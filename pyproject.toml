@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61","wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "test-generator"
+version = "0.1.0"
+description = "A small test generator package (skeleton)."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [ { name = "Levi", email = "levi@roxsoftware.com" } ]
+keywords = ["tests", "generator", "pytest"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
