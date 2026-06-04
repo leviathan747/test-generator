@@ -1,0 +1,43 @@
+questions:
+  - id: 1
+    legacy_id: 1.A.1
+    question: |
+      Find the $x$ values for which $f(x)$ is not continuous where $f$ is given by
+      \[
+        f(x) = \begin{cases}
+                \frac{1}{x - 3} & x \ge 5 \\
+                \frac{1}{2} & x < 5 \\
+              \end{cases}
+      \]
+    answer: $f(x)$ is continuous on $(-\infty, \infty)$
+    distractors:
+      - 5
+      - 3
+      - Both 3 and 5
+    solution: |
+      $\lim_{x \to 5^-} f(x) = \frac{1}{5 - 3} = \frac{1}{2}$ \quad
+      $\lim_{x \to 5^+} f(x) = \frac{1}{2}$ \quad $\therefore f(x)$ is continuous at $x = 5$. \\
+      At $x = 3$, the constant function $\frac{1}{2}$ applies, so the $f(x)$ is continuous at $x = 3$.
+    sections:
+      - 1.11
+      - 1.12
+
+  - id: 2
+    legacy_id: 1.A.2
+    question: Find the limit: $\lim_{x \to -1} \frac{\sqrt{x + 5} - 2}{x + 1}$
+    answer: $\frac{1}{4}$
+    distractors:
+      - $\frac{1}{6}$
+      - $\frac{1}{2}$
+      - 0
+    solution: |
+      $\lim_{x \to -1} \frac{\sqrt{x + 5} - 2}{x + 1} \cdot \frac{\sqrt{x + 5} + 2}{\sqrt{x + 5} + 2}$
+      $= \lim_{x \to -1} \frac{(x + 5) - 4}{(x + 1)(\sqrt{x + 5} + 2)}$ \\
+      $= \lim_{x \to -1} \frac{\cancel{x + 1}}{\cancel{(x + 1)}(\sqrt{x + 5} + 2)}$
+      $= \lim_{x \to -1} \frac{1}{\sqrt{x + 5} + 2}$
+      $= \frac{1}{\sqrt{-1 + 5} + 2}$
+      $= \frac{1}{2 + 2}$
+      $= \frac{1}{4}$
+    sections:
+      - 1.6
+      - 1.7

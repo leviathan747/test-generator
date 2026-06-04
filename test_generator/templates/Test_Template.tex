@@ -1,0 +1,130 @@
+\documentclass[12pt,twoside]{exam}
+\usepackage[utf8]{inputenc}
+
+% required packages
+\usepackage[table]{xcolor}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{ifthen}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage[letterpaper, marginparsep=0in, marginparwidth=0in, includefoot, includehead, top=0.5in, bottom=0.5in, inner=0.6in, outer=0.4in, twoside]{geometry}
+\usepackage[fleqn]{amsmath}
+\usepackage{times}
+\usepackage{newtxmath}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{bm}
+\usepackage[makeroom]{cancel}
+
+% document information
+\title{Unit 1: Limits and Continuity}
+\author{Levi Starrett}
+\def \classname {AP Calculus AB}
+\def \formid {A}
+\def \duration {30 min}
+% \printanswers
+
+% set up figure path
+\graphicspath{ {./images/} }
+
+% left align math equations
+\setlength{\mathindent}{0pt}
+
+% force all math to be display style with top and bottom limits
+\everymath{\displaystyle}
+
+% define centered X column type
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\renewcommand{\arraystretch}{1.5}
+
+% command to insert the "No Calculator" top banner
+\newcommand{\nocalc}{
+  \setlength{\fboxsep}{3pt}
+  \par{\colorbox{black}{\parbox{\textwidth-6pt}{\textbf{\textcolor{white}{%
+  No Calculator --- No Calculator --- No Calculator --- No Calculator --- No Calculator --- No Calculator
+  }}}}}
+}
+
+% customize label for choices
+\renewcommand{\choicelabel}{\textbf{(\thechoice)}}
+
+% customize correct choice and solution emphasis
+\correctchoiceemphasis{\color{red}}
+\SolutionEmphasis{\color{red}}
+
+% remove title and frame from solution box
+\renewcommand{\solutiontitle}{\noindent}
+\unframedsolutions
+
+% environment for placing a solution in a fixed height box
+\newlength{\currentparskip}
+\newenvironment{fixedsolution}[1]
+{
+  \setlength{\currentparskip}{\parskip}
+  \begin{minipage}[t][#1][t]{\linewidth}
+  \setlength{\parskip}{\currentparskip}
+  \begin{solution}
+}
+{
+  \end{solution}
+  \end{minipage}
+}
+
+% command for ensuring questions don't break across pages
+\newsavebox{\fitbox}
+\newcommand{\fitquestion}[1]{%
+  % typeset content into a box
+  \sbox{\fitbox}{%
+    \setlength{\currentparskip}{\parskip}
+    \begin{minipage}{\linewidth}
+    \setlength{\parskip}{\currentparskip}
+      #1
+    \end{minipage}
+  }%
+
+  % remaining space on page
+  \dimen0=\dimexpr\pagegoal-\pagetotal\relax
+
+  % if it doesn't fit, force page break
+  \ifdim\ht\fitbox>\dimen0
+    \newpage
+  \fi
+
+  % print content
+  \usebox{\fitbox}
+}
+
+% header and footer
+\firstpageheader{}{}{}
+\runningheader{\nocalc}{}{}
+\makeatletter
+\lfoot{\today\ -- Form \formid}
+\makeatother
+\cfoot{}
+\rfoot{\thepage}
+
+% don't stretch vertical space to fill page
+\raggedbottom
+
+\begin{document}
+  
+  % first page header
+  \vspace*{-0.75in}
+  \makeatletter
+  \par{\large\textbf{\classname\ -- \@author \hfill Name \fillin[KEY][3in]}}
+  \par{\LARGE\textbf{\@title\ (\duration)}}
+  \makeatother
+  \nocalc
+  \vspace{1em}
+
+  % questions
+  \begin{questions}
+
+    $QUESTION_CONTENT
+
+  \end{questions}
+
+\end{document}
