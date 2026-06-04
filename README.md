@@ -1,5 +1,8 @@
 # Test Generator
 
+[![Tests](https://github.com/leviathan747/test-generator/actions/workflows/python-package.yml/badge.svg)](https://github.com/leviathan747/test-generator/actions/workflows/python-package.yml)
+[![PyPI version](https://img.shields.io/pypi/v/test-generator.svg)](https://pypi.org/project/test-generator/)
+
 A tiny Python package skeleton that demonstrates a test-generator utility.
 
 ## Installation
