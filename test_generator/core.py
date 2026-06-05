@@ -83,9 +83,9 @@ def generate_test(
 
     q_blocks = []
     for q in questions:
-        question_text = q.get("question", "")
-        answer_text = q.get("answer", "")
-        solution_text = q.get("solution", "")
+        question_text = str(q.get("question", ""))
+        answer_text = str(q.get("answer", ""))
+        solution_text = str(q.get("solution", ""))
         distractors = q.get("distractors", []) or []
         distractor_lines = "\n    ".join(f"\\choice {d}" for d in distractors)
 
