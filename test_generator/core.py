@@ -1,4 +1,5 @@
 import importlib.resources as resources
+import random
 import shutil
 import subprocess
 import tempfile
@@ -87,13 +88,14 @@ def generate_test(
         answer_text = str(q.get("answer", ""))
         solution_text = str(q.get("solution", ""))
         distractors = q.get("distractors", []) or []
-        distractor_lines = "\n    ".join(f"\\choice {d}" for d in distractors)
+        choices = [f"\\correctchoice {answer_text}"] + [f"\\choice {d}" for d in distractors]
+        random.shuffle(choices)
+        choices_block = "\n    ".join(choices)
 
         q_block = question_template
         q_block = q_block.replace("$QUESTION", question_text)
-        q_block = q_block.replace("$ANSWER", answer_text)
+        q_block = q_block.replace("$CHOICES", choices_block)
         q_block = q_block.replace("$SOLUTION", solution_text)
-        q_block = q_block.replace("$DISTRACTORS", distractor_lines)
 
         q_blocks.append(q_block)
 
