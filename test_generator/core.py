@@ -1,11 +1,10 @@
-from __future__ import annotations
-
-import re
+import importlib.resources as resources
 import shutil
 import subprocess
 import tempfile
+import yaml
 from pathlib import Path
-import importlib.resources as resources
+
 
 
 def _quote_backslash_scalar_lines(text: str) -> str:
@@ -65,11 +64,6 @@ def generate_test(
     yaml_file = Path(yaml_path)
     if not yaml_file.exists():
         raise FileNotFoundError(yaml_path)
-
-    try:
-        import yaml
-    except Exception as exc:  # pragma: no cover - runtime requirement
-        raise RuntimeError("PyYAML is required to read YAML input. Install pyyaml.") from exc
 
     raw_text = yaml_file.read_text()
     data = yaml.safe_load(_quote_backslash_scalar_lines(raw_text)) or {}
