@@ -34,13 +34,26 @@ def _quote_backslash_scalar_lines(text: str) -> str:
         output_lines.append(line)
     return "\n".join(output_lines) + "\n"
 
-def generate_test(yaml_path: str, output_pdf: str) -> str:
+def generate_test(
+    yaml_path: str,
+    output_pdf: str,
+    title: str = "",
+    author: str = "",
+    class_name: str = "",
+    form_id: str = "",
+    duration: str = "",
+) -> str:
     """Generate a test PDF from a YAML file.
 
     Args:
         yaml_path: Path to a YAML file describing questions (must contain
             a top-level `questions` list of mappings with an `id` key).
         output_pdf: Path where the generated PDF will be written.
+        title: Test title.
+        author: Author name.
+        class_name: Class name.
+        form_id: Form identifier (e.g. "A", "B").
+        duration: Duration string (e.g. "30 min").
 
     Returns:
         The path to the generated PDF (same as ``output_pdf``).
@@ -92,6 +105,11 @@ def generate_test(yaml_path: str, output_pdf: str) -> str:
 
     question_content = "\n\n".join(q_blocks)
     tex_content = template.replace("$QUESTION_CONTENT", question_content)
+    tex_content = tex_content.replace("$TITLE", title)
+    tex_content = tex_content.replace("$AUTHOR", author)
+    tex_content = tex_content.replace("$CLASSNAME", class_name)
+    tex_content = tex_content.replace("$FORMID", form_id)
+    tex_content = tex_content.replace("$DURATION", duration)
 
     with tempfile.TemporaryDirectory() as td:
         td_path = Path(td)

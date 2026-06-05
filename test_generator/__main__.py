@@ -12,9 +12,22 @@ def main(argv=None):
     p = argparse.ArgumentParser(prog="python -m test_generator")
     p.add_argument("input_yaml", help="Path to YAML file containing questions")
     p.add_argument("output_pdf", help="Path where the generated PDF will be written")
+    p.add_argument("--title", default="", help="Test title")
+    p.add_argument("--author", default="", help="Author name")
+    p.add_argument("--class-name", dest="class_name", default="", help="Class name")
+    p.add_argument("--form-id", dest="form_id", default="", help="Form identifier (e.g. A, B)")
+    p.add_argument("--duration", default="", help="Duration string (e.g. '30 min')")
     args = p.parse_args(argv)
 
-    out = generate_test(args.input_yaml, args.output_pdf)
+    out = generate_test(
+        args.input_yaml,
+        args.output_pdf,
+        title=args.title,
+        author=args.author,
+        class_name=args.class_name,
+        form_id=args.form_id,
+        duration=args.duration,
+    )
     print(out)
 
 

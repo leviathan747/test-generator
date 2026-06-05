@@ -20,11 +20,11 @@
 \usepackage[makeroom]{cancel}
 
 % document information
-\title{Unit 1: Limits and Continuity}
-\author{Levi Starrett}
-\def \classname {AP Calculus AB}
-\def \formid {A}
-\def \duration {30 min}
+\title{$TITLE}
+\author{$AUTHOR}
+\def \classname {$CLASSNAME}
+\def \formid {$FORMID}
+\def \duration {$DURATION}
 % \printanswers
 
 % set up figure path
@@ -102,9 +102,9 @@
 \runningheader{\nocalc}{}{}
 \makeatletter
 \lfoot{\today\ -- Form \formid}
-\makeatother
-\cfoot{}
+\cfoot{\@author}
 \rfoot{\thepage}
+\makeatother
 
 % don't stretch vertical space to fill page
 \raggedbottom
@@ -114,7 +114,7 @@
   % first page header
   \vspace*{-0.75in}
   \makeatletter
-  \par{\large\textbf{\classname\ -- \@author \hfill Name \fillin[KEY][3in]}}
+  \par{\large\textbf{\classname \hfill Name \fillin[KEY][3in]}}
   \par{\LARGE\textbf{\@title\ (\duration)}}
   \makeatother
   \nocalc
