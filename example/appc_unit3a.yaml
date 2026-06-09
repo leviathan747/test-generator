@@ -1,0 +1,487 @@
+questions:
+  - id: 1
+    legacy_id: 3.A.1
+    question: |
+      \includegraphics{1}
+
+      Shown below is a circle with radius $r$ and an angle in standard position
+      measuring $\theta$ radians. The length of minor arc $AB$, which is
+      subtended by the angle $\angle AOB$, is $a$. Which of the following
+      equations could be used to find the value of $a$?
+    answer: $a = \theta r$
+    distractors:
+      - $a = \frac{r}{\theta}$
+      - $a = \frac{\theta}{r}$
+      - $a = \theta$
+    solution: TODO
+    sections:
+      - 3.2
+    dok: unknown
+
+  - id: 2
+    legacy_id: 3.A.2
+    question: |
+      A circle with center $O$ is centered at the origin with a radius of 4. The
+      point $A$ lies at the intersection of the terminal ray of an angle in
+      standard position measuring $\theta$ radians and the circle. If $A$ has
+      coordinates $(2, 2 \sqrt 3)$, what is the value of $\sin \theta$?
+    answer: $\frac{\sqrt 3}{2}$
+    distractors:
+      - $\frac{1}{2}$
+      - 2
+      - $2 \sqrt 3$
+    solution: TODO
+    sections:
+      - 3.2
+    dok: unknown
+
+  - id: 3
+    legacy_id: 3.A.3
+    question: |
+      In the $xy$-plane, an angle in standard position measuring $\textstyle
+      \frac{7\pi}{6}$ radians intersects a circle centered at the origin with a
+      radius of 1. What are the coordinates of the point of intersection of the
+      terminal ray of the angle and the circle?
+    answer: $\left( -\frac{\sqrt 3}{2}, -\frac{1}{2} \right)$
+    distractors:
+      - $\left( -\frac{1}{2}, \frac{\sqrt 3}{2} \right)$
+      - $\left( -\frac{1}{2}, -\frac{\sqrt 3}{2} \right)$
+      - $\left( -\frac{\sqrt 3}{2}, \frac{1}{2} \right)$
+    solution: TODO
+    sections:
+      - 3.3
+    dok: unknown
+
+  - id: 4
+    legacy_id: 3.A.4
+    question: |
+      \includegraphics{4}
+
+      The angle $\theta$ measures 1 radian and the circle has a radius of 2. Which of
+      the following is an expression for the area of triangle $\Delta OAB$? \\
+      (Note: The area of a triangle is $\textstyle A = \frac{1}{2}bh$.)
+    answer: $2 \sin 1 \cos 1$
+    distractors:
+      - $\frac{1}{2} \sin 1 \cos 1$
+      - $\sin 1 \cos 1$
+      - $4 \sin 1 \cos 1$
+    solution: TODO
+    sections:
+      - 3.3
+    dok: unknown
+
+  - id: 5
+    legacy_id: 3.A.5
+    question: |
+      Let $f$ be the function given by $f(\theta) = \cos \theta$. Which of the
+      following describes the relationship between the inputs and outputs of $f$
+      over one cycle of its graph?
+    answer: As the inputs increase from 0 to $\pi$, the outputs will decrease, and as the inputs increase from $\pi$ to $2\pi$, the outputs will increase.
+    distractors:
+      - As the inputs increase from 0 to $\pi$, the outputs will increase, and as the inputs increase for $\pi$ to $2\pi$, the outputs will decrease.
+      - As the inputs increase from -1 to 0, the outputs will decrease, and as the inputs increase from 0 to 1, the outputs will increase.
+      - As the inputs increase from -1 to 0, the outputs will increase, and as the inputs increase from 0 to 1, the outputs will decrease.
+    solution: TODO
+    sections:
+      - 3.4
+    dok: unknown
+
+  - id: 6
+    legacy_id: 3.A.6
+    question: |
+      The function $h$ is defined by $h(\theta) = \cos \theta$ for all $\theta$.
+      The graph of $h$ contains the point $(\omega, h(\omega))$ for some angle
+      $\omega > 0$. Which of the following is true about the graph of $h$?
+    answer: The graph of $h$ contains the point $(-\omega, h(\omega))$ because $h$ is an even function.
+    distractors:
+      - The graph of $h$ contains the point $(-\omega, h(\omega))$ because $h$ is an odd function.
+      - The graph of $h$ contains the point $(-\omega, -h(\omega))$ because $h$ is an odd function.
+      - The graph of $h$ contains the point $(-\omega, -h(\omega))$ because $h$ is an even function.
+    solution: TODO
+    sections:
+      - 3.5
+    dok: unknown
+
+  - id: 7
+    legacy_id: 3.A.7
+    question: |
+      The height of the tide on one coastline can be modeled by the function
+      $\textstyle h(t) = 1.25 \sin \left( \frac{2\pi}{12.25} (t - 1.5) \right) +
+      1.5$, where $h$ is height in feet and $t$ is time in hours. What is the
+      maximum tide height on this coastline?
+    answer: 2.75 feet
+    distractors:
+      - 1.5 feet
+      - 2.5 feet
+      - 3 feet
+    solution: TODO
+    sections:
+      - 3.6
+    dok: unknown
+
+  - id: 8
+    legacy_id: 3.A.8
+    question: |
+      \includegraphics{18}
+
+      The function $f$ expressed as $f(x) = \sin(b(x + c))$ is graphed to the
+      right. Which of the following could be the values of $b$ and $c$?
+    answer: $b = 2$ and $c = -\frac{\pi}{4}$
+    distractors:
+      - $b = 2$ and $c = \frac{\pi}{4}$
+      - $b = \frac{1}{2}$ and $c = \frac{\pi}{4}$
+      - $b = \frac{1}{2}$ and $c = -\frac{\pi}{4}$
+    solution: TODO
+    sections:
+      - 3.6
+    dok: unknown
+
+  - id: 9
+    legacy_id: 3.A.9
+    question: |
+      An architect is designing a skate park, and one obstacle in the park will
+      be a concrete wave that skateboarders can ride on. The architect is going
+      to use a sinusoidal function to design the wave. The inputs of the function
+      will be $x$, the distance along the ground, so that the $x$-axis will
+      represent the ground, and the outputs will be $h$, the height above the
+      ground. The wave will start, when $x = 0$, at its peak 3 feet off the
+      ground. The wave will then reach the ground 8 feet away, when $x = 8$. The
+      wave will continue up to its next peak, after which it will continue to
+      decrease and increase periodically. Which of the following sinusoidal
+      functions $h(x)$ will satisfy the architect’s design?
+    answer: $h(x) = 1.5 \cos \left( \frac{2\pi}{16} x \right) + 1.5$
+    distractors:
+      - $h(x) = 3 \cos \left( \frac{2\pi}{8} x \right)$
+      - $h(x) = 1.5 \cos \left( \frac{2\pi}{8} x \right) + 1.5$
+      - $h(x) = 3 \cos \left( \frac{2\pi}{16} x \right)$
+    solution: TODO
+    sections:
+      - 3.7
+    dok: unknown
+
+  - id: 10
+    legacy_id: 3.A.11
+    question: |
+      \includegraphics{11}
+
+      The function $f$ is periodic with a period of 4. One cycle of the graph of
+      $y = f(x)$, where $1 \le x \le 5$, is shown in the graph to the right. What
+      is the value of $f(26.5)$?
+    answer: 1
+    distractors:
+      - 0.25
+      - 0.5
+      - 1.2
+    solution: TODO
+    sections:
+      - 3.1
+    dok: unknown
+
+  - id: 11
+    legacy_id: 3.A.12
+    question: |
+      Consider the function $f$ defined by $f(x) = \cos(x)$. Which of the
+      following is a valid interpretation of $f(6)$.
+    answer: $f(6) = 0.960$, which means that for an angle in standard position measuring 6 radians, the intersection of the terminal ray and the unit circle will have a horizontal displacement of 0.960 from the $y$-axis.
+    distractors:
+      - $f(6) = 0.995$, which means that for an angle in standard position measuring 6 radians, the intersection of the terminal ray and the unit circle will have a vertical displacement of 0.995 from the $x$-axis.
+      - $f(6) = 0.995$, which means that for an angle in standard position measuring 6 radians, the intersection of the terminal ray and the unit circle will have a horizontal displacement of 0.995 from the $y$-axis.
+      - $f(6) = 0.960$, which means that for an angle in standard position measuring 6 radians, the intersection of the terminal ray and the unit circle will have a vertical displacement of 0.960 from the $x$-axis.
+    solution: TODO
+    sections:
+      - 3.4
+    dok: unknown
+
+  - id: 12
+    legacy_id: 3.A.13
+    question: |
+      An antique seller has a piece of memorabilia they are looking to sell. They
+      have found that, over the last few months, the price of similar memorabilia
+      has varied seemingly periodically on a website where memorabilia is sold.
+      The table below provides values of the price, in dollars, of similar
+      memorabilia on the website.
+
+      \fullwidth{
+        \begin{center}
+          \begin{tabularx}{6in}{ |Y||*{5}{Y|} }
+            \hline
+            \textbf{Month} \bm{$t$} & 2 & 3 & 5 & 7 & 11 \\
+            \hline
+            \textbf{Price} \bm{$p$} & \$45 & \$53 & \$50 & \$30 & \$45 \\
+            \hline
+          \end{tabularx}
+        \end{center}
+      }
+
+      The seller used technology to create a regression model $p(t) = a \sin (bt +
+      c) + d$ using all five data points to model the price $p$ based on the
+      month $t$. Based on the regression model, which of the following is the
+      best estimate for the difference between the highest price and the lowest
+      price that similar memorabilia has sold for?
+    answer: \$31
+    distractors:
+      - \$15
+      - \$40
+      - \$55
+    solution: TODO
+    sections:
+      - 3.7
+    dok: unknown
+
+  - id: 13
+    legacy_id: 3.A.14
+    question: |
+      For a car that is idling, the height h of a piston, which goes up and down
+      periodically, can be modeled by the function $h(t) = 0.6 \sin (86.080t) +
+      0.55$, where $t$ is time in seconds and $h$ is in inches. Which of the following
+      gives the value of the frequency of $h$?
+    answer: 13.700
+    distractors:
+      - 0.036
+      - 0.073
+      - 6.850
+    solution: TODO
+    sections:
+      - 3.5
+    dok: unknown
+
+  - id: 14
+    legacy_id: 3.B.1
+    question: |
+      A circle with center $O$ is centered at the origin with a radius of 2. The
+      point $A$ lies at the intersection of the terminal ray of an angle in
+      standard position measuring $\theta$ radians and the circle. If $A$ has
+      coordinates $(-\sqrt 3, 1)$, what is the value of $\sin \theta$?
+    answer: $\frac{1}{2}$
+    distractors:
+      - $\frac{5\pi}{6}$
+      - $\frac{\sqrt 3}{2}$
+      - $2 \sqrt 3$
+    solution: TODO
+    sections:
+      - 3.2
+    dok: unknown
+
+  - id: 15
+    legacy_id: 3.B.2
+    question: |
+      \includegraphics{1}
+
+      Shown below is a circle with radius $r$ and an angle in standard position
+      measuring $\theta$ radians. The length of minor arc $AB$, which is
+      subtended by the angle $\angle AOB$, is $a$. Which of the following
+      equations could be used to find the value of $r$?
+    answer: $r = \frac{a}{\theta}$
+    distractors:
+      - $r = \theta a$
+      - $r = \frac{\theta}{a}$
+      - $r = a$
+    solution: TODO
+    sections:
+      - 3.2
+    dok: unknown
+
+  - id: 16
+    legacy_id: 3.B.3
+    question: |
+      In the $xy$-plane, an angle in standard position measuring $\textstyle
+      \frac{5\pi}{3}$ radians intersects a circle centered at the origin with a
+      radius of 1. What are the coordinates of the point of intersection of the
+      terminal ray of the angle and the circle?
+    answer: $\left( \frac{1}{2}, -\frac{\sqrt 3}{2} \right)$
+    distractors:
+      - $\left( -\frac{1}{2}, \frac{\sqrt 3}{2} \right)$
+      - $\left( -\frac{\sqrt 3}{2}, \frac{1}{2} \right)$
+      - $\left( -\frac{\sqrt 3}{2}, -\frac{1}{2} \right)$
+    solution: TODO
+    sections:
+      - 3.3
+    dok: unknown
+
+  - id: 17
+    legacy_id: 3.B.4
+    question: |
+      The function $h$ is defined by $h(\theta) = \sin \theta$ for all $\theta$.
+      The graph of $h$ contains the point $(\omega, h(\omega))$ for some angle
+      $\omega > 0$. Which of the following is true about the graph of $h$?
+    answer: The graph of $h$ contains the point $(-\omega, -h(\omega))$ because $h$ is an odd function.
+    distractors:
+      - The graph of $h$ contains the point $(-\omega, h(\omega))$ because $h$ is an odd function.
+      - The graph of $h$ contains the point $(-\omega, h(\omega))$ because $h$ is an even function.
+      - The graph of $h$ contains the point $(-\omega, -h(\omega))$ because $h$ is an even function.
+    solution: TODO
+    sections:
+      - 3.5
+    dok: unknown
+
+  - id: 18
+    legacy_id: 3.B.5
+    question: |
+      \includegraphics{4}
+
+      The angle $\theta$ measures 1 radian and the circle has a radius of 2.
+      Which of the following is an expression for the perimeter of triangle
+      $\Delta OAB$?
+    answer: $2 + 2 \sin 1 + 2 \cos 1$
+    distractors:
+      - $2 \sin 1 \cos 1$
+      - $8 \sin 1 \cos 1$
+      - $2 + 2 \sin 1 \cos 1$
+    solution: TODO
+    sections:
+      - 3.3
+    dok: unknown
+
+  - id: 19
+    legacy_id: 3.B.6
+    question: |
+      Let $f$ be the function given by $f(\theta) = -\cos \theta$. Which of the
+      following describes the relationship between the inputs and outputs of $f$
+      over one cycle of its graph?
+    answer: As the inputs increase from 0 to $\pi$, the outputs will increase, and as the inputs increase for $\pi$ to $2\pi$, the outputs will decrease.
+    distractors:
+      - As the inputs increase from -1 to 0, the outputs will decrease, and as the inputs increase from 0 to 1, the outputs will increase.
+      - As the inputs increase from -1 to 0, the outputs will increase, and as the inputs increase from 0 to 1, the outputs will decrease.
+      - As the inputs increase from 0 to $\pi$, the outputs will decrease, and as the inputs increase from $\pi$ to $2\pi$, the outputs will increase.
+    solution: TODO
+    sections:
+      - 3.4
+    dok: unknown
+
+  - id: 20
+    legacy_id: 3.B.7
+    question: |
+      The water level in a resevoir can be modeled by the function $\textstyle
+      h(t) = 7.5 \cos \left( \frac{2\pi}{22.5} (t - 4.5) \right) + 3$, where
+      $h$ is measured in meters and $t$ is measured in days. How long after
+      reaching the maiximum level will the water level in the resevoir reach
+      its maximum again.
+    answer: 22.5 days
+    distractors:
+      - 15 days
+      - $\textstyle \frac{2\pi}{22.5}$ days
+      - 3 days
+    solution: TODO
+    sections:
+      - 3.6
+    dok: unknown
+
+  - id: 21
+    legacy_id: 3.B.8
+    question: |
+      A guitar sting is plucked and allowed to vibrate. Its motion can be
+      modeled by a sinusoial function in the form $f(t) = a \sin (b(t + c)) +
+      d$. Where $f$ represents the distance from the resting position of the
+      string in millimeters and $t$ represents time in seconds. The string is
+      at rest at $t = 0$ when it is first plucked. It resonates with a
+      frequency of 329 Hz (vibrations per second) and reaches a maximum
+      distance of 1.5 mm from the resting position during its vibration.
+      Which of the following sinusoidal functions could represent this model?
+    answer: $f(x) = 1.5 \sin (658 \pi t)$
+    distractors:
+      - $f(x) = 3 \sin (658 \pi t)$
+      - $f(x) = 1.5 \sin \left(\frac{2\pi}{329} t\right)$
+      - $f(x) = \sin \left(\frac{2\pi}{329} t\right) + 1.5$
+    solution: TODO
+    sections:
+      - 3.7
+    dok: unknown
+
+  - id: 22
+    legacy_id: 3.B.9
+    question: |
+      \includegraphics{18}
+
+      The function $f$ expressed as $f(x) = \cos(b(x + c))$ is graphed to the
+      right. Which of the following could be the values of $b$ and $c$?
+    answer: $b = 2$ and $c = \frac{\pi}{2}$
+    distractors:
+      - $b = \frac{1}{2}$ and $c = \frac{\pi}{2}$
+      - $b = 2$ and $c = 0$
+      - $b = \frac{1}{2}$ and $c = 0$
+    solution: TODO
+    sections:
+      - 3.6
+    dok: unknown
+
+  - id: 23
+    legacy_id: 3.B.11
+    question: |
+      Consider the function $f$ defined by $f(x) = \sin(x)$. Which of the
+      following is a valid interpretation of $f(6)$.
+    answer: $f(6) = -0.279$, which means that for an angle in standard position measuring 6 radians, the intersection of the terminal ray and the unit circle will have a vertical displacement of 0.995 from the $x$-axis.
+    distractors:
+      - $f(6) = -0.279$, which means that for an angle in standard position measuring 6 radians, the intersection of the terminal ray and the unit circle will have a horizontal displacement of 0.995 from the $y$-axis.
+      - $f(6) = 0.960$, which means that for an angle in standard position measuring 6 radians, the intersection of the terminal ray and the unit circle will have a vertical displacement of 0.960 from the $x$-axis.
+      - $f(6) = 0.960$, which means that for an angle in standard position measuring 6 radians, the intersection of the terminal ray and the unit circle will have a horizontal displacement of 0.960 from the $y$-axis.
+    solution: TODO
+    sections:
+      - 3.4
+    dok: unknown
+
+  - id: 24
+    legacy_id: 3.B.12
+    question: |
+      \includegraphics{11}
+
+      The function $f$ is periodic with a period of 4. One cycle of the graph of
+      $y = f(x)$, where $1 \le x \le 5$, is shown in the graph to the right. What
+      is the value of $f(15.5)$?
+    answer: 0.25
+    distractors:
+      - 0.5
+      - 1
+      - 1.2
+    solution: TODO
+    sections:
+      - 3.1
+    dok: unknown
+
+  - id: 25
+    legacy_id: 3.B.13
+    question: |
+      For a car that is idling, the height h of a piston, which goes up and down
+      periodically, can be modeled by the function $h(t) = 0.6 \sin (86.080t) +
+      0.55$, where $t$ is time in seconds and $h$ is in inches. Which of the following
+      gives the value of the period of $h$?
+    answer: 0.073
+    distractors:
+      - 0.036
+      - 6.850
+      - 13.700
+    solution: TODO
+    sections:
+      - 3.5
+    dok: unknown
+
+  - id: 26
+    legacy_id: 3.B.14
+    question: |
+      In an experiment, a research has measured the brightness of the moonlight once a week for the last 5 weeks.
+      He observed that the brightness followed a periodic pattern.
+
+      \fullwidth{
+        \begin{center}
+          \begin{tabularx}{6in}{ |Y||*{5}{Y|} }
+            \hline
+            \textbf{Week} \bm{$t$} & 1 & 2 & 3 & 4 & 5 \\
+            \hline
+            \textbf{Brightness (lumens)} \bm{$L$} & 6.0 & 10.6 & 11.9 & 9.1 & 4.1 \\
+            \hline
+          \end{tabularx}
+        \end{center}
+      }
+
+      The researcher created a regression model $L(t) = a \sin(bt + c) + d$
+      using the data in the table shown above. According to the regression
+      model, how bright will the is the moon expected to be the next the
+      researcher takes a measurement?
+    answer: 0.4 lumens
+    distractors:
+      - 0.6 lumens
+      - 4.5 lumens
+      - 9.4 lumens
+    solution: TODO
+    sections:
+      - 3.7
+    dok: unknown

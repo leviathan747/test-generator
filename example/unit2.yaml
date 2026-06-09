@@ -1,0 +1,568 @@
+questions:
+  - id: 1
+    legacy_id: 2.A.1
+    question: |
+      \begin{figureright}[3.5in]{\includegraphics{1}}
+
+        At which of the following values of $x$ is $g(x)$ defined, but $g'(x)$ is
+        undefined?
+
+        I. $x = -2$ \qquad II. $x = 2$ \qquad III. $x = 3$
+    answer: II only
+    distractors:
+      - I and III only
+      - I and II only
+      - II and III only
+    solution: |
+      $g(-2)$ is undefined, $g'(-2)$ is undefined
+
+      $g(2) = 2$, $g'(2)$ is undefined
+
+      $g(3) = 1$, $g'(3) \approx 0$
+    sections:
+      - 2.4
+    dok: unknown
+
+  - id: 2
+    legacy_id: 2.A.2
+    question: |
+      If $f(x) = 2x \sin x$, then what is the slope of the tangent line to the
+      graph of $f(x)$ when $x = \frac{\pi}{2}$?
+    answer: 2
+    distractors:
+      - $\frac{1}{2}$
+      - 0
+      - $\pi$
+    solution: |
+      $f'(x) = 2x \cos x + 2 \sin x$ \quad (Product Rule)
+
+      $f'\left(\frac{\pi}{2}\right) = 2\left(\frac{\pi}{2}\right) \cos \frac{\pi}{2} + 2 \sin \frac{\pi}{2}$
+      $= 2\left(\frac{\pi}{2}\right)(0) + 2(1) = 2$
+    sections:
+      - 2.2
+      - 2.6
+      - 2.7
+      - 2.8
+    dok: unknown
+
+  - id: 3
+    legacy_id: 2.A.3
+    question: |
+      Find the limit: $\lim_{h \to 0} \frac{\sec(x + h) - \sec x}{h}$
+    answer: $\sec x \tan x$
+    distractors:
+      - $\tan^2 x$
+      - $\sec x$
+      - $\sec^2 x$
+    solution: $\lim_{h \to 0} \frac{\sec(x + h) - \sec x}{h} = \frac{d}{dx} \left[ \sec x \right] = \sec x \tan x$
+    sections:
+      - 2.2
+      - '2.10'
+    dok: unknown
+
+  - id: 4
+    legacy_id: 2.A.4
+    question: If $y = e^x \tan x$, then $\frac{dy}{dx} =$
+    answer: $e^x (\sec^2 x + \tan x)$
+    distractors:
+      - $e^x \sec^2 x$
+      - $e^x (\cot x + \tan x)$
+      - $e^x (\sec x + \tan x)$
+    solution: $\frac{dy}{dx} = e^x \sec^2 x + e^x \tan x = e^x (\sec^2 x + \tan x)$ \quad (Product Rule)
+    sections:
+      - 2.7
+      - 2.8
+      - '2.10'
+    dok: unknown
+
+  - id: 5
+    legacy_id: 2.A.5
+    question: If $f(2) = -1$ and $f'(2) = 3$, find an equation of the tangent line when $x = 2$
+    answer: $y + 1 = 3(x - 2)$
+    distractors:
+      - $y - 3 = 2(x + 1)$
+      - $y - 2 = 3(x + 1)$
+      - $y + 1 = 2(x - 2)$
+    solution: $y - f(c) = f'(c)(x - c)$
+    sections:
+      - 2.2
+    dok: unknown
+
+  - id: 6
+    legacy_id: 2.A.6
+    question: If $f(x) = \frac{2x}{x^2 + 1}$, which of the following is the derivative of $f$?
+    answer: $f'(x) = \lim_{\Delta x \to 0} \frac{\frac{2(x + \Delta x)}{(x + \Delta x)^2 + 1} - \frac{2x}{x^2 + 1}}{\Delta x}$
+    distractors:
+      - $f'(x) = \frac{\frac{2x + \Delta x}{x^2 + \Delta x + 1} - \frac{2x}{x^2 + 1}}{\Delta x}$
+      - $f'(x) = \lim_{\Delta x \to 0} \frac{\frac{2x + \Delta x}{x^2 + \Delta x + 1} - \frac{2x}{x^2 + 1}}{\Delta x}$
+      - $f'(x) = \frac{\frac{2(x + \Delta x)}{(x + \Delta x)^2 + 1} - \frac{2x}{x^2 + 1}}{\Delta x}$
+    solution: Definition of the derivative
+    sections:
+      - 2.2
+    dok: unknown
+
+  - id: 7
+    legacy_id: 2.A.7
+    question: Find $f'(t)$ if $f(t) = \frac{\ln t}{t^2}$
+    answer: $f'(t) = \frac{1 - 2 \ln t}{t^3}$
+    distractors:
+      - $f'(t) = \frac{\frac{1}{t}}{2t}$
+      - $f'(t) = t - 2t \ln t$
+      - $f'(t) = \frac{t + 2t \ln t}{t^2}$
+    solution: |
+      $f'(t) = \frac{t^2 \cdot \frac{1}{t} - \ln t \cdot 2t}{t^4}$
+      $= \frac{t(1 - 2 \ln t)}{t^4}$
+      $= \frac{1 - 2 \ln t}{t^3}$ \quad (Quotient Rule)
+    sections:
+      - 2.5
+      - 2.7
+      - 2.9
+    dok: unknown
+
+  - id: 8
+    legacy_id: 2.A.8
+    question: |
+      \includegraphics{8}
+
+      Given $h(x) = f(x) \cdot g(x)$, use the graph to the right to find $h'(4)$.
+    answer: $\frac{15}{2}$
+    distractors:
+      - $\frac{5}{8}$
+      - $\frac{45}{4}$
+      - 5
+    solution: |
+      $h'(x) = f(x) \cdot g'(x) + f'(x) \cdot g(x)$ \quad (Product Rule)
+
+      $h'(4) = \frac{5}{2} \cdot \frac{1}{2} + \frac{5}{4} \cdot 5$
+      $= \frac{5}{4} + \frac{25}{4} = \frac{30}{4} = \frac{15}{2}$
+    sections:
+      - 2.3
+      - 2.9
+    dok: unknown
+
+  - id: 9
+    legacy_id: 2.A.9
+    question: If $f(\theta) = 2 \sqrt \theta + 3 \sin \theta$, what is $f'(\theta)$
+    answer: $\frac{1 + 3 \sqrt \theta \cos \theta}{\sqrt \theta}$
+    distractors:
+      - $\frac{1 + 3 \sqrt \theta \sin \theta}{\sqrt \theta}$
+      - $\frac{1 - 3 \cos \theta}{\sqrt \theta}$
+      - $\frac{1 - 3 \sqrt \theta 3 \cos \theta}{\sqrt \theta}$
+    solution: |
+      $f'(\theta) = 2 \cdot \frac{1}{2 \sqrt \theta} + 3 \cos \theta$
+      $= \frac{1 + 3 \sqrt \theta \cos \theta}{\sqrt \theta}$
+    sections:
+      - 2.5
+      - 2.6
+      - 2.7
+    dok: unknown
+
+  - id: 10
+    legacy_id: 2.A.10
+    question: |
+      For what value(s) of $a$ will the function $g(x) = a \sqrt x + 4x$ have a
+      tangent line whose slope is 3 when $x = 4$
+    answer: $a = -4$
+    distractors:
+      - $a = -53$
+      - $a = -\frac{1}{4}$
+      - $a = -6$
+    solution: |
+      $g'(x) = \frac{a}{2 \sqrt x} + 4$
+
+      $g'(4) = 3 \Rightarrow$
+      $\frac{a}{2 \sqrt 4} + 4 = 3 \Rightarrow$
+      $\frac{a}{2 \sqrt 4} = -1 \Rightarrow$
+      $a = -1 \cdot 2 \sqrt 4 \Rightarrow$
+      $a = -4$
+    sections: []
+    dok: unknown
+
+  - id: 11
+    legacy_id: 2.A.12
+    question: Suppose that $g(x) = f(x) \cdot h(x)$, $f(3) = 6$, $h(3) = 2$, $h'(6) = 4$, $h'(3) = 15$, and $f'(3) = 8$. Find $g'(3)$.
+    answer: 106
+    distractors:
+      - 32
+      - 8
+      - 60
+    solution: |
+      $g'(x) = f(x) \cdot h'(x) + f'(x) \cdot h(x)$ \quad (Product Rule)
+
+      $g'(3) = 6 \cdot 15 + 8 \cdot 2 = 90 + 16 = 106$
+    sections:
+      - 2.8
+    dok: unknown
+
+  - id: 12
+    legacy_id: 2.A.13
+    question: Suppose that $g(x) = \frac{h(x)}{f(x)}$, $f(3) = 6$, $h(3) = 2$, $h'(6) = 4$, $h'(3) = 15$, and $f'(3) = 9$. Find $g'(3)$.
+    answer: 2
+    distractors:
+      - $\frac{1}{3}$
+      - 3
+      - $\frac{5}{3}$
+    solution: |
+      $g'(x) = \frac{f(x) \cdot h'(x) - h(x) \cdot f'(x)}{(f(x))^2}$ \quad (Quotient Rule)
+
+      $g'(3) = \frac{6 \cdot 15 - 2 \cdot 9}{6^2} = \frac{90 - 18}{36} = \frac{72}{36} = 2$
+    sections:
+      - 2.9
+    dok: unknown
+
+  - id: 13
+    legacy_id: 2.A.14
+    question: |
+      The limit $\lim_{\Delta x \to 0} \frac{\frac{4}{2 - (-1 + \Delta x)^2} - 4}{\Delta x}$
+      represents $f'(c)$ for a function $f(x)$ and a number $c$. Find $f$ and $c$.
+    answer: $f(x) = \frac{4}{2 - x^2}$; $c = -1$
+    distractors:
+      - $f(x) = 2 - x^2$; $c = -1$
+      - $f(x) = \frac{4}{2 - x^2}$; $c = 4$
+      - $f(x) = 2 - x^2$; $c = 4$
+    solution: Definition of the derivative
+    sections:
+      - 2.2
+    dok: unknown
+
+  - id: 14
+    legacy_id: 2.A.15
+    question: |
+      At $x = 2$, the function given by $f(x) = \begin{cases}
+        x^2 + 1 & x \le 2 \\
+        4x - 3 & x > 2 \\
+      \end{cases}$ is
+    answer: both continuous and differentiable
+    distractors:
+      - differentiable, but not continuous
+      - continuous, but not differentiable
+      - neither continuous nor differentiable
+    solution: |
+      $\lim_{x \to 2^-} f(x) = \lim_{x \to 2^-} x^2 + 1 = (2)^2 + 1 = 5$ \quad
+      $\lim_{x \to 2^+} f(x) = \lim_{x \to 2^-} 4x - 3 = 4(2) - 3 = 5$ \quad
+      $\therefore f(x)$ is continuous at $x = 2$
+
+      $f'(2) = \lim_{x \to 2} \frac{f(x) - f(2)}{x - 2}$
+
+      $\lim_{x \to 2^-} \frac{f(x) - f(h)}{x - 2}$
+      $= \lim_{x \to 2^-} \frac{x^2 + 1 - \left[(2)^2 + 1\right]}{x - 2}$
+      $= \lim_{x \to 2^-} \frac{x^2 - 4}{x - 2}$
+      $= \lim_{x \to 2^-} \frac{(x - 2)(x + 2)}{x - 2}$
+      $= \lim_{x \to 2^-} x + 2 = 2 + 2 = 4$
+
+      $\lim_{x \to 2^+} \frac{f(x) - f(h)}{x - 2}$
+      $= \lim_{x \to 2^+} \frac{4x - 3 - \left[4(2) - 3\right]}{x - 2}$
+      $= \lim_{x \to 2^+} \frac{4x - 8}{x - 2}$
+      $= \lim_{x \to 2^+} \frac{4(x - 2)}{x - 2}$
+      $= \lim_{x \to 2^+} 4 = 4$
+
+      $\therefore f'(2) = 4$
+    sections:
+      - 2.2
+      - 2.4
+    dok: unknown
+
+  - id: 15
+    legacy_id: 2.A.16
+    question: |
+      A counter records people entering a fast food restaurant. The data below
+      shows the number of customers, $N(t)$ that are in the restaurant every
+      two hours starting at 8:00 am. Estimate the rate at which the customers
+      are entering the restaurant at 1:00 pm ($t = 5$).
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |*{8}{Y|} }
+          \hline
+          \bm{$t$} & 0 & 2 & 4 & 6 & 8 & 10 & 12 \\
+          \hline
+          \bm{$N(t)$} & 0 & 21 & 42 & 36 & 14 & 58 & 23 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: -3 customers/hr
+    distractors:
+      - 6 customers/hr
+      - 39 customers/hr
+      - -6 customers/hr
+    solution: |
+      $N'(5) \approx \frac{36 - 42}{6 - 4} = -3$
+
+      \emph{Note: the negative value for the rate indicates that customers are
+      leaving the store during this period}
+    sections:
+      - 2.1
+    dok: unknown
+
+  - id: 16
+    legacy_id: 2.B.1
+    question: |
+      \includegraphics{1B}
+
+      The graph of a function $f$ is shown to the right. At which value of
+      $x$ is $f$ continuous, but not differentiable?
+    answer: $a$
+    distractors:
+      - $c$
+      - $b$
+      - $d$
+    solution: Graph has a sharp corner
+    sections: []
+    dok: unknown
+
+  - id: 17
+    legacy_id: 2.B.2
+    question: |
+      If $f(x) = 3x \cos(x)$, then what is the slope of the tangent line to the
+      graph of $f(x)$ when $x = \frac{\pi}{2}$?
+    answer: $-\frac{3\pi}{2}$
+    distractors:
+      - 3
+      - $\frac{3\pi}{2}$
+      - -3
+    solution: |
+      $f'(x) = 3x \cdot -\sin(x) + 3 \cdot \cos(x)$ \qquad (Product Rule)
+
+      $f'\left(\frac{\pi}{2}\right) = 3 \left(\frac{\pi}{2}\right) \cdot -\sin\left(\frac{\pi}{2}\right)$
+      $+ 3 \cdot \cos\left(\frac{\pi}{2}\right)$
+      $= \frac{3\pi}{2} \cdot -1 + 3 \cdot 0 = -\frac{3\pi}{2}$
+    sections: []
+    dok: unknown
+
+  - id: 18
+    legacy_id: 2.B.3
+    question: Find $\lim_{h \to 0} \frac{\sin\left(\frac{\pi}{3} + h\right) - \sin\left(\frac{\pi}{3}\right)}{h}$
+    answer: $\frac{1}{2}$
+    distractors:
+      - 0
+      - $\frac{\sqrt 3}{2}$
+      - The limit does not exist.
+    solution: |
+      $\lim_{h \to 0} \frac{\sin\left(\frac{\pi}{3} + h\right) - \sin\left(\frac{\pi}{3}\right)}{h}$
+      $= \frac{d}{dx} \left[ \sin(x) \right] \Big|_{x = \frac{\pi}{3}}$
+      $= \cos\left(\frac{\pi}{3}\right) = \frac{1}{2}$
+
+      (Definition of the derivative)
+    sections: []
+    dok: unknown
+
+  - id: 19
+    legacy_id: 2.B.4
+    question: If $y = \tan(x) - \cot(x)$, then $\frac{dy}{dx} =$
+    answer: $\sec^2(x) + \csc^2(x)$
+    distractors:
+      - $\sec(x)\csc(x)$
+      - $\sec^2(x) - \csc^2(x)$
+      - $\sec(x) + \csc(x)$
+    solution: $\frac{dy}{dx} = \sec^2(x) - (-csc^2(x)) = \sec^2(x) + \csc^2(x)$
+    sections: []
+    dok: unknown
+
+  - id: 20
+    legacy_id: 2.B.5
+    question: |
+      If the line tangent to the graph of the function $f$ at the point $(1,
+      7)$ passes through the point $(-2, -2)$, then $f'(1)$ is
+    answer: 3
+    distractors:
+      - -5
+      - 1
+      - undefined
+    solution: |
+      $f'(1) = \frac{7 - (-2)}{1 - (-2)} = \frac{9}{3} = 3$
+      \qquad $f'(1)$ represents the slope of the line tangent to the point at $x = 1$.
+    sections: []
+    dok: unknown
+
+  - id: 21
+    legacy_id: 2.B.6
+    question: |
+      If $f(x) = 3x^2 + 2x$, which of the following will calculate the
+      derivative of $f(x)$?
+    answer: $\lim_{h \to 0} \frac{(3(x + h)^2 + 2(x + h)) - (3x^2 + 2x)}{h}$
+    distractors:
+      - $\lim_{h \to 0} \frac{(3x^2 + 2x + h) - (3x^2 + 2x)}{h}$
+      - $\lim_{x \to 0} \frac{(3x^2 + 2x + h) - (3x^2 + 2x)}{h}$
+      - $\lim_{x \to 0} \frac{(3(x + h)^2 + 2(x + h)) - (3x^2 + 2x)}{h}$
+    solution: Definition of the derivative
+    sections: []
+    dok: unknown
+
+  - id: 22
+    legacy_id: 2.B.7
+    question: Find $f'(t)$ if $f(t) = \frac{e^t}{t^3}$
+    answer: $f'(t) = \frac{e^t(t - 3)}{t^4}$
+    distractors:
+      - $f'(t) = \frac{e^t}{3t^2}$
+      - $f'(t) = e^{t}t^2(t + 3)$
+      - $f'(t) = \frac{e^t(3 - t)}{t^4}$
+    solution: |
+      $f'(t) = \frac{t^3 \cdot e^t - e^t \cdot 3t^2}{t^6}$
+      $= \frac{t^2 \cdot e^t(t - 3)}{t^6}$
+      $= \frac{e^t(t - 3)}{t^4}$
+    sections: []
+    dok: unknown
+
+  - id: 23
+    legacy_id: 2.B.8
+    question: |
+      \includegraphics{8B}
+
+      The figure to the right show the graphs of the functions $f$ and $g$.
+      If $h(x) = f(x) \cdot g(x)$, then $h'(2) =$
+    answer: -$\frac{11}{2}$
+    distractors:
+      - $\frac{13}{2}$
+      - -1
+      - $\frac{1}{2}$
+    solution: |
+      $h'(x) = f(x)g'(x) + g(x)f'(x)$ \qquad (Product Rule) \\
+      $h'(2) = 3 \cdot -2 + 1 \cdot \frac{1}{2} = -\frac{12}{2} + \frac{1}{2} = -\frac{11}{2}$
+    sections: []
+    dok: unknown
+
+  - id: 24
+    legacy_id: 2.B.9
+    question: $\frac{d}{dx}\left[ 2^x \right]$
+    answer: $(2^x) \cdot \ln 2$
+    distractors:
+      - $2^{x - 1}$
+      - $(2^{x - 1})x$
+      - $\frac{2x}{\ln(x)}$
+    solution: |
+      $\frac{d}{dx}\left[ 2^x \right]$
+      $= \frac{d}{dx}\left[ \left(e^{\ln 2}\right)^x \right]$
+      $= \frac{d}{dx}\left[ e^{\ln 2 \cdot x} \right]$
+      $= \left(e^{\ln 2 \cdot x}\right) \cdot \ln 2$
+      $= (2^x) \cdot \ln 2$
+    sections: []
+    dok: unknown
+
+  - id: 25
+    legacy_id: 2.B.10
+    question: |
+      The function $f$ is defined by $f(x) = \frac{x}{x + 2}$. What points $(x,
+      y)$ on the graph of $f$ have the property that the line tangent to $f$ at
+      $(x, y)$ has slope $\frac{1}{2}$?
+    answer: $(0, 0)$ and $(-4, 2)$
+    distractors:
+      - $\left(\frac{1}{2}, \frac{1}{5}\right)$ only
+      - $(0, 0)$ only
+      - $(0, 0)$ and $\left(4, \frac{2}{3}\right)$
+    solution: |
+      $f'(x) = \frac{(x + 2) \cdot 1 - x \cdot 1}{(x + 2)^2}$
+      $= \frac{2}{(x + 2)^2}$
+
+      $f'(x) = \frac{1}{2} \implies \frac{2}{(x + 2)^2} = \frac{1}{2} \implies$
+      $4 = (x + 2)^2 \implies 4 = x^2 + 4x + 4 \implies x^2 + 4x = 0 \implies$
+      $x(x + 4) = 0$
+
+      $x = 0, -4$
+    sections: []
+    dok: unknown
+
+  - id: 26
+    legacy_id: 2.B.12
+    question: |
+      \includegraphics{12B}
+
+      The graphs of $f$ and $g$ are shown to the right. If $h(x) = \frac{f(x)}{g(x)}$, then $h'(6) =$
+    answer: $-\frac{7}{16}$
+    distractors:
+      - 4 \phantom{$\frac{7}{4}$}
+      - $\frac{7}{4}$
+      - $\frac{7}{16}$
+    solution: |
+      $h'(x) = \frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}$ \qquad (Quotient Rule)
+
+      $h'(6) = \frac{4 \cdot -2 - \left(2 \cdot -\frac{1}{2}\right)}{4^2}$
+      $= \frac{-8 + 1}{16} = -\frac{7}{16}$
+    sections: []
+    dok: unknown
+
+  - id: 27
+    legacy_id: 2.B.13
+    question: |
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+          \hline
+          \bm{$x$} & \bm{$f(x)$} & \bm{$f'(x)$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
+          \hline
+          0 & 3 & 4 & 2 & $\pi$ \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      The table above gives values of the differentiable functions $f$ and $g$
+      and their derivatives at $x = 0$. If $h(x) = \frac{f(x)}{g(x)}$, what is
+      the value of $h'(0)$?
+    answer: $\frac{8 - 3\pi}{4}$
+    distractors:
+      - $\frac{4}{\pi}$
+      - $\frac{3\pi - 8}{4}$
+      - $\frac{2 - 3\pi}{2}$
+    solution: |
+      $h'(x) = \frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}$ \qquad (Quotient Rule)
+
+      $h'(0) = \frac{2 \cdot 4 - (3 \cdot \pi)}{2^2}$
+      $= \frac{8 - 3\pi}{4}$
+    sections: []
+    dok: unknown
+
+  - id: 28
+    legacy_id: 2.B.14
+    question: |
+      The limit $\lim_{\Delta x \to 0} \frac{\frac{4}{2 - (-1 + \Delta x)^2} -
+      4}{\Delta x}$ represents $f'(c)$ for a function $f(x)$ and a number $c$.
+      Find $f$ and $c$.
+    answer: $f(x) = \frac{4}{2 - x^2}$; $c = -1$
+    distractors:
+      - $f(x) = 2 - x^2$; $c = 4$
+      - $f(x) = \frac{4}{2 - x^2}$; $c = 4$
+      - $f(x) = 2 - x^2$; $c = -1$
+    solution: Definition of the derivative
+    sections: []
+    dok: unknown
+
+  - id: 29
+    legacy_id: 2.B.15
+    question: |
+      \includegraphics{15B}
+
+      The graph of the function $f$ is shown to the right. On which of the
+      following intervals is $f$ continuous but not differentiable?
+    answer: $(2, 3)$
+    distractors:
+      - $(0, 1)$
+      - $(1, 2)$
+      - $(3, 4)$
+    solution: |
+      Continuous and differentiable on $(0, 1)$ \\
+      Not continuous on $(1, 2)$ and $(3, 4)$ \\
+      Continuous but not differentiable on $(2, 3)$ (sharp corner) \\
+    sections: []
+    dok: unknown
+
+  - id: 30
+    legacy_id: 2.B.16
+    question: |
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{6}{Y|} }
+          \hline
+          \bm{$x$} & 0 & 2 & 4 & 6 & 8 & 10 \\
+          \hline
+          \bm{$f(x)$} & 5 & 7 & 8 & 0 & -15 & -20 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      Let $f$ be a differentiable function with selected values given in the
+      table above. What is the average rate of change of $f$ over the closed
+      interval $0 \le x \le 10$?
+    answer: $-\frac{5}{2}$
+    distractors:
+      - -6 \phantom{$-\frac{5}{2}$}
+      - -2 \phantom{$-\frac{5}{2}$}
+      - $-\frac{2}{5}$
+    solution: $\frac{f(10) - f(0)}{10 - 0} = \frac{-20 - 5}{10} = \frac{-25}{10} = -\frac{5}{2}$
+    sections: []
+    dok: unknown

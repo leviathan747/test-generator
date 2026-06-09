@@ -1,0 +1,495 @@
+questions:
+  - id: 1
+    legacy_id: 5.A.1
+    question: |
+      If $f$ is continuous on a closed interval $[a, b]$, which of the following
+      \emph{must} be true?
+    answer: There is a number $c$ in the closed interval $[a, b]$ such that $f(c)\ge f(x)$ for all $x$ in $[a, b]$.
+    distractors:
+      - There is a number $c$ in the open interval $(a, b)$ such that $f(c)=0$.
+      - There is a number $c$ in the open interval $(a, b)$ such that $f'(c)=0$.
+      - There is a number $c$ in the closed interval $[a, b]$ such that $f'(c)=\frac{f(b)-f(a)}{b-a}$ for all $x$ in $[a, b]$.
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 2
+    legacy_id: 5.A.2
+    question: |
+      \includegraphics[width=\linewidth]{2}
+
+      The graphs of the \emph{derivatives} of the functions $f$, $g$, and $h$ are
+      shown above.  Which of the functions $f$, $g$ or $h$ have a relative
+      maximum on the open interval $a<x<b$ ?
+    answer: $f$ only
+    distractors:
+      - $g$ only
+      - $f$, $g$, and $h$
+      - $f$ and $g$ only
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 3
+    legacy_id: 5.A.3
+    question: |
+      \begin{figure}[h!]
+        \centering
+        \includegraphics{3}
+
+      The graph of $y=h(x)$ is shown above. Which of the following could be the
+      graph of $y=h'(x)$?
+    answer: \includegraphics{3D}
+    distractors:
+      - \includegraphics{3A}
+      - \includegraphics{3C}
+      - \includegraphics{3B}
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 4
+    legacy_id: 5.A.4
+    question: |
+      Let $f$ be a function defined and continuous on the closed interval $[a, b]$.
+      If $f$ has a relative maximum at $c$ and $a < c < b$, which of the
+      following must be true?
+
+      \textbf{I.\phantom{II}} \quad $f'(c)$ must exist. \\
+      \textbf{II.\phantom{I}} \quad If $f'(c)$ exists, then $f'(c) = 0$. \\
+      \textbf{III.} \quad If $f''(c)$ exists, then $f''(c) < 0$. \\
+    answer: II and III only
+    distractors:
+      - III only
+      - I and III only
+      - II only
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 5
+    legacy_id: 5.A.5
+    question: |
+      Given $f(x) = 6 - \frac{10}{x}$, find all $c$ in the interval $(2, 5)$ such
+      that $f'(c) = \frac{f(5) - f(2)}{5 - 2}$.
+    answer: $\sqrt{10}$
+    distractors:
+      - $\sqrt{15}$
+      - $\pm\sqrt{15}$
+      - $\pm\sqrt{10}$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 6
+    legacy_id: 5.A.6
+    question: |
+      Let $f''(x) = 3x^2 - 4$ and let $f(x)$ have first derivative critical
+      numbers at -2, 0, and 2. Use the \emph{second derivative test} to determine
+      which critical number(s), if any, give a relative minimum.
+    answer: -2 and 2
+    distractors:
+      - 0
+      - 0 and -2
+      - 2
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 7
+    legacy_id: 5.A.7
+    question: |
+      The absolute maximum value of $f(x) = x^3 - 3x^2 + 12$ on the closed
+      interval $[-2, 4]$ occurs at $x=$
+    answer: 4
+    distractors:
+      - 0
+      - -2
+      - 2
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 8
+    legacy_id: 5.A.8
+    question: |
+      If $f$ is the function defined by $f(x) = 3x^5 - 5x^4$, what are all the
+      \textit{x}-coordinates of points of inflection for the graph of $f$?
+    answer: 1
+    distractors:
+      - -1, 0, and 1
+      - -1
+      - 0 and 1
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 9
+    legacy_id: 5.A.9
+    question: |
+      What are all values of $x$ for which the function $f$ defined by
+      $f(x) = x^3 + 3x^2 - 9x + 7$ is increasing?
+    answer: $x < -3$ or $x > 1$
+    distractors:
+      - $-3 < x < 1$
+      - $x < -1$ or $x > 3$
+      - $-1 < x < 1$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 10
+    legacy_id: 5.A.10
+    question: |
+      If $g$ is a differentiable function such that $g(x) < 0$ for all real
+      numbers $x$ and if $f'(x) = (x^2 -4)g(x)$, which of the following is true?
+    answer: $f$ has a relative minimum at $x = -2$ and a relative maximum at $x = 2$.
+    distractors:
+      - $f$ has relative maxima at $x = -2$ and $x = 2$.
+      - $f$ has relative minima at $x = -2$ and $x = 2$.
+      - $f$ has a relative maximum at $x = -2$ and a relative minimum at $x = 2$.
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 11
+    legacy_id: 5.A.12
+    question: |
+      If $f''(x) = x(x + 1)(x - 2)^2$, then the graph of $f$ has inflection
+      points when $x =$?
+    answer: -1 and 0 only
+    distractors:
+      - -1, 0, and 2 only
+      - -1 and 2 only
+      - -1 only
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 12
+    legacy_id: 5.A.13
+    question: |
+      The \emph{derivative} of $f$ is $x^4(x - 2)(x + 3)$. At how many points will
+      the graph of $f$ have a relative maximum?
+    answer: One
+    distractors:
+      - Three
+      - Four
+      - Two
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 13
+    legacy_id: 5.A.14
+    question: |
+      The first derivative of the function $f$ is given by $f'(x) = \frac{\cos x}{x} - \frac{1}{5}$.
+      How many critical values does $f$ have on the open interval $(0, 10)$?
+    answer: One
+    distractors:
+      - Four
+      - Seven
+      - Five
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 14
+    legacy_id: 5.A.15
+    question: |
+      \begin{minipage}{\linewidth-2.5in}
+
+      The graph of $f'(x)$ is shown in the figure to the right. For what values of
+      $x$, on the interval $-4 < x < 6$ is the graph of $f$ both increasing and
+      concave down?
+
+      \end{minipage}
+      \hspace{0.25in}
+      \begin{minipage}{2in}
+      \includegraphics{15}
+      \end{minipage}
+    answer: $(-4, -3)$ and $(1, 3)$
+    distractors:
+      - $(-4, -3)$ and $(4, 6)$
+      - $(-2, 1)$ and $(4, 6)$
+      - $(4, 6)$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 15
+    legacy_id: 5.A.16
+    question: |
+      State the reason(s) why Rolle’s Theorem does not apply to the function
+      $f(x) = \frac{2}{(x + 1.5)^2}$ on the interval $[-3, 0]$.
+    answer: $f$ is not continuous at $x = -1.5$
+    distractors:
+      - Both (B) and (D)
+      - $f$ is not defined at $x = -3$ and $x = 0$
+      - $f(-3) \ne f(0)$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 16
+    legacy_id: 5.B.1
+    question: |
+      If $g$ is a strictly decreasing differentiable function such that $g(2) =
+      0$ and if $f'(x) = (x^2 - 4x + 3)g(x)$, which of the following is true?
+    answer: $f$ has relative maxima at $x = 1$ and $x = 3$.
+    distractors:
+      - $f$ has relative minima at $x = 1$ and $x = 3$.
+      - $f$ has a relative minimum at $x = 1$ and a relative maximum at $x = 3$.
+      - $f$ has a relative maximum at $x = 1$ and a relative minimum at $x = 3$.
+    solution: |
+      \begin{gather*}
+        f'(x) = (x - 1)(x - 3)g(x)
+      \end{gather*}
+      \sgchart{1,2,3}{f'(x): +-+-}
+    sections: []
+    dok: unknown
+
+  - id: 17
+    legacy_id: 5.B.2
+    question: |
+      What are all values of $x$ for which the function $f$ defined by
+      $f(x) = x^3 + 3x^2 + 6x + 18$ is increasing?
+    answer: all real numbers
+    distractors:
+      - $x < -3$
+      - $x > -3$
+      - $x < -6$ or $x > -3$
+    solution: |
+      \begin{gather*}
+        f'(x) = 3x^2 + 6x + 6
+      \end{gather*}
+      Since $f'(x) > 0$ for all real numbers, $f(x)$ is increasing for all real numbers.
+    sections: []
+    dok: unknown
+
+  - id: 18
+    legacy_id: 5.B.3
+    question: |
+      If $f$ is the function defined by $f(x) = x^4 + 4x^3 + 6x^2 + 60x - 24$,
+      what are all the \textit{x}-coordinates of points of inflection for the
+      graph of $f$?
+    answer: There are no points of inflection
+    distractors:
+      - 1
+      - -1, 0, and 1
+      - -1
+    solution: |
+      \begin{gather*}
+        f'(x) = 4x^3 + 12x^2 + 12x + 60 \\
+        f''(x) = 12x^2 + 24x + 12 = 12(x^2 + 2x + 1) = 12(x + 1)^2 \\
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 19
+    legacy_id: 5.B.4
+    question: |
+      \begin{figure}[h!]
+        \includegraphics[width=\linewidth]{2}
+
+      The graphs of the \emph{derivatives} of the functions $f$, $g$, and $h$
+      are shown above.  Which of the functions $f$, $g$ or $h$ have a relative
+      minimum on the open interval $a<x<b$ ?
+    answer: $f$ and $g$ only
+    distractors:
+      - $g$ only
+      - $f$, $g$, and $h$
+      - $f$ only
+    solution: Graphs show $f'$ and $g'$ going from negative to positive in the interval $a < x < b$.
+    sections: []
+    dok: unknown
+
+  - id: 20
+    legacy_id: 5.B.5
+    question: |
+      \begin{figure}[h!]
+        \centering
+        \includegraphics{5B}
+
+      The graph of $y=h(x)$ is shown above. Which of the following could be the
+      graph of $y=h'(x)$?
+    answer: \includegraphics{3B}
+    distractors:
+      - \includegraphics{3A}
+      - \includegraphics{3C}
+      - \includegraphics{3D}
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 21
+    legacy_id: 5.B.6
+    question: |
+      What is the absolute maximum value of $f(x) = x^3 - 3x^2 + 12$ on the
+      closed interval $[-2, 4]$?
+    answer: 28
+    distractors:
+      - 4
+      - -8
+      - 12
+    solution: |
+      \begin{gather*}
+        f'(x) = 3x^2 - 6x = 3x(x - 2)
+      \end{gather*}
+      \begin{tabularx}{3in}{ Y*{4}{|Y} }
+        \bm{$x$} & -2 & 0 & 2 & 4 \\
+        \hline
+        \bm{$f(x)$} & -8 & 12 & 8 & 28 \\
+      \end{tabularx}
+    sections: []
+    dok: unknown
+
+  - id: 22
+    legacy_id: 5.B.7
+    question: |
+      Let $f''(x) = 3x^2 - 3$ and let $f(x)$ have first derivative critical
+      numbers at -1 and 2. Use the \emph{second derivative test} to determine
+      which critical number(s), if any, give a relative minimum.
+    answer: 2
+    distractors:
+      - -1
+      - -1 and 2
+      - neither
+    solution: |
+      \begin{gather*}
+        f''(-1) = 3(-1)^2 - 3 = 0 \implies \text{neither max nor min} \\
+        f''(2) = 3(2)^2 - 3 = 9 > 0 \implies \text{relative minimum}
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 23
+    legacy_id: 5.B.8
+    question: |
+      Let $f$ be a function defined and continuous on the closed interval $[a, b]$.
+      If $f$ has a relative minimum at $c$ and $a < c < b$, which of the
+      following must be true?
+
+      \textbf{I.\phantom{II}} \quad $f'(c)$ must not exist. \\
+      \textbf{II.\phantom{I}} \quad If $f'(c)$ exists, then $f'(c) = 0$. \\
+      \textbf{III.} \quad If $f''(c)$ exists, then $f''(c) < 0$. \\
+    answer: II only
+    distractors:
+      - II and III only
+      - III only
+      - I and III only
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 24
+    legacy_id: 5.B.9
+    question: |
+      Given $f(x) = -3 + \frac{20}{x}$, find all $c$ in the interval $(-5, -2)$ such
+      that $f'(c) = \frac{f(-2) - f(-5)}{-2 - (-5)}$.
+    answer: $-2 \sqrt{ \frac{5}{3} }$
+    distractors:
+      - $\pm 2 \sqrt{ \frac{5}{3} }$
+      - $\sqrt{ \frac{5}{3} }$
+      - $\pm \sqrt{ \frac{5}{3} }$
+    solution: |
+      \begin{gather*}
+        f'(x) = -\frac{20}{x^2} \\
+        f(-2) = -3 + \frac{20}{-2} = -3 - 10 = -13 \\
+        f(-5) = -3 + \frac{20}{-5} = -3 - 4 = -7 \\
+        -\frac{20}{c^2} = \frac{-13 - (-7)}{-2 - (-5)} \implies
+        -\frac{20}{c^2} = \frac{-6}{3} \implies
+        -\frac{20}{c^2} = -3 \implies
+        20 = 3c^2 \implies
+        c^2 = \frac{20}{3} \\
+        c = -2 \sqrt{ \frac{5}{3} }
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 25
+    legacy_id: 5.B.10
+    question: |
+      If $f$ is continuous on the closed interval $[a, b]$ and differentiable on the open interval $(a, b)$, which of the following
+      \emph{must} be true?
+    answer: There is a number $c$ in the closed interval $[a, b]$ such that $f'(c)=\frac{f(b)-f(a)}{b-a}$ for all $x$ in $[a, b]$.
+    distractors:
+      - There is a number $c$ in the open interval $(a, b)$ such that $f(c)=0$.
+      - There is a number $c$ in the open interval $(a, b)$ such that $f'(c)=0$.
+      - There is a number $c$ in the closed interval $[a, b]$ such that $f(c) > f(x)$ for all $x$ in $[a, b]$.
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 26
+    legacy_id: 5.B.12
+    question: |
+      State the reason(s) why Rolle’s Theorem does not apply to the function
+      $f(x) = \frac{2}{(x + 1.5)^2}$ on the interval $[-1, 1]$.
+    answer: $f(-1) \ne f(1)$
+    distractors:
+      - $f$ is not continuous at $x = -1.5$
+      - $f$ is not defined at $x = -1$ and $x = 1$
+      - Both \emph{A} and \emph{B}
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 27
+    legacy_id: 5.B.13
+    question: |
+      The first derivative of the function $f$ is given by $f'(x) = \frac{25 \sin x}{x^2} - \frac{1}{6}$.
+      How many critical values does $f$ have on the open interval $(0, 10)$?
+    answer: Three
+    distractors:
+      - Five
+      - Six
+      - Seven
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 28
+    legacy_id: 5.B.14
+    question: |
+      \includegraphics{15}
+
+      The graph of $f'(x)$ is shown in the figure to the right. For what values of
+      $x$, on the interval $-4 < x < 6$ is the graph of $f$ both decreasing and
+      concave down?
+    answer: $(-3, -2)$ and $(3, 4)$
+    distractors:
+      - $(-4, -3)$ and $(1, 3)$
+      - $(-4, -2)$ and $(1, 4)$
+      - $(4, 5)$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 29
+    legacy_id: 5.B.15
+    question: |
+      The \emph{derivative} of $f$ is $x^3(x - 5)(x + 1)$. At how many points will
+      the graph of $f$ have a relative minimum?
+    answer: Two
+    distractors:
+      - Three
+      - One
+      - Four
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 30
+    legacy_id: 5.B.16
+    question: |
+      If $f''(x) = x^4(x^2 + 1)(x - 5)^3$, then the graph of $f$ has inflection
+      points when $x =$?
+    answer: 5 only
+    distractors:
+      - 0 only
+      - 0 and 5 only
+      - -1, 0, and 5
+    solution: TODO
+    sections: []
+    dok: unknown

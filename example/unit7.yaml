@@ -1,0 +1,456 @@
+questions:
+  - id: 1
+    legacy_id: 7.A.1
+    question: |
+      At each point $(x, y)$ on a certain curve, the slope of the curve is
+      $\frac{y}{2 \sqrt x}$. If the curve contains the point $(0, 8)$, then its
+      equation is
+    answer: $y = 8e^{\sqrt x}$
+    distractors:
+      - $\ln y = 4 \sqrt x - 8$
+      - $y = 8e^{\sqrt x - 2}$
+      - $\ln y = 8 \sqrt{x - 2}$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 2
+    legacy_id: 7.A.2
+    question: |
+      A function $f(x)$ that satisfies the equation $f(x) \cdot f'(x) = x$ and
+      $f(0) = 1$ is
+    answer: $f(x) = \sqrt{x^2 + 1}$
+    distractors:
+      - $f(x) = x$
+      - $f(x) = \sqrt{1 - x^2}$
+      - $f(x) = e^x$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 3
+    legacy_id: 7.A.3
+    question: If $\dydx = y \sec^2 x$ and $y = 5$ when $x = 0$, then $y =$
+    answer: $5e^{\tan x}$
+    distractors:
+      - $\tan x + 5e^x$
+      - $e^{\tan x} + 4$
+      - $\tan x + 5$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 4
+    legacy_id: 7.A.4
+    question: |
+      According to Newton’s Law of cooling, the temperature of an object
+      decreases at a rate proportional to the difference between its temperature
+      and that of the surrounding air. Suppose a soda at a temperature of
+      $68^\circ$ F is put into the freezer where the temperature is kept at
+      $25^\circ$ F. Then the differential equation representing the rate of
+      cooling when the soda is  $T^\circ$ F is
+    answer: $\frac{dT}{dt} = k(T - 25)$
+    distractors:
+      - $\frac{dT}{dt} = kT(T - 25)$
+      - $\frac{dT}{dt} = k(T - 68)$
+      - $\frac{dT}{dt} = kT(T - 68)$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 5
+    legacy_id: 7.A.5
+    question: |
+      Find the value of $k$ for which the constant function $y(t) = k$ is a
+      solution to the differential equation \\
+      $5t^2 y' - 2y + 4 = 0$.
+    answer: 2
+    distractors:
+      - -2
+      - 1
+      - $\frac{1}{2}$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 6
+    legacy_id: 7.A.6
+    question: Which of the following is a solution to the differential equation $y'' - 4y = 0$?
+    answer: $y = e^{2x}$
+    distractors:
+      - $y = 2e^x$
+      - $y = \sin 2x$
+      - $y = \cos 2x$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 7
+    legacy_id: 7.A.7
+    question: |
+      Consider the differential equation $\dydx = \frac{4x}{y}$ for $y \ge 1$
+      with initial value $y(0) = 1$. Which of the following is the slope field
+      for the general solution to that differential equation?
+    answer: \includegraphics[width=2.25in]{7-A}
+    distractors:
+      - \includegraphics[width=2.25in]{7-C}
+      - \includegraphics[width=2.25in]{7-B}
+      - \includegraphics[width=2.25in]{7-D}
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 8
+    legacy_id: 7.A.8
+    question: |
+      \includegraphics{8}
+
+      Shown is a slope field for which of the following differential equations?
+    answer: $\dydx = \frac{y - 2}{x + 1}$
+    distractors:
+      - $\dydx = \frac{y}{x + 1}$
+      - $\dydx = \frac{y - 2}{x}$
+      - $\dydx = \frac{y + 2}{x + 1}$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 9
+    legacy_id: 7.A.9
+    question: Solve the differential equation $2y' = y$.
+    answer: $y = Ce^{\frac{x}{2}}$
+    distractors:
+      - $y = e^{\frac{x}{2}} + C$
+      - $y = e^{2x} + C$
+      - $2y = \frac{y^2}{2} + C$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 10
+    legacy_id: 7.A.10
+    question: |
+      Suppose $f$ is a function satisfying $f'(x) = x \sqrt{f(x)}$ for all real
+      numbers $x$ and $f(3) = 25$. What is the value of $f(0)$?
+    answer: $\frac{121}{16}$
+    distractors:
+      - $\frac{5}{3}$
+      - $\frac{11}{4}$
+      - $\frac{11}{2}$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 11
+    legacy_id: 7.A.12
+    question: |
+      A bacteria colony with population $y$ grows according to the differential
+      equation $\dydx = 0.4y$. There are 2000 bacteria initially. Find the
+      approximate number of bacteria at time $t = 7$.
+    answer: 32,889
+    distractors:
+      - 16,446
+      - 14,000
+      - 20,885
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 12
+    legacy_id: 7.A.13
+    question: |
+      \includegraphics{13}
+
+      The slope field for a certain differential equation is shown to the
+      right. Which of the following equations could represent the specific
+      solution to the differential equation shown on the graph?
+    answer: $y = -\sqrt{9 - x^2}$
+    distractors:
+      - $x^2 + y^2 = 9$
+      - $y = \sqrt{9 - x^2}$
+      - $y = \sqrt{3 - x^2}$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 13
+    legacy_id: 7.A.14
+    question: |
+      The differential equation $\frac{dq}{dt} = t^2q - 3q$ in separable form is:
+    answer: $\frac{dq}{q} = \left(t^2 - 3\right) dt$
+    distractors:
+      - $\frac{dq}{q} = \frac{1}{\left(t^2 - 3\right)} dt$
+      - $\frac{dq}{q} + 3q = t^2 dt$
+      - $dq = \left( t^2q - 3q \right) dt$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 14
+    legacy_id: 7.A.15
+    question: |
+      Which of the following could be a solution to the differential equation
+      $\dydx = \frac{4x}{y}$ when $y(2) = -2$?
+    answer: $y = -\sqrt{4x^2 - 12}$ for $x > \sqrt 3$
+    distractors:
+      - $y = 2x$ for $x > 0$
+      - $y = 2x - 6$ for $x \ne 3$
+      - $y = \sqrt{4x^2 - 12}$ for $x > \sqrt 3$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 15
+    legacy_id: 7.A.16
+    question: |
+      A student attempted to solve the differential equation $\dydx = xy$ with
+      initial condition $y = 2$ when $x = 0$. In which step does an error first
+      appear?
+
+      \begin{center}
+
+      \begin{gather*}
+        (1) \qquad \int \frac{1}{y} dy = \int x dx \\
+        (2) \qquad \ln |y| = \frac{x^2}{2} + C \\
+        (3) \qquad |y| = e^{\frac{x^2}{2}} + C \\
+        (4) \qquad y(0) = 2 \Rightarrow 2 = e^0 + C \\
+        (5) \qquad \boxed{y = e^{\frac{x^2}{2}} + 1} \\
+      \end{gather*}
+      \end{center}
+    answer: Step 3
+    distractors:
+      - Step 2
+      - Step 4
+      - Step 5
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 16
+    legacy_id: 7.B.1
+    question: Which of the following is a solution to the differential equation $y'' + 4y = 0$?
+    answer: $y = \cos 2x$
+    distractors:
+      - $y = 2e^x$
+      - $y = 2 \sin x$
+      - $y = e^{2x}$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 17
+    legacy_id: 7.B.2
+    question: |
+      Consider the differential equation $\textstyle \dydx = \frac{3}{x^3}$ for $y \ge 1$.
+      Which of the following is the slope field for the general solution to that
+      differential equation?
+    answer: \includegraphics[width=2.25in]{7-C}
+    distractors:
+      - \includegraphics[width=2.25in]{7-A}
+      - \includegraphics[width=2.25in]{7-B}
+      - \includegraphics[width=2.25in]{7-D}
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 18
+    legacy_id: 7.B.3
+    question: |
+      A function $f(x)$ that satisfies the equation $f(x) \cdot f'(x) = x^2$ and
+      $f(0) = 3$ is
+    answer: $f(x) = -\sqrt{\frac{2}{3}x^3 + 9}$
+    distractors:
+      - $f(x) = \sqrt{x^3 + 9}$
+      - $f(x) = \sqrt{\frac{1}{3}x^3 + 3}$
+      - $f(x) = \frac{1}{3}x^3 + 3$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 19
+    legacy_id: 7.B.4
+    question: If $\dydx = y \csc x \cot x$ and $y = 3$ when $x = 0$, then $y =$
+    answer: $3e^{\csc x}$
+    distractors:
+      - $\csc x + 3e^x$
+      - $\csc x + 3$
+      - $e^{\csc x} + 2$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 20
+    legacy_id: 7.B.5
+    question: |
+      At each point $(x, y)$ on a certain curve, the slope of the curve is
+      $2e^x - \cos x$. If the curve contains the point $(0, 3)$, then its
+      equation is
+    answer: $y = 2e^x - \sin x + 1$
+    distractors:
+      - $y = 2e^x - \sin x$
+      - $y = e^{2x} - \sin x + 2$
+      - $y = 2e^x + \sin x + 1$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 21
+    legacy_id: 7.B.6
+    question: |
+      Suppose $f$ is a function satisfying $f'(x) = x^2 \cdot f(x)$ for all real
+      numbers $x$ and $f(3) = 1$. What is the value of $f(0)$?
+    answer: $e^{-9}$
+    distractors:
+      - $e^{9}$
+      - $e$
+      - $e^{-3}$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 22
+    legacy_id: 7.B.7
+    question: |
+      Find all values of $k$ for which the constant function $y(x) = 2k$ is a
+      solution to the differential equation \\
+      $3e^{y'} + y^2 = 12$.
+    answer: $\frac{3}{2}$
+    distractors:
+      - -2
+      - 1
+      - 2
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 23
+    legacy_id: 7.B.8
+    question: Solve the differential equation $2yy' = 6x^2$.
+    answer: $y = \pm \sqrt{2x^3 + C}$
+    distractors:
+      - $y = \pm \sqrt{2x^3} + C$
+      - $y = 2x^3 + C$
+      - $y = \pm \sqrt{x^3 + C}$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 24
+    legacy_id: 7.B.9
+    question: |
+      \includegraphics{8-2}
+
+      Shown is a slope field for which of the following differential equations?
+    answer: $\dydx = \frac{y - 2}{x}$
+    distractors:
+      - $\dydx = \frac{y - 2}{x + 1}$
+      - $\dydx = \frac{y}{x + 1}$
+      - $\dydx = \frac{y + 2}{x + 1}$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 25
+    legacy_id: 7.B.10
+    question: |
+      According to Newton’s Law of cooling, the temperature of an object
+      decreases at a rate proportional to the difference between its temperature
+      and that of the surrounding air. Suppose a delicious pie at a temperature
+      of $350^\circ$ F is put onto the window sill where the temperature is a
+      beautiful $75^\circ$ F. If the pie is cooling at a rate of $27.5^\circ$ F
+      per minute when it is first placed on the sill, what is the rate the pie is
+      cooling when it is $150^\circ$ F?
+    answer: $7.5^\circ$ F per minute
+    distractors:
+      - $27.5^\circ$ F per minute
+      - $1.5^\circ$ F per minute
+      - The pie is no longer cooling down
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 26
+    legacy_id: 7.B.12
+    question: |
+      The differential equation $\frac{dq}{dt} = \frac{1}{2}t(q-4)^3$ in
+      separable form is:
+    answer: $\frac{dq}{(q - 4)^3} = \frac{t}{2} dt$
+    distractors:
+      - $(q - 4)^3 dq = \frac{t}{2} dt$
+      - $\frac{dq}{(q - 4)^3} = \frac{2}{t} dt$
+      - $\frac{dq}{(q - 4)^3} = 2t dt$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 27
+    legacy_id: 7.B.13
+    question: |
+      The general solution to the differential equation $\dydx = -\frac{x}{y}$ is
+      a family of
+    answer: Circles
+    distractors:
+      - Parallel lines
+      - Parabolas
+      - Lines passing through the origin
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 28
+    legacy_id: 7.B.14
+    question: |
+      A ant habitat with population $y$ grows according to the differential
+      equation $\dydx = 0.1y$ ants per day. There are 100 ants initially. Find
+      the approximate number of ants at time $t = 10$ days.
+    answer: 272 ants
+    distractors:
+      - 200 ants
+      - 101 ants
+      - 739 ants
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 29
+    legacy_id: 7.B.15
+    question: |
+      Which of the following could be a solution to the differential equation
+      $\dydx = \frac{3x}{y}$ when $y(3) = \sqrt{15}$?
+    answer: $y = \sqrt{3x^2 - 12}$ for $x > 2$
+    distractors:
+      - $y = 3x$ for $x > 0$
+      - $y = -\sqrt{3x^2 - 12}$ for $x > 2$
+      - $y = 3x - 7$ for $x \ne 3$
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 30
+    legacy_id: 7.B.16
+    question: |
+      A student attempted to solve the differential equation $\dydx = x + 2xy$ with
+      initial condition $y = 1$ when $x = 0$. In which step does an error first
+      appear?
+
+      \begin{center}
+        \begin{gather*}
+          (1) \qquad \dydx = x(1 + 2y) \\
+          (2) \qquad \int \frac{1}{1 + 2y} dy = \int x dx \\
+          (3) \qquad \ln |1 + 2y| = \frac{x^2}{2} + C \\
+          (4) \qquad y(0) = 1 \Rightarrow \ln |1 + 2(1)| = \frac{0^2}{2} + C \\
+          (5) \qquad C = \ln 3 \\
+          (6) \qquad \ln |1 + 2y| = \frac{x^2}{2} + \ln 3 \\
+          (7) \qquad e^{\ln |1 + 2y|} = e^{\frac{x^2}{2} + \ln 3} \\
+          (8) \qquad 1 + 2y = \ln 3 e^{\frac{x^2}{2}} \\
+          (9) \qquad \boxed{y = \frac{\ln 3}{2}e^{\frac{x^2}{2}} + \frac{1}{2}} \\
+        \end{gather*}
+      \end{center}
+    answer: Step 3
+    distractors:
+      - Step 1
+      - Step 8
+      - Step 9
+    solution: TODO
+    sections: []
+    dok: unknown

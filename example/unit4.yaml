@@ -1,0 +1,705 @@
+questions:
+  - id: 1
+    legacy_id: 4.A.1
+    question: Find $\lim_{x \to 0} \frac{e^x - \cos x}{4 \sin x}$
+    answer: $\frac{1}{4}$
+    distractors:
+      - $\frac{e - 1}{4}$
+      - $-\frac{1}{2}$
+      - $\infty$
+    solution: |
+      $\lim_{x \to 0} e^x - \cos x = 1 - 1 = 0$
+      $\qquad \lim_{x \to 0} 4 \sin x = 0$
+      \qquad L'Hospital's Rule applies
+
+      $\lim_{x \to 0} \frac{e^x - \cos x}{4 \sin x}$
+      $= \lim_{x \to 0} \frac{e^x + \sin x}{4 \cos x}$
+      $= \frac{1 + 0}{4 \cdot 1} = \frac{1}{4}$
+    sections: []
+    dok: unknown
+
+  - id: 2
+    legacy_id: 4.A.2
+    question: |
+      A particle's position is represented by the position function $s(t) = t^2 -
+      t$ for $t \ge 0$, where $s$ is measured in feet and $t$ is measured in
+      seconds. When is the particle moving to the right?
+    answer: $t > \frac{1}{2}$
+    distractors:
+      - $t > 0$
+      - $t > 1$
+      - $t > 2$
+    solution: |
+      $v(t) = s'(t) = 2t - 1$
+
+      $v(t) > 0 \implies t > \frac{1}{2}$
+    sections: []
+    dok: unknown
+
+  - id: 3
+    legacy_id: 4.A.3
+    question: Find $\lim_{x \to 0} \frac{1 - e^x}{\ln(2 - e^x)}$
+    answer: 1
+    distractors:
+      - $\frac{2}{e}$
+      - 0
+      - The limit does not exist
+    solution: |
+      $\lim_{x \to 0} 1 - e^x = 1 - 1 = 0$
+      $\qquad \lim_{x \to 0} \ln(2 - e^x) = \ln(2 - 1) = \ln 1 = 0$
+      \qquad L'Hospital's Rule applies
+
+      $\lim_{x \to 0} \frac{1 - e^x}{\ln(2 - e^x)}$
+      $= \lim_{x \to 0} \frac{-e^x}{\frac{-e^x}{2 - e^x}}$
+      $= \frac{-1}{\frac{-1}{2 - 1}} = 1$
+    sections: []
+    dok: unknown
+
+  - id: 4
+    legacy_id: 4.A.4
+    question: |
+      Let $f$ be the function given by $f(x) = 2 \cos x + 1$. Approximate the
+      value of $f(1.5)$ using the tangent line to the graph of $f$ at $\textstyle
+      x = \frac{\pi}{2}$
+    answer: $\pi - 2$
+    distractors:
+      - -2
+      - 1
+      - $4 - \pi$
+    solution: |
+      \begin{gather*}
+        L(x) = f\left(\frac{\pi}{2}\right) + f'\left(\frac{\pi}{2}\right)\left(x - \frac{\pi}{2}\right) \\
+        f\left(\frac{\pi}{2}\right) = 2 \cdot 0 + 1 = 1 \\
+        f'(x) = -2 \sin x \qquad
+        f'\left(\frac{\pi}{2}\right) = -2 \cdot 1 = -2 \\
+        L(x) = 1 - 2\left(x - \frac{\pi}{2}\right) \\
+        L(1.5) = 1 - 2\left(1.5 - \frac{\pi}{2}\right) = 1 - 3 + \pi = \pi - 2
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 5
+    legacy_id: 4.A.5
+    question: |
+      A spherical balloon is being inflated in such a way that its radius
+      is increasing at a rate of $\textstyle \frac{1}{2}$ cm/s. How fast is
+      the volume increasing when the radius is 3 cm? $\textstyle \left( V = \frac{4}{3} \pi r^3 \right)$
+    answer: $18\pi \text{ cm}^3/\text{s}$
+    distractors:
+      - $36 \text{ cm}^3/\text{s}$
+      - $12\pi \text{ cm}^3/\text{s}$
+      - $36\pi \text{ cm}^3/\text{s}$
+    solution: |
+      \begin{gather*}
+        \frac{dV}{dt} = \frac{4}{3} \pi \cdot 3r^2 \cdot \frac{dr}{dt} \\
+        r = 3, \quad \frac{dr}{dt} = \frac{1}{2} \\
+        \frac{dV}{dt} = \frac{4}{3} \pi \cdot 3(3)^2 \cdot \frac{1}{2} \\
+        \frac{dV}{dt} = 18 \pi
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 6
+    legacy_id: 4.A.6
+    question: |
+      The length of a rectangle is increasing at a rate of 3 m/s while the width is increasing
+      at a rate of 2 m/s. When the length is 6 m and the width is 4 m, the area is
+    answer: increasing at a rate of 24 m$^2$/s
+    distractors:
+      - decreasing at a rate of 24 m$^2$/s
+      - increasing at a rate of 26 m$^2$/s
+      - decreasing at a rate of 26 m$^2$/s
+    solution: |
+      \begin{gather*}
+        A = l \cdot w
+        \qquad \frac{dl}{dt} = 3
+        \qquad \frac{dw}{dt} = 2
+        \qquad l = 6
+        \qquad w = 4
+        \qquad \frac{dA}{dt} = l \frac{dw}{dt} + w \frac{dl}{dt} \\
+        \frac{dA}{dt} = 6 \cdot 2 + 4 \cdot 3
+        = 12 + 12 = 24
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 7
+    legacy_id: 4.A.7
+    question: |
+      \includegraphics{7}
+
+      Use the tangent line at $x = 2$ and the graph of $g'$ to the right to
+      approximate $g(2.1)$ given that $g(2) = 7$.
+    answer: 7.4
+    distractors:
+      - 3.8
+      - 3.9
+      - 7.1
+    solution: |
+      \begin{gather*}
+        L(x) = g(2) + g'(2)(x - 2) = 7 + 4(x - 2) \\
+        g(2.1) \approx L(2.1) = 7 + 4(2.1 - 2)
+        = 7 + 4(0.1) = 7.4
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 8
+    legacy_id: 4.A.8
+    question: |
+      \includegraphics{8}
+
+      The sides of the rectangle to the right increase in such a way that
+      $\textstyle \frac{dz}{dt} = 1$ and $\textstyle \frac{dy}{dt} = \frac{1}{3} \frac{dx}{dt}$.
+      At the instant when $x = 4$ and $y = 3$, what is the value of
+      $\textstyle \frac{dx}{dt}$?
+    answer: 1
+    distractors:
+      - $\frac{1}{3}$
+      - 3
+      - 5
+    solution: |
+      \begin{gather*}
+        x^2 + y^2 = z^2 \implies 2x \frac{dx}{dt} + 2y \frac{dy}{dt} = 2z \frac{dz}{dt} \\
+        z = \sqrt{(4)^2 + (3)^2} = 5 \\
+        2(4) \frac{dx}{dt} + 2(3)\left(\frac{1}{3}\right) = 2(5)(1) \implies
+        8 \frac{dx}{dt} = 8 \implies \frac{dx}{dt} = 1
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 9
+    legacy_id: 4.A.9
+    question: |
+      Let $f$ be a function where $f(-2) = -2$ and $f'(-2) = 3$, and let $L(x)$ be
+      the linear approximation of $f$ using the line tangent to $f$ at $x = -2$.
+      At what value of $k$ is the approximation of $f$ equal to 4?
+    answer: 0
+    distractors:
+      - -2
+      - $\frac{1}{3}$
+      - 3
+    solution: |
+      \begin{gather*}
+        L(x) = f(-2) + f'(-2)(x + 2) = -2 + 3(x + 2) \\
+        L(k) = 4 \\
+        -2 + 3(k + 2) = 4 \\
+        3(k + 2) = 6 \\
+        k + 2 = 2 \\
+        k = 0
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 10
+    legacy_id: 4.A.10
+    question: |
+      People are entering the line to a roller coaster at a rate modeled by
+      $f(t)$ people per hour and entering the ride at a rate modeled by $g(t)$
+      people per hour, where $t$ is measured in hours. The functions $f$ and $g$
+      are non-negative and differentiable for all $t$. Which of the following
+      inequalities indicates that the number of people in the line is increasing
+      at time $t$?
+    answer: $f(t) - g(t) > 0$
+    distractors:
+      - $f(t) > 0$
+      - $f'(t) > 0$
+      - $f'(t) - g'(t) > 0$
+    solution: |
+      The number of people in line will be increasing when the difference
+      between the rate at which people are joining the line and the rate at
+      which people are exiting the line (entering the ride) is positive.
+    sections: []
+    dok: unknown
+
+  - id: 11
+    legacy_id: 4.A.12
+    question: |
+      A particle moves along the $x$-axis with velocity given by $v(t) = 3t^4 -
+      11t^2 + 9t - 2$ for $-3 \le t \le 3$. How many times does the particle
+      change directions as $t$ increases from -3 to 3?
+    answer: Two
+    distractors:
+      - One
+      - Three
+      - Four
+    solution: |
+      \begin{multicols}{2}
+        The graph of $v(t)$ crosses the $x$-axis two times in the interval $-3 \le
+        t \le 3$.
+
+        \includegraphics[width=2in]{12S}
+      \end{multicols}
+    sections: []
+    dok: unknown
+
+  - id: 12
+    legacy_id: 4.A.13
+    question: |
+      \begin{figureright}[3.75in]{
+          \begin{multicols}{2}
+            \includegraphics{13}
+
+            \begin{tabularx}{1.5in}{ |*{3}{Y|} }
+              \hline
+              \rowcolor{lightgray}
+              \bm{$x$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
+              \hline
+              1 & 5 & -1 \\
+              \hline
+              2 & 0 & -3 \\
+              \hline
+              4 & 2 & 3 \\
+              \hline
+            \end{tabularx}
+          \end{multicols}
+        }
+
+        Let $f$ be the continuous function consisting of two line segments as
+        shown in the figure to the right. The differentiable function $g$ and its
+        first derivative are given in the table for selected values of $x$. Find
+        $\textstyle \lim_{x \to 2} \frac{g(x)}{f(x)}$.
+    answer: $\frac{3}{2}$
+    distractors:
+      - 0
+      - $\frac{2}{3}$
+      - Does not exist
+    solution: |
+      \begin{gather*}
+        \lim_{x \to 2} g(x) = 0, \quad
+        \lim_{x \to 2} f(x) = 0
+        \implies \text{L'Hospital's Rule applies} \\
+        \lim_{x \to 2} \frac{g(x)}{f(x)}
+        = \lim_{x \to 2} \frac{g'(x)}{f'(x)}
+        = \frac{-3}{-2}
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 13
+    legacy_id: 4.A.14
+    question: |
+      A point moves along the curve $y = 2x^2 + 1$ in such a way that the $y$
+      value is decreasing at a rate of 2 units per second. At what rate is $x$
+      changing when $x = -3$?
+    answer: increasing by $\textstyle \frac{1}{6}$ unit/s
+    distractors:
+      - decreasing by $\textstyle \frac{1}{3}$ unit/s
+      - increasing by $\textstyle \frac{1}{3}$ unit/s
+      - decreasing by $\textstyle \frac{1}{6}$ unit/s
+    solution: |
+      \begin{gather*}
+        \frac{dy}{dt} = 4x \frac{dx}{dt} \implies
+        -2 = 4(-3) \frac{dx}{dt} \implies
+        -2 = -12 \frac{dx}{dt} \implies
+        \frac{dx}{dt} = \frac{-2}{-12} = \frac{1}{6}
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 14
+    legacy_id: 4.A.15
+    question: |
+      A 12,000 liter tank of water is filled to capacity. At time $t = 0$, water
+      begins to drain out of the tank at a rate modeled by $r(t)$, measured in
+      liters per hour, where $r$ is given by the piecewise-defined function:
+      \[
+        r(t) = \begin{cases}
+          \frac{600t}{t + 3} & 0 \le t \le 5 \\
+          1000e^{-0.2t} & t > 5 \\
+        \end{cases}
+      \]
+      Which of the following identifies the correct value of $r'(3)$ and
+      accurately and thoroughly explains the meaning of that value in the context
+      of the problem?
+    answer: The rate at which water is draining from the tank is increasing by 50 liters/hour$^2$ at time $t = 3$ hours.
+    distractors:
+      - The amount of water in the tank is increasing at a rate of 50 liters/hour at time $t = 3$ hours.
+      - The rate at which water is draining from tank is decreasing by 109.762 liters/hour$^2$ at time $t = 3$ hours.
+      - The amount of water in the tank is decreasing at a rate of 109.762 liters/hour at time $t = 3$ hours.
+    solution: $\frac{d}{dt} \left[ \frac{600t}{t + 3} \right]_{t = 3} = 50$
+    sections: []
+    dok: unknown
+
+  - id: 15
+    legacy_id: 4.A.16
+    question: |
+      If the base, $b$, of a triangle is increasing at a rate of 3 inches per
+      minute while its height, $h$, is decreasing at a rate of 3 inches per
+      minute, which of the following must be true about the area, $A$, of the
+      triangle?
+    answer: $A$ is decreasing only when $b > h$
+    distractors:
+      - $A$ is always increasing
+      - $A$ is decreasing only when $b < h$
+      - $A$ is always decreasing
+    solution: |
+      \begin{gather*}
+        A = \frac{1}{2}bh \\
+        \frac{dA}{dt} = \frac{1}{2} \left[ b \frac{dh}{dt} + h \frac{db}{dt} \right] \implies
+        \frac{dA}{dt} = \frac{1}{2} \left[ b \cdot -3 + h \cdot 3 \right] \implies
+        \frac{dA}{dt} = \frac{3}{2} \left[ h - b \right] \\
+        b > h \implies \frac{dA}{dt} < 0
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 16
+    legacy_id: 4.B.1
+    question: |
+      \begin{figureright}[2.5in]{\includegraphics[width=1.75in]{1B}}
+
+        Use the tangent line at $x = 3$ and the graph of $h'$ to the right to
+        approximate $h(2.9)$ given that $h(3) = 8$.
+    answer: 7.7
+    distractors:
+      - 8.3
+      - 7.4
+      - 3.9
+    solution: |
+      \begin{gather*}
+        L(x) = h(3) + h'(3)(x - 3) = 8 + 3(x - 3) \\
+        h(2.9) \approx L(2.9) = 8 + 3(2.9 - 3)
+        = 8 + 3(-0.1) = 7.7
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 17
+    legacy_id: 4.B.2
+    question: Find $\lim_{x \to 0} \frac{e^x - x - 1}{\cos x - 1}$
+    answer: -1
+    distractors:
+      - 1
+      - 0
+      - The limit does not exist
+    solution: |
+      $\lim_{x \to 0} e^x - x - 1 = 1 - 0 - 1 = 0$
+      $\qquad \lim_{x \to 0} \cos x - 1 = 1 - 1 = 0$
+      \qquad L'Hospital's Rule applies
+
+      $\lim_{x \to 0} \frac{e^x - x - 1}{\cos x - 1}$
+      $= \lim_{x \to 0} \frac{e^x - 1}{- \sin x}$
+
+      $\lim_{x \to 0} e^x - 1 = 1 - 1 = 0$
+      $\qquad \lim_{x \to 0} -\sin x = 0$
+      \qquad L'Hospital's Rule applies again
+
+      $\lim_{x \to 0} \frac{e^x - 1}{- \sin x}$
+      $= \lim_{x \to 0} \frac{e^x}{- \cos x}$
+      $= \frac{1}{-1} = -1$
+    sections: []
+    dok: unknown
+
+  - id: 18
+    legacy_id: 4.B.3
+    question: |
+      Grass clippings are placed in a bin at a rate modeled by $f(t)$ kilograms
+      per week. The grass clippings begin to decompose in the bin at a rate
+      modeled by $g(t)$ kilograms per week, where $t$ is measured in weeks. The
+      functions $f$ and $g$ are non-negative and differentiable for all $t$.
+      Which of the following inequalities indicates that the mass of clippings
+      in the bin is decreasing?
+    answer: $g(t) > f(t)$
+    distractors:
+      - $f(t) < 0$
+      - $f(t) - g(t) > 0$
+      - $g'(t) - f'(t) > 0$
+    solution: |
+      The number of people in line will be increasing when the difference
+      between the rate at which people are joining the line and the rate at
+      which people are exiting the line (entering the ride) is positive.
+    sections: []
+    dok: unknown
+
+  - id: 19
+    legacy_id: 4.B.4
+    question: |
+      Let $f$ be a function where $f(1) = 2$ and $f'(1) = -3$, and let $L(x)$ be
+      the linear approximation of $f$ using the line tangent to $f$ at $x = 1$.
+      At what value of $k$ is the approximation of $f$ equal to 4?
+    answer: $\frac{1}{3}$
+    distractors:
+      - $-\frac{1}{3}$
+      - -2
+      - 3
+    solution: |
+      \begin{gather*}
+        L(x) = f(1) + f'(1)(x - 1) = 2 - 3(x - 1) \\
+        L(k) = 4 \\
+        2 - 3(k - 1) = 4 \\
+        3(k - 1) = -2 \\
+        k - 1 = -\frac{2}{3} \\
+        k = \frac{1}{3}
+      \end{gather*}
+      \vspace{-2em}
+    sections: []
+    dok: unknown
+
+  - id: 20
+    legacy_id: 4.B.5
+    question: |
+      \begin{figureright}[2in]{\includegraphics{5B}}
+
+        A boy flies a kite which is 30 meters directly above his hand. If the
+        wind carries the kite horizontally at the rate of 10 meters/min while
+        keeping a constant altitude, which of the following describes what is
+        happening to the length of the string at the moment when 50 meters of
+        string has been let out?
+    answer: increasing at a rate of 8 meters/min
+    distractors:
+      - decreasing at a rate of 8 meters/min
+      - increasing at a rate of 12 meters/min$^2$
+      - decreasing at a rate of 12 meters/min$^2$
+    solution: |
+      \begin{gather*}
+        \frac{db}{dt} = 10 \qquad c = 50 \qquad b = \sqrt{(50)^2 - (30)^2} = 40
+        \qquad (30)^2 + b^2 = c^2 \qquad \implies 2b\frac{db}{dt} = 2c\frac{dc}{dt} \\
+        2(40)(10) = 2(50)\frac{dc}{dt} \\
+        \frac{dc}{dt} = 8\text{ meters/min}
+      \end{gather*}
+      \vspace{-2em}
+    sections: []
+    dok: unknown
+
+  - id: 21
+    legacy_id: 4.B.6
+    question: Find $\lim_{x \to 0} \frac{\ln(2 - e^x)}{e^x - 1}$
+    answer: -1
+    distractors:
+      - 0
+      - 1
+      - The limit does not exist
+    solution: |
+      $\lim_{x \to 0} \ln(2 - e^x) = \ln(2 - 1) = \ln 1 = 0$
+      $\qquad \lim_{x \to 0} e^x - 1 = 1 - 1 = 0$
+      \qquad L'Hospital's Rule applies
+
+      $\lim_{x \to 0} \frac{\ln(2 - e^x)}{e^x - 1}$
+      $= \lim_{x \to 0} \frac{\frac{-e^x}{2 - e^x}}{e^x}$
+      $= \frac{\frac{-1}{2 - 1}}{1} = -1$
+    sections: []
+    dok: unknown
+
+  - id: 22
+    legacy_id: 4.B.7
+    question: |
+      Approximate the value of $\sqrt{27}$ using the tangent line to the graph
+      of $f(x) = \sqrt{x}$ at $x = 25$.
+    answer: 5.2
+    distractors:
+      - 6.1
+      - 5.4
+      - 4.8
+    solution: |
+      \begin{gather*}
+        L(x) = f(25) + f'(25)(x - 25) \\
+        f(25) = \sqrt{25} = 5 \\
+        f'(x) = \frac{1}{2 \sqrt x} \qquad
+        f'(25) = \frac{1}{2 \sqrt{25}} = \frac{1}{10} \\
+        L(x) = 5 + \frac{1}{10}(x - 25) \\
+        L(27) = 5 + \frac{1}{10}(27 - 25)
+        = 5 + \frac{1}{10}(2) = 5.2
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 23
+    legacy_id: 4.B.8
+    question: |
+      \includegraphics{8}
+
+      The sides of the rectangle to the right increase in such a way that
+      $\textstyle \frac{dx}{dt} = 1$ and $\textstyle \frac{dy}{dt} = \frac{2}{3} \frac{dx}{dt}$.
+      At the instant when $x = 4$ and $y = 3$, what is the value of
+      $\textstyle \frac{dz}{dt}$?
+    answer: $\frac{6}{5}$
+    distractors:
+      - $\frac{2}{3}$
+      - $\frac{1}{6}$
+      - $\frac{1}{3}$
+    solution: |
+      \begin{gather*}
+        x^2 + y^2 = z^2 \implies 2x \frac{dx}{dt} + 2y \frac{dy}{dt} = 2z \frac{dz}{dt} \\
+        z = \sqrt{(4)^2 + (3)^2} = 5 \\
+        2(4)(1) + 2(3)\left(\frac{2}{3}\right) = 2(5) \frac{dz}{dt} \implies
+        10 \frac{dz}{dt} = 12 \implies \frac{dx}{dt} = \frac{6}{5}
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 24
+    legacy_id: 4.B.9
+    question: |
+      A particle's position is represented by the position function $s(t) = t^2 -
+      2t$ for $t \ge 0$, where $s$ is measured in feet and $t$ is measured in
+      seconds. On what time interval(s) is the particle \emph{speeding up}?
+    answer: $t > 1$
+    distractors:
+      - $t < 1$
+      - $t > 2$
+      - No solutions
+    solution: |
+      \begin{gather*}
+        v(t) = s'(t) = 2t - 2 \\
+        a(t) = v'(t) = 2
+      \end{gather*}
+      Since $a(t) > 0$ for $t \ge 0$ and $v(t) > 0$ for $t > \frac{1}{2}$,
+      the particle is speeding up for $t > \frac{1}{2}$
+    sections: []
+    dok: unknown
+
+  - id: 25
+    legacy_id: 4.B.10
+    question: |
+      A tank with the shape of a right circular cone with a height twice that
+      of its radius is being filled by water at a constant rate of 1500 liters
+      per hour. At what rate is the water level in the tank rising when the
+      depth of water is 1 meter? (1000 liters = 1 cubic meter, $V = \frac{1}{3}
+      \pi r^2 h$)
+    answer: $\frac{6}{\pi}$ meters per hour
+    distractors:
+      - $\frac{\pi}{6}$ meters per hour
+      - $\frac{\pi}{4}$ meters per hour
+      - $\frac{6}{\pi}$ liters per hour
+    solution: |
+      \begin{gather*}
+        \frac{dV}{dt} = 1.5
+        \qquad r = \frac{h}{2} \implies V = \frac{1}{12} \pi h^3 \\
+        \frac{dV}{dt} = \frac{1}{12} \pi \left[ 3h^2 \cdot \frac{dh}{dt} \right] \\
+        1.5 = \frac{1}{12} \pi \left[ 3(1)^2 \cdot \frac{dh}{dt} \right] \\
+        1.5 = \frac{1}{4} \pi \cdot \frac{dh}{dt} \\
+        \frac{dh}{dt} = \frac{6}{\pi} \text{ meters per hour} \\
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 26
+    legacy_id: 4.B.12
+    question: |
+      \begin{figureright}[3.75in]{
+          \begin{multicols}{2}
+            \includegraphics{13}
+
+            % g(x) = -(x - 2)(x - 6)
+            \begin{tabularx}{1.5in}{ |*{3}{Y|} }
+              \hline
+              \rowcolor{lightgray}
+              \bm{$x$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
+              \hline
+              1 & -5 & 6 \\
+              \hline
+              2 & 0 & 4 \\
+              \hline
+              4 & 4 & 0 \\
+              \hline
+            \end{tabularx}
+          \end{multicols}
+        }
+
+        Let $f$ be the continuous function consisting of two line segments as
+        shown in the figure to the right. The differentiable function $g$ and its
+        first derivative are given in the table for selected values of $x$. Find
+        $\textstyle \lim_{x \to 2} \frac{f(x)}{g(x)}$.
+    answer: $-\frac{1}{2}$
+    distractors:
+      - $\frac{1}{4}$
+      - 0
+      - Does not exist
+    solution: |
+      \begin{gather*}
+        \lim_{x \to 2} g(x) = 0, \quad
+        \lim_{x \to 2} f(x) = 0
+        \implies \text{L'Hospital's Rule applies} \\
+        \lim_{x \to 2} \frac{f(x)}{g(x)}
+        = \lim_{x \to 2} \frac{f'(x)}{g'(x)}
+        = \frac{-2}{4} = -\frac{1}{2}
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 27
+    legacy_id: 4.B.13
+    question: |
+      A particle is moving along a hyperbola $xy = 8$. As it reaches the point
+      $(4, 2)$, the $y$-coordinate is decreasing at a rate of 3 cm/s. How fast
+      is the $x$-coordinate of the point changing at that instant?
+    answer: increasing at a rate of 6 cm/s
+    distractors:
+      - increasing at a rate of 12 cm/s
+      - decreasing at a rate of 6 cm/s
+      - the $x$-coordinate of the particle is not changing
+    solution: |
+      \begin{gather*}
+        \frac{dy}{dt} = -3 \\
+        x \frac{dy}{dt} + y \frac{dx}{dt} = 0 \\
+        (4)(-3) + (2) \frac{dx}{dt} = 0 \\
+        \frac{dx}{dt} = 6
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 28
+    legacy_id: 4.B.14
+    question: |
+      A bug moves in a straight path along a window sill with velocity given by
+      $v(t) = -6t^4 + 24t^3 - 14t^2 -38t + 37$ for $-3 \le t \le 3$. How many
+      times does the bug change directions as $t$ increases from -3 to 3?
+    answer: Four
+    distractors:
+      - One
+      - Three
+      - Two
+    solution: |
+      \begin{multicols}{2}
+        The graph of $v(t)$ crosses the $x$-axis four times in the interval $-3 \le
+        t \le 3$.
+
+        \includegraphics[width=2in]{14S-B}
+      \end{multicols}
+    sections: []
+    dok: unknown
+
+  - id: 29
+    legacy_id: 4.B.15
+    question: |
+      If the width, $w$, of a rectangle is increasing at a constant rate of 2 cm/s and the length, $l$, of the rectangle is decreasing
+      at a constant rate of 2 cm/s, which statement is true about the perimeter, $P$, of the rectangle?
+    answer: $P$ is not changing
+    distractors:
+      - $P$ is increasing when $l > w$
+      - $P$ is increasing when $l < w$
+      - $P$ is always increasing
+    solution: |
+      \begin{gather*}
+        P = 2l + 2w \implies
+        \frac{dP}{dt} = 2\frac{dl}{dt} + 2\frac{d2}{dt} \\
+        \frac{dP}{dt} = 2(-2) + 2(2) = 0
+      \end{gather*}
+      Since $\frac{dP}{dt} = 0$ for all values of $l$ and $w$, $P$ is not changing.
+    sections: []
+    dok: unknown
+
+  - id: 30
+    legacy_id: 4.B.16
+    question: |
+      A 12,000 liter tank of water is filled to capacity. At time $t = 0$, water
+      begins to drain out of the tank at a rate modeled by $r(t)$, measured in
+      liters per hour, where $r$ is given by the piecewise-defined function:
+      \[
+        r(t) = \begin{cases}
+          \frac{600t}{t + 3} & 0 \le t \le 5 \\
+          1000e^{-0.2t} & t > 5 \\
+        \end{cases}
+      \]
+      Which of the following identifies the correct value of $r'(6)$ and
+      accurately and thoroughly explains the meaning of that value in the context
+      of the problem?
+    answer: The rate at which water is draining from tank is decreasing by 60.239 liters/hour$^2$ at time $t = 6$ hours.
+    distractors:
+      - The amount of water in the tank is increasing at a rate of 22.222 liters/hour at time $t = 6$ hours.
+      - The rate at which water is draining from the tank is increasing by 22.222 liters/hour$^2$ at time $t = 6$ hours.
+      - The amount of water in the tank is decreasing at a rate of 60.239 liters/hour at time $t = 6$ hours.
+    solution: $\frac{d}{dt} \left[ 1000e^{-0.2t} \right]_{t = 6} = -60.239$
+    sections: []
+    dok: unknown

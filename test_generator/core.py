@@ -112,6 +112,10 @@ def generate_test(
         tex_path = td_path / "output.tex"
         tex_path.write_text(tex_content)
 
+        images_src = yaml_file.parent / "images"
+        if images_src.is_dir():
+            shutil.copytree(str(images_src), str(td_path / "images"))
+
         cmd = [
             "pdflatex",
             "-interaction=nonstopmode",

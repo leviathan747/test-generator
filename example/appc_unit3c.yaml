@@ -1,0 +1,174 @@
+questions:
+  - id: 1
+    legacy_id: 3.A.1
+    question: |
+      The complex number $z$ is graphed in the complex plane, as shown in the figure.
+
+      \fullwidth{\begin{center}
+        \includegraphics[width=3in]{1}
+      \end{center}}
+
+      The number $z$ can be represented according to its polar coordinates as
+      $\textstyle \left(2 \cos \frac{2\pi}{3}\right) + i \left(2 \sin
+      \frac{2\pi}{3}\right)$. Which of the following is a representation of $z$
+      according to itse rectangular coordinates?
+    answer: $-1 + \sqrt 3 i$
+    distractors:
+      - $-\frac{1}{2} + \frac{\sqrt 3}{2} i$
+      - $-\sqrt 3 + i$
+      - $-\frac{\sqrt 3}{2} + \frac{1}{2} i$
+    solution: TODO
+    sections:
+      - 3.13
+    dok: unknown
+
+  - id: 2
+    legacy_id: 3.A.2
+    question: |
+      The graph of a polar function $r = g(\theta)$ contains the point $A$, where
+      the polar coordinates of $A$ are given by $\textstyle \left(-4,
+      -\frac{2\pi}{3}\right)$. In which quadrant does point $A$ lie?
+    answer: Because the terminal ray of the angle with measure $\theta$ is in Quadrant III and $r < 0$, the point $A$ lies in Quadrant I.
+    distractors:
+      - Because the terminal ray of the angle with measure $\theta$ is in Quadrant II and $r < 0$, the point $A$ lies in Quadrant II.
+      - Because the terminal ray of the angle with measure $\theta$ is in Quadrant II and $r < 0$, the point $A$ lies in Quadrant IV.
+      - Because the terminal ray of the angle with measure $\theta$ is in Quadrant III and $r < 0$, the point $A$ lies in Quadrant III.
+    solution: TODO
+    sections:
+      - 3.14
+    dok: unknown
+
+  - id: 3
+    legacy_id: 3.A.3
+    question: |
+      \includegraphics{3}
+
+      The polar function $r = f(\theta)$ is graphed in the polar coordinate
+      system in the figure. Which of the following could be an expression for
+      $f(\theta)$?
+    answer: $f(\theta) = \frac{5}{2} \cos \left( 4\theta \right)$
+    distractors:
+      - $f(\theta) = \frac{5}{2} \cos \left( \frac{\theta}{4} \right)$
+      - $f(\theta) = \frac{5}{2} \sin \left( \frac{\theta}{4} \right)$
+      - $f(\theta) = \frac{5}{2} \sin \left( 4\theta \right)$
+    solution: TODO
+    sections:
+      - 3.14
+    dok: unknown
+
+  - id: 4
+    legacy_id: 3.A.4
+    question: |
+      Consider the polar function $r = g(\theta)$  graphed in the polar
+      coordinate system where \\ $g(\theta) = \theta^2(\theta - 1)(\theta - 3)$. On
+      the interval $-\infty < \theta < 0$ is the distance between the curve and
+      the origin \emph{increasing} or \emph{decreasing}?
+    answer: The distance between the curve and the origin is \emph{decreasing} because $f(\theta)$ is positive and decreasing on $-\infty < \theta < 0$.
+    distractors:
+      - The distance between the curve and the origin is \emph{increasing} because $f(\theta)$ is positive and decreasing on $-\infty < \theta < 0$.
+      - The distance between the curve and the origin is \emph{increasing} because $f(\theta)$ is positive and increasing on $-\infty < \theta < 0$.
+      - The distance between the curve and the origin is \emph{decreasing} because $f(\theta)$ is positive and increasing on $-\infty < \theta < 0$.
+    solution: TODO
+    sections:
+      - 3.15
+    dok: unknown
+
+  - id: 5
+    legacy_id: 3.A.5
+    question: |
+      The point $P$ has polar coordinates $\left(-4, \frac{7\pi}{6} \right)$.
+      Which of the following polar coordinates is an equivalent representation of
+      the point $P$?
+    answer: $\left( 4, \frac{\pi}{6} \right)$
+    distractors:
+      - $\left( -4, \frac{5\pi}{6} \right)$
+      - $\left( -4, \frac{\pi}{6} \right)$
+      - $\left( 4, \frac{5\pi}{6} \right)$
+    solution: TODO
+    sections:
+      - 3.13
+    dok: unknown
+
+  - id: 6
+    legacy_id: 3.B.1
+    question: |
+      The number $z$ can be represented according to its polar coordinates as
+      $\textstyle \left(3 \cos \frac{3\pi}{4}\right) + i \left(3 \sin
+      \frac{3\pi}{4}\right)$. Which of the following is a representation of $z$
+      according to itse rectangular coordinates?
+    answer: $-\frac{3\sqrt 2}{2} + \frac{3\sqrt 2}{2} i$
+    distractors:
+      - $-\frac{\sqrt 2}{2} + \frac{\sqrt 2}{2} i$
+      - $\frac{\sqrt 2}{2} - \frac{\sqrt 2}{2} i$
+      - $\frac{3\sqrt 2}{2} - \frac{3\sqrt 2}{2} i$
+    solution: TODO
+    sections:
+      - 3.13
+    dok: unknown
+
+  - id: 7
+    legacy_id: 3.B.2
+    question: |
+      The graph of a polar function $r = g(\theta)$ contains the point $A$, where
+      the polar coordinates of $A$ are given by $\textstyle \left(-4,
+      \frac{5\pi}{3}\right)$. In which quadrant does point $A$ lie?
+    answer: Because the terminal ray of the angle with measure $\theta$ is in Quadrant IV and $r < 0$, the point $A$ lies in Quadrant II.
+    distractors:
+      - Because the terminal ray of the angle with measure $\theta$ is in Quadrant IV and $r < 0$, the point $A$ lies in Quadrant IV.
+      - Because the terminal ray of the angle with measure $\theta$ is in Quadrant II and $r < 0$, the point $A$ lies in Quadrant II.
+      - Because the terminal ray of the angle with measure $\theta$ is in Quadrant II and $r < 0$, the point $A$ lies in Quadrant IV.
+    solution: TODO
+    sections:
+      - 3.14
+    dok: unknown
+
+  - id: 8
+    legacy_id: 3.B.3
+    question: |
+      \includegraphics{3}
+
+      The polar function $r = f(\theta)$ is graphed in the polar coordinate
+      system in the figure. Which of the following could be an expression for
+      $f(\theta)$?
+    answer: $f(\theta) = \frac{5}{2} \cos \left( 4\theta \right)$
+    distractors:
+      - $f(\theta) = \frac{5}{2} \sin \left( 4\theta \right)$
+      - $f(\theta) = \frac{5}{2} \sin \left( \frac{\theta}{4} \right)$
+      - $f(\theta) = \frac{5}{2} \cos \left( \frac{\theta}{4} \right)$
+    solution: TODO
+    sections:
+      - 3.14
+    dok: unknown
+
+  - id: 9
+    legacy_id: 3.B.4
+    question: |
+      Consider the polar function $r = g(\theta)$  graphed in the polar
+      coordinate system where \\ $g(\theta) = \theta^2(\theta - 1)(\theta - 3)$. On
+      the interval $1 < \theta < 1.1$ is the distance between the curve and
+      the origin \emph{increasing} or \emph{decreasing}?
+    answer: The distance between the curve and the origin is \emph{increasing} because $f(\theta)$ is negative and decreasing on $-\infty < \theta < 0$.
+    distractors:
+      - The distance between the curve and the origin is \emph{increasing} because $f(\theta)$ is negative and increasing on $-\infty < \theta < 0$.
+      - The distance between the curve and the origin is \emph{decreasing} because $f(\theta)$ is negative and decreasing on $-\infty < \theta < 0$.
+      - The distance between the curve and the origin is \emph{decreasing} because $f(\theta)$ is negative and increasing on $-\infty < \theta < 0$.
+    solution: TODO
+    sections:
+      - 3.15
+    dok: unknown
+
+  - id: 10
+    legacy_id: 3.B.5
+    question: |
+      The point $P$ has polar coordinates $\left(4, \frac{7\pi}{6} \right)$.
+      Which of the following polar coordinates is an equivalent representation of
+      the point $P$?
+    answer: $\left( -4, -\frac{11\pi}{6} \right)$
+    distractors:
+      - $\left( -4, \frac{\pi}{6} \right)$
+      - $\left( 4, \frac{11\pi}{6} \right)$
+      - $\left( -4, \frac{7\pi}{6} \right)$
+    solution: TODO
+    sections:
+      - 3.13
+    dok: unknown

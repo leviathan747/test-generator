@@ -1,0 +1,580 @@
+questions:
+  - id: 1
+    legacy_id: 2.A.1
+    question: |
+      \includegraphics{1}
+
+      Values of the terms of a geometric sequence $g_n$ are graphed in the
+      figure to the right. Which of the following is an expression  for the
+      \emph{n}th term of the geometric sequence?
+    answer: $g_n = 8 \left( -\frac{1}{2} \right)^{n-2}$
+    distractors:
+      - $g_n = 8 \left( \frac{1}{2} \right)^n$
+      - $g_n = -16 \left( \frac{1}{2} \right)^{n-1}$
+      - $g_n = 8 \left( -\frac{1}{2} \right)^{n+2}$
+    solution: |
+      $g_n = g_k \cdot r^{n-k}$ \qquad $g_2 = 8$ \\
+      The absolute value of each element is half of the element before it and
+      alternating between positive and negative values, therefore $r =
+      -\frac{1}{2}$.
+    sections: []
+    dok: unknown
+
+  - id: 2
+    legacy_id: 2.A.2
+    question: |
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+          \hline
+          \bm{$n$} & 1 & 5 & 7 & 8 & 15 \\
+          \hline
+          \bm{$a_n$} & $b$ & 32 & 26 & $c$ & 2 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      The table above contains selected values of an arithmetic sequence $a_n$ ,
+      where $b$ and $c$ are constants. What is the value of $b + c$?
+    answer: 67
+    distractors:
+      - 49
+      - 58
+      - 76
+    solution: |
+      $a_n = 32 + d(n - 5)$ \\
+      $26 = 32 + d(7 - 5) \implies$
+      $26 = 32 + 2d \implies$
+      $-6 = 2d \implies$
+      $d = -3$ \\
+      $b = 32 - 3(1 - 5) = 32 + 12 = 44$ \\
+      $c = 32 - 3(8 - 5) = 32 - 9 = 23$ \\
+      $44 + 23 = 67$ \\
+    sections: []
+    dok: unknown
+
+  - id: 3
+    legacy_id: 2.A.3
+    question: |
+      The exponential function $f$ is defined by $f(x) = ab^x$, where $a$ and $b$
+      are constants. If $f(2) = 36$ and $\textstyle \frac{f(x + 1)}{f(x)} = 3$ for all
+      values of $x$, which of the following is an expression for $f(x)$?
+    answer: $4(3)^x$
+    distractors:
+      - $36 \left( \frac{1}{3} \right)^x$
+      - $12(3)^x$
+      - $4 \left( \frac{1}{3} \right)^x$
+    solution: |
+      $b = \textstyle \frac{f(x + 1)}{f(x)} = 3$ \\
+      $f(x) = 36(3)^{x - 2} = 36(3^{-2})(3)^x = 4(3)^x$
+    sections: []
+    dok: unknown
+
+  - id: 4
+    legacy_id: 2.A.4
+    question: |
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+          \hline
+          \bm{$x$} & 1 & 2 & 3 & 4 & 5 \\
+          \hline
+          \bm{$g(x)$} & 3 & 6 & 12 & 24 & 48 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      Selected values of the function $g$ are given in the table above. Which of
+      the following statements about $g$ is most appropriate?
+    answer: $g$ could be exponential because over equal-length input-value intervals, the output values change proportionally.
+    distractors:
+      - $g$ could be linear because over equal-length input-value intervals, the output values change at a constant rate.
+      - $g$ could be linear because the output values change linearly as the input values change proportionally.
+      - $g$ could be exponential because the output values change linearly as the input values change proportionally.
+    solution: As the $x$ values increase by 1 over each interval, the value of $g(x)$ doubles. This matches the statement in answer C.
+    sections: []
+    dok: unknown
+
+  - id: 5
+    legacy_id: 2.A.5
+    question: |
+      Let $m(x) = 5 \left( \frac{2}{3} \right)^{x - 1}$. Which of the following
+      statements about $m$ is correct?
+    answer: $m$ is decreasing and the graph of $m$ is concave up.
+    distractors:
+      - $m$ is increasing and the graph of $m$ is concave up.
+      - $m$ is increasing and the graph of $m$ is concave down.
+      - $m$ is decreasing and the graph of $m$ is concave down.
+    solution: |
+      $a = 5 \qquad b = \frac{2}{3}$ \\
+      Because $0 < b < 1$, this curve represents exponential decay. Because $a
+      > 0$, $m$ will be positive on its entire domain, therefore it is
+      decreasing and concave up.
+    sections: []
+    dok: unknown
+
+  - id: 6
+    legacy_id: 2.A.6
+    question: |
+      Let $f$ be an exponential function with the following end behavior:
+      \[
+        \lim_{x \to -\infty} f(x) = \infty \qquad \text{and} \qquad \lim_{x \to \infty} f(x) = 0
+      \]
+      Which of the following could be the graph of $f$?
+    answer: \includegraphics[width=2in]{6-D}
+    distractors:
+      - \includegraphics[width=2in]{6-A}
+      - \includegraphics[width=2in]{6-C}\phantom{\includegraphics[width=2in]{6-A}}
+      - \includegraphics[width=2in]{6-B}
+    solution: |
+      Note: B has the correct end behavior, but exponential functions are either concave up or concave down over their entire domain.
+    sections: []
+    dok: unknown
+
+  - id: 7
+    legacy_id: 2.A.7
+    question: |
+      \fullwidth{\begin{center}
+        \everymath{}
+        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+          \hline
+          \bm{$x$} & 1 & 2 & 3 & 4 & 5 \\
+          \hline
+          \bm{$g(x)$} & $\frac{1}{12}$ & $\frac{1}{4}$ & $\frac{3}{4}$ & $\frac{9}{4}$ & $\frac{27}{4}$ \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      The exponential function $h$ is defined by $h(x) = ab^x$, where $a$ and $b$
+      are positive constants. The table above gives values of $h(x)$ at selected
+      values of $x$. Which of the following statements is true?
+    answer: $h$ demonstrates exponential growth because $a > 0$ and $b > 1$.
+    distractors:
+      - $h$ demonstrates exponential decay because $0 < a < 1$ and $b > 1$.
+      - $h$ demonstrates exponential decay because $a > 0$ and $0 < b < 1$.
+      - $h$ demonstrates exponential growth because $a > 0$ and $0 < b < 1$.
+    solution: Exponential growth only occurs if $b > 1$. The table of data shows all postive values for $g(x)$ and the value of $g(x)$ is increasing.
+    sections: []
+    dok: unknown
+
+  - id: 8
+    legacy_id: 2.A.8
+    question: |
+      Which of the following functions is an equivalent form of the function
+      $k(x) = 4 \cdot 9^{2x}$?
+    answer: $k(x) = 4 \cdot 81^x$
+    distractors:
+      - $k(x) = 36^{2x}$
+      - $k(x) = 4 \cdot 3^x$
+      - $k(x) = 16 \cdot 81^x$
+    solution: $4 \cdot 9^{2x} = 4 \cdot \left(9^2\right)^x = 4 \cdot 81^x$
+    sections: []
+    dok: unknown
+
+  - id: 9
+    legacy_id: 2.A.9
+    question: |
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+          \hline
+          \bm{$t$} (days) & 0 & 1 & 2 & 3 & 4 \\
+          \hline
+          \bm{$D(t)$} & 81 & 54 & 36 & 24 & 16 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      After returning home from vacation, Mr. Starrett notices a large number of
+      dandelions in his yard and decides to apply weed killer. The table above
+      gives selected values of $D(t)$, where $D$ is the number of dandelions and
+      $t$ is the number of days since Mr. Starrett applied the weed killer. If a
+      model is constructed to represent these data, which of the following best
+      applies to this situation?
+    answer: $D(t) = 81 \left( \frac{2}{3} \right)^t$
+    distractors:
+      - $D(t) = 81 \left( \frac{1}{3} \right)^t$
+      - $D(t) = 81 - 27t \phantom{\frac{1}{3}}$
+      - $D(t) = 81 - \frac{2}{3}t$
+    solution: |
+      The initial value for $D(t)$ is 81. Each successive value of $D(t)$ in
+      the table is proportional to the previous value with a ratio of
+      $\textstyle \frac{2}{3}$. Therefore, an exponential function $ab^x$ where $a = 81$
+      and $\textstyle b = \frac{2}{3}$ models this situation.
+    sections: []
+    dok: unknown
+
+  - id: 10
+    legacy_id: 2.A.11
+    question: |
+      Mary Jo deposits \$300 each month into her retirement account that pays
+      4.5\% annually. What will be the value of her investment after 20 years?
+    answer: \$116,437.31
+    distractors:
+      - \$71,625.00
+      - \$72,000.00
+      - \$73,453.62
+    solution: |
+      \begin{gather*}
+        FV = R \frac{(1 + i)^n - 1}{i} \\
+        FV = 300 \frac{(1 + \frac{0.045}{12})^{12 \cdot 20} - 1}{\frac{0.045}{12}} \\
+        FV = 116437.3089 \\
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 11
+    legacy_id: 2.A.12
+    question: |
+      \begin{center}
+        \includegraphics{10}
+      \end{center}
+
+      A quadratic regression was used to develop a model for a given set of data.
+      The figure above shows a graph of the residuals of the quadratic
+      regression. Which of the following statements about the quadratic
+      regression is true?
+    answer: The quadratic model is not appropriate because there is a clear pattern in the graph of the residuals.
+    distractors:
+      - The quadratic model is not appropriate because there are more positive residual values than negative residual values.
+      - The quadratic model is appropriate because there is a linear pattern in the graph of the residuals.
+      - The quadratic model is appropriate because none of the residuals fall outside the pattern in the graph of the residuals.
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 12
+    legacy_id: 2.A.13
+    question: |
+      For a period of time, an island's population grows at a rate proportional
+      to its population. If the growth rate is 3.8\% per year and the current
+      population is 1543, what will the population be 5.2 years from now?
+    answer: 1873
+    distractors:
+      - 2036
+      - 1601
+      - 1723
+    solution: |
+      \begin{gather*}
+      P(t) = 1543 \cdot 1.038^t \qquad \text{(the common ratio is 1 plus the percentage as a decimal)} \\
+        P(5.2) = 1873.234572 \\
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 13
+    legacy_id: 2.A.14
+    question: |
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+          \hline
+          \bm{$x$} & -1 & 1 & 2 & 5 \\
+          \hline
+          \bm{$g(x)$} & 5 & 8 & 10 & 19 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      The table above presents values for a function $g$ at selected values of
+      $x$. An exponential regression $y = ab^x$ is used to model these data. What
+      is the value of $g(3.2)$ predicted by the exponential function model?
+    answer: 12.880
+    distractors:
+      - 12.994
+      - 13.161
+      - 13.941
+    solution: |
+      Enter the data into two lists in your calculator and perform an exponential regression: \\
+      $y = 6.332862704 \cdot 1.248374122^x$ \\
+      $g(3.2) \approx 12.87962731$ \\
+    sections: []
+    dok: unknown
+
+  - id: 14
+    legacy_id: 2.B.1
+    question: |
+      Let $m(x) = -2 \left( \frac{1}{2} \right)^{x + 2}$. Which of the following
+      statements about $m$ is correct?
+    answer: $m$ is increasing and the graph of $m$ is concave down.
+    distractors:
+      - $m$ is increasing and the graph of $m$ is concave up.
+      - $m$ is decreasing and the graph of $m$ is concave up.
+      - $m$ is decreasing and the graph of $m$ is concave down.
+    solution: |
+      $a = -2 \qquad b = \frac{1}{2}$ \\
+      Because $0 < b < 1$, this curve represents exponential decay. Because
+      $a < 0$, $m$ will be negative on its entire domain, therefore it is
+      increasing and concave down.
+    sections: []
+    dok: unknown
+
+  - id: 15
+    legacy_id: 2.B.2
+    question: |
+      The exponential function $f$ is defined by $f(x) = ab^x$, where $a$ and $b$
+      are constants. If $f(-3) = 108$ and $\textstyle \frac{f(x + 1)}{f(x)} = \frac{1}{3}$ for all
+      values of $x$, which of the following is an expression for $f(x)$?
+    answer: $4 \left( \frac{1}{3} \right)^x$
+    distractors:
+      - $36 \left( \frac{1}{3} \right)^x$
+      - $4(3)^x$
+      - $12(3)^x$
+    solution: |
+      $b = \textstyle \frac{f(x + 1)}{f(x)} = \frac{1}{3}$ \\
+      $f(x) = 108\left(\frac{1}{3}\right)^{x + 3} = 108\left(\frac{1}{3}^{3}\right)\left(\frac{1}{3}\right)^x = 4\left(\frac{1}{3}\right)^x$
+    sections: []
+    dok: unknown
+
+  - id: 16
+    legacy_id: 2.B.3
+    question: |
+      Let $f$ be an exponential function with the following end behavior:
+      \[
+        \lim_{x \to -\infty} f(x) = -\infty \qquad \text{and} \qquad \lim_{x \to \infty} f(x) = 0
+      \]
+      Which of the following could be the graph of $f$?
+    answer: \includegraphics[width=2in]{6-A}
+    distractors:
+      - \includegraphics[width=2in]{6-C}\phantom{\includegraphics[width=2in]{6-A}}
+      - \includegraphics[width=2in]{6-B}
+      - \includegraphics[width=2in]{6-D}
+    solution: TODO
+    sections: []
+    dok: unknown
+
+  - id: 17
+    legacy_id: 2.B.4
+    question: |
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+          \hline
+          \bm{$x$} & 1 & 3 & 5 & 7 & 9 \\
+          \hline
+          \bm{$g(x)$} & 3 & 1 & $\textstyle \frac{1}{3}$ & $\textstyle \frac{1}{9}$ & $\textstyle \frac{1}{27}$ \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      Selected values of the function $g$ are given in the table above. Which of
+      the following statements about $g$ is most appropriate?
+    answer: $g$ could be exponential because over equal-length input-value intervals, the output values change proportionally.
+    distractors:
+      - $g$ could be exponential because the output values change linearly as the input values change proportionally.
+      - $g$ could be linear because the output values change linearly as the input values change proportionally.
+      - $g$ could be linear because over equal-length input-value intervals, the output values change at a constant rate.
+    solution: |
+      As the $x$ values increase by 2 over each interval, the value of $g(x)$
+      is multiplied by $\frac{1}{3}$. This matches the statement in answer B.
+    sections: []
+    dok: unknown
+
+  - id: 18
+    legacy_id: 2.B.5
+    question: |
+      Which of the following functions is an equivalent form of the function
+      $k(x) = -3 \cdot 5^{2x}$?
+    answer: $k(x) = -3 \cdot 25^x$
+    distractors:
+      - $k(x) = -75^{x}$
+      - $k(x) = -75 \cdot 5^x$
+      - $k(x) = -15^{2x}$
+    solution: $-3 \cdot 5^{2x} = -3 \cdot (5^2)^x = -3 \cdot 25^x$
+    sections: []
+    dok: unknown
+
+  - id: 19
+    legacy_id: 2.B.6
+    question: |
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+          \hline
+          \bm{$n$} & 1 & 4 & 7 & 9 & 12 \\
+          \hline
+          \bm{$a_n$} & 15 & $a$ & 33 & $b$ & $c$ \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      The table above contains selected values of an arithmetic sequence $a_n$ ,
+      where $a$, $b$, and $c$ are constants. What is the value of $a + b + c$?
+    answer: 111
+    distractors:
+      - 24
+      - 48
+      - 89
+    solution: |
+      $a_n = 15 + d(n - 1)$ \\
+      $33 = 15 + d(7 - 1) \implies$
+      $33 = 15 + 6d \implies$
+      $18 = 6d \implies$
+      $d = 3$ \\
+      $a = 15 + 3(4 - 1) = 15 + 9 = 24$ \\
+      $b = 15 + 3(9 - 1) = 15 + 24 = 39$ \\
+      $c = 15 + 3(12 - 1) = 15 + 33 = 48$ \\
+      $24 + 39 + 48 = 111$ \\
+    sections: []
+    dok: unknown
+
+  - id: 20
+    legacy_id: 2.B.7
+    question: |
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+          \hline
+          \bm{$t$} (days) & 0 & 1 & 2 & 3 \\
+          \hline
+          \bm{$F(t)$} & 27 & 36 & 48 & 64 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      When Mr. Starrett moved into his house, he planted a number of daylilies
+      in his flower bed. The table above gives selected values of $F(t)$, where
+      $F$ is the number of daylily blooms in the flower bed and $t$ is the
+      number of years Mr. Starrett has lived at his house. If a model is
+      constructed to represent these data, which of the following best applies
+      to this situation?
+    answer: $F(t) = 27 \left( \frac{4}{3} \right)^t$
+    distractors:
+      - $D(t) = 27 + 9t \phantom{\frac{1}{3}}$
+      - $F(t) = 27 \left( \frac{3}{4} \right)^t$
+      - $D(t) = 64 + \frac{4}{3}t$
+    solution: |
+      The initial value for $F(t)$ is 27. Each successive value of $F(t)$ in
+      the table is proportional to the previous value with a ratio of
+      $\textstyle \frac{4}{3}$. Therefore, an exponential function $ab^x$ where $a = 27$
+      and $\textstyle b = \frac{4}{3}$ models this situation.
+    sections: []
+    dok: unknown
+
+  - id: 21
+    legacy_id: 2.B.8
+    question: |
+      \includegraphics{8B}
+
+      Values of the terms of a geometric sequence $g_n$ are graphed in the
+      figure to the right. Which of the following is an expression  for the
+      \emph{n}th term of the geometric sequence?
+    answer: $g_n = 9 \left( \frac{1}{3} \right)^{\frac{1}{2}n - 1}$
+    distractors:
+      - $g_n = 9 \left( \frac{1}{3} \right)^{n - 2}$
+      - $g_n = 9 (3)^{n - 2}$ \phantom{$\frac{1}{3}$}
+      - $g_n = 9 \left( -\frac{1}{3} \right)^{\frac{1}{2}n + 2}$
+    solution: |
+      $g_n = g_k \cdot r^{n-k}$ \qquad $g_2 = 9$ \\
+      The value of each element is multiplied by $\textstyle \frac{1}{3}$
+      every second element, therefore $\textstyle r = \frac{1}{3}$ with a
+      horizontal dilation of 2.
+    sections: []
+    dok: unknown
+
+  - id: 22
+    legacy_id: 2.B.9
+    question: |
+      \fullwidth{\begin{center}
+        \everymath{}
+        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+          \hline
+          \bm{$x$} & 1 & 2 & 3 & 4 & 5 \\
+          \hline
+          \bm{$g(x)$} & 2 & 6 & 18 & 54 & 162 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      The exponential function $h$ is defined by $h(x) = ab^x$, where $a$ and $b$
+      are positive constants. The table above gives values of $h(x)$ at selected
+      values of $x$. Which of the following statements is true?
+    answer: $h$ demonstrates exponential growth because $a > 0$ and $b > 1$.
+    distractors:
+      - $h$ demonstrates exponential growth because $a > 0$ and $0 < b < 1$.
+      - $h$ demonstrates exponential decay because $0 < a < 1$ and $b > 1$.
+      - $h$ demonstrates exponential decay because $a > 0$ and $0 < b < 1$.
+    solution: Exponential growth only occurs if $b > 1$. The table of data shows all postive values for $g(x)$ and the value of $g(x)$ is increasing.
+    sections: []
+    dok: unknown
+
+  - id: 23
+    legacy_id: 2.B.10
+    question: |
+      The amount of a certain medication in a patient's body decreases at a
+      rate proportional to the current amount. If a patient is given 5mg of the
+      medication and the amount is reduced by 42\% per hour, what will be the
+      amount of medication in the patient's body after 4.5 hours?
+    answer: 0.431mg
+    distractors:
+      - 24.225mg
+      - 3.110mg
+      - 0.101mg
+    solution: |
+      \begin{gather*}
+      A(t) = 5 \cdot 0.58^t \qquad \text{(the common ratio is 1 minus the percentage as a decimal)} \\
+      A(4.5) = 0.431\text{mg} \\
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 24
+    legacy_id: 2.B.11
+    question: |
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+          \hline
+          \bm{$x$} & -1 & 1 & 2 & 5 \\
+          \hline
+          \bm{$g(x)$} & 12 & 8 & 6 & 3 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      The table above presents values for a function $g$ at selected values of
+      $x$. An exponential regression $y = ab^x$ is used to model these data. What
+      is the value of $g(-0.2)$ predicted by the exponential function model?
+    answer: 10.162
+    distractors:
+      - 10.456
+      - 9.256
+      - 11.561
+    solution: |
+      Enter the data into two lists in your calculator and perform an exponential regression: \\
+      $y = 9.698586503 \cdot 0.7919045749^x$ \\
+      $g(-0.2) \approx 10.16187558$ \\
+    sections: []
+    dok: unknown
+
+  - id: 25
+    legacy_id: 2.B.12
+    question: |
+      Judy has \$500 to invest at 9\% annual interest compounded monthly. How
+      long will it take for her investment to grow to \$3000?
+    answer: 19.983 years
+    distractors:
+      - 6 years
+      - 20.791 years
+      - 19.901 years
+    solution: |
+      \begin{gather*}
+        A = P\left(1 + \frac{r}{k}\right)^{kt} \\
+        3000 = 500\left(1 + \frac{0.09}{12}\right)^{12t} \\
+        \text{(solve for $t$ using your calculator)} \\
+        t \approx 19.983 \\
+      \end{gather*}
+    sections: []
+    dok: unknown
+
+  - id: 26
+    legacy_id: 2.B.13
+    question: |
+      \begin{center}
+        \includegraphics{14B}
+      \end{center}
+
+      A quadratic regression was used to develop a model for a given set of data.
+      The figure above shows a graph of the residuals of the quadratic
+      regression. Which of the following statements about the quadratic
+      regression is true?
+    answer: The quadratic model is appropriate because there is no clear pattern in the graph of the residuals.
+    distractors:
+      - The quadratic model is not appropriate because there is a clear pattern in the graph of the residuals.
+      - The quadratic model is not appropriate because there are more positive residual values than negative residual values.
+      - The quadratic model is appropriate because there is a linear pattern in the graph of the residuals.
+    solution: TODO
+    sections: []
+    dok: unknown

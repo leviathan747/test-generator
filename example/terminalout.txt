@@ -1,0 +1,561 @@
+➜  test-generator git:(main) ✗  source /Users/levi/git/test-generator/.venv/bin/activate
+(.venv) ➜  test-generator git:(main) ✗ deactivate                                          
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/apcalc/tests/unit2/Test_Unit2.tex example/unit2.yaml
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('B', 3, 'A', True)
+   ('A', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('A', 6, 'A', True)
+   ('A', 7, 'A', True)
+   ('B', 4, 'A', True)
+   ('B', 5, 'A', True)
+   ('B', 6, 'A', True)
+   ('B', 7, 'A', True)
+   ('A', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('A', 10, 'A', True)
+   ('B', 8, 'A', True)
+   ('B', 9, 'A', True)
+   ('B', 10, 'A', True)
+   ('A', 11, 'B', False)
+   ('B', 11, 'B', False)
+   ('A', 12, 'A', True)
+   ('A', 13, 'A', True)
+   ('A', 14, 'A', True)
+   ('B', 12, 'A', True)
+   ('B', 13, 'A', True)
+   ('A', 15, 'A', True)
+   ('A', 16, 'A', True)
+   ('B', 14, 'A', True)
+   ('B', 15, 'A', True)
+   ('B', 16, 'A', True)
+   ('A', 17, 'B', False)
+   ('B', 17, 'B', False)
+
+Extracted 30 MCQs -> example/unit2.yaml
+legacy_ids: ['2.A.1', '2.A.2', '2.A.3', '2.A.4', '2.A.5', '2.A.6', '2.A.7', '2.A.8', '2.A.9', '2.A.10', '2.A.12', '2.A.13', '2.A.14', '2.A.15', '2.A.16', '2.B.1', '2.B.2', '2.B.3', '2.B.4', '2.B.5', '2.B.6', '2.B.7', '2.B.8', '2.B.9', '2.B.10', '2.B.12', '2.B.13', '2.B.14', '2.B.15', '2.B.16']
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/apcalc/tests/unit3/Test_Unit3.tex example/unit3.yaml 
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('B', 3, 'A', True)
+   ('A', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('A', 6, 'A', True)
+   ('A', 7, 'A', True)
+   ('B', 4, 'A', True)
+   ('B', 5, 'A', True)
+   ('B', 6, 'A', True)
+   ('B', 7, 'A', True)
+   ('A', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('A', 10, 'A', True)
+   ('B', 8, 'A', True)
+   ('B', 9, 'A', True)
+   ('B', 10, 'A', True)
+   ('A', 11, 'B', False)
+   ('A', 12, 'A', True)
+   ('A', 13, 'A', True)
+   ('A', 14, 'A', True)
+   ('B', 11, 'A', True)
+   ('B', 12, 'A', True)
+   ('B', 13, 'A', True)
+   ('A', 15, 'A', True)
+   ('A', 16, 'A', True)
+   ('B', 14, 'A', True)
+   ('B', 15, 'A', True)
+   ('A', 17, 'B', False)
+   ('B', 16, 'B', False)
+
+Extracted 30 MCQs -> example/unit3.yaml
+legacy_ids: ['3.A.1', '3.A.2', '3.A.3', '3.A.4', '3.A.5', '3.A.6', '3.A.7', '3.A.8', '3.A.9', '3.A.10', '3.A.12', '3.A.13', '3.A.14', '3.A.15', '3.A.16', '3.B.1', '3.B.2', '3.B.3', '3.B.4', '3.B.5', '3.B.6', '3.B.7', '3.B.8', '3.B.9', '3.B.10', '3.B.11', '3.B.12', '3.B.13', '3.B.14', '3.B.15']
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/apcalc/tests/unit4/Test_Unit4.tex example/unit4.yaml
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('B', 3, 'A', True)
+   ('A', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('A', 6, 'A', True)
+   ('B', 4, 'A', True)
+   ('B', 5, 'A', True)
+   ('B', 6, 'A', True)
+   ('A', 7, 'A', True)
+   ('A', 8, 'A', True)
+   ('B', 7, 'A', True)
+   ('B', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('A', 10, 'A', True)
+   ('B', 9, 'A', True)
+   ('B', 10, 'A', True)
+   ('A', 11, 'B', False)
+   ('B', 11, 'B', False)
+   ('A', 12, 'A', True)
+   ('A', 13, 'A', True)
+   ('B', 12, 'A', True)
+   ('B', 13, 'A', True)
+   ('A', 14, 'A', True)
+   ('A', 15, 'A', True)
+   ('A', 16, 'A', True)
+   ('B', 14, 'A', True)
+   ('B', 15, 'A', True)
+   ('B', 16, 'A', True)
+   ('A', 17, 'B', False)
+   ('B', 17, 'B', False)
+
+Extracted 30 MCQs -> example/unit4.yaml
+legacy_ids: ['4.A.1', '4.A.2', '4.A.3', '4.A.4', '4.A.5', '4.A.6', '4.A.7', '4.A.8', '4.A.9', '4.A.10', '4.A.12', '4.A.13', '4.A.14', '4.A.15', '4.A.16', '4.B.1', '4.B.2', '4.B.3', '4.B.4', '4.B.5', '4.B.6', '4.B.7', '4.B.8', '4.B.9', '4.B.10', '4.B.12', '4.B.13', '4.B.14', '4.B.15', '4.B.16']
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/apcalc/tests/unit5/Test_Unit5.tex example/unit5.yaml
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('B', 3, 'A', True)
+   ('A', 3, 'A', True)
+   ('A', 4, 'A', True)
+   ('B', 4, 'A', True)
+   ('B', 5, 'A', True)
+   ('A', 5, 'A', True)
+   ('A', 6, 'A', True)
+   ('A', 7, 'A', True)
+   ('B', 6, 'A', True)
+   ('B', 7, 'A', True)
+   ('B', 8, 'A', True)
+   ('A', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('A', 10, 'A', True)
+   ('B', 9, 'A', True)
+   ('B', 10, 'A', True)
+   ('A', 11, 'B', False)
+   ('B', 11, 'B', False)
+   ('A', 12, 'A', True)
+   ('A', 13, 'A', True)
+   ('A', 14, 'A', True)
+   ('B', 12, 'A', True)
+   ('B', 13, 'A', True)
+   ('B', 14, 'A', True)
+   ('A', 15, 'A', True)
+   ('A', 16, 'A', True)
+   ('B', 15, 'A', True)
+   ('B', 16, 'A', True)
+   ('A', 17, 'B', False)
+   ('B', 17, 'B', False)
+
+Extracted 30 MCQs -> example/unit5.yaml
+legacy_ids: ['5.A.1', '5.A.2', '5.A.3', '5.A.4', '5.A.5', '5.A.6', '5.A.7', '5.A.8', '5.A.9', '5.A.10', '5.A.12', '5.A.13', '5.A.14', '5.A.15', '5.A.16', '5.B.1', '5.B.2', '5.B.3', '5.B.4', '5.B.5', '5.B.6', '5.B.7', '5.B.8', '5.B.9', '5.B.10', '5.B.12', '5.B.13', '5.B.14', '5.B.15', '5.B.16']
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/apcalc/tests/unit6/Test_Unit6.tex example/unit6.yaml
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('B', 3, 'A', True)
+   ('A', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('A', 6, 'A', True)
+   ('A', 7, 'A', True)
+   ('B', 4, 'A', True)
+   ('B', 5, 'A', True)
+   ('B', 6, 'A', True)
+   ('B', 7, 'A', True)
+   ('A', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('A', 10, 'A', True)
+   ('B', 8, 'A', True)
+   ('B', 9, 'A', True)
+   ('B', 10, 'A', True)
+   ('A', 11, 'B', False)
+   ('A', 12, 'A', True)
+   ('A', 13, 'A', True)
+   ('A', 14, 'A', True)
+   ('B', 11, 'A', True)
+   ('B', 12, 'A', True)
+   ('B', 13, 'A', True)
+   ('A', 15, 'A', True)
+   ('A', 16, 'A', True)
+   ('B', 14, 'A', True)
+   ('B', 15, 'A', True)
+   ('A', 17, 'B', False)
+   ('B', 16, 'B', False)
+
+Extracted 30 MCQs -> example/unit6.yaml
+legacy_ids: ['6.A.1', '6.A.2', '6.A.3', '6.A.4', '6.A.5', '6.A.6', '6.A.7', '6.A.8', '6.A.9', '6.A.10', '6.A.12', '6.A.13', '6.A.14', '6.A.15', '6.A.16', '6.B.1', '6.B.2', '6.B.3', '6.B.4', '6.B.5', '6.B.6', '6.B.7', '6.B.8', '6.B.9', '6.B.10', '6.B.11', '6.B.12', '6.B.13', '6.B.14', '6.B.15']
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/apcalc/tests/unit7/Test_Unit7.tex example/unit7.yaml
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('A', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('A', 6, 'A', True)
+   ('B', 3, 'A', True)
+   ('B', 4, 'A', True)
+   ('B', 5, 'A', True)
+   ('A', 7, 'A', True)
+   ('A', 8, 'A', True)
+   ('B', 6, 'A', True)
+   ('B', 7, 'A', True)
+   ('B', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('A', 10, 'A', True)
+   ('B', 9, 'A', True)
+   ('B', 10, 'A', True)
+   ('A', 11, 'B', False)
+   ('B', 11, 'B', False)
+   ('A', 12, 'A', True)
+   ('A', 13, 'A', True)
+   ('A', 14, 'A', True)
+   ('B', 12, 'A', True)
+   ('B', 13, 'A', True)
+   ('B', 14, 'A', True)
+   ('A', 15, 'A', True)
+   ('A', 16, 'A', True)
+   ('B', 15, 'A', True)
+   ('B', 16, 'A', True)
+   ('A', 17, 'B', False)
+   ('B', 17, 'B', False)
+
+Extracted 30 MCQs -> example/unit7.yaml
+legacy_ids: ['7.A.1', '7.A.2', '7.A.3', '7.A.4', '7.A.5', '7.A.6', '7.A.7', '7.A.8', '7.A.9', '7.A.10', '7.A.12', '7.A.13', '7.A.14', '7.A.15', '7.A.16', '7.B.1', '7.B.2', '7.B.3', '7.B.4', '7.B.5', '7.B.6', '7.B.7', '7.B.8', '7.B.9', '7.B.10', '7.B.12', '7.B.13', '7.B.14', '7.B.15', '7.B.16']
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/apcalc/tests/unit8/Test_Unit8.tex example/unit8.yaml
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('A', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('A', 6, 'A', True)
+   ('B', 3, 'A', True)
+   ('B', 4, 'A', True)
+   ('B', 5, 'A', True)
+   ('A', 7, 'A', True)
+   ('A', 8, 'A', True)
+   ('B', 6, 'A', True)
+   ('B', 7, 'A', True)
+   ('B', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('A', 10, 'A', True)
+   ('B', 9, 'A', True)
+   ('B', 10, 'A', True)
+   ('A', 11, 'B', False)
+   ('B', 11, 'B', False)
+   ('A', 12, 'A', True)
+   ('A', 13, 'A', True)
+   ('B', 12, 'A', True)
+   ('B', 13, 'A', True)
+   ('B', 14, 'A', True)
+   ('A', 14, 'A', True)
+   ('A', 15, 'A', True)
+   ('A', 16, 'A', True)
+   ('B', 15, 'A', True)
+   ('B', 16, 'A', True)
+   ('A', 17, 'B', False)
+   ('B', 17, 'B', False)
+
+Extracted 30 MCQs -> example/unit8.yaml
+legacy_ids: ['8.A.1', '8.A.2', '8.A.3', '8.A.4', '8.A.5', '8.A.6', '8.A.7', '8.A.8', '8.A.9', '8.A.10', '8.A.12', '8.A.13', '8.A.14', '8.A.15', '8.A.16', '8.B.1', '8.B.2', '8.B.3', '8.B.4', '8.B.5', '8.B.6', '8.B.7', '8.B.8', '8.B.9', '8.B.10', '8.B.12', '8.B.13', '8.B.14', '8.B.15', '8.B.16']
+➜  test-generator git:(main) ✗ git st
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   example/images/12-1.png
+        new file:   example/images/12-2.png
+        new file:   example/images/16.png
+        new file:   example/images/17-B.png
+        new file:   example/images/17C.png
+        new file:   example/images/4.png
+        modified:   test_generator/core.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        example/unit2.yaml
+        example/unit3.yaml
+        example/unit4.yaml
+        example/unit5.yaml
+        example/unit6.yaml
+        example/unit7.yaml
+        example/unit8.yaml
+        output.pdf
+
+➜  test-generator git:(main) ✗ git add example/
+➜  test-generator git:(main) ✗ git st
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   example/images/12-1.png
+        new file:   example/images/12-2.png
+        new file:   example/images/16.png
+        new file:   example/images/17-B.png
+        new file:   example/images/17C.png
+        new file:   example/images/4.png
+        new file:   example/unit2.yaml
+        new file:   example/unit3.yaml
+        new file:   example/unit4.yaml
+        new file:   example/unit5.yaml
+        new file:   example/unit6.yaml
+        new file:   example/unit7.yaml
+        new file:   example/unit8.yaml
+        modified:   test_generator/core.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        output.pdf
+
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/appc/tests/unit1a/Test_Unit1A.tex example/appc_unit1a.yaml 
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('A', 4, 'A', True)
+   ('B', 3, 'A', True)
+   ('B', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('A', 6, 'A', True)
+   ('B', 5, 'A', True)
+   ('A', 7, 'A', True)
+   ('A', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('B', 6, 'A', True)
+   ('B', 7, 'A', True)
+   ('A', 10, 'A', True)
+   ('B', 8, 'A', True)
+   ('A', 11, 'B', False)
+   ('A', 12, 'A', True)
+   ('A', 13, 'A', True)
+   ('B', 9, 'A', True)
+   ('B', 10, 'A', True)
+   ('A', 14, 'A', True)
+   ('A', 15, 'A', True)
+   ('B', 11, 'A', True)
+   ('B', 12, 'A', True)
+   ('A', 16, 'B', False)
+
+Extracted 26 MCQs -> example/appc_unit1a.yaml
+legacy_ids: ['1.A.1', '1.A.2', '1.A.3', '1.A.4', '1.A.5', '1.A.6', '1.A.7', '1.A.8', '1.A.9', '1.A.10', '1.A.12', '1.A.13', '1.A.14', '1.A.15', '1.B.1', '1.B.2', '1.B.3', '1.B.4', '1.B.5', '1.B.6', '1.B.7', '1.B.8', '1.B.9', '1.B.10', '1.B.11', '1.B.12']
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/appc/tests/unit1b/Test_Unit1B.tex example/appc_unit1b.yaml
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('A', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('A', 6, 'A', True)
+   ('B', 3, 'A', True)
+   ('B', 4, 'A', True)
+   ('B', 5, 'A', True)
+   ('B', 6, 'A', True)
+   ('A', 7, 'A', True)
+   ('A', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('B', 7, 'A', True)
+   ('B', 8, 'A', True)
+   ('B', 9, 'A', True)
+   ('A', 10, 'B', False)
+   ('A', 11, 'A', True)
+   ('B', 10, 'A', True)
+   ('B', 11, 'A', True)
+   ('A', 12, 'A', True)
+   ('A', 13, 'A', True)
+   ('B', 12, 'A', True)
+   ('A', 14, 'A', True)
+   ('B', 13, 'A', True)
+   ('A', 15, 'B', False)
+   ('B', 14, 'B', False)
+
+Extracted 26 MCQs -> example/appc_unit1b.yaml
+legacy_ids: ['1.A.1', '1.A.2', '1.A.3', '1.A.4', '1.A.5', '1.A.6', '1.A.7', '1.A.8', '1.A.9', '1.A.11', '1.A.12', '1.A.13', '1.A.14', '1.B.1', '1.B.2', '1.B.3', '1.B.4', '1.B.5', '1.B.6', '1.B.7', '1.B.8', '1.B.9', '1.B.10', '1.B.11', '1.B.12', '1.B.13']
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/appc/tests/unit2a/Test_Unit2A.tex example/appc_unit2a.yaml
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('A', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('B', 3, 'A', True)
+   ('B', 4, 'A', True)
+   ('A', 6, 'A', True)
+   ('A', 7, 'A', True)
+   ('B', 5, 'A', True)
+   ('B', 6, 'A', True)
+   ('B', 7, 'A', True)
+   ('A', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('B', 8, 'A', True)
+   ('B', 9, 'A', True)
+   ('A', 10, 'B', False)
+   ('A', 11, 'A', True)
+   ('A', 12, 'A', True)
+   ('B', 10, 'A', True)
+   ('B', 11, 'A', True)
+   ('A', 13, 'A', True)
+   ('A', 14, 'A', True)
+   ('B', 12, 'A', True)
+   ('B', 13, 'A', True)
+   ('A', 15, 'B', False)
+   ('B', 14, 'B', False)
+
+Extracted 26 MCQs -> example/appc_unit2a.yaml
+legacy_ids: ['2.A.1', '2.A.2', '2.A.3', '2.A.4', '2.A.5', '2.A.6', '2.A.7', '2.A.8', '2.A.9', '2.A.11', '2.A.12', '2.A.13', '2.A.14', '2.B.1', '2.B.2', '2.B.3', '2.B.4', '2.B.5', '2.B.6', '2.B.7', '2.B.8', '2.B.9', '2.B.10', '2.B.11', '2.B.12', '2.B.13']
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/appc/tests/unit2b/Test_Unit2B.tex example/appc_unit2b.yaml
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('B', 3, 'A', True)
+   ('A', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('A', 6, 'A', True)
+   ('B', 4, 'A', True)
+   ('B', 5, 'A', True)
+   ('B', 6, 'A', True)
+   ('A', 7, 'A', True)
+   ('A', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('B', 7, 'A', True)
+   ('B', 8, 'A', True)
+   ('B', 9, 'A', True)
+   ('A', 10, 'B', False)
+   ('B', 10, 'B', False)
+   ('A', 11, 'A', True)
+   ('A', 12, 'A', True)
+   ('B', 11, 'A', True)
+   ('B', 12, 'A', True)
+   ('A', 13, 'A', True)
+   ('A', 14, 'A', True)
+   ('B', 13, 'A', True)
+   ('B', 14, 'A', True)
+   ('A', 15, 'B', False)
+   ('B', 15, 'B', False)
+
+Extracted 26 MCQs -> example/appc_unit2b.yaml
+legacy_ids: ['2.A.1', '2.A.2', '2.A.3', '2.A.4', '2.A.5', '2.A.6', '2.A.7', '2.A.8', '2.A.9', '2.A.11', '2.A.12', '2.A.13', '2.A.14', '2.B.1', '2.B.2', '2.B.3', '2.B.4', '2.B.5', '2.B.6', '2.B.7', '2.B.8', '2.B.9', '2.B.11', '2.B.12', '2.B.13', '2.B.14']
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/appc/tests/unit2c/Test_Unit2C.tex example/appc_unit2c.yaml
+Traceback (most recent call last):
+  File "/Users/levi/Downloads/extract_mcq.py", line 373, in <module>
+    records, trace = extract_file(tex_path, unit)
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/levi/Downloads/extract_mcq.py", line 336, in extract_file
+    with open(tex_path, encoding='utf-8') as fh:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/levi/git/appc/tests/unit2c/Test_Unit2C.tex'
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/appc/tests/unit3a/Test_Unit3A.tex example/appc_unit3a.yaml
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('B', 3, 'A', True)
+   ('A', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('A', 6, 'A', True)
+   ('B', 4, 'A', True)
+   ('B', 5, 'A', True)
+   ('B', 6, 'A', True)
+   ('A', 7, 'A', True)
+   ('A', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('B', 7, 'A', True)
+   ('B', 8, 'A', True)
+   ('B', 9, 'A', True)
+   ('A', 10, 'B', False)
+   ('B', 10, 'B', False)
+   ('A', 11, 'A', True)
+   ('A', 12, 'A', True)
+   ('B', 11, 'A', True)
+   ('B', 12, 'A', True)
+   ('A', 13, 'A', True)
+   ('A', 14, 'A', True)
+   ('B', 13, 'A', True)
+   ('B', 14, 'A', True)
+   ('A', 15, 'B', False)
+   ('B', 15, 'B', False)
+
+Extracted 26 MCQs -> example/appc_unit3a.yaml
+legacy_ids: ['3.A.1', '3.A.2', '3.A.3', '3.A.4', '3.A.5', '3.A.6', '3.A.7', '3.A.8', '3.A.9', '3.A.11', '3.A.12', '3.A.13', '3.A.14', '3.B.1', '3.B.2', '3.B.3', '3.B.4', '3.B.5', '3.B.6', '3.B.7', '3.B.8', '3.B.9', '3.B.11', '3.B.12', '3.B.13', '3.B.14']
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/appc/tests/unit3b/Test_Unit3B.tex example/appc_unit3b.yaml
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('B', 3, 'A', True)
+   ('A', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('A', 6, 'A', True)
+   ('B', 4, 'A', True)
+   ('B', 5, 'A', True)
+   ('B', 6, 'A', True)
+   ('A', 7, 'A', True)
+   ('A', 8, 'A', True)
+   ('A', 9, 'A', True)
+   ('B', 7, 'A', True)
+   ('B', 8, 'A', True)
+   ('B', 9, 'A', True)
+   ('A', 10, 'B', False)
+   ('B', 10, 'B', False)
+   ('A', 11, 'A', True)
+   ('A', 12, 'A', True)
+   ('B', 11, 'A', True)
+   ('B', 12, 'A', True)
+   ('A', 13, 'A', True)
+   ('A', 14, 'A', True)
+   ('A', 15, 'B', False)
+   ('B', 13, 'B', False)
+
+Extracted 24 MCQs -> example/appc_unit3b.yaml
+legacy_ids: ['3.A.1', '3.A.2', '3.A.3', '3.A.4', '3.A.5', '3.A.6', '3.A.7', '3.A.8', '3.A.9', '3.A.11', '3.A.12', '3.A.13', '3.A.14', '3.B.1', '3.B.2', '3.B.3', '3.B.4', '3.B.5', '3.B.6', '3.B.7', '3.B.8', '3.B.9', '3.B.11', '3.B.12']
+➜  test-generator git:(main) ✗ python ~/Downloads/extract_mcq.py ~/git/appc/tests/unit3c/Test_Unit3C.tex example/appc_unit3c.yaml
+Counting trace (form, running#, subpart, is_mcq):
+   ('A', 1, 'A', True)
+   ('A', 2, 'A', True)
+   ('B', 1, 'A', True)
+   ('B', 2, 'A', True)
+   ('A', 3, 'A', True)
+   ('A', 4, 'A', True)
+   ('A', 5, 'A', True)
+   ('B', 3, 'A', True)
+   ('B', 4, 'A', True)
+   ('B', 5, 'A', True)
+   ('A', 6, 'B', False)
+   ('A', 7, 'B', False)
+   ('A', 8, 'B', False)
+   ('B', 6, 'B', False)
+   ('B', 7, 'B', False)
+   ('B', 8, 'B', False)
+
+Extracted 10 MCQs -> example/appc_unit3c.yaml
+legacy_ids: ['3.A.1', '3.A.2', '3.A.3', '3.A.4', '3.A.5', '3.B.1', '3.B.2', '3.B.3', '3.B.4', '3.B.5']
+➜  test-generator git:(main) ✗ 
