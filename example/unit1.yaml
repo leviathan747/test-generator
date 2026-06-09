@@ -21,6 +21,7 @@ questions:
     sections:
       - 1.11
       - 1.12
+    dok: unknown
 
   - id: 2
     legacy_id: 1.A.2
@@ -41,3 +42,4 @@ questions:
     sections:
       - 1.6
       - 1.7
+    dok: unknown
