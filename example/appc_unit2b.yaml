@@ -1,6 +1,6 @@
 questions:
   - id: 1
-    legacy_id: 2.A.1
+    legacy_id: 2B.A.1
     question: |
       A cybersecurity firm sells encryption packages that have security ratings
       that exist on a logarithmic scale of base 2. How many more times secure is
@@ -18,7 +18,7 @@ questions:
     dok: unknown
 
   - id: 2
-    legacy_id: 2.A.2
+    legacy_id: 2B.A.2
     question: |
       \begin{figureright}[2in]{\vspace{-2em}\includegraphics[width=1.5in]{2}}
 
@@ -38,7 +38,7 @@ questions:
     dok: unknown
 
   - id: 3
-    legacy_id: 2.A.3
+    legacy_id: 2B.A.3
     question: |
       The functions $f$ and $g$ are given by $f(x) = 10^x$ and $g(x) =
       \log_{10}(x)$. The function $h$ is given by the composition of $h(x) =
@@ -56,7 +56,7 @@ questions:
     dok: unknown
 
   - id: 4
-    legacy_id: 2.A.4
+    legacy_id: 2B.A.4
     question: |
       The exponential function $h(x)$ is decreasing and its graph is concave up
       for all $x$. Which of the following is true about the inverse function
@@ -77,7 +77,7 @@ questions:
     dok: unknown
 
   - id: 5
-    legacy_id: 2.A.5
+    legacy_id: 2B.A.5
     question: |
       Let $f(x) = \log_{10}(ax)$ and $g(x) = \log_{10}(bx^2)$ for positive
       numbers $a$ and $b$. Let $k(x) = f(x) + g(x)$. Which of the following
@@ -99,7 +99,7 @@ questions:
     dok: unknown
 
   - id: 6
-    legacy_id: 2.A.6
+    legacy_id: 2B.A.6
     question: |
       The logarithmic function $L$ can be expressed as $L(x) = A \log_3(x)$ and
       also as $L(x) = B \log_2(x)$. Which of the following is an expression for
@@ -123,7 +123,7 @@ questions:
     dok: unknown
 
   - id: 7
-    legacy_id: 2.A.7
+    legacy_id: 2B.A.7
     question: |
       The functions $f$ and $g$ are given by $f(x) = \log_3(x - 2)$ and $g(x) =
       \log_3(2x - 1)$. Find all $x$ for which $f(x) + g(x) > 2$?
@@ -148,7 +148,7 @@ questions:
     dok: unknown
 
   - id: 8
-    legacy_id: 2.A.8
+    legacy_id: 2B.A.8
     question: |
       A student is solving the equation $5^x = 10^{3x - 1}$. They do not have
       their calculator, so they have to rely on a table of logarithms which
@@ -171,7 +171,7 @@ questions:
     dok: unknown
 
   - id: 9
-    legacy_id: 2.A.9
+    legacy_id: 2B.A.9
     question: |
       The function $g(x) = 3 \cdot 8^x$ is going to be graphed on a semi-log plot
       where equally spaced marks on the $y$-axis correspond to increasing powers
@@ -190,7 +190,7 @@ questions:
     dok: unknown
 
   - id: 10
-    legacy_id: 2.A.11
+    legacy_id: 2B.A.11
     question: |
       Which of the following is an expression for the inverse of $f(x) = 3^{2x} +
       1$, along with its domain?
@@ -212,7 +212,7 @@ questions:
     dok: unknown
 
   - id: 11
-    legacy_id: 2.A.12
+    legacy_id: 2B.A.12
     question: |
       Four equally rated professional weightlifters agreed to participate in an
       experiment where they would have different amounts of time to train for a
@@ -248,7 +248,7 @@ questions:
     dok: unknown
 
   - id: 12
-    legacy_id: 2.A.13
+    legacy_id: 2B.A.13
     question: |
       \begin{figureright}[3.5in]{\vspace{-2em}\includegraphics[width=3in]{13}}
 
@@ -268,7 +268,7 @@ questions:
     dok: unknown
 
   - id: 13
-    legacy_id: 2.A.14
+    legacy_id: 2B.A.14
     question: |
       A function $f(x)$ is going to be used to model the relationship between $x$
       and $y$, with select values of $x$ and $y$ provided in the table.
@@ -302,7 +302,7 @@ questions:
     dok: unknown
 
   - id: 14
-    legacy_id: 2.B.1
+    legacy_id: 2B.B.1
     question: |
       The function $\textstyle g(x) = 2 \cdot \left( \frac{1}{2} \right)^x$ is
       going to be graphed on a semi-log plot where equally spaced marks on the
@@ -322,7 +322,7 @@ questions:
     dok: unknown
 
   - id: 15
-    legacy_id: 2.B.2
+    legacy_id: 2B.B.2
     question: |
       The exponential function $h(x)$ is increasing and its graph is concave up
       for all $x$. Which of the following is true about the inverse function
@@ -343,7 +343,7 @@ questions:
     dok: unknown
 
   - id: 16
-    legacy_id: 2.B.3
+    legacy_id: 2B.B.3
     question: |
       Let $f(x) = \log_{10}(ax)$ and $g(x) = \log_{10}(bx^2)$ for positive
       numbers $a$ and $b$. Let $k(x) = g(x) - f(x)$. Which of the following
@@ -365,7 +365,7 @@ questions:
     dok: unknown
 
   - id: 17
-    legacy_id: 2.B.4
+    legacy_id: 2B.B.4
     question: |
       The function $g$ is given by $g(x) = \ln(3x + 1) - \ln(x^2 + x - 2)$.
       What are all values of $x$ for which $g(x) < 0$?
@@ -390,7 +390,7 @@ questions:
     dok: unknown
 
   - id: 18
-    legacy_id: 2.B.5
+    legacy_id: 2B.B.5
     question: |
       The functions $f$ and $g$ are given by $f(x) = 10^x$ and $g(x) =
       \log_{10}(x)$. The function $h$ is given by the composition of $h(x) =
@@ -409,7 +409,7 @@ questions:
     dok: unknown
 
   - id: 19
-    legacy_id: 2.B.6
+    legacy_id: 2B.B.6
     question: |
       The logarithmic function $L$ given by $L(x) = \log_{10}(x)$ can be
       expressed as a vertical dilation of the natural log function: $L(x) = A
@@ -432,7 +432,7 @@ questions:
     dok: unknown
 
   - id: 20
-    legacy_id: 2.B.7
+    legacy_id: 2B.B.7
     question: |
       An emergency warning system issues threat warnings on a logarithmic scale
       of base 2. How many times more serious is a threat of level 5 compared to
@@ -450,7 +450,7 @@ questions:
     dok: unknown
 
   - id: 21
-    legacy_id: 2.B.8
+    legacy_id: 2B.B.8
     question: |
       Solve the equation: $\ln(x - 3) + \ln(x + 4) = 3 \ln 2$
     answer: $x = 4$
@@ -474,7 +474,7 @@ questions:
     dok: unknown
 
   - id: 22
-    legacy_id: 2.B.9
+    legacy_id: 2B.B.9
     question: |
       \begin{figureright}[2in]{\vspace{-2em}\includegraphics[width=1.5in]{2}}
 
@@ -494,7 +494,7 @@ questions:
     dok: unknown
 
   - id: 23
-    legacy_id: 2.B.11
+    legacy_id: 2B.B.11
     question: |
       Four equally rated professional basketball players agreed to participate
       in an experiment where they would have different amounts of time to train
@@ -530,7 +530,7 @@ questions:
     dok: unknown
 
   - id: 24
-    legacy_id: 2.B.12
+    legacy_id: 2B.B.12
     question: |
       \begin{figureright}[3.5in]{\vspace{-2em}\includegraphics[width=3in]{13}}
 
@@ -550,7 +550,7 @@ questions:
     dok: unknown
 
   - id: 25
-    legacy_id: 2.B.13
+    legacy_id: 2B.B.13
     question: |
       A function $f(x)$ is going to be used to model the relationship between $x$
       and $y$, with select values of $x$ and $y$ provided in the table.
@@ -584,7 +584,7 @@ questions:
     dok: unknown
 
   - id: 26
-    legacy_id: 2.B.14
+    legacy_id: 2B.B.14
     question: |
       Which of the following is an expression for the inverse of $f(x) = 3^{x} +
       1$, along with its domain?

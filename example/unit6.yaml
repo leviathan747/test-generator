@@ -370,7 +370,7 @@ questions:
     dok: unknown
 
   - id: 26
-    legacy_id: 6.B.11
+    legacy_id: 6.B.12
     question: |
       For $\int x(x^2 - 1)^5 dx$, if you choose $u = x^2 - 1$ then the integral becomes
       \vspace{0.2in}
@@ -384,7 +384,7 @@ questions:
     dok: unknown
 
   - id: 27
-    legacy_id: 6.B.12
+    legacy_id: 6.B.13
     question: |
       \begin{figureright}[2.1in]{%
       \begin{tabular}{ |c|c|c|c|c| }
@@ -409,7 +409,7 @@ questions:
     dok: unknown
 
   - id: 28
-    legacy_id: 6.B.13
+    legacy_id: 6.B.14
     question: Given $F'(x) = f(x)$ and $\int_{3}^{9} f(x) dx = 4$, if $F(3) = -1$, then $F(9) =$
     answer: 3
     distractors:
@@ -421,7 +421,7 @@ questions:
     dok: unknown
 
   - id: 29
-    legacy_id: 6.B.14
+    legacy_id: 6.B.15
     question: |
       \includegraphics{16.png}
 
@@ -439,7 +439,7 @@ questions:
     dok: unknown
 
   - id: 30
-    legacy_id: 6.B.15
+    legacy_id: 6.B.16
     question: |
       If $f(x) = \int_{0}^{x^3} \frac{1}{1 + t^2} dt$, find $f'(x)$.
       \vspace{0.2in}

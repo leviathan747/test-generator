@@ -439,7 +439,7 @@ questions:
     dok: unknown
 
   - id: 26
-    legacy_id: 3.B.11
+    legacy_id: 3.B.12
     question: |
       If the slope of a strictly monotonic function $f$, is $\frac{3}{4}$ at a particular
       point $(b, a)$, what is the slope of $f^{-1}$ at the point $(a, b)$?
@@ -459,7 +459,7 @@ questions:
     dok: unknown
 
   - id: 27
-    legacy_id: 3.B.12
+    legacy_id: 3.B.13
     question: Find an equation of the tangent line to the graph of $2x^2 + y^2 = 3$ at the point $(-1, -1)$.
     answer: $y + 1 = -2(x + 1)$
     distractors:
@@ -476,7 +476,7 @@ questions:
     dok: unknown
 
   - id: 28
-    legacy_id: 3.B.13
+    legacy_id: 3.B.14
     question: |
       Suppose that $g(x) = h(f(x))$, $f(4) = 5$, $h(4) = -3$, $h'(5) = 4$, $h'(4) = 12$, and $f'(4) = 6$.
       Find $g'(4)$.
@@ -493,7 +493,7 @@ questions:
     dok: unknown
 
   - id: 29
-    legacy_id: 3.B.14
+    legacy_id: 3.B.15
     question: If $e^{xy} - y^3 = e - 8$, then at $x = \frac{1}{2}$ and $y = 2$, $\dydx =$
     answer: $\frac{4e}{24 - e}$
     distractors:
@@ -515,7 +515,7 @@ questions:
     dok: unknown
 
   - id: 30
-    legacy_id: 3.B.15
+    legacy_id: 3.B.16
     question: Find $(f^{-1})'(3)$ for the function $f(x) = x^3 + 4x - 13$.
     answer: $\frac{1}{16}$
     distractors:

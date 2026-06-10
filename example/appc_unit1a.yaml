@@ -1,6 +1,6 @@
 questions:
   - id: 1
-    legacy_id: 1.A.1
+    legacy_id: 1A.A.1
     question: |
       \begin{figureright}[3.5in]{\includegraphics[width=3in]{1}}
 
@@ -18,7 +18,7 @@ questions:
     dok: unknown
 
   - id: 2
-    legacy_id: 1.A.2
+    legacy_id: 1A.A.2
     question: |
       The function $g$ is a polynomial with the following end behavior:
       \[ \lim_{x \to -\infty} g(x) = \infty \qquad \text{and} \qquad \lim_{x \to \infty} g(x) = -\infty \]
@@ -36,7 +36,7 @@ questions:
     dok: unknown
 
   - id: 3
-    legacy_id: 1.A.3
+    legacy_id: 1A.A.3
     question: |
       }
 
@@ -57,7 +57,7 @@ questions:
     dok: unknown
 
   - id: 4
-    legacy_id: 1.A.4
+    legacy_id: 1A.A.4
     question: |
       \begin{center}
         \begin{tabularx}{6in}{ |*{6}{Y|} }
@@ -93,7 +93,7 @@ questions:
     dok: unknown
 
   - id: 5
-    legacy_id: 1.A.5
+    legacy_id: 1A.A.5
     question: |
       The polynomial function $p$ is given by $p(x) = -x(x + 2)(x - 3)^2$. Which
       of the following could be the graph of $p$?
@@ -112,7 +112,7 @@ questions:
     dok: unknown
 
   - id: 6
-    legacy_id: 1.A.6
+    legacy_id: 1A.A.6
     question: |
       The polynomial $h$ is given by $h(x) = x^2(x^2 + 1)$. Which of the
       following describes the zeros of $h$?
@@ -129,7 +129,7 @@ questions:
     dok: unknown
 
   - id: 7
-    legacy_id: 1.A.7
+    legacy_id: 1A.A.7
     question: |
       }
 
@@ -150,7 +150,7 @@ questions:
     dok: unknown
 
   - id: 8
-    legacy_id: 1.A.8
+    legacy_id: 1A.A.8
     question: |
       Let $g$ be a polynomial function whose graph has a point of inflection at $x = 3$.
       Which of the following statements about $g$ must be true?
@@ -169,7 +169,7 @@ questions:
     dok: unknown
 
   - id: 9
-    legacy_id: 1.A.9
+    legacy_id: 1A.A.9
     question: |
       \begin{center}
         \begin{tabularx}{6in}{ |*{8}{Y|} }
@@ -216,7 +216,7 @@ questions:
     dok: unknown
 
   - id: 10
-    legacy_id: 1.A.10
+    legacy_id: 1A.A.11
     question: |
       The graph of $f$ is shown above with the six points $A$, $B$, $C$, $D$,
       $E$, and $F$ labeled. What are all the points where the graph of $f$ has a
@@ -234,7 +234,7 @@ questions:
     dok: unknown
 
   - id: 11
-    legacy_id: 1.A.12
+    legacy_id: 1A.A.12
     question: |
       The function $f$ is given by $f(x) = 1.07x^3 - 11.17x^2 + 23.71x + 2.13$.
       Which of the following values is an absolute extremum for the graph of $f$
@@ -257,7 +257,7 @@ questions:
     dok: unknown
 
   - id: 12
-    legacy_id: 1.A.13
+    legacy_id: 1A.A.13
     question: |
       Let $k$ be a polynomial function whose rate of change can be modeled by the
       function $R$, given by $R(x) = -3.261x^3 + 5.362x - 1.584$. Based on this
@@ -283,7 +283,7 @@ questions:
     dok: unknown
 
   - id: 13
-    legacy_id: 1.A.14
+    legacy_id: 1A.A.14
     question: |
       A ball is thrown through an open window to the ground below. the height of
       the ball, in meters, at time $t$ seconds after it is thrown can be modeled by
@@ -309,7 +309,7 @@ questions:
     dok: unknown
 
   - id: 14
-    legacy_id: 1.A.15
+    legacy_id: 1A.A.15
     question: |
       The rate of people entering a subway car on a particular day is modeled by
       the function $r$, where $r(t) = 0.03t^3 - 0.846t^2 + 6.587t + 1.428$ for
@@ -336,7 +336,7 @@ questions:
     dok: unknown
 
   - id: 15
-    legacy_id: 1.B.1
+    legacy_id: 1A.B.1
     question: |
       The polynomial $h$ is given by $h(x) = x^2(x^2 - 1)$. Which of the
       following describes the zeros of $h$?
@@ -353,7 +353,7 @@ questions:
     dok: unknown
 
   - id: 16
-    legacy_id: 1.B.2
+    legacy_id: 1A.B.2
     question: |
       \begin{center}
         \begin{tabularx}{6in}{ |*{6}{Y|} }
@@ -384,7 +384,7 @@ questions:
     dok: unknown
 
   - id: 17
-    legacy_id: 1.B.3
+    legacy_id: 1A.B.3
     question: |
       The graph of $f$ is shown above with the six points $A$, $B$, $C$, $D$,
       $E$, and $F$ labeled. What are all the points where the graph of $f$ has an
@@ -402,7 +402,7 @@ questions:
     dok: unknown
 
   - id: 18
-    legacy_id: 1.B.4
+    legacy_id: 1A.B.4
     question: |
       Let $g$ be a polynomial function whose graph has a local extremum at $x = 3$.
       Which of the following statements about $g$ must be true?
@@ -420,7 +420,7 @@ questions:
     dok: unknown
 
   - id: 19
-    legacy_id: 1.B.5
+    legacy_id: 1A.B.5
     question: |
       The table above shows values for the polynomial function $g$ at selected
       values of $x$. Which of the following claim could be true about $g$?
@@ -437,7 +437,7 @@ questions:
     dok: unknown
 
   - id: 20
-    legacy_id: 1.B.6
+    legacy_id: 1A.B.6
     question: |
       \begin{figureright}[3.5in]{\includegraphics[width=3in]{1-B}}
 
@@ -455,7 +455,7 @@ questions:
     dok: unknown
 
   - id: 21
-    legacy_id: 1.B.7
+    legacy_id: 1A.B.7
     question: |
       The function $g$ is a polynomial with the following end behavior:
       \[ \lim_{x \to -\infty} g(x) = -\infty \qquad \text{and} \qquad \lim_{x \to \infty} g(x) = -\infty \]
@@ -473,7 +473,7 @@ questions:
     dok: unknown
 
   - id: 22
-    legacy_id: 1.B.8
+    legacy_id: 1A.B.8
     question: |
       The polynomial function $p$ is given by $p(x) = -x(x + 6)(x - 3)$. Which
       of the following could be the graph of $p$?
@@ -490,7 +490,7 @@ questions:
     dok: unknown
 
   - id: 23
-    legacy_id: 1.B.9
+    legacy_id: 1A.B.9
     question: |
       The rate at which people are entering the Indianapolis Zoo on a
       particular day is modeled by the function $R$, where $R(t) = 1.013x^2 -
@@ -519,7 +519,7 @@ questions:
     dok: unknown
 
   - id: 24
-    legacy_id: 1.B.10
+    legacy_id: 1A.B.11
     question: |
       Let $k$ be a polynomial function whose rate of change can be modeled by the
       function $R$, given by $R(x) = 1.361x^3 + 6.881$. Based on this
@@ -545,7 +545,7 @@ questions:
     dok: unknown
 
   - id: 25
-    legacy_id: 1.B.11
+    legacy_id: 1A.B.12
     question: |
       The function $f$ is given by $f(x) = 0.005x^4 - 0.113x^3 + 0.449x^2 + 1.858x - 4.2$.
       Which of the following values is an absolute extremum for the graph of $f$
@@ -569,7 +569,7 @@ questions:
     dok: unknown
 
   - id: 26
-    legacy_id: 1.B.12
+    legacy_id: 1A.B.13
     question: |
       A soccer ball is kicked from the corner arc at an angle towards the center
       of the field and curves toward the goal. Its distance horizontal distance
