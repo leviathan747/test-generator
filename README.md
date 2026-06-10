@@ -32,10 +32,11 @@ python -m test_generator input.yaml output.pdf \
   --author "Levi Starrett" \
   --class-name "AP Calculus AB" \
   --form-id A \
-  --duration "30 min"
+  --duration "30 min" \
+  --images-dir path/to/images
 ```
 
-All options are optional and default to an empty string.
+All options are optional and default to an empty string (or `None` for `--images-dir`).
 
 | Flag | Description |
 |------|-------------|
@@ -44,6 +45,7 @@ All options are optional and default to an empty string.
 | `--class-name` | Class name |
 | `--form-id` | Form identifier (e.g. `A`, `B`) |
 | `--duration` | Duration string (e.g. `30 min`) |
+| `--images-dir` | Directory containing images copied into the PDF build environment. Defaults to an `images/` subdirectory next to the YAML file. |
 
 ### Python API
 
@@ -58,6 +60,7 @@ test_generator.generate_test(
     class_name="AP Calculus AB",
     form_id="A",
     duration="30 min",
+    images_dir="path/to/images",  # optional; defaults to images/ next to the YAML file
 )
 ```
 

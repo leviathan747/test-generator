@@ -54,3 +54,51 @@ def test_generate_test(tmp_path, monkeypatch):
     out_pdf = tmp_path / "out.pdf"
     result = test_generator.generate_test(str(yaml_file), str(out_pdf))
     assert Path(result).exists()
+
+
+def test_generate_test_custom_images_dir(tmp_path, monkeypatch):
+    yaml_file = tmp_path / "q.yaml"
+    yaml_file.write_text(
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: What is 2 + 2?\n"
+        "    answer: 4\n"
+        "    distractors: [3, 5]\n"
+        "    solution: Because 2+2 equals 4.\n"
+    )
+
+    images_dir = tmp_path / "custom_images"
+    images_dir.mkdir()
+    (images_dir / "fig1.png").write_bytes(b"\x89PNG")
+
+    fake_yaml = types.SimpleNamespace(safe_load=lambda s: {
+        "questions": [
+            {
+                "id": 1,
+                "question": "What is 2 + 2?",
+                "answer": "4",
+                "distractors": ["3", "5"],
+                "solution": "Because 2+2 equals 4.",
+            }
+        ]
+    })
+    sys.modules["yaml"] = fake_yaml
+
+    copied_images = []
+
+    def fake_run(cmd, check, stdout, stderr):
+        outdir = cmd[cmd.index("-output-directory") + 1]
+        imgs = Path(outdir) / "images"
+        if imgs.is_dir():
+            copied_images.extend(imgs.iterdir())
+        Path(outdir, "output.pdf").write_bytes(b"%PDF-1.4\n%EOF")
+        return subprocess.CompletedProcess(cmd, 0, stdout=b"", stderr=b"")
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+
+    out_pdf = tmp_path / "out.pdf"
+    result = test_generator.generate_test(
+        str(yaml_file), str(out_pdf), images_dir=str(images_dir)
+    )
+    assert Path(result).exists()
+    assert any(p.name == "fig1.png" for p in copied_images)

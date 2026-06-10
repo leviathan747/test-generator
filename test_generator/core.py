@@ -42,6 +42,7 @@ def generate_test(
     class_name: str = "",
     form_id: str = "",
     duration: str = "",
+    images_dir: str | None = None,
 ) -> str:
     """Generate a test PDF from a YAML file.
 
@@ -54,6 +55,9 @@ def generate_test(
         class_name: Class name.
         form_id: Form identifier (e.g. "A", "B").
         duration: Duration string (e.g. "30 min").
+        images_dir: Directory containing image files to copy into the build
+            environment. Defaults to an ``images/`` subdirectory next to the
+            YAML file when not specified.
 
     Returns:
         The path to the generated PDF (same as ``output_pdf``).
@@ -112,7 +116,7 @@ def generate_test(
         tex_path = td_path / "output.tex"
         tex_path.write_text(tex_content)
 
-        images_src = yaml_file.parent / "images"
+        images_src = Path(images_dir) if images_dir is not None else yaml_file.parent / "images"
         if images_src.is_dir():
             shutil.copytree(str(images_src), str(td_path / "images"))
 
