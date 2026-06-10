@@ -6,3 +6,6 @@
 - Add ability to chose the exact number of questions, distractors, etc.
 - Scramble question order.
 - Add a "watch" mode that waits for changes to the YAML file and regenerates the PDF when it changes.
+
+- Add preamble section to the YAML to add preamble for that specific questions set or question
+- Remove figureright environment

@@ -132,7 +132,7 @@ def generate_test(
         try:
             subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         except subprocess.CalledProcessError as err:
-            out = err.stdout.decode() if getattr(err, "stdout", None) else ""
+            out = err.stdout.decode("utf-8", errors="replace") if getattr(err, "stdout", None) else ""
             raise RuntimeError(f"pdflatex failed:\n{out}") from err
 
         generated_pdf = td_path / "output.pdf"

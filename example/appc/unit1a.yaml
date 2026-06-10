@@ -38,11 +38,9 @@ questions:
   - id: 3
     legacy_id: 1A.A.3
     question: |
-      }
-
-        The figure to the right shows the graph of a function $h$. For how many
-        values of $b$ does the function $h$ have an average rate of change of
-        $\frac{1}{2}$ over the interval $[-2, b]$?
+      The figure to the right shows the graph of a function $h$. For how many
+      values of $b$ does the function $h$ have an average rate of change of
+      $\frac{1}{2}$ over the interval $[-2, b]$?
     answer: 2
     distractors:
       - 0
@@ -131,11 +129,9 @@ questions:
   - id: 7
     legacy_id: 1A.A.7
     question: |
-      }
-
-        The figure to the right shows the graph of a function $h$. For how many
-        values of $c$ does the function $h$ have an average rate of change of
-        1 over the interval $[0, c]$?
+      The figure to the right shows the graph of a function $h$. For how many
+      values of $c$ does the function $h$ have an average rate of change of
+      1 over the interval $[0, c]$?
     answer: 1
     distractors:
       - 0

@@ -36,6 +36,7 @@ questions:
       \begin{figure}[h!]
         \centering
         \includegraphics{3}
+      \end{figure}
 
       The graph of $y=h(x)$ is shown above. Which of the following could be the
       graph of $y=h'(x)$?
@@ -291,6 +292,7 @@ questions:
     question: |
       \begin{figure}[h!]
         \includegraphics[width=\linewidth]{2}
+      \end{figure}
 
       The graphs of the \emph{derivatives} of the functions $f$, $g$, and $h$
       are shown above.  Which of the functions $f$, $g$ or $h$ have a relative
@@ -310,6 +312,7 @@ questions:
       \begin{figure}[h!]
         \centering
         \includegraphics{5B}
+      \end{figure}
 
       The graph of $y=h(x)$ is shown above. Which of the following could be the
       graph of $y=h'(x)$?
