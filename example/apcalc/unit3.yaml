@@ -2,6 +2,8 @@ questions:
   - id: 98aa752b-1380-4328-962b-c65558f857a8
     legacy_ids:
       - 3.A.1
+    related_to:
+      - b11d7c80-1115-42b0-8d7f-d9864ceed964
     question: The table shows the values of the differentiable function $f$. If $H(x) = f^{-1}(x)$, find $H'(3)$.
     answer: $\frac{1}{4}$
     distractors:
@@ -17,6 +19,8 @@ questions:
   - id: b4f08287-1ee5-4146-bffd-b62ea8155c84
     legacy_ids:
       - 3.A.2
+    related_to:
+      - 407feb1d-5d5f-4857-b282-018da1145343
     question: |
       \includegraphics{2}
 
@@ -39,6 +43,8 @@ questions:
   - id: ce6ccf9c-25ae-4354-b3dc-ee6f7c1522ab
     legacy_ids:
       - 3.A.3
+    related_to:
+      - 24851b50-ce47-4a53-955f-22a77da23a54
     question: Given $f(x) = \ln \left( \sin^{-1}(2x) \right)$, find $f'(x)$.
     answer: $\frac{2}{\sqrt{1 - 4x^2}\sin^{-1}(2x)}$
     distractors:
@@ -59,6 +65,8 @@ questions:
   - id: 046db7ba-0b2c-405b-b1c9-2edf441b3a01
     legacy_ids:
       - 3.A.4
+    related_to:
+      - 8180f4dc-d68e-4dec-bacc-fab434b69b0f
     question: If $f(x) = e^{\left( x - \frac{1}{x} \right)}$, then $f'(x) =$
     answer: $e^{\left(x - \frac{1}{x}\right)} \cdot \left(1 + \frac{1}{x^2}\right)$
     distractors:
@@ -75,6 +83,8 @@ questions:
   - id: ac2e6c35-d800-4d14-bb66-604677e73da0
     legacy_ids:
       - 3.A.5
+    related_to:
+      - 8e3d9e5e-1af1-48ea-99a9-c6b7bc1edc56
     question: Find $f'(x)$ for $f(x) = (2x^3 - 5x + 2)^4$.
     answer: $f'(x) = 4(2x^3 - 5x + 2)^3(6x^2 - 5)$
     distractors:
@@ -91,6 +101,8 @@ questions:
   - id: f7308239-176e-435d-804b-3ac9a895e8a8
     legacy_ids:
       - 3.A.6
+    related_to:
+      - a7f8a5d8-4625-4dd2-ba4c-da5c1fe5a072
     question: Find $f''(x)$ if $f(x) = 4x^6 - x^3 + \sin(2x)$.
     answer: $f''(x) = 120x^4 - 6x - 4\sin(2x)$
     distractors:
@@ -111,6 +123,8 @@ questions:
   - id: f3d8038a-1709-4a66-bafe-5ec5e6e30c42
     legacy_ids:
       - 3.A.7
+    related_to:
+      - dad6c597-fa7a-4b5b-938c-8327ede859fc
     question: Find $f'(x)$ if $f(x) = \cos^4(x^2)$.
     answer: $f'(x) = -8x\sin(x^2)\cos^3(x^2)$
     distractors:
@@ -130,6 +144,8 @@ questions:
   - id: d633c478-8d43-4d7a-ba7d-584da4fd7d5e
     legacy_ids:
       - 3.A.8
+    related_to:
+      - 91652591-a82d-466c-879d-64eab3f9b02c
     question: |
       Let $f(x) = \sqrt[3]{\ln x + 3x^2 + 5}$ and let $g$ be the inverse function
       of $f$. Given $f(1) = 2$, what is the value of $g'(2)$?
@@ -176,6 +192,8 @@ questions:
   - id: 3e42eebc-d2d1-47b7-8481-b9d785ab37cb
     legacy_ids:
       - 3.A.10
+    related_to:
+      - 667211fc-debf-4c96-9d0f-8f89c4f6f16d
     question: Given that $4x^2 - \sec y = x$, what is $\dydx$ in terms of $x$ and $y$?
     answer: $(8x - 1) \cos y \cot y$
     distractors:
@@ -196,6 +214,8 @@ questions:
   - id: 3125017b-d607-422c-9610-1636e4ac9148
     legacy_ids:
       - 3.A.12
+    related_to:
+      - 5a2c90ed-535e-420d-82e4-f6136a5c758a
     question: |
       Suppose that $g(x) = h(f(x))$, $f(3) = 6$, $h(3) = 2$, $h'(6) = 4$, $h'(3) = 15$, and $f'(3) = 8$.
       Find $g'(3)$.
@@ -215,6 +235,8 @@ questions:
   - id: 69b8c41c-2d77-4d39-a3be-72e8a37ece79
     legacy_ids:
       - 3.A.13
+    related_to:
+      - 44aaa212-0c94-43f1-8b06-dd3b0ffb4a2f
     question: Find $(f^{-1})'(2)$ for the function $f(x) = x^3 + 2x - 1$.
     answer: $\frac{1}{5}$
     distractors:
@@ -236,6 +258,8 @@ questions:
   - id: ab915e3d-56a2-43e3-bc29-0685e5ecc388
     legacy_ids:
       - 3.A.14
+    related_to:
+      - ff8fde2a-48dd-4771-a6f3-3e4ef777bc24
     question: Find an equation of the tangent line to the graph of $x^2 + 2y^2 = 3$ at the point $(1, -1)$.
     answer: $y + 1 = \frac{1}{2}(x - 1)$
     distractors:
@@ -255,6 +279,8 @@ questions:
   - id: b8f8b18c-9e3b-4f53-89ba-590f19ea2b6b
     legacy_ids:
       - 3.A.15
+    related_to:
+      - 93fac5c3-e76d-49f9-a2a6-d6458ad3d8f1
     question: |
       If the slope of a strictly monotonic function $f$, is $\frac{1}{5}$ at a
       particular point $(b, a)$, what is the slope of $f^{-1}$ at the point $(a, b)$?
@@ -277,6 +303,8 @@ questions:
   - id: 0542e9b6-b256-4fd2-96a2-e7e0fbc84b3c
     legacy_ids:
       - 3.A.16
+    related_to:
+      - 1306a0db-d442-45d0-9ff6-d3239c5cfb05
     question: If $e^{xy} - y^2 = e - 4$, then at $x = \frac{1}{2}$ and $y = 2$, $\dydx =$
     answer: $\frac{4e}{8 - e}$
     distractors:
@@ -299,6 +327,8 @@ questions:
   - id: dad6c597-fa7a-4b5b-938c-8327ede859fc
     legacy_ids:
       - 3.B.1
+    related_to:
+      - f3d8038a-1709-4a66-bafe-5ec5e6e30c42
     question: Find $f'(x)$ if $f(x) = \sin^5 (3x)$
     answer: $f'(x) = 15 \sin^4 (3x) \cos (3x)$
     distractors:
@@ -318,6 +348,8 @@ questions:
   - id: 91652591-a82d-466c-879d-64eab3f9b02c
     legacy_ids:
       - 3.B.2
+    related_to:
+      - d633c478-8d43-4d7a-ba7d-584da4fd7d5e
     question: |
       Let $f(x) = \sqrt{e^x + 2x + 3}$ and let $g$ be the inverse of $f$. Given
       $f(0) = 2$, what is the value of $g'(2)$?
@@ -343,6 +375,8 @@ questions:
   - id: a7f8a5d8-4625-4dd2-ba4c-da5c1fe5a072
     legacy_ids:
       - 3.B.3
+    related_to:
+      - f7308239-176e-435d-804b-3ac9a895e8a8
     question: Find $f''(x)$ if $f(x) = 3x^5 - 6x^2$
     answer: $f''(x) = 60x^3 - 12$
     distractors:
@@ -361,6 +395,8 @@ questions:
   - id: 8180f4dc-d68e-4dec-bacc-fab434b69b0f
     legacy_ids:
       - 3.B.4
+    related_to:
+      - 046db7ba-0b2c-405b-b1c9-2edf441b3a01
     question: If $y = e^{\sin x}$, then $\frac{dy}{dx} =$
     answer: $\cos x \cdot e^{\sin x}$
     distractors:
@@ -379,6 +415,8 @@ questions:
   - id: 667211fc-debf-4c96-9d0f-8f89c4f6f16d
     legacy_ids:
       - 3.B.5
+    related_to:
+      - 3e42eebc-d2d1-47b7-8481-b9d785ab37cb
     question: Given that $3x - \tan y = 4$, what is $\frac{dy}{dx}$ in terms of $y$?
     answer: $3 \cos^2 y$
     distractors:
@@ -397,6 +435,8 @@ questions:
   - id: 24851b50-ce47-4a53-955f-22a77da23a54
     legacy_ids:
       - 3.B.6
+    related_to:
+      - ce6ccf9c-25ae-4354-b3dc-ee6f7c1522ab
     question: Given $f(x) = \ln \left( \cot^{-1} (2x) \right)$, find $f'(x)$.
     answer: $f'(x) = -\frac{2}{\cot^{-1}(2x)\left(1 + 4x^2\right)}$
     distractors:
@@ -415,6 +455,8 @@ questions:
   - id: b11d7c80-1115-42b0-8d7f-d9864ceed964
     legacy_ids:
       - 3.B.7
+    related_to:
+      - 98aa752b-1380-4328-962b-c65558f857a8
     question: The table shows the values of the differentiable function $f$. If $H(x) = f^{-1}(x)$, find $H'(3)$.
     answer: $-\frac{1}{2}$
     distractors:
@@ -430,6 +472,8 @@ questions:
   - id: 407feb1d-5d5f-4857-b282-018da1145343
     legacy_ids:
       - 3.B.8
+    related_to:
+      - b4f08287-1ee5-4146-bffd-b62ea8155c84
     question: |
       \includegraphics{2}
 
@@ -473,6 +517,8 @@ questions:
   - id: 8e3d9e5e-1af1-48ea-99a9-c6b7bc1edc56
     legacy_ids:
       - 3.B.10
+    related_to:
+      - ac2e6c35-d800-4d14-bb66-604677e73da0
     question: Find $f'(x)$ for $f(x) = (3x^2 + 5)^6$
     answer: $f'(x) = 36x(3x^2 + 5)^5$
     distractors:
@@ -491,6 +537,8 @@ questions:
   - id: 93fac5c3-e76d-49f9-a2a6-d6458ad3d8f1
     legacy_ids:
       - 3.B.12
+    related_to:
+      - b8f8b18c-9e3b-4f53-89ba-590f19ea2b6b
     question: |
       If the slope of a strictly monotonic function $f$, is $\frac{3}{4}$ at a particular
       point $(b, a)$, what is the slope of $f^{-1}$ at the point $(a, b)$?
@@ -513,6 +561,8 @@ questions:
   - id: ff8fde2a-48dd-4771-a6f3-3e4ef777bc24
     legacy_ids:
       - 3.B.13
+    related_to:
+      - ab915e3d-56a2-43e3-bc29-0685e5ecc388
     question: Find an equation of the tangent line to the graph of $2x^2 + y^2 = 3$ at the point $(-1, -1)$.
     answer: $y + 1 = -2(x + 1)$
     distractors:
@@ -532,6 +582,8 @@ questions:
   - id: 5a2c90ed-535e-420d-82e4-f6136a5c758a
     legacy_ids:
       - 3.B.14
+    related_to:
+      - 3125017b-d607-422c-9610-1636e4ac9148
     question: |
       Suppose that $g(x) = h(f(x))$, $f(4) = 5$, $h(4) = -3$, $h'(5) = 4$, $h'(4) = 12$, and $f'(4) = 6$.
       Find $g'(4)$.
@@ -551,6 +603,8 @@ questions:
   - id: 1306a0db-d442-45d0-9ff6-d3239c5cfb05
     legacy_ids:
       - 3.B.15
+    related_to:
+      - 0542e9b6-b256-4fd2-96a2-e7e0fbc84b3c
     question: If $e^{xy} - y^3 = e - 8$, then at $x = \frac{1}{2}$ and $y = 2$, $\dydx =$
     answer: $\frac{4e}{24 - e}$
     distractors:
@@ -575,6 +629,8 @@ questions:
   - id: 44aaa212-0c94-43f1-8b06-dd3b0ffb4a2f
     legacy_ids:
       - 3.B.16
+    related_to:
+      - 69b8c41c-2d77-4d39-a3be-72e8a37ece79
     question: Find $(f^{-1})'(3)$ for the function $f(x) = x^3 + 4x - 13$.
     answer: $\frac{1}{16}$
     distractors:

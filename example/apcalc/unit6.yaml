@@ -2,6 +2,8 @@ questions:
   - id: 4e4e97ce-c05c-4a73-81ba-a805b627bf43
     legacy_ids:
       - 6.A.1
+    related_to:
+      - 169b273e-f299-4380-89cb-af3f709d937c
     question: |
       The flow of oil, in barrels per hour, through a pipeline on July 9 is given
       by the graph shown below. Of the following, which best approximates the
@@ -23,6 +25,8 @@ questions:
   - id: 9c3ea570-848c-41f9-9dbc-f3ed22bf6bfb
     legacy_ids:
       - 6.A.2
+    related_to:
+      - 157c0868-707f-4405-b49c-0deb36bff360
     question: |
       Given $\int_{-2}^{2} g(x) dx = 8$ and $\int_{0}^{2} g(x) dx = 3$, what
       is the value of $\int_{0}^{-2} 5g(x) dx$?
@@ -40,6 +44,8 @@ questions:
   - id: abe1def4-74fe-431b-8366-66eb98cea5dd
     legacy_ids:
       - 6.A.3
+    related_to:
+      - ecff39fa-88e8-44f3-8d28-56a6f2fef6d0
     question: |
       Use the Fundamental Theorem of Calculus to evaluate $\int_{1}^{8} \frac{1}{\sqrt[3]{x^2}} dx$.
       \vspace{0.2in}
@@ -56,6 +62,8 @@ questions:
   - id: 6648dccb-640d-4b09-9d15-3d19c0ffd9e9
     legacy_ids:
       - 6.A.4
+    related_to:
+      - 49840dfd-1755-49d0-a5e8-d7b868e0a9b7
     question: |
       Let $f(x)$ be a function whose first derivative is positive while the
       second derivative is negative on the closed interval $[a, b]$. The interval
@@ -76,6 +84,8 @@ questions:
   - id: 873acedc-d1b4-411e-a818-1e2260930317
     legacy_ids:
       - 6.A.5
+    related_to:
+      - a3116eae-413c-47fe-8db1-37225f8b5934
     question: |
       $\int_{1}^{e} \frac{\cos(\ln x)}{x} dx =$
       \vspace{0.2in}
@@ -92,6 +102,8 @@ questions:
   - id: 23dc11c3-00e2-4e2a-991b-11328bf3b9c6
     legacy_ids:
       - 6.A.6
+    related_to:
+      - 8f620d1d-7d86-4979-b60d-c88bcec2a977
     question: Which of the following limits is equal to $\int_{3}^{7} x^3 dx$
     answer: $\lim_{n\to\infty} \sum_{k=1}^{n} \left(\left(3 + \frac{4k}{n}\right)^3 \cdot \frac{4}{n}\right) $
     distractors:
@@ -106,6 +118,8 @@ questions:
   - id: e339b4f8-8964-4678-85b0-bb59c8cfb9ac
     legacy_ids:
       - 6.A.7
+    related_to:
+      - fe75bcb4-4af7-4cd3-a0b9-7ed00c0035d2
     question: |
       $\int_{0}^{2} \frac{x^2}{x+1} dx =$
       \vspace{0.2in}
@@ -122,6 +136,8 @@ questions:
   - id: 77e4e421-0117-4729-a5ce-87f7be44384c
     legacy_ids:
       - 6.A.8
+    related_to:
+      - 80977e91-ce5f-4d65-a39a-e24fc357da86
     question: |
       $\int \frac{dx}{x^2 - 6x + 18} =$
       \vspace{0.2in}
@@ -138,6 +154,8 @@ questions:
   - id: 94dc4d71-4d41-47df-917f-8a6a2f1f2169
     legacy_ids:
       - 6.A.9
+    related_to:
+      - 187f342f-c6fa-486c-9dc9-7164f6dc27a7
     question: |
       Evaluate the integral: $\int x\sec^2(x^2) dx$
     answer: $\frac{1}{2}\tan(x^2) + C$
@@ -153,6 +171,8 @@ questions:
   - id: abd6cf11-eeb9-4c59-8782-ecfc781d6b03
     legacy_ids:
       - 6.A.10
+    related_to:
+      - 6027f199-f824-4d0b-ac22-52172aa90327
     question: Find $f(x)$ if $f''(x) = 6x - 2$, $f'(0) = 3$, and $f(0) = 7$.
     answer: $f(x) = x^3 - x^2 + 3x + 7$
     distractors:
@@ -167,6 +187,8 @@ questions:
   - id: 1975d160-efb7-418d-843b-50ba95fa3bd7
     legacy_ids:
       - 6.A.12
+    related_to:
+      - 43655682-2992-4da3-8946-511b8dee7959
     question: |
       The function $f$ is continuous on the closed interval $[2, 8]$ and has
       values that are given in the table below. Using the subintervals $[2, 5]$,
@@ -195,6 +217,8 @@ questions:
   - id: e87d6a28-4fd5-4ed4-9fa0-c88662b33845
     legacy_ids:
       - 6.A.13
+    related_to:
+      - 373a6f99-4031-4fc3-82c0-aa9376513906
     question: |
       For $\int x(x^2 + 3)^4 dx$, if you choose $u = x^2 + 3$ then the integral becomes
       \vspace{0.2in}
@@ -211,6 +235,8 @@ questions:
   - id: d4a34292-edf3-46f0-8be0-13c5e22d0c5e
     legacy_ids:
       - 6.A.14
+    related_to:
+      - d2e812e9-fbab-4e09-88bf-4a590deba7fc
     question: Given $F(x) = \int f(x) dx$ and $\int_{6}^{8} f(x) dx = 6$, if $F(8) = -2$, then $F(6) =$
     answer: -8
     distractors:
@@ -225,6 +251,8 @@ questions:
   - id: 29cd1aac-2e94-4cbc-9225-8e05344728af
     legacy_ids:
       - 6.A.15
+    related_to:
+      - 23f9d89c-6f81-4dbd-ac81-94e300994406
     question: |
       If $f(x) = \int_{0}^{x^2} \frac{1}{1 + t^2} dt$, find $f'(x)$.
       \vspace{0.2in}
@@ -241,6 +269,7 @@ questions:
   - id: b0b914e5-256d-4eaa-aa23-ee0748180de0
     legacy_ids:
       - 6.A.16
+      - 6.B.15
     question: |
       \includegraphics{16.png}
 
@@ -261,6 +290,8 @@ questions:
   - id: 157c0868-707f-4405-b49c-0deb36bff360
     legacy_ids:
       - 6.B.1
+    related_to:
+      - 9c3ea570-848c-41f9-9dbc-f3ed22bf6bfb
     question: |
       Given $\int_{-1}^{1} g(x) dx = 7$ and $\int_{-5}^{1} g(x) dx = 5$, what
       is the value of $\int_{-5}^{-1} 3g(x) dx$?
@@ -278,6 +309,8 @@ questions:
   - id: ecff39fa-88e8-44f3-8d28-56a6f2fef6d0
     legacy_ids:
       - 6.B.2
+    related_to:
+      - abe1def4-74fe-431b-8366-66eb98cea5dd
     question: |
       Use the Fundamental Theorem of Calculus to evaluate $\int_{1}^{9} \frac{1}{\sqrt{x^3}} dx$.
       \vspace{0.2in}
@@ -294,6 +327,8 @@ questions:
   - id: 169b273e-f299-4380-89cb-af3f709d937c
     legacy_ids:
       - 6.B.3
+    related_to:
+      - 4e4e97ce-c05c-4a73-81ba-a805b627bf43
     question: |
       \includegraphics{1.png}
 
@@ -314,6 +349,8 @@ questions:
   - id: 8f620d1d-7d86-4979-b60d-c88bcec2a977
     legacy_ids:
       - 6.B.4
+    related_to:
+      - 23dc11c3-00e2-4e2a-991b-11328bf3b9c6
     question: Which of the following limits is equal to $\int_{-1}^{8} 3x^2 dx$
     answer: $\lim_{n\to\infty} \sum_{k=1}^{n} \left(3\left(-1 + \frac{9k}{n}\right)^3 \cdot \frac{9}{n}\right) $
     distractors:
@@ -328,6 +365,8 @@ questions:
   - id: a3116eae-413c-47fe-8db1-37225f8b5934
     legacy_ids:
       - 6.B.5
+    related_to:
+      - 873acedc-d1b4-411e-a818-1e2260930317
     question: |
       $\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \sin(x)\cos(x) dx =$
       \vspace{0.2in}
@@ -344,6 +383,8 @@ questions:
   - id: 49840dfd-1755-49d0-a5e8-d7b868e0a9b7
     legacy_ids:
       - 6.B.6
+    related_to:
+      - 6648dccb-640d-4b09-9d15-3d19c0ffd9e9
     question: |
       Let $f(x)$ be a function whose first derivative is negative and whose
       second derivative is negative on the closed interval $[a, b]$. The interval
@@ -364,6 +405,8 @@ questions:
   - id: fe75bcb4-4af7-4cd3-a0b9-7ed00c0035d2
     legacy_ids:
       - 6.B.7
+    related_to:
+      - e339b4f8-8964-4678-85b0-bb59c8cfb9ac
     question: |
       $\int_{-2}^{0} \frac{2x - 1}{x^2 - 2x + 1} dx =$
       \vspace{0.2in}
@@ -380,6 +423,8 @@ questions:
   - id: 6027f199-f824-4d0b-ac22-52172aa90327
     legacy_ids:
       - 6.B.8
+    related_to:
+      - abd6cf11-eeb9-4c59-8782-ecfc781d6b03
     question: Find $f(x)$ if $f''(x) = 6x - 2$, $f'(0) = 7$, and $f(0) = 3$.
     answer: $f(x) = x^3 - x^2 + 7x + 3$
     distractors:
@@ -394,6 +439,8 @@ questions:
   - id: 80977e91-ce5f-4d65-a39a-e24fc357da86
     legacy_ids:
       - 6.B.9
+    related_to:
+      - 77e4e421-0117-4729-a5ce-87f7be44384c
     question: |
       $\int \frac{dx}{\sqrt{-x^2 + 6x}} =$
       \vspace{0.2in}
@@ -410,6 +457,8 @@ questions:
   - id: 187f342f-c6fa-486c-9dc9-7164f6dc27a7
     legacy_ids:
       - 6.B.10
+    related_to:
+      - 94dc4d71-4d41-47df-917f-8a6a2f1f2169
     question: |
       Evaluate the integral: $\int 3x\csc^2(x^2) dx$
     answer: $-\frac{3}{2}\cot(x^2) + C$
@@ -425,6 +474,8 @@ questions:
   - id: 373a6f99-4031-4fc3-82c0-aa9376513906
     legacy_ids:
       - 6.B.12
+    related_to:
+      - e87d6a28-4fd5-4ed4-9fa0-c88662b33845
     question: |
       For $\int x(x^2 - 1)^5 dx$, if you choose $u = x^2 - 1$ then the integral becomes
       \vspace{0.2in}
@@ -441,6 +492,8 @@ questions:
   - id: 43655682-2992-4da3-8946-511b8dee7959
     legacy_ids:
       - 6.B.13
+    related_to:
+      - 1975d160-efb7-418d-843b-50ba95fa3bd7
     question: |
       The function $f$ is continuous on the closed interval $[2, 8]$ and has
       values that are given in the table below. Using the subintervals $[2, 5]$,
@@ -469,6 +522,8 @@ questions:
   - id: d2e812e9-fbab-4e09-88bf-4a590deba7fc
     legacy_ids:
       - 6.B.14
+    related_to:
+      - d4a34292-edf3-46f0-8be0-13c5e22d0c5e
     question: Given $F'(x) = f(x)$ and $\int_{3}^{9} f(x) dx = 4$, if $F(3) = -1$, then $F(9) =$
     answer: 3
     distractors:
@@ -480,29 +535,11 @@ questions:
     sections: []
     dok: unknown
 
-  - id: 7fcaf5f3-eb32-4bfd-a6e7-b3c8085e8414
-    legacy_ids:
-      - 6.B.15
-    question: |
-      \includegraphics{16.png}
-
-      The graph of the function $r(x)$ represents a road that runs along the edge
-      of a national park as depicted in the figure to the right. Each unit
-      represents 1 mile. Use a trapezoidal sum with three equal subintervals to
-      approximate the area of the park.
-    answer: 51 mi\textsuperscript{2}
-    distractors:
-      - 33.5 mi\textsuperscript{2}
-      - 201 mi\textsuperscript{2}
-      - 67 mi\textsuperscript{2}
-    solution: TODO
-    calculator_active: true
-    sections: []
-    dok: unknown
-
   - id: 23f9d89c-6f81-4dbd-ac81-94e300994406
     legacy_ids:
       - 6.B.16
+    related_to:
+      - 29cd1aac-2e94-4cbc-9225-8e05344728af
     question: |
       If $f(x) = \int_{0}^{x^3} \frac{1}{1 + t^2} dt$, find $f'(x)$.
       \vspace{0.2in}

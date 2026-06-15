@@ -2,6 +2,8 @@ questions:
   - id: 3be46b22-c917-426f-a12c-66d274b43e6b
     legacy_ids:
       - 1.A.1
+    related_to:
+      - 56bc6f4c-774c-4c5d-89d8-a6bc9b4a172b
     question: |
       Find the $x$ values for which $f(x)$ is not continuous where $f$ is given by
       \[
@@ -28,6 +30,8 @@ questions:
   - id: 574dc825-9fea-4daf-b65d-997c6cb71eff
     legacy_ids:
       - 1.A.2
+    related_to:
+      - 24468954-50ed-4ac6-a533-421604039f32
     question: |
       Find the limit: $\lim_{x \to -1} \frac{\sqrt{x + 5} - 2}{x + 1}$
     answer: $\frac{1}{4}$
@@ -52,6 +56,8 @@ questions:
   - id: 2d544681-c005-4c61-87d5-84ccdf2710a3
     legacy_ids:
       - 1.A.3
+    related_to:
+      - 58b38497-1b7d-438c-9f79-fd6cca076151
     question: |
       Find the limit: $\lim_{x \to -\infty} \frac{-5x}{\sqrt{16x^2 + 7}}$
     answer: 1.25
@@ -73,6 +79,8 @@ questions:
   - id: 142e92db-d3d2-4b9e-b994-deced005436a
     legacy_ids:
       - 1.A.4
+    related_to:
+      - 98833de5-5425-4056-b928-f35740c7f9f1
     question: |
       \includegraphics{4}
 
@@ -95,6 +103,8 @@ questions:
   - id: cd9c578f-3baa-4f4e-935b-5a34063e328b
     legacy_ids:
       - 1.A.5
+    related_to:
+      - 0f8dd5ca-ef6a-4eee-a497-aea585ac5341
     question: |
       Given that $\lim_{x \to a} f(x) = -3$ and $\lim_{x \to a} g(x) = 9$, find
       $\lim_{x \to a} \frac{2f(x)}{g(x) + f(x)}$.
@@ -116,6 +126,8 @@ questions:
   - id: 4c46fb67-9d1f-4264-847d-a017706e6324
     legacy_ids:
       - 1.A.6
+    related_to:
+      - 0c1746e8-aeae-4aba-a791-bc8af2055681
     question: |
       Let $f$ be a function such that $f(x) = \frac{g(x)}{h(x)}$, where $g$ and
       $h$ are continuous for all real numbers. Which one of the following
@@ -137,6 +149,8 @@ questions:
   - id: faec9f56-0cd4-4dbe-aff1-0b51b91fcde4
     legacy_ids:
       - 1.A.7
+    related_to:
+      - 4930c5be-3c77-4e89-bb06-1e2f67bf1bfd
     question: |
       Let $g$ and $h$ be the functions defined by $g(x) = \sin \left(\frac{\pi}{2}x\right) + 4$
       and $h(x) = -\frac{1}{4}x^3 + \frac{3}{4}x + \frac{9}{2}$. If $f$ is a
@@ -160,6 +174,8 @@ questions:
   - id: 583ab789-6ea3-41ff-9c55-86a61b4f2bf6
     legacy_ids:
       - 1.A.8
+    related_to:
+      - d187ad55-af78-44c6-b624-1cbfa1266bc3
     question: |
       Suppose that $y = f(x)$ is a continuous function defined for all real
       numbers $x$ and $f(-6) = 5$ and $f(-2) = -1$. If $f(c) = 0$ for one and
@@ -182,6 +198,8 @@ questions:
   - id: f19d5cfc-e1fe-4857-8ba5-c01d0b8512f7
     legacy_ids:
       - 1.A.9
+    related_to:
+      - ac1d2a62-ef18-4956-b09b-65331854288f
     question: |
       Find the constant $a$ that makes $f(x)$ continuous for its entire domain.
       \[
@@ -211,6 +229,8 @@ questions:
   - id: ef08aa1e-32b5-474b-914e-9c5b5587fad6
     legacy_ids:
       - 1.A.10
+    related_to:
+      - 91ccff56-6097-4658-9a9d-dd8a1fef016d
     question: |
       The function $f(x)$ is continuous on the closed interval $[0, 2]$ and has
       values that are given in the table below.
@@ -244,6 +264,8 @@ questions:
   - id: db6add37-babd-4adb-b0e6-8a018eff1b32
     legacy_ids:
       - 1.A.12
+    related_to:
+      - 891a128d-8750-4802-aabf-afa6ac8b9688
     question: |
       Find the limit: $\lim_{x \to \infty} \frac{6x + 1}{-8x^2 - 4}$
     answer: 0
@@ -264,6 +286,8 @@ questions:
   - id: 97126f7a-4f4f-4691-84a3-5c5fa534345d
     legacy_ids:
       - 1.A.13
+    related_to:
+      - 1f1e6b74-eaaa-4b30-9603-64b4aad36a13
     question: |
       \fullwidth{
         \begin{center}
@@ -293,6 +317,8 @@ questions:
   - id: 539986f2-a4ef-475e-b7af-7049cd1e521d
     legacy_ids:
       - 1.A.14
+    related_to:
+      - 12d3ebbd-b997-4bfe-ba79-c197de51ade5
     question: |
       If the graph of $y = \frac{ax + b}{x + c}$ has a horizontal asymptote at $y
       = 2$ and a vertical asymptote at $x = -3$, then $a + c =$
@@ -314,6 +340,8 @@ questions:
   - id: 61ff7a40-59ef-4e67-b044-a6b93d8cce75
     legacy_ids:
       - 1.A.15
+    related_to:
+      - 9254923c-3c6f-408e-a2d3-ac78a03f4295
     question: |
       Find the limit: $\lim_{h \to 0} \frac{(x + h)^2 + 3(x + h) + 4 - (x^2 + 3x + 4)}{h}$
     answer: $2x + 3$
@@ -335,6 +363,8 @@ questions:
   - id: 07efb62a-dfaa-41d2-bafb-f07bc0ff736f
     legacy_ids:
       - 1.A.16
+    related_to:
+      - 5ed2b94d-e71b-49a0-ba8d-77ecd17ffb44
     question: |
       \includegraphics{16}
 
@@ -358,6 +388,8 @@ questions:
   - id: 4930c5be-3c77-4e89-bb06-1e2f67bf1bfd
     legacy_ids:
       - 1.B.1
+    related_to:
+      - faec9f56-0cd4-4dbe-aff1-0b51b91fcde4
     question: |
       Let $g$ and $h$ be the functions defined by $g(x) = 1 - \cos \left(\frac{\pi}{3}x - \frac{\pi}{3}\right)$
       and $h(x) = x^4 - 4x^3 + 4x^2 - 1$. Which statement must be true in order to guarantee that
@@ -376,6 +408,8 @@ questions:
   - id: 98833de5-5425-4056-b928-f35740c7f9f1
     legacy_ids:
       - 1.B.2
+    related_to:
+      - 142e92db-d3d2-4b9e-b994-deced005436a
     question: |
       \includegraphics{4}
 
@@ -397,6 +431,8 @@ questions:
   - id: d187ad55-af78-44c6-b624-1cbfa1266bc3
     legacy_ids:
       - 1.B.3
+    related_to:
+      - 583ab789-6ea3-41ff-9c55-86a61b4f2bf6
     question: |
       Suppose that $y = f(x)$ is a continuous function defined for all real
       numbers $x$ and $f(3) = -1$ and $f(0) = 10$. If $f(c) = 0$ for one and
@@ -419,6 +455,8 @@ questions:
   - id: 0f8dd5ca-ef6a-4eee-a497-aea585ac5341
     legacy_ids:
       - 1.B.4
+    related_to:
+      - cd9c578f-3baa-4f4e-935b-5a34063e328b
     question: |
       Given that $\lim_{x \to b} f(x) = 2$ and $\lim_{x \to b} g(x) = -5$, find
       $\lim_{x \to b} \frac{g(x)}{f(x) - g(x)}$.
@@ -440,6 +478,8 @@ questions:
   - id: 24468954-50ed-4ac6-a533-421604039f32
     legacy_ids:
       - 1.B.5
+    related_to:
+      - 574dc825-9fea-4daf-b65d-997c6cb71eff
     question: |
       Find the limit: $\lim_{x \to 0} \frac{\sqrt{x + 1} - 1}{x}$
     answer: $\frac{1}{2}$
@@ -464,6 +504,8 @@ questions:
   - id: ac1d2a62-ef18-4956-b09b-65331854288f
     legacy_ids:
       - 1.B.6
+    related_to:
+      - f19d5cfc-e1fe-4857-8ba5-c01d0b8512f7
     question: |
       Find the constant $k$ that makes $f(x)$ continuous for its entire domain.
       \[
@@ -493,6 +535,8 @@ questions:
   - id: 58b38497-1b7d-438c-9f79-fd6cca076151
     legacy_ids:
       - 1.B.7
+    related_to:
+      - 2d544681-c005-4c61-87d5-84ccdf2710a3
     question: |
       Find the limit: $\lim_{x \to \infty} \frac{3x - 2}{\sqrt{2x^2 + 1}}$
     answer: $\frac{3}{\sqrt 2}$
@@ -513,6 +557,8 @@ questions:
   - id: 91ccff56-6097-4658-9a9d-dd8a1fef016d
     legacy_ids:
       - 1.B.8
+    related_to:
+      - ef08aa1e-32b5-474b-914e-9c5b5587fad6
     question: |
       The function $f(x)$ is continuous on the closed interval $[-3, -1]$ and has
       values that are given in the table below.
@@ -546,6 +592,8 @@ questions:
   - id: 56bc6f4c-774c-4c5d-89d8-a6bc9b4a172b
     legacy_ids:
       - 1.B.9
+    related_to:
+      - 3be46b22-c917-426f-a12c-66d274b43e6b
     question: |
       Find the $x$ values for which $f(x)$ is not continuous where $f$ is given by
       \[
@@ -571,6 +619,8 @@ questions:
   - id: 0c1746e8-aeae-4aba-a791-bc8af2055681
     legacy_ids:
       - 1.B.10
+    related_to:
+      - 4c46fb67-9d1f-4264-847d-a017706e6324
     question: |
       Let $f$ be a function such that $f(x) = \frac{g(x)}{h(x)}$, where $g$ and
       $h$ are continuous for all real numbers. Which one of the following
@@ -592,6 +642,8 @@ questions:
   - id: 12d3ebbd-b997-4bfe-ba79-c197de51ade5
     legacy_ids:
       - 1.B.12
+    related_to:
+      - 539986f2-a4ef-475e-b7af-7049cd1e521d
     question: |
       If the graph of $y = \frac{x^a + b}{x^2 - c}$ has a horizontal asymptote at
       $y = 0$ and a vertical asymptote at $x = 2$, then $a + c =$
@@ -613,6 +665,8 @@ questions:
   - id: 891a128d-8750-4802-aabf-afa6ac8b9688
     legacy_ids:
       - 1.B.13
+    related_to:
+      - db6add37-babd-4adb-b0e6-8a018eff1b32
     question: |
       Find the limit: $\lim_{x \to -\infty} \frac{6x^2 - 1}{2x^2 + 4}$
     answer: 3
@@ -633,6 +687,8 @@ questions:
   - id: 5ed2b94d-e71b-49a0-ba8d-77ecd17ffb44
     legacy_ids:
       - 1.B.14
+    related_to:
+      - 07efb62a-dfaa-41d2-bafb-f07bc0ff736f
     question: |
       \includegraphics{16}
 
@@ -656,6 +712,8 @@ questions:
   - id: 9254923c-3c6f-408e-a2d3-ac78a03f4295
     legacy_ids:
       - 1.B.15
+    related_to:
+      - 61ff7a40-59ef-4e67-b044-a6b93d8cce75
     question: |
       Find the limit: $\lim_{\Delta x \to 0} \frac{(x + \Delta x)^3 - 7(x + \Delta x) - (x^3 - 7x)}{\Delta x}$
     answer: $3x^2 - 7$
@@ -679,6 +737,8 @@ questions:
   - id: 1f1e6b74-eaaa-4b30-9603-64b4aad36a13
     legacy_ids:
       - 1.B.16
+    related_to:
+      - 97126f7a-4f4f-4691-84a3-5c5fa534345d
     question: |
       \fullwidth{
         \begin{center}

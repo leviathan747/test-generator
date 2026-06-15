@@ -2,6 +2,8 @@ questions:
   - id: 54d39645-ac7e-4901-b73c-2bfb13053768
     legacy_ids:
       - 7.A.1
+    related_to:
+      - 24db00a2-c467-4e69-be8f-52100ae26fe1
     question: |
       At each point $(x, y)$ on a certain curve, the slope of the curve is
       $\frac{y}{2 \sqrt x}$. If the curve contains the point $(0, 8)$, then its
@@ -19,6 +21,8 @@ questions:
   - id: 52f1674c-d645-4e8e-a773-7b23317279b9
     legacy_ids:
       - 7.A.2
+    related_to:
+      - 7b6db409-5c85-4663-bec5-9f6ea22af533
     question: |
       A function $f(x)$ that satisfies the equation $f(x) \cdot f'(x) = x$ and
       $f(0) = 1$ is
@@ -35,6 +39,8 @@ questions:
   - id: 1f59394c-0749-4099-bbba-b6e46dca27be
     legacy_ids:
       - 7.A.3
+    related_to:
+      - 479a15ae-b6c1-4324-a944-27f18aac91d1
     question: If $\dydx = y \sec^2 x$ and $y = 5$ when $x = 0$, then $y =$
     answer: $5e^{\tan x}$
     distractors:
@@ -49,6 +55,8 @@ questions:
   - id: b2b432e2-4f83-46a5-8d19-0c6f373dbf54
     legacy_ids:
       - 7.A.4
+    related_to:
+      - c5db5299-5bc6-4ce0-810f-83d4d97be13a
     question: |
       According to Newton’s Law of cooling, the temperature of an object
       decreases at a rate proportional to the difference between its temperature
@@ -69,6 +77,8 @@ questions:
   - id: 655f69ad-e8a6-4579-9bd1-6de4647be863
     legacy_ids:
       - 7.A.5
+    related_to:
+      - 5e86baf4-a69f-4d87-9c15-8f1c7df59d52
     question: |
       Find the value of $k$ for which the constant function $y(t) = k$ is a
       solution to the differential equation \\
@@ -86,6 +96,8 @@ questions:
   - id: 530584ff-13df-48be-adbc-1f7e096f26b6
     legacy_ids:
       - 7.A.6
+    related_to:
+      - 32ddab0f-2589-48ad-a7f1-855c9624a0d6
     question: Which of the following is a solution to the differential equation $y'' - 4y = 0$?
     answer: $y = e^{2x}$
     distractors:
@@ -100,6 +112,8 @@ questions:
   - id: f1f4d3ae-2b82-4d81-8f95-bc69804242b5
     legacy_ids:
       - 7.A.7
+    related_to:
+      - 2e7071a7-f295-49d8-a021-c0227ec3b892
     question: |
       Consider the differential equation $\dydx = \frac{4x}{y}$ for $y \ge 1$
       with initial value $y(0) = 1$. Which of the following is the slope field
@@ -117,6 +131,8 @@ questions:
   - id: 22a2db06-3388-4f29-98dd-e8b006aca5c7
     legacy_ids:
       - 7.A.8
+    related_to:
+      - 0c80d04f-55a8-4e61-9292-d946142ddf4e
     question: |
       \includegraphics{8}
 
@@ -134,6 +150,8 @@ questions:
   - id: 9d9ee6a5-bc7b-4342-bdbf-efbfc202f71b
     legacy_ids:
       - 7.A.9
+    related_to:
+      - 829b30ad-3f9e-4be2-99c2-061883b91c72
     question: Solve the differential equation $2y' = y$.
     answer: $y = Ce^{\frac{x}{2}}$
     distractors:
@@ -148,6 +166,8 @@ questions:
   - id: d3315d60-44f3-4d41-a041-01795437ab37
     legacy_ids:
       - 7.A.10
+    related_to:
+      - a1221e56-3aab-4bbe-b48f-1bb359333f32
     question: |
       Suppose $f$ is a function satisfying $f'(x) = x \sqrt{f(x)}$ for all real
       numbers $x$ and $f(3) = 25$. What is the value of $f(0)$?
@@ -164,6 +184,8 @@ questions:
   - id: 283479ed-a267-49d7-a4fd-c5f8513a8e0f
     legacy_ids:
       - 7.A.12
+    related_to:
+      - a039e619-dddb-4fa9-962b-2bf31def8987
     question: |
       A bacteria colony with population $y$ grows according to the differential
       equation $\dydx = 0.4y$. There are 2000 bacteria initially. Find the
@@ -181,6 +203,8 @@ questions:
   - id: c47727a3-e768-42c5-8ba0-0022eb186cdd
     legacy_ids:
       - 7.A.13
+    related_to:
+      - 51b06705-bc8a-4dd9-8abf-dd84021b3a7e
     question: |
       \includegraphics{13}
 
@@ -200,6 +224,8 @@ questions:
   - id: 3cc53cc6-8c12-4579-9c03-45ea15b5f33c
     legacy_ids:
       - 7.A.14
+    related_to:
+      - 4730dc60-9fae-45da-afca-7fd661436a7d
     question: |
       The differential equation $\frac{dq}{dt} = t^2q - 3q$ in separable form is:
     answer: $\frac{dq}{q} = \left(t^2 - 3\right) dt$
@@ -215,6 +241,8 @@ questions:
   - id: 94b84173-4d7b-4753-9252-48db4b4b460a
     legacy_ids:
       - 7.A.15
+    related_to:
+      - 362b5b83-6fbf-4960-921b-4ace0c8f8d2b
     question: |
       Which of the following could be a solution to the differential equation
       $\dydx = \frac{4x}{y}$ when $y(2) = -2$?
@@ -231,6 +259,8 @@ questions:
   - id: cc1569e4-4e67-4b44-93ec-488903b0fe00
     legacy_ids:
       - 7.A.16
+    related_to:
+      - 06ec39b0-39b8-45d5-92b2-d5e8acd1c5a9
     question: |
       A student attempted to solve the differential equation $\dydx = xy$ with
       initial condition $y = 2$ when $x = 0$. In which step does an error first
@@ -259,6 +289,8 @@ questions:
   - id: 32ddab0f-2589-48ad-a7f1-855c9624a0d6
     legacy_ids:
       - 7.B.1
+    related_to:
+      - 530584ff-13df-48be-adbc-1f7e096f26b6
     question: Which of the following is a solution to the differential equation $y'' + 4y = 0$?
     answer: $y = \cos 2x$
     distractors:
@@ -273,6 +305,8 @@ questions:
   - id: 2e7071a7-f295-49d8-a021-c0227ec3b892
     legacy_ids:
       - 7.B.2
+    related_to:
+      - f1f4d3ae-2b82-4d81-8f95-bc69804242b5
     question: |
       Consider the differential equation $\textstyle \dydx = \frac{3}{x^3}$ for $y \ge 1$.
       Which of the following is the slope field for the general solution to that
@@ -290,6 +324,8 @@ questions:
   - id: 7b6db409-5c85-4663-bec5-9f6ea22af533
     legacy_ids:
       - 7.B.3
+    related_to:
+      - 52f1674c-d645-4e8e-a773-7b23317279b9
     question: |
       A function $f(x)$ that satisfies the equation $f(x) \cdot f'(x) = x^2$ and
       $f(0) = 3$ is
@@ -306,6 +342,8 @@ questions:
   - id: 479a15ae-b6c1-4324-a944-27f18aac91d1
     legacy_ids:
       - 7.B.4
+    related_to:
+      - 1f59394c-0749-4099-bbba-b6e46dca27be
     question: If $\dydx = y \csc x \cot x$ and $y = 3$ when $x = 0$, then $y =$
     answer: $3e^{\csc x}$
     distractors:
@@ -320,6 +358,8 @@ questions:
   - id: 24db00a2-c467-4e69-be8f-52100ae26fe1
     legacy_ids:
       - 7.B.5
+    related_to:
+      - 54d39645-ac7e-4901-b73c-2bfb13053768
     question: |
       At each point $(x, y)$ on a certain curve, the slope of the curve is
       $2e^x - \cos x$. If the curve contains the point $(0, 3)$, then its
@@ -337,6 +377,8 @@ questions:
   - id: a1221e56-3aab-4bbe-b48f-1bb359333f32
     legacy_ids:
       - 7.B.6
+    related_to:
+      - d3315d60-44f3-4d41-a041-01795437ab37
     question: |
       Suppose $f$ is a function satisfying $f'(x) = x^2 \cdot f(x)$ for all real
       numbers $x$ and $f(3) = 1$. What is the value of $f(0)$?
@@ -353,6 +395,8 @@ questions:
   - id: 5e86baf4-a69f-4d87-9c15-8f1c7df59d52
     legacy_ids:
       - 7.B.7
+    related_to:
+      - 655f69ad-e8a6-4579-9bd1-6de4647be863
     question: |
       Find all values of $k$ for which the constant function $y(x) = 2k$ is a
       solution to the differential equation \\
@@ -370,6 +414,8 @@ questions:
   - id: 829b30ad-3f9e-4be2-99c2-061883b91c72
     legacy_ids:
       - 7.B.8
+    related_to:
+      - 9d9ee6a5-bc7b-4342-bdbf-efbfc202f71b
     question: Solve the differential equation $2yy' = 6x^2$.
     answer: $y = \pm \sqrt{2x^3 + C}$
     distractors:
@@ -384,6 +430,8 @@ questions:
   - id: 0c80d04f-55a8-4e61-9292-d946142ddf4e
     legacy_ids:
       - 7.B.9
+    related_to:
+      - 22a2db06-3388-4f29-98dd-e8b006aca5c7
     question: |
       \includegraphics{8-2}
 
@@ -401,6 +449,8 @@ questions:
   - id: c5db5299-5bc6-4ce0-810f-83d4d97be13a
     legacy_ids:
       - 7.B.10
+    related_to:
+      - b2b432e2-4f83-46a5-8d19-0c6f373dbf54
     question: |
       According to Newton’s Law of cooling, the temperature of an object
       decreases at a rate proportional to the difference between its temperature
@@ -422,6 +472,8 @@ questions:
   - id: 4730dc60-9fae-45da-afca-7fd661436a7d
     legacy_ids:
       - 7.B.12
+    related_to:
+      - 3cc53cc6-8c12-4579-9c03-45ea15b5f33c
     question: |
       The differential equation $\frac{dq}{dt} = \frac{1}{2}t(q-4)^3$ in
       separable form is:
@@ -438,6 +490,8 @@ questions:
   - id: 51b06705-bc8a-4dd9-8abf-dd84021b3a7e
     legacy_ids:
       - 7.B.13
+    related_to:
+      - c47727a3-e768-42c5-8ba0-0022eb186cdd
     question: |
       The general solution to the differential equation $\dydx = -\frac{x}{y}$ is
       a family of
@@ -454,6 +508,8 @@ questions:
   - id: a039e619-dddb-4fa9-962b-2bf31def8987
     legacy_ids:
       - 7.B.14
+    related_to:
+      - 283479ed-a267-49d7-a4fd-c5f8513a8e0f
     question: |
       A ant habitat with population $y$ grows according to the differential
       equation $\dydx = 0.1y$ ants per day. There are 100 ants initially. Find
@@ -471,6 +527,8 @@ questions:
   - id: 362b5b83-6fbf-4960-921b-4ace0c8f8d2b
     legacy_ids:
       - 7.B.15
+    related_to:
+      - 94b84173-4d7b-4753-9252-48db4b4b460a
     question: |
       Which of the following could be a solution to the differential equation
       $\dydx = \frac{3x}{y}$ when $y(3) = \sqrt{15}$?
@@ -487,6 +545,8 @@ questions:
   - id: 06ec39b0-39b8-45d5-92b2-d5e8acd1c5a9
     legacy_ids:
       - 7.B.16
+    related_to:
+      - cc1569e4-4e67-4b44-93ec-488903b0fe00
     question: |
       A student attempted to solve the differential equation $\dydx = x + 2xy$ with
       initial condition $y = 1$ when $x = 0$. In which step does an error first

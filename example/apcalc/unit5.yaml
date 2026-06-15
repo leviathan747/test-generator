@@ -2,6 +2,8 @@ questions:
   - id: c2886a1e-b20f-422e-8170-fa74f8ae7c26
     legacy_ids:
       - 5.A.1
+    related_to:
+      - 46f87a40-2ffd-4394-8b5a-ae6d1dceffdb
     question: |
       If $f$ is continuous on a closed interval $[a, b]$, which of the following
       \emph{must} be true?
@@ -18,6 +20,8 @@ questions:
   - id: a73a79b6-2444-45f8-82fc-35ce65ad363e
     legacy_ids:
       - 5.A.2
+    related_to:
+      - f463530d-c4aa-461e-a582-8dac8775555f
     question: |
       \includegraphics[width=\linewidth]{2}
 
@@ -37,6 +41,8 @@ questions:
   - id: 143b8581-b327-40d5-bc53-d1df79d0992d
     legacy_ids:
       - 5.A.3
+    related_to:
+      - 9673c318-c664-4fca-949f-c950641f148e
     question: |
       \begin{center}
         \includegraphics{3}
@@ -57,6 +63,8 @@ questions:
   - id: b3af64b8-07bf-4193-9a87-9fe99ed5fd55
     legacy_ids:
       - 5.A.4
+    related_to:
+      - 92fa180a-a653-4be4-95ed-f5b8136f131a
     question: |
       Let $f$ be a function defined and continuous on the closed interval $[a, b]$.
       If $f$ has a relative maximum at $c$ and $a < c < b$, which of the
@@ -78,6 +86,8 @@ questions:
   - id: 26aee9f5-33cf-410a-baf2-f3d600aedacd
     legacy_ids:
       - 5.A.5
+    related_to:
+      - e51d31e1-380a-4d98-86ab-408476093611
     question: |
       Given $f(x) = 6 - \frac{10}{x}$, find all $c$ in the interval $(2, 5)$ such
       that $f'(c) = \frac{f(5) - f(2)}{5 - 2}$.
@@ -94,6 +104,8 @@ questions:
   - id: 9eaac5c4-b4bc-473c-a0f2-096b642424d8
     legacy_ids:
       - 5.A.6
+    related_to:
+      - 11a89a32-5e4f-4b6e-8bd7-8dc8b008e325
     question: |
       Let $f''(x) = 3x^2 - 4$ and let $f(x)$ have first derivative critical
       numbers at -2, 0, and 2. Use the \emph{second derivative test} to determine
@@ -111,6 +123,8 @@ questions:
   - id: 3f16797c-5211-4199-9aaa-c7f06dcdffb1
     legacy_ids:
       - 5.A.7
+    related_to:
+      - af02cafc-b905-49b1-9de4-305d17dbbf4c
     question: |
       The absolute maximum value of $f(x) = x^3 - 3x^2 + 12$ on the closed
       interval $[-2, 4]$ occurs at $x=$
@@ -127,6 +141,8 @@ questions:
   - id: 5c96c1db-c162-4a04-a65d-714de9d346b2
     legacy_ids:
       - 5.A.8
+    related_to:
+      - 8bccf2f3-b409-41d8-b216-c1808a014b6a
     question: |
       If $f$ is the function defined by $f(x) = 3x^5 - 5x^4$, what are all the
       \textit{x}-coordinates of points of inflection for the graph of $f$?
@@ -143,6 +159,8 @@ questions:
   - id: 004288bc-3f02-40ef-afef-98ee413b16c4
     legacy_ids:
       - 5.A.9
+    related_to:
+      - 567877cb-ce02-44fd-801b-ee3aa07e8aba
     question: |
       What are all values of $x$ for which the function $f$ defined by
       $f(x) = x^3 + 3x^2 - 9x + 7$ is increasing?
@@ -159,6 +177,8 @@ questions:
   - id: 888c3e6a-0147-4840-900d-ae4b0bd07f32
     legacy_ids:
       - 5.A.10
+    related_to:
+      - c5290fac-2bfc-4765-ad67-9355b25bee4b
     question: |
       If $g$ is a differentiable function such that $g(x) < 0$ for all real
       numbers $x$ and if $f'(x) = (x^2 -4)g(x)$, which of the following is true?
@@ -175,6 +195,8 @@ questions:
   - id: cbb9f348-6598-47f6-86f7-dd40ba6c02e1
     legacy_ids:
       - 5.A.12
+    related_to:
+      - a9b87525-6ace-4c28-a3d3-e08a5e7cda2f
     question: |
       If $f''(x) = x(x + 1)(x - 2)^2$, then the graph of $f$ has inflection
       points when $x =$?
@@ -191,6 +213,8 @@ questions:
   - id: c926ebb0-8a68-4509-87c0-eaa2575196ff
     legacy_ids:
       - 5.A.13
+    related_to:
+      - c819eb33-229f-4868-800b-de1e6ae12428
     question: |
       The \emph{derivative} of $f$ is $x^4(x - 2)(x + 3)$. At how many points will
       the graph of $f$ have a relative maximum?
@@ -207,6 +231,8 @@ questions:
   - id: e8bed730-a622-4721-b0d1-9d186ab7a7a0
     legacy_ids:
       - 5.A.14
+    related_to:
+      - 974dd223-0c78-4e8b-8ba1-a72f5b7c2a00
     question: |
       The first derivative of the function $f$ is given by $f'(x) = \frac{\cos x}{x} - \frac{1}{5}$.
       How many critical values does $f$ have on the open interval $(0, 10)$?
@@ -223,6 +249,8 @@ questions:
   - id: a7681429-13fd-40d8-ad13-f8b4e83fe5cf
     legacy_ids:
       - 5.A.15
+    related_to:
+      - c2385d31-bd97-496d-837a-b5047c6ecce5
     question: |
       \begin{minipage}{\linewidth-2.5in}
 
@@ -248,6 +276,8 @@ questions:
   - id: 84a0636e-23ce-45f0-8f9c-b869e4be73c1
     legacy_ids:
       - 5.A.16
+    related_to:
+      - fbaf77a5-32be-494f-a87a-42e91e3b8f23
     question: |
       State the reason(s) why Rolle’s Theorem does not apply to the function
       $f(x) = \frac{2}{(x + 1.5)^2}$ on the interval $[-3, 0]$.
@@ -264,6 +294,8 @@ questions:
   - id: c5290fac-2bfc-4765-ad67-9355b25bee4b
     legacy_ids:
       - 5.B.1
+    related_to:
+      - 888c3e6a-0147-4840-900d-ae4b0bd07f32
     question: |
       If $g$ is a strictly decreasing differentiable function such that $g(2) =
       0$ and if $f'(x) = (x^2 - 4x + 3)g(x)$, which of the following is true?
@@ -284,6 +316,8 @@ questions:
   - id: 567877cb-ce02-44fd-801b-ee3aa07e8aba
     legacy_ids:
       - 5.B.2
+    related_to:
+      - 004288bc-3f02-40ef-afef-98ee413b16c4
     question: |
       What are all values of $x$ for which the function $f$ defined by
       $f(x) = x^3 + 3x^2 + 6x + 18$ is increasing?
@@ -304,6 +338,8 @@ questions:
   - id: 8bccf2f3-b409-41d8-b216-c1808a014b6a
     legacy_ids:
       - 5.B.3
+    related_to:
+      - 5c96c1db-c162-4a04-a65d-714de9d346b2
     question: |
       If $f$ is the function defined by $f(x) = x^4 + 4x^3 + 6x^2 + 60x - 24$,
       what are all the \textit{x}-coordinates of points of inflection for the
@@ -325,6 +361,8 @@ questions:
   - id: f463530d-c4aa-461e-a582-8dac8775555f
     legacy_ids:
       - 5.B.4
+    related_to:
+      - a73a79b6-2444-45f8-82fc-35ce65ad363e
     question: |
       \begin{center}
         \includegraphics[width=\linewidth]{2}
@@ -346,6 +384,8 @@ questions:
   - id: 9673c318-c664-4fca-949f-c950641f148e
     legacy_ids:
       - 5.B.5
+    related_to:
+      - 143b8581-b327-40d5-bc53-d1df79d0992d
     question: |
       \begin{center}
         \includegraphics{5B}
@@ -366,6 +406,8 @@ questions:
   - id: af02cafc-b905-49b1-9de4-305d17dbbf4c
     legacy_ids:
       - 5.B.6
+    related_to:
+      - 3f16797c-5211-4199-9aaa-c7f06dcdffb1
     question: |
       What is the absolute maximum value of $f(x) = x^3 - 3x^2 + 12$ on the
       closed interval $[-2, 4]$?
@@ -390,6 +432,8 @@ questions:
   - id: 11a89a32-5e4f-4b6e-8bd7-8dc8b008e325
     legacy_ids:
       - 5.B.7
+    related_to:
+      - 9eaac5c4-b4bc-473c-a0f2-096b642424d8
     question: |
       Let $f''(x) = 3x^2 - 3$ and let $f(x)$ have first derivative critical
       numbers at -1 and 2. Use the \emph{second derivative test} to determine
@@ -411,6 +455,8 @@ questions:
   - id: 92fa180a-a653-4be4-95ed-f5b8136f131a
     legacy_ids:
       - 5.B.8
+    related_to:
+      - b3af64b8-07bf-4193-9a87-9fe99ed5fd55
     question: |
       Let $f$ be a function defined and continuous on the closed interval $[a, b]$.
       If $f$ has a relative minimum at $c$ and $a < c < b$, which of the
@@ -432,6 +478,8 @@ questions:
   - id: e51d31e1-380a-4d98-86ab-408476093611
     legacy_ids:
       - 5.B.9
+    related_to:
+      - 26aee9f5-33cf-410a-baf2-f3d600aedacd
     question: |
       Given $f(x) = -3 + \frac{20}{x}$, find all $c$ in the interval $(-5, -2)$ such
       that $f'(c) = \frac{f(-2) - f(-5)}{-2 - (-5)}$.
@@ -459,6 +507,8 @@ questions:
   - id: 46f87a40-2ffd-4394-8b5a-ae6d1dceffdb
     legacy_ids:
       - 5.B.10
+    related_to:
+      - c2886a1e-b20f-422e-8170-fa74f8ae7c26
     question: |
       If $f$ is continuous on the closed interval $[a, b]$ and differentiable on the open interval $(a, b)$, which of the following
       \emph{must} be true?
@@ -475,6 +525,8 @@ questions:
   - id: fbaf77a5-32be-494f-a87a-42e91e3b8f23
     legacy_ids:
       - 5.B.12
+    related_to:
+      - 84a0636e-23ce-45f0-8f9c-b869e4be73c1
     question: |
       State the reason(s) why Rolle’s Theorem does not apply to the function
       $f(x) = \frac{2}{(x + 1.5)^2}$ on the interval $[-1, 1]$.
@@ -491,6 +543,8 @@ questions:
   - id: 974dd223-0c78-4e8b-8ba1-a72f5b7c2a00
     legacy_ids:
       - 5.B.13
+    related_to:
+      - e8bed730-a622-4721-b0d1-9d186ab7a7a0
     question: |
       The first derivative of the function $f$ is given by $f'(x) = \frac{25 \sin x}{x^2} - \frac{1}{6}$.
       How many critical values does $f$ have on the open interval $(0, 10)$?
@@ -507,6 +561,8 @@ questions:
   - id: c2385d31-bd97-496d-837a-b5047c6ecce5
     legacy_ids:
       - 5.B.14
+    related_to:
+      - a7681429-13fd-40d8-ad13-f8b4e83fe5cf
     question: |
       \includegraphics{15}
 
@@ -526,6 +582,8 @@ questions:
   - id: c819eb33-229f-4868-800b-de1e6ae12428
     legacy_ids:
       - 5.B.15
+    related_to:
+      - c926ebb0-8a68-4509-87c0-eaa2575196ff
     question: |
       The \emph{derivative} of $f$ is $x^3(x - 5)(x + 1)$. At how many points will
       the graph of $f$ have a relative minimum?
@@ -542,6 +600,8 @@ questions:
   - id: a9b87525-6ace-4c28-a3d3-e08a5e7cda2f
     legacy_ids:
       - 5.B.16
+    related_to:
+      - cbb9f348-6598-47f6-86f7-dd40ba6c02e1
     question: |
       If $f''(x) = x^4(x^2 + 1)(x - 5)^3$, then the graph of $f$ has inflection
       points when $x =$?

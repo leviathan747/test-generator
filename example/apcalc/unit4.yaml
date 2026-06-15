@@ -2,6 +2,8 @@ questions:
   - id: cc26d99a-8bcc-465d-aa42-b3b7dde819e1
     legacy_ids:
       - 4.A.1
+    related_to:
+      - 7ac2e915-680c-4ab3-b860-5b76e4468c5e
     question: Find $\lim_{x \to 0} \frac{e^x - \cos x}{4 \sin x}$
     answer: $\frac{1}{4}$
     distractors:
@@ -23,6 +25,8 @@ questions:
   - id: 34060c21-119b-4a3a-86c9-b390c1672a66
     legacy_ids:
       - 4.A.2
+    related_to:
+      - 7c384d65-88c9-4438-a0bc-4633600f84f6
     question: |
       A particle's position is represented by the position function $s(t) = t^2 -
       t$ for $t \ge 0$, where $s$ is measured in feet and $t$ is measured in
@@ -43,6 +47,8 @@ questions:
   - id: 78cc5dbf-c6b8-4833-b7d5-85ee8813ad4f
     legacy_ids:
       - 4.A.3
+    related_to:
+      - 36f127f2-5ad0-44e9-b7bc-34cd969186a6
     question: Find $\lim_{x \to 0} \frac{1 - e^x}{\ln(2 - e^x)}$
     answer: 1
     distractors:
@@ -64,6 +70,8 @@ questions:
   - id: 3cbdde43-c698-4257-9d4b-298562758f5e
     legacy_ids:
       - 4.A.4
+    related_to:
+      - 1688cf33-eb55-4726-bbe3-9607f070dd3b
     question: |
       Let $f$ be the function given by $f(x) = 2 \cos x + 1$. Approximate the
       value of $f(1.5)$ using the tangent line to the graph of $f$ at $\textstyle
@@ -89,6 +97,8 @@ questions:
   - id: 114acf7b-3906-45f0-9246-01dd93400cfa
     legacy_ids:
       - 4.A.5
+    related_to:
+      - a771e021-9bee-4275-9ef7-79bbe5546031
     question: |
       A spherical balloon is being inflated in such a way that its radius
       is increasing at a rate of $\textstyle \frac{1}{2}$ cm/s. How fast is
@@ -112,6 +122,8 @@ questions:
   - id: 94c4c1c6-e68f-4859-a696-a973273b4ab1
     legacy_ids:
       - 4.A.6
+    related_to:
+      - 7fd35ffa-66c3-43cc-81b6-44584bf92dad
     question: |
       The length of a rectangle is increasing at a rate of 3 m/s while the width is increasing
       at a rate of 2 m/s. When the length is 6 m and the width is 4 m, the area is
@@ -138,6 +150,8 @@ questions:
   - id: 6ea0537b-5c0f-44b4-af97-fc3756659ebb
     legacy_ids:
       - 4.A.7
+    related_to:
+      - ab338616-c134-4953-be38-10a8bc829d44
     question: |
       \includegraphics{7}
 
@@ -161,6 +175,8 @@ questions:
   - id: 6b1084d0-6a86-48bb-8aae-c54aebd3b115
     legacy_ids:
       - 4.A.8
+    related_to:
+      - 045016b3-50f6-42b4-b7e8-6b91343f23ce
     question: |
       \includegraphics{8}
 
@@ -187,6 +203,8 @@ questions:
   - id: 3affc1e0-ce29-4dcd-a6ec-29565b110b89
     legacy_ids:
       - 4.A.9
+    related_to:
+      - 96d7ccfc-b004-4348-8040-879677a217f2
     question: |
       Let $f$ be a function where $f(-2) = -2$ and $f'(-2) = 3$, and let $L(x)$ be
       the linear approximation of $f$ using the line tangent to $f$ at $x = -2$.
@@ -212,6 +230,8 @@ questions:
   - id: 4cd822ff-8e19-4f2f-9e2c-0948bdfcfd65
     legacy_ids:
       - 4.A.10
+    related_to:
+      - da213643-cde4-4a47-a4bf-a67e23d65675
     question: |
       People are entering the line to a roller coaster at a rate modeled by
       $f(t)$ people per hour and entering the ride at a rate modeled by $g(t)$
@@ -235,6 +255,8 @@ questions:
   - id: 0e476305-d873-4537-b391-2c7b1fdd2055
     legacy_ids:
       - 4.A.12
+    related_to:
+      - 97756b81-8ffe-4e0b-a3fa-b3d656717a88
     question: |
       A particle moves along the $x$-axis with velocity given by $v(t) = 3t^4 -
       11t^2 + 9t - 2$ for $-3 \le t \le 3$. How many times does the particle
@@ -258,6 +280,8 @@ questions:
   - id: 209ebfdf-7765-4fd3-8139-e0eaf4cbb7ed
     legacy_ids:
       - 4.A.13
+    related_to:
+      - db501ff2-7aa6-4523-914c-f0d0aa2c486c
     question: |
       \fullwidth{\begin{center}
         Let $f$ be the continuous function consisting of two line segments as
@@ -303,6 +327,8 @@ questions:
   - id: aad4ce95-bc7d-4642-9ced-b4094e0b333d
     legacy_ids:
       - 4.A.14
+    related_to:
+      - 02229cc1-c877-417b-b66d-a0b1478c1093
     question: |
       A point moves along the curve $y = 2x^2 + 1$ in such a way that the $y$
       value is decreasing at a rate of 2 units per second. At what rate is $x$
@@ -326,6 +352,8 @@ questions:
   - id: 707abdbd-01de-4708-94c0-1d7aa9e4a56a
     legacy_ids:
       - 4.A.15
+    related_to:
+      - 4b81fa7c-3dee-43a0-9da4-55f8c0a4cd90
     question: |
       A 12,000 liter tank of water is filled to capacity. At time $t = 0$, water
       begins to drain out of the tank at a rate modeled by $r(t)$, measured in
@@ -352,6 +380,8 @@ questions:
   - id: 0d339e3c-3f56-4d72-a5a3-6ac63786ced7
     legacy_ids:
       - 4.A.16
+    related_to:
+      - 7fd35ffa-66c3-43cc-81b6-44584bf92dad
     question: |
       If the base, $b$, of a triangle is increasing at a rate of 3 inches per
       minute while its height, $h$, is decreasing at a rate of 3 inches per
@@ -377,6 +407,8 @@ questions:
   - id: ab338616-c134-4953-be38-10a8bc829d44
     legacy_ids:
       - 4.B.1
+    related_to:
+      - 6ea0537b-5c0f-44b4-af97-fc3756659ebb
     question: |
       Use the tangent line at $x = 3$ and the graph of $h'$ below to
       approximate $h(2.9)$ given that $h(3) = 8$.
@@ -402,6 +434,8 @@ questions:
   - id: 7ac2e915-680c-4ab3-b860-5b76e4468c5e
     legacy_ids:
       - 4.B.2
+    related_to:
+      - cc26d99a-8bcc-465d-aa42-b3b7dde819e1
     question: Find $\lim_{x \to 0} \frac{e^x - x - 1}{\cos x - 1}$
     answer: -1
     distractors:
@@ -430,6 +464,8 @@ questions:
   - id: da213643-cde4-4a47-a4bf-a67e23d65675
     legacy_ids:
       - 4.B.3
+    related_to:
+      - 4cd822ff-8e19-4f2f-9e2c-0948bdfcfd65
     question: |
       Grass clippings are placed in a bin at a rate modeled by $f(t)$ kilograms
       per week. The grass clippings begin to decompose in the bin at a rate
@@ -453,6 +489,8 @@ questions:
   - id: 96d7ccfc-b004-4348-8040-879677a217f2
     legacy_ids:
       - 4.B.4
+    related_to:
+      - 3affc1e0-ce29-4dcd-a6ec-29565b110b89
     question: |
       Let $f$ be a function where $f(1) = 2$ and $f'(1) = -3$, and let $L(x)$ be
       the linear approximation of $f$ using the line tangent to $f$ at $x = 1$.
@@ -479,6 +517,8 @@ questions:
   - id: 33a1eb45-6d00-4759-a24e-7858e1631301
     legacy_ids:
       - 4.B.5
+    related_to:
+      - 114acf7b-3906-45f0-9246-01dd93400cfa
     question: |
       A boy flies a kite which is 30 meters directly above his hand. If the
       wind carries the kite horizontally at the rate of 10 meters/min while
@@ -509,6 +549,8 @@ questions:
   - id: 36f127f2-5ad0-44e9-b7bc-34cd969186a6
     legacy_ids:
       - 4.B.6
+    related_to:
+      - 78cc5dbf-c6b8-4833-b7d5-85ee8813ad4f
     question: Find $\lim_{x \to 0} \frac{\ln(2 - e^x)}{e^x - 1}$
     answer: -1
     distractors:
@@ -530,6 +572,8 @@ questions:
   - id: 1688cf33-eb55-4726-bbe3-9607f070dd3b
     legacy_ids:
       - 4.B.7
+    related_to:
+      - 3cbdde43-c698-4257-9d4b-298562758f5e
     question: |
       Approximate the value of $\sqrt{27}$ using the tangent line to the graph
       of $f(x) = \sqrt{x}$ at $x = 25$.
@@ -555,6 +599,8 @@ questions:
   - id: 045016b3-50f6-42b4-b7e8-6b91343f23ce
     legacy_ids:
       - 4.B.8
+    related_to:
+      - 6b1084d0-6a86-48bb-8aae-c54aebd3b115
     question: |
       \includegraphics{8}
 
@@ -581,6 +627,8 @@ questions:
   - id: 7c384d65-88c9-4438-a0bc-4633600f84f6
     legacy_ids:
       - 4.B.9
+    related_to:
+      - 34060c21-119b-4a3a-86c9-b390c1672a66
     question: |
       A particle's position is represented by the position function $s(t) = t^2 -
       2t$ for $t \ge 0$, where $s$ is measured in feet and $t$ is measured in
@@ -604,6 +652,8 @@ questions:
   - id: a771e021-9bee-4275-9ef7-79bbe5546031
     legacy_ids:
       - 4.B.10
+    related_to:
+      - 114acf7b-3906-45f0-9246-01dd93400cfa
     question: |
       A tank with the shape of a right circular cone with a height twice that
       of its radius is being filled by water at a constant rate of 1500 liters
@@ -631,6 +681,8 @@ questions:
   - id: db501ff2-7aa6-4523-914c-f0d0aa2c486c
     legacy_ids:
       - 4.B.12
+    related_to:
+      - 209ebfdf-7765-4fd3-8139-e0eaf4cbb7ed
     question: |
       Let $f$ be the continuous function consisting of two line segments as
       shown in the figure below. The differentiable function $g$ and its
@@ -677,6 +729,8 @@ questions:
   - id: 02229cc1-c877-417b-b66d-a0b1478c1093
     legacy_ids:
       - 4.B.13
+    related_to:
+      - aad4ce95-bc7d-4642-9ced-b4094e0b333d
     question: |
       A particle is moving along a hyperbola $xy = 8$. As it reaches the point
       $(4, 2)$, the $y$-coordinate is decreasing at a rate of 3 cm/s. How fast
@@ -700,6 +754,8 @@ questions:
   - id: 97756b81-8ffe-4e0b-a3fa-b3d656717a88
     legacy_ids:
       - 4.B.14
+    related_to:
+      - 0e476305-d873-4537-b391-2c7b1fdd2055
     question: |
       A bug moves in a straight path along a window sill with velocity given by
       $v(t) = -6t^4 + 24t^3 - 14t^2 -38t + 37$ for $-3 \le t \le 3$. How many
@@ -723,6 +779,9 @@ questions:
   - id: 7fd35ffa-66c3-43cc-81b6-44584bf92dad
     legacy_ids:
       - 4.B.15
+    related_to:
+      - 94c4c1c6-e68f-4859-a696-a973273b4ab1
+      - 0d339e3c-3f56-4d72-a5a3-6ac63786ced7
     question: |
       If the width, $w$, of a rectangle is increasing at a constant rate of 2 cm/s and the length, $l$, of the rectangle is decreasing
       at a constant rate of 2 cm/s, which statement is true about the perimeter, $P$, of the rectangle?
@@ -745,6 +804,8 @@ questions:
   - id: 4b81fa7c-3dee-43a0-9da4-55f8c0a4cd90
     legacy_ids:
       - 4.B.16
+    related_to:
+      - 707abdbd-01de-4708-94c0-1d7aa9e4a56a
     question: |
       A 12,000 liter tank of water is filled to capacity. At time $t = 0$, water
       begins to drain out of the tank at a rate modeled by $r(t)$, measured in
