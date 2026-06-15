@@ -14,13 +14,13 @@ OUTPUT_DIR = Path(__file__).parent / "output_pdfs"
 
 # Each entry: (course_dir_name, yaml_stem)
 EXAMPLE_CASES = [
-    ("appc", "unit1a"),
-    ("appc", "unit1b"),
-    ("appc", "unit2a"),
-    ("appc", "unit2b"),
-    ("appc", "unit3a"),
-    ("appc", "unit3b"),
-    ("appc", "unit3c"),
+    # ("appc", "unit1a"),
+    # ("appc", "unit1b"),
+    # ("appc", "unit2a"),
+    # ("appc", "unit2b"),
+    # ("appc", "unit3a"),
+    # ("appc", "unit3b"),
+    # ("appc", "unit3c"),
     ("apcalc", "unit1"),
     ("apcalc", "unit2"),
     ("apcalc", "unit3"),

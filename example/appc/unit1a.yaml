@@ -78,12 +78,12 @@ questions:
       - $f$ is best modeled by a quadratic function because the rate of change over consecutive equal-length input-value intervals is constant.
     solution: |
       \hspace{2in}
-      \begin{tabularx}{4in}{ *{5}{Z} }
+      \begin{tabularx}{4in}{ *{5}{Y} }
         $-4 - (-5) = \bm{1}$ & $-1 - (-4) = \bm{3}$ & $4 - (-1) = \bm{5}$ & $11 - 4 = \bm{7}$ \\
       \end{tabularx}
 
       \hspace{2.5in}
-      \begin{tabularx}{3in}{ *{4}{Z} }
+      \begin{tabularx}{3in}{ *{4}{Y} }
         $3 - 1 = \bm{2}$ & $5 - 3 = \bm{2}$ & $7 - 5 = \bm{2}$ \\
       \end{tabularx}
     sections:
@@ -101,7 +101,7 @@ questions:
       - \includegraphics[width=2.5in]{5B}
       - \includegraphics[width=2.5in]{5D}
     solution: |
-      Downard facing fourth degree polynomial. Zeros at $x = -2$, $x = 0$, and
+      Downard facing fourth degree polynomial. Yeros at $x = -2$, $x = 0$, and
       $x = 3$ (multiplicity 2).
     sections:
       - 1.4
@@ -188,22 +188,22 @@ questions:
       - The least possible degree of $g$ is five.
     solution: |
       \hspace{1.7in}
-      \begin{tabularx}{4.7in}{ *{5}{Z} }
+      \begin{tabularx}{4.7in}{ *{5}{Y} }
         $-3 - (-6) = \bm{3}$ & $1 - (-3) = \bm{4}$ & $4 - 1 = \bm{3}$ & $5 - 4 = \bm{1}$ & $4 - 5 = \bm{-1}$ \\
       \end{tabularx}
 
       \hspace{2.1in}
-      \begin{tabularx}{3.7in}{ *{4}{Z} }
+      \begin{tabularx}{3.7in}{ *{4}{Y} }
         $4 - 3 = \bm{1}$ & $3 - 4 = \bm{-1}$ & $1 - 3 = \bm{-2}$ & $-1 - 1 = \bm{-2}$ \\
       \end{tabularx}
 
       \hspace{2.3in}
-      \begin{tabularx}{3.1in}{ *{3}{Z} }
+      \begin{tabularx}{3.1in}{ *{3}{Y} }
         $-1 - 1 = \bm{-2}$ & $-2 - (-1) = \bm{-1}$ & $-2 - (-2) = \bm{0}$ \\
       \end{tabularx}
 
       \hspace{2.8in}
-      \begin{tabularx}{2.3in}{ *{2}{Z} }
+      \begin{tabularx}{2.3in}{ *{2}{Y} }
         $-1 - (-2) = \bm{1}$ & $0 - (-1) = \bm{1}$ \\
       \end{tabularx}
       \vspace{1em}
@@ -372,7 +372,7 @@ questions:
       - $f$ is best modeled by a quadratic function because the change in the average rates of change over consecutive equal-length input-value intervals is constant.
     solution: |
       \hspace{2in}
-      \begin{tabularx}{4in}{ *{5}{Z} }
+      \begin{tabularx}{4in}{ *{5}{Y} }
         $-6.5 - (-5) = \bm{-1.5}$ & $-8 - (-6.5) = \bm{-1.5}$ & $-9.5 - (-8) = \bm{-1.5}$ & $-11 - (-9.5) = \bm{-1.5}$ \\
       \end{tabularx}
     sections:

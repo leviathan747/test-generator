@@ -5,6 +5,16 @@
 
 A tiny Python package skeleton that demonstrates a test-generator utility.
 
+## Getting Started
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -r requirements-dev.txt
+pip install -e .
+pytest -q
+```
+
 ## Installation
 
 Install from source:
@@ -13,13 +23,6 @@ Install from source:
 python -m pip install --upgrade build
 python -m build
 python -m pip install dist/test_generator-0.1.0-py3-none-any.whl
-```
-
-Run tests:
-
-```bash
-python -m pip install -r requirements-dev.txt
-python -m pytest -q
 ```
 
 ## Usage

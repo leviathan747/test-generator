@@ -18,7 +18,6 @@
 \usepackage{tikz}
 \usepackage{bm}
 \usepackage[makeroom]{cancel}
-\usepackage{needspace}
 \usepackage{polynom}
 
 % document information
@@ -38,9 +37,8 @@
 % force all math to be display style with top and bottom limits
 \everymath{\displaystyle}
 
-% define centered X column types
+% define centered X column type
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
-\newcolumntype{Z}{>{\centering\arraybackslash}X}
 \renewcommand{\arraystretch}{1.5}
 
 % command to insert the "No Calculator" top banner
@@ -76,33 +74,32 @@
   \end{minipage}
 }
 
-% flag tracking whether a figureright environment is open (for auto-close in question template)
-\newif\iffigureright
-\figurerightfalse
+% command for ensuring questions don't break across pages
+\newsavebox{\fitbox}
+\newcommand{\fitquestion}[1]{%
+  % typeset content into a box
+  \sbox{\fitbox}{%
+    \setlength{\currentparskip}{\parskip}
+    \begin{minipage}{\linewidth}
+    \setlength{\parskip}{\currentparskip}
+      #1
+    \end{minipage}
+  }%
 
-% environment for placing a figure to the right with text on the left
-% YAML questions omit \end{figureright}; Question_Template.tex closes it automatically
-% usage: \begin{figureright}[width]{figure content}
-\newenvironment{figureright}[2][3in]{%
-  \def\figrightwidth{#1}%
-  \def\figrightcontent{#2}%
-  \global\figurerighttrue%
-  \noindent\begin{minipage}[t]{\dimexpr\linewidth-#1-1em\relax}%
-}{%
-  \end{minipage}%
-  \hfill%
-  \begin{minipage}[t]{\figrightwidth}%
-    \figrightcontent%
-  \end{minipage}%
-  \par%
-  \global\figurerightfalse%
+  % remaining space on page
+  \dimen0=\dimexpr\pagegoal-\pagetotal\relax
+
+  % if it doesn't fit, force page break
+  \ifdim\ht\fitbox>\dimen0
+    \newpage
+  \fi
+
+  % print content
+  \usebox{\fitbox}
 }
 
 % sign-chart placeholder (only used in solutions, which are not printed by default)
 \newcommand{\sgchart}[2]{}
-
-% command for keeping questions together on a page where possible
-\newcommand{\fitquestion}[1]{\Needspace{2in}#1}
 
 % dy/dx shorthand
 \newcommand{\dydx}{\frac{dy}{dx}}

@@ -378,7 +378,8 @@ questions:
       - $f(x) = \frac{x^2 - x - 6}{x^2 - 2x - 3}$ \simplesol{$= \frac{(x - 3)(x + 2)}{(x - 3)(x + 1)}$}
       - $f(x) = \frac{x^2 - 2x - 3}{x^2 + 3x + 2}$ \simplesol{$= \frac{(x - 3)(x + 1)}{(x + 2)(x + 1)}$}
       - $f(x) = \frac{x^2 + 3x + 2}{x^2 - 2x - 3}$ \simplesol{$= \frac{(x + 1)(x + 2)}{(x + 1)(x - 3)}$}
-    solution: $x = 1$ is a zero of both the numerator and denominator; $x = -2$ is a zero of just the numerator.
+    solution: |
+      $x = 1$ is a zero of both the numerator and denominator; $x = -2$ is a zero of just the numerator.
     sections:
       - 1.8
       - '1.10'
