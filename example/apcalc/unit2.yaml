@@ -2,12 +2,14 @@ questions:
   - id: 1
     legacy_id: 2.A.1
     question: |
-      \begin{figureright}[3.5in]{\includegraphics{1}}
+      At which of the following values of $x$ is $g(x)$ defined, but $g'(x)$ is
+      undefined?
 
-        At which of the following values of $x$ is $g(x)$ defined, but $g'(x)$ is
-        undefined?
+      \fullwidth{\begin{center}
+        \includegraphics{1}
 
         I. $x = -2$ \qquad II. $x = 2$ \qquad III. $x = 3$
+      \end{center}}
     answer: II only
     distractors:
       - I and III only

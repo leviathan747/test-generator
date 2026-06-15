@@ -9,3 +9,8 @@
 
 - Add preamble section to the YAML to add preamble for that specific questions set or question
 - Remove figureright environment
+
+- Calculator active
+- DOK
+- Sections
+- Duplicates

@@ -79,7 +79,9 @@ questions:
       all equal in area. The area of the region bounded by $y = f(x)$, $y =
       g(x)$, and the $x$-axis in Quadrant I is:
 
-      \begin{figureright}[4in]{\includegraphics{6}}
+      \fullwidth{\begin{center}
+        \includegraphics{6}
+      \end{center}}
     answer: $\frac{1}{4}$
     distractors:
       - $\frac{1}{2}$
@@ -92,12 +94,14 @@ questions:
   - id: 7
     legacy_id: 8.A.7
     question: |
-      \begin{figureright}[2.5in]{\includegraphics{7}}
+      Let $R$ be the shaded region bounded by the graph of $y = \sqrt x$, the
+      graph of $y = x - 2$, and the $x$-axis, as shown in the figure to the
+      right. Which of the following gives the volume of the solid generated
+      when R is revolved about the $x$-axis?
 
-        Let $R$ be the shaded region bounded by the graph of $y = \sqrt x$, the
-        graph of $y = x - 2$, and the $x$-axis, as shown in the figure to the
-        right. Which of the following gives the volume of the solid generated
-        when R is revolved about the $x$-axis?
+      \fullwidth{\begin{center}
+        \includegraphics{7}
+      \end{center}}
     answer: $\pi \int_0^2 x dx + \pi \int_2^4 \left( x - (x-2)^2 \right) dx$
     distractors:
       - $\pi \int_0^4 \left( x - (x-2)^2 \right) dx$
@@ -170,12 +174,14 @@ questions:
   - id: 12
     legacy_id: 8.A.13
     question: |
-      \begin{figureright}[1.75in]{\includegraphics{13}}
+      The base of a loudspeaker is determined by the two curves $y = \frac{x^2}{10}$
+      and $y = -\frac{x^2}{10}$ for $1 \le x \le 4$ as shown in the figure to the
+      right. For this loudspeaker, the cross- sections perpendicular to the
+      $x$-axis are squares. What is the volume of this speaker, in cubic units?
 
-        The base of a loudspeaker is determined by the two curves $y = \frac{x^2}{10}$
-        and $y = -\frac{x^2}{10}$ for $1 \le x \le 4$ as shown in the figure to the
-        right. For this loudspeaker, the cross- sections perpendicular to the
-        $x$-axis are squares. What is the volume of this speaker, in cubic units?
+      \fullwidth{\begin{center}
+        \includegraphics{13}
+      \end{center}}
     answer: 8.184
     distractors:
       - 4.200
@@ -236,7 +242,9 @@ questions:
       all equal in area. The area of the region bounded by $y = f(x)$, $y =
       g(x)$, and the $y$-axis in Quadrant II is:
 
-      \begin{figureright}[4in]{\includegraphics{6}}
+      \fullwidth{\begin{center}
+        \includegraphics{6}
+      \end{center}}
     answer: $\frac{1}{2}$
     distractors:
       - $\frac{1}{4}$
@@ -265,12 +273,14 @@ questions:
   - id: 18
     legacy_id: 8.B.3
     question: |
-      \begin{figureright}[2.5in]{\includegraphics{7}}
+      Let $R$ be the shaded region bounded by the graph of $y = \sqrt x$, the
+      graph of $y = x - 2$, and the $x$-axis, as shown in the figure to the
+      right. Which of the following gives the volume of the solid generated
+      when R is revolved about the $y$-axis?
 
-        Let $R$ be the shaded region bounded by the graph of $y = \sqrt x$, the
-        graph of $y = x - 2$, and the $x$-axis, as shown in the figure to the
-        right. Which of the following gives the volume of the solid generated
-        when R is revolved about the $y$-axis?
+      \fullwidth{\begin{center}
+        \includegraphics{7}
+      \end{center}}
     answer: $\pi \int_0^2 \left( (y + 2)^2 - y^4 \right) dy$
     distractors:
       - $\pi \int_0^4 \left( x - (x-2)^2 \right) dx$
@@ -418,12 +428,14 @@ questions:
   - id: 28
     legacy_id: 8.B.14
     question: |
-      \begin{figureright}[1.75in]{\includegraphics{13}}
+      The base of a loudspeaker is determined by the two curves $y = \frac{x^2}{10}$
+      and $y = -\frac{x^2}{10}$ for $1 \le x \le 4$ as shown in the figure to the
+      right. For this loudspeaker, the cross- sections perpendicular to the
+      $x$-axis are squares. What is the volume of this speaker, in cubic units?
 
-        The base of a loudspeaker is determined by the two curves $y = \frac{x^2}{10}$
-        and $y = -\frac{x^2}{10}$ for $1 \le x \le 4$ as shown in the figure to the
-        right. For this loudspeaker, the cross- sections perpendicular to the
-        $x$-axis are squares. What is the volume of this speaker, in cubic units?
+      \fullwidth{\begin{center}
+        \includegraphics{13}
+      \end{center}}
     answer: 8.184
     distractors:
       - 4.200

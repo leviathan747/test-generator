@@ -236,29 +236,29 @@ questions:
   - id: 12
     legacy_id: 4.A.13
     question: |
-      \begin{figureright}[3.75in]{
-          \begin{multicols}{2}
-            \includegraphics{13}
-
-            \begin{tabularx}{1.5in}{ |*{3}{Y|} }
-              \hline
-              \rowcolor{lightgray}
-              \bm{$x$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
-              \hline
-              1 & 5 & -1 \\
-              \hline
-              2 & 0 & -3 \\
-              \hline
-              4 & 2 & 3 \\
-              \hline
-            \end{tabularx}
-          \end{multicols}
-        }
-
+      \fullwidth{\begin{center}
         Let $f$ be the continuous function consisting of two line segments as
-        shown in the figure to the right. The differentiable function $g$ and its
+        shown in the figure below. The differentiable function $g$ and its
         first derivative are given in the table for selected values of $x$. Find
         $\textstyle \lim_{x \to 2} \frac{g(x)}{f(x)}$.
+
+        \begin{multicols}{2}
+          \includegraphics{13}
+
+          \begin{tabularx}{1.5in}{ |*{3}{Y|} }
+            \hline
+            \rowcolor{lightgray}
+            \bm{$x$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
+            \hline
+            1 & 5 & -1 \\
+            \hline
+            2 & 0 & -3 \\
+            \hline
+            4 & 2 & 3 \\
+            \hline
+          \end{tabularx}
+        \end{multicols}
+      \end{center}}
     answer: $\frac{3}{2}$
     distractors:
       - 0
@@ -347,10 +347,12 @@ questions:
   - id: 16
     legacy_id: 4.B.1
     question: |
-      \begin{figureright}[2.5in]{\includegraphics[width=1.75in]{1B}}
+      Use the tangent line at $x = 3$ and the graph of $h'$ below to
+      approximate $h(2.9)$ given that $h(3) = 8$.
 
-        Use the tangent line at $x = 3$ and the graph of $h'$ to the right to
-        approximate $h(2.9)$ given that $h(3) = 8$.
+      \fullwidth{\begin{center}
+        \includegraphics[width=1.75in]{1B}
+      \end{center}}
     answer: 7.7
     distractors:
       - 8.3
@@ -439,13 +441,15 @@ questions:
   - id: 20
     legacy_id: 4.B.5
     question: |
-      \begin{figureright}[2in]{\includegraphics{5B}}
+      A boy flies a kite which is 30 meters directly above his hand. If the
+      wind carries the kite horizontally at the rate of 10 meters/min while
+      keeping a constant altitude, which of the following describes what is
+      happening to the length of the string at the moment when 50 meters of
+      string has been let out?
 
-        A boy flies a kite which is 30 meters directly above his hand. If the
-        wind carries the kite horizontally at the rate of 10 meters/min while
-        keeping a constant altitude, which of the following describes what is
-        happening to the length of the string at the moment when 50 meters of
-        string has been let out?
+      \fullwidth{\begin{center}
+        \includegraphics{5B}
+      \end{center}}
     answer: increasing at a rate of 8 meters/min
     distractors:
       - decreasing at a rate of 8 meters/min
@@ -577,30 +581,30 @@ questions:
   - id: 26
     legacy_id: 4.B.12
     question: |
-      \begin{figureright}[3.75in]{
-          \begin{multicols}{2}
-            \includegraphics{13}
+      Let $f$ be the continuous function consisting of two line segments as
+      shown in the figure below. The differentiable function $g$ and its
+      first derivative are given in the table for selected values of $x$. Find
+      $\textstyle \lim_{x \to 2} \frac{f(x)}{g(x)}$.
 
-            % g(x) = -(x - 2)(x - 6)
-            \begin{tabularx}{1.5in}{ |*{3}{Y|} }
-              \hline
-              \rowcolor{lightgray}
-              \bm{$x$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
-              \hline
-              1 & -5 & 6 \\
-              \hline
-              2 & 0 & 4 \\
-              \hline
-              4 & 4 & 0 \\
-              \hline
-            \end{tabularx}
-          \end{multicols}
-        }
+      \fullwidth{\begin{center}
+        \begin{multicols}{2}
+          \includegraphics{13}
 
-        Let $f$ be the continuous function consisting of two line segments as
-        shown in the figure to the right. The differentiable function $g$ and its
-        first derivative are given in the table for selected values of $x$. Find
-        $\textstyle \lim_{x \to 2} \frac{f(x)}{g(x)}$.
+          % g(x) = -(x - 2)(x - 6)
+          \begin{tabularx}{1.5in}{ |*{3}{Y|} }
+            \hline
+            \rowcolor{lightgray}
+            \bm{$x$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
+            \hline
+            1 & -5 & 6 \\
+            \hline
+            2 & 0 & 4 \\
+            \hline
+            4 & 4 & 0 \\
+            \hline
+          \end{tabularx}
+        \end{multicols}
+      \end{center}}
     answer: $-\frac{1}{2}$
     distractors:
       - $\frac{1}{4}$

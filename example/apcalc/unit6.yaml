@@ -2,11 +2,13 @@ questions:
   - id: 1
     legacy_id: 6.A.1
     question: |
-      \includegraphics{1.png}
-
       The flow of oil, in barrels per hour, through a pipeline on July 9 is given
       by the graph shown below. Of the following, which best approximates the
       total number of barrels of oil that passed through the pipeline that day?
+
+      \fullwidth{\begin{center}
+        \includegraphics{1.png}
+      \end{center}}
     answer: 3,000
     distractors:
       - 600
@@ -145,19 +147,20 @@ questions:
   - id: 11
     legacy_id: 6.A.12
     question: |
-      \begin{figureright}[2.1in]{%
-      \begin{tabular}{ |c|c|c|c|c| }
-        \hline
-        $x$    & 2  & 5  & 7  & 8 \\
-        \hline
-        $f(x)$ & 20 & 30 & 40 & 10 \\
-        \hline
-      \end{tabular}}
-
       The function $f$ is continuous on the closed interval $[2, 8]$ and has
       values that are given in the table below. Using the subintervals $[2, 5]$,
       $[5, 7]$, and $[7, 8]$, what is the left sum approximation of
       $\textstyle \int_{2}^{8} f(x) dx$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{3.5in}{ |*{5}{Y|} }
+            \hline
+            $x$ & 2 & 5 & 7 & 8 \\
+            \hline
+            $f(x)$ & 20 & 30 & 40 & 10 \\
+            \hline
+        \end{tabularx}
+      \end{center}}
     answer: 160
     distractors:
       - 110
@@ -386,19 +389,20 @@ questions:
   - id: 27
     legacy_id: 6.B.13
     question: |
-      \begin{figureright}[2.1in]{%
-      \begin{tabular}{ |c|c|c|c|c| }
-        \hline
-        $x$    & 2  & 5  & 7  & 8 \\
-        \hline
-        $f(x)$ & 20 & 30 & 40 & 10 \\
-        \hline
-      \end{tabular}}
-
       The function $f$ is continuous on the closed interval $[2, 8]$ and has
       values that are given in the table below. Using the subintervals $[2, 5]$,
       $[5, 7]$, and $[7, 8]$, what is the right sum approximation of
       $\textstyle \int_{2}^{8} f(x) dx$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{3.5in}{ |*{5}{Y|} }
+            \hline
+            $x$ & 2 & 5 & 7 & 8 \\
+            \hline
+            $f(x)$ & 20 & 30 & 40 & 10 \\
+            \hline
+        \end{tabularx}
+      \end{center}}
     answer: 180
     distractors:
       - 110
