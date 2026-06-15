@@ -20,10 +20,12 @@ questions:
   - id: 2
     legacy_id: 2B.A.2
     question: |
-      \begin{figureright}[2in]{\vspace{-2em}\includegraphics[width=1.5in]{2}}
+      A graph of the exponential function $f(x)$ is shown to the right. Which of
+      the following points would line on the graph of $f^{-1}(x)$?
 
-        A graph of the exponential function $f(x)$ is shown to the right. Which of
-        the following points would line on the graph of $f^{-1}(x)$?
+      \fullwidth{\begin{center}
+        \includegraphics[width=1.5in]{2}
+      \end{center}}
     answer: $(4, -1)$
     distractors:
       - $(8, 2)$
@@ -250,13 +252,15 @@ questions:
   - id: 12
     legacy_id: 2B.A.13
     question: |
-      \begin{figureright}[3.5in]{\vspace{-2em}\includegraphics[width=3in]{13}}
+      Since the early 1970s, the number of transistors in microprocessors has
+      increased. A semi-log plot of $T$, the number of transistors, in year $x$
+      since 1970 is shown to the right. Which of the following provides the
+      correct kind of model that could be used to model $T(x)$ along with correct
+      reasoning?
 
-        Since the early 1970s, the number of transistors in microprocessors has
-        increased. A semi-log plot of $T$, the number of transistors, in year $x$
-        since 1970 is shown to the right. Which of the following provides the
-        correct kind of model that could be used to model $T(x)$ along with correct
-        reasoning?
+      \fullwidth{\begin{center}
+        \includegraphics[width=3in]{13}
+      \end{center}}
     answer: $T(x)$ could be modeled by an exponential function because the semi-log plot is reasonably linear.
     distractors:
       - $T(x)$ could be modeled by a linear function because the semi-log plot is reasonably linear.
@@ -476,10 +480,12 @@ questions:
   - id: 22
     legacy_id: 2B.B.9
     question: |
-      \begin{figureright}[2in]{\vspace{-2em}\includegraphics[width=1.5in]{2}}
+      A graph of the exponential function $f(x)$ is shown to the right. Which of
+      the following points would line on the graph of $f^{-1}(x)$?
 
-        A graph of the exponential function $f(x)$ is shown to the right. Which of
-        the following points would line on the graph of $f^{-1}(x)$?
+      \fullwidth{\begin{center}
+        \includegraphics[width=1.5in]{2}
+      \end{center}}
     answer: $(1, 0)$
     distractors:
       - $(4, 1)$
@@ -532,13 +538,15 @@ questions:
   - id: 24
     legacy_id: 2B.B.12
     question: |
-      \begin{figureright}[3.5in]{\vspace{-2em}\includegraphics[width=3in]{13}}
+      Since the early 1970s, the number of transistors in microprocessors has
+      increased. A semi-log plot of $T$, the number of transistors, in year $x$
+      since 1970 is shown to the right. Which of the following provides the
+      correct kind of model that could be used to model $T(x)$ along with correct
+      reasoning?
 
-        Since the early 1970s, the number of transistors in microprocessors has
-        increased. A semi-log plot of $T$, the number of transistors, in year $x$
-        since 1970 is shown to the right. Which of the following provides the
-        correct kind of model that could be used to model $T(x)$ along with correct
-        reasoning?
+      \fullwidth{\begin{center}
+        \includegraphics[width=3in]{13}
+      \end{center}}
     answer: $T(x)$ could be modeled by an exponential function because the semi-log plot is reasonably linear.
     distractors:
       - $T(x)$ could be modeled by a logarithmic function because the semi-log plot is reasonably linear.

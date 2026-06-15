@@ -2,11 +2,13 @@ questions:
   - id: 1
     legacy_id: 1A.A.1
     question: |
-      \begin{figureright}[3.5in]{\includegraphics[width=3in]{1}}
+      The graph of a function $k$ is shown in the figure to the right. Which of
+      the following best describes the behavior of the graph of $k$ from point
+      $A$ to point $B$.
 
-        The graph of a function $k$ is shown in the figure to the right. Which of
-        the following best describes the behavior of the graph of $k$ from point
-        $A$ to point $B$.
+      \fullwidth{\begin{center}
+        \includegraphics[width=3in]{1}
+      \end{center}}
     answer: The graph of $k$ is increasing and concave down.
     distractors:
       - The graph of $k$ is increasing and concave up.
@@ -435,11 +437,13 @@ questions:
   - id: 20
     legacy_id: 1A.B.6
     question: |
-      \begin{figureright}[3.5in]{\includegraphics[width=3in]{1-B}}
+      The graph of a function $k$ is shown in the figure to the right. Which of
+      the following best describes the behavior of the graph of $k$ from point
+      $A$ to point $B$.
 
-        The graph of a function $k$ is shown in the figure to the right. Which of
-        the following best describes the behavior of the graph of $k$ from point
-        $A$ to point $B$.
+      \fullwidth{\begin{center}
+        \includegraphics[width=3in]{1-B}
+      \end{center}}
     answer: The graph of $k$ is increasing and concave up.
     distractors:
       - The graph of $k$ is increasing and concave down.
