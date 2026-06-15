@@ -1,6 +1,7 @@
 questions:
-  - id: 1
-    legacy_id: 1B.A.1
+  - id: f2667ed4-e44d-431b-8062-482802b8e648
+    legacy_ids:
+      - 1B.A.1
     question: |
       The graph of function $f$ has a hole at $x = -1$ and a vertical asymptote
       at $x = 3$. Which of the following functions could be $f(x)$?
@@ -10,13 +11,15 @@ questions:
       - $f(x) = \frac{x^2 - 2x - 3}{x^2 + 3x + 2}$ \simplesol{$= \frac{(x - 3)(x + 1)}{(x + 2)(x + 1)}$}
       - $f(x) = \frac{x^2 + x - 2}{x^2 + 2x - 3}$ \simplesol{$= \frac{(x + 2)(x - 1)}{(x + 3)(x - 1)}$}
     solution: $x = -1$ is a zero of both the numerator and denominator; $x = 3$ is a zero of just the denominator.
+    calculator_active: false
     sections:
       - 1.9
       - '1.10'
     dok: unknown
 
-  - id: 2
-    legacy_id: 1B.A.2
+  - id: 78d3131c-4446-4ba8-b183-f72b8f9d594b
+    legacy_ids:
+      - 1B.A.2
     question: Let $f(x) = x - 3$ and $g(x) = \frac{2x^2 + x - 6}{x + 2}$. What are all the intervals on which $g(x) \ge f(x)$?
     answer: $[0, \infty)$
     distractors:
@@ -33,12 +36,14 @@ questions:
 
       \vspace{1em}
       \sgchart{~-2, 0}{\frac{x(x + 2)}{x + 2}: --+}
+    calculator_active: false
     sections:
       - 1.8
     dok: unknown
 
-  - id: 3
-    legacy_id: 1B.A.3
+  - id: 39d1e0b4-b444-4c97-a6a1-9f122285cbeb
+    legacy_ids:
+      - 1B.A.3
     question: The function $r$ is given by $r(x) = \frac{x^2 + 2x - 24}{x^3 + 8x^2 + 12x}$. Which of the following is the domain of $r$?
     answer: All real numbers $x$ where $x \ne -6$, $x \ne 0$, $x \ne -2$
     distractors:
@@ -49,12 +54,14 @@ questions:
       $r(x) = \frac{(x + 6)(x - 4)}{x(x + 6)(x + 2)}$
 
       Domain contains all real numbers except zeros of the denominator.
+    calculator_active: false
     sections:
       - 1.11
     dok: unknown
 
-  - id: 4
-    legacy_id: 1B.A.4
+  - id: cdca8f44-0b2e-47c3-814d-21d5cae6c43c
+    legacy_ids:
+      - 1B.A.4
     question: |
       The functions $m$ and $n$ are defined for all real numbers. In the $xy$-plane, the graph of $n$ is constructed by
       applying three transformations to the graph of $m$ in this order:
@@ -72,12 +79,14 @@ questions:
       - $n(x) = m\left(2(x + 4)\right) - 8$
       - $n(x) = m\left(2(x - 4)\right) - 8$
     solution: $m(x) \implies m\left(\frac{1}{2}x\right) \implies m\left(\frac{1}{2}(x - 4)\right) \implies m\left(\frac{1}{2}(x - 4)\right) - 8$
+    calculator_active: false
     sections:
       - 1.12
     dok: unknown
 
-  - id: 5
-    legacy_id: 1B.A.5
+  - id: e3af9b12-1a45-4e1b-bc5d-cd06fc4c8d13
+    legacy_ids:
+      - 1B.A.5
     question: The rational function $r$ is given by $r(x) = \frac{2x^2 - 3x + 7}{x - 4}$. Which of the following statement about $r$ is correct?
     answer: The graph of $r$ has a slant asymptote at $y = 2x + 5$.
     distractors:
@@ -85,13 +94,15 @@ questions:
       - The graph of $r$ has a slant asymptote at $y = 2x - 3$.
       - The graph of $r$ has a no horizontal or slant asymptotes.
     solution: $\polylongdiv{2x^2 - 3x + 7}{x - 4}$
+    calculator_active: false
     sections:
       - 1.7
       - 1.11
     dok: unknown
 
-  - id: 6
-    legacy_id: 1B.A.6
+  - id: 619c1f64-0172-4a91-a688-98918d2a2f86
+    legacy_ids:
+      - 1B.A.6
     question: |
       The function $P(t)$ models the population of cattle on a ranch and is given
       by $P(t) = \frac{3000t}{10 + 5t}$ for $t \ge 0$, where $t$ is measured in
@@ -106,13 +117,15 @@ questions:
       The horizontal end behavior of $P(t)$ is a horizontal asymptote. Since
       the degrees of the numerator and denominator are equal, the asymptote is
       given by the ratio of the leading coefficients.
+    calculator_active: false
     sections:
       - 1.7
       - 1.14
     dok: unknown
 
-  - id: 7
-    legacy_id: 1B.A.7
+  - id: e6ef6f52-ec60-4a21-acea-9182bdfc5277
+    legacy_ids:
+      - 1B.A.7
     question: |
       The rational function $f$ is given by $f(x) = \frac{n(x)}{d(x)}$, where and
       $n$, and $d$ are polynomial functions. The degree of $n$ is less than the
@@ -126,12 +139,14 @@ questions:
       A rational function where the polynomial in the denominator has a higher
       degree than the polynomial in the numerator will have a horizontal
       asymptote at $y = 0$.
+    calculator_active: false
     sections:
       - 1.7
     dok: unknown
 
-  - id: 8
-    legacy_id: 1B.A.8
+  - id: 731681bd-2137-48de-9f2c-715c6e0d1220
+    legacy_ids:
+      - 1B.A.8
     question: |
       A balanced coin with one side heads ($H$) and the other side tails ($T$) is
       repeatedly flipped, and the results are recorded. The coefficients in the
@@ -150,12 +165,14 @@ questions:
       The elements of the 6th row of Pascal's Triangle are 1, 6, 15, 20, 15, 6,
       1. These represent the coefficients of the expansion of $(H + T)^6$. The
       fifth element represents the coefficient of the $H^2T^4$ term.
+    calculator_active: false
     sections:
       - 1.11
     dok: unknown
 
-  - id: 9
-    legacy_id: 1B.A.9
+  - id: 912e62a6-edae-44b5-bc67-b07b369eb2e6
+    legacy_ids:
+      - 1B.A.9
     question: |
       A rational function $q(x)$ has a hole at $x = 3$, a vertical asymptote at
       $x = -1$, and a horizontal asymptote at $y = -\frac{1}{2}$.  $q(x)$ has
@@ -173,14 +190,16 @@ questions:
     solution: |
       II would indicate a vertical asymptote at $x = -\frac{1}{2}$. III would
       indicate a horizontal asymptote at $y = 3$.
+    calculator_active: false
     sections:
       - 1.7
       - 1.9
       - '1.10'
     dok: unknown
 
-  - id: 10
-    legacy_id: 1B.A.11
+  - id: 0dad1e4c-a71d-4d6e-bb85-5e9738cecba3
+    legacy_ids:
+      - 1B.A.11
     question: |
       The graph of $f(x)$, consisting of three line segments, is shown above
       for $-3 \le x \le 4$. Which of the following is the transformed graph
@@ -191,12 +210,14 @@ questions:
       - \includegraphics[width=2in]{11B}
       - \includegraphics[width=2in]{11D}
     solution: TODO
+    calculator_active: true
     sections:
       - 1.12
     dok: unknown
 
-  - id: 11
-    legacy_id: 1B.A.12
+  - id: b4dcb43f-ffe1-428a-8927-ae37a8401410
+    legacy_ids:
+      - 1B.A.12
     question: |
       Starting at time $t = 0$ minutes, a copy machine makes copies at a constant
       rate of 30 pages per minute. Two minutes after the first copy machine
@@ -220,13 +241,15 @@ questions:
       made. Using the point slope formula for a line ($y = y_1 + m(x - x_1)$),
       with $m = 70$ and the point $(2, 60)$, We can come up the the regression
       $60 + 70(t - 2)$ for $2 < t \le 6$.
+    calculator_active: true
     sections:
       - 1.12
       - 1.13
     dok: unknown
 
-  - id: 12
-    legacy_id: 1B.A.13
+  - id: a2ac7c6d-6dcb-46e3-91d9-597edf190c41
+    legacy_ids:
+      - 1B.A.13
     question: |
       The rational function $r$ is given by $r(x) = \frac{2.08x^2 - 3.3x - 4.48}{1.44x^2 + 8.62x + 6.44}$.
       At which of the following $x$- values does the graph of $r(x)$ have a hole?
@@ -242,12 +265,14 @@ questions:
         The hole occurs at the location where both the numerator and
         denominator have a zero.
       \end{multicols}
+    calculator_active: true
     sections:
       - '1.10'
     dok: unknown
 
-  - id: 13
-    legacy_id: 1B.A.14
+  - id: ae7359ca-3814-499b-8989-537af2b5d7c0
+    legacy_ids:
+      - 1B.A.14
     question: |
       A model rocket is launched from a site on level ground. One second after
       the rocket is launched, it is at a height of 20.1 meters above the ground.
@@ -270,12 +295,14 @@ questions:
         Calculate a quadratic regression and then use the zero function to
         predict when the rocket will land.
       \end{multicols}
+    calculator_active: true
     sections:
       - 1.14
     dok: unknown
 
-  - id: 14
-    legacy_id: 1B.B.1
+  - id: 4897dc84-deed-4c32-bae9-92792f29ffc2
+    legacy_ids:
+      - 1B.B.1
     question: The rational function $r$ is given by $r(x) = \frac{4x^2 + 3x - 9}{x - 3}$. Which of the following statement about $r$ is correct?
     answer: The graph of $r$ has a slant asymptote at $y = 4x + 15$.
     distractors:
@@ -283,13 +310,15 @@ questions:
       - The graph of $r$ has a slant asymptote at $y = 4x - 9$.
       - The graph of $r$ has a no horizontal or slant asymptotes.
     solution: $\polylongdiv{4x^2 + 3x - 9}{x - 3}$
+    calculator_active: false
     sections:
       - 1.7
       - 1.11
     dok: unknown
 
-  - id: 15
-    legacy_id: 1B.B.2
+  - id: 3cb17e93-2d05-45dd-89e2-0e188b328144
+    legacy_ids:
+      - 1B.B.2
     question: |
       The rational function $f$ is given by $f(x) = \frac{n(x)}{d(x)}$, where
       and $n$, and $d$ are polynomial functions. The degree of $n$ is 4 and the
@@ -304,12 +333,14 @@ questions:
       degree than the polynomial in the denominator will not have a
       horizontal asymptote. Because the degree of the numerator is 2 greater
       than the denominator, the end behavior resembles a degree 2 polynomial.
+    calculator_active: false
     sections:
       - 1.7
     dok: unknown
 
-  - id: 16
-    legacy_id: 1B.B.3
+  - id: 1425d7e4-9d43-40b3-bc5d-c9cd390c6fc7
+    legacy_ids:
+      - 1B.B.3
     question: Let $f(x) = \frac{2}{x^3 - x}$ and $g(x) = -\frac{x}{x^2 - 1}$. What are all the intervals on which $f(x) < g(x)$?
     answer: $(-\infty, -1) \cup (0, 1)$
     distractors:
@@ -324,12 +355,14 @@ questions:
 
       \vspace{1em}
       \sgchart{~-1, ~0, ~1}{\frac{x^2 + 2}{x(x - 1)(x + 1)}: -+-+}
+    calculator_active: false
     sections:
       - 1.8
     dok: unknown
 
-  - id: 17
-    legacy_id: 1B.B.4
+  - id: 4c678054-7dd9-4275-a2ff-68ee520bfdd0
+    legacy_ids:
+      - 1B.B.4
     question: |
       A deck of cards with black faces ($B$) and red faces ($R$) is dealt onto
       the table. The coefficients in the expansion of $(B + R)^n$ give the
@@ -348,12 +381,14 @@ questions:
       56, 28, 8, 1. These represent the coefficients of the expansion of
       $(B + R)^8$. The fourth element represents the coefficient of the
       $B^5R^3$ term.
+    calculator_active: false
     sections:
       - 1.11
     dok: unknown
 
-  - id: 18
-    legacy_id: 1B.B.5
+  - id: 1c148c02-d333-4165-a9c7-632efa41cd42
+    legacy_ids:
+      - 1B.B.5
     question: The function $r$ is given by $r(x) = \frac{x^3 - 3x^2 + 2x}{x^2 - 2x - 3}$. Which of the following is the domain of $r$?
     answer: All real numbers $x$ where $x \ne 3$, $x \ne -1$
     distractors:
@@ -364,12 +399,14 @@ questions:
       $r(x) = \frac{x(x - 2)(x - 1)}{x(x - 3)(x + 1)}$
 
       Domain contains all real numbers except zeros of the denominator.
+    calculator_active: false
     sections:
       - 1.11
     dok: unknown
 
-  - id: 19
-    legacy_id: 1B.B.6
+  - id: b21e092c-9b1a-4ec0-acc4-63f89be506a4
+    legacy_ids:
+      - 1B.B.6
     question: |
       The graph of function $f$ has a hole at $x = 1$ and a zero
       at $x = -2$. Which of the following functions could be $f(x)$?
@@ -380,13 +417,15 @@ questions:
       - $f(x) = \frac{x^2 + 3x + 2}{x^2 - 2x - 3}$ \simplesol{$= \frac{(x + 1)(x + 2)}{(x + 1)(x - 3)}$}
     solution: |
       $x = 1$ is a zero of both the numerator and denominator; $x = -2$ is a zero of just the numerator.
+    calculator_active: false
     sections:
       - 1.8
       - '1.10'
     dok: unknown
 
-  - id: 20
-    legacy_id: 1B.B.7
+  - id: 43dea07c-027b-4c07-8f6e-0dfd75acf7a9
+    legacy_ids:
+      - 1B.B.7
     question: |
       The functions $m$ and $n$ are defined for all real numbers. In the $xy$-plane, the graph of $n$ is constructed by
       applying three transformations to the graph of $m$ in this order:
@@ -404,12 +443,14 @@ questions:
       - $n(x) = -3 m(x) + 21$
       - $n(x) = m(-3x) + 7$
     solution: $m(x) \implies 3 m(x) \implies 3 m(-x) \implies 3 m(-x) + 7$
+    calculator_active: false
     sections:
       - 1.12
     dok: unknown
 
-  - id: 21
-    legacy_id: 1B.B.8
+  - id: 20883980-0c20-455e-ac06-c2e45c27ab93
+    legacy_ids:
+      - 1B.B.8
     question: |
       The function $P(V)$ models the pressure of a gas in a vessel and is given
       by $P(V) = \frac{nRT}{V}$ for $V \ge 0$, where $V$ is measured in liters
@@ -425,13 +466,15 @@ questions:
       The horizontal end behavior of $P(V)$ is a horizontal asymptote. Since
       the degrees of the denominator is greater than the degree of the
       numerator, the asymptote is at $y = 0$.
+    calculator_active: false
     sections:
       - 1.7
       - 1.14
     dok: unknown
 
-  - id: 22
-    legacy_id: 1B.B.9
+  - id: 219cc1e8-cd1d-4b25-ad1b-f0d1d764155f
+    legacy_ids:
+      - 1B.B.9
     question: |
       A rational function $q(x)$ has a horizontal asymptote at $y = 3$, a
       vertical asymptote at $x = -1$, and a horizontal asymptote at $y =
@@ -447,14 +490,16 @@ questions:
       - II only
       - I, II, and III
     solution: II would indicate a vertical asymptote at $x = 3$.
+    calculator_active: false
     sections:
       - 1.7
       - 1.9
       - '1.10'
     dok: unknown
 
-  - id: 23
-    legacy_id: 1B.B.11
+  - id: 5f06321b-06bb-402a-99c1-e0dac3a96bbc
+    legacy_ids:
+      - 1B.B.11
     question: |
       The rational function $r$ is given by $r(x) = \frac{-x^2 - 6.84x - 2.148}{0.1x^3 + 0.264x^2 - 2.658x - 0.902}$.
       At which of the following $x$- values does the graph of $r(x)$ have a vertical asymptote?
@@ -470,12 +515,14 @@ questions:
         The vertical asymptote occurs at the location where the denominator
         has a zero that is not also a zero of the numerator.
       \end{multicols}
+    calculator_active: true
     sections:
       - 1.9
     dok: unknown
 
-  - id: 24
-    legacy_id: 1B.B.12
+  - id: 7db2fcc9-bcbf-4e7e-acbe-1993559bd972
+    legacy_ids:
+      - 1B.B.12
     question: |
       A marathoner starts a race running at a pace of 6 minutes per mile and
       runs at this same pace for the first hour. At the start of the second
@@ -496,13 +543,15 @@ questions:
       starts at $t = 60$, 60 must be subtracted from $t$ before multiplying,
       and 10 must be added to represent the distance run during the first 60
       minutes.
+    calculator_active: true
     sections:
       - 1.12
       - 1.13
     dok: unknown
 
-  - id: 25
-    legacy_id: 1B.B.13
+  - id: 9db06961-6a75-47cd-8556-9399da407902
+    legacy_ids:
+      - 1B.B.13
     question: |
       The graph of $f(x)$, consisting of three line segments, is shown above
       for $-3 \le x \le 4$. Which of the following is the transformed graph
@@ -513,12 +562,14 @@ questions:
       - \includegraphics[width=2in]{11C}
       - \includegraphics[width=2in]{11D}
     solution: TODO
+    calculator_active: true
     sections:
       - 1.12
     dok: unknown
 
-  - id: 26
-    legacy_id: 1B.B.14
+  - id: 9bfb3f28-7798-4887-a2d7-1ee2c90a82ff
+    legacy_ids:
+      - 1B.B.14
     question: |
       A baseball is hit from a position 1 meter above home plate towards the
       outfield. One second after the baseball is hit, it is at a height of 20.1
@@ -542,6 +593,7 @@ questions:
         Calculate a quadratic regression and then use the zero function to
         predict when the baseball will land.
       \end{multicols}
+    calculator_active: true
     sections:
       - 1.14
     dok: unknown

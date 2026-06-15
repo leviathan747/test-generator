@@ -1,6 +1,7 @@
 questions:
-  - id: 1
-    legacy_id: 3C.A.1
+  - id: 08658aa0-c57a-4401-8204-be622aba741c
+    legacy_ids:
+      - 3C.A.1
     question: |
       The complex number $z$ is graphed in the complex plane, as shown in the figure.
 
@@ -18,12 +19,14 @@ questions:
       - $-\sqrt 3 + i$
       - $-\frac{\sqrt 3}{2} + \frac{1}{2} i$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.13
     dok: unknown
 
-  - id: 2
-    legacy_id: 3C.A.2
+  - id: 41259938-1c2f-4b0d-a534-dd015b32b0cb
+    legacy_ids:
+      - 3C.A.2
     question: |
       The graph of a polar function $r = g(\theta)$ contains the point $A$, where
       the polar coordinates of $A$ are given by $\textstyle \left(-4,
@@ -34,12 +37,14 @@ questions:
       - Because the terminal ray of the angle with measure $\theta$ is in Quadrant II and $r < 0$, the point $A$ lies in Quadrant IV.
       - Because the terminal ray of the angle with measure $\theta$ is in Quadrant III and $r < 0$, the point $A$ lies in Quadrant III.
     solution: TODO
+    calculator_active: false
     sections:
       - 3.14
     dok: unknown
 
-  - id: 3
-    legacy_id: 3C.A.3
+  - id: 8a1c815d-44ca-4844-a815-19cd5b98115f
+    legacy_ids:
+      - 3C.A.3
     question: |
       \includegraphics{3}
 
@@ -52,12 +57,14 @@ questions:
       - $f(\theta) = \frac{5}{2} \sin \left( \frac{\theta}{4} \right)$
       - $f(\theta) = \frac{5}{2} \sin \left( 4\theta \right)$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.14
     dok: unknown
 
-  - id: 4
-    legacy_id: 3C.A.4
+  - id: e77a376e-4cd4-42ef-ac9b-352db76155ce
+    legacy_ids:
+      - 3C.A.4
     question: |
       Consider the polar function $r = g(\theta)$  graphed in the polar
       coordinate system where \\ $g(\theta) = \theta^2(\theta - 1)(\theta - 3)$. On
@@ -69,12 +76,14 @@ questions:
       - The distance between the curve and the origin is \emph{increasing} because $f(\theta)$ is positive and increasing on $-\infty < \theta < 0$.
       - The distance between the curve and the origin is \emph{decreasing} because $f(\theta)$ is positive and increasing on $-\infty < \theta < 0$.
     solution: TODO
+    calculator_active: false
     sections:
       - 3.15
     dok: unknown
 
-  - id: 5
-    legacy_id: 3C.A.5
+  - id: 174c45c5-231b-49cf-b308-632363bef608
+    legacy_ids:
+      - 3C.A.5
     question: |
       The point $P$ has polar coordinates $\left(-4, \frac{7\pi}{6} \right)$.
       Which of the following polar coordinates is an equivalent representation of
@@ -85,12 +94,14 @@ questions:
       - $\left( -4, \frac{\pi}{6} \right)$
       - $\left( 4, \frac{5\pi}{6} \right)$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.13
     dok: unknown
 
-  - id: 6
-    legacy_id: 3C.B.1
+  - id: 54dfcdbc-d234-420c-9575-9c3824bd1b1a
+    legacy_ids:
+      - 3C.B.1
     question: |
       The number $z$ can be represented according to its polar coordinates as
       $\textstyle \left(3 \cos \frac{3\pi}{4}\right) + i \left(3 \sin
@@ -102,12 +113,14 @@ questions:
       - $\frac{\sqrt 2}{2} - \frac{\sqrt 2}{2} i$
       - $\frac{3\sqrt 2}{2} - \frac{3\sqrt 2}{2} i$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.13
     dok: unknown
 
-  - id: 7
-    legacy_id: 3C.B.2
+  - id: c0d68215-7125-4c56-82d0-459f581bcf52
+    legacy_ids:
+      - 3C.B.2
     question: |
       The graph of a polar function $r = g(\theta)$ contains the point $A$, where
       the polar coordinates of $A$ are given by $\textstyle \left(-4,
@@ -118,12 +131,14 @@ questions:
       - Because the terminal ray of the angle with measure $\theta$ is in Quadrant II and $r < 0$, the point $A$ lies in Quadrant II.
       - Because the terminal ray of the angle with measure $\theta$ is in Quadrant II and $r < 0$, the point $A$ lies in Quadrant IV.
     solution: TODO
+    calculator_active: false
     sections:
       - 3.14
     dok: unknown
 
-  - id: 8
-    legacy_id: 3C.B.3
+  - id: 490538a1-4106-49b7-8d99-b3c53822bfdc
+    legacy_ids:
+      - 3C.B.3
     question: |
       \includegraphics{3}
 
@@ -136,12 +151,14 @@ questions:
       - $f(\theta) = \frac{5}{2} \sin \left( \frac{\theta}{4} \right)$
       - $f(\theta) = \frac{5}{2} \cos \left( \frac{\theta}{4} \right)$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.14
     dok: unknown
 
-  - id: 9
-    legacy_id: 3C.B.4
+  - id: 8b66d6e1-d6ba-4655-8c74-b6136e2f812f
+    legacy_ids:
+      - 3C.B.4
     question: |
       Consider the polar function $r = g(\theta)$  graphed in the polar
       coordinate system where \\ $g(\theta) = \theta^2(\theta - 1)(\theta - 3)$. On
@@ -153,12 +170,14 @@ questions:
       - The distance between the curve and the origin is \emph{decreasing} because $f(\theta)$ is negative and decreasing on $-\infty < \theta < 0$.
       - The distance between the curve and the origin is \emph{decreasing} because $f(\theta)$ is negative and increasing on $-\infty < \theta < 0$.
     solution: TODO
+    calculator_active: false
     sections:
       - 3.15
     dok: unknown
 
-  - id: 10
-    legacy_id: 3C.B.5
+  - id: 83cb23b2-9fa2-43e8-92b8-b4c574072542
+    legacy_ids:
+      - 3C.B.5
     question: |
       The point $P$ has polar coordinates $\left(4, \frac{7\pi}{6} \right)$.
       Which of the following polar coordinates is an equivalent representation of
@@ -169,6 +188,7 @@ questions:
       - $\left( 4, \frac{11\pi}{6} \right)$
       - $\left( -4, \frac{7\pi}{6} \right)$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.13
     dok: unknown

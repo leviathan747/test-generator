@@ -1,6 +1,7 @@
 questions:
-  - id: 1
-    legacy_id: 3A.A.1
+  - id: 936adef7-8cd6-4b6a-a2a3-e9ca7f8d1404
+    legacy_ids:
+      - 3A.A.1
     question: |
       \includegraphics{1}
 
@@ -14,12 +15,14 @@ questions:
       - $a = \frac{\theta}{r}$
       - $a = \theta$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.2
     dok: unknown
 
-  - id: 2
-    legacy_id: 3A.A.2
+  - id: 2d213c6b-2f7e-4c42-b7ad-d43a1a42586f
+    legacy_ids:
+      - 3A.A.2
     question: |
       A circle with center $O$ is centered at the origin with a radius of 4. The
       point $A$ lies at the intersection of the terminal ray of an angle in
@@ -31,12 +34,14 @@ questions:
       - 2
       - $2 \sqrt 3$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.2
     dok: unknown
 
-  - id: 3
-    legacy_id: 3A.A.3
+  - id: 861dcd0b-14c0-4f12-a276-5c21491e6fec
+    legacy_ids:
+      - 3A.A.3
     question: |
       In the $xy$-plane, an angle in standard position measuring $\textstyle
       \frac{7\pi}{6}$ radians intersects a circle centered at the origin with a
@@ -48,12 +53,14 @@ questions:
       - $\left( -\frac{1}{2}, -\frac{\sqrt 3}{2} \right)$
       - $\left( -\frac{\sqrt 3}{2}, \frac{1}{2} \right)$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.3
     dok: unknown
 
-  - id: 4
-    legacy_id: 3A.A.4
+  - id: 82d83c9f-9f3b-42a3-a3c3-b43b158e183a
+    legacy_ids:
+      - 3A.A.4
     question: |
       \includegraphics{4}
 
@@ -66,12 +73,14 @@ questions:
       - $\sin 1 \cos 1$
       - $4 \sin 1 \cos 1$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.3
     dok: unknown
 
-  - id: 5
-    legacy_id: 3A.A.5
+  - id: 92c68a6c-350f-459d-a27e-0edb770216ea
+    legacy_ids:
+      - 3A.A.5
     question: |
       Let $f$ be the function given by $f(\theta) = \cos \theta$. Which of the
       following describes the relationship between the inputs and outputs of $f$
@@ -82,12 +91,14 @@ questions:
       - As the inputs increase from -1 to 0, the outputs will decrease, and as the inputs increase from 0 to 1, the outputs will increase.
       - As the inputs increase from -1 to 0, the outputs will increase, and as the inputs increase from 0 to 1, the outputs will decrease.
     solution: TODO
+    calculator_active: false
     sections:
       - 3.4
     dok: unknown
 
-  - id: 6
-    legacy_id: 3A.A.6
+  - id: 59079bf4-ff0d-4c56-97b2-3c04c3f31aa2
+    legacy_ids:
+      - 3A.A.6
     question: |
       The function $h$ is defined by $h(\theta) = \cos \theta$ for all $\theta$.
       The graph of $h$ contains the point $(\omega, h(\omega))$ for some angle
@@ -98,12 +109,14 @@ questions:
       - The graph of $h$ contains the point $(-\omega, -h(\omega))$ because $h$ is an odd function.
       - The graph of $h$ contains the point $(-\omega, -h(\omega))$ because $h$ is an even function.
     solution: TODO
+    calculator_active: false
     sections:
       - 3.5
     dok: unknown
 
-  - id: 7
-    legacy_id: 3A.A.7
+  - id: cada46c7-9967-43f8-9065-f67d5e423cdd
+    legacy_ids:
+      - 3A.A.7
     question: |
       The height of the tide on one coastline can be modeled by the function
       $\textstyle h(t) = 1.25 \sin \left( \frac{2\pi}{12.25} (t - 1.5) \right) +
@@ -115,12 +128,14 @@ questions:
       - 2.5 feet
       - 3 feet
     solution: TODO
+    calculator_active: false
     sections:
       - 3.6
     dok: unknown
 
-  - id: 8
-    legacy_id: 3A.A.8
+  - id: 93467e7e-dfda-492d-8c5f-5001ad8ca344
+    legacy_ids:
+      - 3A.A.8
     question: |
       \includegraphics{18}
 
@@ -132,12 +147,14 @@ questions:
       - $b = \frac{1}{2}$ and $c = \frac{\pi}{4}$
       - $b = \frac{1}{2}$ and $c = -\frac{\pi}{4}$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.6
     dok: unknown
 
-  - id: 9
-    legacy_id: 3A.A.9
+  - id: d6df7e72-e952-45b9-acfd-4f6ce866670f
+    legacy_ids:
+      - 3A.A.9
     question: |
       An architect is designing a skate park, and one obstacle in the park will
       be a concrete wave that skateboarders can ride on. The architect is going
@@ -155,12 +172,14 @@ questions:
       - $h(x) = 1.5 \cos \left( \frac{2\pi}{8} x \right) + 1.5$
       - $h(x) = 3 \cos \left( \frac{2\pi}{16} x \right)$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.7
     dok: unknown
 
-  - id: 10
-    legacy_id: 3A.A.11
+  - id: f30c1898-29ae-42b1-856b-12f3d486732c
+    legacy_ids:
+      - 3A.A.11
     question: |
       \includegraphics{11}
 
@@ -173,12 +192,14 @@ questions:
       - 0.5
       - 1.2
     solution: TODO
+    calculator_active: true
     sections:
       - 3.1
     dok: unknown
 
-  - id: 11
-    legacy_id: 3A.A.12
+  - id: 65cdac71-d6b2-411b-b121-79290d809e07
+    legacy_ids:
+      - 3A.A.12
     question: |
       Consider the function $f$ defined by $f(x) = \cos(x)$. Which of the
       following is a valid interpretation of $f(6)$.
@@ -188,12 +209,14 @@ questions:
       - $f(6) = 0.995$, which means that for an angle in standard position measuring 6 radians, the intersection of the terminal ray and the unit circle will have a horizontal displacement of 0.995 from the $y$-axis.
       - $f(6) = 0.960$, which means that for an angle in standard position measuring 6 radians, the intersection of the terminal ray and the unit circle will have a vertical displacement of 0.960 from the $x$-axis.
     solution: TODO
+    calculator_active: true
     sections:
       - 3.4
     dok: unknown
 
-  - id: 12
-    legacy_id: 3A.A.13
+  - id: b3142aa6-f89e-480c-8662-b181f5416268
+    legacy_ids:
+      - 3A.A.13
     question: |
       An antique seller has a piece of memorabilia they are looking to sell. They
       have found that, over the last few months, the price of similar memorabilia
@@ -224,12 +247,14 @@ questions:
       - \$40
       - \$55
     solution: TODO
+    calculator_active: true
     sections:
       - 3.7
     dok: unknown
 
-  - id: 13
-    legacy_id: 3A.A.14
+  - id: 6e5c11db-c6a7-4b2d-8ef9-9298af4be27b
+    legacy_ids:
+      - 3A.A.14
     question: |
       For a car that is idling, the height h of a piston, which goes up and down
       periodically, can be modeled by the function $h(t) = 0.6 \sin (86.080t) +
@@ -241,12 +266,14 @@ questions:
       - 0.073
       - 6.850
     solution: TODO
+    calculator_active: true
     sections:
       - 3.5
     dok: unknown
 
-  - id: 14
-    legacy_id: 3A.B.1
+  - id: 4416d15b-a958-4435-8fdb-0af5412947cf
+    legacy_ids:
+      - 3A.B.1
     question: |
       A circle with center $O$ is centered at the origin with a radius of 2. The
       point $A$ lies at the intersection of the terminal ray of an angle in
@@ -258,12 +285,14 @@ questions:
       - $\frac{\sqrt 3}{2}$
       - $2 \sqrt 3$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.2
     dok: unknown
 
-  - id: 15
-    legacy_id: 3A.B.2
+  - id: 9f8d1133-167a-4242-92a6-397ef481ac78
+    legacy_ids:
+      - 3A.B.2
     question: |
       \includegraphics{1}
 
@@ -277,12 +306,14 @@ questions:
       - $r = \frac{\theta}{a}$
       - $r = a$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.2
     dok: unknown
 
-  - id: 16
-    legacy_id: 3A.B.3
+  - id: 3bed543c-0695-484d-a57d-184fc2f18102
+    legacy_ids:
+      - 3A.B.3
     question: |
       In the $xy$-plane, an angle in standard position measuring $\textstyle
       \frac{5\pi}{3}$ radians intersects a circle centered at the origin with a
@@ -294,12 +325,14 @@ questions:
       - $\left( -\frac{\sqrt 3}{2}, \frac{1}{2} \right)$
       - $\left( -\frac{\sqrt 3}{2}, -\frac{1}{2} \right)$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.3
     dok: unknown
 
-  - id: 17
-    legacy_id: 3A.B.4
+  - id: 2563e190-6db6-47a2-95f7-7bf8bf5988ce
+    legacy_ids:
+      - 3A.B.4
     question: |
       The function $h$ is defined by $h(\theta) = \sin \theta$ for all $\theta$.
       The graph of $h$ contains the point $(\omega, h(\omega))$ for some angle
@@ -310,12 +343,14 @@ questions:
       - The graph of $h$ contains the point $(-\omega, h(\omega))$ because $h$ is an even function.
       - The graph of $h$ contains the point $(-\omega, -h(\omega))$ because $h$ is an even function.
     solution: TODO
+    calculator_active: false
     sections:
       - 3.5
     dok: unknown
 
-  - id: 18
-    legacy_id: 3A.B.5
+  - id: 17d1324d-3438-4092-82c9-4f19db300880
+    legacy_ids:
+      - 3A.B.5
     question: |
       \includegraphics{4}
 
@@ -328,12 +363,14 @@ questions:
       - $8 \sin 1 \cos 1$
       - $2 + 2 \sin 1 \cos 1$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.3
     dok: unknown
 
-  - id: 19
-    legacy_id: 3A.B.6
+  - id: adecc009-8ca6-4b3e-837d-bc39d0794517
+    legacy_ids:
+      - 3A.B.6
     question: |
       Let $f$ be the function given by $f(\theta) = -\cos \theta$. Which of the
       following describes the relationship between the inputs and outputs of $f$
@@ -344,12 +381,14 @@ questions:
       - As the inputs increase from -1 to 0, the outputs will increase, and as the inputs increase from 0 to 1, the outputs will decrease.
       - As the inputs increase from 0 to $\pi$, the outputs will decrease, and as the inputs increase from $\pi$ to $2\pi$, the outputs will increase.
     solution: TODO
+    calculator_active: false
     sections:
       - 3.4
     dok: unknown
 
-  - id: 20
-    legacy_id: 3A.B.7
+  - id: 06c7e2a6-69c9-4795-8f26-035c0bc3c95b
+    legacy_ids:
+      - 3A.B.7
     question: |
       The water level in a resevoir can be modeled by the function $\textstyle
       h(t) = 7.5 \cos \left( \frac{2\pi}{22.5} (t - 4.5) \right) + 3$, where
@@ -362,12 +401,14 @@ questions:
       - $\textstyle \frac{2\pi}{22.5}$ days
       - 3 days
     solution: TODO
+    calculator_active: false
     sections:
       - 3.6
     dok: unknown
 
-  - id: 21
-    legacy_id: 3A.B.8
+  - id: 0cc3083a-0870-487a-a8cd-1d98eb2418dc
+    legacy_ids:
+      - 3A.B.8
     question: |
       A guitar sting is plucked and allowed to vibrate. Its motion can be
       modeled by a sinusoial function in the form $f(t) = a \sin (b(t + c)) +
@@ -383,12 +424,14 @@ questions:
       - $f(x) = 1.5 \sin \left(\frac{2\pi}{329} t\right)$
       - $f(x) = \sin \left(\frac{2\pi}{329} t\right) + 1.5$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.7
     dok: unknown
 
-  - id: 22
-    legacy_id: 3A.B.9
+  - id: 73c657aa-df45-4bab-9877-f3f146889de8
+    legacy_ids:
+      - 3A.B.9
     question: |
       \includegraphics{18}
 
@@ -400,12 +443,14 @@ questions:
       - $b = 2$ and $c = 0$
       - $b = \frac{1}{2}$ and $c = 0$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.6
     dok: unknown
 
-  - id: 23
-    legacy_id: 3A.B.11
+  - id: 0586c3da-de9a-40aa-b7d2-f673b7fc37aa
+    legacy_ids:
+      - 3A.B.11
     question: |
       Consider the function $f$ defined by $f(x) = \sin(x)$. Which of the
       following is a valid interpretation of $f(6)$.
@@ -415,12 +460,14 @@ questions:
       - $f(6) = 0.960$, which means that for an angle in standard position measuring 6 radians, the intersection of the terminal ray and the unit circle will have a vertical displacement of 0.960 from the $x$-axis.
       - $f(6) = 0.960$, which means that for an angle in standard position measuring 6 radians, the intersection of the terminal ray and the unit circle will have a horizontal displacement of 0.960 from the $y$-axis.
     solution: TODO
+    calculator_active: true
     sections:
       - 3.4
     dok: unknown
 
-  - id: 24
-    legacy_id: 3A.B.12
+  - id: 1570ea3a-097d-4b81-9245-3ebd9813f668
+    legacy_ids:
+      - 3A.B.12
     question: |
       \includegraphics{11}
 
@@ -433,12 +480,14 @@ questions:
       - 1
       - 1.2
     solution: TODO
+    calculator_active: true
     sections:
       - 3.1
     dok: unknown
 
-  - id: 25
-    legacy_id: 3A.B.13
+  - id: 98681433-1450-451d-8cd4-b9f276b08374
+    legacy_ids:
+      - 3A.B.13
     question: |
       For a car that is idling, the height h of a piston, which goes up and down
       periodically, can be modeled by the function $h(t) = 0.6 \sin (86.080t) +
@@ -450,12 +499,14 @@ questions:
       - 6.850
       - 13.700
     solution: TODO
+    calculator_active: true
     sections:
       - 3.5
     dok: unknown
 
-  - id: 26
-    legacy_id: 3A.B.14
+  - id: 05ec5b9c-f4a8-4079-b04e-091b8f3f6a46
+    legacy_ids:
+      - 3A.B.14
     question: |
       In an experiment, a research has measured the brightness of the moonlight once a week for the last 5 weeks.
       He observed that the brightness followed a periodic pattern.
@@ -482,6 +533,7 @@ questions:
       - 4.5 lumens
       - 9.4 lumens
     solution: TODO
+    calculator_active: true
     sections:
       - 3.7
     dok: unknown

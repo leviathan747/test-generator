@@ -1,6 +1,7 @@
 questions:
-  - id: 1
-    legacy_id: 3B.A.1
+  - id: 3d005770-b814-4249-bf34-b5474f42b202
+    legacy_ids:
+      - 3B.A.1
     question: |
       Consider an angle in standard position measuring $\frac{5\pi}{6}$ radians.
       What is the slope of the terminal ray of this angle?
@@ -10,12 +11,14 @@ questions:
       - $\frac{1}{\sqrt 3}$
       - $\sqrt 3$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.8
     dok: unknown
 
-  - id: 2
-    legacy_id: 3B.A.2
+  - id: 632b089e-7e5e-4a40-a517-e8f6608ead01
+    legacy_ids:
+      - 3B.A.2
     question: |
       Let the function $f$ be given by $f(x) = \arcsin (x)$. If $g$ is the
       function defined by $g(x) = -2f(x + 1) - 3$, what is the range of $g$?
@@ -25,12 +28,14 @@ questions:
       - $[-5, -1]$
       - $[-2, 0]$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.9
     dok: unknown
 
-  - id: 3
-    legacy_id: 3B.A.3
+  - id: 0942f1d3-52e5-4944-b8f5-0c902ff01245
+    legacy_ids:
+      - 3B.A.3
     question: |
       Consider the function $f$ defined by $f(x) = 3 \sin(x) - 2$. One of the
       zeros of $f$ in the interval $0 \le x < 2\pi$ is $\textstyle x =
@@ -43,12 +48,14 @@ questions:
       - $\textstyle x = \sin^{-1}\left(\frac{2}{3}\right)$ is the only zero in this interval because $f$ completes only one period from $x = 0$ to $x = 2\pi$.
       - There is one other zero at $\textstyle x = 2\pi - \sin^{-1}\left(\frac{2}{3}\right)$ because this is the only other angle in the interval for which $\textstyle \sin(x) = \frac{2}{3}$.
     solution: TODO
+    calculator_active: false
     sections:
       - '3.10'
     dok: unknown
 
-  - id: 4
-    legacy_id: 3B.A.4
+  - id: 2049e3d4-9854-4026-8e4b-e493231b318f
+    legacy_ids:
+      - 3B.A.4
     question: |
       Find all solutions to the given equation in the interval $0 \le x < 2\pi$: $\cos
       2x + 5 \cos x = 2$
@@ -58,12 +65,14 @@ questions:
       - $x = 0, \frac{\pi}{3}, \pi, \frac{5\pi}{3}$
       - No solutions
     solution: TODO
+    calculator_active: false
     sections:
       - '3.10'
     dok: unknown
 
-  - id: 5
-    legacy_id: 3B.A.5
+  - id: ced69178-d419-4e56-8ecf-51207c0d02af
+    legacy_ids:
+      - 3B.A.5
     question: Which of the following is \emph{not} equal to $\sin \left( \frac{3\pi}{4} \right)$
     answer: $\sin \left( \frac{5\pi}{4} \right) \cos \left( \frac{\pi}{2} \right) + \cos \left( \frac{5\pi}{4} \right) \sin \left( \frac{\pi}{2} \right)$
     distractors:
@@ -71,12 +80,14 @@ questions:
       - $\sin \left( \frac{5\pi}{4} \right) \cos \left( \frac{\pi}{2} \right) - \cos \left( \frac{5\pi}{4} \right) \sin \left( \frac{\pi}{2} \right)$
       - $\sin \left( \frac{6\pi}{8} \right)$
     solution: TODO
+    calculator_active: false
     sections:
       - '3.10'
     dok: unknown
 
-  - id: 6
-    legacy_id: 3B.A.6
+  - id: ad9db7f4-526c-40af-a2ab-0d505031e45b
+    legacy_ids:
+      - 3B.A.6
     question: |
       The function $f$ is given by $f(x) = (\sin(x) + \cos(x))(\sin(x) -
       \cos(x))$. A student is trying to solve $f(x) = 1$. Which of the following
@@ -88,12 +99,14 @@ questions:
       - $\cos(2x) = 1$
       - $\sin(2x) = 1$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.12
     dok: unknown
 
-  - id: 7
-    legacy_id: 3B.A.7
+  - id: 39a47bd2-5bc6-4d1d-b974-573acac59f7e
+    legacy_ids:
+      - 3B.A.7
     question: |
       The functions $f$ and $g$ are given by $f(x) = \sin(2x)\tan(x)$ and $g(x) =
       \sin(x)$. Which of the following is an expression for $f$ in terms of $g$
@@ -104,12 +117,14 @@ questions:
       - $f(x) = (2g(x))^2$
       - $f(x) = (g(2x))^2$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.12
     dok: unknown
 
-  - id: 8
-    legacy_id: 3B.A.8
+  - id: cdc63bf5-3dfb-49e2-baa8-cdf72805d403
+    legacy_ids:
+      - 3B.A.8
     question: |
       Find all values of $x$ in the interval $0 \le x < 2\pi$ such that
       $\textstyle \cos(x) > \frac{\sqrt 3}{2}$.
@@ -119,12 +134,14 @@ questions:
       - $\frac{\pi}{6} < x < \frac{11\pi}{6}$
       - $0 \le x < \frac{\pi}{3} \cup \frac{5\pi}{3} < x < 2\pi$
     solution: TODO
+    calculator_active: false
     sections:
       - '3.10'
     dok: unknown
 
-  - id: 9
-    legacy_id: 3B.A.9
+  - id: 075712ab-b3d9-4080-8333-6c4e423e0425
+    legacy_ids:
+      - 3B.A.9
     question: |
       Let $f$ and $g$ be defined by $f(x) = 1 - \sin(x)$ and $g(x) = 2\cos^2(x)$.
       Find the $x$ coordinates for all points of intersection between $f$ and $g$
@@ -135,12 +152,14 @@ questions:
       - $x = \frac{3\pi}{2}, \frac{7\pi}{6}, \frac{11\pi}{6}$
       - $x = -\frac{1}{2}, 1$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.12
     dok: unknown
 
-  - id: 10
-    legacy_id: 3B.A.11
+  - id: 0692a1ca-2f0c-4d22-a188-572d23b60b70
+    legacy_ids:
+      - 3B.A.11
     question: |
       The function $g$ is defined as $g(x) = a \sin(x)$, where $a \ne 0$. Which
       of the following gives the domain of the inverse function $g^{-1}(x)$?
@@ -150,12 +169,14 @@ questions:
       - $\left[-\frac{\pi}{2} \cdot a, \frac{\pi}{2} \cdot a\right]$
       - $\left[-\frac{\pi}{2} \cdot \frac{1}{a}, \frac{\pi}{2} \cdot \frac{1}{a}\right]$
     solution: TODO
+    calculator_active: true
     sections:
       - 3.9
     dok: unknown
 
-  - id: 11
-    legacy_id: 3B.A.12
+  - id: 03130407-fdc0-4a73-9b7d-3d7d5fe9b83b
+    legacy_ids:
+      - 3B.A.12
     question: |
       Over the course of one year, a certain stock price increased and decreased
       periodically. The sinusoidal function $P(t) = 1.25 \sin
@@ -169,12 +190,14 @@ questions:
       - 160
       - 262
     solution: TODO
+    calculator_active: true
     sections:
       - '3.10'
     dok: unknown
 
-  - id: 12
-    legacy_id: 3B.A.13
+  - id: 687890fb-fe5c-4741-ade2-4289ba1a2c33
+    legacy_ids:
+      - 3B.A.13
     question: |
       \setcounter{question}{\value{numquestions}}
 
@@ -186,12 +209,14 @@ questions:
       - $x = 2.618$
       - $x = 4.712$
     solution: TODO
+    calculator_active: true
     sections:
       - 3.11
     dok: unknown
 
-  - id: 13
-    legacy_id: 3B.A.14
+  - id: 53a9217b-b901-4efb-ae76-637069ac78c7
+    legacy_ids:
+      - 3B.A.14
     question: |
       The functions $f$ and $g$ are defined by $f(\theta) = \sin \theta$ and
       $g(\theta) = \cos \theta$. It is known that for some angle, $\alpha$,
@@ -203,12 +228,14 @@ questions:
       - -0.237
       - 0.971
     solution: TODO
+    calculator_active: true
     sections:
       - 3.12
     dok: unknown
 
-  - id: 14
-    legacy_id: 3B.B.1
+  - id: 23bb2f9e-a03b-4ba6-adef-89a5d97b4e59
+    legacy_ids:
+      - 3B.B.1
     question: |
       Consider an angle in standard position whose terminal ray has a slope of $\sqrt 3$.
       Which of the following could be the measure of the angle?
@@ -218,12 +245,14 @@ questions:
       - $\frac{\pi}{6}$
       - $-\frac{\pi}{6}$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.8
     dok: unknown
 
-  - id: 15
-    legacy_id: 3B.B.2
+  - id: 4daaaf75-d06e-40c3-8930-f23b467bfed7
+    legacy_ids:
+      - 3B.B.2
     question: |
       Let the function $f$ be given by $f(x) = \arccos (x)$. What is the range
       of $f$?
@@ -233,12 +262,14 @@ questions:
       - $[-1, 1]$
       - $(-\infty, \infty)$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.9
     dok: unknown
 
-  - id: 16
-    legacy_id: 3B.B.3
+  - id: 2afe8929-85d5-4c41-9d03-8555483f47f7
+    legacy_ids:
+      - 3B.B.3
     question: |
       Consider the function $f$ defined by $f(x) = 3 \cos(x) - 4$. Which of the
       following is a true statement about the zeros of $f$ on the interval $0
@@ -249,12 +280,14 @@ questions:
       - There are exactly two zeros in the interval $0 \le x < 2\pi$ because there are exactly two locations on the unit circle where the $x$-coordinate is equal to $\textstyle \frac{4}{3}$.
       - There are infinitely many zeros because the cosine function is periodic.
     solution: TODO
+    calculator_active: false
     sections:
       - '3.10'
     dok: unknown
 
-  - id: 17
-    legacy_id: 3B.B.4
+  - id: 2226e887-fef3-4a06-baff-2413866f266a
+    legacy_ids:
+      - 3B.B.4
     question: |
       Find all solutions to the given equation in the interval $0 \le x < 2\pi$:
       $\sin(2x) \cos(x) = 0$
@@ -264,12 +297,14 @@ questions:
       - $\frac{\pi}{2}, \frac{3\pi}{2}$
       - No solutions
     solution: TODO
+    calculator_active: false
     sections:
       - '3.10'
     dok: unknown
 
-  - id: 18
-    legacy_id: 3B.B.5
+  - id: 33ca9ad6-fe17-49cc-bbf1-522b4f601fe8
+    legacy_ids:
+      - 3B.B.5
     question: Which of the following is \emph{not} equal to $\cos \left( \frac{3\pi}{4} \right)$
     answer: $\cos \left( \frac{5\pi}{4} \right) \cos \left( \frac{\pi}{2} \right) - \sin \left( \frac{5\pi}{4} \right) \sin \left( \frac{\pi}{2} \right)$
     distractors:
@@ -277,12 +312,14 @@ questions:
       - $\cos \left( \pi \right) \cos \left( \frac{\pi}{4} \right) + \sin \left( \pi \right) \sin \left( \frac{\pi}{4} \right)$
       - $\cos \left( \frac{5\pi}{4} \right) \cos \left( \frac{\pi}{2} \right) + \sin \left( \frac{5\pi}{4} \right) \sin \left( \frac{\pi}{2} \right)$
     solution: TODO
+    calculator_active: false
     sections:
       - '3.10'
     dok: unknown
 
-  - id: 19
-    legacy_id: 3B.B.6
+  - id: 01c525d3-52d8-49c5-96d8-12563f4d86e0
+    legacy_ids:
+      - 3B.B.6
     question: |
       The function $f$ is given by $f(x) = -\sin(x) \cos(x)$.
 
@@ -295,12 +332,14 @@ questions:
       - $\cos(2x) = 2$
       - $\sin(2x) = -\frac{1}{2}$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.12
     dok: unknown
 
-  - id: 20
-    legacy_id: 3B.B.7
+  - id: 4fbf9b4b-28ee-4556-9e3f-8d895a0392e9
+    legacy_ids:
+      - 3B.B.7
     question: |
       The function $f$ is given by $f(x) = \tan(2x)\sin(x)$
       Which of the following is an expression for $f$ in terms of $\cos(x)$
@@ -311,12 +350,14 @@ questions:
       - $\frac{2 - \cos^2(x)}{2\cos(x) - 1}$
       - $\frac{1 - \cos^3(x)}{\cos^2(x) - 1}$
     solution: TODO
+    calculator_active: false
     sections:
       - 3.12
     dok: unknown
 
-  - id: 21
-    legacy_id: 3B.B.8
+  - id: 0edd8bac-49fb-45ee-9a2a-a4e362fc9488
+    legacy_ids:
+      - 3B.B.8
     question: |
       Find all values of $x$ in the interval $0 \le x < 2\pi$ such that
       $\textstyle \sin(x) \le \frac{1}{2}$.
@@ -326,12 +367,14 @@ questions:
       - $0 \le x \le \frac{\pi}{3} \cup \frac{2\pi}{3} \le x < 2\pi$
       - $\frac{7\pi}{6} \le x \le \frac{11\pi}{6}$
     solution: TODO
+    calculator_active: false
     sections:
       - '3.10'
     dok: unknown
 
-  - id: 22
-    legacy_id: 3B.B.9
+  - id: 748e52e4-605c-4d23-92f3-161a9a1fb4b4
+    legacy_ids:
+      - 3B.B.9
     question: |
       Let $f$ and $g$ be defined by $f(x) = 2\sin^2(x) - 2$ and $g(x) = 5\cos(x) + 2$.
       Find the $x$ coordinates for all points of intersection between $f$ and $g$
@@ -342,12 +385,14 @@ questions:
       - $x = \frac{\pi}{3}, \frac{5\pi}{3}$
       - No solutions
     solution: TODO
+    calculator_active: false
     sections:
       - 3.12
     dok: unknown
 
-  - id: 23
-    legacy_id: 3B.B.11
+  - id: babb2fc2-248e-4925-9d95-db1004c76b9b
+    legacy_ids:
+      - 3B.B.11
     question: |
       The function $g$ is defined as $g(x) = a \cos(x)$, where $a \ne 0$. Which
       of the following gives the domain of the inverse function $g^{-1}(x)$?
@@ -357,12 +402,14 @@ questions:
       - $\left[-\frac{1}{a}, \frac{1}{a}\right]$
       - $\left[-\frac{\pi}{2} \cdot \frac{1}{a}, \frac{\pi}{2} \cdot \frac{1}{a}\right]$
     solution: TODO
+    calculator_active: true
     sections:
       - 3.9
     dok: unknown
 
-  - id: 24
-    legacy_id: 3B.B.12
+  - id: 027bdae6-dba5-4a99-8675-fd43c698e23b
+    legacy_ids:
+      - 3B.B.12
     question: |
       Over the course of one year, the price of tickets at a dinner theater
       increased and decreased periodically. The sinusoidal function $P(t) = 1.7
@@ -376,6 +423,7 @@ questions:
       - 182
       - None
     solution: TODO
+    calculator_active: true
     sections:
       - '3.10'
     dok: unknown

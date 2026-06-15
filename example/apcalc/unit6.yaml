@@ -1,6 +1,7 @@
 questions:
-  - id: 1
-    legacy_id: 6.A.1
+  - id: 4e4e97ce-c05c-4a73-81ba-a805b627bf43
+    legacy_ids:
+      - 6.A.1
     question: |
       The flow of oil, in barrels per hour, through a pipeline on July 9 is given
       by the graph shown below. Of the following, which best approximates the
@@ -15,11 +16,13 @@ questions:
       - 2,400
       - 500
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 2
-    legacy_id: 6.A.2
+  - id: 9c3ea570-848c-41f9-9dbc-f3ed22bf6bfb
+    legacy_ids:
+      - 6.A.2
     question: |
       Given $\int_{-2}^{2} g(x) dx = 8$ and $\int_{0}^{2} g(x) dx = 3$, what
       is the value of $\int_{0}^{-2} 5g(x) dx$?
@@ -30,11 +33,13 @@ questions:
       - -40
       - 25
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 3
-    legacy_id: 6.A.3
+  - id: abe1def4-74fe-431b-8366-66eb98cea5dd
+    legacy_ids:
+      - 6.A.3
     question: |
       Use the Fundamental Theorem of Calculus to evaluate $\int_{1}^{8} \frac{1}{\sqrt[3]{x^2}} dx$.
       \vspace{0.2in}
@@ -44,11 +49,13 @@ questions:
       - $\frac{5}{12}$
       - 1
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 4
-    legacy_id: 6.A.4
+  - id: 6648dccb-640d-4b09-9d15-3d19c0ffd9e9
+    legacy_ids:
+      - 6.A.4
     question: |
       Let $f(x)$ be a function whose first derivative is positive while the
       second derivative is negative on the closed interval $[a, b]$. The interval
@@ -62,11 +69,13 @@ questions:
       - right $<$ trapezoid $\textstyle < \int_{a}^{b} f(x) dx <$ left
       - right $\textstyle < \int_{a}^{b} f(x) dx <$ trapezoid $<$ left
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 5
-    legacy_id: 6.A.5
+  - id: 873acedc-d1b4-411e-a818-1e2260930317
+    legacy_ids:
+      - 6.A.5
     question: |
       $\int_{1}^{e} \frac{\cos(\ln x)}{x} dx =$
       \vspace{0.2in}
@@ -76,11 +85,13 @@ questions:
       - $\sin(e)$
       - $\frac{1}{\cos 1}$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 6
-    legacy_id: 6.A.6
+  - id: 23dc11c3-00e2-4e2a-991b-11328bf3b9c6
+    legacy_ids:
+      - 6.A.6
     question: Which of the following limits is equal to $\int_{3}^{7} x^3 dx$
     answer: $\lim_{n\to\infty} \sum_{k=1}^{n} \left(\left(3 + \frac{4k}{n}\right)^3 \cdot \frac{4}{n}\right) $
     distractors:
@@ -88,11 +99,13 @@ questions:
       - $\lim_{n\to\infty} \sum_{k=1}^{n} \left(\left(3 + \frac{4k}{n}\right)^3 \cdot \frac{1}{n}\right) $
       - $\lim_{n\to\infty} \sum_{k=1}^{n} \left(\left(3 + \frac{k}{n}\right)^3 \cdot \frac{4}{n}\right) $
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 7
-    legacy_id: 6.A.7
+  - id: e339b4f8-8964-4678-85b0-bb59c8cfb9ac
+    legacy_ids:
+      - 6.A.7
     question: |
       $\int_{0}^{2} \frac{x^2}{x+1} dx =$
       \vspace{0.2in}
@@ -102,11 +115,13 @@ questions:
       - $\ln 3 + 2$
       - $\ln 6 + 4$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 8
-    legacy_id: 6.A.8
+  - id: 77e4e421-0117-4729-a5ce-87f7be44384c
+    legacy_ids:
+      - 6.A.8
     question: |
       $\int \frac{dx}{x^2 - 6x + 18} =$
       \vspace{0.2in}
@@ -116,11 +131,13 @@ questions:
       - $\ln |x^2 - 6x + 18| + C$
       - $\frac{1}{3}\tan^{-1} (x + 3) + C$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 9
-    legacy_id: 6.A.9
+  - id: 94dc4d71-4d41-47df-917f-8a6a2f1f2169
+    legacy_ids:
+      - 6.A.9
     question: |
       Evaluate the integral: $\int x\sec^2(x^2) dx$
     answer: $\frac{1}{2}\tan(x^2) + C$
@@ -129,11 +146,13 @@ questions:
       - $\sec(x^2)\tan(x^2) + C$
       - $2\tan(x^2) + C$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 10
-    legacy_id: 6.A.10
+  - id: abd6cf11-eeb9-4c59-8782-ecfc781d6b03
+    legacy_ids:
+      - 6.A.10
     question: Find $f(x)$ if $f''(x) = 6x - 2$, $f'(0) = 3$, and $f(0) = 7$.
     answer: $f(x) = x^3 - x^2 + 3x + 7$
     distractors:
@@ -141,11 +160,13 @@ questions:
       - $f(x) = x^3 - x^2 + 3x$
       - $f(x) = 0$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 11
-    legacy_id: 6.A.12
+  - id: 1975d160-efb7-418d-843b-50ba95fa3bd7
+    legacy_ids:
+      - 6.A.12
     question: |
       The function $f$ is continuous on the closed interval $[2, 8]$ and has
       values that are given in the table below. Using the subintervals $[2, 5]$,
@@ -167,11 +188,13 @@ questions:
       - 150
       - 190
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 12
-    legacy_id: 6.A.13
+  - id: e87d6a28-4fd5-4ed4-9fa0-c88662b33845
+    legacy_ids:
+      - 6.A.13
     question: |
       For $\int x(x^2 + 3)^4 dx$, if you choose $u = x^2 + 3$ then the integral becomes
       \vspace{0.2in}
@@ -181,11 +204,13 @@ questions:
       - $\int u^4 du$
       - $\frac{1}{2}\int (u + 3)^4 du$
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 13
-    legacy_id: 6.A.14
+  - id: d4a34292-edf3-46f0-8be0-13c5e22d0c5e
+    legacy_ids:
+      - 6.A.14
     question: Given $F(x) = \int f(x) dx$ and $\int_{6}^{8} f(x) dx = 6$, if $F(8) = -2$, then $F(6) =$
     answer: -8
     distractors:
@@ -193,11 +218,13 @@ questions:
       - 8
       - 4
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 14
-    legacy_id: 6.A.15
+  - id: 29cd1aac-2e94-4cbc-9225-8e05344728af
+    legacy_ids:
+      - 6.A.15
     question: |
       If $f(x) = \int_{0}^{x^2} \frac{1}{1 + t^2} dt$, find $f'(x)$.
       \vspace{0.2in}
@@ -207,11 +234,13 @@ questions:
       - $f'(x) = \tan^{-1} x^2$
       - $f'(x) = \frac{2x}{1 + x^2}$
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 15
-    legacy_id: 6.A.16
+  - id: b0b914e5-256d-4eaa-aa23-ee0748180de0
+    legacy_ids:
+      - 6.A.16
     question: |
       \includegraphics{16.png}
 
@@ -225,11 +254,13 @@ questions:
       - 33.5 mi\textsuperscript{2}
       - 67 mi\textsuperscript{2}
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 16
-    legacy_id: 6.B.1
+  - id: 157c0868-707f-4405-b49c-0deb36bff360
+    legacy_ids:
+      - 6.B.1
     question: |
       Given $\int_{-1}^{1} g(x) dx = 7$ and $\int_{-5}^{1} g(x) dx = 5$, what
       is the value of $\int_{-5}^{-1} 3g(x) dx$?
@@ -240,11 +271,13 @@ questions:
       - 105
       - 6
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 17
-    legacy_id: 6.B.2
+  - id: ecff39fa-88e8-44f3-8d28-56a6f2fef6d0
+    legacy_ids:
+      - 6.B.2
     question: |
       Use the Fundamental Theorem of Calculus to evaluate $\int_{1}^{9} \frac{1}{\sqrt{x^3}} dx$.
       \vspace{0.2in}
@@ -254,11 +287,13 @@ questions:
       - $\frac{8}{9}$
       - $-\frac{2}{3}$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 18
-    legacy_id: 6.B.3
+  - id: 169b273e-f299-4380-89cb-af3f709d937c
+    legacy_ids:
+      - 6.B.3
     question: |
       \includegraphics{1.png}
 
@@ -272,11 +307,13 @@ questions:
       - 600
       - 500
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 19
-    legacy_id: 6.B.4
+  - id: 8f620d1d-7d86-4979-b60d-c88bcec2a977
+    legacy_ids:
+      - 6.B.4
     question: Which of the following limits is equal to $\int_{-1}^{8} 3x^2 dx$
     answer: $\lim_{n\to\infty} \sum_{k=1}^{n} \left(3\left(-1 + \frac{9k}{n}\right)^3 \cdot \frac{9}{n}\right) $
     distractors:
@@ -284,11 +321,13 @@ questions:
       - $\lim_{n\to\infty} \sum_{k=1}^{n} \left(\left(-1 + \frac{9k}{n}\right)^3 \cdot \frac{1}{n}\right) $
       - $\lim_{n\to\infty} \sum_{k=1}^{n} \left(\left(-1 + \frac{9k}{n}\right)^3 \cdot \frac{9}{n}\right) $
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 20
-    legacy_id: 6.B.5
+  - id: a3116eae-413c-47fe-8db1-37225f8b5934
+    legacy_ids:
+      - 6.B.5
     question: |
       $\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \sin(x)\cos(x) dx =$
       \vspace{0.2in}
@@ -298,11 +337,13 @@ questions:
       - $\frac{1}{2}$
       - $-\frac{1}{2}$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 21
-    legacy_id: 6.B.6
+  - id: 49840dfd-1755-49d0-a5e8-d7b868e0a9b7
+    legacy_ids:
+      - 6.B.6
     question: |
       Let $f(x)$ be a function whose first derivative is negative and whose
       second derivative is negative on the closed interval $[a, b]$. The interval
@@ -316,11 +357,13 @@ questions:
       - left $<$ trapezoid $\textstyle < \int_{a}^{b} f(x) dx <$ right
       - right $\textstyle < \int_{a}^{b} f(x) dx <$ trapezoid $<$ left
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 22
-    legacy_id: 6.B.7
+  - id: fe75bcb4-4af7-4cd3-a0b9-7ed00c0035d2
+    legacy_ids:
+      - 6.B.7
     question: |
       $\int_{-2}^{0} \frac{2x - 1}{x^2 - 2x + 1} dx =$
       \vspace{0.2in}
@@ -330,11 +373,13 @@ questions:
       - $-\ln 9$
       - $2 - \ln 3$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 23
-    legacy_id: 6.B.8
+  - id: 6027f199-f824-4d0b-ac22-52172aa90327
+    legacy_ids:
+      - 6.B.8
     question: Find $f(x)$ if $f''(x) = 6x - 2$, $f'(0) = 7$, and $f(0) = 3$.
     answer: $f(x) = x^3 - x^2 + 7x + 3$
     distractors:
@@ -342,11 +387,13 @@ questions:
       - $f(x) = x^3 - x^2$
       - $f(x) = 0$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 24
-    legacy_id: 6.B.9
+  - id: 80977e91-ce5f-4d65-a39a-e24fc357da86
+    legacy_ids:
+      - 6.B.9
     question: |
       $\int \frac{dx}{\sqrt{-x^2 + 6x}} =$
       \vspace{0.2in}
@@ -356,11 +403,13 @@ questions:
       - $\ln |-x^2 + 6x| + C$
       - $\frac{1}{3}\tan^{-1} (x + 3) + C$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 25
-    legacy_id: 6.B.10
+  - id: 187f342f-c6fa-486c-9dc9-7164f6dc27a7
+    legacy_ids:
+      - 6.B.10
     question: |
       Evaluate the integral: $\int 3x\csc^2(x^2) dx$
     answer: $-\frac{3}{2}\cot(x^2) + C$
@@ -369,11 +418,13 @@ questions:
       - $-\csc(x^2)\cot(x^2) + C$
       - $-2\cot(x^2) + C$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 26
-    legacy_id: 6.B.12
+  - id: 373a6f99-4031-4fc3-82c0-aa9376513906
+    legacy_ids:
+      - 6.B.12
     question: |
       For $\int x(x^2 - 1)^5 dx$, if you choose $u = x^2 - 1$ then the integral becomes
       \vspace{0.2in}
@@ -383,11 +434,13 @@ questions:
       - $\int u^5 du$
       - $2\int u^5 du$
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 27
-    legacy_id: 6.B.13
+  - id: 43655682-2992-4da3-8946-511b8dee7959
+    legacy_ids:
+      - 6.B.13
     question: |
       The function $f$ is continuous on the closed interval $[2, 8]$ and has
       values that are given in the table below. Using the subintervals $[2, 5]$,
@@ -409,11 +462,13 @@ questions:
       - 160
       - 150
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 28
-    legacy_id: 6.B.14
+  - id: d2e812e9-fbab-4e09-88bf-4a590deba7fc
+    legacy_ids:
+      - 6.B.14
     question: Given $F'(x) = f(x)$ and $\int_{3}^{9} f(x) dx = 4$, if $F(3) = -1$, then $F(9) =$
     answer: 3
     distractors:
@@ -421,11 +476,13 @@ questions:
       - -5
       - 9
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 29
-    legacy_id: 6.B.15
+  - id: 7fcaf5f3-eb32-4bfd-a6e7-b3c8085e8414
+    legacy_ids:
+      - 6.B.15
     question: |
       \includegraphics{16.png}
 
@@ -439,11 +496,13 @@ questions:
       - 201 mi\textsuperscript{2}
       - 67 mi\textsuperscript{2}
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 30
-    legacy_id: 6.B.16
+  - id: 23f9d89c-6f81-4dbd-ac81-94e300994406
+    legacy_ids:
+      - 6.B.16
     question: |
       If $f(x) = \int_{0}^{x^3} \frac{1}{1 + t^2} dt$, find $f'(x)$.
       \vspace{0.2in}
@@ -453,5 +512,6 @@ questions:
       - $f'(x) = \frac{3x^2}{1 + x^2}$
       - $f'(x) = \tan^{-1} x^3$
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown

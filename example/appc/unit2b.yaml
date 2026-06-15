@@ -1,6 +1,7 @@
 questions:
-  - id: 1
-    legacy_id: 2B.A.1
+  - id: c5167c12-19ee-43fb-852f-830173b709d2
+    legacy_ids:
+      - 2B.A.1
     question: |
       A cybersecurity firm sells encryption packages that have security ratings
       that exist on a logarithmic scale of base 2. How many more times secure is
@@ -13,12 +14,14 @@ questions:
     solution: |
       Each additional unit on the logarithmic scale corresponds to a factor of
       2 $\implies 2^{7 - 4} = 2^3 = 8$ times more secure
+    calculator_active: false
     sections:
       - 2.9
     dok: unknown
 
-  - id: 2
-    legacy_id: 2B.A.2
+  - id: f4242d60-24ba-48a6-9ff3-cccbb2be48ee
+    legacy_ids:
+      - 2B.A.2
     question: |
       A graph of the exponential function $f(x)$ is shown to the right. Which of
       the following points would line on the graph of $f^{-1}(x)$?
@@ -35,12 +38,14 @@ questions:
       The point $(-1, 4)$ is shown on the graph of $f$. If the $x$ and $y$
       coordinates are swapped, the point $(4, -1)$ will appear on the graph of
       $f^{-1}$.
+    calculator_active: false
     sections:
       - '2.10'
     dok: unknown
 
-  - id: 3
-    legacy_id: 2B.A.3
+  - id: 13ef4abc-2430-440d-bfc9-d0c65782e673
+    legacy_ids:
+      - 2B.A.3
     question: |
       The functions $f$ and $g$ are given by $f(x) = 10^x$ and $g(x) =
       \log_{10}(x)$. The function $h$ is given by the composition of $h(x) =
@@ -53,12 +58,14 @@ questions:
     solution: |
       $h(x) = f(g(x)) = 10^{\log_{10}(x)} = x$ by the definition of the
       logarithmic function as the inverse of the exponential function.
+    calculator_active: false
     sections:
       - '2.10'
     dok: unknown
 
-  - id: 4
-    legacy_id: 2B.A.4
+  - id: 17eef279-b5ad-4c10-a125-7285bacdcf19
+    legacy_ids:
+      - 2B.A.4
     question: |
       The exponential function $h(x)$ is decreasing and its graph is concave up
       for all $x$. Which of the following is true about the inverse function
@@ -74,12 +81,14 @@ questions:
     solution: |
       By sketching the graph and its inverse, the attributes of the inverse
       can be clearly seen.
+    calculator_active: false
     sections:
       - 2.11
     dok: unknown
 
-  - id: 5
-    legacy_id: 2B.A.5
+  - id: cc61125b-a2f5-4fa0-9088-e9639aac6699
+    legacy_ids:
+      - 2B.A.5
     question: |
       Let $f(x) = \log_{10}(ax)$ and $g(x) = \log_{10}(bx^2)$ for positive
       numbers $a$ and $b$. Let $k(x) = f(x) + g(x)$. Which of the following
@@ -96,12 +105,14 @@ questions:
         = \log_{10}(ax \cdot bx^2)
         = \log_{10}(abx^3)
       \end{gather*}
+    calculator_active: false
     sections:
       - 2.12
     dok: unknown
 
-  - id: 6
-    legacy_id: 2B.A.6
+  - id: b210ae64-4ef8-4949-b38a-b046a47121f4
+    legacy_ids:
+      - 2B.A.6
     question: |
       The logarithmic function $L$ can be expressed as $L(x) = A \log_3(x)$ and
       also as $L(x) = B \log_2(x)$. Which of the following is an expression for
@@ -120,12 +131,14 @@ questions:
         = \frac{B}{\log_3(2)} \cdot \log_3(x)
       \end{gather*}
       therefore $A = \frac{B}{\log_3(2)}$
+    calculator_active: false
     sections:
       - 2.12
     dok: unknown
 
-  - id: 7
-    legacy_id: 2B.A.7
+  - id: d8402242-f333-4360-b4ad-a333a1a3c1c6
+    legacy_ids:
+      - 2B.A.7
     question: |
       The functions $f$ and $g$ are given by $f(x) = \log_3(x - 2)$ and $g(x) =
       \log_3(2x - 1)$. Find all $x$ for which $f(x) + g(x) > 2$?
@@ -145,12 +158,14 @@ questions:
         (x + 1)(2x - 7) > 0 \implies
       \end{gather*}
       \sgchart{-1,\frac{7}{2}}{(x + 1)(2x - 7): +-+}
+    calculator_active: false
     sections:
       - 2.13
     dok: unknown
 
-  - id: 8
-    legacy_id: 2B.A.8
+  - id: 0b42d085-7882-4161-ae48-e4286f3d5668
+    legacy_ids:
+      - 2B.A.8
     question: |
       A student is solving the equation $5^x = 10^{3x - 1}$. They do not have
       their calculator, so they have to rely on a table of logarithms which
@@ -168,12 +183,14 @@ questions:
         \log_{10} 5^x = 3x - 1 \implies
         x \log_{10} 5 = 3x - 1
       \end{gather*}
+    calculator_active: false
     sections:
       - 2.13
     dok: unknown
 
-  - id: 9
-    legacy_id: 2B.A.9
+  - id: 2876b156-b54f-4d9c-a6f1-edbaebce5bcf
+    legacy_ids:
+      - 2B.A.9
     question: |
       The function $g(x) = 3 \cdot 8^x$ is going to be graphed on a semi-log plot
       where equally spaced marks on the $y$-axis correspond to increasing powers
@@ -187,12 +204,14 @@ questions:
     solution: |
       On the semi-log plot, the graph of $g(x)$ will
       appear as the line given by $y = \log_{10} 8 \cdot x + \log_{10} 3$
+    calculator_active: false
     sections:
       - 2.15
     dok: unknown
 
-  - id: 10
-    legacy_id: 2B.A.11
+  - id: 2697b893-6eb5-4dab-b7d5-fdc9249934f8
+    legacy_ids:
+      - 2B.A.11
     question: |
       Which of the following is an expression for the inverse of $f(x) = 3^{2x} +
       1$, along with its domain?
@@ -209,12 +228,14 @@ questions:
         \frac{1}{2} \log_3(x - 1) = y \\
         f^{-1}(x) = \frac{1}{2} \log_3(x - 1)
       \end{gather*}
+    calculator_active: true
     sections:
       - 2.13
     dok: unknown
 
-  - id: 11
-    legacy_id: 2B.A.12
+  - id: 86f2bf07-f21c-4aff-9010-deca7d468bb4
+    legacy_ids:
+      - 2B.A.12
     question: |
       Four equally rated professional weightlifters agreed to participate in an
       experiment where they would have different amounts of time to train for a
@@ -245,12 +266,14 @@ questions:
     solution: |
       Perform logartithmic regression. Enter 1,100 into $Y_2$ and find the
       $x$-coordinate of the intersection
+    calculator_active: true
     sections:
       - 2.14
     dok: unknown
 
-  - id: 12
-    legacy_id: 2B.A.13
+  - id: 910dcf15-6a4d-49c3-b01e-ba4ccf5dd622
+    legacy_ids:
+      - 2B.A.13
     question: |
       Since the early 1970s, the number of transistors in microprocessors has
       increased. A semi-log plot of $T$, the number of transistors, in year $x$
@@ -267,12 +290,14 @@ questions:
       - $T(x)$ could be modeled by a logarithmic function because the semi-log plot is reasonably linear.
       - $T(x)$ could be modeled by a quadratic function because the semi-log plot is reasonably linear.
     solution: An exponential function will appear linear when graphed on a semi-log plot.
+    calculator_active: true
     sections:
       - 2.15
     dok: unknown
 
-  - id: 13
-    legacy_id: 2B.A.14
+  - id: ed3fe24b-f229-45c9-8d9a-63b0c89fde7c
+    legacy_ids:
+      - 2B.A.14
     question: |
       A function $f(x)$ is going to be used to model the relationship between $x$
       and $y$, with select values of $x$ and $y$ provided in the table.
@@ -301,12 +326,14 @@ questions:
       successive input value is being multiplied by roughly 4. This corresponds
       to a logarithmic model with a base of 4. It may help to plot the data and
       view the shape of the graph.
+    calculator_active: true
     sections:
       - 2.14
     dok: unknown
 
-  - id: 14
-    legacy_id: 2B.B.1
+  - id: 54e7ba60-b30c-4996-a6b8-77b78763df6d
+    legacy_ids:
+      - 2B.B.1
     question: |
       The function $\textstyle g(x) = 2 \cdot \left( \frac{1}{2} \right)^x$ is
       going to be graphed on a semi-log plot where equally spaced marks on the
@@ -321,12 +348,14 @@ questions:
       On the semi-log plot, the graph of $g(x)$ will appear as the line given
       by $y = \log_{10} \frac{1}{2} \cdot x + \log_{10} 2$ $= -\log_{10} 2
       \cdot x + \log_{10} 2$
+    calculator_active: false
     sections:
       - 2.15
     dok: unknown
 
-  - id: 15
-    legacy_id: 2B.B.2
+  - id: bf36d2ba-4121-4ae4-89f8-d0ec7d23adf7
+    legacy_ids:
+      - 2B.B.2
     question: |
       The exponential function $h(x)$ is increasing and its graph is concave up
       for all $x$. Which of the following is true about the inverse function
@@ -342,12 +371,14 @@ questions:
     solution: |
       By sketching the graph and its inverse, the attributes of the inverse
       can be clearly seen.
+    calculator_active: false
     sections:
       - 2.11
     dok: unknown
 
-  - id: 16
-    legacy_id: 2B.B.3
+  - id: c599f60a-bef9-4bb1-ba15-c2f65f61143c
+    legacy_ids:
+      - 2B.B.3
     question: |
       Let $f(x) = \log_{10}(ax)$ and $g(x) = \log_{10}(bx^2)$ for positive
       numbers $a$ and $b$. Let $k(x) = g(x) - f(x)$. Which of the following
@@ -364,12 +395,14 @@ questions:
         = \log_{10}\left(\frac{bx^2}{ax}\right)
         = \log_{10}\left(\frac{bx}{a}\right)
       \end{gather*}
+    calculator_active: false
     sections:
       - 2.12
     dok: unknown
 
-  - id: 17
-    legacy_id: 2B.B.4
+  - id: be7761d6-d1a3-46dc-9c36-84c9a0910408
+    legacy_ids:
+      - 2B.B.4
     question: |
       The function $g$ is given by $g(x) = \ln(3x + 1) - \ln(x^2 + x - 2)$.
       What are all values of $x$ for which $g(x) < 0$?
@@ -389,12 +422,14 @@ questions:
         \frac{-(x - 3)(x + 1)}{(x - 1)(x + 2)} < 0
       \end{gather*}
       \sgchart{~-2,-1,~1,3}{g(x): -+-+-}
+    calculator_active: false
     sections:
       - 2.13
     dok: unknown
 
-  - id: 18
-    legacy_id: 2B.B.5
+  - id: 5593d8c3-5e9d-4e40-bdc8-ff3a3e13ca4d
+    legacy_ids:
+      - 2B.B.5
     question: |
       The functions $f$ and $g$ are given by $f(x) = 10^x$ and $g(x) =
       \log_{10}(x)$. The function $h$ is given by the composition of $h(x) =
@@ -408,12 +443,14 @@ questions:
       $h(x) = (f \circ g)(x) = (g \circ f)(x)$ for all $x$ in the domains of
       both $f$ and $g$ by the definition of the logarithmic function as the
       inverse of the exponential function.
+    calculator_active: false
     sections:
       - '2.10'
     dok: unknown
 
-  - id: 19
-    legacy_id: 2B.B.6
+  - id: d86f2b89-6714-45d3-98cc-98274aa96508
+    legacy_ids:
+      - 2B.B.6
     question: |
       The logarithmic function $L$ given by $L(x) = \log_{10}(x)$ can be
       expressed as a vertical dilation of the natural log function: $L(x) = A
@@ -431,12 +468,14 @@ questions:
         = \frac{1}{\ln(10)} \cdot \ln(x) \implies
         A = \frac{1}{\ln(10)}
       \end{gather*}
+    calculator_active: false
     sections:
       - 2.12
     dok: unknown
 
-  - id: 20
-    legacy_id: 2B.B.7
+  - id: ef2f8426-86f2-4c78-8b5b-d65ecb39f449
+    legacy_ids:
+      - 2B.B.7
     question: |
       An emergency warning system issues threat warnings on a logarithmic scale
       of base 2. How many times more serious is a threat of level 5 compared to
@@ -449,12 +488,14 @@ questions:
     solution: |
       Each additional unit on the logarithmic scale corresponds to a factor of
       2 $\implies 2^{5 - 3} = 2^2 = 4$ times more serious
+    calculator_active: false
     sections:
       - 2.9
     dok: unknown
 
-  - id: 21
-    legacy_id: 2B.B.8
+  - id: 372040eb-25f2-4165-a5cc-b520437c7a5b
+    legacy_ids:
+      - 2B.B.8
     question: |
       Solve the equation: $\ln(x - 3) + \ln(x + 4) = 3 \ln 2$
     answer: $x = 4$
@@ -473,12 +514,14 @@ questions:
         x = 4
       \end{gather*}
       $x = -5$ is an extraneous solution because it is not in the domain of the original equation.
+    calculator_active: false
     sections:
       - 2.13
     dok: unknown
 
-  - id: 22
-    legacy_id: 2B.B.9
+  - id: ba5eca70-9b17-4458-b2aa-b7e8ab768d9d
+    legacy_ids:
+      - 2B.B.9
     question: |
       A graph of the exponential function $f(x)$ is shown to the right. Which of
       the following points would line on the graph of $f^{-1}(x)$?
@@ -495,12 +538,14 @@ questions:
       The point $(0, 1)$ is shown on the graph of $f$. If the $x$ and $y$
       coordinates are swapped, the point $(1, 0)$ will appear on the graph of
       $f^{-1}$.
+    calculator_active: false
     sections:
       - '2.10'
     dok: unknown
 
-  - id: 23
-    legacy_id: 2B.B.11
+  - id: 2e69ce4a-7b7b-4e91-bb8d-2f536ecd8bd2
+    legacy_ids:
+      - 2B.B.11
     question: |
       Four equally rated professional basketball players agreed to participate
       in an experiment where they would have different amounts of time to train
@@ -531,12 +576,14 @@ questions:
     solution: |
       Perform logartithmic regression. Enter 95 into $Y_2$ and find the
       $x$-coordinate of the intersection
+    calculator_active: true
     sections:
       - 2.14
     dok: unknown
 
-  - id: 24
-    legacy_id: 2B.B.12
+  - id: 80595371-e1ed-4cd1-9ef0-a19f7d1f5d92
+    legacy_ids:
+      - 2B.B.12
     question: |
       Since the early 1970s, the number of transistors in microprocessors has
       increased. A semi-log plot of $T$, the number of transistors, in year $x$
@@ -553,12 +600,14 @@ questions:
       - $T(x)$ could be modeled by a quadratic function because the semi-log plot is reasonably linear.
       - $T(x)$ could be modeled by a linear function because the semi-log plot is reasonably linear.
     solution: An exponential function will appear linear when graphed on a semi-log plot.
+    calculator_active: true
     sections:
       - 2.15
     dok: unknown
 
-  - id: 25
-    legacy_id: 2B.B.13
+  - id: 8bb6a2ac-3d5f-44b8-b73a-95698856cf51
+    legacy_ids:
+      - 2B.B.13
     question: |
       A function $f(x)$ is going to be used to model the relationship between $x$
       and $y$, with select values of $x$ and $y$ provided in the table.
@@ -587,12 +636,14 @@ questions:
       successive output value is being multiplied by roughly 4. This corresponds
       to an exponential model with a base of 4. It may help to plot the data and
       view the shape of the graph.
+    calculator_active: true
     sections:
       - 2.14
     dok: unknown
 
-  - id: 26
-    legacy_id: 2B.B.14
+  - id: 6ebb8a76-e869-4e5c-8827-e078e003be97
+    legacy_ids:
+      - 2B.B.14
     question: |
       Which of the following is an expression for the inverse of $f(x) = 3^{x} +
       1$, along with its domain?
@@ -608,6 +659,7 @@ questions:
         \log_3(x - 1) = y \implies
         f^{-1}(x) = \log_3(x - 1)
       \end{gather*}
+    calculator_active: true
     sections:
       - 2.13
     dok: unknown

@@ -1,6 +1,7 @@
 questions:
-  - id: 1
-    legacy_id: 2A.A.1
+  - id: 3a704c87-9dfa-47e4-8e5f-9e2ca1daa34f
+    legacy_ids:
+      - 2A.A.1
     question: |
       \includegraphics{1}
 
@@ -17,11 +18,13 @@ questions:
       The absolute value of each element is half of the element before it and
       alternating between positive and negative values, therefore $r =
       -\frac{1}{2}$.
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 2
-    legacy_id: 2A.A.2
+  - id: 41a8ae50-18f0-4282-a316-71f03c6241c6
+    legacy_ids:
+      - 2A.A.2
     question: |
       \fullwidth{\begin{center}
         \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
@@ -49,11 +52,13 @@ questions:
       $b = 32 - 3(1 - 5) = 32 + 12 = 44$ \\
       $c = 32 - 3(8 - 5) = 32 - 9 = 23$ \\
       $44 + 23 = 67$ \\
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 3
-    legacy_id: 2A.A.3
+  - id: 33756531-0c88-4357-b11d-ee7404873a25
+    legacy_ids:
+      - 2A.A.3
     question: |
       The exponential function $f$ is defined by $f(x) = ab^x$, where $a$ and $b$
       are constants. If $f(2) = 36$ and $\textstyle \frac{f(x + 1)}{f(x)} = 3$ for all
@@ -66,11 +71,13 @@ questions:
     solution: |
       $b = \textstyle \frac{f(x + 1)}{f(x)} = 3$ \\
       $f(x) = 36(3)^{x - 2} = 36(3^{-2})(3)^x = 4(3)^x$
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 4
-    legacy_id: 2A.A.4
+  - id: 51aff989-4ef3-42ce-bb3d-b49df548469b
+    legacy_ids:
+      - 2A.A.4
     question: |
       \fullwidth{\begin{center}
         \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
@@ -90,11 +97,13 @@ questions:
       - $g$ could be linear because the output values change linearly as the input values change proportionally.
       - $g$ could be exponential because the output values change linearly as the input values change proportionally.
     solution: As the $x$ values increase by 1 over each interval, the value of $g(x)$ doubles. This matches the statement in answer C.
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 5
-    legacy_id: 2A.A.5
+  - id: 863c6495-99ae-4617-a909-2b7fc5921d38
+    legacy_ids:
+      - 2A.A.5
     question: |
       Let $m(x) = 5 \left( \frac{2}{3} \right)^{x - 1}$. Which of the following
       statements about $m$ is correct?
@@ -108,11 +117,13 @@ questions:
       Because $0 < b < 1$, this curve represents exponential decay. Because $a
       > 0$, $m$ will be positive on its entire domain, therefore it is
       decreasing and concave up.
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 6
-    legacy_id: 2A.A.6
+  - id: 88eee4da-1d0a-46f3-b201-01f3de7b05fa
+    legacy_ids:
+      - 2A.A.6
     question: |
       Let $f$ be an exponential function with the following end behavior:
       \[
@@ -126,11 +137,13 @@ questions:
       - \includegraphics[width=2in]{6-B}
     solution: |
       Note: B has the correct end behavior, but exponential functions are either concave up or concave down over their entire domain.
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 7
-    legacy_id: 2A.A.7
+  - id: fddd6657-db37-4f90-a0f7-193c63f3c9e3
+    legacy_ids:
+      - 2A.A.7
     question: |
       \fullwidth{\begin{center}
         \everymath{}
@@ -152,11 +165,13 @@ questions:
       - $h$ demonstrates exponential decay because $a > 0$ and $0 < b < 1$.
       - $h$ demonstrates exponential growth because $a > 0$ and $0 < b < 1$.
     solution: Exponential growth only occurs if $b > 1$. The table of data shows all postive values for $g(x)$ and the value of $g(x)$ is increasing.
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 8
-    legacy_id: 2A.A.8
+  - id: fe0cbf16-1af5-4493-a4cd-27abc8879806
+    legacy_ids:
+      - 2A.A.8
     question: |
       Which of the following functions is an equivalent form of the function
       $k(x) = 4 \cdot 9^{2x}$?
@@ -166,11 +181,13 @@ questions:
       - $k(x) = 4 \cdot 3^x$
       - $k(x) = 16 \cdot 81^x$
     solution: $4 \cdot 9^{2x} = 4 \cdot \left(9^2\right)^x = 4 \cdot 81^x$
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 9
-    legacy_id: 2A.A.9
+  - id: c5f407e1-b395-494c-a84b-e46e1086ae13
+    legacy_ids:
+      - 2A.A.9
     question: |
       \fullwidth{\begin{center}
         \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
@@ -198,11 +215,13 @@ questions:
       the table is proportional to the previous value with a ratio of
       $\textstyle \frac{2}{3}$. Therefore, an exponential function $ab^x$ where $a = 81$
       and $\textstyle b = \frac{2}{3}$ models this situation.
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 10
-    legacy_id: 2A.A.11
+  - id: 499cbb43-ee9d-458e-9a81-ac1c485b59db
+    legacy_ids:
+      - 2A.A.11
     question: |
       Mary Jo deposits \$300 each month into her retirement account that pays
       4.5\% annually. What will be the value of her investment after 20 years?
@@ -217,11 +236,13 @@ questions:
         FV = 300 \frac{(1 + \frac{0.045}{12})^{12 \cdot 20} - 1}{\frac{0.045}{12}} \\
         FV = 116437.3089 \\
       \end{gather*}
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 11
-    legacy_id: 2A.A.12
+  - id: c1fb128c-74ce-4453-8e01-c02fe839537c
+    legacy_ids:
+      - 2A.A.12
     question: |
       \begin{center}
         \includegraphics{10}
@@ -237,11 +258,13 @@ questions:
       - The quadratic model is appropriate because there is a linear pattern in the graph of the residuals.
       - The quadratic model is appropriate because none of the residuals fall outside the pattern in the graph of the residuals.
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 12
-    legacy_id: 2A.A.13
+  - id: 73ff5b11-518a-460e-84d3-1f0058837baf
+    legacy_ids:
+      - 2A.A.13
     question: |
       For a period of time, an island's population grows at a rate proportional
       to its population. If the growth rate is 3.8\% per year and the current
@@ -256,11 +279,13 @@ questions:
       P(t) = 1543 \cdot 1.038^t \qquad \text{(the common ratio is 1 plus the percentage as a decimal)} \\
         P(5.2) = 1873.234572 \\
       \end{gather*}
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 13
-    legacy_id: 2A.A.14
+  - id: cc92781e-6b3e-43a1-a9eb-bb54839266a2
+    legacy_ids:
+      - 2A.A.14
     question: |
       \fullwidth{\begin{center}
         \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
@@ -284,11 +309,13 @@ questions:
       Enter the data into two lists in your calculator and perform an exponential regression: \\
       $y = 6.332862704 \cdot 1.248374122^x$ \\
       $g(3.2) \approx 12.87962731$ \\
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 14
-    legacy_id: 2A.B.1
+  - id: bcc88acb-8ba2-4126-a6c1-603635175b70
+    legacy_ids:
+      - 2A.B.1
     question: |
       Let $m(x) = -2 \left( \frac{1}{2} \right)^{x + 2}$. Which of the following
       statements about $m$ is correct?
@@ -302,11 +329,13 @@ questions:
       Because $0 < b < 1$, this curve represents exponential decay. Because
       $a < 0$, $m$ will be negative on its entire domain, therefore it is
       increasing and concave down.
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 15
-    legacy_id: 2A.B.2
+  - id: 41d121e6-2027-4370-a8d4-1b725de57934
+    legacy_ids:
+      - 2A.B.2
     question: |
       The exponential function $f$ is defined by $f(x) = ab^x$, where $a$ and $b$
       are constants. If $f(-3) = 108$ and $\textstyle \frac{f(x + 1)}{f(x)} = \frac{1}{3}$ for all
@@ -319,11 +348,13 @@ questions:
     solution: |
       $b = \textstyle \frac{f(x + 1)}{f(x)} = \frac{1}{3}$ \\
       $f(x) = 108\left(\frac{1}{3}\right)^{x + 3} = 108\left(\frac{1}{3}^{3}\right)\left(\frac{1}{3}\right)^x = 4\left(\frac{1}{3}\right)^x$
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 16
-    legacy_id: 2A.B.3
+  - id: 7d5c5d2b-12b1-4836-b315-8fa3a4e196bc
+    legacy_ids:
+      - 2A.B.3
     question: |
       Let $f$ be an exponential function with the following end behavior:
       \[
@@ -336,11 +367,13 @@ questions:
       - \includegraphics[width=2in]{6-B}
       - \includegraphics[width=2in]{6-D}
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 17
-    legacy_id: 2A.B.4
+  - id: 68cc6269-0267-452c-a870-3d5691a5ef53
+    legacy_ids:
+      - 2A.B.4
     question: |
       \fullwidth{\begin{center}
         \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
@@ -362,11 +395,13 @@ questions:
     solution: |
       As the $x$ values increase by 2 over each interval, the value of $g(x)$
       is multiplied by $\frac{1}{3}$. This matches the statement in answer B.
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 18
-    legacy_id: 2A.B.5
+  - id: 7ebb0ad6-03ee-494c-9fcf-4366a53bc62e
+    legacy_ids:
+      - 2A.B.5
     question: |
       Which of the following functions is an equivalent form of the function
       $k(x) = -3 \cdot 5^{2x}$?
@@ -376,11 +411,13 @@ questions:
       - $k(x) = -75 \cdot 5^x$
       - $k(x) = -15^{2x}$
     solution: $-3 \cdot 5^{2x} = -3 \cdot (5^2)^x = -3 \cdot 25^x$
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 19
-    legacy_id: 2A.B.6
+  - id: 8058de0d-a655-439e-82ee-50f4d540eee8
+    legacy_ids:
+      - 2A.B.6
     question: |
       \fullwidth{\begin{center}
         \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
@@ -409,11 +446,13 @@ questions:
       $b = 15 + 3(9 - 1) = 15 + 24 = 39$ \\
       $c = 15 + 3(12 - 1) = 15 + 33 = 48$ \\
       $24 + 39 + 48 = 111$ \\
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 20
-    legacy_id: 2A.B.7
+  - id: 82bade1d-8f38-407a-a778-5b8b25fc6fbb
+    legacy_ids:
+      - 2A.B.7
     question: |
       \fullwidth{\begin{center}
         \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
@@ -441,11 +480,13 @@ questions:
       the table is proportional to the previous value with a ratio of
       $\textstyle \frac{4}{3}$. Therefore, an exponential function $ab^x$ where $a = 27$
       and $\textstyle b = \frac{4}{3}$ models this situation.
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 21
-    legacy_id: 2A.B.8
+  - id: 1b5a32f2-6900-4855-9621-ad94340051fb
+    legacy_ids:
+      - 2A.B.8
     question: |
       \includegraphics{8B}
 
@@ -462,11 +503,13 @@ questions:
       The value of each element is multiplied by $\textstyle \frac{1}{3}$
       every second element, therefore $\textstyle r = \frac{1}{3}$ with a
       horizontal dilation of 2.
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 22
-    legacy_id: 2A.B.9
+  - id: 1471965f-0917-46f7-b47d-75743e90dfab
+    legacy_ids:
+      - 2A.B.9
     question: |
       \fullwidth{\begin{center}
         \everymath{}
@@ -488,11 +531,13 @@ questions:
       - $h$ demonstrates exponential decay because $0 < a < 1$ and $b > 1$.
       - $h$ demonstrates exponential decay because $a > 0$ and $0 < b < 1$.
     solution: Exponential growth only occurs if $b > 1$. The table of data shows all postive values for $g(x)$ and the value of $g(x)$ is increasing.
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 23
-    legacy_id: 2A.B.11
+  - id: 48952deb-45bc-4f48-b292-33682811126a
+    legacy_ids:
+      - 2A.B.11
     question: |
       The amount of a certain medication in a patient's body decreases at a
       rate proportional to the current amount. If a patient is given 5mg of the
@@ -508,11 +553,13 @@ questions:
       A(t) = 5 \cdot 0.58^t \qquad \text{(the common ratio is 1 minus the percentage as a decimal)} \\
       A(4.5) = 0.431\text{mg} \\
       \end{gather*}
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 24
-    legacy_id: 2A.B.12
+  - id: 18124b09-3e63-4b56-9160-7da48059a4c1
+    legacy_ids:
+      - 2A.B.12
     question: |
       \fullwidth{\begin{center}
         \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
@@ -536,11 +583,13 @@ questions:
       Enter the data into two lists in your calculator and perform an exponential regression: \\
       $y = 9.698586503 \cdot 0.7919045749^x$ \\
       $g(-0.2) \approx 10.16187558$ \\
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 25
-    legacy_id: 2A.B.13
+  - id: aa5e3973-dfc5-484b-bc68-0ab29e89122c
+    legacy_ids:
+      - 2A.B.13
     question: |
       Judy has \$500 to invest at 9\% annual interest compounded monthly. How
       long will it take for her investment to grow to \$3000?
@@ -556,11 +605,13 @@ questions:
         \text{(solve for $t$ using your calculator)} \\
         t \approx 19.983 \\
       \end{gather*}
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 26
-    legacy_id: 2A.B.14
+  - id: f8e88f6e-55fa-435f-8983-7458715b0c7b
+    legacy_ids:
+      - 2A.B.14
     question: |
       \begin{center}
         \includegraphics{14B}
@@ -576,5 +627,6 @@ questions:
       - The quadratic model is not appropriate because there are more positive residual values than negative residual values.
       - The quadratic model is appropriate because there is a linear pattern in the graph of the residuals.
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown

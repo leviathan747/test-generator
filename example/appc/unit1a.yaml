@@ -1,6 +1,7 @@
 questions:
-  - id: 1
-    legacy_id: 1A.A.1
+  - id: 7a90b9e5-c142-4542-bea2-3a7b53513679
+    legacy_ids:
+      - 1A.A.1
     question: |
       The graph of a function $k$ is shown in the figure to the right. Which of
       the following best describes the behavior of the graph of $k$ from point
@@ -15,12 +16,14 @@ questions:
       - The graph of $k$ is decreasing and concave up.
       - The graph of $k$ is decreasing and concave down.
     solution: The rate of change is positive and it is decreasing.
+    calculator_active: false
     sections:
       - 1.1
     dok: unknown
 
-  - id: 2
-    legacy_id: 1A.A.2
+  - id: d1f25f9c-65d0-4ab5-9e20-e6a548d6a5e7
+    legacy_ids:
+      - 1A.A.2
     question: |
       The function $g$ is a polynomial with the following end behavior:
       \[ \lim_{x \to -\infty} g(x) = \infty \qquad \text{and} \qquad \lim_{x \to \infty} g(x) = -\infty \]
@@ -33,12 +36,14 @@ questions:
     solution: |
       An odd-degree polynomial with a negative leading coefficient has end
       behavior that matches the given description.
+    calculator_active: false
     sections:
       - 1.6
     dok: unknown
 
-  - id: 3
-    legacy_id: 1A.A.3
+  - id: a5896f7e-0129-40f3-9190-1433f75e2e25
+    legacy_ids:
+      - 1A.A.3
     question: |
       The figure to the right shows the graph of a function $h$. For how many
       values of $b$ does the function $h$ have an average rate of change of
@@ -52,12 +57,14 @@ questions:
       A ray with slope $\frac{1}{2}$ starting at $(-2, 1)$ intersects with the
       graph of $h$ exactly 2 times. These points are the only two points for
       which the average rate of change of $h$ is equal to $\frac{1}{2}$.
+    calculator_active: false
     sections:
       - 1.2
     dok: unknown
 
-  - id: 4
-    legacy_id: 1A.A.4
+  - id: 45b72f41-b165-4fca-b48f-75eaa74301c1
+    legacy_ids:
+      - 1A.A.4
     question: |
       \begin{center}
         \begin{tabularx}{6in}{ |*{6}{Y|} }
@@ -88,12 +95,14 @@ questions:
       \begin{tabularx}{3in}{ *{4}{Y} }
         $3 - 1 = \bm{2}$ & $5 - 3 = \bm{2}$ & $7 - 5 = \bm{2}$ \\
       \end{tabularx}
+    calculator_active: false
     sections:
       - 1.3
     dok: unknown
 
-  - id: 5
-    legacy_id: 1A.A.5
+  - id: a3776af3-cec1-499a-87d6-589a55dc148f
+    legacy_ids:
+      - 1A.A.5
     question: |
       The polynomial function $p$ is given by $p(x) = -x(x + 2)(x - 3)^2$. Which
       of the following could be the graph of $p$?
@@ -105,14 +114,16 @@ questions:
     solution: |
       Downard facing fourth degree polynomial. Yeros at $x = -2$, $x = 0$, and
       $x = 3$ (multiplicity 2).
+    calculator_active: false
     sections:
       - 1.4
       - 1.5
       - 1.6
     dok: unknown
 
-  - id: 6
-    legacy_id: 1A.A.6
+  - id: abdcefc6-3bfe-4c74-91ed-264d2904eda5
+    legacy_ids:
+      - 1A.A.6
     question: |
       The polynomial $h$ is given by $h(x) = x^2(x^2 + 1)$. Which of the
       following describes the zeros of $h$?
@@ -124,12 +135,14 @@ questions:
     solution: |
       Real zero at $x = 0$ with multiplicity 2. $(x^2 + 1)$ cannot be factored
       over the reals, so it represents the remaining two complex zeros.
+    calculator_active: false
     sections:
       - 1.5
     dok: unknown
 
-  - id: 7
-    legacy_id: 1A.A.7
+  - id: d514bf75-f6b3-4dcf-b1b4-6317939db267
+    legacy_ids:
+      - 1A.A.7
     question: |
       The figure to the right shows the graph of a function $h$. For how many
       values of $c$ does the function $h$ have an average rate of change of
@@ -143,12 +156,14 @@ questions:
       A ray with slope 1 starting at $(0, 1)$ intersects with the
       graph of $h$ exactly one time. This points is the only point for
       which the average rate of change of $h$ is equal to 1.
+    calculator_active: false
     sections:
       - 1.2
     dok: unknown
 
-  - id: 8
-    legacy_id: 1A.A.8
+  - id: be06bf61-540d-4e98-a227-8546b0de75b3
+    legacy_ids:
+      - 1A.A.8
     question: |
       Let $g$ be a polynomial function whose graph has a point of inflection at $x = 3$.
       Which of the following statements about $g$ must be true?
@@ -162,12 +177,14 @@ questions:
       change must be switching from increasing to decreasing or decreasing to
       increasing, which means the graph of the function iteself has an
       inflection point at that $x$ value.
+    calculator_active: false
     sections:
       - 1.4
     dok: unknown
 
-  - id: 9
-    legacy_id: 1A.A.9
+  - id: b1b10672-5b32-4d1d-a6f4-33f6431bebb7
+    legacy_ids:
+      - 1A.A.9
     question: |
       \begin{center}
         \begin{tabularx}{6in}{ |*{8}{Y|} }
@@ -209,12 +226,14 @@ questions:
         $-1 - (-2) = \bm{1}$ & $0 - (-1) = \bm{1}$ \\
       \end{tabularx}
       \vspace{1em}
+    calculator_active: false
     sections:
       - 1.5
     dok: unknown
 
-  - id: 10
-    legacy_id: 1A.A.11
+  - id: 8a6f7dc4-5beb-42b3-907b-2455a989a7cd
+    legacy_ids:
+      - 1A.A.11
     question: |
       The graph of $f$ is shown above with the six points $A$, $B$, $C$, $D$,
       $E$, and $F$ labeled. What are all the points where the graph of $f$ has a
@@ -227,12 +246,14 @@ questions:
     solution: |
       For $A$, $C$, and $E$, an interval can be chosen including the point for
       which the point itself is the greatest in the interval.
+    calculator_active: true
     sections:
       - 1.4
     dok: unknown
 
-  - id: 11
-    legacy_id: 1A.A.12
+  - id: e2375da7-bea8-403a-b863-6ebf14a8e0bc
+    legacy_ids:
+      - 1A.A.12
     question: |
       The function $f$ is given by $f(x) = 1.07x^3 - 11.17x^2 + 23.71x + 2.13$.
       Which of the following values is an absolute extremum for the graph of $f$
@@ -250,12 +271,14 @@ questions:
 
         \includegraphics[width=2.5in]{11S}
       \end{multicols}
+    calculator_active: true
     sections:
       - 1.4
     dok: unknown
 
-  - id: 12
-    legacy_id: 1A.A.13
+  - id: ed518ec4-c536-4691-906c-9f05351f7a24
+    legacy_ids:
+      - 1A.A.13
     question: |
       Let $k$ be a polynomial function whose rate of change can be modeled by the
       function $R$, given by $R(x) = -3.261x^3 + 5.362x - 1.584$. Based on this
@@ -276,12 +299,14 @@ questions:
 
         \includegraphics[width=2.5in]{12S}
       \end{multicols}
+    calculator_active: true
     sections:
       - 1.4
     dok: unknown
 
-  - id: 13
-    legacy_id: 1A.A.14
+  - id: 23157c19-461a-4ac0-ad69-4e5475cf910a
+    legacy_ids:
+      - 1A.A.14
     question: |
       A ball is thrown through an open window to the ground below. the height of
       the ball, in meters, at time $t$ seconds after it is thrown can be modeled by
@@ -302,12 +327,14 @@ questions:
 
         \includegraphics[width=2.5in]{13s}
       \end{multicols}
+    calculator_active: true
     sections:
       - 1.1
     dok: unknown
 
-  - id: 14
-    legacy_id: 1A.A.15
+  - id: a9418125-f1f6-49b1-803b-63929617b23b
+    legacy_ids:
+      - 1A.A.15
     question: |
       The rate of people entering a subway car on a particular day is modeled by
       the function $r$, where $r(t) = 0.03t^3 - 0.846t^2 + 6.587t + 1.428$ for
@@ -329,12 +356,14 @@ questions:
 
         \includegraphics[width=2.5in]{14s}
       \end{multicols}
+    calculator_active: true
     sections:
       - 1.4
     dok: unknown
 
-  - id: 15
-    legacy_id: 1A.B.1
+  - id: 8306f09a-c413-4c45-8ed9-2e8ded089c69
+    legacy_ids:
+      - 1A.B.1
     question: |
       The polynomial $h$ is given by $h(x) = x^2(x^2 - 1)$. Which of the
       following describes the zeros of $h$?
@@ -346,12 +375,14 @@ questions:
     solution: |
       Real zeros at $x = 0$ with multiplicity 2. $(x^2 - 1)$ can be factored
       into $(x - 1)(x + 1)$. Giving two more distinct real zeros at $x = \pm1$.
+    calculator_active: false
     sections:
       - 1.5
     dok: unknown
 
-  - id: 16
-    legacy_id: 1A.B.2
+  - id: d58e90b0-21a9-4ed7-9137-e257706d82f5
+    legacy_ids:
+      - 1A.B.2
     question: |
       \begin{center}
         \begin{tabularx}{6in}{ |*{6}{Y|} }
@@ -377,12 +408,14 @@ questions:
       \begin{tabularx}{4in}{ *{5}{Y} }
         $-6.5 - (-5) = \bm{-1.5}$ & $-8 - (-6.5) = \bm{-1.5}$ & $-9.5 - (-8) = \bm{-1.5}$ & $-11 - (-9.5) = \bm{-1.5}$ \\
       \end{tabularx}
+    calculator_active: false
     sections:
       - 1.3
     dok: unknown
 
-  - id: 17
-    legacy_id: 1A.B.3
+  - id: 80684e48-9250-458f-a622-d54e8ab3fea6
+    legacy_ids:
+      - 1A.B.3
     question: |
       The graph of $f$ is shown above with the six points $A$, $B$, $C$, $D$,
       $E$, and $F$ labeled. What are all the points where the graph of $f$ has an
@@ -395,12 +428,14 @@ questions:
     solution: |
       At point $B$, the function reaches the lowest value on the interval where
       it is defined, therefore the absolute minimum occurs at $B$.
+    calculator_active: false
     sections:
       - 1.4
     dok: unknown
 
-  - id: 18
-    legacy_id: 1A.B.4
+  - id: 05c92d7b-aee5-45ca-8506-2e2d7247834d
+    legacy_ids:
+      - 1A.B.4
     question: |
       Let $g$ be a polynomial function whose graph has a local extremum at $x = 3$.
       Which of the following statements about $g$ must be true?
@@ -413,12 +448,14 @@ questions:
       If the graph of the rate of change crosses the $x$-axis, the rate of
       change must be switching from positive, which means the graph of the
       function itself has a local extremum at that $x$ value.
+    calculator_active: false
     sections:
       - 1.4
     dok: unknown
 
-  - id: 19
-    legacy_id: 1A.B.5
+  - id: 69133f4b-67bf-4caf-a3f6-fad72b93b27a
+    legacy_ids:
+      - 1A.B.5
     question: |
       The table above shows values for the polynomial function $g$ at selected
       values of $x$. Which of the following claim could be true about $g$?
@@ -430,12 +467,14 @@ questions:
     solution: |
       The third differences are a constant value of one, so this function
       could be a third degree polynomial.
+    calculator_active: false
     sections:
       - 1.5
     dok: unknown
 
-  - id: 20
-    legacy_id: 1A.B.6
+  - id: 7e1dd106-8286-479d-9678-bf0d4f6e3de9
+    legacy_ids:
+      - 1A.B.6
     question: |
       The graph of a function $k$ is shown in the figure to the right. Which of
       the following best describes the behavior of the graph of $k$ from point
@@ -450,12 +489,14 @@ questions:
       - The graph of $k$ is decreasing and concave up.
       - The graph of $k$ is decreasing and concave down.
     solution: The rate of change is positive and it is increasing.
+    calculator_active: false
     sections:
       - 1.1
     dok: unknown
 
-  - id: 21
-    legacy_id: 1A.B.7
+  - id: e2955b05-de97-4356-a71b-ae300943c2d1
+    legacy_ids:
+      - 1A.B.7
     question: |
       The function $g$ is a polynomial with the following end behavior:
       \[ \lim_{x \to -\infty} g(x) = -\infty \qquad \text{and} \qquad \lim_{x \to \infty} g(x) = -\infty \]
@@ -468,12 +509,14 @@ questions:
     solution: |
       An even-degree polynomial with a negative leading coefficient has end
       behavior that matches the given description.
+    calculator_active: false
     sections:
       - 1.6
     dok: unknown
 
-  - id: 22
-    legacy_id: 1A.B.8
+  - id: 62c27824-d379-41f9-aa26-9aaf185b5039
+    legacy_ids:
+      - 1A.B.8
     question: |
       The polynomial function $p$ is given by $p(x) = -x(x + 6)(x - 3)$. Which
       of the following could be the graph of $p$?
@@ -483,14 +526,16 @@ questions:
       - \includegraphics[width=2.5in]{5C}
       - \includegraphics[width=2.5in]{5D}
     solution: Decreasing third degree polynomial. Zeros at $x = -6$, $x = 0$, and $x = 3$.
+    calculator_active: false
     sections:
       - 1.4
       - 1.5
       - 1.6
     dok: unknown
 
-  - id: 23
-    legacy_id: 1A.B.9
+  - id: 1de9fc18-42c9-4b9f-b9d9-5bc37d290fb1
+    legacy_ids:
+      - 1A.B.9
     question: |
       The rate at which people are entering the Indianapolis Zoo on a
       particular day is modeled by the function $R$, where $R(t) = 1.013x^2 -
@@ -514,12 +559,14 @@ questions:
 
         \includegraphics[width=2.5in]{14S-B}
       \end{multicols}
+    calculator_active: false
     sections:
       - 1.4
     dok: unknown
 
-  - id: 24
-    legacy_id: 1A.B.11
+  - id: d86c4280-4ede-4137-a3c5-a8e08d522052
+    legacy_ids:
+      - 1A.B.11
     question: |
       Let $k$ be a polynomial function whose rate of change can be modeled by the
       function $R$, given by $R(x) = 1.361x^3 + 6.881$. Based on this
@@ -540,12 +587,14 @@ questions:
 
         \includegraphics[width=2.5in]{12S-B}
       \end{multicols}
+    calculator_active: true
     sections:
       - 1.4
     dok: unknown
 
-  - id: 25
-    legacy_id: 1A.B.12
+  - id: c9965af5-f6c6-4b21-b768-bf68e5259d5a
+    legacy_ids:
+      - 1A.B.12
     question: |
       The function $f$ is given by $f(x) = 0.005x^4 - 0.113x^3 + 0.449x^2 + 1.858x - 4.2$.
       Which of the following values is an absolute extremum for the graph of $f$
@@ -564,12 +613,14 @@ questions:
 
         \includegraphics[width=2.5in]{11S-B}
       \end{multicols}
+    calculator_active: true
     sections:
       - 1.4
     dok: unknown
 
-  - id: 26
-    legacy_id: 1A.B.13
+  - id: ae6a2860-f2f3-4190-9eaa-796b309c7c7b
+    legacy_ids:
+      - 1A.B.13
     question: |
       A soccer ball is kicked from the corner arc at an angle towards the center
       of the field and curves toward the goal. Its distance horizontal distance
@@ -591,6 +642,7 @@ questions:
 
         \includegraphics[width=2.5in]{13S-B}
       \end{multicols}
+    calculator_active: true
     sections:
       - 1.1
     dok: unknown

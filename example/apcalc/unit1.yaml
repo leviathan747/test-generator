@@ -1,6 +1,7 @@
 questions:
-  - id: 1
-    legacy_id: 1.A.1
+  - id: 3be46b22-c917-426f-a12c-66d274b43e6b
+    legacy_ids:
+      - 1.A.1
     question: |
       Find the $x$ values for which $f(x)$ is not continuous where $f$ is given by
       \[
@@ -18,13 +19,15 @@ questions:
       $\lim_{x \to 5^-} f(x) = \frac{1}{5 - 3} = \frac{1}{2}$ \quad
       $\lim_{x \to 5^+} f(x) = \frac{1}{2}$ \quad $\therefore f(x)$ is continuous at $x = 5$. \\
       At $x = 3$, the constant function $\frac{1}{2}$ applies, so the $f(x)$ is continuous at $x = 3$.
+    calculator_active: false
     sections:
       - 1.11
       - 1.12
     dok: unknown
 
-  - id: 2
-    legacy_id: 1.A.2
+  - id: 574dc825-9fea-4daf-b65d-997c6cb71eff
+    legacy_ids:
+      - 1.A.2
     question: |
       Find the limit: $\lim_{x \to -1} \frac{\sqrt{x + 5} - 2}{x + 1}$
     answer: $\frac{1}{4}$
@@ -40,13 +43,15 @@ questions:
       $= \frac{1}{\sqrt{-1 + 5} + 2}$
       $= \frac{1}{2 + 2}$
       $= \frac{1}{4}$
+    calculator_active: false
     sections:
       - 1.6
       - 1.7
     dok: unknown
 
-  - id: 3
-    legacy_id: 1.A.3
+  - id: 2d544681-c005-4c61-87d5-84ccdf2710a3
+    legacy_ids:
+      - 1.A.3
     question: |
       Find the limit: $\lim_{x \to -\infty} \frac{-5x}{\sqrt{16x^2 + 7}}$
     answer: 1.25
@@ -59,13 +64,15 @@ questions:
       $= \lim_{x \to -\infty} \frac{-5}{-{\sqrt{16 + \frac{7}{x^2}}}}$
       $= \frac{-5}{-{\sqrt{16 + 0}}}$
       $= \frac{-5}{-4} = 1.25$
+    calculator_active: false
     sections:
       - 1.6
       - 1.7
     dok: unknown
 
-  - id: 4
-    legacy_id: 1.A.4
+  - id: 142e92db-d3d2-4b9e-b994-deced005436a
+    legacy_ids:
+      - 1.A.4
     question: |
       \includegraphics{4}
 
@@ -79,13 +86,15 @@ questions:
       - 2, 2, 2, continuous
       - 3, 3, 3, not continuous
     solution: $f(4) = 3$ and $\lim_{x \to 4} f(x) = 2 \quad \therefore f(x)$ is not continuous
+    calculator_active: false
     sections:
       - 1.3
       - 1.11
     dok: unknown
 
-  - id: 5
-    legacy_id: 1.A.5
+  - id: cd9c578f-3baa-4f4e-935b-5a34063e328b
+    legacy_ids:
+      - 1.A.5
     question: |
       Given that $\lim_{x \to a} f(x) = -3$ and $\lim_{x \to a} g(x) = 9$, find
       $\lim_{x \to a} \frac{2f(x)}{g(x) + f(x)}$.
@@ -99,12 +108,14 @@ questions:
       $= \frac{2 \lim_{x \to a} f(x)}{\lim_{x \to a} g(x) + \lim_{x \to a} f(x)}$
       $= \frac{2 (-3)}{9 + (-3)}$
       $= \frac{-6}{6} = -1$
+    calculator_active: false
     sections:
       - 1.5
     dok: unknown
 
-  - id: 6
-    legacy_id: 1.A.6
+  - id: 4c46fb67-9d1f-4264-847d-a017706e6324
+    legacy_ids:
+      - 1.A.6
     question: |
       Let $f$ be a function such that $f(x) = \frac{g(x)}{h(x)}$, where $g$ and
       $h$ are continuous for all real numbers. Which one of the following
@@ -117,13 +128,15 @@ questions:
     solution: |
       A: $f$ is not continuous when $h(x) = 0$ \quad B/C: counter example: $g(x) = x - c$, $h(x) = x - c \Rightarrow \lim_{x \to c} f(x) = 1$ \\
       D: Restatement of definition of vertical asymptote
+    calculator_active: false
     sections:
       - 1.11
       - 1.14
     dok: unknown
 
-  - id: 7
-    legacy_id: 1.A.7
+  - id: faec9f56-0cd4-4dbe-aff1-0b51b91fcde4
+    legacy_ids:
+      - 1.A.7
     question: |
       Let $g$ and $h$ be the functions defined by $g(x) = \sin \left(\frac{\pi}{2}x\right) + 4$
       and $h(x) = -\frac{1}{4}x^3 + \frac{3}{4}x + \frac{9}{2}$. If $f$ is a
@@ -139,12 +152,14 @@ questions:
       \quad and \quad
       $\lim_{x \to 1} h(x) = -\frac{1}{4} + \frac{3}{4} + \frac{9}{2} = 5 \quad \therefore \lim_{x \to 1} f(x) = 5$
       \quad (Squeeze Theorem)
+    calculator_active: false
     sections:
       - 1.8
     dok: unknown
 
-  - id: 8
-    legacy_id: 1.A.8
+  - id: 583ab789-6ea3-41ff-9c55-86a61b4f2bf6
+    legacy_ids:
+      - 1.A.8
     question: |
       Suppose that $y = f(x)$ is a continuous function defined for all real
       numbers $x$ and $f(-6) = 5$ and $f(-2) = -1$. If $f(c) = 0$ for one and
@@ -159,12 +174,14 @@ questions:
       Theorem guarantees that there will be some $c$ such that $f(c) = 0$ and
       $-6 < c < -2$. Since there is only one such value on the domain of $f$,
       it must occur between -6 and -2.
+    calculator_active: false
     sections:
       - 1.16
     dok: unknown
 
-  - id: 9
-    legacy_id: 1.A.9
+  - id: f19d5cfc-e1fe-4857-8ba5-c01d0b8512f7
+    legacy_ids:
+      - 1.A.9
     question: |
       Find the constant $a$ that makes $f(x)$ continuous for its entire domain.
       \[
@@ -185,13 +202,15 @@ questions:
 
       $\lim_{x \to 1^-} x^2 - 2x + 3 = \lim_{x \to 1^+} ax^2 + 4x - 2 \quad \Rightarrow \quad 1 - 2 + 3 = a + 4 - 2$
       $\quad \Rightarrow \quad a = 0$
+    calculator_active: false
     sections:
       - 1.11
       - 1.12
     dok: unknown
 
-  - id: 10
-    legacy_id: 1.A.10
+  - id: ef08aa1e-32b5-474b-914e-9c5b5587fad6
+    legacy_ids:
+      - 1.A.10
     question: |
       The function $f(x)$ is continuous on the closed interval $[0, 2]$ and has
       values that are given in the table below.
@@ -217,12 +236,14 @@ questions:
       If $k = 0$, then $f(0) > \frac{1}{2} > f(1)$ and $f(1) < \frac{1}{2} < f(2)$
       and Intermediate Value Theorem guarantees that there will
       be a solution to $f(x) = \frac{1}{2}$ in both $(0, 1)$ and $(1, 2)$.
+    calculator_active: false
     sections:
       - 1.16
     dok: unknown
 
-  - id: 11
-    legacy_id: 1.A.12
+  - id: db6add37-babd-4adb-b0e6-8a018eff1b32
+    legacy_ids:
+      - 1.A.12
     question: |
       Find the limit: $\lim_{x \to \infty} \frac{6x + 1}{-8x^2 - 4}$
     answer: 0
@@ -234,13 +255,15 @@ questions:
       $\lim_{x \to \infty} \frac{\frac{6x}{x^2} + \frac{1}{x^2}}{\frac{-8x^2}{x^2} - \frac{4}{x^2}}$
       $= \lim_{x \to \infty} \frac{\frac{6}{x} + \frac{1}{x^2}}{-8 - \frac{4}{x^2}}$
       $= \frac{0 + 0}{-8 - 0} = 0$
+    calculator_active: true
     sections:
       - 1.6
       - 1.7
     dok: unknown
 
-  - id: 12
-    legacy_id: 1.A.13
+  - id: 97126f7a-4f4f-4691-84a3-5c5fa534345d
+    legacy_ids:
+      - 1.A.13
     question: |
       \fullwidth{
         \begin{center}
@@ -261,13 +284,15 @@ questions:
       $\lim_{x \to 2^-} (f(x) \cdot g(x - 1)) = 0 \cdot 1 = 0$
       $\quad \lim_{x \to 2^+} (f(x) \cdot g(x - 1)) = 0 \cdot -1 = 0$
       $\quad \therefore \quad \lim_{x \to 2} (f(x) \cdot g(x - 1)) = 0$
+    calculator_active: true
     sections:
       - 1.3
       - 1.5
     dok: unknown
 
-  - id: 13
-    legacy_id: 1.A.14
+  - id: 539986f2-a4ef-475e-b7af-7049cd1e521d
+    legacy_ids:
+      - 1.A.14
     question: |
       If the graph of $y = \frac{ax + b}{x + c}$ has a horizontal asymptote at $y
       = 2$ and a vertical asymptote at $x = -3$, then $a + c =$
@@ -280,13 +305,15 @@ questions:
       H.A. at $y = 2 \implies a = 2$ \\
       V.A. at $x = -3 \implies c = 3$ \\
       $\therefore a + c = 5$
+    calculator_active: true
     sections:
       - 1.14
       - 1.15
     dok: unknown
 
-  - id: 14
-    legacy_id: 1.A.15
+  - id: 61ff7a40-59ef-4e67-b044-a6b93d8cce75
+    legacy_ids:
+      - 1.A.15
     question: |
       Find the limit: $\lim_{h \to 0} \frac{(x + h)^2 + 3(x + h) + 4 - (x^2 + 3x + 4)}{h}$
     answer: $2x + 3$
@@ -299,13 +326,15 @@ questions:
       $= \lim_{h \to 0} \frac{2xh + h^2 + 3h}{h}$
       $= \lim_{h \to 0} \frac{\cancel{h}(2x + h + 3)}{\cancel{h}}$
       $= 2x + 0 + 3 = 2x + 3$
+    calculator_active: true
     sections:
       - 1.6
       - 1.7
     dok: unknown
 
-  - id: 15
-    legacy_id: 1.A.16
+  - id: 07efb62a-dfaa-41d2-bafb-f07bc0ff736f
+    legacy_ids:
+      - 1.A.16
     question: |
       \includegraphics{16}
 
@@ -320,13 +349,15 @@ questions:
       - I and III only
       - I, II, and III
     solution: $g(2) = 3 \quad \lim_{x \to 2} g(x) = 1 \quad \therefore \quad \lim_{x \to 2} g(x) \ne g(2)$ and $g$ is \emph{not} continuous at $x = 2$.
+    calculator_active: true
     sections:
       - 1.3
       - 1.11
     dok: unknown
 
-  - id: 16
-    legacy_id: 1.B.1
+  - id: 4930c5be-3c77-4e89-bb06-1e2f67bf1bfd
+    legacy_ids:
+      - 1.B.1
     question: |
       Let $g$ and $h$ be the functions defined by $g(x) = 1 - \cos \left(\frac{\pi}{3}x - \frac{\pi}{3}\right)$
       and $h(x) = x^4 - 4x^3 + 4x^2 - 1$. Which statement must be true in order to guarantee that
@@ -337,12 +368,14 @@ questions:
       - $g(x) > f(x) > h(x)$ for an interval containing 1
       - The given information is not enough to show $\lim_{x \to 1} f(x) = 0$
     solution: C is a condition for the Squeeze Theorem to apply
+    calculator_active: false
     sections:
       - 1.8
     dok: unknown
 
-  - id: 17
-    legacy_id: 1.B.2
+  - id: 98833de5-5425-4056-b928-f35740c7f9f1
+    legacy_ids:
+      - 1.B.2
     question: |
       \includegraphics{4}
 
@@ -356,12 +389,14 @@ questions:
     solution: |
       $\lim_{x \to 4} f(x) = 2$
       \quad Since the limit at 2 exists, the discontinuity is a hole.
+    calculator_active: false
     sections:
       - '1.10'
     dok: unknown
 
-  - id: 18
-    legacy_id: 1.B.3
+  - id: d187ad55-af78-44c6-b624-1cbfa1266bc3
+    legacy_ids:
+      - 1.B.3
     question: |
       Suppose that $y = f(x)$ is a continuous function defined for all real
       numbers $x$ and $f(3) = -1$ and $f(0) = 10$. If $f(c) = 0$ for one and
@@ -376,12 +411,14 @@ questions:
       Theorem guarantees that there will be some $c$ such that $f(c) = 0$ and
       $0 < c < 3$. Since there is only one such value on the domain of $f$,
       it must occur between 0 and 3.
+    calculator_active: false
     sections:
       - 1.16
     dok: unknown
 
-  - id: 19
-    legacy_id: 1.B.4
+  - id: 0f8dd5ca-ef6a-4eee-a497-aea585ac5341
+    legacy_ids:
+      - 1.B.4
     question: |
       Given that $\lim_{x \to b} f(x) = 2$ and $\lim_{x \to b} g(x) = -5$, find
       $\lim_{x \to b} \frac{g(x)}{f(x) - g(x)}$.
@@ -395,12 +432,14 @@ questions:
       $= \frac{\lim_{x \to b} g(x)}{\lim_{x \to b} f(x) - \lim_{x \to b} g(x)}$
       $= \frac{-5}{2 - (-5)}$
       $= -\frac{5}{7}$
+    calculator_active: false
     sections:
       - 1.5
     dok: unknown
 
-  - id: 20
-    legacy_id: 1.B.5
+  - id: 24468954-50ed-4ac6-a533-421604039f32
+    legacy_ids:
+      - 1.B.5
     question: |
       Find the limit: $\lim_{x \to 0} \frac{\sqrt{x + 1} - 1}{x}$
     answer: $\frac{1}{2}$
@@ -416,13 +455,15 @@ questions:
       $= \frac{1}{\sqrt{0 + 1} + 1}$
       $= \frac{1}{1 + 1}$
       $= \frac{1}{2}$
+    calculator_active: false
     sections:
       - 1.6
       - 1.7
     dok: unknown
 
-  - id: 21
-    legacy_id: 1.B.6
+  - id: ac1d2a62-ef18-4956-b09b-65331854288f
+    legacy_ids:
+      - 1.B.6
     question: |
       Find the constant $k$ that makes $f(x)$ continuous for its entire domain.
       \[
@@ -443,13 +484,15 @@ questions:
 
       $\lim_{x \to 1^-} x^2 + 2x - 5 = \lim_{x \to 1^+} kx^2 + 4x - 2 \quad \Rightarrow \quad 1 + 2 - 5 = k + 4 - 2$
       $\quad \Rightarrow \quad k = -4$
+    calculator_active: false
     sections:
       - 1.11
       - 1.12
     dok: unknown
 
-  - id: 22
-    legacy_id: 1.B.7
+  - id: 58b38497-1b7d-438c-9f79-fd6cca076151
+    legacy_ids:
+      - 1.B.7
     question: |
       Find the limit: $\lim_{x \to \infty} \frac{3x - 2}{\sqrt{2x^2 + 1}}$
     answer: $\frac{3}{\sqrt 2}$
@@ -461,13 +504,15 @@ questions:
       $\lim_{x \to \infty} \frac{\frac{6x}{x^2} + \frac{1}{x^2}}{\frac{-8x^2}{x^2} - \frac{4}{x^2}}$
       $= \lim_{x \to \infty} \frac{\frac{6}{x} + \frac{1}{x^2}}{-8 - \frac{4}{x^2}}$
       $= \frac{0 + 0}{-8 - 0} = 0$
+    calculator_active: false
     sections:
       - 1.6
       - 1.7
     dok: unknown
 
-  - id: 23
-    legacy_id: 1.B.8
+  - id: 91ccff56-6097-4658-9a9d-dd8a1fef016d
+    legacy_ids:
+      - 1.B.8
     question: |
       The function $f(x)$ is continuous on the closed interval $[-3, -1]$ and has
       values that are given in the table below.
@@ -493,12 +538,14 @@ questions:
       Since $f(-3) > 0 > f(-2)$ and $f(-2) < 0 < f(-1)$, Intermediate Value
       Theorem guarantees that there will be at least one $x$ value in both
       $(-3, -2)$ and $(-2, -1)$ that satisfies the equation $f(x) = 0$.
+    calculator_active: false
     sections:
       - 1.16
     dok: unknown
 
-  - id: 24
-    legacy_id: 1.B.9
+  - id: 56bc6f4c-774c-4c5d-89d8-a6bc9b4a172b
+    legacy_ids:
+      - 1.B.9
     question: |
       Find the $x$ values for which $f(x)$ is not continuous where $f$ is given by
       \[
@@ -515,13 +562,15 @@ questions:
     solution: |
       $\lim_{x \to 0} f(x) = -\frac{1}{2}$, but $f(0)$ is not defined, so $f(x)$ is discontinuous at $x = 0$. \\
       Evaluating $f(x)$ at $x = 2$ results in an indeterminate form, so $f(x)$ is discontinuous at $x = 2$.
+    calculator_active: false
     sections:
       - 1.11
       - 1.12
     dok: unknown
 
-  - id: 25
-    legacy_id: 1.B.10
+  - id: 0c1746e8-aeae-4aba-a791-bc8af2055681
+    legacy_ids:
+      - 1.B.10
     question: |
       Let $f$ be a function such that $f(x) = \frac{g(x)}{h(x)}$, where $g$ and
       $h$ are continuous for all real numbers. Which one of the following
@@ -534,13 +583,15 @@ questions:
     solution: |
       A: counter example: $g(x) = x - c$, $h(x) = x - c \Rightarrow \lim_{x \to c} f(x) = 1$ \quad  B: counter example: $g(x) = x$, $h(x) = 1$ \\
       C: Restatement of the definition of horizontal asymptote D: Incorrect statement of definition of vertical asymptote
+    calculator_active: false
     sections:
       - 1.11
       - 1.14
     dok: unknown
 
-  - id: 26
-    legacy_id: 1.B.12
+  - id: 12d3ebbd-b997-4bfe-ba79-c197de51ade5
+    legacy_ids:
+      - 1.B.12
     question: |
       If the graph of $y = \frac{x^a + b}{x^2 - c}$ has a horizontal asymptote at
       $y = 0$ and a vertical asymptote at $x = 2$, then $a + c =$
@@ -553,13 +604,15 @@ questions:
       H.A. at $y = 0 \implies a \le 1$ \\
       V.A. at $x = 2 \implies c = 4$ \\
       $\therefore a + c \le 5$
+    calculator_active: true
     sections:
       - 1.14
       - 1.15
     dok: unknown
 
-  - id: 27
-    legacy_id: 1.B.13
+  - id: 891a128d-8750-4802-aabf-afa6ac8b9688
+    legacy_ids:
+      - 1.B.13
     question: |
       Find the limit: $\lim_{x \to -\infty} \frac{6x^2 - 1}{2x^2 + 4}$
     answer: 3
@@ -571,13 +624,15 @@ questions:
       $\lim_{x \to -\infty} \frac{\frac{6x^2}{x^2} - \frac{1}{x^2}}{\frac{2x^2}{x^2} + \frac{4}{x^2}}$
       $= \lim_{x \to \infty} \frac{6 - \frac{1}{x^2}}{2 + \frac{4}{x^2}}$
       $= \frac{6 + 0}{2 - 0} = 3$
+    calculator_active: true
     sections:
       - 1.6
       - 1.7
     dok: unknown
 
-  - id: 28
-    legacy_id: 1.B.14
+  - id: 5ed2b94d-e71b-49a0-ba8d-77ecd17ffb44
+    legacy_ids:
+      - 1.B.14
     question: |
       \includegraphics{16}
 
@@ -592,13 +647,15 @@ questions:
       - I and III only
       - I, II, and III
     solution: $\lim_{x \to 2} g(x) = 1 \quad g(2) = 3$
+    calculator_active: true
     sections:
       - 1.3
       - 1.11
     dok: unknown
 
-  - id: 29
-    legacy_id: 1.B.15
+  - id: 9254923c-3c6f-408e-a2d3-ac78a03f4295
+    legacy_ids:
+      - 1.B.15
     question: |
       Find the limit: $\lim_{\Delta x \to 0} \frac{(x + \Delta x)^3 - 7(x + \Delta x) - (x^3 - 7x)}{\Delta x}$
     answer: $3x^2 - 7$
@@ -613,13 +670,15 @@ questions:
       $= \lim_{\Delta x \to 0} 3x^2 + 3x\Delta x + \Delta x^2 - 7$
       $= 3x^2 + 3x(0) + (0)^2 - 7$
       $= 3x^2 + - 7$
+    calculator_active: true
     sections:
       - 1.6
       - 1.7
     dok: unknown
 
-  - id: 30
-    legacy_id: 1.B.16
+  - id: 1f1e6b74-eaaa-4b30-9603-64b4aad36a13
+    legacy_ids:
+      - 1.B.16
     question: |
       \fullwidth{
         \begin{center}
@@ -643,6 +702,7 @@ questions:
       $\quad \lim_{x \to 2^+} (f(x) \cdot g(x - 1)) = 0 \cdot -1 = 0$
       $\quad \therefore \quad \lim_{x \to 2} (f(x) \cdot g(x - 1)) = 0 \Rightarrow$ false \\
       D: $\lim_{x \to 1^-} g(x) = 1 \Rightarrow$ false
+    calculator_active: true
     sections:
       - 1.3
       - 1.5

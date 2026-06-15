@@ -1,6 +1,7 @@
 questions:
-  - id: 1
-    legacy_id: 2.A.1
+  - id: c21df73d-62a4-4001-99ac-f3dc228314b5
+    legacy_ids:
+      - 2.A.1
     question: |
       At which of the following values of $x$ is $g(x)$ defined, but $g'(x)$ is
       undefined?
@@ -21,12 +22,14 @@ questions:
       $g(2) = 2$, $g'(2)$ is undefined
 
       $g(3) = 1$, $g'(3) \approx 0$
+    calculator_active: false
     sections:
       - 2.4
     dok: unknown
 
-  - id: 2
-    legacy_id: 2.A.2
+  - id: a0cc1729-ebce-4f25-9234-340ec5787a00
+    legacy_ids:
+      - 2.A.2
     question: |
       If $f(x) = 2x \sin x$, then what is the slope of the tangent line to the
       graph of $f(x)$ when $x = \frac{\pi}{2}$?
@@ -40,6 +43,7 @@ questions:
 
       $f'\left(\frac{\pi}{2}\right) = 2\left(\frac{\pi}{2}\right) \cos \frac{\pi}{2} + 2 \sin \frac{\pi}{2}$
       $= 2\left(\frac{\pi}{2}\right)(0) + 2(1) = 2$
+    calculator_active: false
     sections:
       - 2.2
       - 2.6
@@ -47,8 +51,9 @@ questions:
       - 2.8
     dok: unknown
 
-  - id: 3
-    legacy_id: 2.A.3
+  - id: 5ef710cd-b262-4321-a78a-69380f53249c
+    legacy_ids:
+      - 2.A.3
     question: |
       Find the limit: $\lim_{h \to 0} \frac{\sec(x + h) - \sec x}{h}$
     answer: $\sec x \tan x$
@@ -57,13 +62,15 @@ questions:
       - $\sec x$
       - $\sec^2 x$
     solution: $\lim_{h \to 0} \frac{\sec(x + h) - \sec x}{h} = \frac{d}{dx} \left[ \sec x \right] = \sec x \tan x$
+    calculator_active: false
     sections:
       - 2.2
       - '2.10'
     dok: unknown
 
-  - id: 4
-    legacy_id: 2.A.4
+  - id: 7b5b1e97-ae07-4b71-9bf5-56eaceec4a54
+    legacy_ids:
+      - 2.A.4
     question: If $y = e^x \tan x$, then $\frac{dy}{dx} =$
     answer: $e^x (\sec^2 x + \tan x)$
     distractors:
@@ -71,14 +78,16 @@ questions:
       - $e^x (\cot x + \tan x)$
       - $e^x (\sec x + \tan x)$
     solution: $\frac{dy}{dx} = e^x \sec^2 x + e^x \tan x = e^x (\sec^2 x + \tan x)$ \quad (Product Rule)
+    calculator_active: false
     sections:
       - 2.7
       - 2.8
       - '2.10'
     dok: unknown
 
-  - id: 5
-    legacy_id: 2.A.5
+  - id: 0ff36b3e-e292-4c12-a614-2d49c46c0f17
+    legacy_ids:
+      - 2.A.5
     question: If $f(2) = -1$ and $f'(2) = 3$, find an equation of the tangent line when $x = 2$
     answer: $y + 1 = 3(x - 2)$
     distractors:
@@ -86,12 +95,14 @@ questions:
       - $y - 2 = 3(x + 1)$
       - $y + 1 = 2(x - 2)$
     solution: $y - f(c) = f'(c)(x - c)$
+    calculator_active: false
     sections:
       - 2.2
     dok: unknown
 
-  - id: 6
-    legacy_id: 2.A.6
+  - id: 0cf3000d-5593-42c5-90ea-f6968181af0a
+    legacy_ids:
+      - 2.A.6
     question: If $f(x) = \frac{2x}{x^2 + 1}$, which of the following is the derivative of $f$?
     answer: $f'(x) = \lim_{\Delta x \to 0} \frac{\frac{2(x + \Delta x)}{(x + \Delta x)^2 + 1} - \frac{2x}{x^2 + 1}}{\Delta x}$
     distractors:
@@ -99,12 +110,14 @@ questions:
       - $f'(x) = \lim_{\Delta x \to 0} \frac{\frac{2x + \Delta x}{x^2 + \Delta x + 1} - \frac{2x}{x^2 + 1}}{\Delta x}$
       - $f'(x) = \frac{\frac{2(x + \Delta x)}{(x + \Delta x)^2 + 1} - \frac{2x}{x^2 + 1}}{\Delta x}$
     solution: Definition of the derivative
+    calculator_active: false
     sections:
       - 2.2
     dok: unknown
 
-  - id: 7
-    legacy_id: 2.A.7
+  - id: d4890992-36a2-4016-9da9-78ebb563b351
+    legacy_ids:
+      - 2.A.7
     question: Find $f'(t)$ if $f(t) = \frac{\ln t}{t^2}$
     answer: $f'(t) = \frac{1 - 2 \ln t}{t^3}$
     distractors:
@@ -115,14 +128,16 @@ questions:
       $f'(t) = \frac{t^2 \cdot \frac{1}{t} - \ln t \cdot 2t}{t^4}$
       $= \frac{t(1 - 2 \ln t)}{t^4}$
       $= \frac{1 - 2 \ln t}{t^3}$ \quad (Quotient Rule)
+    calculator_active: false
     sections:
       - 2.5
       - 2.7
       - 2.9
     dok: unknown
 
-  - id: 8
-    legacy_id: 2.A.8
+  - id: 55d675ff-e8ea-4d9c-a956-ddf4a1756e54
+    legacy_ids:
+      - 2.A.8
     question: |
       \includegraphics{8}
 
@@ -137,13 +152,15 @@ questions:
 
       $h'(4) = \frac{5}{2} \cdot \frac{1}{2} + \frac{5}{4} \cdot 5$
       $= \frac{5}{4} + \frac{25}{4} = \frac{30}{4} = \frac{15}{2}$
+    calculator_active: false
     sections:
       - 2.3
       - 2.9
     dok: unknown
 
-  - id: 9
-    legacy_id: 2.A.9
+  - id: 510d68e1-aa74-43d2-b3f6-fb42e8c3f127
+    legacy_ids:
+      - 2.A.9
     question: If $f(\theta) = 2 \sqrt \theta + 3 \sin \theta$, what is $f'(\theta)$
     answer: $\frac{1 + 3 \sqrt \theta \cos \theta}{\sqrt \theta}$
     distractors:
@@ -153,14 +170,16 @@ questions:
     solution: |
       $f'(\theta) = 2 \cdot \frac{1}{2 \sqrt \theta} + 3 \cos \theta$
       $= \frac{1 + 3 \sqrt \theta \cos \theta}{\sqrt \theta}$
+    calculator_active: false
     sections:
       - 2.5
       - 2.6
       - 2.7
     dok: unknown
 
-  - id: 10
-    legacy_id: 2.A.10
+  - id: eb0792a7-c157-423c-a4dd-e52b715150a9
+    legacy_ids:
+      - 2.A.10
     question: |
       For what value(s) of $a$ will the function $g(x) = a \sqrt x + 4x$ have a
       tangent line whose slope is 3 when $x = 4$
@@ -177,11 +196,13 @@ questions:
       $\frac{a}{2 \sqrt 4} = -1 \Rightarrow$
       $a = -1 \cdot 2 \sqrt 4 \Rightarrow$
       $a = -4$
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 11
-    legacy_id: 2.A.12
+  - id: b4a97a9d-94b7-46a1-82c7-afee431335c9
+    legacy_ids:
+      - 2.A.12
     question: Suppose that $g(x) = f(x) \cdot h(x)$, $f(3) = 6$, $h(3) = 2$, $h'(6) = 4$, $h'(3) = 15$, and $f'(3) = 8$. Find $g'(3)$.
     answer: 106
     distractors:
@@ -192,12 +213,14 @@ questions:
       $g'(x) = f(x) \cdot h'(x) + f'(x) \cdot h(x)$ \quad (Product Rule)
 
       $g'(3) = 6 \cdot 15 + 8 \cdot 2 = 90 + 16 = 106$
+    calculator_active: true
     sections:
       - 2.8
     dok: unknown
 
-  - id: 12
-    legacy_id: 2.A.13
+  - id: 2d937939-654f-4f9b-8059-d448620abc97
+    legacy_ids:
+      - 2.A.13
     question: Suppose that $g(x) = \frac{h(x)}{f(x)}$, $f(3) = 6$, $h(3) = 2$, $h'(6) = 4$, $h'(3) = 15$, and $f'(3) = 9$. Find $g'(3)$.
     answer: 2
     distractors:
@@ -208,12 +231,14 @@ questions:
       $g'(x) = \frac{f(x) \cdot h'(x) - h(x) \cdot f'(x)}{(f(x))^2}$ \quad (Quotient Rule)
 
       $g'(3) = \frac{6 \cdot 15 - 2 \cdot 9}{6^2} = \frac{90 - 18}{36} = \frac{72}{36} = 2$
+    calculator_active: true
     sections:
       - 2.9
     dok: unknown
 
-  - id: 13
-    legacy_id: 2.A.14
+  - id: a657e7f1-b73f-4b94-a6e2-dd883e08f79b
+    legacy_ids:
+      - 2.A.14
     question: |
       The limit $\lim_{\Delta x \to 0} \frac{\frac{4}{2 - (-1 + \Delta x)^2} - 4}{\Delta x}$
       represents $f'(c)$ for a function $f(x)$ and a number $c$. Find $f$ and $c$.
@@ -223,12 +248,14 @@ questions:
       - $f(x) = \frac{4}{2 - x^2}$; $c = 4$
       - $f(x) = 2 - x^2$; $c = 4$
     solution: Definition of the derivative
+    calculator_active: true
     sections:
       - 2.2
     dok: unknown
 
-  - id: 14
-    legacy_id: 2.A.15
+  - id: e7b7ef4b-8357-4ff2-929b-a5dd92d502b6
+    legacy_ids:
+      - 2.A.15
     question: |
       At $x = 2$, the function given by $f(x) = \begin{cases}
         x^2 + 1 & x \le 2 \\
@@ -259,13 +286,15 @@ questions:
       $= \lim_{x \to 2^+} 4 = 4$
 
       $\therefore f'(2) = 4$
+    calculator_active: true
     sections:
       - 2.2
       - 2.4
     dok: unknown
 
-  - id: 15
-    legacy_id: 2.A.16
+  - id: 98a4d19c-6f0b-4c33-9cad-f27a44544b41
+    legacy_ids:
+      - 2.A.16
     question: |
       A counter records people entering a fast food restaurant. The data below
       shows the number of customers, $N(t)$ that are in the restaurant every
@@ -291,12 +320,14 @@ questions:
 
       \emph{Note: the negative value for the rate indicates that customers are
       leaving the store during this period}
+    calculator_active: true
     sections:
       - 2.1
     dok: unknown
 
-  - id: 16
-    legacy_id: 2.B.1
+  - id: f7714349-1af1-49f5-bddc-aa88461d68f4
+    legacy_ids:
+      - 2.B.1
     question: |
       \includegraphics{1B}
 
@@ -308,11 +339,13 @@ questions:
       - $b$
       - $d$
     solution: Graph has a sharp corner
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 17
-    legacy_id: 2.B.2
+  - id: ce2d2d5d-302d-4760-a89a-75e6a53efac5
+    legacy_ids:
+      - 2.B.2
     question: |
       If $f(x) = 3x \cos(x)$, then what is the slope of the tangent line to the
       graph of $f(x)$ when $x = \frac{\pi}{2}$?
@@ -327,11 +360,13 @@ questions:
       $f'\left(\frac{\pi}{2}\right) = 3 \left(\frac{\pi}{2}\right) \cdot -\sin\left(\frac{\pi}{2}\right)$
       $+ 3 \cdot \cos\left(\frac{\pi}{2}\right)$
       $= \frac{3\pi}{2} \cdot -1 + 3 \cdot 0 = -\frac{3\pi}{2}$
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 18
-    legacy_id: 2.B.3
+  - id: b51d4701-c6f7-4912-a58f-743a97acf585
+    legacy_ids:
+      - 2.B.3
     question: Find $\lim_{h \to 0} \frac{\sin\left(\frac{\pi}{3} + h\right) - \sin\left(\frac{\pi}{3}\right)}{h}$
     answer: $\frac{1}{2}$
     distractors:
@@ -344,11 +379,13 @@ questions:
       $= \cos\left(\frac{\pi}{3}\right) = \frac{1}{2}$
 
       (Definition of the derivative)
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 19
-    legacy_id: 2.B.4
+  - id: 18e0bebf-0ac1-4807-9251-97369ad6f272
+    legacy_ids:
+      - 2.B.4
     question: If $y = \tan(x) - \cot(x)$, then $\frac{dy}{dx} =$
     answer: $\sec^2(x) + \csc^2(x)$
     distractors:
@@ -356,11 +393,13 @@ questions:
       - $\sec^2(x) - \csc^2(x)$
       - $\sec(x) + \csc(x)$
     solution: $\frac{dy}{dx} = \sec^2(x) - (-csc^2(x)) = \sec^2(x) + \csc^2(x)$
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 20
-    legacy_id: 2.B.5
+  - id: ee3687cf-dd78-4603-8b9e-72f3a41de8eb
+    legacy_ids:
+      - 2.B.5
     question: |
       If the line tangent to the graph of the function $f$ at the point $(1,
       7)$ passes through the point $(-2, -2)$, then $f'(1)$ is
@@ -372,11 +411,13 @@ questions:
     solution: |
       $f'(1) = \frac{7 - (-2)}{1 - (-2)} = \frac{9}{3} = 3$
       \qquad $f'(1)$ represents the slope of the line tangent to the point at $x = 1$.
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 21
-    legacy_id: 2.B.6
+  - id: 1c5b02f5-3b58-4bb1-b066-3373fe3dad5a
+    legacy_ids:
+      - 2.B.6
     question: |
       If $f(x) = 3x^2 + 2x$, which of the following will calculate the
       derivative of $f(x)$?
@@ -386,11 +427,13 @@ questions:
       - $\lim_{x \to 0} \frac{(3x^2 + 2x + h) - (3x^2 + 2x)}{h}$
       - $\lim_{x \to 0} \frac{(3(x + h)^2 + 2(x + h)) - (3x^2 + 2x)}{h}$
     solution: Definition of the derivative
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 22
-    legacy_id: 2.B.7
+  - id: 3ebf07ac-7270-47f2-a455-600be80d8265
+    legacy_ids:
+      - 2.B.7
     question: Find $f'(t)$ if $f(t) = \frac{e^t}{t^3}$
     answer: $f'(t) = \frac{e^t(t - 3)}{t^4}$
     distractors:
@@ -401,11 +444,13 @@ questions:
       $f'(t) = \frac{t^3 \cdot e^t - e^t \cdot 3t^2}{t^6}$
       $= \frac{t^2 \cdot e^t(t - 3)}{t^6}$
       $= \frac{e^t(t - 3)}{t^4}$
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 23
-    legacy_id: 2.B.8
+  - id: 8695429a-6a5e-4e11-9eab-007aba3fca34
+    legacy_ids:
+      - 2.B.8
     question: |
       \includegraphics{8B}
 
@@ -419,11 +464,13 @@ questions:
     solution: |
       $h'(x) = f(x)g'(x) + g(x)f'(x)$ \qquad (Product Rule) \\
       $h'(2) = 3 \cdot -2 + 1 \cdot \frac{1}{2} = -\frac{12}{2} + \frac{1}{2} = -\frac{11}{2}$
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 24
-    legacy_id: 2.B.9
+  - id: afdce30c-565e-4d81-8dd6-ced16bdd239a
+    legacy_ids:
+      - 2.B.9
     question: $\frac{d}{dx}\left[ 2^x \right]$
     answer: $(2^x) \cdot \ln 2$
     distractors:
@@ -436,11 +483,13 @@ questions:
       $= \frac{d}{dx}\left[ e^{\ln 2 \cdot x} \right]$
       $= \left(e^{\ln 2 \cdot x}\right) \cdot \ln 2$
       $= (2^x) \cdot \ln 2$
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 25
-    legacy_id: 2.B.10
+  - id: 7ba5783c-4216-4db1-b063-ffa02af482f3
+    legacy_ids:
+      - 2.B.10
     question: |
       The function $f$ is defined by $f(x) = \frac{x}{x + 2}$. What points $(x,
       y)$ on the graph of $f$ have the property that the line tangent to $f$ at
@@ -459,11 +508,13 @@ questions:
       $x(x + 4) = 0$
 
       $x = 0, -4$
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 26
-    legacy_id: 2.B.12
+  - id: 159c8887-b334-4fbd-abbb-da5a8c286853
+    legacy_ids:
+      - 2.B.12
     question: |
       \includegraphics{12B}
 
@@ -478,11 +529,13 @@ questions:
 
       $h'(6) = \frac{4 \cdot -2 - \left(2 \cdot -\frac{1}{2}\right)}{4^2}$
       $= \frac{-8 + 1}{16} = -\frac{7}{16}$
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 27
-    legacy_id: 2.B.13
+  - id: c9429258-3a74-4ca8-ba52-86221833f497
+    legacy_ids:
+      - 2.B.13
     question: |
       \fullwidth{\begin{center}
         \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
@@ -507,11 +560,13 @@ questions:
 
       $h'(0) = \frac{2 \cdot 4 - (3 \cdot \pi)}{2^2}$
       $= \frac{8 - 3\pi}{4}$
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 28
-    legacy_id: 2.B.14
+  - id: 7be60435-aee6-46de-93c9-3b84934b8361
+    legacy_ids:
+      - 2.B.14
     question: |
       The limit $\lim_{\Delta x \to 0} \frac{\frac{4}{2 - (-1 + \Delta x)^2} -
       4}{\Delta x}$ represents $f'(c)$ for a function $f(x)$ and a number $c$.
@@ -522,11 +577,13 @@ questions:
       - $f(x) = \frac{4}{2 - x^2}$; $c = 4$
       - $f(x) = 2 - x^2$; $c = -1$
     solution: Definition of the derivative
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 29
-    legacy_id: 2.B.15
+  - id: 753fbcbc-9488-4009-a925-3c36bb226d50
+    legacy_ids:
+      - 2.B.15
     question: |
       \includegraphics{15B}
 
@@ -541,11 +598,13 @@ questions:
       Continuous and differentiable on $(0, 1)$ \\
       Not continuous on $(1, 2)$ and $(3, 4)$ \\
       Continuous but not differentiable on $(2, 3)$ (sharp corner) \\
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 30
-    legacy_id: 2.B.16
+  - id: a41511cf-5e28-496d-8142-bbd31891401c
+    legacy_ids:
+      - 2.B.16
     question: |
       \fullwidth{\begin{center}
         \begin{tabularx}{4in}{ |Y||*{6}{Y|} }
@@ -566,5 +625,6 @@ questions:
       - -2 \phantom{$-\frac{5}{2}$}
       - $-\frac{2}{5}$
     solution: $\frac{f(10) - f(0)}{10 - 0} = \frac{-20 - 5}{10} = \frac{-25}{10} = -\frac{5}{2}$
+    calculator_active: true
     sections: []
     dok: unknown

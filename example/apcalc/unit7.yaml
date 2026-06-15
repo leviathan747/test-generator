@@ -1,6 +1,7 @@
 questions:
-  - id: 1
-    legacy_id: 7.A.1
+  - id: 54d39645-ac7e-4901-b73c-2bfb13053768
+    legacy_ids:
+      - 7.A.1
     question: |
       At each point $(x, y)$ on a certain curve, the slope of the curve is
       $\frac{y}{2 \sqrt x}$. If the curve contains the point $(0, 8)$, then its
@@ -11,11 +12,13 @@ questions:
       - $y = 8e^{\sqrt x - 2}$
       - $\ln y = 8 \sqrt{x - 2}$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 2
-    legacy_id: 7.A.2
+  - id: 52f1674c-d645-4e8e-a773-7b23317279b9
+    legacy_ids:
+      - 7.A.2
     question: |
       A function $f(x)$ that satisfies the equation $f(x) \cdot f'(x) = x$ and
       $f(0) = 1$ is
@@ -25,11 +28,13 @@ questions:
       - $f(x) = \sqrt{1 - x^2}$
       - $f(x) = e^x$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 3
-    legacy_id: 7.A.3
+  - id: 1f59394c-0749-4099-bbba-b6e46dca27be
+    legacy_ids:
+      - 7.A.3
     question: If $\dydx = y \sec^2 x$ and $y = 5$ when $x = 0$, then $y =$
     answer: $5e^{\tan x}$
     distractors:
@@ -37,11 +42,13 @@ questions:
       - $e^{\tan x} + 4$
       - $\tan x + 5$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 4
-    legacy_id: 7.A.4
+  - id: b2b432e2-4f83-46a5-8d19-0c6f373dbf54
+    legacy_ids:
+      - 7.A.4
     question: |
       According to Newton’s Law of cooling, the temperature of an object
       decreases at a rate proportional to the difference between its temperature
@@ -55,11 +62,13 @@ questions:
       - $\frac{dT}{dt} = k(T - 68)$
       - $\frac{dT}{dt} = kT(T - 68)$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 5
-    legacy_id: 7.A.5
+  - id: 655f69ad-e8a6-4579-9bd1-6de4647be863
+    legacy_ids:
+      - 7.A.5
     question: |
       Find the value of $k$ for which the constant function $y(t) = k$ is a
       solution to the differential equation \\
@@ -70,11 +79,13 @@ questions:
       - 1
       - $\frac{1}{2}$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 6
-    legacy_id: 7.A.6
+  - id: 530584ff-13df-48be-adbc-1f7e096f26b6
+    legacy_ids:
+      - 7.A.6
     question: Which of the following is a solution to the differential equation $y'' - 4y = 0$?
     answer: $y = e^{2x}$
     distractors:
@@ -82,11 +93,13 @@ questions:
       - $y = \sin 2x$
       - $y = \cos 2x$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 7
-    legacy_id: 7.A.7
+  - id: f1f4d3ae-2b82-4d81-8f95-bc69804242b5
+    legacy_ids:
+      - 7.A.7
     question: |
       Consider the differential equation $\dydx = \frac{4x}{y}$ for $y \ge 1$
       with initial value $y(0) = 1$. Which of the following is the slope field
@@ -97,11 +110,13 @@ questions:
       - \includegraphics[width=2.25in]{7-B}
       - \includegraphics[width=2.25in]{7-D}
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 8
-    legacy_id: 7.A.8
+  - id: 22a2db06-3388-4f29-98dd-e8b006aca5c7
+    legacy_ids:
+      - 7.A.8
     question: |
       \includegraphics{8}
 
@@ -112,11 +127,13 @@ questions:
       - $\dydx = \frac{y - 2}{x}$
       - $\dydx = \frac{y + 2}{x + 1}$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 9
-    legacy_id: 7.A.9
+  - id: 9d9ee6a5-bc7b-4342-bdbf-efbfc202f71b
+    legacy_ids:
+      - 7.A.9
     question: Solve the differential equation $2y' = y$.
     answer: $y = Ce^{\frac{x}{2}}$
     distractors:
@@ -124,11 +141,13 @@ questions:
       - $y = e^{2x} + C$
       - $2y = \frac{y^2}{2} + C$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 10
-    legacy_id: 7.A.10
+  - id: d3315d60-44f3-4d41-a041-01795437ab37
+    legacy_ids:
+      - 7.A.10
     question: |
       Suppose $f$ is a function satisfying $f'(x) = x \sqrt{f(x)}$ for all real
       numbers $x$ and $f(3) = 25$. What is the value of $f(0)$?
@@ -138,11 +157,13 @@ questions:
       - $\frac{11}{4}$
       - $\frac{11}{2}$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 11
-    legacy_id: 7.A.12
+  - id: 283479ed-a267-49d7-a4fd-c5f8513a8e0f
+    legacy_ids:
+      - 7.A.12
     question: |
       A bacteria colony with population $y$ grows according to the differential
       equation $\dydx = 0.4y$. There are 2000 bacteria initially. Find the
@@ -153,11 +174,13 @@ questions:
       - 14,000
       - 20,885
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 12
-    legacy_id: 7.A.13
+  - id: c47727a3-e768-42c5-8ba0-0022eb186cdd
+    legacy_ids:
+      - 7.A.13
     question: |
       \includegraphics{13}
 
@@ -170,11 +193,13 @@ questions:
       - $y = \sqrt{9 - x^2}$
       - $y = \sqrt{3 - x^2}$
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 13
-    legacy_id: 7.A.14
+  - id: 3cc53cc6-8c12-4579-9c03-45ea15b5f33c
+    legacy_ids:
+      - 7.A.14
     question: |
       The differential equation $\frac{dq}{dt} = t^2q - 3q$ in separable form is:
     answer: $\frac{dq}{q} = \left(t^2 - 3\right) dt$
@@ -183,11 +208,13 @@ questions:
       - $\frac{dq}{q} + 3q = t^2 dt$
       - $dq = \left( t^2q - 3q \right) dt$
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 14
-    legacy_id: 7.A.15
+  - id: 94b84173-4d7b-4753-9252-48db4b4b460a
+    legacy_ids:
+      - 7.A.15
     question: |
       Which of the following could be a solution to the differential equation
       $\dydx = \frac{4x}{y}$ when $y(2) = -2$?
@@ -197,11 +224,13 @@ questions:
       - $y = 2x - 6$ for $x \ne 3$
       - $y = \sqrt{4x^2 - 12}$ for $x > \sqrt 3$
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 15
-    legacy_id: 7.A.16
+  - id: cc1569e4-4e67-4b44-93ec-488903b0fe00
+    legacy_ids:
+      - 7.A.16
     question: |
       A student attempted to solve the differential equation $\dydx = xy$ with
       initial condition $y = 2$ when $x = 0$. In which step does an error first
@@ -223,11 +252,13 @@ questions:
       - Step 4
       - Step 5
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 16
-    legacy_id: 7.B.1
+  - id: 32ddab0f-2589-48ad-a7f1-855c9624a0d6
+    legacy_ids:
+      - 7.B.1
     question: Which of the following is a solution to the differential equation $y'' + 4y = 0$?
     answer: $y = \cos 2x$
     distractors:
@@ -235,11 +266,13 @@ questions:
       - $y = 2 \sin x$
       - $y = e^{2x}$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 17
-    legacy_id: 7.B.2
+  - id: 2e7071a7-f295-49d8-a021-c0227ec3b892
+    legacy_ids:
+      - 7.B.2
     question: |
       Consider the differential equation $\textstyle \dydx = \frac{3}{x^3}$ for $y \ge 1$.
       Which of the following is the slope field for the general solution to that
@@ -250,11 +283,13 @@ questions:
       - \includegraphics[width=2.25in]{7-B}
       - \includegraphics[width=2.25in]{7-D}
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 18
-    legacy_id: 7.B.3
+  - id: 7b6db409-5c85-4663-bec5-9f6ea22af533
+    legacy_ids:
+      - 7.B.3
     question: |
       A function $f(x)$ that satisfies the equation $f(x) \cdot f'(x) = x^2$ and
       $f(0) = 3$ is
@@ -264,11 +299,13 @@ questions:
       - $f(x) = \sqrt{\frac{1}{3}x^3 + 3}$
       - $f(x) = \frac{1}{3}x^3 + 3$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 19
-    legacy_id: 7.B.4
+  - id: 479a15ae-b6c1-4324-a944-27f18aac91d1
+    legacy_ids:
+      - 7.B.4
     question: If $\dydx = y \csc x \cot x$ and $y = 3$ when $x = 0$, then $y =$
     answer: $3e^{\csc x}$
     distractors:
@@ -276,11 +313,13 @@ questions:
       - $\csc x + 3$
       - $e^{\csc x} + 2$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 20
-    legacy_id: 7.B.5
+  - id: 24db00a2-c467-4e69-be8f-52100ae26fe1
+    legacy_ids:
+      - 7.B.5
     question: |
       At each point $(x, y)$ on a certain curve, the slope of the curve is
       $2e^x - \cos x$. If the curve contains the point $(0, 3)$, then its
@@ -291,11 +330,13 @@ questions:
       - $y = e^{2x} - \sin x + 2$
       - $y = 2e^x + \sin x + 1$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 21
-    legacy_id: 7.B.6
+  - id: a1221e56-3aab-4bbe-b48f-1bb359333f32
+    legacy_ids:
+      - 7.B.6
     question: |
       Suppose $f$ is a function satisfying $f'(x) = x^2 \cdot f(x)$ for all real
       numbers $x$ and $f(3) = 1$. What is the value of $f(0)$?
@@ -305,11 +346,13 @@ questions:
       - $e$
       - $e^{-3}$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 22
-    legacy_id: 7.B.7
+  - id: 5e86baf4-a69f-4d87-9c15-8f1c7df59d52
+    legacy_ids:
+      - 7.B.7
     question: |
       Find all values of $k$ for which the constant function $y(x) = 2k$ is a
       solution to the differential equation \\
@@ -320,11 +363,13 @@ questions:
       - 1
       - 2
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 23
-    legacy_id: 7.B.8
+  - id: 829b30ad-3f9e-4be2-99c2-061883b91c72
+    legacy_ids:
+      - 7.B.8
     question: Solve the differential equation $2yy' = 6x^2$.
     answer: $y = \pm \sqrt{2x^3 + C}$
     distractors:
@@ -332,11 +377,13 @@ questions:
       - $y = 2x^3 + C$
       - $y = \pm \sqrt{x^3 + C}$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 24
-    legacy_id: 7.B.9
+  - id: 0c80d04f-55a8-4e61-9292-d946142ddf4e
+    legacy_ids:
+      - 7.B.9
     question: |
       \includegraphics{8-2}
 
@@ -347,11 +394,13 @@ questions:
       - $\dydx = \frac{y}{x + 1}$
       - $\dydx = \frac{y + 2}{x + 1}$
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 25
-    legacy_id: 7.B.10
+  - id: c5db5299-5bc6-4ce0-810f-83d4d97be13a
+    legacy_ids:
+      - 7.B.10
     question: |
       According to Newton’s Law of cooling, the temperature of an object
       decreases at a rate proportional to the difference between its temperature
@@ -366,11 +415,13 @@ questions:
       - $1.5^\circ$ F per minute
       - The pie is no longer cooling down
     solution: TODO
+    calculator_active: false
     sections: []
     dok: unknown
 
-  - id: 26
-    legacy_id: 7.B.12
+  - id: 4730dc60-9fae-45da-afca-7fd661436a7d
+    legacy_ids:
+      - 7.B.12
     question: |
       The differential equation $\frac{dq}{dt} = \frac{1}{2}t(q-4)^3$ in
       separable form is:
@@ -380,11 +431,13 @@ questions:
       - $\frac{dq}{(q - 4)^3} = \frac{2}{t} dt$
       - $\frac{dq}{(q - 4)^3} = 2t dt$
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 27
-    legacy_id: 7.B.13
+  - id: 51b06705-bc8a-4dd9-8abf-dd84021b3a7e
+    legacy_ids:
+      - 7.B.13
     question: |
       The general solution to the differential equation $\dydx = -\frac{x}{y}$ is
       a family of
@@ -394,11 +447,13 @@ questions:
       - Parabolas
       - Lines passing through the origin
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 28
-    legacy_id: 7.B.14
+  - id: a039e619-dddb-4fa9-962b-2bf31def8987
+    legacy_ids:
+      - 7.B.14
     question: |
       A ant habitat with population $y$ grows according to the differential
       equation $\dydx = 0.1y$ ants per day. There are 100 ants initially. Find
@@ -409,11 +464,13 @@ questions:
       - 101 ants
       - 739 ants
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 29
-    legacy_id: 7.B.15
+  - id: 362b5b83-6fbf-4960-921b-4ace0c8f8d2b
+    legacy_ids:
+      - 7.B.15
     question: |
       Which of the following could be a solution to the differential equation
       $\dydx = \frac{3x}{y}$ when $y(3) = \sqrt{15}$?
@@ -423,11 +480,13 @@ questions:
       - $y = -\sqrt{3x^2 - 12}$ for $x > 2$
       - $y = 3x - 7$ for $x \ne 3$
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
 
-  - id: 30
-    legacy_id: 7.B.16
+  - id: 06ec39b0-39b8-45d5-92b2-d5e8acd1c5a9
+    legacy_ids:
+      - 7.B.16
     question: |
       A student attempted to solve the differential equation $\dydx = x + 2xy$ with
       initial condition $y = 1$ when $x = 0$. In which step does an error first
@@ -452,5 +511,6 @@ questions:
       - Step 8
       - Step 9
     solution: TODO
+    calculator_active: true
     sections: []
     dok: unknown
