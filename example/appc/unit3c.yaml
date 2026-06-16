@@ -2,6 +2,8 @@ questions:
   - id: 08658aa0-c57a-4401-8204-be622aba741c
     legacy_ids:
       - 3C.A.1
+    related_to:
+      - 54dfcdbc-d234-420c-9575-9c3824bd1b1a
     question: |
       The complex number $z$ is graphed in the complex plane, as shown in the figure.
 
@@ -27,6 +29,8 @@ questions:
   - id: 41259938-1c2f-4b0d-a534-dd015b32b0cb
     legacy_ids:
       - 3C.A.2
+    related_to:
+      - c0d68215-7125-4c56-82d0-459f581bcf52
     question: |
       The graph of a polar function $r = g(\theta)$ contains the point $A$, where
       the polar coordinates of $A$ are given by $\textstyle \left(-4,
@@ -45,6 +49,7 @@ questions:
   - id: 8a1c815d-44ca-4844-a815-19cd5b98115f
     legacy_ids:
       - 3C.A.3
+      - 3C.B.3
     question: |
       \includegraphics{3}
 
@@ -65,6 +70,8 @@ questions:
   - id: e77a376e-4cd4-42ef-ac9b-352db76155ce
     legacy_ids:
       - 3C.A.4
+    related_to:
+      - 8b66d6e1-d6ba-4655-8c74-b6136e2f812f
     question: |
       Consider the polar function $r = g(\theta)$  graphed in the polar
       coordinate system where \\ $g(\theta) = \theta^2(\theta - 1)(\theta - 3)$. On
@@ -84,6 +91,8 @@ questions:
   - id: 174c45c5-231b-49cf-b308-632363bef608
     legacy_ids:
       - 3C.A.5
+    related_to:
+      - 83cb23b2-9fa2-43e8-92b8-b4c574072542
     question: |
       The point $P$ has polar coordinates $\left(-4, \frac{7\pi}{6} \right)$.
       Which of the following polar coordinates is an equivalent representation of
@@ -102,6 +111,8 @@ questions:
   - id: 54dfcdbc-d234-420c-9575-9c3824bd1b1a
     legacy_ids:
       - 3C.B.1
+    related_to:
+      - 08658aa0-c57a-4401-8204-be622aba741c
     question: |
       The number $z$ can be represented according to its polar coordinates as
       $\textstyle \left(3 \cos \frac{3\pi}{4}\right) + i \left(3 \sin
@@ -121,6 +132,8 @@ questions:
   - id: c0d68215-7125-4c56-82d0-459f581bcf52
     legacy_ids:
       - 3C.B.2
+    related_to:
+      - 41259938-1c2f-4b0d-a534-dd015b32b0cb
     question: |
       The graph of a polar function $r = g(\theta)$ contains the point $A$, where
       the polar coordinates of $A$ are given by $\textstyle \left(-4,
@@ -136,29 +149,11 @@ questions:
       - 3.14
     dok: unknown
 
-  - id: 490538a1-4106-49b7-8d99-b3c53822bfdc
-    legacy_ids:
-      - 3C.B.3
-    question: |
-      \includegraphics{3}
-
-      The polar function $r = f(\theta)$ is graphed in the polar coordinate
-      system in the figure. Which of the following could be an expression for
-      $f(\theta)$?
-    answer: $f(\theta) = \frac{5}{2} \cos \left( 4\theta \right)$
-    distractors:
-      - $f(\theta) = \frac{5}{2} \sin \left( 4\theta \right)$
-      - $f(\theta) = \frac{5}{2} \sin \left( \frac{\theta}{4} \right)$
-      - $f(\theta) = \frac{5}{2} \cos \left( \frac{\theta}{4} \right)$
-    solution: TODO
-    calculator_active: false
-    sections:
-      - 3.14
-    dok: unknown
-
   - id: 8b66d6e1-d6ba-4655-8c74-b6136e2f812f
     legacy_ids:
       - 3C.B.4
+    related_to:
+      - e77a376e-4cd4-42ef-ac9b-352db76155ce
     question: |
       Consider the polar function $r = g(\theta)$  graphed in the polar
       coordinate system where \\ $g(\theta) = \theta^2(\theta - 1)(\theta - 3)$. On
@@ -178,6 +173,8 @@ questions:
   - id: 83cb23b2-9fa2-43e8-92b8-b4c574072542
     legacy_ids:
       - 3C.B.5
+    related_to:
+      - 174c45c5-231b-49cf-b308-632363bef608
     question: |
       The point $P$ has polar coordinates $\left(4, \frac{7\pi}{6} \right)$.
       Which of the following polar coordinates is an equivalent representation of

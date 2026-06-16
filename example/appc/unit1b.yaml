@@ -2,6 +2,8 @@ questions:
   - id: f2667ed4-e44d-431b-8062-482802b8e648
     legacy_ids:
       - 1B.A.1
+    related_to:
+      - b21e092c-9b1a-4ec0-acc4-63f89be506a4
     question: |
       The graph of function $f$ has a hole at $x = -1$ and a vertical asymptote
       at $x = 3$. Which of the following functions could be $f(x)$?
@@ -20,6 +22,8 @@ questions:
   - id: 78d3131c-4446-4ba8-b183-f72b8f9d594b
     legacy_ids:
       - 1B.A.2
+    related_to:
+      - 1425d7e4-9d43-40b3-bc5d-c9cd390c6fc7
     question: Let $f(x) = x - 3$ and $g(x) = \frac{2x^2 + x - 6}{x + 2}$. What are all the intervals on which $g(x) \ge f(x)$?
     answer: $[0, \infty)$
     distractors:
@@ -44,6 +48,8 @@ questions:
   - id: 39d1e0b4-b444-4c97-a6a1-9f122285cbeb
     legacy_ids:
       - 1B.A.3
+    related_to:
+      - 1c148c02-d333-4165-a9c7-632efa41cd42
     question: The function $r$ is given by $r(x) = \frac{x^2 + 2x - 24}{x^3 + 8x^2 + 12x}$. Which of the following is the domain of $r$?
     answer: All real numbers $x$ where $x \ne -6$, $x \ne 0$, $x \ne -2$
     distractors:
@@ -62,6 +68,8 @@ questions:
   - id: cdca8f44-0b2e-47c3-814d-21d5cae6c43c
     legacy_ids:
       - 1B.A.4
+    related_to:
+      - 43dea07c-027b-4c07-8f6e-0dfd75acf7a9
     question: |
       The functions $m$ and $n$ are defined for all real numbers. In the $xy$-plane, the graph of $n$ is constructed by
       applying three transformations to the graph of $m$ in this order:
@@ -87,6 +95,8 @@ questions:
   - id: e3af9b12-1a45-4e1b-bc5d-cd06fc4c8d13
     legacy_ids:
       - 1B.A.5
+    related_to:
+      - 4897dc84-deed-4c32-bae9-92792f29ffc2
     question: The rational function $r$ is given by $r(x) = \frac{2x^2 - 3x + 7}{x - 4}$. Which of the following statement about $r$ is correct?
     answer: The graph of $r$ has a slant asymptote at $y = 2x + 5$.
     distractors:
@@ -103,6 +113,8 @@ questions:
   - id: 619c1f64-0172-4a91-a688-98918d2a2f86
     legacy_ids:
       - 1B.A.6
+    related_to:
+      - 20883980-0c20-455e-ac06-c2e45c27ab93
     question: |
       The function $P(t)$ models the population of cattle on a ranch and is given
       by $P(t) = \frac{3000t}{10 + 5t}$ for $t \ge 0$, where $t$ is measured in
@@ -126,6 +138,8 @@ questions:
   - id: e6ef6f52-ec60-4a21-acea-9182bdfc5277
     legacy_ids:
       - 1B.A.7
+    related_to:
+      - 3cb17e93-2d05-45dd-89e2-0e188b328144
     question: |
       The rational function $f$ is given by $f(x) = \frac{n(x)}{d(x)}$, where and
       $n$, and $d$ are polynomial functions. The degree of $n$ is less than the
@@ -147,6 +161,8 @@ questions:
   - id: 731681bd-2137-48de-9f2c-715c6e0d1220
     legacy_ids:
       - 1B.A.8
+    related_to:
+      - 4c678054-7dd9-4275-a2ff-68ee520bfdd0
     question: |
       A balanced coin with one side heads ($H$) and the other side tails ($T$) is
       repeatedly flipped, and the results are recorded. The coefficients in the
@@ -173,6 +189,8 @@ questions:
   - id: 912e62a6-edae-44b5-bc67-b07b369eb2e6
     legacy_ids:
       - 1B.A.9
+    related_to:
+      - 219cc1e8-cd1d-4b25-ad1b-f0d1d764155f
     question: |
       A rational function $q(x)$ has a hole at $x = 3$, a vertical asymptote at
       $x = -1$, and a horizontal asymptote at $y = -\frac{1}{2}$.  $q(x)$ has
@@ -200,6 +218,8 @@ questions:
   - id: 0dad1e4c-a71d-4d6e-bb85-5e9738cecba3
     legacy_ids:
       - 1B.A.11
+    related_to:
+      - 9db06961-6a75-47cd-8556-9399da407902
     question: |
       The graph of $f(x)$, consisting of three line segments, is shown above
       for $-3 \le x \le 4$. Which of the following is the transformed graph
@@ -218,6 +238,8 @@ questions:
   - id: b4dcb43f-ffe1-428a-8927-ae37a8401410
     legacy_ids:
       - 1B.A.12
+    related_to:
+      - 7db2fcc9-bcbf-4e7e-acbe-1993559bd972
     question: |
       Starting at time $t = 0$ minutes, a copy machine makes copies at a constant
       rate of 30 pages per minute. Two minutes after the first copy machine
@@ -250,6 +272,8 @@ questions:
   - id: a2ac7c6d-6dcb-46e3-91d9-597edf190c41
     legacy_ids:
       - 1B.A.13
+    related_to:
+      - 5f06321b-06bb-402a-99c1-e0dac3a96bbc
     question: |
       The rational function $r$ is given by $r(x) = \frac{2.08x^2 - 3.3x - 4.48}{1.44x^2 + 8.62x + 6.44}$.
       At which of the following $x$- values does the graph of $r(x)$ have a hole?
@@ -273,6 +297,8 @@ questions:
   - id: ae7359ca-3814-499b-8989-537af2b5d7c0
     legacy_ids:
       - 1B.A.14
+    related_to:
+      - 9bfb3f28-7798-4887-a2d7-1ee2c90a82ff
     question: |
       A model rocket is launched from a site on level ground. One second after
       the rocket is launched, it is at a height of 20.1 meters above the ground.
@@ -303,6 +329,8 @@ questions:
   - id: 4897dc84-deed-4c32-bae9-92792f29ffc2
     legacy_ids:
       - 1B.B.1
+    related_to:
+      - e3af9b12-1a45-4e1b-bc5d-cd06fc4c8d13
     question: The rational function $r$ is given by $r(x) = \frac{4x^2 + 3x - 9}{x - 3}$. Which of the following statement about $r$ is correct?
     answer: The graph of $r$ has a slant asymptote at $y = 4x + 15$.
     distractors:
@@ -319,6 +347,8 @@ questions:
   - id: 3cb17e93-2d05-45dd-89e2-0e188b328144
     legacy_ids:
       - 1B.B.2
+    related_to:
+      - e6ef6f52-ec60-4a21-acea-9182bdfc5277
     question: |
       The rational function $f$ is given by $f(x) = \frac{n(x)}{d(x)}$, where
       and $n$, and $d$ are polynomial functions. The degree of $n$ is 4 and the
@@ -341,6 +371,8 @@ questions:
   - id: 1425d7e4-9d43-40b3-bc5d-c9cd390c6fc7
     legacy_ids:
       - 1B.B.3
+    related_to:
+      - 78d3131c-4446-4ba8-b183-f72b8f9d594b
     question: Let $f(x) = \frac{2}{x^3 - x}$ and $g(x) = -\frac{x}{x^2 - 1}$. What are all the intervals on which $f(x) < g(x)$?
     answer: $(-\infty, -1) \cup (0, 1)$
     distractors:
@@ -363,6 +395,8 @@ questions:
   - id: 4c678054-7dd9-4275-a2ff-68ee520bfdd0
     legacy_ids:
       - 1B.B.4
+    related_to:
+      - 731681bd-2137-48de-9f2c-715c6e0d1220
     question: |
       A deck of cards with black faces ($B$) and red faces ($R$) is dealt onto
       the table. The coefficients in the expansion of $(B + R)^n$ give the
@@ -389,6 +423,8 @@ questions:
   - id: 1c148c02-d333-4165-a9c7-632efa41cd42
     legacy_ids:
       - 1B.B.5
+    related_to:
+      - 39d1e0b4-b444-4c97-a6a1-9f122285cbeb
     question: The function $r$ is given by $r(x) = \frac{x^3 - 3x^2 + 2x}{x^2 - 2x - 3}$. Which of the following is the domain of $r$?
     answer: All real numbers $x$ where $x \ne 3$, $x \ne -1$
     distractors:
@@ -407,6 +443,8 @@ questions:
   - id: b21e092c-9b1a-4ec0-acc4-63f89be506a4
     legacy_ids:
       - 1B.B.6
+    related_to:
+      - f2667ed4-e44d-431b-8062-482802b8e648
     question: |
       The graph of function $f$ has a hole at $x = 1$ and a zero
       at $x = -2$. Which of the following functions could be $f(x)$?
@@ -426,6 +464,8 @@ questions:
   - id: 43dea07c-027b-4c07-8f6e-0dfd75acf7a9
     legacy_ids:
       - 1B.B.7
+    related_to:
+      - cdca8f44-0b2e-47c3-814d-21d5cae6c43c
     question: |
       The functions $m$ and $n$ are defined for all real numbers. In the $xy$-plane, the graph of $n$ is constructed by
       applying three transformations to the graph of $m$ in this order:
@@ -451,6 +491,8 @@ questions:
   - id: 20883980-0c20-455e-ac06-c2e45c27ab93
     legacy_ids:
       - 1B.B.8
+    related_to:
+      - 619c1f64-0172-4a91-a688-98918d2a2f86
     question: |
       The function $P(V)$ models the pressure of a gas in a vessel and is given
       by $P(V) = \frac{nRT}{V}$ for $V \ge 0$, where $V$ is measured in liters
@@ -475,6 +517,8 @@ questions:
   - id: 219cc1e8-cd1d-4b25-ad1b-f0d1d764155f
     legacy_ids:
       - 1B.B.9
+    related_to:
+      - 912e62a6-edae-44b5-bc67-b07b369eb2e6
     question: |
       A rational function $q(x)$ has a horizontal asymptote at $y = 3$, a
       vertical asymptote at $x = -1$, and a horizontal asymptote at $y =
@@ -500,6 +544,8 @@ questions:
   - id: 5f06321b-06bb-402a-99c1-e0dac3a96bbc
     legacy_ids:
       - 1B.B.11
+    related_to:
+      - a2ac7c6d-6dcb-46e3-91d9-597edf190c41
     question: |
       The rational function $r$ is given by $r(x) = \frac{-x^2 - 6.84x - 2.148}{0.1x^3 + 0.264x^2 - 2.658x - 0.902}$.
       At which of the following $x$- values does the graph of $r(x)$ have a vertical asymptote?
@@ -523,6 +569,8 @@ questions:
   - id: 7db2fcc9-bcbf-4e7e-acbe-1993559bd972
     legacy_ids:
       - 1B.B.12
+    related_to:
+      - b4dcb43f-ffe1-428a-8927-ae37a8401410
     question: |
       A marathoner starts a race running at a pace of 6 minutes per mile and
       runs at this same pace for the first hour. At the start of the second
@@ -552,6 +600,8 @@ questions:
   - id: 9db06961-6a75-47cd-8556-9399da407902
     legacy_ids:
       - 1B.B.13
+    related_to:
+      - 0dad1e4c-a71d-4d6e-bb85-5e9738cecba3
     question: |
       The graph of $f(x)$, consisting of three line segments, is shown above
       for $-3 \le x \le 4$. Which of the following is the transformed graph
@@ -570,6 +620,8 @@ questions:
   - id: 9bfb3f28-7798-4887-a2d7-1ee2c90a82ff
     legacy_ids:
       - 1B.B.14
+    related_to:
+      - ae7359ca-3814-499b-8989-537af2b5d7c0
     question: |
       A baseball is hit from a position 1 meter above home plate towards the
       outfield. One second after the baseball is hit, it is at a height of 20.1

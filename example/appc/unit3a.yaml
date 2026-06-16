@@ -2,6 +2,8 @@ questions:
   - id: 936adef7-8cd6-4b6a-a2a3-e9ca7f8d1404
     legacy_ids:
       - 3A.A.1
+    related_to:
+      - 9f8d1133-167a-4242-92a6-397ef481ac78
     question: |
       \includegraphics{1}
 
@@ -23,6 +25,8 @@ questions:
   - id: 2d213c6b-2f7e-4c42-b7ad-d43a1a42586f
     legacy_ids:
       - 3A.A.2
+    related_to:
+      - 4416d15b-a958-4435-8fdb-0af5412947cf
     question: |
       A circle with center $O$ is centered at the origin with a radius of 4. The
       point $A$ lies at the intersection of the terminal ray of an angle in
@@ -42,6 +46,8 @@ questions:
   - id: 861dcd0b-14c0-4f12-a276-5c21491e6fec
     legacy_ids:
       - 3A.A.3
+    related_to:
+      - 3bed543c-0695-484d-a57d-184fc2f18102
     question: |
       In the $xy$-plane, an angle in standard position measuring $\textstyle
       \frac{7\pi}{6}$ radians intersects a circle centered at the origin with a
@@ -61,6 +67,8 @@ questions:
   - id: 82d83c9f-9f3b-42a3-a3c3-b43b158e183a
     legacy_ids:
       - 3A.A.4
+    related_to:
+      - 17d1324d-3438-4092-82c9-4f19db300880
     question: |
       \includegraphics{4}
 
@@ -81,6 +89,8 @@ questions:
   - id: 92c68a6c-350f-459d-a27e-0edb770216ea
     legacy_ids:
       - 3A.A.5
+    related_to:
+      - adecc009-8ca6-4b3e-837d-bc39d0794517
     question: |
       Let $f$ be the function given by $f(\theta) = \cos \theta$. Which of the
       following describes the relationship between the inputs and outputs of $f$
@@ -99,6 +109,8 @@ questions:
   - id: 59079bf4-ff0d-4c56-97b2-3c04c3f31aa2
     legacy_ids:
       - 3A.A.6
+    related_to:
+      - 2563e190-6db6-47a2-95f7-7bf8bf5988ce
     question: |
       The function $h$ is defined by $h(\theta) = \cos \theta$ for all $\theta$.
       The graph of $h$ contains the point $(\omega, h(\omega))$ for some angle
@@ -117,6 +129,8 @@ questions:
   - id: cada46c7-9967-43f8-9065-f67d5e423cdd
     legacy_ids:
       - 3A.A.7
+    related_to:
+      - 06c7e2a6-69c9-4795-8f26-035c0bc3c95b
     question: |
       The height of the tide on one coastline can be modeled by the function
       $\textstyle h(t) = 1.25 \sin \left( \frac{2\pi}{12.25} (t - 1.5) \right) +
@@ -136,6 +150,8 @@ questions:
   - id: 93467e7e-dfda-492d-8c5f-5001ad8ca344
     legacy_ids:
       - 3A.A.8
+    related_to:
+      - 73c657aa-df45-4bab-9877-f3f146889de8
     question: |
       \includegraphics{18}
 
@@ -155,6 +171,8 @@ questions:
   - id: d6df7e72-e952-45b9-acfd-4f6ce866670f
     legacy_ids:
       - 3A.A.9
+    related_to:
+      - 0cc3083a-0870-487a-a8cd-1d98eb2418dc
     question: |
       An architect is designing a skate park, and one obstacle in the park will
       be a concrete wave that skateboarders can ride on. The architect is going
@@ -180,6 +198,8 @@ questions:
   - id: f30c1898-29ae-42b1-856b-12f3d486732c
     legacy_ids:
       - 3A.A.11
+    related_to:
+      - 1570ea3a-097d-4b81-9245-3ebd9813f668
     question: |
       \includegraphics{11}
 
@@ -200,6 +220,8 @@ questions:
   - id: 65cdac71-d6b2-411b-b121-79290d809e07
     legacy_ids:
       - 3A.A.12
+    related_to:
+      - 0586c3da-de9a-40aa-b7d2-f673b7fc37aa
     question: |
       Consider the function $f$ defined by $f(x) = \cos(x)$. Which of the
       following is a valid interpretation of $f(6)$.
@@ -217,6 +239,8 @@ questions:
   - id: b3142aa6-f89e-480c-8662-b181f5416268
     legacy_ids:
       - 3A.A.13
+    related_to:
+      - 05ec5b9c-f4a8-4079-b04e-091b8f3f6a46
     question: |
       An antique seller has a piece of memorabilia they are looking to sell. They
       have found that, over the last few months, the price of similar memorabilia
@@ -255,6 +279,8 @@ questions:
   - id: 6e5c11db-c6a7-4b2d-8ef9-9298af4be27b
     legacy_ids:
       - 3A.A.14
+    related_to:
+      - 98681433-1450-451d-8cd4-b9f276b08374
     question: |
       For a car that is idling, the height h of a piston, which goes up and down
       periodically, can be modeled by the function $h(t) = 0.6 \sin (86.080t) +
@@ -274,6 +300,8 @@ questions:
   - id: 4416d15b-a958-4435-8fdb-0af5412947cf
     legacy_ids:
       - 3A.B.1
+    related_to:
+      - 2d213c6b-2f7e-4c42-b7ad-d43a1a42586f
     question: |
       A circle with center $O$ is centered at the origin with a radius of 2. The
       point $A$ lies at the intersection of the terminal ray of an angle in
@@ -293,6 +321,8 @@ questions:
   - id: 9f8d1133-167a-4242-92a6-397ef481ac78
     legacy_ids:
       - 3A.B.2
+    related_to:
+      - 936adef7-8cd6-4b6a-a2a3-e9ca7f8d1404
     question: |
       \includegraphics{1}
 
@@ -314,6 +344,8 @@ questions:
   - id: 3bed543c-0695-484d-a57d-184fc2f18102
     legacy_ids:
       - 3A.B.3
+    related_to:
+      - 861dcd0b-14c0-4f12-a276-5c21491e6fec
     question: |
       In the $xy$-plane, an angle in standard position measuring $\textstyle
       \frac{5\pi}{3}$ radians intersects a circle centered at the origin with a
@@ -333,6 +365,8 @@ questions:
   - id: 2563e190-6db6-47a2-95f7-7bf8bf5988ce
     legacy_ids:
       - 3A.B.4
+    related_to:
+      - 59079bf4-ff0d-4c56-97b2-3c04c3f31aa2
     question: |
       The function $h$ is defined by $h(\theta) = \sin \theta$ for all $\theta$.
       The graph of $h$ contains the point $(\omega, h(\omega))$ for some angle
@@ -351,6 +385,8 @@ questions:
   - id: 17d1324d-3438-4092-82c9-4f19db300880
     legacy_ids:
       - 3A.B.5
+    related_to:
+      - 82d83c9f-9f3b-42a3-a3c3-b43b158e183a
     question: |
       \includegraphics{4}
 
@@ -371,6 +407,8 @@ questions:
   - id: adecc009-8ca6-4b3e-837d-bc39d0794517
     legacy_ids:
       - 3A.B.6
+    related_to:
+      - 92c68a6c-350f-459d-a27e-0edb770216ea
     question: |
       Let $f$ be the function given by $f(\theta) = -\cos \theta$. Which of the
       following describes the relationship between the inputs and outputs of $f$
@@ -389,6 +427,8 @@ questions:
   - id: 06c7e2a6-69c9-4795-8f26-035c0bc3c95b
     legacy_ids:
       - 3A.B.7
+    related_to:
+      - cada46c7-9967-43f8-9065-f67d5e423cdd
     question: |
       The water level in a resevoir can be modeled by the function $\textstyle
       h(t) = 7.5 \cos \left( \frac{2\pi}{22.5} (t - 4.5) \right) + 3$, where
@@ -409,6 +449,8 @@ questions:
   - id: 0cc3083a-0870-487a-a8cd-1d98eb2418dc
     legacy_ids:
       - 3A.B.8
+    related_to:
+      - d6df7e72-e952-45b9-acfd-4f6ce866670f
     question: |
       A guitar sting is plucked and allowed to vibrate. Its motion can be
       modeled by a sinusoial function in the form $f(t) = a \sin (b(t + c)) +
@@ -432,6 +474,8 @@ questions:
   - id: 73c657aa-df45-4bab-9877-f3f146889de8
     legacy_ids:
       - 3A.B.9
+    related_to:
+      - 93467e7e-dfda-492d-8c5f-5001ad8ca344
     question: |
       \includegraphics{18}
 
@@ -451,6 +495,8 @@ questions:
   - id: 0586c3da-de9a-40aa-b7d2-f673b7fc37aa
     legacy_ids:
       - 3A.B.11
+    related_to:
+      - 65cdac71-d6b2-411b-b121-79290d809e07
     question: |
       Consider the function $f$ defined by $f(x) = \sin(x)$. Which of the
       following is a valid interpretation of $f(6)$.
@@ -468,6 +514,8 @@ questions:
   - id: 1570ea3a-097d-4b81-9245-3ebd9813f668
     legacy_ids:
       - 3A.B.12
+    related_to:
+      - f30c1898-29ae-42b1-856b-12f3d486732c
     question: |
       \includegraphics{11}
 
@@ -488,6 +536,8 @@ questions:
   - id: 98681433-1450-451d-8cd4-b9f276b08374
     legacy_ids:
       - 3A.B.13
+    related_to:
+      - 6e5c11db-c6a7-4b2d-8ef9-9298af4be27b
     question: |
       For a car that is idling, the height h of a piston, which goes up and down
       periodically, can be modeled by the function $h(t) = 0.6 \sin (86.080t) +
@@ -507,6 +557,8 @@ questions:
   - id: 05ec5b9c-f4a8-4079-b04e-091b8f3f6a46
     legacy_ids:
       - 3A.B.14
+    related_to:
+      - b3142aa6-f89e-480c-8662-b181f5416268
     question: |
       In an experiment, a research has measured the brightness of the moonlight once a week for the last 5 weeks.
       He observed that the brightness followed a periodic pattern.

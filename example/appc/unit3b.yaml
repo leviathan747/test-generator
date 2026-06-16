@@ -2,6 +2,8 @@ questions:
   - id: 3d005770-b814-4249-bf34-b5474f42b202
     legacy_ids:
       - 3B.A.1
+    related_to:
+      - 23bb2f9e-a03b-4ba6-adef-89a5d97b4e59
     question: |
       Consider an angle in standard position measuring $\frac{5\pi}{6}$ radians.
       What is the slope of the terminal ray of this angle?
@@ -19,6 +21,8 @@ questions:
   - id: 632b089e-7e5e-4a40-a517-e8f6608ead01
     legacy_ids:
       - 3B.A.2
+    related_to:
+      - 4daaaf75-d06e-40c3-8930-f23b467bfed7
     question: |
       Let the function $f$ be given by $f(x) = \arcsin (x)$. If $g$ is the
       function defined by $g(x) = -2f(x + 1) - 3$, what is the range of $g$?
@@ -36,6 +40,8 @@ questions:
   - id: 0942f1d3-52e5-4944-b8f5-0c902ff01245
     legacy_ids:
       - 3B.A.3
+    related_to:
+      - 2afe8929-85d5-4c41-9d03-8555483f47f7
     question: |
       Consider the function $f$ defined by $f(x) = 3 \sin(x) - 2$. One of the
       zeros of $f$ in the interval $0 \le x < 2\pi$ is $\textstyle x =
@@ -56,6 +62,8 @@ questions:
   - id: 2049e3d4-9854-4026-8e4b-e493231b318f
     legacy_ids:
       - 3B.A.4
+    related_to:
+      - 2226e887-fef3-4a06-baff-2413866f266a
     question: |
       Find all solutions to the given equation in the interval $0 \le x < 2\pi$: $\cos
       2x + 5 \cos x = 2$
@@ -73,6 +81,8 @@ questions:
   - id: ced69178-d419-4e56-8ecf-51207c0d02af
     legacy_ids:
       - 3B.A.5
+    related_to:
+      - 33ca9ad6-fe17-49cc-bbf1-522b4f601fe8
     question: Which of the following is \emph{not} equal to $\sin \left( \frac{3\pi}{4} \right)$
     answer: $\sin \left( \frac{5\pi}{4} \right) \cos \left( \frac{\pi}{2} \right) + \cos \left( \frac{5\pi}{4} \right) \sin \left( \frac{\pi}{2} \right)$
     distractors:
@@ -88,6 +98,8 @@ questions:
   - id: ad9db7f4-526c-40af-a2ab-0d505031e45b
     legacy_ids:
       - 3B.A.6
+    related_to:
+      - 01c525d3-52d8-49c5-96d8-12563f4d86e0
     question: |
       The function $f$ is given by $f(x) = (\sin(x) + \cos(x))(\sin(x) -
       \cos(x))$. A student is trying to solve $f(x) = 1$. Which of the following
@@ -107,6 +119,8 @@ questions:
   - id: 39a47bd2-5bc6-4d1d-b974-573acac59f7e
     legacy_ids:
       - 3B.A.7
+    related_to:
+      - 4fbf9b4b-28ee-4556-9e3f-8d895a0392e9
     question: |
       The functions $f$ and $g$ are given by $f(x) = \sin(2x)\tan(x)$ and $g(x) =
       \sin(x)$. Which of the following is an expression for $f$ in terms of $g$
@@ -125,6 +139,8 @@ questions:
   - id: cdc63bf5-3dfb-49e2-baa8-cdf72805d403
     legacy_ids:
       - 3B.A.8
+    related_to:
+      - 0edd8bac-49fb-45ee-9a2a-a4e362fc9488
     question: |
       Find all values of $x$ in the interval $0 \le x < 2\pi$ such that
       $\textstyle \cos(x) > \frac{\sqrt 3}{2}$.
@@ -142,6 +158,8 @@ questions:
   - id: 075712ab-b3d9-4080-8333-6c4e423e0425
     legacy_ids:
       - 3B.A.9
+    related_to:
+      - 748e52e4-605c-4d23-92f3-161a9a1fb4b4
     question: |
       Let $f$ and $g$ be defined by $f(x) = 1 - \sin(x)$ and $g(x) = 2\cos^2(x)$.
       Find the $x$ coordinates for all points of intersection between $f$ and $g$
@@ -160,6 +178,8 @@ questions:
   - id: 0692a1ca-2f0c-4d22-a188-572d23b60b70
     legacy_ids:
       - 3B.A.11
+    related_to:
+      - babb2fc2-248e-4925-9d95-db1004c76b9b
     question: |
       The function $g$ is defined as $g(x) = a \sin(x)$, where $a \ne 0$. Which
       of the following gives the domain of the inverse function $g^{-1}(x)$?
@@ -177,6 +197,8 @@ questions:
   - id: 03130407-fdc0-4a73-9b7d-3d7d5fe9b83b
     legacy_ids:
       - 3B.A.12
+    related_to:
+      - 027bdae6-dba5-4a99-8675-fd43c698e23b
     question: |
       Over the course of one year, a certain stock price increased and decreased
       periodically. The sinusoidal function $P(t) = 1.25 \sin
@@ -236,6 +258,8 @@ questions:
   - id: 23bb2f9e-a03b-4ba6-adef-89a5d97b4e59
     legacy_ids:
       - 3B.B.1
+    related_to:
+      - 3d005770-b814-4249-bf34-b5474f42b202
     question: |
       Consider an angle in standard position whose terminal ray has a slope of $\sqrt 3$.
       Which of the following could be the measure of the angle?
@@ -253,6 +277,8 @@ questions:
   - id: 4daaaf75-d06e-40c3-8930-f23b467bfed7
     legacy_ids:
       - 3B.B.2
+    related_to:
+      - 632b089e-7e5e-4a40-a517-e8f6608ead01
     question: |
       Let the function $f$ be given by $f(x) = \arccos (x)$. What is the range
       of $f$?
@@ -270,6 +296,8 @@ questions:
   - id: 2afe8929-85d5-4c41-9d03-8555483f47f7
     legacy_ids:
       - 3B.B.3
+    related_to:
+      - 0942f1d3-52e5-4944-b8f5-0c902ff01245
     question: |
       Consider the function $f$ defined by $f(x) = 3 \cos(x) - 4$. Which of the
       following is a true statement about the zeros of $f$ on the interval $0
@@ -288,6 +316,8 @@ questions:
   - id: 2226e887-fef3-4a06-baff-2413866f266a
     legacy_ids:
       - 3B.B.4
+    related_to:
+      - 2049e3d4-9854-4026-8e4b-e493231b318f
     question: |
       Find all solutions to the given equation in the interval $0 \le x < 2\pi$:
       $\sin(2x) \cos(x) = 0$
@@ -305,6 +335,8 @@ questions:
   - id: 33ca9ad6-fe17-49cc-bbf1-522b4f601fe8
     legacy_ids:
       - 3B.B.5
+    related_to:
+      - ced69178-d419-4e56-8ecf-51207c0d02af
     question: Which of the following is \emph{not} equal to $\cos \left( \frac{3\pi}{4} \right)$
     answer: $\cos \left( \frac{5\pi}{4} \right) \cos \left( \frac{\pi}{2} \right) - \sin \left( \frac{5\pi}{4} \right) \sin \left( \frac{\pi}{2} \right)$
     distractors:
@@ -320,6 +352,8 @@ questions:
   - id: 01c525d3-52d8-49c5-96d8-12563f4d86e0
     legacy_ids:
       - 3B.B.6
+    related_to:
+      - ad9db7f4-526c-40af-a2ab-0d505031e45b
     question: |
       The function $f$ is given by $f(x) = -\sin(x) \cos(x)$.
 
@@ -340,6 +374,8 @@ questions:
   - id: 4fbf9b4b-28ee-4556-9e3f-8d895a0392e9
     legacy_ids:
       - 3B.B.7
+    related_to:
+      - 39a47bd2-5bc6-4d1d-b974-573acac59f7e
     question: |
       The function $f$ is given by $f(x) = \tan(2x)\sin(x)$
       Which of the following is an expression for $f$ in terms of $\cos(x)$
@@ -358,6 +394,8 @@ questions:
   - id: 0edd8bac-49fb-45ee-9a2a-a4e362fc9488
     legacy_ids:
       - 3B.B.8
+    related_to:
+      - cdc63bf5-3dfb-49e2-baa8-cdf72805d403
     question: |
       Find all values of $x$ in the interval $0 \le x < 2\pi$ such that
       $\textstyle \sin(x) \le \frac{1}{2}$.
@@ -375,6 +413,8 @@ questions:
   - id: 748e52e4-605c-4d23-92f3-161a9a1fb4b4
     legacy_ids:
       - 3B.B.9
+    related_to:
+      - 075712ab-b3d9-4080-8333-6c4e423e0425
     question: |
       Let $f$ and $g$ be defined by $f(x) = 2\sin^2(x) - 2$ and $g(x) = 5\cos(x) + 2$.
       Find the $x$ coordinates for all points of intersection between $f$ and $g$
@@ -393,6 +433,8 @@ questions:
   - id: babb2fc2-248e-4925-9d95-db1004c76b9b
     legacy_ids:
       - 3B.B.11
+    related_to:
+      - 0692a1ca-2f0c-4d22-a188-572d23b60b70
     question: |
       The function $g$ is defined as $g(x) = a \cos(x)$, where $a \ne 0$. Which
       of the following gives the domain of the inverse function $g^{-1}(x)$?
@@ -410,6 +452,8 @@ questions:
   - id: 027bdae6-dba5-4a99-8675-fd43c698e23b
     legacy_ids:
       - 3B.B.12
+    related_to:
+      - 03130407-fdc0-4a73-9b7d-3d7d5fe9b83b
     question: |
       Over the course of one year, the price of tickets at a dinner theater
       increased and decreased periodically. The sinusoidal function $P(t) = 1.7

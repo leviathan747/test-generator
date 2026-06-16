@@ -2,6 +2,8 @@ questions:
   - id: c5167c12-19ee-43fb-852f-830173b709d2
     legacy_ids:
       - 2B.A.1
+    related_to:
+      - ef2f8426-86f2-4c78-8b5b-d65ecb39f449
     question: |
       A cybersecurity firm sells encryption packages that have security ratings
       that exist on a logarithmic scale of base 2. How many more times secure is
@@ -22,6 +24,8 @@ questions:
   - id: f4242d60-24ba-48a6-9ff3-cccbb2be48ee
     legacy_ids:
       - 2B.A.2
+    related_to:
+      - ba5eca70-9b17-4458-b2aa-b7e8ab768d9d
     question: |
       A graph of the exponential function $f(x)$ is shown to the right. Which of
       the following points would line on the graph of $f^{-1}(x)$?
@@ -46,6 +50,8 @@ questions:
   - id: 13ef4abc-2430-440d-bfc9-d0c65782e673
     legacy_ids:
       - 2B.A.3
+    related_to:
+      - 5593d8c3-5e9d-4e40-bdc8-ff3a3e13ca4d
     question: |
       The functions $f$ and $g$ are given by $f(x) = 10^x$ and $g(x) =
       \log_{10}(x)$. The function $h$ is given by the composition of $h(x) =
@@ -66,6 +72,8 @@ questions:
   - id: 17eef279-b5ad-4c10-a125-7285bacdcf19
     legacy_ids:
       - 2B.A.4
+    related_to:
+      - bf36d2ba-4121-4ae4-89f8-d0ec7d23adf7
     question: |
       The exponential function $h(x)$ is decreasing and its graph is concave up
       for all $x$. Which of the following is true about the inverse function
@@ -89,6 +97,8 @@ questions:
   - id: cc61125b-a2f5-4fa0-9088-e9639aac6699
     legacy_ids:
       - 2B.A.5
+    related_to:
+      - c599f60a-bef9-4bb1-ba15-c2f65f61143c
     question: |
       Let $f(x) = \log_{10}(ax)$ and $g(x) = \log_{10}(bx^2)$ for positive
       numbers $a$ and $b$. Let $k(x) = f(x) + g(x)$. Which of the following
@@ -113,6 +123,8 @@ questions:
   - id: b210ae64-4ef8-4949-b38a-b046a47121f4
     legacy_ids:
       - 2B.A.6
+    related_to:
+      - d86f2b89-6714-45d3-98cc-98274aa96508
     question: |
       The logarithmic function $L$ can be expressed as $L(x) = A \log_3(x)$ and
       also as $L(x) = B \log_2(x)$. Which of the following is an expression for
@@ -139,6 +151,8 @@ questions:
   - id: d8402242-f333-4360-b4ad-a333a1a3c1c6
     legacy_ids:
       - 2B.A.7
+    related_to:
+      - be7761d6-d1a3-46dc-9c36-84c9a0910408
     question: |
       The functions $f$ and $g$ are given by $f(x) = \log_3(x - 2)$ and $g(x) =
       \log_3(2x - 1)$. Find all $x$ for which $f(x) + g(x) > 2$?
@@ -166,6 +180,8 @@ questions:
   - id: 0b42d085-7882-4161-ae48-e4286f3d5668
     legacy_ids:
       - 2B.A.8
+    related_to:
+      - 372040eb-25f2-4165-a5cc-b520437c7a5b
     question: |
       A student is solving the equation $5^x = 10^{3x - 1}$. They do not have
       their calculator, so they have to rely on a table of logarithms which
@@ -191,6 +207,8 @@ questions:
   - id: 2876b156-b54f-4d9c-a6f1-edbaebce5bcf
     legacy_ids:
       - 2B.A.9
+    related_to:
+      - 54e7ba60-b30c-4996-a6b8-77b78763df6d
     question: |
       The function $g(x) = 3 \cdot 8^x$ is going to be graphed on a semi-log plot
       where equally spaced marks on the $y$-axis correspond to increasing powers
@@ -212,6 +230,8 @@ questions:
   - id: 2697b893-6eb5-4dab-b7d5-fdc9249934f8
     legacy_ids:
       - 2B.A.11
+    related_to:
+      - 6ebb8a76-e869-4e5c-8827-e078e003be97
     question: |
       Which of the following is an expression for the inverse of $f(x) = 3^{2x} +
       1$, along with its domain?
@@ -236,6 +256,8 @@ questions:
   - id: 86f2bf07-f21c-4aff-9010-deca7d468bb4
     legacy_ids:
       - 2B.A.12
+    related_to:
+      - 2e69ce4a-7b7b-4e91-bb8d-2f536ecd8bd2
     question: |
       Four equally rated professional weightlifters agreed to participate in an
       experiment where they would have different amounts of time to train for a
@@ -274,6 +296,7 @@ questions:
   - id: 910dcf15-6a4d-49c3-b01e-ba4ccf5dd622
     legacy_ids:
       - 2B.A.13
+      - 2B.B.12
     question: |
       Since the early 1970s, the number of transistors in microprocessors has
       increased. A semi-log plot of $T$, the number of transistors, in year $x$
@@ -298,6 +321,8 @@ questions:
   - id: ed3fe24b-f229-45c9-8d9a-63b0c89fde7c
     legacy_ids:
       - 2B.A.14
+    related_to:
+      - 8bb6a2ac-3d5f-44b8-b73a-95698856cf51
     question: |
       A function $f(x)$ is going to be used to model the relationship between $x$
       and $y$, with select values of $x$ and $y$ provided in the table.
@@ -334,6 +359,8 @@ questions:
   - id: 54e7ba60-b30c-4996-a6b8-77b78763df6d
     legacy_ids:
       - 2B.B.1
+    related_to:
+      - 2876b156-b54f-4d9c-a6f1-edbaebce5bcf
     question: |
       The function $\textstyle g(x) = 2 \cdot \left( \frac{1}{2} \right)^x$ is
       going to be graphed on a semi-log plot where equally spaced marks on the
@@ -356,6 +383,8 @@ questions:
   - id: bf36d2ba-4121-4ae4-89f8-d0ec7d23adf7
     legacy_ids:
       - 2B.B.2
+    related_to:
+      - 17eef279-b5ad-4c10-a125-7285bacdcf19
     question: |
       The exponential function $h(x)$ is increasing and its graph is concave up
       for all $x$. Which of the following is true about the inverse function
@@ -379,6 +408,8 @@ questions:
   - id: c599f60a-bef9-4bb1-ba15-c2f65f61143c
     legacy_ids:
       - 2B.B.3
+    related_to:
+      - cc61125b-a2f5-4fa0-9088-e9639aac6699
     question: |
       Let $f(x) = \log_{10}(ax)$ and $g(x) = \log_{10}(bx^2)$ for positive
       numbers $a$ and $b$. Let $k(x) = g(x) - f(x)$. Which of the following
@@ -403,6 +434,8 @@ questions:
   - id: be7761d6-d1a3-46dc-9c36-84c9a0910408
     legacy_ids:
       - 2B.B.4
+    related_to:
+      - d8402242-f333-4360-b4ad-a333a1a3c1c6
     question: |
       The function $g$ is given by $g(x) = \ln(3x + 1) - \ln(x^2 + x - 2)$.
       What are all values of $x$ for which $g(x) < 0$?
@@ -430,6 +463,8 @@ questions:
   - id: 5593d8c3-5e9d-4e40-bdc8-ff3a3e13ca4d
     legacy_ids:
       - 2B.B.5
+    related_to:
+      - 13ef4abc-2430-440d-bfc9-d0c65782e673
     question: |
       The functions $f$ and $g$ are given by $f(x) = 10^x$ and $g(x) =
       \log_{10}(x)$. The function $h$ is given by the composition of $h(x) =
@@ -451,6 +486,8 @@ questions:
   - id: d86f2b89-6714-45d3-98cc-98274aa96508
     legacy_ids:
       - 2B.B.6
+    related_to:
+      - b210ae64-4ef8-4949-b38a-b046a47121f4
     question: |
       The logarithmic function $L$ given by $L(x) = \log_{10}(x)$ can be
       expressed as a vertical dilation of the natural log function: $L(x) = A
@@ -476,6 +513,8 @@ questions:
   - id: ef2f8426-86f2-4c78-8b5b-d65ecb39f449
     legacy_ids:
       - 2B.B.7
+    related_to:
+      - c5167c12-19ee-43fb-852f-830173b709d2
     question: |
       An emergency warning system issues threat warnings on a logarithmic scale
       of base 2. How many times more serious is a threat of level 5 compared to
@@ -496,6 +535,8 @@ questions:
   - id: 372040eb-25f2-4165-a5cc-b520437c7a5b
     legacy_ids:
       - 2B.B.8
+    related_to:
+      - 0b42d085-7882-4161-ae48-e4286f3d5668
     question: |
       Solve the equation: $\ln(x - 3) + \ln(x + 4) = 3 \ln 2$
     answer: $x = 4$
@@ -522,6 +563,8 @@ questions:
   - id: ba5eca70-9b17-4458-b2aa-b7e8ab768d9d
     legacy_ids:
       - 2B.B.9
+    related_to:
+      - f4242d60-24ba-48a6-9ff3-cccbb2be48ee
     question: |
       A graph of the exponential function $f(x)$ is shown to the right. Which of
       the following points would line on the graph of $f^{-1}(x)$?
@@ -546,6 +589,8 @@ questions:
   - id: 2e69ce4a-7b7b-4e91-bb8d-2f536ecd8bd2
     legacy_ids:
       - 2B.B.11
+    related_to:
+      - 86f2bf07-f21c-4aff-9010-deca7d468bb4
     question: |
       Four equally rated professional basketball players agreed to participate
       in an experiment where they would have different amounts of time to train
@@ -581,33 +626,11 @@ questions:
       - 2.14
     dok: unknown
 
-  - id: 80595371-e1ed-4cd1-9ef0-a19f7d1f5d92
-    legacy_ids:
-      - 2B.B.12
-    question: |
-      Since the early 1970s, the number of transistors in microprocessors has
-      increased. A semi-log plot of $T$, the number of transistors, in year $x$
-      since 1970 is shown to the right. Which of the following provides the
-      correct kind of model that could be used to model $T(x)$ along with correct
-      reasoning?
-
-      \fullwidth{\begin{center}
-        \includegraphics[width=3in]{13}
-      \end{center}}
-    answer: $T(x)$ could be modeled by an exponential function because the semi-log plot is reasonably linear.
-    distractors:
-      - $T(x)$ could be modeled by a logarithmic function because the semi-log plot is reasonably linear.
-      - $T(x)$ could be modeled by a quadratic function because the semi-log plot is reasonably linear.
-      - $T(x)$ could be modeled by a linear function because the semi-log plot is reasonably linear.
-    solution: An exponential function will appear linear when graphed on a semi-log plot.
-    calculator_active: true
-    sections:
-      - 2.15
-    dok: unknown
-
   - id: 8bb6a2ac-3d5f-44b8-b73a-95698856cf51
     legacy_ids:
       - 2B.B.13
+    related_to:
+      - ed3fe24b-f229-45c9-8d9a-63b0c89fde7c
     question: |
       A function $f(x)$ is going to be used to model the relationship between $x$
       and $y$, with select values of $x$ and $y$ provided in the table.
@@ -644,6 +667,8 @@ questions:
   - id: 6ebb8a76-e869-4e5c-8827-e078e003be97
     legacy_ids:
       - 2B.B.14
+    related_to:
+      - 2697b893-6eb5-4dab-b7d5-fdc9249934f8
     question: |
       Which of the following is an expression for the inverse of $f(x) = 3^{x} +
       1$, along with its domain?
