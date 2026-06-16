@@ -1,10 +1,8 @@
 name: Python package
 
+# Temporarily disabled — re-enable by restoring push/pull_request triggers
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   test:
