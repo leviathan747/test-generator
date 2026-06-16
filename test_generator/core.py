@@ -43,6 +43,7 @@ def generate_test(
     form_id: str = "",
     duration: str = "",
     images_dir: str | None = None,
+    solution: bool = False,
 ) -> str:
     """Generate a test PDF from a YAML file.
 
@@ -110,6 +111,8 @@ def generate_test(
     tex_content = tex_content.replace("$CLASSNAME", class_name)
     tex_content = tex_content.replace("$FORMID", form_id)
     tex_content = tex_content.replace("$DURATION", duration)
+    if solution:
+        tex_content = tex_content.replace("\\begin{document}", "\\printanswers\n\\begin{document}")
 
     with tempfile.TemporaryDirectory() as td:
         td_path = Path(td)

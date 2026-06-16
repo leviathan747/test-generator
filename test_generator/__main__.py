@@ -33,6 +33,7 @@ def _run_once(args):
             form_id=args.form_id,
             duration=args.duration,
             images_dir=args.images_dir,
+            solution=args.solution,
         )
         print(out)
     except Exception as e:
@@ -66,6 +67,7 @@ def main(argv=None):
     p.add_argument("--form-id", dest="form_id", default="", help="Form identifier (e.g. A, B)")
     p.add_argument("--duration", default="", help="Duration string (e.g. '30 min')")
     p.add_argument("--images-dir", dest="images_dir", default=None, help="Directory containing images (default: images/ next to the YAML file)")
+    p.add_argument("--solution", action="store_true", help="Generate solution/answer-key copy with answers shown")
     p.add_argument("--watch", action="store_true", help="Watch for changes and regenerate automatically")
     args = p.parse_args(argv)
 
