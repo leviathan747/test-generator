@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=0.75]
+  % Clip region
+  \begin{scope}
+    \clip (-1.4,-1.2) rectangle (7.5,4.5);
+    % g(x) = -0.5x + 2 for x != 2, g(2) = 3
+    % Left segment: from (-1, 2.5) to open circle at (2, 1)
+    \draw[blue, thick] (-1,2.5) -- (2,1);
+    % Right segment: from (2, 1) continuing to (7, -1.5)
+    \draw[blue, thick] (2,1) -- (7,-1.5);
+  \end{scope}
+  % Axes
+  \draw[->] (-1.4,0) -- (7.6,0) node[right] {$x$};
+  \draw[->] (0,-1.2) -- (0,4.6) node[above] {$y$};
+  % x-axis ticks
+  \foreach \x in {1,2,3,4,5,6,7} {
+    \draw (\x,0.07) -- (\x,-0.07) node[below, font=\small] {\x};
+  }
+  \draw (-1,0.07) -- (-1,-0.07) node[below, font=\small] {$-1$};
+  % y-axis ticks
+  \foreach \y in {1,2,3,4} {
+    \draw (0.07,\y) -- (-0.07,\y) node[left, font=\small] {\y};
+  }
+  \draw (0.07,-1) -- (-0.07,-1) node[left, font=\small] {$-1$};
+  % Open circle at (2,1) — limit value
+  \draw[fill=white, draw=black] (2,1) circle (4pt);
+  % Filled dot at (2,3) — defined value g(2)=3
+  \fill[black] (2,3) circle (3.5pt);
+\end{tikzpicture}
+\end{document}

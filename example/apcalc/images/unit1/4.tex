@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=0.75]
+  % Clip curve to visible region before drawing axes
+  \begin{scope}
+    \clip (-0.6,-0.6) rectangle (8.8,4.6);
+    % f(x) = |x-4| + 2: two rays meeting at vertex (4,2)
+    \draw[blue, thick] (-0.6,6.6) -- (4,2) -- (8.8,6.8);
+  \end{scope}
+  % Axes
+  \draw[->] (-0.6,0) -- (8.9,0) node[right] {$x$};
+  \draw[->] (0,-0.6) -- (0,4.7) node[above] {$y$};
+  % x-axis ticks
+  \foreach \x in {2,4,6,8} {
+    \draw (\x,0.07) -- (\x,-0.07) node[below, font=\small] {\x};
+  }
+  % y-axis ticks
+  \foreach \y in {1,2,3,4} {
+    \draw (0.07,\y) -- (-0.07,\y) node[left, font=\small] {\y};
+  }
+  % Open circle at (4,2) — limit value
+  \draw[fill=white, draw=black] (4,2) circle (4pt);
+  % Filled dot at (4,3) — defined value f(4)=3
+  \fill[black] (4,3) circle (3.5pt);
+\end{tikzpicture}
+\end{document}
