@@ -9,3 +9,4 @@ dist/
 .mypy_cache/
 *.egg-info/
 tests/output_pdfs/
+output.pdf
