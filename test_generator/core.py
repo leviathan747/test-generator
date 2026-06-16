@@ -11,22 +11,38 @@ from pathlib import Path
 def _quote_backslash_scalar_lines(text: str) -> str:
     """Wrap plain YAML scalar values containing backslashes in single quotes."""
     output_lines = []
+    block_scalar_indent = None  # tracks indentation of key that opened a block scalar
+
     for line in text.splitlines():
         stripped = line.lstrip()
+        current_indent = len(line) - len(stripped)
+
+        # Inside a block scalar: skip modification until indentation returns to the key level
+        if block_scalar_indent is not None:
+            if stripped and current_indent <= block_scalar_indent:
+                block_scalar_indent = None  # exited the block scalar; fall through
+            else:
+                output_lines.append(line)
+                continue
+
         if not stripped or stripped.startswith("#"):
             output_lines.append(line)
             continue
 
         if stripped.startswith("-"):
             item = stripped[1:].lstrip()
-            if item and "\\" in item and not item.startswith(("'", '"', "|", ">")):
+            if item and item[0] in ("|", ">"):
+                block_scalar_indent = current_indent
+            elif item and "\\" in item and not item.startswith(("'", '"')):
                 prefix = line[: line.index("-")] + "- "
                 escaped = item.replace("'", "''")
                 line = f"{prefix}'{escaped}'"
         elif ":" in stripped:
             key, _, value = stripped.partition(":")
             value = value.lstrip()
-            if value and "\\" in value and not value.startswith(("'", '"', "|", ">")):
+            if value and value[0] in ("|", ">"):
+                block_scalar_indent = current_indent
+            elif value and "\\" in value and not value.startswith(("'", '"')):
                 prefix = line[: line.index(key)] + f"{key}:"
                 escaped = value.replace("'", "''")
                 line = f"{prefix} '{escaped}'"
