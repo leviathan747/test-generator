@@ -60,21 +60,8 @@
 \renewcommand{\solutiontitle}{\noindent}
 \unframedsolutions
 
-% environment for placing a solution in a fixed height box
-\newlength{\currentparskip}
-\newenvironment{fixedsolution}[1]
-{
-  \setlength{\currentparskip}{\parskip}
-  \begin{minipage}[t][#1][t]{\linewidth}
-  \setlength{\parskip}{\currentparskip}
-  \begin{solution}
-}
-{
-  \end{solution}
-  \end{minipage}
-}
-
 % command for ensuring questions don't break across pages
+\newlength{\currentparskip}
 \newsavebox{\fitbox}
 \newcommand{\fitquestion}[1]{%
   % typeset content into a box
