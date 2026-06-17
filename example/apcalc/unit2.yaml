@@ -7,7 +7,7 @@ questions:
       undefined?
 
       \fullwidth{\begin{center}
-        \includestandalone[width=3in]{images/1}
+        \includestandalone[width=3in]{images/5}
 
         I. $x = -2$ \qquad II. $x = 2$ \qquad III. $x = 3$
       \end{center}}
@@ -156,7 +156,7 @@ questions:
       Given $h(x) = f(x) \cdot g(x)$, use the graph below to find $h'(4)$.
 
       \fullwidth{\begin{center}
-        \input{images/2.tex}
+        \input{images/6.tex}
       \end{center}}
     answer: $\frac{15}{2}$
     distractors:
@@ -366,7 +366,7 @@ questions:
       $x$ is $f$ continuous, but not differentiable?
 
       \fullwidth{\begin{center}
-        \input{images/3.tex}
+        \input{images/7.tex}
       \end{center}}
     answer: $a$
     distractors:
@@ -509,7 +509,7 @@ questions:
       If $h(x) = f(x) \cdot g(x)$, then $h'(2) =$
 
       \fullwidth{\begin{center}
-        \input{images/4.tex}
+        \input{images/8.tex}
       \end{center}}
     answer: -$\frac{11}{2}$
     distractors:
@@ -580,7 +580,7 @@ questions:
       The graphs of $f$ and $g$ are shown below. If $h(x) = \frac{f(x)}{g(x)}$, then $h'(6) =$
 
       \fullwidth{\begin{center}
-        \input{images/5.tex}
+        \input{images/9.tex}
       \end{center}}
     answer: $-\frac{7}{16}$
     distractors:
@@ -640,7 +640,7 @@ questions:
       following intervals is $f$ continuous but not differentiable?
 
       \fullwidth{\begin{center}
-        \input{images/6.tex}
+        \input{images/10.tex}
       \end{center}}
     answer: $(2, 3)$
     distractors:

@@ -35,7 +35,12 @@ EXAMPLE_CASES = [
 @pytest.mark.parametrize("course,unit", EXAMPLE_CASES, ids=[f"{c}/{u}" for c, u in EXAMPLE_CASES])
 def test_example_builds_pdf(course, unit):
     yaml_path = EXAMPLE_DIR / course / f"{unit}.yaml"
-    images_dir = EXAMPLE_DIR / course / "images" / unit
+    # apcalc uses a single flat figures/ directory; other courses keep
+    # per-unit image subdirectories under images/.
+    if course == "apcalc":
+        images_dir = EXAMPLE_DIR / course / "figures"
+    else:
+        images_dir = EXAMPLE_DIR / course / "images" / unit
 
     assert yaml_path.exists(), f"YAML not found: {yaml_path}"
 

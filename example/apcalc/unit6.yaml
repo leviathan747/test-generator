@@ -10,7 +10,7 @@ questions:
       total number of barrels of oil that passed through the pipeline that day?
 
       \fullwidth{\begin{center}
-        \includegraphics{1.png}
+        \includegraphics{unit6_1.png}
       \end{center}}
     answer: 3,000
     distractors:
@@ -271,7 +271,7 @@ questions:
       - 6.A.16
       - 6.B.15
     question: |
-      \includegraphics{16.png}
+      \includegraphics{unit6_16.png}
 
       The graph of the function $r(x)$ represents a road that runs along the edge
       of a national park as depicted in the figure to the right. Each unit
@@ -330,7 +330,7 @@ questions:
     related_to:
       - 4e4e97ce-c05c-4a73-81ba-a805b627bf43
     question: |
-      \includegraphics{1.png}
+      \includegraphics{unit6_1.png}
 
       The amount of oil, in barrels per hour, loaded onto ships in a port on a
       single day is given by the graph shown below. Of the following, which

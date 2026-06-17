@@ -118,11 +118,11 @@ questions:
       Consider the differential equation $\dydx = \frac{4x}{y}$ for $y \ge 1$
       with initial value $y(0) = 1$. Which of the following is the slope field
       for the general solution to that differential equation?
-    answer: \includegraphics[width=2.25in]{7-A}
+    answer: \includegraphics[width=2.25in]{unit7_7-A}
     distractors:
-      - \includegraphics[width=2.25in]{7-C}
-      - \includegraphics[width=2.25in]{7-B}
-      - \includegraphics[width=2.25in]{7-D}
+      - \includegraphics[width=2.25in]{unit7_7-C}
+      - \includegraphics[width=2.25in]{unit7_7-B}
+      - \includegraphics[width=2.25in]{unit7_7-D}
     solution: TODO
     calculator_active: false
     sections: []
@@ -134,7 +134,7 @@ questions:
     related_to:
       - 0c80d04f-55a8-4e61-9292-d946142ddf4e
     question: |
-      \includegraphics{8}
+      \includegraphics{unit7_8}
 
       Shown is a slope field for which of the following differential equations?
     answer: $\dydx = \frac{y - 2}{x + 1}$
@@ -206,7 +206,7 @@ questions:
     related_to:
       - 51b06705-bc8a-4dd9-8abf-dd84021b3a7e
     question: |
-      \includegraphics{13}
+      \includegraphics{unit7_13}
 
       The slope field for a certain differential equation is shown to the
       right. Which of the following equations could represent the specific
@@ -311,11 +311,11 @@ questions:
       Consider the differential equation $\textstyle \dydx = \frac{3}{x^3}$ for $y \ge 1$.
       Which of the following is the slope field for the general solution to that
       differential equation?
-    answer: \includegraphics[width=2.25in]{7-C}
+    answer: \includegraphics[width=2.25in]{unit7_7-C}
     distractors:
-      - \includegraphics[width=2.25in]{7-A}
-      - \includegraphics[width=2.25in]{7-B}
-      - \includegraphics[width=2.25in]{7-D}
+      - \includegraphics[width=2.25in]{unit7_7-A}
+      - \includegraphics[width=2.25in]{unit7_7-B}
+      - \includegraphics[width=2.25in]{unit7_7-D}
     solution: TODO
     calculator_active: false
     sections: []
@@ -433,7 +433,7 @@ questions:
     related_to:
       - 22a2db06-3388-4f29-98dd-e8b006aca5c7
     question: |
-      \includegraphics{8-2}
+      \includegraphics{unit7_8-2}
 
       Shown is a slope field for which of the following differential equations?
     answer: $\dydx = \frac{y - 2}{x}$

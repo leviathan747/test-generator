@@ -22,9 +22,11 @@ questions:
     related_to:
       - 407feb1d-5d5f-4857-b282-018da1145343
     question: |
-      \includegraphics{2}
-
       Given $h(x) = g(f(x))$, use the graph to the right to find $h'(4)$.
+
+      \fullwidth{\begin{center}
+        \input{images/6.tex}
+      \end{center}}
     answer: $\frac{5}{8}$
     distractors:
       - $\frac{1}{2}$
@@ -475,9 +477,11 @@ questions:
     related_to:
       - b4f08287-1ee5-4146-bffd-b62ea8155c84
     question: |
-      \includegraphics{2}
-
       Given $h(x) = f(g(x))$, use the graph to the right to find $h'(4)$.
+
+      \fullwidth{\begin{center}
+        \input{images/6.tex}
+      \end{center}}
     answer: $\frac{5}{8}$
     distractors:
       - $\frac{1}{2}$

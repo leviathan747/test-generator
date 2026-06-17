@@ -102,7 +102,7 @@ questions:
       g(x)$, and the $x$-axis in Quadrant I is:
 
       \fullwidth{\begin{center}
-        \includegraphics{6}
+        \includegraphics{unit8_6}
       \end{center}}
     answer: $\frac{1}{4}$
     distractors:
@@ -126,7 +126,7 @@ questions:
       when R is revolved about the $x$-axis?
 
       \fullwidth{\begin{center}
-        \includegraphics{7}
+        \includegraphics{unit8_7}
       \end{center}}
     answer: $\pi \int_0^2 x dx + \pi \int_2^4 \left( x - (x-2)^2 \right) dx$
     distractors:
@@ -223,7 +223,7 @@ questions:
       $x$-axis are squares. What is the volume of this speaker, in cubic units?
 
       \fullwidth{\begin{center}
-        \includegraphics{13}
+        \includegraphics{unit8_13}
       \end{center}}
     answer: 8.184
     distractors:
@@ -301,7 +301,7 @@ questions:
       g(x)$, and the $y$-axis in Quadrant II is:
 
       \fullwidth{\begin{center}
-        \includegraphics{6}
+        \includegraphics{unit8_6}
       \end{center}}
     answer: $\frac{1}{2}$
     distractors:
@@ -345,7 +345,7 @@ questions:
       when R is revolved about the $y$-axis?
 
       \fullwidth{\begin{center}
-        \includegraphics{7}
+        \includegraphics{unit8_7}
       \end{center}}
     answer: $\pi \int_0^2 \left( (y + 2)^2 - y^4 \right) dy$
     distractors:
