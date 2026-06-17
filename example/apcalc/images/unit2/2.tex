@@ -19,15 +19,16 @@
   \fill (2,4) circle (3pt);
   \fill (6,6) circle (3pt);
   \fill (6,5) circle (3pt);
+  \fill (2,0) circle (3pt);
 
-  % Labels
+  % Point labels (consistently below and to the right of each point)
   \node[below right,font=\small] at (2,4) {$(2,4)$};
-  \node[above left,font=\small]  at (6,6) {$(6,6)$};
-  \node[below right,font=\small] at (6,5) {$(6,5)$};
+  \node[right,font=\small] at (6,6) {$(6,6)$};
+  \node[right,font=\small] at (6,5) {$(6,5)$};
 
   % Function labels
-  \node[right,font=\small] at (4.5,5.75) {$g(x)$};
-  \node[right,font=\small] at (4.5,3.6)  {$f(x)$};
+  \node[font=\large] at (3.3,5.6) {$g(x)$};
+  \node[font=\large] at (5.5,3)   {$f(x)$};
 
   % Axis tick labels
   \foreach \x in {1,2,3,4,5,6} {

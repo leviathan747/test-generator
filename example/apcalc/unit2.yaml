@@ -7,7 +7,7 @@ questions:
       undefined?
 
       \fullwidth{\begin{center}
-        \input{images/1.tex}
+        \includestandalone[width=3in]{images/1}
 
         I. $x = -2$ \qquad II. $x = 2$ \qquad III. $x = 3$
       \end{center}}
@@ -153,9 +153,11 @@ questions:
     legacy_ids:
       - 2.A.8
     question: |
-      \input{images/8.tex}
+      Given $h(x) = f(x) \cdot g(x)$, use the graph below to find $h'(4)$.
 
-      Given $h(x) = f(x) \cdot g(x)$, use the graph to the right to find $h'(4)$.
+      \fullwidth{\begin{center}
+        \input{images/2.tex}
+      \end{center}}
     answer: $\frac{15}{2}$
     distractors:
       - $\frac{5}{8}$
@@ -295,18 +297,18 @@ questions:
       - neither continuous nor differentiable
     solution: |
       $\lim_{x \to 2^-} f(x) = \lim_{x \to 2^-} x^2 + 1 = (2)^2 + 1 = 5$ \quad
-      $\lim_{x \to 2^+} f(x) = \lim_{x \to 2^-} 4x - 3 = 4(2) - 3 = 5$ \quad
+      $\lim_{x \to 2^+} f(x) = \lim_{x \to 2^+} 4x - 3 = 4(2) - 3 = 5$ \quad
       $\therefore f(x)$ is continuous at $x = 2$
 
       $f'(2) = \lim_{x \to 2} \frac{f(x) - f(2)}{x - 2}$
 
-      $\lim_{x \to 2^-} \frac{f(x) - f(h)}{x - 2}$
+      $\lim_{x \to 2^-} \frac{f(x) - f(2)}{x - 2}$
       $= \lim_{x \to 2^-} \frac{x^2 + 1 - \left[(2)^2 + 1\right]}{x - 2}$
       $= \lim_{x \to 2^-} \frac{x^2 - 4}{x - 2}$
       $= \lim_{x \to 2^-} \frac{(x - 2)(x + 2)}{x - 2}$
       $= \lim_{x \to 2^-} x + 2 = 2 + 2 = 4$
 
-      $\lim_{x \to 2^+} \frac{f(x) - f(h)}{x - 2}$
+      $\lim_{x \to 2^+} \frac{f(x) - f(2)}{x - 2}$
       $= \lim_{x \to 2^+} \frac{4x - 3 - \left[4(2) - 3\right]}{x - 2}$
       $= \lim_{x \to 2^+} \frac{4x - 8}{x - 2}$
       $= \lim_{x \to 2^+} \frac{4(x - 2)}{x - 2}$
@@ -360,16 +362,22 @@ questions:
     related_to:
       - c21df73d-62a4-4001-99ac-f3dc228314b5
     question: |
-      \input{images/1B.tex}
-
-      The graph of a function $f$ is shown to the right. At which value of
+      The graph of a function $f$ is shown below. At which value of
       $x$ is $f$ continuous, but not differentiable?
+
+      \fullwidth{\begin{center}
+        \input{images/3.tex}
+      \end{center}}
     answer: $a$
     distractors:
       - $c$
       - $b$
       - $d$
-    solution: Graph has a sharp corner
+    solution: |
+      The graph is not continuous at $x = b$ and $x = d$. The graph is
+      continuous and differentiable at $x = c$ and $x = e$. At $x = a$, the
+      graph is continuous, but it has a sharp corner so it is not
+      differentiable.
     calculator_active: false
     sections: []
     dok: unknown
@@ -429,7 +437,7 @@ questions:
       - $\sec(x)\csc(x)$
       - $\sec^2(x) - \csc^2(x)$
       - $\sec(x) + \csc(x)$
-    solution: $\frac{dy}{dx} = \sec^2(x) - (-csc^2(x)) = \sec^2(x) + \csc^2(x)$
+    solution: $\frac{dy}{dx} = \sec^2(x) - (-\csc^2(x)) = \sec^2(x) + \csc^2(x)$
     calculator_active: false
     sections: []
     dok: unknown
@@ -497,10 +505,12 @@ questions:
     related_to:
       - 55d675ff-e8ea-4d9c-a956-ddf4a1756e54
     question: |
-      \input{images/8B.tex}
-
-      The figure to the right show the graphs of the functions $f$ and $g$.
+      The figure below shows the graphs of the functions $f$ and $g$.
       If $h(x) = f(x) \cdot g(x)$, then $h'(2) =$
+
+      \fullwidth{\begin{center}
+        \input{images/4.tex}
+      \end{center}}
     answer: -$\frac{11}{2}$
     distractors:
       - $\frac{13}{2}$
@@ -567,9 +577,11 @@ questions:
     related_to:
       - b4a97a9d-94b7-46a1-82c7-afee431335c9
     question: |
-      \input{images/12B.tex}
+      The graphs of $f$ and $g$ are shown below. If $h(x) = \frac{f(x)}{g(x)}$, then $h'(6) =$
 
-      The graphs of $f$ and $g$ are shown to the right. If $h(x) = \frac{f(x)}{g(x)}$, then $h'(6) =$
+      \fullwidth{\begin{center}
+        \input{images/5.tex}
+      \end{center}}
     answer: $-\frac{7}{16}$
     distractors:
       - 4 \phantom{$\frac{7}{4}$}
@@ -590,6 +602,10 @@ questions:
     related_to:
       - 2d937939-654f-4f9b-8059-d448620abc97
     question: |
+      The table below gives values of the differentiable functions $f$ and $g$
+      and their derivatives at $x = 0$. If $h(x) = \frac{f(x)}{g(x)}$, what is
+      the value of $h'(0)$?
+
       \fullwidth{\begin{center}
         \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
           \hline
@@ -599,10 +615,6 @@ questions:
           \hline
         \end{tabularx}
       \end{center}}
-
-      The table above gives values of the differentiable functions $f$ and $g$
-      and their derivatives at $x = 0$. If $h(x) = \frac{f(x)}{g(x)}$, what is
-      the value of $h'(0)$?
     answer: $\frac{8 - 3\pi}{4}$
     distractors:
       - $\frac{4}{\pi}$
@@ -624,10 +636,12 @@ questions:
     related_to:
       - e7b7ef4b-8357-4ff2-929b-a5dd92d502b6
     question: |
-      \input{images/15B.tex}
-
-      The graph of the function $f$ is shown to the right. On which of the
+      The graph of the function $f$ is shown below. On which of the
       following intervals is $f$ continuous but not differentiable?
+
+      \fullwidth{\begin{center}
+        \input{images/6.tex}
+      \end{center}}
     answer: $(2, 3)$
     distractors:
       - $(0, 1)$
@@ -647,6 +661,10 @@ questions:
     related_to:
       - 98a4d19c-6f0b-4c33-9cad-f27a44544b41
     question: |
+      Let $f$ be a differentiable function with selected values given in the
+      table below. What is the average rate of change of $f$ over the closed
+      interval $0 \le x \le 10$?
+
       \fullwidth{\begin{center}
         \begin{tabularx}{4in}{ |Y||*{6}{Y|} }
           \hline
@@ -656,10 +674,6 @@ questions:
           \hline
         \end{tabularx}
       \end{center}}
-
-      Let $f$ be a differentiable function with selected values given in the
-      table above. What is the average rate of change of $f$ over the closed
-      interval $0 \le x \le 10$?
     answer: $-\frac{5}{2}$
     distractors:
       - -6 \phantom{$-\frac{5}{2}$}

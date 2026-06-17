@@ -1,0 +1,42 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=0.8]
+  % Axes
+  \draw[->] (-0.7,0) -- (5.8,0) node[right] {$x$};
+  \draw[->] (0,-2.3) -- (0,4.8) node[above] {$y$};
+
+  \begin{scope}
+    \clip (-0.7,-2.3) rectangle (5.8,4.7);
+    % Segment 1: increasing, concave up, vertex (-0.45,-0.25) clips quadrant 3,
+    % rises through origin to sharp peak at a=(1,4).
+    \draw[thick] plot[domain=-0.45:1,samples=60] (\x,{2.022*(\x+0.45)*(\x+0.45)-0.25});
+    % Segment 2: concave up, vertex at c=(3,-0.6) slightly below axis.
+    % Continuous corner with segment 1 at the peak (1,4); ends (open) at d.
+    \draw[thick] plot[domain=1:4,samples=80] (\x,{1.15*(\x-3)*(\x-3)-0.6});
+    % Segment 3: increasing, concave up, vertex at d=(4,-0.5) below axis;
+    % rises and crosses the x-axis near e.
+    \draw[thick] plot[domain=4:5.6,samples=60] (\x,{0.6*(\x-4)*(\x-4)-0.5});
+  \end{scope}
+
+  % Hole at b: f not continuous; open circle on the curve, displaced point above.
+  \draw[fill=white,draw=black] (2,0.55) circle (3pt);
+  \fill[black] (2,1.6) circle (3pt);
+
+  % Jump at d: segment 2 is defined here (closed dot = f(d)),
+  % segment 3 is undefined here (open circle at its vertex below the axis).
+  \fill[black] (4,0.55) circle (3pt);
+  \draw[fill=white,draw=black] (4,-0.5) circle (3pt);
+
+  % x-axis labels: O, a, b, c, d, e (anchored on a common baseline so they align)
+  \node[font=\small,anchor=base] at (-0.2,-0.45) {$O$};
+  \node[font=\small,anchor=base] at (1,-0.45)    {$a$};
+  \node[font=\small,anchor=base] at (2,-0.45)    {$b$};
+  \node[font=\small,anchor=base] at (3,-0.45)    {$c$};
+  \node[font=\small,anchor=base] at (4,-0.45)    {$d$};
+  \node[font=\small,anchor=base] at (5,-0.45)    {$e$};
+
+  % Title below
+  \node[below,font=\small] at (2.5,-2.5) {Graph of $f$};
+\end{tikzpicture}
+\end{document}
