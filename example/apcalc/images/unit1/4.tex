@@ -2,26 +2,34 @@
 \usepackage{tikz}
 \begin{document}
 \begin{tikzpicture}[>=stealth, scale=0.75]
-  % Clip curve to visible region before drawing axes
-  \begin{scope}
-    \clip (-0.6,-0.6) rectangle (8.8,4.6);
-    % f(x) = |x-4| + 2: two rays meeting at vertex (4,2)
-    \draw[blue, thick] (-0.6,6.6) -- (4,2) -- (8.8,6.8);
-  \end{scope}
+  % Piecewise linear function defined only on [0,6] (first quadrant)
+  % Segments through (0,2), (2,1), (4,1), (6,0)
+  % (2,1) is a hole; the function is defined at (2,3) instead
+  % Left segment: from (0,2) to open circle at (2,1)
+  \draw[blue, thick] (0,2) -- (2,1);
+  % Middle segment: from (2,1) to (4,1)
+  \draw[blue, thick] (2,1) -- (4,1);
+  % Right segment: from (4,1) to (6,0)
+  \draw[blue, thick] (4,1) -- (6,0);
   % Axes
-  \draw[->] (-0.6,0) -- (8.9,0) node[right] {$x$};
-  \draw[->] (0,-0.6) -- (0,4.7) node[above] {$y$};
+  \draw[->] (-0.8,0) -- (7.0,0) node[right] {$x$};
+  \draw[->] (0,-0.8) -- (0,4.6) node[above] {$y$};
   % x-axis ticks
-  \foreach \x in {2,4,6,8} {
+  \foreach \x in {1,2,3,4,5,6} {
     \draw (\x,0.07) -- (\x,-0.07) node[below, font=\small] {\x};
   }
   % y-axis ticks
   \foreach \y in {1,2,3,4} {
     \draw (0.07,\y) -- (-0.07,\y) node[left, font=\small] {\y};
   }
-  % Open circle at (4,2) — limit value
-  \draw[fill=white, draw=black] (4,2) circle (4pt);
-  % Filled dot at (4,3) — defined value f(4)=3
-  \fill[black] (4,3) circle (3.5pt);
+  % Filled endpoints — function stops here
+  \fill[blue] (0,2) circle (3.5pt);
+  \fill[blue] (6,0) circle (3.5pt);
+  % Closed dot at (4,1)
+  \fill[blue] (4,1) circle (3.5pt);
+  % Open circle at (2,1) — hole (limit value)
+  \draw[fill=white, draw=blue] (2,1) circle (4pt);
+  % Filled dot at (2,3) — defined value
+  \fill[blue] (2,3) circle (3.5pt);
 \end{tikzpicture}
 \end{document}

@@ -19,7 +19,7 @@
   % f(x) = sin(pi*x/2) on (-2.5, 2), open circle at (2, 0)
   \begin{scope}
     \clip (-2.5,-1.5) rectangle (3.2,2.5);
-    \draw[blue, thick, domain=-2.4:2, samples=120]
+    \draw[blue, thick, domain=-2.4:3, samples=160]
       plot (\x, {sin(90*\x)});
   \end{scope}
   % Open circle at (2,0)

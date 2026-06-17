@@ -7,7 +7,7 @@ questions:
       undefined?
 
       \fullwidth{\begin{center}
-        \includegraphics{1}
+        \input{images/1.tex}
 
         I. $x = -2$ \qquad II. $x = 2$ \qquad III. $x = 3$
       \end{center}}
@@ -153,7 +153,7 @@ questions:
     legacy_ids:
       - 2.A.8
     question: |
-      \includegraphics{8}
+      \input{images/8.tex}
 
       Given $h(x) = f(x) \cdot g(x)$, use the graph to the right to find $h'(4)$.
     answer: $\frac{15}{2}$
@@ -360,7 +360,7 @@ questions:
     related_to:
       - c21df73d-62a4-4001-99ac-f3dc228314b5
     question: |
-      \includegraphics{1B}
+      \input{images/1B.tex}
 
       The graph of a function $f$ is shown to the right. At which value of
       $x$ is $f$ continuous, but not differentiable?
@@ -497,7 +497,7 @@ questions:
     related_to:
       - 55d675ff-e8ea-4d9c-a956-ddf4a1756e54
     question: |
-      \includegraphics{8B}
+      \input{images/8B.tex}
 
       The figure to the right show the graphs of the functions $f$ and $g$.
       If $h(x) = f(x) \cdot g(x)$, then $h'(2) =$
@@ -567,7 +567,7 @@ questions:
     related_to:
       - b4a97a9d-94b7-46a1-82c7-afee431335c9
     question: |
-      \includegraphics{12B}
+      \input{images/12B.tex}
 
       The graphs of $f$ and $g$ are shown to the right. If $h(x) = \frac{f(x)}{g(x)}$, then $h'(6) =$
     answer: $-\frac{7}{16}$
@@ -624,7 +624,7 @@ questions:
     related_to:
       - e7b7ef4b-8357-4ff2-929b-a5dd92d502b6
     question: |
-      \includegraphics{15B}
+      \input{images/15B.tex}
 
       The graph of the function $f$ is shown to the right. On which of the
       following intervals is $f$ continuous but not differentiable?

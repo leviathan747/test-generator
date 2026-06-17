@@ -85,7 +85,7 @@ questions:
       the continuity of the function at $x = 4$.
 
       \fullwidth{\begin{center}
-        \input{images/4.tex}
+        \input{images/1.tex}
       \end{center}}
 
       \textbf{i.} $\lim_{x \to 4^+} f(x)$ \qquad \textbf{ii.} $\lim_{x \to 4^-} f(x)$ \qquad \textbf{iii.} $\lim_{x \to 4} f(x)$
@@ -294,9 +294,9 @@ questions:
 
       \fullwidth{
         \begin{center}
-          \input{images/12-1.tex}
+          \input{images/2.tex}
           \hspace{3em}
-          \input{images/12-2.tex}
+          \input{images/3.tex}
         \end{center}
       }
     answer: $\lim_{x \to 2} (f(x) \cdot g(x - 1))$ does not exist.
@@ -369,7 +369,7 @@ questions:
       The graph of the function $g$ is shown below. Which of the following are true?
 
       \fullwidth{\begin{center}
-        \input{images/16.tex}
+        \input{images/4.tex}
       \end{center}}
 
       \textbf{I.\phantom{II}} \quad $\lim_{x \to 2} g(x) = 1$ \\
@@ -417,7 +417,7 @@ questions:
       discontinuity at $x = 4$?
 
       \fullwidth{\begin{center}
-        \input{images/4.tex}
+        \input{images/1.tex}
       \end{center}}
     answer: Removable, hole
     distractors:
@@ -697,7 +697,7 @@ questions:
       The graph of the function $g$ is shown below. Which of the following are true?
 
       \fullwidth{\begin{center}
-        \input{images/16.tex}
+        \input{images/4.tex}
       \end{center}}
 
       \textbf{I.\phantom{II}} \quad $\lim_{x \to 2} g(x)$ does not exist \\
@@ -751,9 +751,9 @@ questions:
 
       \fullwidth{
         \begin{center}
-          \input{images/12-1.tex}
+          \input{images/2.tex}
           \hspace{3em}
-          \input{images/12-2.tex}
+          \input{images/3.tex}
         \end{center}
       }
     answer: $\lim_{x \to 2} (f(x - 1) \cdot g(x))$ exists.
