@@ -23,11 +23,13 @@ questions:
     related_to:
       - f463530d-c4aa-461e-a582-8dac8775555f
     question: |
-      \includegraphics[width=\linewidth]{unit5_2}
-
       The graphs of the \emph{derivatives} of the functions $f$, $g$, and $h$ are
       shown above.  Which of the functions $f$, $g$ or $h$ have a relative
       maximum on the open interval $a<x<b$ ?
+
+      \fullwidth{\begin{center}
+        \includestandalone[width=7in]{images/18}
+      \end{center}}
     answer: $f$ only
     distractors:
       - $g$ only
@@ -44,17 +46,17 @@ questions:
     related_to:
       - 9673c318-c664-4fca-949f-c950641f148e
     question: |
-      \begin{center}
-        \includegraphics{unit5_3}
-      \end{center}
-
       The graph of $y=h(x)$ is shown above. Which of the following could be the
       graph of $y=h'(x)$?
-    answer: \includegraphics{unit5_3D}
+
+      \fullwidth{\begin{center}
+        \input{images/19.tex}
+      \end{center}}
+    answer: \input{images/20.tex}
     distractors:
-      - \includegraphics{unit5_3A}
-      - \includegraphics{unit5_3C}
-      - \includegraphics{unit5_3B}
+      - \input{images/21.tex}
+      - \input{images/22.tex}
+      - \input{images/23.tex}
     solution: TODO
     calculator_active: false
     sections: []
@@ -252,17 +254,13 @@ questions:
     related_to:
       - c2385d31-bd97-496d-837a-b5047c6ecce5
     question: |
-      \begin{minipage}{\linewidth-2.5in}
-
       The graph of $f'(x)$ is shown in the figure to the right. For what values of
       $x$, on the interval $-4 < x < 6$ is the graph of $f$ both increasing and
       concave down?
 
-      \end{minipage}
-      \hspace{0.25in}
-      \begin{minipage}{2in}
-      \includegraphics{unit5_15}
-      \end{minipage}
+      \fullwidth{\begin{center}
+        \input{images/24.tex}
+      \end{center}}
     answer: $(-4, -3)$ and $(1, 3)$
     distractors:
       - $(-4, -3)$ and $(4, 6)$
@@ -364,13 +362,13 @@ questions:
     related_to:
       - a73a79b6-2444-45f8-82fc-35ce65ad363e
     question: |
-      \begin{center}
-        \includegraphics[width=\linewidth]{unit5_2}
-      \end{center}
-
       The graphs of the \emph{derivatives} of the functions $f$, $g$, and $h$
       are shown above.  Which of the functions $f$, $g$ or $h$ have a relative
       minimum on the open interval $a<x<b$ ?
+
+      \fullwidth{\begin{center}
+        \includestandalone[width=7in]{images/18}
+      \end{center}}
     answer: $f$ and $g$ only
     distractors:
       - $g$ only
@@ -387,17 +385,17 @@ questions:
     related_to:
       - 143b8581-b327-40d5-bc53-d1df79d0992d
     question: |
-      \begin{center}
-        \includegraphics{unit5_5B}
-      \end{center}
-
       The graph of $y=h(x)$ is shown above. Which of the following could be the
       graph of $y=h'(x)$?
-    answer: \includegraphics{unit5_3B}
+
+      \fullwidth{\begin{center}
+        \input{images/25.tex}
+      \end{center}}
+    answer: \input{images/23.tex}
     distractors:
-      - \includegraphics{unit5_3A}
-      - \includegraphics{unit5_3C}
-      - \includegraphics{unit5_3D}
+      - \input{images/21.tex}
+      - \input{images/22.tex}
+      - \input{images/20.tex}
     solution: TODO
     calculator_active: false
     sections: []
@@ -564,11 +562,13 @@ questions:
     related_to:
       - a7681429-13fd-40d8-ad13-f8b4e83fe5cf
     question: |
-      \includegraphics{unit5_15}
-
       The graph of $f'(x)$ is shown in the figure to the right. For what values of
       $x$, on the interval $-4 < x < 6$ is the graph of $f$ both decreasing and
       concave down?
+
+      \fullwidth{\begin{center}
+        \input{images/24.tex}
+      \end{center}}
     answer: $(-3, -2)$ and $(3, 4)$
     distractors:
       - $(-4, -3)$ and $(1, 3)$

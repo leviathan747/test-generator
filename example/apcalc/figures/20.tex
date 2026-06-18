@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=1.0]
+  % Axes
+  \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+  \draw[->] (0,-2) -- (0,2) node[above] {$y$};
+  \node[below left] at (0,0) {$O$};
+
+  % Parabola: vertex below origin, opening upward
+  \begin{scope}
+    \clip (-2,-2) rectangle (2,2);
+    \draw[thick] plot[domain=-1.45:1.45, samples=100] (\x, {1.5*\x*\x - 1});
+  \end{scope}
+\end{tikzpicture}
+\end{document}

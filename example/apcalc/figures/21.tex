@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=1.0]
+  % Axes
+  \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+  \draw[->] (0,-2) -- (0,2) node[above] {$y$};
+  \node[below left] at (0,0) {$O$};
+
+  % Curve: comes down steeply from upper-left, local min just left of y-axis,
+  % local max to the right of and above the x-axis, then descends steeply
+  % crossing the x-axis and continuing down to the lower right.
+  \begin{scope}
+    \clip (-2,-2) rectangle (2,2);
+    \draw[thick, domain=-2.5:2.4, smooth, samples=200, variable=\x]
+      plot (\x, {-0.55*\x*\x*\x + 1.2*\x + 1.15});
+  \end{scope}
+\end{tikzpicture}
+\end{document}

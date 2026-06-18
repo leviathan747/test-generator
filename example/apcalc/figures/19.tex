@@ -1,0 +1,26 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=1.0]
+  % Axes
+  \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+  \draw[->] (0,-2) -- (0,2) node[above] {$y$};
+  \node[below left] at (0,0) {$O$};
+
+  % Curve: cubic-like with local max in QII, local min in QI near x-axis,
+  % rising steeply on the right, crossing x-axis lower-left.
+  \begin{scope}
+    \clip (-2,-2) rectangle (2,2);
+    \draw[thick] plot[smooth, tension=0.7] coordinates {
+      (-2.3,-1.4)
+      (-1.7,0)
+      (-1.0,1.05)
+      (-0.3,1.15)
+      (0.5,0.85)
+      (1.1,0.85)
+      (1.7,1.7)
+      (2.2,2.6)
+    };
+  \end{scope}
+\end{tikzpicture}
+\end{document}

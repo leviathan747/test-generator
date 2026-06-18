@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=1.0]
+  % Axes
+  \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+  \draw[->] (0,-2) -- (0,2) node[above] {$y$};
+  \node[below left] at (0,0) {$O$};
+
+  % Downward parabola: y = 0.8 - 0.8 x^2  (vertex (0,0.8), roots at x = +-1)
+  \begin{scope}
+    \clip (-2,-2) rectangle (2,2);
+    \draw[thick, smooth, samples=100, domain=-1.45:1.45]
+      plot (\x, {0.8 - 0.8*(\x)*(\x)});
+  \end{scope}
+\end{tikzpicture}
+\end{document}

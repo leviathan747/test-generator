@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=1.0]
+  % Axes
+  \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+  \draw[->] (0,-2) -- (0,2) node[above] {$y$};
+  \node[below left] at (0,0) {$O$};
+
+  % Curve: central trough at origin, side crests, edges descending.
+  % Model: y = -cos(2x) * envelope, giving a minimum near x=0,
+  % maxima around x = +/- pi/2, then dropping at the edges.
+  \begin{scope}
+    \clip (-2,-2) rectangle (2,2);
+    \draw[thick]
+      plot[domain=-3.3:3.3, samples=200, smooth]
+        (\x, {-1.1*cos(2*\x r) * exp(-0.04*\x*\x)});
+  \end{scope}
+\end{tikzpicture}
+\end{document}
