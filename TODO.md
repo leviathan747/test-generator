@@ -8,9 +8,5 @@
 - Add a "watch" mode that waits for changes to the YAML file and regenerates the PDF when it changes.
 
 - Add preamble section to the YAML to add preamble for that specific questions set or question
-- Remove figureright environment
 
-- Calculator active
-- DOK
-- Sections
-- Duplicates
+- Dynamically decide between two column or one column answer choices
