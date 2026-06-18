@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=1]
+  % Rectangle corners
+  \coordinate (BL) at (0,0);
+  \coordinate (BR) at (5,0);
+  \coordinate (TR) at (5,2.4);
+  \coordinate (TL) at (0,2.4);
+
+  % Rectangle
+  \draw[thick] (BL) -- (BR) -- (TR) -- (TL) -- cycle;
+
+  % Diagonal from top-left to bottom-right
+  \draw[thick] (TL) -- (BR);
+
+  % Labels
+  \node[anchor=east] at (-0.05,1.2) {$y$};        % left side
+  \node[anchor=north] at (2.5,-0.05) {$x$};        % bottom side
+  \node[anchor=south] at (2.7,1.35) {$z$};         % diagonal
+\end{tikzpicture}
+\end{document}

@@ -153,10 +153,12 @@ questions:
     related_to:
       - ab338616-c134-4953-be38-10a8bc829d44
     question: |
-      \includegraphics{unit4_7}
-
-      Use the tangent line at $x = 2$ and the graph of $g'$ to the right to
+      Use the tangent line at $x = 2$ and the graph of $g'$ below to
       approximate $g(2.1)$ given that $g(2) = 7$.
+
+      \fullwidth{\begin{center}
+        \input{images/11.tex}
+      \end{center}}
     answer: 7.4
     distractors:
       - 3.8
@@ -178,12 +180,14 @@ questions:
     related_to:
       - 045016b3-50f6-42b4-b7e8-6b91343f23ce
     question: |
-      \includegraphics{unit4_8}
+      The sides of the rectangle below increase in such a way that $\textstyle
+      \frac{dz}{dt} = 1$ and $\textstyle \frac{dy}{dt} = \frac{1}{3}$.  At the
+      instant when $x = 4$ and $y = 3$, what is the value of $\textstyle
+      \frac{dx}{dt}$?
 
-      The sides of the rectangle to the right increase in such a way that
-      $\textstyle \frac{dz}{dt} = 1$ and $\textstyle \frac{dy}{dt} = \frac{1}{3} \frac{dx}{dt}$.
-      At the instant when $x = 4$ and $y = 3$, what is the value of
-      $\textstyle \frac{dx}{dt}$?
+      \fullwidth{\begin{center}
+        \input{images/12.tex}
+      \end{center}}
     answer: 1
     distractors:
       - $\frac{1}{3}$
@@ -194,6 +198,7 @@ questions:
         x^2 + y^2 = z^2 \implies 2x \frac{dx}{dt} + 2y \frac{dy}{dt} = 2z \frac{dz}{dt} \\
         z = \sqrt{(4)^2 + (3)^2} = 5 \\
         2(4) \frac{dx}{dt} + 2(3)\left(\frac{1}{3}\right) = 2(5)(1) \implies
+        8 \frac{dx}{dt} + 2 = 10 \implies
         8 \frac{dx}{dt} = 8 \implies \frac{dx}{dt} = 1
       \end{gather*}
     calculator_active: false
@@ -271,7 +276,7 @@ questions:
         The graph of $v(t)$ crosses the $x$-axis two times in the interval $-3 \le
         t \le 3$.
 
-        \includegraphics[width=2in]{unit4_12S}
+        \input{images/13.tex}
       \end{multicols}
     calculator_active: true
     sections: []
@@ -287,10 +292,12 @@ questions:
         Let $f$ be the continuous function consisting of two line segments as
         shown in the figure below. The differentiable function $g$ and its
         first derivative are given in the table for selected values of $x$. Find
-        $\textstyle \lim_{x \to 2} \frac{g(x)}{f(x)}$.
+        $\lim_{x \to 2} \frac{g(x)}{f(x)}$.
 
         \begin{multicols}{2}
-          \includegraphics{unit4_13}
+          \input{images/14.tex}
+
+          \phantom{space}
 
           \begin{tabularx}{1.5in}{ |*{3}{Y|} }
             \hline
@@ -414,7 +421,7 @@ questions:
       approximate $h(2.9)$ given that $h(3) = 8$.
 
       \fullwidth{\begin{center}
-        \includegraphics[width=1.75in]{unit4_1B}
+        \input{images/15.tex}
       \end{center}}
     answer: 7.7
     distractors:
@@ -479,9 +486,9 @@ questions:
       - $f(t) - g(t) > 0$
       - $g'(t) - f'(t) > 0$
     solution: |
-      The number of people in line will be increasing when the difference
-      between the rate at which people are joining the line and the rate at
-      which people are exiting the line (entering the ride) is positive.
+      The mass of clippings in the bin will be decreasing when the rate at
+      which clippings decompose (and thus leave the bin) exceeds the rate at
+      which clippings are added, that is, when $g(t) > f(t)$.
     calculator_active: false
     sections: []
     dok: unknown
@@ -527,7 +534,7 @@ questions:
       string has been let out?
 
       \fullwidth{\begin{center}
-        \includegraphics{unit4_5B}
+        \input{images/16.tex}
       \end{center}}
     answer: increasing at a rate of 8 meters/min
     distractors:
@@ -602,12 +609,14 @@ questions:
     related_to:
       - 6b1084d0-6a86-48bb-8aae-c54aebd3b115
     question: |
-      \includegraphics{unit4_8}
-
-      The sides of the rectangle to the right increase in such a way that
-      $\textstyle \frac{dx}{dt} = 1$ and $\textstyle \frac{dy}{dt} = \frac{2}{3} \frac{dx}{dt}$.
+      The sides of the rectangle below increase in such a way that
+      $\textstyle \frac{dx}{dt} = 1$ and $\textstyle \frac{dy}{dt} = \frac{2}{3}$.
       At the instant when $x = 4$ and $y = 3$, what is the value of
       $\textstyle \frac{dz}{dt}$?
+
+      \fullwidth{\begin{center}
+        \input{images/12.tex}
+      \end{center}}
     answer: $\frac{6}{5}$
     distractors:
       - $\frac{2}{3}$
@@ -618,7 +627,7 @@ questions:
         x^2 + y^2 = z^2 \implies 2x \frac{dx}{dt} + 2y \frac{dy}{dt} = 2z \frac{dz}{dt} \\
         z = \sqrt{(4)^2 + (3)^2} = 5 \\
         2(4)(1) + 2(3)\left(\frac{2}{3}\right) = 2(5) \frac{dz}{dt} \implies
-        10 \frac{dz}{dt} = 12 \implies \frac{dx}{dt} = \frac{6}{5}
+        10 \frac{dz}{dt} = 12 \implies \frac{dz}{dt} = \frac{6}{5}
       \end{gather*}
     calculator_active: false
     sections: []
@@ -643,8 +652,8 @@ questions:
         v(t) = s'(t) = 2t - 2 \\
         a(t) = v'(t) = 2
       \end{gather*}
-      Since $a(t) > 0$ for $t \ge 0$ and $v(t) > 0$ for $t > \frac{1}{2}$,
-      the particle is speeding up for $t > \frac{1}{2}$
+      Since $a(t) > 0$ for $t \ge 0$ and $v(t) > 0$ for $t > 1$,
+      the particle is speeding up for $t > 1$
     calculator_active: false
     sections: []
     dok: unknown
@@ -687,13 +696,14 @@ questions:
       Let $f$ be the continuous function consisting of two line segments as
       shown in the figure below. The differentiable function $g$ and its
       first derivative are given in the table for selected values of $x$. Find
-      $\textstyle \lim_{x \to 2} \frac{f(x)}{g(x)}$.
+      $\lim_{x \to 2} \frac{f(x)}{g(x)}$.
 
       \fullwidth{\begin{center}
         \begin{multicols}{2}
-          \includegraphics{unit4_13}
+          \input{images/14.tex}
 
-          % g(x) = -(x - 2)(x - 6)
+          \phantom{$g(x) = -(x - 2)(x - 6)$}
+
           \begin{tabularx}{1.5in}{ |*{3}{Y|} }
             \hline
             \rowcolor{lightgray}
@@ -770,7 +780,7 @@ questions:
         The graph of $v(t)$ crosses the $x$-axis four times in the interval $-3 \le
         t \le 3$.
 
-        \includegraphics[width=2in]{unit4_14S-B}
+        \input{images/17.tex}
       \end{multicols}
     calculator_active: true
     sections: []
@@ -793,7 +803,7 @@ questions:
     solution: |
       \begin{gather*}
         P = 2l + 2w \implies
-        \frac{dP}{dt} = 2\frac{dl}{dt} + 2\frac{d2}{dt} \\
+        \frac{dP}{dt} = 2\frac{dl}{dt} + 2\frac{dw}{dt} \\
         \frac{dP}{dt} = 2(-2) + 2(2) = 0
       \end{gather*}
       Since $\frac{dP}{dt} = 0$ for all values of $l$ and $w$, $P$ is not changing.
