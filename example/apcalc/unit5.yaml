@@ -12,11 +12,14 @@ questions:
       - There is a number $c$ in the open interval $(a, b)$ such that $f(c)=0$.
       - There is a number $c$ in the open interval $(a, b)$ such that $f'(c)=0$.
       - There is a number $c$ in the closed interval $[a, b]$ such that $f'(c)=\frac{f(b)-f(a)}{b-a}$ for all $x$ in $[a, b]$.
-    solution: TODO
+    solution: |
+      Because $f$ is continuous on a closed interval, the Extreme Value Theorem
+      guarantees that $f$ attains an absolute maximum value $f(c)$ for some $c$
+      in $[a, b]$, so $f(c) \ge f(x)$ for all $x$ in $[a, b]$.
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: a73a79b6-2444-45f8-82fc-35ce65ad363e
     legacy_ids:
@@ -36,11 +39,11 @@ questions:
       - $g$ only
       - $f$, $g$, and $h$
       - $f$ and $g$ only
-    solution: TODO
+    solution: Only the graph of $f'$ changes from positive to negative on $a < x < b$, indicating a relative maximum.
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: 143b8581-b327-40d5-bc53-d1df79d0992d
     legacy_ids:
@@ -59,11 +62,11 @@ questions:
       - \input{images/21.tex}
       - \input{images/22.tex}
       - \input{images/23.tex}
-    solution: TODO
+    solution: The graph of $h'$ must be positive where $h$ is increasing, negative where $h$ is decreasing, and zero where $h$ has a horizontal tangent.
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: b3af64b8-07bf-4193-9a87-9fe99ed5fd55
     legacy_ids:
@@ -77,17 +80,22 @@ questions:
 
       \textbf{I.\phantom{II}} \quad $f'(c)$ must exist. \\
       \textbf{II.\phantom{I}} \quad If $f'(c)$ exists, then $f'(c) = 0$. \\
-      \textbf{III.} \quad If $f''(c)$ exists, then $f''(c) < 0$. \\
-    answer: II and III only
+      \textbf{III.} \quad If $f''(c)$ exists, then $f''(c) > 0$. \\
+    answer: II only
     distractors:
       - III only
       - I and III only
-      - II only
-    solution: TODO
+      - II and III only
+    solution: |
+      \textbf{I.} False: $f$ could have a sharp corner at $c$ (e.g. $f(x) = -|x|$),
+      so $f'(c)$ need not exist. \\
+      \textbf{II.} True: if $f'(c)$ exists at a relative maximum, then $f'(c) = 0$. \\
+      \textbf{III.} False: if $f''(c)$ exists at a relative maximum, the graph is
+      concave down, so $f''(c) \le 0$.
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: 26aee9f5-33cf-410a-baf2-f3d600aedacd
     legacy_ids:
@@ -102,11 +110,18 @@ questions:
       - $\sqrt{15}$
       - $\pm\sqrt{15}$
       - $\pm\sqrt{10}$
-    solution: TODO
+    solution: |
+      \begin{gather*}
+        f'(x) = \frac{10}{x^2} \\
+        f(5) = 6 - \frac{10}{5} = 4 \qquad f(2) = 6 - \frac{10}{2} = 1 \\
+        \frac{10}{c^2} = \frac{f(5) - f(2)}{5 - 2} = \frac{4 - 1}{3} = 1 \implies
+        c^2 = 10 \implies c = \sqrt{10}
+      \end{gather*}
+      ($c = \sqrt{10}$ since $c$ must be in $(2, 5)$)
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: 9eaac5c4-b4bc-473c-a0f2-096b642424d8
     legacy_ids:
@@ -122,11 +137,16 @@ questions:
       - 0
       - 0 and -2
       - 2
-    solution: TODO
+    solution: |
+      \begin{gather*}
+        f''(-2) = 3(-2)^2 - 4 = 8 > 0 \implies \text{relative minimum} \\
+        f''(0) = 3(0)^2 - 4 = -4 < 0 \implies \text{relative maximum} \\
+        f''(2) = 3(2)^2 - 4 = 8 > 0 \implies \text{relative minimum}
+      \end{gather*}
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: 3f16797c-5211-4199-9aaa-c7f06dcdffb1
     legacy_ids:
@@ -141,11 +161,20 @@ questions:
       - 0
       - -2
       - 2
-    solution: TODO
+    solution: |
+      \begin{gather*}
+        f'(x) = 3x^2 - 6x = 3x(x - 2)
+      \end{gather*}
+      \begin{tabularx}{3in}{ Y*{4}{|Y} }
+        \bm{$x$} & -2 & 0 & 2 & 4 \\
+        \hline
+        \bm{$f(x)$} & -8 & 12 & 8 & 28 \\
+      \end{tabularx}
+      The absolute maximum value of 28 occurs at $x = 4$.
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: 5c96c1db-c162-4a04-a65d-714de9d346b2
     legacy_ids:
@@ -160,11 +189,16 @@ questions:
       - -1, 0, and 1
       - -1
       - 0 and 1
-    solution: TODO
+    solution: |
+      \begin{gather*}
+        f'(x) = 15x^4 - 20x^3 \\
+        f''(x) = 60x^3 - 60x^2 = 60x^2(x - 1)
+      \end{gather*}
+      $f''$ changes sign only at $x = 1$ (at $x = 0$ the factor $x^2$ does not change sign), so the only point of inflection is at $x = 1$.
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: 004288bc-3f02-40ef-afef-98ee413b16c4
     legacy_ids:
@@ -179,11 +213,16 @@ questions:
       - $-3 < x < 1$
       - $x < -1$ or $x > 3$
       - $-1 < x < 1$
-    solution: TODO
+    solution: |
+      \begin{gather*}
+        f'(x) = 3x^2 + 6x - 9 = 3(x + 3)(x - 1)
+      \end{gather*}
+      \sgchart{-3,1}{f'(x): +-+}
+      $f$ is increasing where $f'(x) > 0$: $x < -3$ or $x > 1$.
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: 888c3e6a-0147-4840-900d-ae4b0bd07f32
     legacy_ids:
@@ -198,11 +237,16 @@ questions:
       - $f$ has relative maxima at $x = -2$ and $x = 2$.
       - $f$ has relative minima at $x = -2$ and $x = 2$.
       - $f$ has a relative maximum at $x = -2$ and a relative minimum at $x = 2$.
-    solution: TODO
+    solution: |
+      \begin{gather*}
+        f'(x) = (x + 2)(x - 2)g(x), \quad g(x) < 0
+      \end{gather*}
+      \sgchart{-2,2}{f'(x): -+-}
+      $f$ has a relative minimum at $x = -2$ and a relative maximum at $x = 2$.
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: cbb9f348-6598-47f6-86f7-dd40ba6c02e1
     legacy_ids:
@@ -217,11 +261,13 @@ questions:
       - -1, 0, and 2 only
       - -1 and 2 only
       - -1 only
-    solution: TODO
+    solution: |
+      \sgchart{-1,0,2}{f''(x): +-++}
+      $f''$ changes sign at $x = -1$ and $x = 0$. At $x = 2$ the factor $(x - 2)^2$ does not change sign, so there is no inflection point there.
     calculator_active: true
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: c926ebb0-8a68-4509-87c0-eaa2575196ff
     legacy_ids:
@@ -236,11 +282,16 @@ questions:
       - Three
       - Four
       - Two
-    solution: TODO
+    solution: |
+      \begin{gather*}
+        f'(x) = x^4(x - 2)(x + 3)
+      \end{gather*}
+      \sgchart{-3,0,2}{f'(x): +--+}
+      $f'$ changes from positive to negative only at $x = -3$, so $f$ has one relative maximum.
     calculator_active: true
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: e8bed730-a622-4721-b0d1-9d186ab7a7a0
     legacy_ids:
@@ -255,11 +306,13 @@ questions:
       - Four
       - Seven
       - Five
-    solution: TODO
+    solution: |
+      Graphing $f'(x) = \frac{\cos x}{x} - \frac{1}{5}$ on $(0, 10)$ shows that
+      $f'$ changes sign exactly once, so $f$ has one critical value.
     calculator_active: true
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: a7681429-13fd-40d8-ad13-f8b4e83fe5cf
     legacy_ids:
@@ -279,11 +332,11 @@ questions:
       - $(-4, -3)$ and $(4, 6)$
       - $(-2, 1)$ and $(4, 6)$
       - $(4, 6)$
-    solution: TODO
+    solution: $f$ is increasing where $f'(x) > 0$ and concave down where $f'$ is decreasing. Both occur on $(-4, -3)$ and $(1, 3)$.
     calculator_active: true
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: 84a0636e-23ce-45f0-8f9c-b869e4be73c1
     legacy_ids:
@@ -298,11 +351,11 @@ questions:
       - Both (B) and (D)
       - $f$ is not defined at $x = -3$ and $x = 0$
       - $f(-3) \ne f(0)$
-    solution: TODO
+    solution: $f$ is undefined at $x = -1.5$, which lies in $[-3, 0]$, so $f$ is not continuous on the interval and Rolle's Theorem does not apply.
     calculator_active: true
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: c5290fac-2bfc-4765-ad67-9355b25bee4b
     legacy_ids:
@@ -415,11 +468,11 @@ questions:
       - \input{images/21.tex}
       - \input{images/22.tex}
       - \input{images/20.tex}
-    solution: TODO
+    solution: The graph of $h'$ must be positive where $h$ is increasing, negative where $h$ is decreasing, and zero where $h$ has a horizontal tangent.
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: af02cafc-b905-49b1-9de4-305d17dbbf4c
     legacy_ids:
@@ -490,11 +543,16 @@ questions:
       - II and III only
       - III only
       - I and III only
-    solution: TODO
+    solution: |
+      \textbf{I.} False: $f$ could be differentiable at $c$ (e.g. $f(x) = x^2$),
+      so it is not required that $f'(c)$ fail to exist. \\
+      \textbf{II.} True: if $f'(c)$ exists at a relative minimum, then $f'(c) = 0$. \\
+      \textbf{III.} False: at a relative minimum the graph is concave up, so
+      $f''(c) > 0$, not $f''(c) < 0$.
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: e51d31e1-380a-4d98-86ab-408476093611
     legacy_ids:
@@ -539,11 +597,14 @@ questions:
       - There is a number $c$ in the open interval $(a, b)$ such that $f(c)=0$.
       - There is a number $c$ in the open interval $(a, b)$ such that $f'(c)=0$.
       - There is a number $c$ in the closed interval $[a, b]$ such that $f(c) > f(x)$ for all $x$ in $[a, b]$.
-    solution: TODO
+    solution: |
+      Because $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, the
+      Mean Value Theorem guarantees that there is a number $c$ in $(a, b)$ such
+      that $f'(c) = \frac{f(b) - f(a)}{b - a}$.
     calculator_active: false
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: fbaf77a5-32be-494f-a87a-42e91e3b8f23
     legacy_ids:
@@ -558,11 +619,16 @@ questions:
       - $f$ is not continuous at $x = -1.5$
       - $f$ is not defined at $x = -1$ and $x = 1$
       - Both \emph{A} and \emph{B}
-    solution: TODO
+    solution: |
+      \begin{gather*}
+        f(-1) = \frac{2}{(-1 + 1.5)^2} = \frac{2}{0.25} = 8 \qquad
+        f(1) = \frac{2}{(1 + 1.5)^2} = \frac{2}{6.25} = 0.32
+      \end{gather*}
+      Since $-1.5$ is not in $[-1, 1]$, $f$ is continuous and differentiable on the interval, but $f(-1) \ne f(1)$, so Rolle's Theorem does not apply.
     calculator_active: true
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: 974dd223-0c78-4e8b-8ba1-a72f5b7c2a00
     legacy_ids:
@@ -577,11 +643,13 @@ questions:
       - Five
       - Six
       - Seven
-    solution: TODO
+    solution: |
+      Graphing $f'(x) = \frac{25 \sin x}{x^2} - \frac{1}{6}$ on $(0, 10)$ shows that
+      $f'$ changes sign three times, so $f$ has three critical values.
     calculator_active: true
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: c2385d31-bd97-496d-837a-b5047c6ecce5
     legacy_ids:
@@ -601,11 +669,11 @@ questions:
       - $(-4, -3)$ and $(1, 3)$
       - $(-4, -2)$ and $(1, 4)$
       - $(4, 5)$
-    solution: TODO
+    solution: $f$ is decreasing where $f'(x) < 0$ and concave down where $f'$ is decreasing. Both occur on $(-3, -2)$ and $(3, 4)$.
     calculator_active: true
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: c819eb33-229f-4868-800b-de1e6ae12428
     legacy_ids:
@@ -620,11 +688,16 @@ questions:
       - Three
       - One
       - Four
-    solution: TODO
+    solution: |
+      \begin{gather*}
+        f'(x) = x^3(x - 5)(x + 1)
+      \end{gather*}
+      \sgchart{-1,0,5}{f'(x): -+-+}
+      $f'$ changes from negative to positive at $x = -1$ and $x = 5$, so $f$ has two relative minima.
     calculator_active: true
     sections: []
     dok: unknown
-    review: none
+    review: check solution
 
   - id: a9b87525-6ace-4c28-a3d3-e08a5e7cda2f
     legacy_ids:
@@ -639,8 +712,8 @@ questions:
       - 0 only
       - 0 and 5 only
       - -1, 0, and 5
-    solution: TODO
+    solution: $x^4 \ge 0$ and $x^2 + 1 > 0$ do not change sign, so $f''$ changes sign only at $x = 5$, giving an inflection point at $x = 5$ only.
     calculator_active: true
     sections: []
     dok: unknown
-    review: none
+    review: check solution
