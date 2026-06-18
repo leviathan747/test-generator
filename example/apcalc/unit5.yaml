@@ -11,7 +11,7 @@ questions:
     distractors:
       - There is a number $c$ in the open interval $(a, b)$ such that $f(c)=0$.
       - There is a number $c$ in the open interval $(a, b)$ such that $f'(c)=0$.
-      - There is a number $c$ in the closed interval $[a, b]$ such that $f'(c)=\frac{f(b)-f(a)}{b-a}$ for all $x$ in $[a, b]$.
+      - There is a number $c$ in the closed interval $[a, b]$ such that $f'(c)=\frac{f(b)-f(a)}{b-a}$.
     solution: |
       Because $f$ is continuous on a closed interval, the Extreme Value Theorem
       guarantees that $f$ attains an absolute maximum value $f(c)$ for some $c$
@@ -28,7 +28,7 @@ questions:
       - f463530d-c4aa-461e-a582-8dac8775555f
     question: |
       The graphs of the \emph{derivatives} of the functions $f$, $g$, and $h$ are
-      shown above.  Which of the functions $f$, $g$ or $h$ have a relative
+      shown below.  Which of the functions $f$, $g$ or $h$ have a relative
       maximum on the open interval $a<x<b$ ?
 
       \fullwidth{\begin{center}
@@ -51,7 +51,7 @@ questions:
     related_to:
       - 9673c318-c664-4fca-949f-c950641f148e
     question: |
-      The graph of $y=h(x)$ is shown above. Which of the following could be the
+      The graph of $y=h(x)$ is shown below. Which of the following could be the
       graph of $y=h'(x)$?
 
       \fullwidth{\begin{center}
@@ -320,7 +320,7 @@ questions:
     related_to:
       - c2385d31-bd97-496d-837a-b5047c6ecce5
     question: |
-      The graph of $f'(x)$ is shown in the figure to the right. For what values of
+      The graph of $f'(x)$ is shown in the figure below. For what values of
       $x$, on the interval $-4 < x < 6$ is the graph of $f$ both increasing and
       concave down?
 
@@ -434,7 +434,7 @@ questions:
       - a73a79b6-2444-45f8-82fc-35ce65ad363e
     question: |
       The graphs of the \emph{derivatives} of the functions $f$, $g$, and $h$
-      are shown above.  Which of the functions $f$, $g$ or $h$ have a relative
+      are shown below.  Which of the functions $f$, $g$ or $h$ have a relative
       minimum on the open interval $a<x<b$ ?
 
       \fullwidth{\begin{center}
@@ -457,7 +457,7 @@ questions:
     related_to:
       - 143b8581-b327-40d5-bc53-d1df79d0992d
     question: |
-      The graph of $y=h(x)$ is shown above. Which of the following could be the
+      The graph of $y=h(x)$ is shown below. Which of the following could be the
       graph of $y=h'(x)$?
 
       \fullwidth{\begin{center}
@@ -517,7 +517,7 @@ questions:
       - neither
     solution: |
       \begin{gather*}
-        f''(-1) = 3(-1)^2 - 3 = 0 \implies \text{neither max nor min} \\
+        f''(-1) = 3(-1)^2 - 3 = 0 \implies \text{test inconclusive} \\
         f''(2) = 3(2)^2 - 3 = 9 > 0 \implies \text{relative minimum}
       \end{gather*}
     calculator_active: false
@@ -562,11 +562,11 @@ questions:
     question: |
       Given $f(x) = -3 + \frac{20}{x}$, find all $c$ in the interval $(-5, -2)$ such
       that $f'(c) = \frac{f(-2) - f(-5)}{-2 - (-5)}$.
-    answer: $-2 \sqrt{ \frac{5}{3} }$
+    answer: $-\sqrt{10}$
     distractors:
-      - $\pm 2 \sqrt{ \frac{5}{3} }$
-      - $\sqrt{ \frac{5}{3} }$
-      - $\pm \sqrt{ \frac{5}{3} }$
+      - $-\sqrt{15}$
+      - $\pm\sqrt{15}$
+      - $\pm\sqrt{10}$
     solution: |
       \begin{gather*}
         f'(x) = -\frac{20}{x^2} \\
@@ -574,11 +574,12 @@ questions:
         f(-5) = -3 + \frac{20}{-5} = -3 - 4 = -7 \\
         -\frac{20}{c^2} = \frac{-13 - (-7)}{-2 - (-5)} \implies
         -\frac{20}{c^2} = \frac{-6}{3} \implies
-        -\frac{20}{c^2} = -3 \implies
-        20 = 3c^2 \implies
-        c^2 = \frac{20}{3} \\
-        c = -2 \sqrt{ \frac{5}{3} }
+        -\frac{20}{c^2} = -2 \implies
+        20 = 2c^2 \implies
+        c^2 = 10 \\
+        c = -\sqrt{ 10 }
       \end{gather*}
+      ($c = -\sqrt{10}$ since $c$ must be in $(-5, -2)$)
     calculator_active: false
     sections: []
     dok: unknown
@@ -592,7 +593,7 @@ questions:
     question: |
       If $f$ is continuous on the closed interval $[a, b]$ and differentiable on the open interval $(a, b)$, which of the following
       \emph{must} be true?
-    answer: There is a number $c$ in the closed interval $[a, b]$ such that $f'(c)=\frac{f(b)-f(a)}{b-a}$ for all $x$ in $[a, b]$.
+    answer: There is a number $c$ in the closed interval $[a, b]$ such that $f'(c)=\frac{f(b)-f(a)}{b-a}$.
     distractors:
       - There is a number $c$ in the open interval $(a, b)$ such that $f(c)=0$.
       - There is a number $c$ in the open interval $(a, b)$ such that $f'(c)=0$.
@@ -657,7 +658,7 @@ questions:
     related_to:
       - a7681429-13fd-40d8-ad13-f8b4e83fe5cf
     question: |
-      The graph of $f'(x)$ is shown in the figure to the right. For what values of
+      The graph of $f'(x)$ is shown in the figure below. For what values of
       $x$, on the interval $-4 < x < 6$ is the graph of $f$ both decreasing and
       concave down?
 
