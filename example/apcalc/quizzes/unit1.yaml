@@ -1,0 +1,66 @@
+questions:
+  - id: c9d6e17f-3a8d-442f-8b81-3f0ff561d3e0
+    question: |
+      Find $\lim_{x \to 0} f(1 - x^2)$
+      \fullwidth{\begin{center}
+        \input{images/26.tex}
+      \end{center}}
+    answer: 3
+    distractors:
+      - 1
+      - 2
+      - 4
+      - does not exist
+    solution: |
+      $\lim_{x \to 0} (1 - x^2) = 1 \Rightarrow \lim_{x \to 1^-} f(x) = 3$
+
+      Since $x = 0$ is the location of the maximum of a downward facing
+      parabola, as $x \to 0$, $y \to 1$ from below, so when we evaluate the
+      outer limit, we $x \to 1$ from the left.
+    calculator_active: false
+    sections:
+      - 1.3
+      - 1.7
+    dok: -1
+    question_type: MCQ
+    assessment_type: quiz
+    review: none
+
+  - id: 81cceaba-8719-477a-b0ec-d435f36694dd
+    question: Find $\lim_{x \to 2} \left( \frac{1}{x - 2} + \frac{1}{x^2 - 5x + 6} \right)$. Show all your steps.
+    solution: |
+      \begin{gather*}
+        \lim_{x \to 2} \left( \frac{1}{x - 2} + \frac{1}{(x - 2)(x - 3)} \right) \\
+        \lim_{x \to 2} \left( \frac{x - 3}{(x - 2)(x - 3)} + \frac{1}{(x - 2)(x - 3)} \right) \\
+        \lim_{x \to 2} \frac{\cancel{x - 2}}{\cancel{(x - 2)}(x - 3)} \\
+        \lim_{x \to 2} \frac{1}{x - 3} = \frac{1}{2 - 3}= \frac{1}{-1} = \boxed{-1} \\
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 1.5
+      - 1.6
+      - 1.7
+    dok: -1
+    question_type: FRQ
+    assessment_type: quiz
+    size: 2in
+    review: none
+
+  - id: 402e0ee8-c10d-4630-8dd6-7c180f3558d3
+    question: If $\lim_{x \to 0} \frac{\sin x}{x} = 1$, find the value of $\lim_{x \to 0} \frac{2 \tan x}{x}$. Show all your steps.
+    solution: |
+      \begin{gather*}
+        \lim_{x \to 0} \frac{\sin x}{x} \cdot \frac{2}{\cos x} \\
+        \lim_{x \to 0} \frac{\sin x}{x} \cdot \lim_{x \to 0} \frac{2}{\cos x} \\
+        1 \cdot \frac{2}{\cos 0} = \frac{2}{1} = \boxed{2} \\
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 1.5
+      - 1.6
+      - 1.7
+    dok: -1
+    question_type: FRQ
+    assessment_type: quiz
+    size: 2in
+    review: none

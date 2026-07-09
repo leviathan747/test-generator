@@ -97,26 +97,35 @@ def generate_test(
     except Exception as exc:  # pragma: no cover - resource packaging issues
         raise RuntimeError("Unable to load internal TeX template resource") from exc
 
-    try:
-        with resources.open_text("test_generator.templates", "MCQ_Template.tex") as fh:
-            question_template = fh.read()
-    except Exception as exc:  # pragma: no cover - resource packaging issues
-        raise RuntimeError("Unable to load internal question template resource") from exc
+    question_templates = {}
+    for q_type, template_name in (("MCQ", "MCQ_Template.tex"), ("FRQ", "FRQ_Template.tex")):
+        try:
+            with resources.open_text("test_generator.templates", template_name) as fh:
+                question_templates[q_type] = fh.read()
+        except Exception as exc:  # pragma: no cover - resource packaging issues
+            raise RuntimeError("Unable to load internal question template resource") from exc
 
     q_blocks = []
     for q in questions:
         question_text = str(q.get("question", ""))
-        answer_text = str(q.get("answer", ""))
         solution_text = str(q.get("solution", ""))
-        distractors = q.get("distractors", []) or []
-        choices = [f"\\correctchoice {answer_text}"] + [f"\\choice {d}" for d in distractors]
-        random.shuffle(choices)
-        choices_block = "\n    ".join(choices)
+        q_type = str(q.get("question_type", "MCQ")).upper()
+        if q_type not in question_templates:
+            raise RuntimeError(f"Unknown question_type: {q_type!r}")
 
-        q_block = question_template
+        q_block = question_templates[q_type]
         q_block = q_block.replace("$QUESTION", question_text)
-        q_block = q_block.replace("$CHOICES", choices_block)
         q_block = q_block.replace("$SOLUTION", solution_text)
+
+        if q_type == "MCQ":
+            answer_text = str(q.get("answer", ""))
+            distractors = q.get("distractors", []) or []
+            choices = [f"\\correctchoice {answer_text}"] + [f"\\choice {d}" for d in distractors]
+            random.shuffle(choices)
+            choices_block = "\n    ".join(choices)
+            q_block = q_block.replace("$CHOICES", choices_block)
+        else:
+            q_block = q_block.replace("$SIZE", str(q.get("size", "1in")))
 
         q_blocks.append(q_block)
 

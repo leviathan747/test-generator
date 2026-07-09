@@ -76,8 +76,13 @@
   % remaining space on page
   \dimen0=\dimexpr\pagegoal-\pagetotal\relax
 
+  % full size of the box (the minipage centers on the baseline, so about
+  % half of the content ends up in the depth) plus the glue added when
+  % the box is placed on the page
+  \dimen1=\dimexpr\ht\fitbox+\dp\fitbox+\parskip+\baselineskip\relax
+
   % if it doesn't fit, force page break
-  \ifdim\ht\fitbox>\dimen0
+  \ifdim\dimen1>\dimen0
     \newpage
   \fi
 
@@ -112,7 +117,7 @@
   \vspace*{-0.75in}
   \makeatletter
   \par{\large\textbf{\classname \hfill Name \fillin[KEY][3in]}}
-  \par{\LARGE\textbf{\@title\ (\duration)}}
+  \par{\large\textbf{\@title\ (\duration)}}
   \makeatother
   \nocalc
   \vspace{1em}

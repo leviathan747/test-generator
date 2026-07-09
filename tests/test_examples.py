@@ -12,33 +12,39 @@ REPO_ROOT = Path(__file__).parent.parent
 EXAMPLE_DIR = REPO_ROOT / "example"
 OUTPUT_DIR = Path(__file__).parent / "output_pdfs"
 
-# Each entry: (course_dir_name, yaml_stem)
+# Each entry: (course_dir_name, subdir, yaml_stem); subdir is None when the
+# YAML files live at the course root.
 EXAMPLE_CASES = [
-    ("appc", "unit1a"),
-    ("appc", "unit1b"),
-    ("appc", "unit2a"),
-    ("appc", "unit2b"),
-    ("appc", "unit3a"),
-    ("appc", "unit3b"),
-    ("appc", "unit3c"),
-    ("apcalc", "unit1"),
-    ("apcalc", "unit2"),
-    ("apcalc", "unit3"),
-    ("apcalc", "unit4"),
-    ("apcalc", "unit5"),
-    ("apcalc", "unit6"),
-    ("apcalc", "unit7"),
-    ("apcalc", "unit8"),
+    ("appc", None, "unit1a"),
+    ("appc", None, "unit1b"),
+    ("appc", None, "unit2a"),
+    ("appc", None, "unit2b"),
+    ("appc", None, "unit3a"),
+    ("appc", None, "unit3b"),
+    ("appc", None, "unit3c"),
+    ("apcalc", "tests", "unit1"),
+    ("apcalc", "tests", "unit2"),
+    ("apcalc", "tests", "unit3"),
+    ("apcalc", "tests", "unit4"),
+    ("apcalc", "tests", "unit5"),
+    ("apcalc", "tests", "unit6"),
+    ("apcalc", "tests", "unit7"),
+    ("apcalc", "tests", "unit8"),
+    ("apcalc", "quizzes", "unit1"),
 ]
 
 
-@pytest.mark.parametrize("course,unit", EXAMPLE_CASES, ids=[f"{c}/{u}" for c, u in EXAMPLE_CASES])
-def test_example_builds_pdf(course, unit):
-    # apcalc keeps its YAML files in a tests/ subdirectory and uses a single
-    # flat figures/ directory; other courses keep YAML files at the course
-    # root and per-unit image subdirectories under images/.
+@pytest.mark.parametrize(
+    "course,subdir,unit",
+    EXAMPLE_CASES,
+    ids=[f"{c}/{s + '/' if s else ''}{u}" for c, s, u in EXAMPLE_CASES],
+)
+def test_example_builds_pdf(course, subdir, unit):
+    # apcalc keeps its YAML files in tests/ and quizzes/ subdirectories and
+    # uses a single flat figures/ directory; other courses keep YAML files at
+    # the course root and per-unit image subdirectories under images/.
     if course == "apcalc":
-        yaml_path = EXAMPLE_DIR / course / "tests" / f"{unit}.yaml"
+        yaml_path = EXAMPLE_DIR / course / subdir / f"{unit}.yaml"
         images_dir = EXAMPLE_DIR / course / "figures"
     else:
         yaml_path = EXAMPLE_DIR / course / f"{unit}.yaml"
@@ -48,7 +54,7 @@ def test_example_builds_pdf(course, unit):
 
     out_dir = OUTPUT_DIR / course
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_pdf = out_dir / f"{unit}.pdf"
+    out_pdf = out_dir / (f"{subdir}-{unit}.pdf" if subdir else f"{unit}.pdf")
 
     result = test_generator.generate_test(
         str(yaml_path),
