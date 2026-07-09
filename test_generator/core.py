@@ -98,7 +98,7 @@ def generate_test(
         raise RuntimeError("Unable to load internal TeX template resource") from exc
 
     try:
-        with resources.open_text("test_generator.templates", "Question_Template.tex") as fh:
+        with resources.open_text("test_generator.templates", "MCQ_Template.tex") as fh:
             question_template = fh.read()
     except Exception as exc:  # pragma: no cover - resource packaging issues
         raise RuntimeError("Unable to load internal question template resource") from exc
