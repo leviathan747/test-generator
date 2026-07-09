@@ -1,6 +1,83 @@
 questions:
   - id: c9d6e17f-3a8d-442f-8b81-3f0ff561d3e0
     question: |
+      Use the graph of $y = f(x)$ below to find $\lim_{x \to -4^+} f(x)$.
+      \fullwidth{\begin{center}
+        \input{images/27.tex}
+      \end{center}}
+    answer: 0
+    distractors:
+      - 2
+      - 1
+      - does not exist
+    solution: |
+      As $x \to -4$ from the right, we follow the branch of the graph to the
+      right of $x = -4$ toward the open circle at $(-4, 0)$, so
+      $\lim_{x \to -4^+} f(x) = 0$.
+
+      Note that the value of the function at $x = -4$ (the filled dot at
+      $(-4, 1)$) does not affect the limit.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: -1
+    question_type: MCQ
+    assessment_type: quiz
+    review: none
+
+  - id: 6f64339e-f0bc-4db4-afc9-3436705724ae
+    question: |
+      The graph below represents the function $y = \cos
+      \left(\frac{1}{x}\right)$. Evaluate $\lim_{x \to 0} \cos
+      \left(\frac{1}{x}\right)$.
+      \fullwidth{\begin{center}
+        \input{images/28.tex}
+      \end{center}}
+    answer: does not exist
+    distractors:
+      - 0
+      - 1
+      - -1
+    solution: |
+      As $x \to 0$, $\frac{1}{x} \to \pm\infty$, so $\cos
+      \left(\frac{1}{x}\right)$ oscillates between $-1$ and $1$ infinitely
+      often near $x = 0$, as seen in the graph. Since the function does not
+      approach a single value, the limit does not exist.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: -1
+    question_type: MCQ
+    assessment_type: quiz
+    review: none
+
+  - id: 9e006e95-98b1-4296-91db-1f3e6ad7c320
+    question: Which of the following is true about the limit $\lim_{x \to 0} \frac{x}{|x|}$?
+    answer: The limit does not exist because $f(x)$ approaches two different numbers from the left and right.
+    distractors:
+      - The $\lim_{x \to 0} \frac{x}{|x|} = 0$.
+      - The $\lim_{x \to 0} \frac{x}{|x|} = 1$.
+      - The limit does not exist because the graph of $f(x)$ features a vertical asymptote at $x = 0$.
+    solution: |
+      For $x > 0$, $|x| = x$, so $\frac{x}{|x|} = 1$ and
+      $\lim_{x \to 0^+} \frac{x}{|x|} = 1$.
+
+      For $x < 0$, $|x| = -x$, so $\frac{x}{|x|} = -1$ and
+      $\lim_{x \to 0^-} \frac{x}{|x|} = -1$.
+
+      Since the one-sided limits are different, the limit does not exist.
+      There is no vertical asymptote; the function values stay bounded at
+      $\pm 1$ near $x = 0$.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: -1
+    question_type: MCQ
+    assessment_type: quiz
+    review: none
+
+  - id: 1245a6ac-cbf1-4aa5-8303-8d4fc8d093f9
+    question: |
       Find $\lim_{x \to 0} f(1 - x^2)$
       \fullwidth{\begin{center}
         \input{images/26.tex}
