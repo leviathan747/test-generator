@@ -26,7 +26,7 @@ questions:
       Given $h(x) = g(f(x))$, use the graph below to find $h'(4)$.
 
       \fullwidth{\begin{center}
-        \input{images/6.tex}
+        \input{figures/6.tex}
       \end{center}}
     answer: $\frac{5}{8}$
     distractors:
@@ -502,7 +502,7 @@ questions:
       Given $h(x) = f(g(x))$, use the graph below to find $h'(4)$.
 
       \fullwidth{\begin{center}
-        \input{images/6.tex}
+        \input{figures/6.tex}
       \end{center}}
     answer: $\frac{5}{8}$
     distractors:

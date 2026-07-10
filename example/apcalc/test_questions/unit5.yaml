@@ -32,7 +32,7 @@ questions:
       maximum on the open interval $a<x<b$ ?
 
       \fullwidth{\begin{center}
-        \includestandalone[width=7in]{images/18}
+        \includestandalone[width=7in]{figures/18}
       \end{center}}
     answer: $f$ only
     distractors:
@@ -55,13 +55,13 @@ questions:
       graph of $y=h'(x)$?
 
       \fullwidth{\begin{center}
-        \input{images/19.tex}
+        \input{figures/19.tex}
       \end{center}}
-    answer: \input{images/20.tex}
+    answer: \input{figures/20.tex}
     distractors:
-      - \input{images/21.tex}
-      - \input{images/22.tex}
-      - \input{images/23.tex}
+      - \input{figures/21.tex}
+      - \input{figures/22.tex}
+      - \input{figures/23.tex}
     solution: The graph of $h'$ must be positive where $h$ is increasing, negative where $h$ is decreasing, and zero where $h$ has a horizontal tangent.
     calculator_active: false
     sections: []
@@ -325,7 +325,7 @@ questions:
       concave down?
 
       \fullwidth{\begin{center}
-        \input{images/24.tex}
+        \input{figures/24.tex}
       \end{center}}
     answer: $(-4, -3)$ and $(1, 3)$
     distractors:
@@ -438,7 +438,7 @@ questions:
       minimum on the open interval $a<x<b$ ?
 
       \fullwidth{\begin{center}
-        \includestandalone[width=7in]{images/18}
+        \includestandalone[width=7in]{figures/18}
       \end{center}}
     answer: $f$ and $g$ only
     distractors:
@@ -461,13 +461,13 @@ questions:
       graph of $y=h'(x)$?
 
       \fullwidth{\begin{center}
-        \input{images/25.tex}
+        \input{figures/25.tex}
       \end{center}}
-    answer: \input{images/23.tex}
+    answer: \input{figures/23.tex}
     distractors:
-      - \input{images/21.tex}
-      - \input{images/22.tex}
-      - \input{images/20.tex}
+      - \input{figures/21.tex}
+      - \input{figures/22.tex}
+      - \input{figures/20.tex}
     solution: The graph of $h'$ must be positive where $h$ is increasing, negative where $h$ is decreasing, and zero where $h$ has a horizontal tangent.
     calculator_active: false
     sections: []
@@ -663,7 +663,7 @@ questions:
       concave down?
 
       \fullwidth{\begin{center}
-        \input{images/24.tex}
+        \input{figures/24.tex}
       \end{center}}
     answer: $(-3, -2)$ and $(3, 4)$
     distractors:

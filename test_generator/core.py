@@ -6,6 +6,8 @@ import tempfile
 import yaml
 from pathlib import Path
 
+from .sections import parse_range, parse_version
+
 
 
 def _quote_backslash_scalar_lines(text: str) -> str:
@@ -50,31 +52,90 @@ def _quote_backslash_scalar_lines(text: str) -> str:
         output_lines.append(line)
     return "\n".join(output_lines) + "\n"
 
+def filter_questions(questions, assessment_type=None, sections=None):
+    """Filter questions by assessment type and/or section range.
+
+    Args:
+        questions: List of question mappings.
+        assessment_type: When set, keep only questions whose
+            ``assessment_type`` equals this value; questions missing the
+            field are dropped.
+        sections: When set, a SemVer-style section range (see
+            :mod:`test_generator.sections`). A question without parts is
+            kept only when the highest section it lists falls within the
+            range. A question with parts is kept only when the highest
+            section listed on each part falls within the range;
+            question-level sections are ignored. Questions with no
+            applicable sections listed are dropped.
+
+    Returns:
+        The filtered list of questions.
+    """
+    section_range = parse_range(sections) if sections is not None else None
+
+    filtered = []
+    for q in questions:
+        if assessment_type is not None:
+            if "assessment_type" not in q:
+                continue
+            if str(q.get("assessment_type")) != str(assessment_type):
+                continue
+
+        if section_range is not None:
+            parts = q.get("parts") or []
+            try:
+                if parts:
+                    highest = [
+                        max(p_sections, key=parse_version)
+                        for part in parts
+                        if (p_sections := list(part.get("sections") or []))
+                    ]
+                else:
+                    q_sections = list(q.get("sections") or [])
+                    highest = [max(q_sections, key=parse_version)] if q_sections else []
+                if not highest or not all(section_range.match(s) for s in highest):
+                    continue
+            except ValueError:
+                continue
+
+        filtered.append(q)
+    return filtered
+
+
 def generate_test(
-    yaml_path: str,
+    yaml_path: str | None,
     output_pdf: str,
     title: str = "",
     author: str = "",
     class_name: str = "",
     form_id: str = "",
     duration: str = "",
-    images_dir: str | None = None,
+    figures_dir: str | None = None,
     solution: bool = False,
+    assessment_type: str | None = None,
+    sections: str | None = None,
+    questions: list | None = None,
 ) -> str:
     """Generate a test PDF from a YAML file.
 
     Args:
         yaml_path: Path to a YAML file describing questions (must contain
             a top-level `questions` list of mappings with an `id` key).
+            May be None when ``questions`` supplies the questions directly.
         output_pdf: Path where the generated PDF will be written.
         title: Test title.
         author: Author name.
         class_name: Class name.
         form_id: Form identifier (e.g. "A", "B").
         duration: Duration string (e.g. "30 min").
-        images_dir: Directory containing image files to copy into the build
-            environment. Defaults to an ``images/`` subdirectory next to the
+        figures_dir: Directory containing figure files to copy into the build
+            environment. Defaults to a ``figures/`` subdirectory next to the
             YAML file when not specified.
+        solution: When True, render the solution/answer-key copy.
+        assessment_type: Optional filter; see :func:`filter_questions`.
+        sections: Optional section range filter; see :func:`filter_questions`.
+        questions: Optional list of question mappings appended to those
+            loaded from ``yaml_path``.
 
     Returns:
         The path to the generated PDF (same as ``output_pdf``).
@@ -83,13 +144,23 @@ def generate_test(
         RuntimeError: if YAML can't be parsed, template can't be loaded, or
             PDF generation via `pdflatex` fails.
     """
-    yaml_file = Path(yaml_path)
-    if not yaml_file.exists():
-        raise FileNotFoundError(yaml_path)
+    all_questions = []
+    yaml_file = None
+    if yaml_path is not None:
+        yaml_file = Path(yaml_path)
+        if not yaml_file.exists():
+            raise FileNotFoundError(yaml_path)
 
-    raw_text = yaml_file.read_text()
-    data = yaml.safe_load(_quote_backslash_scalar_lines(raw_text)) or {}
-    questions = data.get("questions", [])
+        raw_text = yaml_file.read_text()
+        data = yaml.safe_load(_quote_backslash_scalar_lines(raw_text)) or {}
+        all_questions.extend(data.get("questions") or [])
+    all_questions.extend(questions or [])
+
+    questions = filter_questions(
+        all_questions,
+        assessment_type=assessment_type,
+        sections=sections,
+    )
 
     try:
         with resources.open_text("test_generator.templates", "Test_Template.tex") as fh:
@@ -165,9 +236,14 @@ def generate_test(
         tex_path = td_path / "output.tex"
         tex_path.write_text(tex_content)
 
-        images_src = Path(images_dir) if images_dir is not None else yaml_file.parent / "images"
-        if images_src.is_dir():
-            shutil.copytree(str(images_src), str(td_path / "images"))
+        if figures_dir is not None:
+            figures_src = Path(figures_dir)
+        elif yaml_file is not None:
+            figures_src = yaml_file.parent / "figures"
+        else:
+            figures_src = None
+        if figures_src is not None and figures_src.is_dir():
+            shutil.copytree(str(figures_src), str(td_path / "figures"))
 
         cmd = [
             "pdflatex",

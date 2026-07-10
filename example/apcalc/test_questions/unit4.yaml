@@ -163,7 +163,7 @@ questions:
       approximate $g(2.1)$ given that $g(2) = 7$.
 
       \fullwidth{\begin{center}
-        \input{images/11.tex}
+        \input{figures/11.tex}
       \end{center}}
     answer: 7.4
     distractors:
@@ -193,7 +193,7 @@ questions:
       \frac{dx}{dt}$?
 
       \fullwidth{\begin{center}
-        \input{images/12.tex}
+        \input{figures/12.tex}
       \end{center}}
     answer: 1
     distractors:
@@ -286,7 +286,7 @@ questions:
         The graph of $v(t)$ crosses the $x$-axis two times in the interval $-3 \le
         t \le 3$.
 
-        \input{images/13.tex}
+        \input{figures/13.tex}
       \end{multicols}
     calculator_active: true
     sections: []
@@ -306,7 +306,7 @@ questions:
         $\lim_{x \to 2} \frac{g(x)}{f(x)}$.
 
         \begin{multicols}{2}
-          \input{images/14.tex}
+          \input{figures/14.tex}
 
           \phantom{space}
 
@@ -436,7 +436,7 @@ questions:
       approximate $h(2.9)$ given that $h(3) = 8$.
 
       \fullwidth{\begin{center}
-        \input{images/15.tex}
+        \input{figures/15.tex}
       \end{center}}
     answer: 7.7
     distractors:
@@ -553,7 +553,7 @@ questions:
       string has been let out?
 
       \fullwidth{\begin{center}
-        \input{images/16.tex}
+        \input{figures/16.tex}
       \end{center}}
     answer: increasing at a rate of 8 meters/min
     distractors:
@@ -637,7 +637,7 @@ questions:
       $\textstyle \frac{dz}{dt}$?
 
       \fullwidth{\begin{center}
-        \input{images/12.tex}
+        \input{figures/12.tex}
       \end{center}}
     answer: $\frac{6}{5}$
     distractors:
@@ -725,7 +725,7 @@ questions:
 
       \fullwidth{\begin{center}
         \begin{multicols}{2}
-          \input{images/14.tex}
+          \input{figures/14.tex}
 
           \phantom{$g(x) = -(x - 2)(x - 6)$}
 
@@ -807,7 +807,7 @@ questions:
         The graph of $v(t)$ crosses the $x$-axis four times in the interval $-3 \le
         t \le 3$.
 
-        \input{images/17.tex}
+        \input{figures/17.tex}
       \end{multicols}
     calculator_active: true
     sections: []

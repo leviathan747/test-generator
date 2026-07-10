@@ -1,0 +1,51 @@
+title: "Quiz 1.14-1.15: Limits Involving Infinity: Horizontal and Vertical Asymptotes"
+author: Levi Starrett
+class_name: AP Calculus AB
+class_id: APCalc
+form_id: A
+duration: 10 min
+questions:
+  - id: bea8f6d3-d78b-4bbc-b4c8-48670977d5cc
+    question: Consider the function $f(x) = \frac{|x|(x - 3)}{9 - x^2}$
+    parts:
+      - question: |
+          Find the equations of all vertical asymptotes of the graph of $f(x)$. Use
+          the limit definition of vertical asymptotes to justify your responses.
+        solution: |
+          \begin{align*}
+            f(x) &= \frac{|x|(x - 3)}{9 - x^2} \\
+                &= \frac{|x|\cancel{(x - 3)}}{-(x + 3)\cancel{(x - 3)}} \\
+          \end{align*}
+          \begin{gather*}
+            \lim_{x \to -3^-} \frac{|x|}{-(x + 3)} = \frac{3}{\text{very small positive}} = \infty \\
+            \lim_{x \to -3^+} \frac{|x|}{-(x + 3)} = \frac{3}{\text{very small negative}} = -\infty \\
+          \end{gather*}
+          There is one vertical asymptote at $x = -3$
+
+          \emph{Note: only one of the limit statements from above is necessary to
+          support the conclusion}
+        sections:
+          - 1.14
+        dok: -1
+        size: 3in
+      - question: |
+          Find the equations of all horizontal asymptotes of the graph of $f(x)$. Use
+          the limit definition of horizontal asymptotes to justify your responses.
+
+          \emph{HINT: rewrite f(x) as a piecewise function}
+        solution: |
+          \begin{gather*}
+            f(x) = \begin{cases}
+              \frac{-x^2 + 3x}{-x^2 + 9} & x < 0 \\
+              \frac{x^2 - 3x}{-x^2 + 9} & x \ge 0 \\
+            \end{cases} \\
+            \lim_{x \to -\infty} f(x) = \lim_{x \to -\infty} \frac{\frac{-x^2}{x^2} + \frac{3x}{x^2}}{\frac{-x^2}{x^2} + \frac{9}{x^2}} = \lim_{x \to -\infty} \frac{-1}{-1} = 1 \\
+            \lim_{x \to \infty} f(x) = \lim_{x \to \infty} \frac{\frac{x^2}{x^2} - \frac{3x}{x^2}}{\frac{-x^2}{x^2} + \frac{9}{x^2}} = \lim_{x \to \infty} \frac{1}{-1} = -1 \\
+          \end{gather*}
+          There are horizontal asymptotes at $y = -1$ and $y = 1$
+        sections:
+          - 1.15
+        dok: -1
+        size: 3in
+    calculator_active: false
+    question_type: FRQ

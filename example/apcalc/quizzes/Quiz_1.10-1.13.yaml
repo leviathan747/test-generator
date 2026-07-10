@@ -1,0 +1,92 @@
+title: "Quiz 1.10-1.13: Definition of Continuity"
+author: Levi Starrett
+class_name: AP Calculus AB
+class_id: APCalc
+form_id: A
+duration: 15 min
+questions:
+  - id: 41603608-f058-4be4-9c25-9032c158b64c
+    question: |
+      Which of the following statements about the function $f(x)$ are true?
+      \[
+        f(x) =
+          \begin{cases}
+            2x      &  0 < x < 1 \\
+            1       &  x = 1 \\
+            -x + 3  &  1 < x < 2 \\
+          \end{cases}
+      \]
+      \textbf{I.} $f(1)$ is undefined \qquad
+      \textbf{II.} $\lim_{x \to 1} f(x)$ exists \qquad
+      \textbf{III.} $\lim_{x \to 1} f(x) = f(1)$ \\
+    answer: II only
+    distractors:
+      - II and III only
+      - III only
+      - I, II, and III
+    solution: |
+      \textbf{I.} is false: the middle piece of the definition gives
+      $f(1) = 1$, so $f(1)$ is defined.
+
+      \textbf{II.} is true: $\lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} 2x = 2$
+      and $\lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (-x + 3) = 2$. Since the
+      one-sided limits agree, $\lim_{x \to 1} f(x) = 2$ exists.
+
+      \textbf{III.} is false: $\lim_{x \to 1} f(x) = 2$ but $f(1) = 1$, so the
+      limit does not equal the function value (there is a removable
+      discontinuity at $x = 1$).
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: -1
+    question_type: MCQ
+
+  - id: 661d29af-38e4-4110-9150-6158554e73b0
+    question: |
+      Let $f(x)$ be defined by the following piecewise definition where $a$ and
+      $b$ are constants.
+      \[
+        f(x) =
+          \begin{cases}
+            2       &  x \le -1 \\
+            ax + b  &  -1 < x < 3 \\
+            -2      &  x \ge 3 \\
+          \end{cases}
+      \]
+      Find the constants, $a$ and $b$, such that $f(x)$ is continuous on the
+      entire number line. Be sure to use the definition of continuity and
+      demonstrate proper notation.
+    solution: |
+      \begin{multicols}{2}
+
+        \begin{align*}
+          \lim_{x \to -1^-} f(x) &= \lim_{x \to -1^+} f(x) \\
+          \lim_{x \to -1^-} 2 &= \lim_{x \to -1^+} ax + b \\
+          2 &= -a + b \\
+          b &= 2 + a \\
+        \end{align*}
+
+        \begin{align*}
+          \lim_{x \to 3^-} f(x) &= \lim_{x \to 3^+} f(x) \\
+          \lim_{x \to 3^-} ax + b &= \lim_{x \to 3^+} -2 \\
+          3a + b &= -2 \\
+          b &= -2 - 3a \\
+        \end{align*}
+
+      \end{multicols}
+      \vspace{-3em}
+      \begin{gather*}
+        2 + a = -2 - 3a \\
+        4a = -4 \\
+        \boxed{a = -1} \\
+        b = 2 + (-1) \\
+        \boxed{b = 1} \\
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 1.11
+      - 1.12
+      - 1.13
+    dok: -1
+    question_type: FRQ
+    size: 4in
