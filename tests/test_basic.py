@@ -99,6 +99,46 @@ def test_generate_test_frq(tmp_path, monkeypatch):
     assert Path(result).exists()
 
 
+def test_generate_test_frq_multipart(tmp_path, monkeypatch):
+    yaml_file = tmp_path / "q.yaml"
+    yaml_file.write_text(
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: Consider the function f.\n"
+        "    question_type: FRQ\n"
+        "    parts:\n"
+        "      - question: Find the vertical asymptotes.\n"
+        "        solution: One at x = -3.\n"
+        "        size: 4in\n"
+        "      - question: Find the horizontal asymptotes.\n"
+        "        solution: At y = -1 and y = 1.\n"
+    )
+
+    def fake_run(cmd, check, stdout, stderr):
+        tex_path = Path(cmd[-1])
+        tex_content = tex_path.read_text()
+        assert "Consider the function f." in tex_content
+        assert "\\begin{parts}" in tex_content
+        assert "\\end{parts}" in tex_content
+        assert tex_content.count("\\part") == 2
+        assert "Find the vertical asymptotes." in tex_content
+        assert "\\begin{solution}[4in]" in tex_content
+        assert "Find the horizontal asymptotes." in tex_content
+        assert "\\begin{solution}[1in]" in tex_content
+        # the stem itself must not get its own solution box
+        stem_block = tex_content.split("Consider the function f.")[1].split("\\part")[0]
+        assert "\\begin{solution}" not in stem_block
+        outdir = cmd[cmd.index("-output-directory") + 1]
+        Path(outdir, "output.pdf").write_bytes(b"%PDF-1.4\n%EOF")
+        return subprocess.CompletedProcess(cmd, 0, stdout=b"", stderr=b"")
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+
+    out_pdf = tmp_path / "out.pdf"
+    result = test_generator.generate_test(str(yaml_file), str(out_pdf))
+    assert Path(result).exists()
+
+
 def test_generate_test_custom_images_dir(tmp_path, monkeypatch):
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(

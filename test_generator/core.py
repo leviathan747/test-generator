@@ -97,11 +97,17 @@ def generate_test(
     except Exception as exc:  # pragma: no cover - resource packaging issues
         raise RuntimeError("Unable to load internal TeX template resource") from exc
 
+    template_names = {
+        "MCQ": "MCQ_Template.tex",
+        "FRQ": "FRQ_Template.tex",
+        "FRQ_MULTIPART": "FRQ_Multipart_Template.tex",
+        "FRQ_PART": "FRQ_Part_Template.tex",
+    }
     question_templates = {}
-    for q_type, template_name in (("MCQ", "MCQ_Template.tex"), ("FRQ", "FRQ_Template.tex")):
+    for key, template_name in template_names.items():
         try:
             with resources.open_text("test_generator.templates", template_name) as fh:
-                question_templates[q_type] = fh.read()
+                question_templates[key] = fh.read()
         except Exception as exc:  # pragma: no cover - resource packaging issues
             raise RuntimeError("Unable to load internal question template resource") from exc
 
@@ -110,8 +116,23 @@ def generate_test(
         question_text = str(q.get("question", ""))
         solution_text = str(q.get("solution", ""))
         q_type = str(q.get("question_type", "MCQ")).upper()
-        if q_type not in question_templates:
+        if q_type not in ("MCQ", "FRQ"):
             raise RuntimeError(f"Unknown question_type: {q_type!r}")
+
+        parts = q.get("parts") or []
+        if q_type == "FRQ" and parts:
+            part_blocks = []
+            for part in parts:
+                p_block = question_templates["FRQ_PART"]
+                p_block = p_block.replace("$QUESTION", str(part.get("question", "")))
+                p_block = p_block.replace("$SOLUTION", str(part.get("solution", "")))
+                p_block = p_block.replace("$SIZE", str(part.get("size", "1in")))
+                part_blocks.append(p_block)
+            q_block = question_templates["FRQ_MULTIPART"]
+            q_block = q_block.replace("$PARTS", "\n\n".join(part_blocks))
+            q_block = q_block.replace("$QUESTION", question_text)
+            q_blocks.append(q_block)
+            continue
 
         q_block = question_templates[q_type]
         q_block = q_block.replace("$QUESTION", question_text)

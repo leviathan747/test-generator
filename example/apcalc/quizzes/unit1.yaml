@@ -53,11 +53,13 @@ questions:
 
   - id: 9e006e95-98b1-4296-91db-1f3e6ad7c320
     question: Which of the following is true about the limit $\lim_{x \to 0} \frac{x}{|x|}$?
-    answer: The limit does not exist because $f(x)$ approaches two different numbers from the left and right.
+    answer: |
+      The limit does not exist because $y = \frac{x}{|x|}$ approaches two
+      different values as $x$ approaches $0$ from the left and right.
     distractors:
       - The $\lim_{x \to 0} \frac{x}{|x|} = 0$.
       - The $\lim_{x \to 0} \frac{x}{|x|} = 1$.
-      - The limit does not exist because the graph of $f(x)$ features a vertical asymptote at $x = 0$.
+      - The limit does not exist because the graph of $y = \frac{x}{|x|}$ features a vertical asymptote at $x = 0$.
     solution: |
       For $x > 0$, $|x| = x$, so $\frac{x}{|x|} = 1$ and
       $\lim_{x \to 0^+} \frac{x}{|x|} = 1$.
@@ -93,7 +95,7 @@ questions:
 
       Since $x = 0$ is the location of the maximum of a downward facing
       parabola, as $x \to 0$, $y \to 1$ from below, so when we evaluate the
-      outer limit, we $x \to 1$ from the left.
+      outer limit, we let $x \to 1$ from the left.
     calculator_active: false
     sections:
       - 1.3
@@ -140,4 +142,164 @@ questions:
     question_type: FRQ
     assessment_type: quiz
     size: 2in
+    review: none
+
+  - id: b2fe450f-6db5-4dcf-a03e-db4223c30f8f
+    question: |
+      Let $g$ and $h$ be the functions defined by $\textstyle g(x) = \sin \left(
+      \frac{\pi}{2} x \right) + 4$ and $\textstyle h(x) = -\frac{1}{4}x^3 + \frac{3}{4}x +
+      \frac{9}{2}$. If $f$ is a function that satisfies $g(x) \le f(x) \le h(x)$
+      for $-1 < x < 2$, what is $\lim_{x \to 1} f(x)$?
+    solution: |
+      \begin{gather*}
+        \lim_{x \to 1} g(x) = \lim_{x \to 1} \sin \left(\frac{\pi}{2} x \right) + 4
+        = \sin \left(\frac{\pi}{2} (1) \right) + 4 = 1 + 4 = 5 \\
+        \lim_{x \to 1} h(x) = \lim_{x \to 1} -\frac{1}{4}x^3 + \frac{3}{4}x + \frac{9}{2}
+        = -\frac{1}{4}(1)^3 + \frac{3}{4}(1) + \frac{9}{2} = -\frac{1}{4} + \frac{3}{4} + \frac{9}{2} = 5 \\
+      \end{gather*}
+      Since $\lim_{x \to 1} g(x) = \lim_{x \to 1} h(x) = 5$, by the Squeeze Theorem, $\lim_{x \to 1} f(x) = 5$.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: -1
+    question_type: FRQ
+    assessment_type: quiz
+    size: 4in
+    review: none
+
+  - id: 41603608-f058-4be4-9c25-9032c158b64c
+    question: |
+      Which of the following statements about the function $f(x)$ are true?
+      \[
+        f(x) =
+          \begin{cases}
+            2x      &  0 < x < 1 \\
+            1       &  x = 1 \\
+            -x + 3  &  1 < x < 2 \\
+          \end{cases}
+      \]
+      \textbf{I.} $f(1)$ is undefined \qquad
+      \textbf{II.} $\lim_{x \to 1} f(x)$ exists \qquad
+      \textbf{III.} $\lim_{x \to 1} f(x) = f(1)$ \\
+    answer: II only
+    distractors:
+      - II and III only
+      - III only
+      - I, II, and III
+    solution: |
+      \textbf{I.} is false: the middle piece of the definition gives
+      $f(1) = 1$, so $f(1)$ is defined.
+
+      \textbf{II.} is true: $\lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} 2x = 2$
+      and $\lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (-x + 3) = 2$. Since the
+      one-sided limits agree, $\lim_{x \to 1} f(x) = 2$ exists.
+
+      \textbf{III.} is false: $\lim_{x \to 1} f(x) = 2$ but $f(1) = 1$, so the
+      limit does not equal the function value (there is a removable
+      discontinuity at $x = 1$).
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: -1
+    question_type: MCQ
+    assessment_type: quiz
+    review: none
+
+  - id: 661d29af-38e4-4110-9150-6158554e73b0
+    question: |
+      Let $f(x)$ be defined by the following piecewise definition where $a$ and
+      $b$ are constants.
+      \[
+        f(x) =
+          \begin{cases}
+            2       &  x \le -1 \\
+            ax + b  &  -1 < x < 3 \\
+            -2      &  x \ge 3 \\
+          \end{cases}
+      \]
+      Find the constants, $a$ and $b$, such that $f(x)$ is continuous on the
+      entire number line. Be sure to use the definition of continuity and
+      demonstrate proper notation.
+    solution: |
+      \begin{multicols}{2}
+
+        \begin{align*}
+          \lim_{x \to -1^-} f(x) &= \lim_{x \to -1^+} f(x) \\
+          \lim_{x \to -1^-} 2 &= \lim_{x \to -1^+} ax + b \\
+          2 &= -a + b \\
+          b &= 2 + a \\
+        \end{align*}
+
+        \begin{align*}
+          \lim_{x \to 3^-} f(x) &= \lim_{x \to 3^+} f(x) \\
+          \lim_{x \to 3^-} ax + b &= \lim_{x \to 3^+} -2 \\
+          3a + b &= -2 \\
+          b &= -2 - 3a \\
+        \end{align*}
+
+      \end{multicols}
+      \vspace{-3em}
+      \begin{gather*}
+        2 + a = -2 - 3a \\
+        4a = -4 \\
+        \boxed{a = -1} \\
+        b = 2 + (-1) \\
+        \boxed{b = 1} \\
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 1.11
+      - 1.12
+      - 1.13
+    dok: -1
+    question_type: FRQ
+    assessment_type: quiz
+    size: 4in
+    review: none
+
+  - id: bea8f6d3-d78b-4bbc-b4c8-48670977d5cc
+    question: Consider the function $f(x) = \frac{|x|(x - 3)}{9 - x^2}$
+    parts:
+      - question: |
+          Find the equations of all vertical asymptotes of the graph of $f(x)$. Use
+          the limit definition of vertical asymptotes to justify your responses.
+        solution: |
+          \begin{align*}
+            f(x) &= \frac{|x|(x - 3)}{9 - x^2} \\
+                &= \frac{|x|\cancel{(x - 3)}}{-(x + 3)\cancel{(x - 3)}} \\
+          \end{align*}
+          \begin{gather*}
+            \lim_{x \to -3^-} \frac{|x|}{-(x + 3)} = \frac{3}{\text{very small positive}} = \infty \\
+            \lim_{x \to -3^+} \frac{|x|}{-(x + 3)} = \frac{3}{\text{very small negative}} = -\infty \\
+          \end{gather*}
+          There is one vertical asymptote at $x = -3$
+
+          \emph{Note: only one of the limit statements from above is necessary to
+          support the conclusion}
+        sections:
+          - 1.14
+        dok: -1
+        size: 4in
+      - question: |
+          Find the equations of all horizontal asymptotes of the graph of $f(x)$. Use
+          the limit definition of horizontal asymptotes to justify your responses.
+
+          \emph{HINT: rewrite f(x) as a piecewise function}
+        solution: |
+          \begin{gather*}
+            f(x) = \begin{cases}
+              \frac{-x^2 + 3x}{-x^2 + 9} & x < 0 \\
+              \frac{x^2 - 3x}{-x^2 + 9} & x \ge 0 \\
+            \end{cases} \\
+            \lim_{x \to -\infty} f(x) = \lim_{x \to -\infty} \frac{\frac{-x^2}{x^2} + \frac{3x}{x^2}}{\frac{-x^2}{x^2} + \frac{9}{x^2}} = \lim_{x \to -\infty} \frac{-1}{-1} = 1 \\
+            \lim_{x \to \infty} f(x) = \lim_{x \to \infty} \frac{\frac{x^2}{x^2} - \frac{3x}{x^2}}{\frac{-x^2}{x^2} + \frac{9}{x^2}} = \lim_{x \to \infty} \frac{1}{-1} = -1 \\
+          \end{gather*}
+          There are horizontal asymptotes at $y = -1$ and $y = 1$
+        sections:
+          - 1.15
+        dok: -1
+        size: 4in
+    calculator_active: false
+    question_type: FRQ
+    assessment_type: quiz
     review: none
