@@ -22,15 +22,15 @@ EXAMPLE_CASES = [
     ("appc", None, "unit3a"),
     ("appc", None, "unit3b"),
     ("appc", None, "unit3c"),
-    ("apcalc", "tests", "unit1"),
-    ("apcalc", "tests", "unit2"),
-    ("apcalc", "tests", "unit3"),
-    ("apcalc", "tests", "unit4"),
-    ("apcalc", "tests", "unit5"),
-    ("apcalc", "tests", "unit6"),
-    ("apcalc", "tests", "unit7"),
-    ("apcalc", "tests", "unit8"),
-    ("apcalc", "quizzes", "unit1"),
+    ("apcalc", "test_questions", "unit1"),
+    ("apcalc", "test_questions", "unit2"),
+    ("apcalc", "test_questions", "unit3"),
+    ("apcalc", "test_questions", "unit4"),
+    ("apcalc", "test_questions", "unit5"),
+    ("apcalc", "test_questions", "unit6"),
+    ("apcalc", "test_questions", "unit7"),
+    ("apcalc", "test_questions", "unit8"),
+    ("apcalc", "quiz_questions", "unit1"),
 ]
 
 
@@ -40,9 +40,10 @@ EXAMPLE_CASES = [
     ids=[f"{c}/{s + '/' if s else ''}{u}" for c, s, u in EXAMPLE_CASES],
 )
 def test_example_builds_pdf(course, subdir, unit):
-    # apcalc keeps its YAML files in tests/ and quizzes/ subdirectories and
-    # uses a single flat figures/ directory; other courses keep YAML files at
-    # the course root and per-unit image subdirectories under images/.
+    # apcalc keeps its YAML files in test_questions/ and quiz_questions/
+    # subdirectories and uses a single flat figures/ directory; other courses
+    # keep YAML files at the course root and per-unit image subdirectories
+    # under images/.
     if course == "apcalc":
         yaml_path = EXAMPLE_DIR / course / subdir / f"{unit}.yaml"
         images_dir = EXAMPLE_DIR / course / "figures"
