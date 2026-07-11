@@ -136,6 +136,44 @@ def test_generate_test(tmp_path, monkeypatch):
     assert Path(result).exists()
 
 
+def test_generate_test_mcq_choice_measurement(tmp_path, monkeypatch):
+    yaml_file = tmp_path / "q.yaml"
+    yaml_file.write_text(
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: What is 2 + 2?\n"
+        "    answer: 4\n"
+        "    distractors:\n"
+        "      - 3\n"
+        "      - 5\n"
+        "    solution: Because 2+2 equals 4.\n"
+    )
+
+    def fake_run(cmd, check, stdout, stderr):
+        tex_path = Path(cmd[-1])
+        tex_content = tex_path.read_text()
+        # each option is measured so TeX can pick the layout
+        assert "\\measurechoice{4}" in tex_content
+        assert "\\measurechoice{3}" in tex_content
+        assert "\\measurechoice{5}" in tex_content
+        # conditional offers both the single-column and two-column layouts
+        assert "\\ifdim\\widestchoice" in tex_content
+        mcq_block = tex_content.split("\\ifdim\\widestchoice")[1].split("\\fi")[0]
+        assert mcq_block.count("\\begin{choices}") == 2
+        assert "\\begin{multicols}{2}" in mcq_block
+        assert "$MEASURE_CHOICES" not in tex_content
+        assert "$CHOICES" not in tex_content
+        outdir = cmd[cmd.index("-output-directory") + 1]
+        Path(outdir, "output.pdf").write_bytes(b"%PDF-1.4\n%EOF")
+        return subprocess.CompletedProcess(cmd, 0, stdout=b"", stderr=b"")
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+
+    out_pdf = tmp_path / "out.pdf"
+    result = test_generator.generate_test(str(yaml_file), str(out_pdf))
+    assert Path(result).exists()
+
+
 def test_generate_test_frq(tmp_path, monkeypatch):
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(

@@ -215,6 +215,10 @@ def generate_test(
             choices = [f"\\correctchoice {answer_text}"] + [f"\\choice {d}" for d in distractors]
             random.shuffle(choices)
             choices_block = "\n    ".join(choices)
+            measure_block = "\n  ".join(
+                f"\\measurechoice{{{text}}}" for text in [answer_text, *map(str, distractors)]
+            )
+            q_block = q_block.replace("$MEASURE_CHOICES", measure_block)
             q_block = q_block.replace("$CHOICES", choices_block)
         else:
             q_block = q_block.replace("$SIZE", str(q.get("size", "1in")))

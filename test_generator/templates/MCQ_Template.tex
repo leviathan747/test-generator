@@ -1,9 +1,19 @@
 \fitquestion{
   \question
   $QUESTION
-  \begin{multicols}{2}\begin{choices}
-    $CHOICES
-  \end{choices}\end{multicols}
+  \resetchoicewidth
+  $MEASURE_CHOICES
+  \ifdim\widestchoice>\dimexpr 0.5\linewidth-0.5\columnsep-2.5em\relax
+    \begin{choices}
+      $CHOICES
+    \end{choices}
+  \else
+    \begin{multicols}{2}
+      \begin{choices}
+        $CHOICES
+      \end{choices}
+    \end{multicols}
+  \fi
   \begin{solution}[1in]
     \footnotesize
     $SOLUTION

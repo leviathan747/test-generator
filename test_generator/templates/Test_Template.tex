@@ -90,6 +90,15 @@
   \usebox{\fitbox}
 }
 
+% measure the widest MCQ choice to decide one- vs two-column layout
+\newlength{\widestchoice}
+\newlength{\choicewidth}
+\newcommand{\resetchoicewidth}{\setlength{\widestchoice}{0pt}}
+\newcommand{\measurechoice}[1]{%
+  \settowidth{\choicewidth}{#1}%
+  \ifdim\choicewidth>\widestchoice\setlength{\widestchoice}{\choicewidth}\fi
+}
+
 % sign-chart placeholder (only used in solutions, which are not printed by default)
 \newcommand{\sgchart}[2]{}
 
