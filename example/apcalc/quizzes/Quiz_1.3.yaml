@@ -4,13 +4,12 @@ class_name: AP Calculus AB
 class_id: APCalc
 form_id: A
 duration: 10 min
+work_space: 0in
 questions:
   - id: c9d6e17f-3a8d-442f-8b81-3f0ff561d3e0
     question: |
-      Use the graph of $y = f(x)$ below to find $\lim_{x \to -4^+} f(x)$.
-      \fullwidth{\begin{center}
-        \input{figures/27.tex}
-      \end{center}}
+      Use the graph of $y = f(x)$ to find $\lim_{x \to -4^+} f(x)$.
+    figure: 27.tex
     answer: 0
     distractors:
       - 2
@@ -34,9 +33,8 @@ questions:
       The graph below represents the function $y = \cos
       \left(\frac{1}{x}\right)$. Evaluate $\lim_{x \to 0} \cos
       \left(\frac{1}{x}\right)$.
-      \fullwidth{\begin{center}
-        \input{figures/28.tex}
-      \end{center}}
+    figure: 28.tex
+    figure_placement: below
     answer: does not exist
     distractors:
       - 0

@@ -74,6 +74,7 @@ assessment_type: quiz
 | `assessment_type` | Optional filter: keep only questions whose `assessment_type` matches |
 | `sections` | Optional filter: a section range (see below) |
 | `questions` | Optional list of questions, in the same format as the questions file |
+| `work_space` | Default height of the FRQ answer work space (e.g. `2in`); questions and parts can override it with their own `work_space` field (default: `1in`) |
 
 Questions come from the `--questions` file, the config file's `questions`
 list, or both combined (file questions first). This allows a simple
@@ -94,6 +95,48 @@ questions:
 Output files are written to the output directory as
 `<class_id>_<name>_Form<form_id>.pdf` (student copy) and
 `<class_id>_<name>_Form<form_id>_solutions.pdf` (solution copy).
+
+#### Figures
+
+A question (or an individual part of a multipart FRQ) can float a figure
+to the right of its content with the optional `figure` field:
+
+```yaml
+questions:
+  - id: 1
+    question: Use the graph of $y = f(x)$ to find $\lim_{x \to -4^+} f(x)$.
+    figure: 27.tex
+    figure_width: 2.5in
+    answer: 4
+    distractors: [3, 5]
+```
+
+The value is a filename inside the figures directory, extension included
+(a bare `27` would be parsed as a number). `.tex` files (standalone
+TikZ documents) are included with `\input`; any other extension is
+included with `\includegraphics`. The figure keeps its natural size and
+the question text — and, for MCQs, the answer choices — flows in the
+remaining width to its left; the solution box stays full width below.
+The optional `figure_width` accepts any LaTeX length (e.g. `2.5in`,
+`0.4\linewidth`) and rescales the figure when it is too large. A figure
+too wide to leave a usable text column falls back to full width below
+the text.
+
+The optional `figure_placement` field chooses where the figure goes:
+
+- `right` (the default) — floated to the right as described above.
+- `above` — centered above the question, before the question number so
+  the number stays aligned with the question text.
+- `below` — centered below the question text; for MCQs it sits between
+  the text and the answer choices, and for FRQs between the text and
+  the solution space (for a multipart FRQ stem, before the parts).
+
+All placements keep the figure with its question across page breaks.
+
+Questions may instead embed figures as raw LaTeX in the question text
+(e.g. `\fullwidth{\begin{center}\input{figures/27.tex}\end{center}}`
+for a full-width centered figure), but don't combine that `\fullwidth`
+escape with the `figure` field on the same question.
 
 #### Section filtering
 

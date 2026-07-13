@@ -4,13 +4,12 @@ class_name: AP Calculus AB
 class_id: APCalc
 form_id: A
 duration: 10 min
+work_space: 0in
 questions:
   - id: 1245a6ac-cbf1-4aa5-8303-8d4fc8d093f9
     question: |
       Find $\lim_{x \to 0} f(1 - x^2)$
-      \fullwidth{\begin{center}
-        \input{figures/26.tex}
-      \end{center}}
+    figure: 26.tex
     answer: 3
     distractors:
       - 1
@@ -46,7 +45,7 @@ questions:
       - 1.7
     dok: -1
     question_type: FRQ
-    size: 2in
+    work_space: 2in
 
   - id: 402e0ee8-c10d-4630-8dd6-7c180f3558d3
     question: If $\lim_{x \to 0} \frac{\sin x}{x} = 1$, find the value of $\lim_{x \to 0} \frac{2 \tan x}{x}$. Show all your steps.
@@ -63,4 +62,4 @@ questions:
       - 1.7
     dok: -1
     question_type: FRQ
-    size: 2in
+    work_space: 2in

@@ -102,6 +102,47 @@ def filter_questions(questions, assessment_type=None, sections=None):
     return filtered
 
 
+def _figure_include(figure, figure_width=None):
+    """LaTeX snippet including a figure file from the figures/ build dir."""
+    name = str(figure)
+    if name.lower().endswith(".tex"):
+        include = f"\\input{{figures/{name}}}"
+        if figure_width:
+            include = f"\\resizebox{{{figure_width}}}{{!}}{{{include}}}"
+    else:
+        opts = f"[width={figure_width}]" if figure_width else ""
+        include = f"\\includegraphics{opts}{{figures/{name}}}"
+    return include
+
+
+def _apply_figure_placeholders(block, item):
+    """Fill a template's $FIG_* placeholders from the item's figure fields."""
+    above = begin = end = below = ""
+    figure = item.get("figure")
+    if figure:
+        placement = str(item.get("figure_placement", "right"))
+        include = _figure_include(figure, item.get("figure_width"))
+        if placement == "right":
+            begin = "\\begin{figright}{%s}" % include
+            end = "\\end{figright}"
+        # above/below use \centering rather than the center environment:
+        # a trivlist before \part inside the parts list breaks with
+        # "perhaps a missing \item". The leading \par keeps the figure
+        # out of the preceding text's paragraph.
+        elif placement == "above":
+            above = "\\par{\\centering %s\\par}" % include
+        elif placement == "below":
+            below = "\\par{\\centering %s\\par}" % include
+        else:
+            raise RuntimeError(f"Unknown figure_placement: {placement!r}")
+    return (
+        block.replace("$FIG_ABOVE", above)
+        .replace("$FIG_BEGIN", begin)
+        .replace("$FIG_END", end)
+        .replace("$FIG_BELOW", below)
+    )
+
+
 def generate_test(
     yaml_path: str | None,
     output_pdf: str,
@@ -115,6 +156,7 @@ def generate_test(
     assessment_type: str | None = None,
     sections: str | None = None,
     questions: list | None = None,
+    work_space: str | None = None,
 ) -> str:
     """Generate a test PDF from a YAML file.
 
@@ -136,6 +178,9 @@ def generate_test(
         sections: Optional section range filter; see :func:`filter_questions`.
         questions: Optional list of question mappings appended to those
             loaded from ``yaml_path``.
+        work_space: Default height of the answer work space for FRQ
+            questions (e.g. "2in"). Questions and parts may override it
+            with their own ``work_space`` field. Defaults to "1in".
 
     Returns:
         The path to the generated PDF (same as ``output_pdf``).
@@ -182,6 +227,8 @@ def generate_test(
         except Exception as exc:  # pragma: no cover - resource packaging issues
             raise RuntimeError("Unable to load internal question template resource") from exc
 
+    default_work_space = str(work_space) if work_space is not None else "1in"
+
     q_blocks = []
     for q in questions:
         question_text = str(q.get("question", ""))
@@ -194,20 +241,23 @@ def generate_test(
         if q_type == "FRQ" and parts:
             part_blocks = []
             for part in parts:
-                p_block = question_templates["FRQ_PART"]
+                p_block = _apply_figure_placeholders(question_templates["FRQ_PART"], part)
                 p_block = p_block.replace("$QUESTION", str(part.get("question", "")))
                 p_block = p_block.replace("$SOLUTION", str(part.get("solution", "")))
-                p_block = p_block.replace("$SIZE", str(part.get("size", "1in")))
+                p_block = p_block.replace(
+                    "$SIZE", str(part.get("work_space", q.get("work_space", default_work_space)))
+                )
                 part_blocks.append(p_block)
-            q_block = question_templates["FRQ_MULTIPART"]
+            q_block = _apply_figure_placeholders(question_templates["FRQ_MULTIPART"], q)
             q_block = q_block.replace("$PARTS", "\n\n".join(part_blocks))
             q_block = q_block.replace("$QUESTION", question_text)
             q_blocks.append(q_block)
             continue
 
-        q_block = question_templates[q_type]
+        q_block = _apply_figure_placeholders(question_templates[q_type], q)
         q_block = q_block.replace("$QUESTION", question_text)
         q_block = q_block.replace("$SOLUTION", solution_text)
+        q_block = q_block.replace("$SIZE", str(q.get("work_space", default_work_space)))
 
         if q_type == "MCQ":
             answer_text = str(q.get("answer", ""))
@@ -220,12 +270,10 @@ def generate_test(
             )
             q_block = q_block.replace("$MEASURE_CHOICES", measure_block)
             q_block = q_block.replace("$CHOICES", choices_block)
-        else:
-            q_block = q_block.replace("$SIZE", str(q.get("size", "1in")))
 
         q_blocks.append(q_block)
 
-    question_content = "\n\n".join(q_blocks)
+    question_content = "\n\\vspace{\\stretch{1}}\n".join(q_blocks) + "\\vspace{\\stretch{1}}"
     tex_content = template.replace("$QUESTION_CONTENT", question_content)
     tex_content = tex_content.replace("$TITLE", title)
     tex_content = tex_content.replace("$AUTHOR", author)

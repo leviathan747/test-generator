@@ -99,6 +99,38 @@
   \ifdim\choicewidth>\widestchoice\setlength{\widestchoice}{\choicewidth}\fi
 }
 
+% place a figure to the right of question content
+% usage: \begin{figright}{<figure content>} <question text/choices> \end{figright}
+% Falls back to full-width text with the figure centered below when the
+% figure would leave less than ~12em of text column.
+\newsavebox{\figrightbox}
+\newlength{\figrightparskip}
+\newif\iffigrightfits
+\newenvironment{figright}[1]{%
+  \sbox{\figrightbox}{#1}%
+  \ifdim\wd\figrightbox<\dimexpr\linewidth-12em\relax
+    \figrightfitstrue
+  \else
+    \figrightfitsfalse
+  \fi
+  \iffigrightfits
+    \setlength{\figrightparskip}{\parskip}%
+    \par\noindent
+    \begin{minipage}[t]{\dimexpr\linewidth-\wd\figrightbox-1em\relax}%
+      \setlength{\parskip}{\figrightparskip}%
+  \fi
+}{%
+  \iffigrightfits
+    \end{minipage}\hfill
+    \begin{minipage}[t]{\wd\figrightbox}%
+      \vspace{0pt}%
+      \usebox{\figrightbox}%
+    \end{minipage}\par
+  \else
+    \par\begin{center}\usebox{\figrightbox}\end{center}%
+  \fi
+}
+
 % sign-chart placeholder (only used in solutions, which are not printed by default)
 \newcommand{\sgchart}[2]{}
 

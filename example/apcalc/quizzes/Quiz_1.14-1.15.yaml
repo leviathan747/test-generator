@@ -27,7 +27,7 @@ questions:
         sections:
           - 1.14
         dok: -1
-        size: 3in
+        work_space: 3in
       - question: |
           Find the equations of all horizontal asymptotes of the graph of $f(x)$. Use
           the limit definition of horizontal asymptotes to justify your responses.
@@ -46,6 +46,6 @@ questions:
         sections:
           - 1.15
         dok: -1
-        size: 3in
+        work_space: 3in
     calculator_active: false
     question_type: FRQ

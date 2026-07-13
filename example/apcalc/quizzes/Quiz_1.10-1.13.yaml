@@ -40,6 +40,7 @@ questions:
       - 1.11
     dok: -1
     question_type: MCQ
+    work_space: 0.5in
 
   - id: 661d29af-38e4-4110-9150-6158554e73b0
     question: |
@@ -89,4 +90,4 @@ questions:
       - 1.13
     dok: -1
     question_type: FRQ
-    size: 4in
+    work_space: 3in

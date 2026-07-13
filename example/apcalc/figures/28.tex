@@ -17,9 +17,9 @@
   % cos(1/x) is even, so mirror for x < 0.
   \begin{scope}
     \clip (-1.1,-1.05) rectangle (1.1,1.05);
-    \draw[blue, line width=0.4pt, samples=2400, domain=1:280, variable=\t, smooth]
+    \draw[blue, line width=0.4pt, samples=1200, domain=1:280, variable=\t]
       plot ({1/\t}, {cos(\t r)});
-    \draw[blue, line width=0.4pt, samples=2400, domain=1:280, variable=\t, smooth]
+    \draw[blue, line width=0.4pt, samples=1200, domain=1:280, variable=\t]
       plot ({-1/\t}, {cos(\t r)});
   \end{scope}
   % y-axis ticks and labels (drawn after the curve so the white

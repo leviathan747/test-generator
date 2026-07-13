@@ -182,7 +182,7 @@ def test_generate_test_frq(tmp_path, monkeypatch):
         "    question: Evaluate the limit.\n"
         "    solution: The limit is 2.\n"
         "    question_type: FRQ\n"
-        "    size: 2in\n"
+        "    work_space: 2in\n"
         "  - id: 2\n"
         "    question: Show all your steps.\n"
         "    solution: Steps shown.\n"
@@ -217,6 +217,53 @@ def test_generate_test_frq(tmp_path, monkeypatch):
     assert Path(result).exists()
 
 
+def test_generate_test_work_space_default(tmp_path, monkeypatch):
+    yaml_file = tmp_path / "q.yaml"
+    yaml_file.write_text(
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: Evaluate the limit.\n"
+        "    solution: The limit is 2.\n"
+        "    question_type: FRQ\n"
+        "  - id: 2\n"
+        "    question: Show all your steps.\n"
+        "    solution: Steps shown.\n"
+        "    question_type: FRQ\n"
+        "    work_space: 3in\n"
+        "  - id: 3\n"
+        "    question: Consider the function f.\n"
+        "    question_type: FRQ\n"
+        "    work_space: 4in\n"
+        "    parts:\n"
+        "      - question: Find the vertical asymptotes.\n"
+        "        solution: One at x = -3.\n"
+        "      - question: Find the horizontal asymptotes.\n"
+        "        solution: At y = -1 and y = 1.\n"
+        "        work_space: 5in\n"
+    )
+
+    def fake_run(cmd, check, stdout, stderr):
+        tex_path = Path(cmd[-1])
+        tex_content = tex_path.read_text()
+        # config-level default applies when the question doesn't set one
+        assert "\\begin{solution}[2in]" in tex_content
+        # question-level override beats the config default
+        assert "\\begin{solution}[3in]" in tex_content
+        # parts inherit the question-level value unless they override it
+        assert "\\begin{solution}[4in]" in tex_content
+        assert "\\begin{solution}[5in]" in tex_content
+        assert "\\begin{solution}[1in]" not in tex_content
+        outdir = cmd[cmd.index("-output-directory") + 1]
+        Path(outdir, "output.pdf").write_bytes(b"%PDF-1.4\n%EOF")
+        return subprocess.CompletedProcess(cmd, 0, stdout=b"", stderr=b"")
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+
+    out_pdf = tmp_path / "out.pdf"
+    result = test_generator.generate_test(str(yaml_file), str(out_pdf), work_space="2in")
+    assert Path(result).exists()
+
+
 def test_generate_test_frq_multipart(tmp_path, monkeypatch):
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(
@@ -227,7 +274,7 @@ def test_generate_test_frq_multipart(tmp_path, monkeypatch):
         "    parts:\n"
         "      - question: Find the vertical asymptotes.\n"
         "        solution: One at x = -3.\n"
-        "        size: 4in\n"
+        "        work_space: 4in\n"
         "      - question: Find the horizontal asymptotes.\n"
         "        solution: At y = -1 and y = 1.\n"
     )
@@ -255,6 +302,139 @@ def test_generate_test_frq_multipart(tmp_path, monkeypatch):
     out_pdf = tmp_path / "out.pdf"
     result = test_generator.generate_test(str(yaml_file), str(out_pdf))
     assert Path(result).exists()
+
+
+def test_generate_test_figure_placement(tmp_path, monkeypatch):
+    yaml_file = tmp_path / "q.yaml"
+    yaml_file.write_text(
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: Figured MCQ stem.\n"
+        "    answer: 4\n"
+        "    distractors: [3, 5]\n"
+        "    solution: Because.\n"
+        "    figure: 27.tex\n"
+        "    figure_width: 2.5in\n"
+        "  - id: 2\n"
+        "    question: Figured FRQ stem.\n"
+        "    solution: Solved.\n"
+        "    question_type: FRQ\n"
+        "    figure: graph.png\n"
+        "  - id: 3\n"
+        "    question: Figured multipart stem.\n"
+        "    question_type: FRQ\n"
+        "    figure: stem.tex\n"
+        "    parts:\n"
+        "      - question: Figured part.\n"
+        "        solution: Part solved.\n"
+        "        figure: part.png\n"
+        "        figure_width: 2in\n"
+        "      - question: Plain part.\n"
+        "        solution: Also solved.\n"
+        "  - id: 4\n"
+        "    question: Plain MCQ stem.\n"
+        "    answer: 6\n"
+        "    distractors: [5, 7]\n"
+        "    solution: Because.\n"
+    )
+
+    tex_contents = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    out_pdf = tmp_path / "out.pdf"
+    result = test_generator.generate_test(str(yaml_file), str(out_pdf))
+    assert Path(result).exists()
+
+    tex = tex_contents[0]
+    # .tex figures are \input, images \includegraphics; figure_width rescales
+    assert "\\begin{figright}{\\resizebox{2.5in}{!}{\\input{figures/27.tex}}}" in tex
+    assert "\\begin{figright}{\\includegraphics{figures/graph.png}}" in tex
+    assert "\\begin{figright}{\\input{figures/stem.tex}}" in tex
+    assert "\\begin{figright}{\\includegraphics[width=2in]{figures/part.png}}" in tex
+    body = tex.split("\\begin{questions}")[1]
+    assert body.count("\\begin{figright}") == 4
+    assert body.count("\\end{figright}") == 4
+    assert "$FIG_" not in tex
+    # MCQ: the figure column spans the choices but not the solution box
+    mcq_block = tex.split("Figured MCQ stem.")[1].split("\\fitquestion")[0]
+    assert mcq_block.index("\\begin{choices}") < mcq_block.index("\\end{figright}")
+    assert mcq_block.index("\\end{figright}") < mcq_block.index("\\begin{solution}")
+    # multipart: the stem's figure column closes before the parts begin
+    stem_block = tex.split("Figured multipart stem.")[1].split("\\part")[0]
+    assert stem_block.index("\\end{figright}") < stem_block.index("\\begin{parts}")
+    # a question without a figure gets no figright environment
+    plain_block = tex.split("Plain MCQ stem.")[1].split("\\end{questions}")[0]
+    assert "figright" not in plain_block
+
+
+def test_generate_test_figure_placement_above_below(tmp_path, monkeypatch):
+    yaml_file = tmp_path / "q.yaml"
+    yaml_file.write_text(
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: Above MCQ stem.\n"
+        "    answer: 4\n"
+        "    distractors: [3, 5]\n"
+        "    solution: Because.\n"
+        "    figure: 27.tex\n"
+        "    figure_placement: above\n"
+        "  - id: 2\n"
+        "    question: Below MCQ stem.\n"
+        "    answer: 6\n"
+        "    distractors: [5, 7]\n"
+        "    solution: Because.\n"
+        "    figure: graph.png\n"
+        "    figure_width: 2in\n"
+        "    figure_placement: below\n"
+        "  - id: 3\n"
+        "    question: Below FRQ stem.\n"
+        "    solution: Solved.\n"
+        "    question_type: FRQ\n"
+        "    figure: 28.tex\n"
+        "    figure_placement: below\n"
+    )
+
+    tex_contents = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    out_pdf = tmp_path / "out.pdf"
+    result = test_generator.generate_test(str(yaml_file), str(out_pdf))
+    assert Path(result).exists()
+
+    tex = tex_contents[0]
+    assert "figright" not in tex.split("\\begin{questions}")[1]
+    assert "$FIG_" not in tex
+    # above: the centered figure precedes \question so the number stays
+    # with the stem
+    above_block = tex.split("Above MCQ stem.")[0].rsplit("\\fitquestion", 1)[1]
+    assert "{\\centering \\input{figures/27.tex}\\par}" in above_block
+    assert above_block.index("\\centering") < above_block.index("\\question")
+    # below (MCQ): the centered figure sits between the stem and the choices
+    below_block = tex.split("Below MCQ stem.")[1].split("\\fitquestion")[0]
+    fig = "{\\centering \\includegraphics[width=2in]{figures/graph.png}\\par}"
+    assert below_block.index(fig) < below_block.index("\\begin{choices}")
+    # below (FRQ): the centered figure sits between the stem and the solution
+    frq_block = tex.split("Below FRQ stem.")[1].split("\\end{questions}")[0]
+    fig = "{\\centering \\input{figures/28.tex}\\par}"
+    assert frq_block.index(fig) < frq_block.index("\\begin{solution}")
+
+
+def test_generate_test_invalid_figure_placement(tmp_path, monkeypatch):
+    yaml_file = tmp_path / "q.yaml"
+    yaml_file.write_text(
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: Bad placement.\n"
+        "    answer: 4\n"
+        "    distractors: [3, 5]\n"
+        "    figure: 27.tex\n"
+        "    figure_placement: sideways\n"
+    )
+
+    _fake_pdflatex(monkeypatch, [])
+
+    with pytest.raises(RuntimeError, match="figure_placement"):
+        test_generator.generate_test(str(yaml_file), str(tmp_path / "out.pdf"))
 
 
 def test_generate_test_custom_figures_dir(tmp_path, monkeypatch):

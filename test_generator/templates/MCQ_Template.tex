@@ -1,6 +1,9 @@
 \fitquestion{
+  $FIG_ABOVE
   \question
+  $FIG_BEGIN
   $QUESTION
+  $FIG_BELOW
   \resetchoicewidth
   $MEASURE_CHOICES
   \ifdim\widestchoice>\dimexpr 0.5\linewidth-0.5\columnsep-2.5em\relax
@@ -14,7 +17,8 @@
       \end{choices}
     \end{multicols}
   \fi
-  \begin{solution}[1in]
+  $FIG_END
+  \begin{solution}[$SIZE]
     \footnotesize
     $SOLUTION
     \vspace{0.5in}

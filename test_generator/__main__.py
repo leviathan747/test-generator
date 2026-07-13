@@ -96,6 +96,7 @@ def _run_once(args):
                     assessment_type=config.get("assessment_type"),
                     sections=config.get("sections"),
                     questions=config.get("questions"),
+                    work_space=config.get("work_space"),
                 )
                 print(out)
         except Exception as e:
