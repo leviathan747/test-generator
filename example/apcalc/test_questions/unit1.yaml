@@ -1,5 +1,4 @@
 class_id: APCalc
-form_id: A
 questions:
   - id: 3be46b22-c917-426f-a12c-66d274b43e6b
     legacy_ids:

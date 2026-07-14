@@ -4,6 +4,8 @@ Output PDFs are written to tests/output_pdfs/ (git-ignored) so they can
 be inspected after the test run.
 """
 
+import re
+
 import pytest
 from pathlib import Path
 import test_generator
@@ -66,6 +68,15 @@ def test_example_builds_pdf(course, subdir, unit):
     assert Path(result).stat().st_size > 0, f"PDF is empty: {result}"
 
 
+def _new_outputs(out_dir, prefix, suffix, before):
+    """Files matching <prefix>_<8 hex><suffix> created since ``before``."""
+    pattern = re.compile(rf"{re.escape(prefix)}_[0-9a-f]{{8}}{re.escape(suffix)}")
+    return sorted(
+        p for p in out_dir.iterdir()
+        if pattern.fullmatch(p.name) and p not in before
+    )
+
+
 def test_quiz_configs_build_pdfs():
     """End-to-end CLI run driven by multiple quiz config files in sequence."""
     from test_generator.__main__ import main
@@ -74,18 +85,40 @@ def test_quiz_configs_build_pdfs():
     configs = [quizzes_dir / "Quiz_1.3.yaml", quizzes_dir / "Quiz_1.8.yaml"]
     figures_dir = EXAMPLE_DIR / "apcalc" / "figures"
     out_dir = OUTPUT_DIR / "apcalc" / "quizzes"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    before = set(out_dir.iterdir())
 
     main([str(c) for c in configs] + [
         "--out-dir", str(out_dir),
         "--figures-dir", str(figures_dir),
     ])
 
-    for name in (
-        "APCalc_Quiz_1.3_FormA.pdf",
-        "APCalc_Quiz_1.3_FormA_solutions.pdf",
-        "APCalc_Quiz_1.8_FormA.pdf",
-        "APCalc_Quiz_1.8_FormA_solutions.pdf",
-    ):
-        pdf = out_dir / name
-        assert pdf.exists(), f"PDF was not created: {pdf}"
-        assert pdf.stat().st_size > 0, f"PDF is empty: {pdf}"
+    for prefix in ("APCalc_Quiz_1.3", "APCalc_Quiz_1.8"):
+        for suffix in (".pdf", "_solutions.pdf"):
+            new = _new_outputs(out_dir, prefix, suffix, before)
+            assert len(new) == 1, f"expected one new {prefix}*{suffix}, got {new}"
+            assert new[0].stat().st_size > 0, f"PDF is empty: {new[0]}"
+        manifests = _new_outputs(out_dir, prefix, ".manifest.yaml", before)
+        assert len(manifests) == 1, f"expected one manifest for {prefix}"
+
+
+def test_from_manifest_recreates_pdf(tmp_path):
+    """Deleting a PDF and rerunning from its manifest recreates it."""
+    from test_generator.__main__ import main
+
+    config = EXAMPLE_DIR / "apcalc" / "quizzes" / "Quiz_1.3.yaml"
+    figures_dir = EXAMPLE_DIR / "apcalc" / "figures"
+
+    main([str(config), "--out-dir", str(tmp_path), "--figures-dir", str(figures_dir)])
+
+    manifest = next(tmp_path.glob("*.manifest.yaml"))
+    student_pdf = next(
+        p for p in tmp_path.glob("APCalc_Quiz_1.3_*.pdf")
+        if not p.name.endswith("_solutions.pdf")
+    )
+    student_pdf.unlink()
+
+    main(["--from-manifest", str(manifest), "--out-dir", str(tmp_path), "--student-only"])
+
+    assert student_pdf.exists(), f"PDF was not recreated: {student_pdf}"
+    assert student_pdf.stat().st_size > 0, f"PDF is empty: {student_pdf}"

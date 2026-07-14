@@ -5,19 +5,36 @@ Usage: python -m test_generator config.yaml [config2.yaml ...] \
            [--figures-dir <dir>] [--out-dir <dir>] \
            [--student-only | --solution-only]
 
-Each config file describes an assessment (title, author, class name, form
-ID, duration, and question filters); the question bank comes from the
+       python -m test_generator --from-manifest <manifest.yaml> \
+           [--out-dir <dir>] [--student-only | --solution-only]
+
+Each config file describes an assessment (title, author, class name,
+duration, and question filters); the question bank comes from the
 optional questions YAML file, a `questions` list in the config file
-itself, or both combined.
+itself, or both combined. Each run mints a fresh hex form ID and writes
+a manifest alongside the PDFs; `--from-manifest` replays a manifest to
+exactly recreate that version.
 """
 import argparse
+import hashlib
+import secrets
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
 
 import yaml
 
-from .core import _quote_backslash_scalar_lines, generate_test
+from ._version import __version__
+from .core import (
+    _quote_backslash_scalar_lines,
+    filter_questions,
+    generate_test,
+    load_question_pool,
+    make_choice_orders,
+)
+
+MANIFEST_VERSION = 1
 
 
 def _load_config(config_path):
@@ -32,9 +49,14 @@ def _load_config(config_path):
     if not config.get("name"):
         config["name"] = config_file.stem
 
-    missing = [key for key in ("class_id", "form_id") if not config.get(key)]
-    if missing:
-        raise RuntimeError(f"Config is missing required field(s): {', '.join(missing)}")
+    if "form_id" in config:
+        raise RuntimeError(
+            f"Config field 'form_id' has been removed (form IDs are now "
+            f"generated automatically) — delete it from {config_path}"
+        )
+
+    if not config.get("class_id"):
+        raise RuntimeError("Config is missing required field(s): class_id")
 
     if config.get("questions") is not None and not isinstance(config["questions"], list):
         raise RuntimeError(f"Config field 'questions' must be a list: {config_path}")
@@ -42,9 +64,20 @@ def _load_config(config_path):
     return config
 
 
-def _output_paths(config, out_dir, student_only=False, solution_only=False):
+def _new_form_id():
+    return secrets.token_hex(4)
+
+
+def _display_form_id(form_id):
+    """Group an 8-hex form ID for the page footer (draft passes through)."""
+    if len(form_id) == 8:
+        return f"{form_id[:4]}-{form_id[4:]}"
+    return form_id
+
+
+def _output_paths(config, form_id, out_dir, student_only=False, solution_only=False):
     """Return the (path, solution) pairs to generate for this config."""
-    base = f"{config['class_id']}_{config['name']}_Form{config['form_id']}"
+    base = f"{config['class_id']}_{config['name']}_{form_id}"
     out = Path(out_dir)
     paths = []
     if not solution_only:
@@ -52,6 +85,194 @@ def _output_paths(config, out_dir, student_only=False, solution_only=False):
     if not student_only:
         paths.append((out / f"{base}_solutions.pdf", True))
     return paths
+
+
+def _manifest_path(config, form_id, out_dir):
+    return Path(out_dir) / f"{config['class_id']}_{config['name']}_{form_id}.manifest.yaml"
+
+
+def _validate_question_ids(questions):
+    """Every included question must have a unique `id` for manifest lookup."""
+    missing = [i + 1 for i, q in enumerate(questions) if not q.get("id")]
+    if missing:
+        raise RuntimeError(
+            f"Question(s) missing an 'id' (position {', '.join(map(str, missing))} "
+            f"of the included questions); every question needs a unique id"
+        )
+    seen = set()
+    duplicates = []
+    for q in questions:
+        qid = q["id"]
+        if qid in seen:
+            duplicates.append(qid)
+        seen.add(qid)
+    if duplicates:
+        raise RuntimeError(
+            f"Duplicate question ID(s): {', '.join(map(str, duplicates))}"
+        )
+
+
+def _md5(path):
+    return hashlib.md5(Path(path).read_bytes()).hexdigest()
+
+
+def _manifest_files(config_path, questions_path, figures_dir, questions):
+    """Input files to record: config, question bank, and referenced figures."""
+    paths = [str(config_path)]
+    if questions_path:
+        paths.append(str(questions_path))
+    for q in questions:
+        items = [q] + list(q.get("parts") or [])
+        for item in items:
+            figure = item.get("figure")
+            if figure:
+                paths.append(str(Path(figures_dir) / str(figure)))
+    seen = set()
+    unique = []
+    for p in paths:
+        if p not in seen:
+            seen.add(p)
+            unique.append(p)
+    return unique
+
+
+def _write_manifest(
+    manifest_path, form_id, config_path, questions_path, figures_dir,
+    questions, choice_orders,
+):
+    file_paths = _manifest_files(config_path, questions_path, figures_dir, questions)
+    question_entries = []
+    for q in questions:
+        entry = {"id": q["id"]}
+        if q["id"] in choice_orders:
+            entry["choice_order"] = choice_orders[q["id"]]
+        question_entries.append(entry)
+    manifest = {
+        "manifest_version": MANIFEST_VERSION,
+        "form_id": form_id,
+        "generated": datetime.now().astimezone().isoformat(),
+        "generator_version": __version__,
+        "config": str(config_path),
+        "questions_file": str(questions_path) if questions_path else None,
+        "figures_dir": str(figures_dir) if figures_dir else None,
+        "files": [{"path": p, "md5": _md5(p)} for p in file_paths],
+        "questions": question_entries,
+    }
+    manifest_path = Path(manifest_path)
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    manifest_path.write_text(yaml.safe_dump(manifest, sort_keys=False))
+    return str(manifest_path)
+
+
+def _generate_copies(args, config, form_id, questions_path, figures_dir,
+                     question_order, choice_orders):
+    for output_pdf, solution in _output_paths(
+        config, form_id, args.out_dir, args.student_only, args.solution_only
+    ):
+        out = generate_test(
+            questions_path,
+            str(output_pdf),
+            title=str(config.get("title") or ""),
+            author=str(config.get("author") or ""),
+            class_name=str(config.get("class_name") or ""),
+            form_id=_display_form_id(form_id),
+            duration=str(config.get("duration") or ""),
+            figures_dir=figures_dir,
+            solution=solution,
+            questions=config.get("questions"),
+            work_space=config.get("work_space"),
+            question_order=question_order,
+            choice_orders=choice_orders,
+        )
+        print(out)
+
+
+def _run_once(args, draft=False):
+    ok = True
+    figures_dir = args.figures_dir if args.figures_dir is not None else "."
+    for config_path in args.config_yaml:
+        try:
+            config = _load_config(config_path)
+            pool = load_question_pool(args.questions, config.get("questions"))
+            included = filter_questions(
+                pool,
+                assessment_type=config.get("assessment_type"),
+                sections=config.get("sections"),
+            )
+            _validate_question_ids(included)
+            form_id = "draft" if draft else _new_form_id()
+            question_order = [q["id"] for q in included]
+            choice_orders = make_choice_orders(included)
+            _generate_copies(
+                args, config, form_id, args.questions, figures_dir,
+                question_order, choice_orders,
+            )
+            if not draft:
+                print(_write_manifest(
+                    _manifest_path(config, form_id, args.out_dir),
+                    form_id, config_path, args.questions, figures_dir,
+                    included, choice_orders,
+                ))
+        except Exception as e:
+            print(f"Error: {e}", file=sys.stderr)
+            ok = False
+    return ok
+
+
+def _confirm(prompt):
+    try:
+        answer = input(prompt)
+    except EOFError:
+        return False
+    return answer.strip().lower() in ("y", "yes")
+
+
+def _run_from_manifest(args):
+    manifest_file = Path(args.from_manifest)
+    if not manifest_file.exists():
+        raise FileNotFoundError(args.from_manifest)
+    manifest = yaml.safe_load(manifest_file.read_text()) or {}
+    if manifest.get("manifest_version") != MANIFEST_VERSION:
+        raise RuntimeError(
+            f"Unsupported manifest_version {manifest.get('manifest_version')!r} "
+            f"(this generator supports version {MANIFEST_VERSION}); the manifest "
+            f"may have been written by a newer generator"
+        )
+    if manifest.get("generator_version") != __version__:
+        print(
+            f"Warning: manifest was written by generator "
+            f"{manifest.get('generator_version')}, running {__version__}",
+            file=sys.stderr,
+        )
+
+    problems = []
+    for entry in manifest.get("files") or []:
+        path = Path(entry["path"])
+        if not path.exists():
+            problems.append(f"missing file: {path}")
+        elif _md5(path) != entry["md5"]:
+            problems.append(f"MD5 mismatch: {path}")
+    if problems:
+        print("Manifest verification failed:", file=sys.stderr)
+        for problem in problems:
+            print(f"  {problem}", file=sys.stderr)
+        if not _confirm("Continue anyway? [y/N] "):
+            print("Aborted.", file=sys.stderr)
+            return False
+
+    config = _load_config(manifest["config"])
+    questions_path = manifest.get("questions_file")
+    question_order = [entry["id"] for entry in manifest.get("questions") or []]
+    choice_orders = {
+        entry["id"]: entry["choice_order"]
+        for entry in manifest.get("questions") or []
+        if "choice_order" in entry
+    }
+    _generate_copies(
+        args, config, manifest["form_id"], questions_path,
+        manifest.get("figures_dir"), question_order, choice_orders,
+    )
+    return True
 
 
 def _get_watched_mtimes(config_paths, questions_path, figures_dir):
@@ -75,41 +296,12 @@ def _get_watched_mtimes(config_paths, questions_path, figures_dir):
     return mtimes
 
 
-def _run_once(args):
-    ok = True
-    for config_path in args.config_yaml:
-        try:
-            config = _load_config(config_path)
-            for output_pdf, solution in _output_paths(
-                config, args.out_dir, args.student_only, args.solution_only
-            ):
-                out = generate_test(
-                    args.questions,
-                    str(output_pdf),
-                    title=str(config.get("title") or ""),
-                    author=str(config.get("author") or ""),
-                    class_name=str(config.get("class_name") or ""),
-                    form_id=str(config.get("form_id") or ""),
-                    duration=str(config.get("duration") or ""),
-                    figures_dir=args.figures_dir,
-                    solution=solution,
-                    assessment_type=config.get("assessment_type"),
-                    sections=config.get("sections"),
-                    questions=config.get("questions"),
-                    work_space=config.get("work_space"),
-                )
-                print(out)
-        except Exception as e:
-            print(f"Error: {e}", file=sys.stderr)
-            ok = False
-    return ok
-
-
 def _watch_mode(args):
     configs = ", ".join(args.config_yaml)
     watched = configs if args.questions is None else f"{configs} and {args.questions}"
     print(f"Watching {watched} for changes. Press Ctrl+C to stop.")
-    _run_once(args)
+    print("Draft mode: outputs use 'draft' in place of a form ID and no manifest is written.")
+    _run_once(args, draft=True)
     last_mtimes = _get_watched_mtimes(args.config_yaml, args.questions, args.figures_dir)
     try:
         while True:
@@ -117,7 +309,7 @@ def _watch_mode(args):
             current_mtimes = _get_watched_mtimes(args.config_yaml, args.questions, args.figures_dir)
             if current_mtimes != last_mtimes:
                 print("Change detected, regenerating...")
-                _run_once(args)
+                _run_once(args, draft=True)
                 last_mtimes = current_mtimes
     except KeyboardInterrupt:
         print("\nWatch mode stopped.")
@@ -126,17 +318,36 @@ def _watch_mode(args):
 def main(argv=None):
     argv = argv or sys.argv[1:]
     p = argparse.ArgumentParser(prog="python -m test_generator")
-    p.add_argument("config_yaml", nargs="+", help="Path(s) to YAML config file(s) describing the assessment(s); each is generated in sequence")
+    p.add_argument("config_yaml", nargs="*", help="Path(s) to YAML config file(s) describing the assessment(s); each is generated in sequence")
+    p.add_argument("--from-manifest", dest="from_manifest", metavar="PATH", help="Recreate an existing version from its manifest file (instead of config files)")
     p.add_argument("--questions", help="Path to YAML file containing questions (combined with any 'questions' list in the config file)")
     p.add_argument("--out-dir", dest="out_dir", default=".", help="Directory where generated PDFs are written (default: current directory)")
-    p.add_argument("--figures-dir", dest="figures_dir", default=".", help="Directory containing figures (default: a figures/ subdirectory next to the questions file)")
-    p.add_argument("--watch", action="store_true", help="Watch for changes and regenerate automatically")
+    p.add_argument("--figures-dir", dest="figures_dir", default=None, help="Directory containing figures (default: current directory)")
+    p.add_argument("--watch", action="store_true", help="Watch for changes and regenerate drafts automatically (no manifest is written)")
     only = p.add_mutually_exclusive_group()
     only.add_argument("--student-only", action="store_true", help="Generate only the student copy")
     only.add_argument("--solution-only", action="store_true", help="Generate only the solution copy")
     args = p.parse_args(argv)
 
-    if args.watch:
+    if args.from_manifest:
+        if args.config_yaml:
+            p.error("config files cannot be combined with --from-manifest")
+        if args.watch:
+            p.error("--watch cannot be used with --from-manifest")
+        if args.questions:
+            p.error("--questions cannot be used with --from-manifest (the manifest supplies it)")
+        if args.figures_dir is not None:
+            p.error("--figures-dir cannot be used with --from-manifest (the manifest supplies it)")
+        try:
+            ok = _run_from_manifest(args)
+        except Exception as e:
+            print(f"Error: {e}", file=sys.stderr)
+            ok = False
+        if not ok:
+            sys.exit(1)
+    elif not args.config_yaml:
+        p.error("provide config file(s) or --from-manifest")
+    elif args.watch:
         _watch_mode(args)
     elif not _run_once(args):
         sys.exit(1)

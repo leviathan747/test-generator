@@ -22,7 +22,7 @@ Install from source:
 ```bash
 python -m pip install --upgrade build
 python -m build
-python -m pip install dist/test_generator-0.1.0-py3-none-any.whl
+python -m pip install dist/test_generator-0.2.0-py3-none-any.whl
 ```
 
 ## Usage
@@ -42,9 +42,10 @@ python -m test_generator config.yaml [config2.yaml ...] \
 | Flag | Description |
 |------|-------------|
 | `--questions` | YAML file containing the question bank (optional; combined with any `questions` list in the config file) |
+| `--from-manifest` | Recreate an existing version from its manifest file (instead of config files; see below) |
 | `--out-dir` | Directory where generated PDFs are written (default: current directory, created if missing) |
-| `--figures-dir` | Directory containing figures copied into the PDF build environment (default: a `figures/` subdirectory next to the questions file) |
-| `--watch` | Watch the config file(s), questions file, and figures directory for changes and regenerate automatically |
+| `--figures-dir` | Directory containing figures copied into the PDF build environment (default: current directory) |
+| `--watch` | Watch the config file(s), questions file, and figures directory for changes and regenerate drafts automatically (outputs use `draft` in place of a form ID; no manifest is written) |
 | `--student-only` | Generate only the student copy (default: both copies) |
 | `--solution-only` | Generate only the solution copy (default: both copies) |
 
@@ -56,7 +57,6 @@ title: "Quiz 1.3: Estimating Limit Values From Graphs"
 author: Levi Starrett
 class_name: AP Calculus AB
 class_id: APCalc
-form_id: A
 duration: 10 min
 sections: 1.3 - 1.7
 assessment_type: quiz
@@ -66,7 +66,6 @@ assessment_type: quiz
 |-----|-------------|
 | `name` | Assessment name, used in the output filename (defaults to the config file's basename) |
 | `class_id` | Class identifier, used in the output filename (required) |
-| `form_id` | Form identifier (e.g. `A`, `B`), used in the output filename and on the test (required) |
 | `title` | Test title |
 | `author` | Author name |
 | `class_name` | Class name |
@@ -83,7 +82,6 @@ assessment to be generated from a single self-contained file:
 ```yaml
 name: Quiz_1.3
 class_id: APCalc
-form_id: A
 questions:
   - id: 1
     question: What is $2 + 2$?
@@ -92,9 +90,26 @@ questions:
     solution: Because $2+2=4$.
 ```
 
-Output files are written to the output directory as
-`<class_id>_<name>_Form<form_id>.pdf` (student copy) and
-`<class_id>_<name>_Form<form_id>_solutions.pdf` (solution copy).
+#### Form IDs and manifests
+
+Each run mints a fresh form ID — 8 random hex characters — that is printed
+(grouped, e.g. `3f9a-1c2e`) in the bottom-left page footer and used
+(ungrouped) in the output filenames. Output files are written to the output
+directory as `<class_id>_<name>_<form_id>.pdf` (student copy),
+`<class_id>_<name>_<form_id>_solutions.pdf` (solution copy), and
+`<class_id>_<name>_<form_id>.manifest.yaml` (the version manifest). Re-runs
+mint a new ID, so generated versions accumulate side by side.
+
+The manifest records everything needed to recreate that exact version: the
+input files (config, question bank, and referenced figures) with their MD5
+digests, the question IDs in presentation order, and the order in which each
+MCQ's answer choices were shown. Rerunning with
+`--from-manifest <manifest.yaml>` (from the same working directory)
+regenerates the same printed pages — same questions, order, choices, and
+form ID — recreating deleted PDFs or overwriting existing ones. If any input
+file is missing or has changed since generation, the tool reports the
+mismatches and asks for confirmation before continuing. No new manifest is
+written on reproduce; the existing one remains the record for that form ID.
 
 #### Figures
 
@@ -176,7 +191,7 @@ test_generator.generate_test(
     title="Unit 1: Limits and Continuity",
     author="Levi Starrett",
     class_name="AP Calculus AB",
-    form_id="A",
+    form_id="3f9a-1c2e",           # printed in the page footer
     duration="30 min",
     figures_dir="path/to/figures",  # optional; defaults to figures/ next to the YAML file
     solution=False,               # True renders the answer-key copy

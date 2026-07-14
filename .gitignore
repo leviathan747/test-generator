@@ -13,3 +13,4 @@ tests/output_pdfs/
 *.log
 *.aux
 .claude/
+*.manifest.yaml

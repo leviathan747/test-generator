@@ -1,9 +1,12 @@
+import re
 import sys
+import time
 import types
 from pathlib import Path
 import subprocess
 
 import pytest
+import yaml as real_yaml
 
 import test_generator
 from test_generator.__main__ import main
@@ -514,13 +517,27 @@ def _write_cli_inputs(tmp_path, config_extra=""):
         "author: Levi\n"
         "class_name: AP Calculus AB\n"
         "class_id: APCalc\n"
-        "form_id: A\n"
         "duration: 10 min\n"
         + config_extra
     )
     figures_dir = tmp_path / "figures"
     figures_dir.mkdir()
     return config_file, questions_file, figures_dir
+
+
+def _outputs(out_dir, prefix, suffix, form_id=r"[0-9a-f]{8}"):
+    """Output files matching <prefix>_<form_id><suffix> in out_dir."""
+    pattern = re.compile(rf"{re.escape(prefix)}_{form_id}{re.escape(suffix)}")
+    return sorted(
+        p for p in Path(out_dir).iterdir() if pattern.fullmatch(p.name)
+    )
+
+
+def _the_output(out_dir, prefix, suffix, form_id=r"[0-9a-f]{8}"):
+    """The single output file matching the pattern."""
+    matches = _outputs(out_dir, prefix, suffix, form_id)
+    assert len(matches) == 1, f"expected one {suffix} match, got {matches}"
+    return matches[0]
 
 
 def _fake_pdflatex(monkeypatch, tex_contents):
@@ -550,8 +567,13 @@ def test_main_generates_both_copies(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir))
 
-    assert (out_dir / "APCalc_Quiz_1.3_FormA.pdf").exists()
-    assert (out_dir / "APCalc_Quiz_1.3_FormA_solutions.pdf").exists()
+    student_pdf = _the_output(out_dir, "APCalc_Quiz_1.3", ".pdf")
+    solution_pdf = _the_output(out_dir, "APCalc_Quiz_1.3", "_solutions.pdf")
+    manifest = _the_output(out_dir, "APCalc_Quiz_1.3", ".manifest.yaml")
+    # all three share the same form ID
+    form_id = student_pdf.stem.rsplit("_", 1)[1]
+    assert solution_pdf.name == f"APCalc_Quiz_1.3_{form_id}_solutions.pdf"
+    assert manifest.name == f"APCalc_Quiz_1.3_{form_id}.manifest.yaml"
     assert len(tex_contents) == 2
     student_tex, solution_tex = tex_contents
     assert "\\printanswers" not in student_tex
@@ -561,6 +583,68 @@ def test_main_generates_both_copies(tmp_path, monkeypatch):
     assert "10 min" in student_tex
 
 
+def test_main_form_id_format_and_no_date(tmp_path, monkeypatch):
+    config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
+    tex_contents = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir) + ["--student-only"])
+
+    tex = tex_contents[0]
+    # footer shows the grouped form ID and no date
+    match = re.search(r"\\def \\formid \{([0-9a-f]{4})-([0-9a-f]{4})\}", tex)
+    assert match, "grouped form ID not found in tex"
+    assert "\\today" not in tex
+    # the filename carries the same ID ungrouped
+    student_pdf = _the_output(out_dir, "APCalc_Quiz_1.3", ".pdf")
+    assert student_pdf.stem.endswith(match.group(1) + match.group(2))
+
+
+def test_main_rejects_leftover_form_id(tmp_path, monkeypatch, capsys):
+    config_file, questions_file, figures_dir = _write_cli_inputs(
+        tmp_path, "form_id: A\n"
+    )
+    _fake_pdflatex(monkeypatch, [])
+
+    with pytest.raises(SystemExit):
+        main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out"))
+    err = capsys.readouterr().err
+    assert "form_id" in err
+    assert "removed" in err
+
+
+def test_main_student_and_solution_choices_match(tmp_path, monkeypatch):
+    """Regression test: both copies must share one shuffled choice order."""
+    config_file = tmp_path / "config.yaml"
+    config_file.write_text(
+        "name: Quiz_1.3\n"
+        "class_id: APCalc\n"
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: What is 2 + 2?\n"
+        "    answer: 4\n"
+        "    distractors: [3, 5, 6, 7, 8, 9, 10]\n"
+        "    solution: Because.\n"
+    )
+    figures_dir = tmp_path / "figures"
+    figures_dir.mkdir()
+    tex_contents = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    main([str(config_file), "--out-dir", str(tmp_path / "out"),
+          "--figures-dir", str(figures_dir)])
+
+    assert len(tex_contents) == 2
+    student_choices = re.findall(
+        r"\\begin\{choices\}(.*?)\\end\{choices\}", tex_contents[0], re.S
+    )
+    solution_choices = re.findall(
+        r"\\begin\{choices\}(.*?)\\end\{choices\}", tex_contents[1], re.S
+    )
+    assert student_choices and student_choices == solution_choices
+
+
 def test_main_student_only(tmp_path, monkeypatch):
     config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
     _fake_pdflatex(monkeypatch, [])
@@ -568,8 +652,8 @@ def test_main_student_only(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir) + ["--student-only"])
 
-    assert (out_dir / "APCalc_Quiz_1.3_FormA.pdf").exists()
-    assert not (out_dir / "APCalc_Quiz_1.3_FormA_solutions.pdf").exists()
+    assert len(_outputs(out_dir, "APCalc_Quiz_1.3", ".pdf")) == 1
+    assert not _outputs(out_dir, "APCalc_Quiz_1.3", "_solutions.pdf")
 
 
 def test_main_solution_only(tmp_path, monkeypatch):
@@ -579,8 +663,8 @@ def test_main_solution_only(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir) + ["--solution-only"])
 
-    assert not (out_dir / "APCalc_Quiz_1.3_FormA.pdf").exists()
-    assert (out_dir / "APCalc_Quiz_1.3_FormA_solutions.pdf").exists()
+    assert not _outputs(out_dir, "APCalc_Quiz_1.3", ".pdf")
+    assert len(_outputs(out_dir, "APCalc_Quiz_1.3", "_solutions.pdf")) == 1
 
 
 def test_main_filters_questions(tmp_path, monkeypatch):
@@ -615,7 +699,7 @@ def test_main_name_defaults_to_config_basename(tmp_path, monkeypatch):
     questions_file = tmp_path / "questions.yaml"
     questions_file.write_text(QUESTIONS_YAML)
     config_file = tmp_path / "Quiz_1.3.yaml"
-    config_file.write_text("class_id: APCalc\nform_id: A\n")  # no name
+    config_file.write_text("class_id: APCalc\n")  # no name
     figures_dir = tmp_path / "figures"
     figures_dir.mkdir()
     tex_contents = []
@@ -624,8 +708,8 @@ def test_main_name_defaults_to_config_basename(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir))
 
-    assert (out_dir / "APCalc_Quiz_1.3_FormA.pdf").exists()
-    assert (out_dir / "APCalc_Quiz_1.3_FormA_solutions.pdf").exists()
+    assert len(_outputs(out_dir, "APCalc_Quiz_1.3", ".pdf")) == 1
+    assert len(_outputs(out_dir, "APCalc_Quiz_1.3", "_solutions.pdf")) == 1
 
 
 CONFIG_QUESTIONS_YAML = (
@@ -665,7 +749,6 @@ def test_main_config_only_questions(tmp_path, monkeypatch):
     config_file.write_text(
         "name: Quiz_1.3\n"
         "class_id: APCalc\n"
-        "form_id: A\n"
         + CONFIG_QUESTIONS_YAML
     )
     figures_dir = tmp_path / "figures"
@@ -676,7 +759,7 @@ def test_main_config_only_questions(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main([str(config_file), "--out-dir", str(out_dir), "--figures-dir", str(figures_dir)])
 
-    assert (out_dir / "APCalc_Quiz_1.3_FormA.pdf").exists()
+    assert len(_outputs(out_dir, "APCalc_Quiz_1.3", ".pdf")) == 1
     assert "What is 5 + 5?" in tex_contents[0]
 
 
@@ -698,7 +781,7 @@ def test_main_combines_config_and_file_questions(tmp_path, monkeypatch):
 def test_main_config_questions_must_be_list(tmp_path, monkeypatch, capsys):
     config_file = tmp_path / "config.yaml"
     config_file.write_text(
-        "name: Quiz_1.3\nclass_id: APCalc\nform_id: A\nquestions: nope\n"
+        "name: Quiz_1.3\nclass_id: APCalc\nquestions: nope\n"
     )
     figures_dir = tmp_path / "figures"
     figures_dir.mkdir()
@@ -713,7 +796,7 @@ def test_main_missing_required_config_field(tmp_path, monkeypatch, capsys):
     questions_file = tmp_path / "questions.yaml"
     questions_file.write_text(QUESTIONS_YAML)
     config_file = tmp_path / "config.yaml"
-    config_file.write_text("name: Quiz_1.3\nform_id: A\n")  # no class_id
+    config_file.write_text("name: Quiz_1.3\n")  # no class_id
     figures_dir = tmp_path / "figures"
     figures_dir.mkdir()
     _fake_pdflatex(monkeypatch, [])
@@ -721,3 +804,224 @@ def test_main_missing_required_config_field(tmp_path, monkeypatch, capsys):
     with pytest.raises(SystemExit):
         main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out"))
     assert "class_id" in capsys.readouterr().err
+
+
+def _write_manifest_inputs(tmp_path):
+    """CLI inputs with a figure-bearing question and an unreferenced figure."""
+    questions_file = tmp_path / "questions.yaml"
+    questions_file.write_text(
+        "questions:\n"
+        "  - id: q-mcq\n"
+        "    question: What is 2 + 2?\n"
+        "    answer: 4\n"
+        "    distractors: [3, 5, 6]\n"
+        "    solution: Because.\n"
+        "    figure: used.png\n"
+        "  - id: q-frq\n"
+        "    question: Show your work.\n"
+        "    solution: Shown.\n"
+        "    question_type: FRQ\n"
+        "    parts:\n"
+        "      - question: Part one.\n"
+        "        solution: Done.\n"
+        "        figure: part.png\n"
+    )
+    config_file = tmp_path / "config.yaml"
+    config_file.write_text("name: Quiz_M\nclass_id: APCalc\n")
+    figures_dir = tmp_path / "figures"
+    figures_dir.mkdir()
+    (figures_dir / "used.png").write_bytes(b"\x89PNG used")
+    (figures_dir / "part.png").write_bytes(b"\x89PNG part")
+    (figures_dir / "unreferenced.png").write_bytes(b"\x89PNG unused")
+    return config_file, questions_file, figures_dir
+
+
+def _md5_of(path):
+    import hashlib
+
+    return hashlib.md5(Path(path).read_bytes()).hexdigest()
+
+
+def test_manifest_contents(tmp_path, monkeypatch):
+    config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
+    tex_contents = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+
+    manifest_file = _the_output(out_dir, "APCalc_Quiz_M", ".manifest.yaml")
+    manifest = real_yaml.safe_load(manifest_file.read_text())
+
+    assert manifest["manifest_version"] == 1
+    assert re.fullmatch(r"[0-9a-f]{8}", manifest["form_id"])
+    assert manifest["form_id"] in manifest_file.name
+    assert manifest["generated"]
+    assert manifest["generator_version"] == test_generator.__version__
+    assert manifest["config"] == str(config_file)
+    assert manifest["questions_file"] == str(questions_file)
+    assert manifest["figures_dir"] == str(figures_dir)
+
+    # every recorded file hash matches a recomputation; only referenced
+    # figures are hashed
+    hashed = {entry["path"] for entry in manifest["files"]}
+    assert hashed == {
+        str(config_file),
+        str(questions_file),
+        str(figures_dir / "used.png"),
+        str(figures_dir / "part.png"),
+    }
+    for entry in manifest["files"]:
+        assert entry["md5"] == _md5_of(entry["path"])
+
+    # questions in presentation order; choice_order only on the MCQ
+    assert [q["id"] for q in manifest["questions"]] == ["q-mcq", "q-frq"]
+    mcq, frq = manifest["questions"]
+    assert sorted(mcq["choice_order"]) == [0, 1, 2, 3]
+    assert "choice_order" not in frq
+
+    # the printed correct letter position matches choice_order.index(0)
+    choices_block = re.search(
+        r"\\begin\{choices\}(.*?)\\end\{choices\}", tex_contents[0], re.S
+    ).group(1)
+    lines = [ln.strip() for ln in choices_block.strip().splitlines()]
+    correct_pos = next(
+        i for i, ln in enumerate(lines) if ln.startswith("\\correctchoice")
+    )
+    assert correct_pos == mcq["choice_order"].index(0)
+
+
+def test_main_missing_question_id(tmp_path, monkeypatch, capsys):
+    config_file = tmp_path / "config.yaml"
+    config_file.write_text(
+        "name: Quiz_M\n"
+        "class_id: APCalc\n"
+        "questions:\n"
+        "  - question: No id here.\n"
+        "    answer: 4\n"
+        "    distractors: [3]\n"
+    )
+    figures_dir = tmp_path / "figures"
+    figures_dir.mkdir()
+    _fake_pdflatex(monkeypatch, [])
+
+    with pytest.raises(SystemExit):
+        main([str(config_file), "--out-dir", str(tmp_path / "out"),
+              "--figures-dir", str(figures_dir)])
+    assert "missing an 'id'" in capsys.readouterr().err
+
+
+def test_main_duplicate_question_ids(tmp_path, monkeypatch, capsys):
+    config_file = tmp_path / "config.yaml"
+    config_file.write_text(
+        "name: Quiz_M\n"
+        "class_id: APCalc\n"
+        "questions:\n"
+        "  - id: dup\n"
+        "    question: First.\n"
+        "    answer: 4\n"
+        "    distractors: [3]\n"
+        "  - id: dup\n"
+        "    question: Second.\n"
+        "    answer: 6\n"
+        "    distractors: [5]\n"
+    )
+    figures_dir = tmp_path / "figures"
+    figures_dir.mkdir()
+    _fake_pdflatex(monkeypatch, [])
+
+    with pytest.raises(SystemExit):
+        main([str(config_file), "--out-dir", str(tmp_path / "out"),
+              "--figures-dir", str(figures_dir)])
+    assert "Duplicate question ID(s): dup" in capsys.readouterr().err
+
+
+def test_from_manifest_reproduces(tmp_path, monkeypatch):
+    config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
+    first_tex = []
+    _fake_pdflatex(monkeypatch, first_tex)
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+
+    manifest_file = _the_output(out_dir, "APCalc_Quiz_M", ".manifest.yaml")
+    student_pdf = _the_output(out_dir, "APCalc_Quiz_M", ".pdf")
+    solution_pdf = _the_output(out_dir, "APCalc_Quiz_M", "_solutions.pdf")
+    student_pdf.unlink()
+    solution_pdf.unlink()
+
+    second_tex = []
+    _fake_pdflatex(monkeypatch, second_tex)
+    main(["--from-manifest", str(manifest_file), "--out-dir", str(out_dir)])
+
+    # identical tex (same questions, order, choices, form ID) and filenames
+    assert second_tex == first_tex
+    assert _the_output(out_dir, "APCalc_Quiz_M", ".pdf") == student_pdf
+    assert _the_output(out_dir, "APCalc_Quiz_M", "_solutions.pdf") == solution_pdf
+    # no second manifest is written
+    assert _outputs(out_dir, "APCalc_Quiz_M", ".manifest.yaml") == [manifest_file]
+
+
+def test_from_manifest_md5_mismatch_prompt(tmp_path, monkeypatch, capsys):
+    config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
+    _fake_pdflatex(monkeypatch, [])
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+    manifest_file = _the_output(out_dir, "APCalc_Quiz_M", ".manifest.yaml")
+    _the_output(out_dir, "APCalc_Quiz_M", ".pdf").unlink()
+    _the_output(out_dir, "APCalc_Quiz_M", "_solutions.pdf").unlink()
+
+    questions_file.write_text(questions_file.read_text() + "# mutated\n")
+
+    # answering "n" aborts with nothing generated
+    monkeypatch.setattr("builtins.input", lambda prompt="": "n")
+    with pytest.raises(SystemExit):
+        main(["--from-manifest", str(manifest_file), "--out-dir", str(out_dir)])
+    assert "MD5 mismatch" in capsys.readouterr().err
+    assert not _outputs(out_dir, "APCalc_Quiz_M", ".pdf")
+
+    # answering "y" proceeds
+    monkeypatch.setattr("builtins.input", lambda prompt="": "y")
+    main(["--from-manifest", str(manifest_file), "--out-dir", str(out_dir)])
+    assert len(_outputs(out_dir, "APCalc_Quiz_M", ".pdf")) == 1
+    assert len(_outputs(out_dir, "APCalc_Quiz_M", "_solutions.pdf")) == 1
+
+
+def test_cli_config_with_from_manifest_conflict(tmp_path, capsys):
+    with pytest.raises(SystemExit):
+        main(["config.yaml", "--from-manifest", "m.yaml"])
+    assert "--from-manifest" in capsys.readouterr().err
+
+
+def test_cli_requires_config_or_manifest(capsys):
+    with pytest.raises(SystemExit):
+        main(["--out-dir", "out"])
+    assert "--from-manifest" in capsys.readouterr().err
+
+
+def test_cli_from_manifest_rejects_watch_questions_figures(tmp_path, capsys):
+    for extra in (["--watch"], ["--questions", "q.yaml"], ["--figures-dir", "figs"]):
+        with pytest.raises(SystemExit):
+            main(["--from-manifest", "m.yaml"] + extra)
+        assert extra[0] in capsys.readouterr().err
+
+
+def test_watch_draft_mode(tmp_path, monkeypatch):
+    config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
+    tex_contents = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    def raise_interrupt(_seconds):
+        raise KeyboardInterrupt
+
+    monkeypatch.setattr(time, "sleep", raise_interrupt)
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir) + ["--watch"])
+
+    # stable draft filenames, draft footer, and no manifest
+    assert (out_dir / "APCalc_Quiz_1.3_draft.pdf").exists()
+    assert (out_dir / "APCalc_Quiz_1.3_draft_solutions.pdf").exists()
+    assert "\\def \\formid {draft}" in tex_contents[0]
+    assert not list(out_dir.glob("*.manifest.yaml"))

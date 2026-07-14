@@ -52,6 +52,50 @@ def _quote_backslash_scalar_lines(text: str) -> str:
         output_lines.append(line)
     return "\n".join(output_lines) + "\n"
 
+def load_question_pool(yaml_path, inline_questions=None):
+    """Combine questions from a YAML file and an inline list.
+
+    Args:
+        yaml_path: Path to a YAML file with a top-level ``questions``
+            list, or None.
+        inline_questions: Optional list of question mappings appended
+            after those loaded from ``yaml_path``.
+
+    Returns:
+        The combined list of question mappings (file questions first).
+    """
+    pool = []
+    if yaml_path is not None:
+        yaml_file = Path(yaml_path)
+        if not yaml_file.exists():
+            raise FileNotFoundError(yaml_path)
+        raw_text = yaml_file.read_text()
+        data = yaml.safe_load(_quote_backslash_scalar_lines(raw_text)) or {}
+        pool.extend(data.get("questions") or [])
+    pool.extend(inline_questions or [])
+    return pool
+
+
+def make_choice_orders(questions):
+    """Return a random choice permutation for each MCQ in ``questions``.
+
+    The canonical choice order is ``[answer] + distractors`` as written in
+    the question YAML (canonical index 0 is the correct answer). Each
+    permutation maps display position to canonical index.
+
+    Returns:
+        Mapping of question ``id`` to its shuffled permutation.
+    """
+    orders = {}
+    for q in questions:
+        if str(q.get("question_type", "MCQ")).upper() != "MCQ":
+            continue
+        order = list(range(1 + len(q.get("distractors", []) or [])))
+        random.shuffle(order)
+        orders[q["id"]] = order
+    return orders
+
+
 def filter_questions(questions, assessment_type=None, sections=None):
     """Filter questions by assessment type and/or section range.
 
@@ -157,6 +201,8 @@ def generate_test(
     sections: str | None = None,
     questions: list | None = None,
     work_space: str | None = None,
+    question_order: list | None = None,
+    choice_orders: dict | None = None,
 ) -> str:
     """Generate a test PDF from a YAML file.
 
@@ -168,7 +214,7 @@ def generate_test(
         title: Test title.
         author: Author name.
         class_name: Class name.
-        form_id: Form identifier (e.g. "A", "B").
+        form_id: Form identifier printed in the page footer.
         duration: Duration string (e.g. "30 min").
         figures_dir: Directory containing figure files to copy into the build
             environment. Defaults to a ``figures/`` subdirectory next to the
@@ -181,6 +227,14 @@ def generate_test(
         work_space: Default height of the answer work space for FRQ
             questions (e.g. "2in"). Questions and parts may override it
             with their own ``work_space`` field. Defaults to "1in".
+        question_order: Optional list of question IDs. When set, the
+            filters are skipped and questions are selected from the
+            combined pool by ID in this order; unknown or ambiguous
+            (duplicated in the pool) IDs are errors.
+        choice_orders: Optional mapping of question ID to a choice
+            permutation (see :func:`make_choice_orders`). MCQs with an
+            entry use it instead of shuffling; MCQs without one shuffle
+            randomly.
 
     Returns:
         The path to the generated PDF (same as ``output_pdf``).
@@ -189,23 +243,32 @@ def generate_test(
         RuntimeError: if YAML can't be parsed, template can't be loaded, or
             PDF generation via `pdflatex` fails.
     """
-    all_questions = []
-    yaml_file = None
-    if yaml_path is not None:
-        yaml_file = Path(yaml_path)
-        if not yaml_file.exists():
-            raise FileNotFoundError(yaml_path)
+    yaml_file = Path(yaml_path) if yaml_path is not None else None
+    all_questions = load_question_pool(yaml_path, questions)
 
-        raw_text = yaml_file.read_text()
-        data = yaml.safe_load(_quote_backslash_scalar_lines(raw_text)) or {}
-        all_questions.extend(data.get("questions") or [])
-    all_questions.extend(questions or [])
-
-    questions = filter_questions(
-        all_questions,
-        assessment_type=assessment_type,
-        sections=sections,
-    )
+    if question_order is not None:
+        by_id = {}
+        duplicated = set()
+        for q in all_questions:
+            qid = q.get("id")
+            if qid in by_id:
+                duplicated.add(qid)
+            by_id[qid] = q
+        unknown = [qid for qid in question_order if qid not in by_id]
+        if unknown:
+            raise RuntimeError(f"Unknown question ID(s): {', '.join(map(str, unknown))}")
+        ambiguous = [qid for qid in question_order if qid in duplicated]
+        if ambiguous:
+            raise RuntimeError(
+                f"Duplicate question ID(s) in pool: {', '.join(map(str, ambiguous))}"
+            )
+        questions = [by_id[qid] for qid in question_order]
+    else:
+        questions = filter_questions(
+            all_questions,
+            assessment_type=assessment_type,
+            sections=sections,
+        )
 
     try:
         with resources.open_text("test_generator.templates", "Test_Template.tex") as fh:
@@ -262,11 +325,23 @@ def generate_test(
         if q_type == "MCQ":
             answer_text = str(q.get("answer", ""))
             distractors = q.get("distractors", []) or []
-            choices = [f"\\correctchoice {answer_text}"] + [f"\\choice {d}" for d in distractors]
-            random.shuffle(choices)
+            canonical = [answer_text] + [str(d) for d in distractors]
+            order = (choice_orders or {}).get(q.get("id"))
+            if order is None:
+                order = list(range(len(canonical)))
+                random.shuffle(order)
+            elif sorted(order) != list(range(len(canonical))):
+                raise RuntimeError(
+                    f"choice_order for question {q.get('id')!r} is not a "
+                    f"permutation of 0..{len(canonical) - 1}: {order!r}"
+                )
+            choices = [
+                ("\\correctchoice " if i == 0 else "\\choice ") + canonical[i]
+                for i in order
+            ]
             choices_block = "\n    ".join(choices)
             measure_block = "\n  ".join(
-                f"\\measurechoice{{{text}}}" for text in [answer_text, *map(str, distractors)]
+                f"\\measurechoice{{{text}}}" for text in canonical
             )
             q_block = q_block.replace("$MEASURE_CHOICES", measure_block)
             q_block = q_block.replace("$CHOICES", choices_block)
