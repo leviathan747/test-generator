@@ -22,6 +22,6 @@ questions:
     calculator_active: false
     sections:
       - 1.8
-    dok: -1
+    dok: 3
     question_type: FRQ
     work_space: 4in

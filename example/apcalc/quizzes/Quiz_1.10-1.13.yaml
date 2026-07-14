@@ -38,7 +38,7 @@ questions:
     calculator_active: false
     sections:
       - 1.11
-    dok: -1
+    dok: 2
     question_type: MCQ
     work_space: 0.5in
 
@@ -88,6 +88,6 @@ questions:
       - 1.11
       - 1.12
       - 1.13
-    dok: -1
+    dok: 3
     question_type: FRQ
     work_space: 3in

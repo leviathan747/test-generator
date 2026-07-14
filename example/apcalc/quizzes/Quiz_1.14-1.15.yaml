@@ -26,7 +26,7 @@ questions:
           support the conclusion}
         sections:
           - 1.14
-        dok: -1
+        dok: 3
         work_space: 3in
       - question: |
           Find the equations of all horizontal asymptotes of the graph of $f(x)$. Use
@@ -45,7 +45,7 @@ questions:
           There are horizontal asymptotes at $y = -1$ and $y = 1$
         sections:
           - 1.15
-        dok: -1
+        dok: 3
         work_space: 3in
     calculator_active: false
     question_type: FRQ
