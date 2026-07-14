@@ -6,7 +6,7 @@ form_id: A
 duration: 10 min
 questions:
   - id: bea8f6d3-d78b-4bbc-b4c8-48670977d5cc
-    question: Consider the function $f(x) = \frac{|x|(x - 3)}{9 - x^2}$
+    question: Consider the function $f(x) = \frac{|x|(x - 3)}{9 - x^2}$.
     parts:
       - question: |
           Find the equations of all vertical asymptotes of the graph of $f(x)$. Use
@@ -32,7 +32,7 @@ questions:
           Find the equations of all horizontal asymptotes of the graph of $f(x)$. Use
           the limit definition of horizontal asymptotes to justify your responses.
 
-          \emph{HINT: rewrite f(x) as a piecewise function}
+          \emph{HINT: rewrite $f(x)$ as a piecewise function}
         solution: |
           \begin{gather*}
             f(x) = \begin{cases}

@@ -8,7 +8,7 @@ work_space: 0in
 questions:
   - id: 1245a6ac-cbf1-4aa5-8303-8d4fc8d093f9
     question: |
-      Find $\lim_{x \to 0} f(1 - x^2)$
+      Use the graph of $y = f(x)$ to find $\lim_{x \to 0} f(1 - x^2)$.
     figure: 26.tex
     answer: 3
     distractors:

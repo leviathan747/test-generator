@@ -57,8 +57,8 @@ questions:
       The limit does not exist because $y = \frac{x}{|x|}$ approaches two
       different values as $x$ approaches $0$ from the left and right.
     distractors:
-      - The $\lim_{x \to 0} \frac{x}{|x|} = 0$.
-      - The $\lim_{x \to 0} \frac{x}{|x|} = 1$.
+      - $\lim_{x \to 0} \frac{x}{|x|} = 0$.
+      - $\lim_{x \to 0} \frac{x}{|x|} = 1$.
       - The limit does not exist because the graph of $y = \frac{x}{|x|}$ features a vertical asymptote at $x = 0$.
     solution: |
       For $x > 0$, $|x| = x$, so $\frac{x}{|x|} = 1$ and
