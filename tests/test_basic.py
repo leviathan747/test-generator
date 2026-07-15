@@ -82,6 +82,19 @@ def test_filter_questions_sections_multipart():
     assert [q["id"] for q in result] == [1, 3, 4]
 
 
+def test_filter_questions_calculator_active():
+    questions = [
+        {"id": 1, "calculator_active": True},
+        {"id": 2, "calculator_active": False},
+        {"id": 3},  # missing field means no calculator
+    ]
+    active = test_generator.filter_questions(questions, calculator_active=True)
+    assert [q["id"] for q in active] == [1]
+    inactive = test_generator.filter_questions(questions, calculator_active=False)
+    assert [q["id"] for q in inactive] == [2, 3]
+    assert test_generator.filter_questions(questions) == questions
+
+
 def test_filter_questions_combined():
     questions = [
         {"id": 1, "assessment_type": "quiz", "sections": ["1.3"]},
@@ -679,6 +692,38 @@ def test_main_filters_questions(tmp_path, monkeypatch):
 
     assert "What is 2 + 2?" in tex_contents[0]
     assert "What is 3 + 3?" not in tex_contents[0]
+
+
+def test_main_filters_calculator_active(tmp_path, monkeypatch):
+    config_file = tmp_path / "config.yaml"
+    config_file.write_text(
+        "name: Quiz_1.3\n"
+        "class_id: APCalc\n"
+        "calculator_active: true\n"
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: Calculator allowed here.\n"
+        "    answer: 4\n"
+        "    distractors: [3, 5]\n"
+        "    solution: Because.\n"
+        "    calculator_active: true\n"
+        "  - id: 2\n"
+        "    question: No calculator here.\n"
+        "    answer: 6\n"
+        "    distractors: [5, 7]\n"
+        "    solution: Because.\n"
+    )
+    figures_dir = tmp_path / "figures"
+    figures_dir.mkdir()
+    tex_contents = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    out_dir = tmp_path / "out"
+    main([str(config_file), "--out-dir", str(out_dir),
+          "--figures-dir", str(figures_dir), "--student-only"])
+
+    assert "Calculator allowed here." in tex_contents[0]
+    assert "No calculator here." not in tex_contents[0]
 
 
 def test_main_student_and_solution_only_conflict(tmp_path, monkeypatch, capsys):

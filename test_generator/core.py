@@ -96,7 +96,7 @@ def make_choice_orders(questions):
     return orders
 
 
-def filter_questions(questions, assessment_type=None, sections=None):
+def filter_questions(questions, assessment_type=None, sections=None, calculator_active=None):
     """Filter questions by assessment type and/or section range.
 
     Args:
@@ -111,7 +111,9 @@ def filter_questions(questions, assessment_type=None, sections=None):
             section listed on each part falls within the range;
             question-level sections are ignored. Questions with no
             applicable sections listed are dropped.
-
+        calculator_active: When set, keep only questions whose
+            ``calculator_active`` equals this value; questions missing the
+            field are assumed to be no calculator. If ``None``, keep all questions
     Returns:
         The filtered list of questions.
     """
@@ -140,6 +142,12 @@ def filter_questions(questions, assessment_type=None, sections=None):
                 if not highest or not all(section_range.match(s) for s in highest):
                     continue
             except ValueError:
+                continue
+
+        if calculator_active is not None:
+            if "calculator_active" not in q and calculator_active:
+                continue
+            elif "calculator_active" in q and bool(q.get("calculator_active")) != calculator_active:
                 continue
 
         filtered.append(q)
@@ -199,6 +207,7 @@ def generate_test(
     solution: bool = False,
     assessment_type: str | None = None,
     sections: str | None = None,
+    calculator_active: bool | None = None,
     questions: list | None = None,
     work_space: str | None = None,
     question_order: list | None = None,
@@ -222,6 +231,7 @@ def generate_test(
         solution: When True, render the solution/answer-key copy.
         assessment_type: Optional filter; see :func:`filter_questions`.
         sections: Optional section range filter; see :func:`filter_questions`.
+        calculator_active: Optional calculator_active filter; see :func:`filter_questions`.
         questions: Optional list of question mappings appended to those
             loaded from ``yaml_path``.
         work_space: Default height of the answer work space for FRQ
@@ -268,6 +278,7 @@ def generate_test(
             all_questions,
             assessment_type=assessment_type,
             sections=sections,
+            calculator_active=calculator_active,
         )
 
     try:
