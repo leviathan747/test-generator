@@ -72,6 +72,7 @@ assessment_type: quiz
 | `duration` | Duration string (e.g. `30 min`) |
 | `assessment_type` | Optional filter: keep only questions whose `assessment_type` matches |
 | `sections` | Optional filter: a section range (see below) |
+| `calculator_active` | Optional filter: `true` keeps only calculator-active questions, `false` keeps only no-calculator questions; a question missing the field counts as no-calculator |
 | `questions` | Optional list of questions, in the same format as the questions file |
 | `work_space` | Default height of the FRQ answer work space (e.g. `2in`); questions and parts can override it with their own `work_space` field (default: `1in`) |
 
@@ -166,6 +167,8 @@ is included only when the highest section it lists falls within the
 range. For multipart FRQs, the highest section listed on each part must
 fall within the range (question-level sections are ignored). When either
 filter is set, questions missing the corresponding field are excluded.
+The `calculator_active` filter differs: questions missing the field are
+treated as `calculator_active: false` rather than excluded.
 
 Supported range syntax:
 
@@ -201,6 +204,8 @@ test_generator.generate_test(
     solution=False,               # True renders the answer-key copy
     assessment_type="quiz",       # optional question filter
     sections="1.3 - 1.7",         # optional section range filter
+    calculator_active=False,      # optional calculator filter; False keeps
+                                  # only no-calculator questions
     questions=None,               # optional list of question mappings appended
                                   # to those loaded from the YAML file (which
                                   # may be None when questions are passed here)

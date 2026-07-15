@@ -97,7 +97,7 @@ def make_choice_orders(questions):
 
 
 def filter_questions(questions, assessment_type=None, sections=None, calculator_active=None):
-    """Filter questions by assessment type and/or section range.
+    """Filter questions by assessment type, section range, and/or calculator use.
 
     Args:
         questions: List of question mappings.
@@ -113,7 +113,8 @@ def filter_questions(questions, assessment_type=None, sections=None, calculator_
             applicable sections listed are dropped.
         calculator_active: When set, keep only questions whose
             ``calculator_active`` equals this value; questions missing the
-            field are assumed to be no calculator. If ``None``, keep all questions
+            field are treated as no-calculator (``False``).
+
     Returns:
         The filtered list of questions.
     """
