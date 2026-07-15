@@ -14,12 +14,17 @@ patch component. Range syntax follows npm's semver ranges:
 """
 import re
 
+# A concrete section number as a comparable (major, minor) pair.
+Version = tuple[int, int]
+# A primitive comparator: an operator ("<", "<=", ">", ">=", "==") and a bound.
+Comparator = tuple[str, Version]
+
 _COMPARATOR_RE = re.compile(
     r"\s*(>=|<=|>|<|\^|~|=)?\s*(\d+(?:\.(?:\d+|[xX*]))?|[xX*])"
 )
 
 
-def parse_version(value):
+def parse_version(value: str | float) -> Version:
     """Parse a concrete section number into a ``(major, minor)`` tuple."""
     text = str(value).strip()
     match = re.fullmatch(r"(\d+)(?:\.(\d+))?", text)
@@ -28,12 +33,12 @@ def parse_version(value):
     return (int(match.group(1)), int(match.group(2) or 0))
 
 
-def _partial_bounds(major):
+def _partial_bounds(major: int) -> tuple[Version, Version]:
     """Bounds for a major-only version: >=major.0 and <(major+1).0."""
     return (major, 0), (major + 1, 0)
 
 
-def _comparator_to_bounds(op, token):
+def _comparator_to_bounds(op: str | None, token: str) -> list[Comparator]:
     """Expand one comparator into primitive ``(op, (major, minor))`` pairs.
 
     Primitive ops are limited to ``<``, ``<=``, ``>``, ``>=`` and ``==``.
@@ -69,12 +74,12 @@ def _comparator_to_bounds(op, token):
     raise ValueError(f"Unknown operator: {op!r}")
 
 
-def _parse_alternative(text):
+def _parse_alternative(text: str) -> list[Comparator]:
     """Parse one ``||``-free clause into a list of primitive comparators."""
     hyphen = re.fullmatch(r"\s*(\S+)\s+-\s+(\S+)\s*", text)
     if hyphen:
         low_token, high_token = hyphen.groups()
-        comparators = []
+        comparators: list[Comparator] = []
         if re.fullmatch(r"\d+(\.[xX*])?", low_token):
             comparators.append((">=", (int(low_token.split(".")[0]), 0)))
         else:
@@ -97,7 +102,7 @@ def _parse_alternative(text):
     return comparators
 
 
-def _satisfies(version, op, reference):
+def _satisfies(version: Version, op: str, reference: Version) -> bool:
     if op == "==":
         return version == reference
     if op == "<":
@@ -114,10 +119,10 @@ def _satisfies(version, op, reference):
 class Range:
     """A parsed section range; use :meth:`match` to test section numbers."""
 
-    def __init__(self, alternatives):
+    def __init__(self, alternatives: list[list[Comparator]]) -> None:
         self._alternatives = alternatives
 
-    def match(self, value):
+    def match(self, value: str | float) -> bool:
         """Return True if the section number falls within this range.
 
         Raises ValueError if ``value`` is not a valid section number.
@@ -129,7 +134,7 @@ class Range:
         )
 
 
-def parse_range(spec):
+def parse_range(spec: str) -> Range:
     """Parse a range specification string into a :class:`Range`.
 
     Raises ValueError if the specification is not valid.

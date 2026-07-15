@@ -41,12 +41,13 @@ EXAMPLE_CASES = [
     EXAMPLE_CASES,
     ids=[f"{c}/{s + '/' if s else ''}{u}" for c, s, u in EXAMPLE_CASES],
 )
-def test_example_builds_pdf(course, subdir, unit):
+def test_example_builds_pdf(course: str, subdir: str | None, unit: str) -> None:
     # apcalc keeps its YAML files in test_questions/ and quiz_questions/
     # subdirectories and uses a single flat figures/ directory; other courses
     # keep YAML files at the course root and per-unit figure subdirectories
     # under figures/.
     if course == "apcalc":
+        assert subdir is not None
         yaml_path = EXAMPLE_DIR / course / subdir / f"{unit}.yaml"
         figures_dir = EXAMPLE_DIR / course / "figures"
     else:
@@ -69,7 +70,7 @@ def test_example_builds_pdf(course, subdir, unit):
     assert Path(result).stat().st_size > 0, f"PDF is empty: {result}"
 
 
-def _new_outputs(out_dir, pattern, start):
+def _new_outputs(out_dir: Path, pattern: str, start: float) -> list[Path]:
     """Files whose names fully match ``pattern`` (re)written since ``start``."""
     regex = re.compile(pattern)
     return sorted(
@@ -78,7 +79,7 @@ def _new_outputs(out_dir, pattern, start):
     )
 
 
-def test_quiz_configs_build_pdfs():
+def test_quiz_configs_build_pdfs() -> None:
     """End-to-end CLI run driven by multiple quiz config files in sequence."""
     from test_generator.__main__ import main
 
@@ -108,7 +109,7 @@ def test_quiz_configs_build_pdfs():
         assert len(manifests) == 1, f"expected one manifest for {prefix}"
 
 
-def test_from_manifest_recreates_pdf(tmp_path):
+def test_from_manifest_recreates_pdf(tmp_path: Path) -> None:
     """Deleting a PDF and rerunning from its manifest recreates it."""
     from test_generator.__main__ import main
 

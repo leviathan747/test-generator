@@ -5,15 +5,18 @@ import subprocess
 import tempfile
 import yaml
 from pathlib import Path
+from typing import Any
 
 from .sections import parse_range, parse_version
 
+# A question (or question part) mapping as loaded from YAML.
+Question = dict[str, Any]
 
 
 def _quote_backslash_scalar_lines(text: str) -> str:
     """Wrap plain YAML scalar values containing backslashes in single quotes."""
-    output_lines = []
-    block_scalar_indent = None  # tracks indentation of key that opened a block scalar
+    output_lines: list[str] = []
+    block_scalar_indent: int | None = None  # indentation of key that opened a block scalar
 
     for line in text.splitlines():
         stripped = line.lstrip()
@@ -52,7 +55,10 @@ def _quote_backslash_scalar_lines(text: str) -> str:
         output_lines.append(line)
     return "\n".join(output_lines) + "\n"
 
-def load_question_pool(yaml_path, inline_questions=None):
+def load_question_pool(
+    yaml_path: str | Path | None,
+    inline_questions: list[Question] | None = None,
+) -> list[Question]:
     """Combine questions from a YAML file and an inline list.
 
     Args:
@@ -64,7 +70,7 @@ def load_question_pool(yaml_path, inline_questions=None):
     Returns:
         The combined list of question mappings (file questions first).
     """
-    pool = []
+    pool: list[Question] = []
     if yaml_path is not None:
         yaml_file = Path(yaml_path)
         if not yaml_file.exists():
@@ -76,7 +82,7 @@ def load_question_pool(yaml_path, inline_questions=None):
     return pool
 
 
-def make_choice_orders(questions):
+def make_choice_orders(questions: list[Question]) -> dict[Any, list[int]]:
     """Return a random choice permutation for each MCQ in ``questions``.
 
     The canonical choice order is ``[answer] + distractors`` as written in
@@ -86,7 +92,7 @@ def make_choice_orders(questions):
     Returns:
         Mapping of question ``id`` to its shuffled permutation.
     """
-    orders = {}
+    orders: dict[Any, list[int]] = {}
     for q in questions:
         if str(q.get("question_type", "MCQ")).upper() != "MCQ":
             continue
@@ -96,7 +102,12 @@ def make_choice_orders(questions):
     return orders
 
 
-def filter_questions(questions, assessment_type=None, sections=None, calculator_active=None):
+def filter_questions(
+    questions: list[Question],
+    assessment_type: str | None = None,
+    sections: str | None = None,
+    calculator_active: bool | None = None,
+) -> list[Question]:
     """Filter questions by assessment type, section range, and/or calculator use.
 
     Args:
@@ -120,7 +131,7 @@ def filter_questions(questions, assessment_type=None, sections=None, calculator_
     """
     section_range = parse_range(sections) if sections is not None else None
 
-    filtered = []
+    filtered: list[Question] = []
     for q in questions:
         if assessment_type is not None:
             if "assessment_type" not in q:
@@ -155,7 +166,7 @@ def filter_questions(questions, assessment_type=None, sections=None, calculator_
     return filtered
 
 
-def _figure_include(figure, figure_width=None):
+def _figure_include(figure: str, figure_width: str | None = None) -> str:
     """LaTeX snippet including a figure file from the figures/ build dir."""
     name = str(figure)
     if name.lower().endswith(".tex"):
@@ -168,7 +179,7 @@ def _figure_include(figure, figure_width=None):
     return include
 
 
-def _apply_figure_placeholders(block, item):
+def _apply_figure_placeholders(block: str, item: Question) -> str:
     """Fill a template's $FIG_* placeholders from the item's figure fields."""
     above = begin = end = below = ""
     figure = item.get("figure")
@@ -209,10 +220,10 @@ def generate_test(
     assessment_type: str | None = None,
     sections: str | None = None,
     calculator_active: bool | None = None,
-    questions: list | None = None,
+    questions: list[Question] | None = None,
     work_space: str | None = None,
-    question_order: list | None = None,
-    choice_orders: dict | None = None,
+    question_order: list[Any] | None = None,
+    choice_orders: dict[Any, list[int]] | None = None,
 ) -> str:
     """Generate a test PDF from a YAML file.
 
@@ -258,8 +269,8 @@ def generate_test(
     all_questions = load_question_pool(yaml_path, questions)
 
     if question_order is not None:
-        by_id = {}
-        duplicated = set()
+        by_id: dict[Any, Question] = {}
+        duplicated: set[Any] = set()
         for q in all_questions:
             qid = q.get("id")
             if qid in by_id:
@@ -294,7 +305,7 @@ def generate_test(
         "FRQ_MULTIPART": "FRQ_Multipart_Template.tex",
         "FRQ_PART": "FRQ_Part_Template.tex",
     }
-    question_templates = {}
+    question_templates: dict[str, str] = {}
     for key, template_name in template_names.items():
         try:
             with resources.open_text("test_generator.templates", template_name) as fh:
@@ -304,7 +315,7 @@ def generate_test(
 
     default_work_space = str(work_space) if work_space is not None else "1in"
 
-    q_blocks = []
+    q_blocks: list[str] = []
     for q in questions:
         question_text = str(q.get("question", ""))
         solution_text = str(q.get("solution", ""))

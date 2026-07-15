@@ -4,6 +4,7 @@ import sys
 import time
 import types
 from pathlib import Path
+from typing import cast
 import subprocess
 
 import pytest
@@ -11,14 +12,15 @@ import yaml as real_yaml
 
 import test_generator
 from test_generator.__main__ import main
+from test_generator.core import Question
 
 
-def test_version_present():
+def test_version_present() -> None:
     assert hasattr(test_generator, "__version__")
 
 
-def test_filter_questions_assessment_type():
-    questions = [
+def test_filter_questions_assessment_type() -> None:
+    questions: list[Question] = [
         {"id": 1, "assessment_type": "quiz"},
         {"id": 2, "assessment_type": "test"},
         {"id": 3},
@@ -27,13 +29,13 @@ def test_filter_questions_assessment_type():
     assert [q["id"] for q in result] == [1]
 
 
-def test_filter_questions_no_filters_keeps_all():
-    questions = [{"id": 1}, {"id": 2, "assessment_type": "quiz"}]
+def test_filter_questions_no_filters_keeps_all() -> None:
+    questions: list[Question] = [{"id": 1}, {"id": 2, "assessment_type": "quiz"}]
     assert test_generator.filter_questions(questions) == questions
 
 
-def test_filter_questions_sections():
-    questions = [
+def test_filter_questions_sections() -> None:
+    questions: list[Question] = [
         {"id": 1, "sections": ["1.3"]},
         {"id": 2, "sections": ["1.3", "1.8"]},  # highest (1.8) outside range
         {"id": 3, "sections": [1.5, "1.7"]},
@@ -45,7 +47,7 @@ def test_filter_questions_sections():
     assert [q["id"] for q in result] == [1, 3, 6]
 
 
-def test_filter_questions_sections_multipart():
+def test_filter_questions_sections_multipart() -> None:
     questions = [
         {
             "id": 1,
@@ -82,7 +84,7 @@ def test_filter_questions_sections_multipart():
     assert [q["id"] for q in result] == [1, 3, 4]
 
 
-def test_filter_questions_calculator_active():
+def test_filter_questions_calculator_active() -> None:
     questions = [
         {"id": 1, "calculator_active": True},
         {"id": 2, "calculator_active": False},
@@ -95,7 +97,7 @@ def test_filter_questions_calculator_active():
     assert test_generator.filter_questions(questions) == questions
 
 
-def test_filter_questions_combined():
+def test_filter_questions_combined() -> None:
     questions = [
         {"id": 1, "assessment_type": "quiz", "sections": ["1.3"]},
         {"id": 2, "assessment_type": "test", "sections": ["1.3"]},
@@ -107,7 +109,7 @@ def test_filter_questions_combined():
     assert [q["id"] for q in result] == [1]
 
 
-def test_generate_test(tmp_path, monkeypatch):
+def test_generate_test(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(
         "questions:\n"
@@ -131,9 +133,11 @@ def test_generate_test(tmp_path, monkeypatch):
             }
         ]
     })
-    sys.modules["yaml"] = fake_yaml
+    sys.modules["yaml"] = cast(types.ModuleType, fake_yaml)
 
-    def fake_run(cmd, check, stdout, stderr):
+    def fake_run(
+        cmd: list[str], check: bool, stdout: int, stderr: int
+    ) -> subprocess.CompletedProcess[bytes]:
         tex_path = Path(cmd[-1])
         tex_content = tex_path.read_text()
         assert "\\question" in tex_content
@@ -153,7 +157,9 @@ def test_generate_test(tmp_path, monkeypatch):
     assert Path(result).exists()
 
 
-def test_generate_test_mcq_choice_measurement(tmp_path, monkeypatch):
+def test_generate_test_mcq_choice_measurement(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(
         "questions:\n"
@@ -166,7 +172,9 @@ def test_generate_test_mcq_choice_measurement(tmp_path, monkeypatch):
         "    solution: Because 2+2 equals 4.\n"
     )
 
-    def fake_run(cmd, check, stdout, stderr):
+    def fake_run(
+        cmd: list[str], check: bool, stdout: int, stderr: int
+    ) -> subprocess.CompletedProcess[bytes]:
         tex_path = Path(cmd[-1])
         tex_content = tex_path.read_text()
         # each option is measured so TeX can pick the layout
@@ -191,7 +199,7 @@ def test_generate_test_mcq_choice_measurement(tmp_path, monkeypatch):
     assert Path(result).exists()
 
 
-def test_generate_test_frq(tmp_path, monkeypatch):
+def test_generate_test_frq(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(
         "questions:\n"
@@ -211,7 +219,9 @@ def test_generate_test_frq(tmp_path, monkeypatch):
         "    solution: Because 2+2 equals 4.\n"
     )
 
-    def fake_run(cmd, check, stdout, stderr):
+    def fake_run(
+        cmd: list[str], check: bool, stdout: int, stderr: int
+    ) -> subprocess.CompletedProcess[bytes]:
         tex_path = Path(cmd[-1])
         tex_content = tex_path.read_text()
         assert "Evaluate the limit." in tex_content
@@ -234,7 +244,9 @@ def test_generate_test_frq(tmp_path, monkeypatch):
     assert Path(result).exists()
 
 
-def test_generate_test_work_space_default(tmp_path, monkeypatch):
+def test_generate_test_work_space_default(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(
         "questions:\n"
@@ -259,7 +271,9 @@ def test_generate_test_work_space_default(tmp_path, monkeypatch):
         "        work_space: 5in\n"
     )
 
-    def fake_run(cmd, check, stdout, stderr):
+    def fake_run(
+        cmd: list[str], check: bool, stdout: int, stderr: int
+    ) -> subprocess.CompletedProcess[bytes]:
         tex_path = Path(cmd[-1])
         tex_content = tex_path.read_text()
         # config-level default applies when the question doesn't set one
@@ -281,7 +295,9 @@ def test_generate_test_work_space_default(tmp_path, monkeypatch):
     assert Path(result).exists()
 
 
-def test_generate_test_frq_multipart(tmp_path, monkeypatch):
+def test_generate_test_frq_multipart(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(
         "questions:\n"
@@ -296,7 +312,9 @@ def test_generate_test_frq_multipart(tmp_path, monkeypatch):
         "        solution: At y = -1 and y = 1.\n"
     )
 
-    def fake_run(cmd, check, stdout, stderr):
+    def fake_run(
+        cmd: list[str], check: bool, stdout: int, stderr: int
+    ) -> subprocess.CompletedProcess[bytes]:
         tex_path = Path(cmd[-1])
         tex_content = tex_path.read_text()
         assert "Consider the function f." in tex_content
@@ -321,7 +339,9 @@ def test_generate_test_frq_multipart(tmp_path, monkeypatch):
     assert Path(result).exists()
 
 
-def test_generate_test_figure_placement(tmp_path, monkeypatch):
+def test_generate_test_figure_placement(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(
         "questions:\n"
@@ -355,7 +375,7 @@ def test_generate_test_figure_placement(tmp_path, monkeypatch):
         "    solution: Because.\n"
     )
 
-    tex_contents = []
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_pdf = tmp_path / "out.pdf"
@@ -384,7 +404,9 @@ def test_generate_test_figure_placement(tmp_path, monkeypatch):
     assert "figright" not in plain_block
 
 
-def test_generate_test_figure_placement_above_below(tmp_path, monkeypatch):
+def test_generate_test_figure_placement_above_below(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(
         "questions:\n"
@@ -411,7 +433,7 @@ def test_generate_test_figure_placement_above_below(tmp_path, monkeypatch):
         "    figure_placement: below\n"
     )
 
-    tex_contents = []
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_pdf = tmp_path / "out.pdf"
@@ -436,7 +458,9 @@ def test_generate_test_figure_placement_above_below(tmp_path, monkeypatch):
     assert frq_block.index(fig) < frq_block.index("\\begin{solution}")
 
 
-def test_generate_test_invalid_figure_placement(tmp_path, monkeypatch):
+def test_generate_test_invalid_figure_placement(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(
         "questions:\n"
@@ -454,7 +478,9 @@ def test_generate_test_invalid_figure_placement(tmp_path, monkeypatch):
         test_generator.generate_test(str(yaml_file), str(tmp_path / "out.pdf"))
 
 
-def test_generate_test_custom_figures_dir(tmp_path, monkeypatch):
+def test_generate_test_custom_figures_dir(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(
         "questions:\n"
@@ -480,11 +506,13 @@ def test_generate_test_custom_figures_dir(tmp_path, monkeypatch):
             }
         ]
     })
-    sys.modules["yaml"] = fake_yaml
+    sys.modules["yaml"] = cast(types.ModuleType, fake_yaml)
 
-    copied_figures = []
+    copied_figures: list[Path] = []
 
-    def fake_run(cmd, check, stdout, stderr):
+    def fake_run(
+        cmd: list[str], check: bool, stdout: int, stderr: int
+    ) -> subprocess.CompletedProcess[bytes]:
         outdir = cmd[cmd.index("-output-directory") + 1]
         figs = Path(outdir) / "figures"
         if figs.is_dir():
@@ -521,7 +549,7 @@ QUESTIONS_YAML = (
 )
 
 
-def _write_cli_inputs(tmp_path, config_extra=""):
+def _write_cli_inputs(tmp_path: Path, config_extra: str = "") -> tuple[Path, Path, Path]:
     questions_file = tmp_path / "questions.yaml"
     questions_file.write_text(QUESTIONS_YAML)
     config_file = tmp_path / "config.yaml"
@@ -539,7 +567,7 @@ def _write_cli_inputs(tmp_path, config_extra=""):
     return config_file, questions_file, figures_dir
 
 
-def _manifests(out_dir, prefix):
+def _manifests(out_dir: Path, prefix: str) -> list[Path]:
     """Manifests named <prefix>_<8-hex form ID>.manifest.yaml in out_dir."""
     pattern = re.compile(rf"{re.escape(prefix)}_[0-9a-f]{{8}}\.manifest\.yaml")
     return sorted(
@@ -547,15 +575,17 @@ def _manifests(out_dir, prefix):
     )
 
 
-def _the_manifest(out_dir, prefix):
+def _the_manifest(out_dir: Path, prefix: str) -> Path:
     """The single manifest matching the pattern."""
     matches = _manifests(out_dir, prefix)
     assert len(matches) == 1, f"expected one manifest match, got {matches}"
     return matches[0]
 
 
-def _fake_pdflatex(monkeypatch, tex_contents):
-    def fake_run(cmd, check, stdout, stderr):
+def _fake_pdflatex(monkeypatch: pytest.MonkeyPatch, tex_contents: list[str]) -> None:
+    def fake_run(
+        cmd: list[str], check: bool, stdout: int, stderr: int
+    ) -> subprocess.CompletedProcess[bytes]:
         tex_contents.append(Path(cmd[-1]).read_text())
         outdir = cmd[cmd.index("-output-directory") + 1]
         Path(outdir, "output.pdf").write_bytes(b"%PDF-1.4\n%EOF")
@@ -564,7 +594,9 @@ def _fake_pdflatex(monkeypatch, tex_contents):
     monkeypatch.setattr(subprocess, "run", fake_run)
 
 
-def _cli_args(config_file, questions_file, figures_dir, out_dir):
+def _cli_args(
+    config_file: Path, questions_file: Path, figures_dir: Path, out_dir: Path
+) -> list[str]:
     return [
         str(config_file),
         "--questions", str(questions_file),
@@ -573,9 +605,11 @@ def _cli_args(config_file, questions_file, figures_dir, out_dir):
     ]
 
 
-def test_main_generates_both_copies(tmp_path, monkeypatch):
+def test_main_generates_both_copies(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
-    tex_contents = []
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_dir = tmp_path / "out"
@@ -594,9 +628,11 @@ def test_main_generates_both_copies(tmp_path, monkeypatch):
     assert "10 min" in student_tex
 
 
-def test_main_form_id_format_and_no_date(tmp_path, monkeypatch):
+def test_main_form_id_format_and_no_date(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
-    tex_contents = []
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_dir = tmp_path / "out"
@@ -612,7 +648,9 @@ def test_main_form_id_format_and_no_date(tmp_path, monkeypatch):
     assert match.group(1) + match.group(2) in manifest.name
 
 
-def test_main_rejects_leftover_form_id(tmp_path, monkeypatch, capsys):
+def test_main_rejects_leftover_form_id(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
     config_file, questions_file, figures_dir = _write_cli_inputs(
         tmp_path, "form_id: A\n"
     )
@@ -625,7 +663,9 @@ def test_main_rejects_leftover_form_id(tmp_path, monkeypatch, capsys):
     assert "removed" in err
 
 
-def test_main_student_and_solution_choices_match(tmp_path, monkeypatch):
+def test_main_student_and_solution_choices_match(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     """Regression test: both copies must share one shuffled choice order."""
     config_file = tmp_path / "config.yaml"
     config_file.write_text(
@@ -640,7 +680,7 @@ def test_main_student_and_solution_choices_match(tmp_path, monkeypatch):
     )
     figures_dir = tmp_path / "figures"
     figures_dir.mkdir()
-    tex_contents = []
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
     main([str(config_file), "--out-dir", str(tmp_path / "out"),
@@ -656,7 +696,7 @@ def test_main_student_and_solution_choices_match(tmp_path, monkeypatch):
     assert student_choices and student_choices == solution_choices
 
 
-def test_main_student_only(tmp_path, monkeypatch):
+def test_main_student_only(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
     _fake_pdflatex(monkeypatch, [])
 
@@ -667,7 +707,7 @@ def test_main_student_only(tmp_path, monkeypatch):
     assert not (out_dir / "APCalc_Quiz_1.3_solutions.pdf").exists()
 
 
-def test_main_solution_only(tmp_path, monkeypatch):
+def test_main_solution_only(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
     _fake_pdflatex(monkeypatch, [])
 
@@ -678,13 +718,15 @@ def test_main_solution_only(tmp_path, monkeypatch):
     assert (out_dir / "APCalc_Quiz_1.3_solutions.pdf").exists()
 
 
-def test_main_filters_questions(tmp_path, monkeypatch):
+def test_main_filters_questions(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     config_file, questions_file, figures_dir = _write_cli_inputs(
         tmp_path,
         "assessment_type: quiz\n"
         "sections: 1.3 - 1.7\n",
     )
-    tex_contents = []
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_dir = tmp_path / "out"
@@ -694,7 +736,9 @@ def test_main_filters_questions(tmp_path, monkeypatch):
     assert "What is 3 + 3?" not in tex_contents[0]
 
 
-def test_main_filters_calculator_active(tmp_path, monkeypatch):
+def test_main_filters_calculator_active(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     config_file = tmp_path / "config.yaml"
     config_file.write_text(
         "name: Quiz_1.3\n"
@@ -715,7 +759,7 @@ def test_main_filters_calculator_active(tmp_path, monkeypatch):
     )
     figures_dir = tmp_path / "figures"
     figures_dir.mkdir()
-    tex_contents = []
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_dir = tmp_path / "out"
@@ -726,7 +770,9 @@ def test_main_filters_calculator_active(tmp_path, monkeypatch):
     assert "No calculator here." not in tex_contents[0]
 
 
-def test_main_student_and_solution_only_conflict(tmp_path, monkeypatch, capsys):
+def test_main_student_and_solution_only_conflict(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
     config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
     _fake_pdflatex(monkeypatch, [])
 
@@ -738,14 +784,16 @@ def test_main_student_and_solution_only_conflict(tmp_path, monkeypatch, capsys):
     assert "not allowed with" in capsys.readouterr().err
 
 
-def test_main_name_defaults_to_config_basename(tmp_path, monkeypatch):
+def test_main_name_defaults_to_config_basename(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     questions_file = tmp_path / "questions.yaml"
     questions_file.write_text(QUESTIONS_YAML)
     config_file = tmp_path / "Quiz_1.3.yaml"
     config_file.write_text("class_id: APCalc\n")  # no name
     figures_dir = tmp_path / "figures"
     figures_dir.mkdir()
-    tex_contents = []
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_dir = tmp_path / "out"
@@ -765,8 +813,10 @@ CONFIG_QUESTIONS_YAML = (
 )
 
 
-def test_generate_test_questions_list_without_yaml(tmp_path, monkeypatch):
-    tex_contents = []
+def test_generate_test_questions_list_without_yaml(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_pdf = tmp_path / "out.pdf"
@@ -787,7 +837,9 @@ def test_generate_test_questions_list_without_yaml(tmp_path, monkeypatch):
     assert "What is 2 + 2?" in tex_contents[0]
 
 
-def test_main_config_only_questions(tmp_path, monkeypatch):
+def test_main_config_only_questions(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     config_file = tmp_path / "config.yaml"
     config_file.write_text(
         "name: Quiz_1.3\n"
@@ -796,7 +848,7 @@ def test_main_config_only_questions(tmp_path, monkeypatch):
     )
     figures_dir = tmp_path / "figures"
     figures_dir.mkdir()
-    tex_contents = []
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_dir = tmp_path / "out"
@@ -806,11 +858,13 @@ def test_main_config_only_questions(tmp_path, monkeypatch):
     assert "What is 5 + 5?" in tex_contents[0]
 
 
-def test_main_combines_config_and_file_questions(tmp_path, monkeypatch):
+def test_main_combines_config_and_file_questions(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     config_file, questions_file, figures_dir = _write_cli_inputs(
         tmp_path, CONFIG_QUESTIONS_YAML
     )
-    tex_contents = []
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_dir = tmp_path / "out"
@@ -821,7 +875,9 @@ def test_main_combines_config_and_file_questions(tmp_path, monkeypatch):
     assert "What is 5 + 5?" in tex_contents[0]
 
 
-def test_main_config_questions_must_be_list(tmp_path, monkeypatch, capsys):
+def test_main_config_questions_must_be_list(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
     config_file = tmp_path / "config.yaml"
     config_file.write_text(
         "name: Quiz_1.3\nclass_id: APCalc\nquestions: nope\n"
@@ -835,7 +891,9 @@ def test_main_config_questions_must_be_list(tmp_path, monkeypatch, capsys):
     assert "'questions' must be a list" in capsys.readouterr().err
 
 
-def test_main_missing_required_config_field(tmp_path, monkeypatch, capsys):
+def test_main_missing_required_config_field(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
     questions_file = tmp_path / "questions.yaml"
     questions_file.write_text(QUESTIONS_YAML)
     config_file = tmp_path / "config.yaml"
@@ -849,7 +907,7 @@ def test_main_missing_required_config_field(tmp_path, monkeypatch, capsys):
     assert "class_id" in capsys.readouterr().err
 
 
-def _write_manifest_inputs(tmp_path):
+def _write_manifest_inputs(tmp_path: Path) -> tuple[Path, Path, Path]:
     """CLI inputs with a figure-bearing question and an unreferenced figure."""
     questions_file = tmp_path / "questions.yaml"
     questions_file.write_text(
@@ -879,15 +937,15 @@ def _write_manifest_inputs(tmp_path):
     return config_file, questions_file, figures_dir
 
 
-def _md5_of(path):
+def _md5_of(path: Path) -> str:
     import hashlib
 
     return hashlib.md5(Path(path).read_bytes()).hexdigest()
 
 
-def test_manifest_contents(tmp_path, monkeypatch):
+def test_manifest_contents(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
-    tex_contents = []
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_dir = tmp_path / "out"
@@ -930,9 +988,11 @@ def test_manifest_contents(tmp_path, monkeypatch):
     assert "choice_order" not in frq
 
     # the printed correct letter position matches choice_order.index(0)
-    choices_block = re.search(
+    choices_match = re.search(
         r"\\begin\{choices\}(.*?)\\end\{choices\}", tex_contents[0], re.S
-    ).group(1)
+    )
+    assert choices_match is not None
+    choices_block = choices_match.group(1)
     lines = [ln.strip() for ln in choices_block.strip().splitlines()]
     correct_pos = next(
         i for i, ln in enumerate(lines) if ln.startswith("\\correctchoice")
@@ -940,7 +1000,9 @@ def test_manifest_contents(tmp_path, monkeypatch):
     assert correct_pos == mcq["choice_order"].index(0)
 
 
-def test_main_missing_question_id(tmp_path, monkeypatch, capsys):
+def test_main_missing_question_id(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
     config_file = tmp_path / "config.yaml"
     config_file.write_text(
         "name: Quiz_M\n"
@@ -960,7 +1022,9 @@ def test_main_missing_question_id(tmp_path, monkeypatch, capsys):
     assert "missing an 'id'" in capsys.readouterr().err
 
 
-def test_main_duplicate_question_ids(tmp_path, monkeypatch, capsys):
+def test_main_duplicate_question_ids(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
     config_file = tmp_path / "config.yaml"
     config_file.write_text(
         "name: Quiz_M\n"
@@ -985,9 +1049,11 @@ def test_main_duplicate_question_ids(tmp_path, monkeypatch, capsys):
     assert "Duplicate question ID(s): dup" in capsys.readouterr().err
 
 
-def test_from_manifest_reproduces(tmp_path, monkeypatch):
+def test_from_manifest_reproduces(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
-    first_tex = []
+    first_tex: list[str] = []
     _fake_pdflatex(monkeypatch, first_tex)
 
     out_dir = tmp_path / "out"
@@ -999,7 +1065,7 @@ def test_from_manifest_reproduces(tmp_path, monkeypatch):
     student_pdf.unlink()
     solution_pdf.unlink()
 
-    second_tex = []
+    second_tex: list[str] = []
     _fake_pdflatex(monkeypatch, second_tex)
     main(_cli_args(config_file, questions_file, figures_dir, out_dir)
          + ["--from-manifest", str(manifest_file)])
@@ -1012,10 +1078,12 @@ def test_from_manifest_reproduces(tmp_path, monkeypatch):
     assert _manifests(out_dir, "APCalc_Quiz_M") == [manifest_file]
 
 
-def test_from_manifest_relocated_inputs(tmp_path, monkeypatch):
+def test_from_manifest_relocated_inputs(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     """Replay works from moved inputs as long as the contents match."""
     config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
-    first_tex = []
+    first_tex: list[str] = []
     _fake_pdflatex(monkeypatch, first_tex)
 
     out_dir = tmp_path / "out"
@@ -1029,7 +1097,7 @@ def test_from_manifest_relocated_inputs(tmp_path, monkeypatch):
     questions_file = Path(shutil.move(questions_file, moved / questions_file.name))
     figures_dir = Path(shutil.move(figures_dir, moved / "figures"))
 
-    second_tex = []
+    second_tex: list[str] = []
     _fake_pdflatex(monkeypatch, second_tex)
     monkeypatch.setattr(
         "builtins.input",
@@ -1041,7 +1109,9 @@ def test_from_manifest_relocated_inputs(tmp_path, monkeypatch):
     assert second_tex == first_tex
 
 
-def test_from_manifest_md5_mismatch_prompt(tmp_path, monkeypatch, capsys):
+def test_from_manifest_md5_mismatch_prompt(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
     config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
     _fake_pdflatex(monkeypatch, [])
 
@@ -1072,31 +1142,35 @@ def test_from_manifest_md5_mismatch_prompt(tmp_path, monkeypatch, capsys):
     assert (out_dir / "APCalc_Quiz_M_solutions.pdf").exists()
 
 
-def test_cli_from_manifest_requires_one_config(capsys):
+def test_cli_from_manifest_requires_one_config(
+    capsys: pytest.CaptureFixture[str]
+) -> None:
     for configs in ([], ["a.yaml", "b.yaml"]):
         with pytest.raises(SystemExit):
             main(configs + ["--from-manifest", "m.yaml"])
         assert "exactly one config" in capsys.readouterr().err
 
 
-def test_cli_requires_config_or_manifest(capsys):
+def test_cli_requires_config_or_manifest(capsys: pytest.CaptureFixture[str]) -> None:
     with pytest.raises(SystemExit):
         main(["--out-dir", "out"])
     assert "--from-manifest" in capsys.readouterr().err
 
 
-def test_cli_from_manifest_rejects_watch(tmp_path, capsys):
+def test_cli_from_manifest_rejects_watch(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
     with pytest.raises(SystemExit):
         main(["config.yaml", "--from-manifest", "m.yaml", "--watch"])
     assert "--watch" in capsys.readouterr().err
 
 
-def test_watch_draft_mode(tmp_path, monkeypatch):
+def test_watch_draft_mode(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
-    tex_contents = []
+    tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
 
-    def raise_interrupt(_seconds):
+    def raise_interrupt(_seconds: float) -> None:
         raise KeyboardInterrupt
 
     monkeypatch.setattr(time, "sleep", raise_interrupt)

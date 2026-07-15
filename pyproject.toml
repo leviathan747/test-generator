@@ -7,7 +7,7 @@ name = "test-generator"
 version = "0.2.0"
 description = "A small test generator package (skeleton)."
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [ { name = "Levi", email = "levi@roxsoftware.com" } ]
 keywords = ["tests", "generator", "pytest"]

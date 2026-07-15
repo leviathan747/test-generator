@@ -25,11 +25,13 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
+from typing import Any
 
 import yaml
 
 from ._version import __version__
 from .core import (
+    Question,
     _quote_backslash_scalar_lines,
     filter_questions,
     generate_test,
@@ -40,7 +42,7 @@ from .core import (
 MANIFEST_VERSION = 1
 
 
-def _load_config(config_path):
+def _load_config(config_path: str) -> dict[str, Any]:
     config_file = Path(config_path)
     if not config_file.exists():
         raise FileNotFoundError(config_path)
@@ -67,22 +69,28 @@ def _load_config(config_path):
     return config
 
 
-def _new_form_id():
+def _new_form_id() -> str:
     return secrets.token_hex(4)
 
 
-def _display_form_id(form_id):
+def _display_form_id(form_id: str) -> str:
     """Group an 8-hex form ID for the page footer (draft passes through)."""
     if len(form_id) == 8:
         return f"{form_id[:4]}-{form_id[4:]}"
     return form_id
 
 
-def _output_paths(config, form_id, out_dir, student_only=False, solution_only=False):
+def _output_paths(
+    config: dict[str, Any],
+    form_id: str,
+    out_dir: str,
+    student_only: bool = False,
+    solution_only: bool = False,
+) -> list[tuple[Path, bool]]:
     """Return the (path, solution) pairs to generate for this config."""
     base = f"{config['class_id']}_{config['name']}"
     out = Path(out_dir)
-    paths = []
+    paths: list[tuple[Path, bool]] = []
     if not solution_only:
         paths.append((out / f"{base}.pdf", False))
     if not student_only:
@@ -90,11 +98,11 @@ def _output_paths(config, form_id, out_dir, student_only=False, solution_only=Fa
     return paths
 
 
-def _manifest_path(config, form_id, out_dir):
+def _manifest_path(config: dict[str, Any], form_id: str, out_dir: str) -> Path:
     return Path(out_dir) / f"{config['class_id']}_{config['name']}_{form_id}.manifest.yaml"
 
 
-def _validate_question_ids(questions):
+def _validate_question_ids(questions: list[Question]) -> None:
     """Every included question must have a unique `id` for manifest lookup."""
     missing = [i + 1 for i, q in enumerate(questions) if not q.get("id")]
     if missing:
@@ -102,8 +110,8 @@ def _validate_question_ids(questions):
             f"Question(s) missing an 'id' (position {', '.join(map(str, missing))} "
             f"of the included questions); every question needs a unique id"
         )
-    seen = set()
-    duplicates = []
+    seen: set[Any] = set()
+    duplicates: list[Any] = []
     for q in questions:
         qid = q["id"]
         if qid in seen:
@@ -115,11 +123,16 @@ def _validate_question_ids(questions):
         )
 
 
-def _md5(path):
+def _md5(path: str | Path) -> str:
     return hashlib.md5(Path(path).read_bytes()).hexdigest()
 
 
-def _manifest_files(config_path, questions_path, figures_dir, questions):
+def _manifest_files(
+    config_path: str,
+    questions_path: str | None,
+    figures_dir: str,
+    questions: list[Question],
+) -> list[str]:
     """Input files to record: config, question bank, and referenced figures."""
     paths = [str(config_path)]
     if questions_path:
@@ -130,8 +143,8 @@ def _manifest_files(config_path, questions_path, figures_dir, questions):
             figure = item.get("figure")
             if figure:
                 paths.append(str(Path(figures_dir) / str(figure)))
-    seen = set()
-    unique = []
+    seen: set[str] = set()
+    unique: list[str] = []
     for p in paths:
         if p not in seen:
             seen.add(p)
@@ -140,11 +153,16 @@ def _manifest_files(config_path, questions_path, figures_dir, questions):
 
 
 def _write_manifest(
-    manifest_path, form_id, config_path, questions_path, figures_dir,
-    questions, choice_orders,
-):
+    manifest_path: str | Path,
+    form_id: str,
+    config_path: str,
+    questions_path: str | None,
+    figures_dir: str,
+    questions: list[Question],
+    choice_orders: dict[Any, list[int]],
+) -> str:
     file_paths = _manifest_files(config_path, questions_path, figures_dir, questions)
-    question_entries = []
+    question_entries: list[dict[str, Any]] = []
     for q in questions:
         entry = {"id": q["id"]}
         if q["id"] in choice_orders:
@@ -164,8 +182,15 @@ def _write_manifest(
     return str(manifest_path)
 
 
-def _generate_copies(args, config, form_id, questions_path, figures_dir,
-                     question_order, choice_orders):
+def _generate_copies(
+    args: argparse.Namespace,
+    config: dict[str, Any],
+    form_id: str,
+    questions_path: str | None,
+    figures_dir: str,
+    question_order: list[Any],
+    choice_orders: dict[Any, list[int]],
+) -> None:
     for output_pdf, solution in _output_paths(
         config, form_id, args.out_dir, args.student_only, args.solution_only
     ):
@@ -187,7 +212,7 @@ def _generate_copies(args, config, form_id, questions_path, figures_dir,
         print(out)
 
 
-def _run_once(args, draft=False):
+def _run_once(args: argparse.Namespace, draft: bool = False) -> bool:
     ok = True
     figures_dir = args.figures_dir if args.figures_dir is not None else "."
     for config_path in args.config_yaml:
@@ -220,7 +245,7 @@ def _run_once(args, draft=False):
     return ok
 
 
-def _confirm(prompt):
+def _confirm(prompt: str) -> bool:
     try:
         answer = input(prompt)
     except EOFError:
@@ -228,7 +253,7 @@ def _confirm(prompt):
     return answer.strip().lower() in ("y", "yes")
 
 
-def _run_from_manifest(args):
+def _run_from_manifest(args: argparse.Namespace) -> bool:
     manifest_file = Path(args.from_manifest)
     if not manifest_file.exists():
         raise FileNotFoundError(args.from_manifest)
@@ -261,8 +286,8 @@ def _run_from_manifest(args):
     selected = [by_id[qid] for qid in question_order if qid in by_id]
     loaded_paths = _manifest_files(config_path, args.questions, figures_dir, selected)
 
-    problems = []
-    loaded_md5s = set()
+    problems: list[str] = []
+    loaded_md5s: set[str] = set()
     manifest_md5s = {entry["md5"] for entry in manifest.get("files") or []}
     for p in loaded_paths:
         path = Path(p)
@@ -296,14 +321,19 @@ def _run_from_manifest(args):
     return True
 
 
-def _get_watched_mtimes(config_paths, questions_path, figures_dir):
-    mtimes = {}
+def _get_watched_mtimes(
+    config_paths: list[str],
+    questions_path: str | None,
+    figures_dir: str | None,
+) -> dict[str, float]:
+    mtimes: dict[str, float] = {}
     watched = [Path(p) for p in config_paths]
     if questions_path:
         watched.append(Path(questions_path))
     for p in watched:
         if p.exists():
             mtimes[str(p)] = p.stat().st_mtime
+    fig_dir: Path | None
     if figures_dir:
         fig_dir = Path(figures_dir)
     elif questions_path:
@@ -317,7 +347,7 @@ def _get_watched_mtimes(config_paths, questions_path, figures_dir):
     return mtimes
 
 
-def _watch_mode(args):
+def _watch_mode(args: argparse.Namespace) -> None:
     configs = ", ".join(args.config_yaml)
     watched = configs if args.questions is None else f"{configs} and {args.questions}"
     print(f"Watching {watched} for changes. Press Ctrl+C to stop.")
@@ -336,7 +366,7 @@ def _watch_mode(args):
         print("\nWatch mode stopped.")
 
 
-def main(argv=None):
+def main(argv: list[str] | None = None) -> None:
     argv = argv or sys.argv[1:]
     p = argparse.ArgumentParser(prog="python -m test_generator")
     p.add_argument("config_yaml", nargs="*", help="Path(s) to YAML config file(s) describing the assessment(s); each is generated in sequence")
