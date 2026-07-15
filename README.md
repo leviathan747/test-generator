@@ -42,7 +42,7 @@ python -m test_generator config.yaml [config2.yaml ...] \
 | Flag | Description |
 |------|-------------|
 | `--questions` | YAML file containing the question bank (optional; combined with any `questions` list in the config file) |
-| `--from-manifest` | Recreate an existing version from its manifest file (instead of config files; see below) |
+| `--from-manifest` | Recreate an existing version from its manifest file; provide the config (and `--questions`/`--figures-dir`) as in a normal run (see below) |
 | `--out-dir` | Directory where generated PDFs are written (default: current directory, created if missing) |
 | `--figures-dir` | Directory containing figures copied into the PDF build environment (default: current directory) |
 | `--watch` | Watch the config file(s), questions file, and figures directory for changes and regenerate drafts automatically (the footer shows `draft` in place of a form ID; no manifest is written) |
@@ -102,15 +102,18 @@ overwrite the PDFs but mint a new ID, so manifests accumulate side by side
 and any prior version can still be recreated from its manifest.
 
 The manifest records everything needed to recreate that exact version: the
-input files (config, question bank, and referenced figures) with their MD5
-digests, the question IDs in presentation order, and the order in which each
-MCQ's answer choices were shown. Rerunning with
-`--from-manifest <manifest.yaml>` (from the same working directory)
-regenerates the same printed pages — same questions, order, choices, and
-form ID — recreating deleted PDFs or overwriting existing ones. If any input
-file is missing or has changed since generation, the tool reports the
-mismatches and asks for confirmation before continuing. No new manifest is
-written on reproduce; the existing one remains the record for that form ID.
+MD5 digests of the input files (config, question bank, and referenced
+figures), the question IDs in presentation order, and the order in which
+each MCQ's answer choices were shown. Rerunning with the same config plus
+`--from-manifest <manifest.yaml>` (and `--questions`/`--figures-dir` if the
+original run used them) regenerates the same printed pages — same questions,
+order, choices, and form ID — recreating deleted PDFs or overwriting
+existing ones. The input files may have moved since generation; they are
+matched against the manifest by content (MD5), not by path. If a loaded
+file's digest doesn't appear in the manifest — or a manifest entry matches
+no loaded file — the tool reports the mismatches and asks for confirmation
+before continuing. No new manifest is written on reproduce; the existing
+one remains the record for that form ID.
 
 #### Figures
 

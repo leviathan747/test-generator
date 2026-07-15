@@ -5,7 +5,8 @@ Usage: python -m test_generator config.yaml [config2.yaml ...] \
            [--figures-dir <dir>] [--out-dir <dir>] \
            [--student-only | --solution-only]
 
-       python -m test_generator --from-manifest <manifest.yaml> \
+       python -m test_generator config.yaml --from-manifest <manifest.yaml> \
+           [--questions questions.yaml] [--figures-dir <dir>] \
            [--out-dir <dir>] [--student-only | --solution-only]
 
 Each config file describes an assessment (title, author, class name,
@@ -13,7 +14,9 @@ duration, and question filters); the question bank comes from the
 optional questions YAML file, a `questions` list in the config file
 itself, or both combined. Each run mints a fresh hex form ID and writes
 a manifest alongside the PDFs; `--from-manifest` replays a manifest to
-exactly recreate that version.
+exactly recreate that version. Replay takes the same config, question
+bank, and figures arguments as a normal run — the input files may live
+anywhere, as long as their contents (MD5 sums) match the manifest.
 """
 import argparse
 import hashlib
@@ -152,10 +155,7 @@ def _write_manifest(
         "form_id": form_id,
         "generated": datetime.now().astimezone().isoformat(),
         "generator_version": __version__,
-        "config": str(config_path),
-        "questions_file": str(questions_path) if questions_path else None,
-        "figures_dir": str(figures_dir) if figures_dir else None,
-        "files": [{"path": p, "md5": _md5(p)} for p in file_paths],
+        "files": [{"name": Path(p).name, "md5": _md5(p)} for p in file_paths],
         "questions": question_entries,
     }
     manifest_path = Path(manifest_path)
@@ -198,6 +198,7 @@ def _run_once(args, draft=False):
                 pool,
                 assessment_type=config.get("assessment_type"),
                 sections=config.get("sections"),
+                calculator_active=config.get("calculator_active"),
             )
             _validate_question_ids(included)
             form_id = "draft" if draft else _new_form_id()
@@ -245,13 +246,41 @@ def _run_from_manifest(args):
             file=sys.stderr,
         )
 
+    config_path = args.config_yaml[0]
+    config = _load_config(config_path)
+    figures_dir = args.figures_dir if args.figures_dir is not None else "."
+    question_order = [entry["id"] for entry in manifest.get("questions") or []]
+    choice_orders = {
+        entry["id"]: entry["choice_order"]
+        for entry in manifest.get("questions") or []
+        if "choice_order" in entry
+    }
+
+    pool = load_question_pool(args.questions, config.get("questions"))
+    by_id = {q.get("id"): q for q in pool}
+    selected = [by_id[qid] for qid in question_order if qid in by_id]
+    loaded_paths = _manifest_files(config_path, args.questions, figures_dir, selected)
+
     problems = []
-    for entry in manifest.get("files") or []:
-        path = Path(entry["path"])
+    loaded_md5s = set()
+    manifest_md5s = {entry["md5"] for entry in manifest.get("files") or []}
+    for p in loaded_paths:
+        path = Path(p)
         if not path.exists():
             problems.append(f"missing file: {path}")
-        elif _md5(path) != entry["md5"]:
-            problems.append(f"MD5 mismatch: {path}")
+            continue
+        md5 = _md5(path)
+        loaded_md5s.add(md5)
+        if md5 not in manifest_md5s:
+            problems.append(f"MD5 not in manifest: {path}")
+    for entry in manifest.get("files") or []:
+        if entry["md5"] not in loaded_md5s:
+            # older version-1 manifests labeled entries "path"
+            label = entry.get("name") or entry.get("path") or "?"
+            problems.append(
+                f"no loaded file matches manifest entry: {label} "
+                f"(md5 {entry['md5']})"
+            )
     if problems:
         print("Manifest verification failed:", file=sys.stderr)
         for problem in problems:
@@ -260,17 +289,9 @@ def _run_from_manifest(args):
             print("Aborted.", file=sys.stderr)
             return False
 
-    config = _load_config(manifest["config"])
-    questions_path = manifest.get("questions_file")
-    question_order = [entry["id"] for entry in manifest.get("questions") or []]
-    choice_orders = {
-        entry["id"]: entry["choice_order"]
-        for entry in manifest.get("questions") or []
-        if "choice_order" in entry
-    }
     _generate_copies(
-        args, config, manifest["form_id"], questions_path,
-        manifest.get("figures_dir"), question_order, choice_orders,
+        args, config, manifest["form_id"], args.questions,
+        figures_dir, question_order, choice_orders,
     )
     return True
 
@@ -319,7 +340,7 @@ def main(argv=None):
     argv = argv or sys.argv[1:]
     p = argparse.ArgumentParser(prog="python -m test_generator")
     p.add_argument("config_yaml", nargs="*", help="Path(s) to YAML config file(s) describing the assessment(s); each is generated in sequence")
-    p.add_argument("--from-manifest", dest="from_manifest", metavar="PATH", help="Recreate an existing version from its manifest file (instead of config files)")
+    p.add_argument("--from-manifest", dest="from_manifest", metavar="PATH", help="Recreate an existing version from its manifest file; provide the config (and --questions/--figures-dir) as in a normal run")
     p.add_argument("--questions", help="Path to YAML file containing questions (combined with any 'questions' list in the config file)")
     p.add_argument("--out-dir", dest="out_dir", default=".", help="Directory where generated PDFs are written (default: current directory)")
     p.add_argument("--figures-dir", dest="figures_dir", default=None, help="Directory containing figures (default: current directory)")
@@ -330,14 +351,10 @@ def main(argv=None):
     args = p.parse_args(argv)
 
     if args.from_manifest:
-        if args.config_yaml:
-            p.error("config files cannot be combined with --from-manifest")
+        if len(args.config_yaml) != 1:
+            p.error("--from-manifest requires exactly one config file")
         if args.watch:
             p.error("--watch cannot be used with --from-manifest")
-        if args.questions:
-            p.error("--questions cannot be used with --from-manifest (the manifest supplies it)")
-        if args.figures_dir is not None:
-            p.error("--figures-dir cannot be used with --from-manifest (the manifest supplies it)")
         try:
             ok = _run_from_manifest(args)
         except Exception as e:

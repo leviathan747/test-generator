@@ -122,7 +122,9 @@ def test_from_manifest_recreates_pdf(tmp_path):
     assert student_pdf.exists()
     student_pdf.unlink()
 
-    main(["--from-manifest", str(manifest), "--out-dir", str(tmp_path), "--student-only"])
+    main([str(config), "--from-manifest", str(manifest),
+          "--figures-dir", str(figures_dir),
+          "--out-dir", str(tmp_path), "--student-only"])
 
     assert student_pdf.exists(), f"PDF was not recreated: {student_pdf}"
     assert student_pdf.stat().st_size > 0, f"PDF is empty: {student_pdf}"

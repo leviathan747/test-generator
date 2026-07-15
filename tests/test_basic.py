@@ -1,4 +1,5 @@
 import re
+import shutil
 import sys
 import time
 import types
@@ -855,21 +856,27 @@ def test_manifest_contents(tmp_path, monkeypatch):
     assert manifest["form_id"] in manifest_file.name
     assert manifest["generated"]
     assert manifest["generator_version"] == test_generator.__version__
-    assert manifest["config"] == str(config_file)
-    assert manifest["questions_file"] == str(questions_file)
-    assert manifest["figures_dir"] == str(figures_dir)
+    # input locations are not recorded; only content hashes matter on replay
+    assert "config" not in manifest
+    assert "questions_file" not in manifest
+    assert "figures_dir" not in manifest
 
     # every recorded file hash matches a recomputation; only referenced
-    # figures are hashed
-    hashed = {entry["path"] for entry in manifest["files"]}
-    assert hashed == {
-        str(config_file),
-        str(questions_file),
-        str(figures_dir / "used.png"),
-        str(figures_dir / "part.png"),
+    # figures are hashed, and entries carry basenames only
+    inputs = {
+        p.name: p
+        for p in [
+            config_file,
+            questions_file,
+            figures_dir / "used.png",
+            figures_dir / "part.png",
+        ]
     }
+    hashed = {entry["name"] for entry in manifest["files"]}
+    assert hashed == set(inputs)
     for entry in manifest["files"]:
-        assert entry["md5"] == _md5_of(entry["path"])
+        assert "path" not in entry
+        assert entry["md5"] == _md5_of(inputs[entry["name"]])
 
     # questions in presentation order; choice_order only on the MCQ
     assert [q["id"] for q in manifest["questions"]] == ["q-mcq", "q-frq"]
@@ -949,7 +956,8 @@ def test_from_manifest_reproduces(tmp_path, monkeypatch):
 
     second_tex = []
     _fake_pdflatex(monkeypatch, second_tex)
-    main(["--from-manifest", str(manifest_file), "--out-dir", str(out_dir)])
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir)
+         + ["--from-manifest", str(manifest_file)])
 
     # identical tex (same questions, order, choices, form ID) and filenames
     assert second_tex == first_tex
@@ -957,6 +965,35 @@ def test_from_manifest_reproduces(tmp_path, monkeypatch):
     assert solution_pdf.exists()
     # no second manifest is written
     assert _manifests(out_dir, "APCalc_Quiz_M") == [manifest_file]
+
+
+def test_from_manifest_relocated_inputs(tmp_path, monkeypatch):
+    """Replay works from moved inputs as long as the contents match."""
+    config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
+    first_tex = []
+    _fake_pdflatex(monkeypatch, first_tex)
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_M")
+
+    # move every input so the paths recorded in the manifest no longer exist
+    moved = tmp_path / "moved"
+    moved.mkdir()
+    config_file = Path(shutil.move(config_file, moved / config_file.name))
+    questions_file = Path(shutil.move(questions_file, moved / questions_file.name))
+    figures_dir = Path(shutil.move(figures_dir, moved / "figures"))
+
+    second_tex = []
+    _fake_pdflatex(monkeypatch, second_tex)
+    monkeypatch.setattr(
+        "builtins.input",
+        lambda prompt="": pytest.fail("unexpected verification prompt"),
+    )
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir)
+         + ["--from-manifest", str(manifest_file)])
+
+    assert second_tex == first_tex
 
 
 def test_from_manifest_md5_mismatch_prompt(tmp_path, monkeypatch, capsys):
@@ -971,24 +1008,30 @@ def test_from_manifest_md5_mismatch_prompt(tmp_path, monkeypatch, capsys):
 
     questions_file.write_text(questions_file.read_text() + "# mutated\n")
 
+    replay_args = (_cli_args(config_file, questions_file, figures_dir, out_dir)
+                   + ["--from-manifest", str(manifest_file)])
+
     # answering "n" aborts with nothing generated
     monkeypatch.setattr("builtins.input", lambda prompt="": "n")
     with pytest.raises(SystemExit):
-        main(["--from-manifest", str(manifest_file), "--out-dir", str(out_dir)])
-    assert "MD5 mismatch" in capsys.readouterr().err
+        main(replay_args)
+    err = capsys.readouterr().err
+    assert "MD5 not in manifest" in err
+    assert "no loaded file matches manifest entry" in err
     assert not (out_dir / "APCalc_Quiz_M.pdf").exists()
 
     # answering "y" proceeds
     monkeypatch.setattr("builtins.input", lambda prompt="": "y")
-    main(["--from-manifest", str(manifest_file), "--out-dir", str(out_dir)])
+    main(replay_args)
     assert (out_dir / "APCalc_Quiz_M.pdf").exists()
     assert (out_dir / "APCalc_Quiz_M_solutions.pdf").exists()
 
 
-def test_cli_config_with_from_manifest_conflict(tmp_path, capsys):
-    with pytest.raises(SystemExit):
-        main(["config.yaml", "--from-manifest", "m.yaml"])
-    assert "--from-manifest" in capsys.readouterr().err
+def test_cli_from_manifest_requires_one_config(capsys):
+    for configs in ([], ["a.yaml", "b.yaml"]):
+        with pytest.raises(SystemExit):
+            main(configs + ["--from-manifest", "m.yaml"])
+        assert "exactly one config" in capsys.readouterr().err
 
 
 def test_cli_requires_config_or_manifest(capsys):
@@ -997,11 +1040,10 @@ def test_cli_requires_config_or_manifest(capsys):
     assert "--from-manifest" in capsys.readouterr().err
 
 
-def test_cli_from_manifest_rejects_watch_questions_figures(tmp_path, capsys):
-    for extra in (["--watch"], ["--questions", "q.yaml"], ["--figures-dir", "figs"]):
-        with pytest.raises(SystemExit):
-            main(["--from-manifest", "m.yaml"] + extra)
-        assert extra[0] in capsys.readouterr().err
+def test_cli_from_manifest_rejects_watch(tmp_path, capsys):
+    with pytest.raises(SystemExit):
+        main(["config.yaml", "--from-manifest", "m.yaml", "--watch"])
+    assert "--watch" in capsys.readouterr().err
 
 
 def test_watch_draft_mode(tmp_path, monkeypatch):
