@@ -199,6 +199,48 @@ def test_generate_test_mcq_choice_measurement(
     assert Path(result).exists()
 
 
+def test_generate_test_nocalc_banner(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    question_yaml = (
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: What is 2 + 2?\n"
+        "    answer: 4\n"
+        "    distractors:\n"
+        "      - 3\n"
+        "    solution: Because 2+2 equals 4.\n"
+        "    calculator_active: {}\n"
+    )
+    yaml_file = tmp_path / "q.yaml"
+
+    tex_contents: list[str] = []
+
+    def fake_run(
+        cmd: list[str], check: bool, stdout: int, stderr: int
+    ) -> subprocess.CompletedProcess[bytes]:
+        tex_contents.append(Path(cmd[-1]).read_text())
+        outdir = cmd[cmd.index("-output-directory") + 1]
+        Path(outdir, "output.pdf").write_bytes(b"%PDF-1.4\n%EOF")
+        return subprocess.CompletedProcess(cmd, 0, stdout=b"", stderr=b"")
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+
+    # a calculator-active question suppresses the banner everywhere
+    yaml_file.write_text(question_yaml.format("true"))
+    test_generator.generate_test(str(yaml_file), str(tmp_path / "calc.pdf"))
+    assert "\\runningheader{}" in tex_contents[0]
+    assert "\\nocalc" not in tex_contents[0].split("\\begin{document}")[1]
+    assert "$NOCALC" not in tex_contents[0]
+
+    # no calculator questions keeps the banner in header and first page
+    yaml_file.write_text(question_yaml.format("false"))
+    test_generator.generate_test(str(yaml_file), str(tmp_path / "nocalc.pdf"))
+    assert "\\runningheader{\\nocalc}" in tex_contents[1]
+    assert "\\nocalc" in tex_contents[1].split("\\begin{document}")[1]
+    assert "$NOCALC" not in tex_contents[1]
+
+
 def test_generate_test_frq(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     yaml_file = tmp_path / "q.yaml"
     yaml_file.write_text(

@@ -371,8 +371,11 @@ def generate_test(
 
         q_blocks.append(q_block)
 
+    any_calculator = any(bool(q.get("calculator_active")) for q in questions)
+
     question_content = "\n\\vspace{\\stretch{1}}\n".join(q_blocks) + "\\vspace{\\stretch{1}}"
     tex_content = template.replace("$QUESTION_CONTENT", question_content)
+    tex_content = tex_content.replace("$NOCALC", "" if any_calculator else "\\nocalc")
     tex_content = tex_content.replace("$TITLE", title)
     tex_content = tex_content.replace("$AUTHOR", author)
     tex_content = tex_content.replace("$CLASSNAME", class_name)
