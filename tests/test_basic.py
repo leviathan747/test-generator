@@ -525,18 +525,18 @@ def _write_cli_inputs(tmp_path, config_extra=""):
     return config_file, questions_file, figures_dir
 
 
-def _outputs(out_dir, prefix, suffix, form_id=r"[0-9a-f]{8}"):
-    """Output files matching <prefix>_<form_id><suffix> in out_dir."""
-    pattern = re.compile(rf"{re.escape(prefix)}_{form_id}{re.escape(suffix)}")
+def _manifests(out_dir, prefix):
+    """Manifests named <prefix>_<8-hex form ID>.manifest.yaml in out_dir."""
+    pattern = re.compile(rf"{re.escape(prefix)}_[0-9a-f]{{8}}\.manifest\.yaml")
     return sorted(
         p for p in Path(out_dir).iterdir() if pattern.fullmatch(p.name)
     )
 
 
-def _the_output(out_dir, prefix, suffix, form_id=r"[0-9a-f]{8}"):
-    """The single output file matching the pattern."""
-    matches = _outputs(out_dir, prefix, suffix, form_id)
-    assert len(matches) == 1, f"expected one {suffix} match, got {matches}"
+def _the_manifest(out_dir, prefix):
+    """The single manifest matching the pattern."""
+    matches = _manifests(out_dir, prefix)
+    assert len(matches) == 1, f"expected one manifest match, got {matches}"
     return matches[0]
 
 
@@ -567,13 +567,10 @@ def test_main_generates_both_copies(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir))
 
-    student_pdf = _the_output(out_dir, "APCalc_Quiz_1.3", ".pdf")
-    solution_pdf = _the_output(out_dir, "APCalc_Quiz_1.3", "_solutions.pdf")
-    manifest = _the_output(out_dir, "APCalc_Quiz_1.3", ".manifest.yaml")
-    # all three share the same form ID
-    form_id = student_pdf.stem.rsplit("_", 1)[1]
-    assert solution_pdf.name == f"APCalc_Quiz_1.3_{form_id}_solutions.pdf"
-    assert manifest.name == f"APCalc_Quiz_1.3_{form_id}.manifest.yaml"
+    # PDFs have stable names; only the manifest carries the form ID
+    assert (out_dir / "APCalc_Quiz_1.3.pdf").exists()
+    assert (out_dir / "APCalc_Quiz_1.3_solutions.pdf").exists()
+    _the_manifest(out_dir, "APCalc_Quiz_1.3")
     assert len(tex_contents) == 2
     student_tex, solution_tex = tex_contents
     assert "\\printanswers" not in student_tex
@@ -596,9 +593,9 @@ def test_main_form_id_format_and_no_date(tmp_path, monkeypatch):
     match = re.search(r"\\def \\formid \{([0-9a-f]{4})-([0-9a-f]{4})\}", tex)
     assert match, "grouped form ID not found in tex"
     assert "\\today" not in tex
-    # the filename carries the same ID ungrouped
-    student_pdf = _the_output(out_dir, "APCalc_Quiz_1.3", ".pdf")
-    assert student_pdf.stem.endswith(match.group(1) + match.group(2))
+    # the manifest filename carries the same ID ungrouped
+    manifest = _the_manifest(out_dir, "APCalc_Quiz_1.3")
+    assert match.group(1) + match.group(2) in manifest.name
 
 
 def test_main_rejects_leftover_form_id(tmp_path, monkeypatch, capsys):
@@ -652,8 +649,8 @@ def test_main_student_only(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir) + ["--student-only"])
 
-    assert len(_outputs(out_dir, "APCalc_Quiz_1.3", ".pdf")) == 1
-    assert not _outputs(out_dir, "APCalc_Quiz_1.3", "_solutions.pdf")
+    assert (out_dir / "APCalc_Quiz_1.3.pdf").exists()
+    assert not (out_dir / "APCalc_Quiz_1.3_solutions.pdf").exists()
 
 
 def test_main_solution_only(tmp_path, monkeypatch):
@@ -663,8 +660,8 @@ def test_main_solution_only(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir) + ["--solution-only"])
 
-    assert not _outputs(out_dir, "APCalc_Quiz_1.3", ".pdf")
-    assert len(_outputs(out_dir, "APCalc_Quiz_1.3", "_solutions.pdf")) == 1
+    assert not (out_dir / "APCalc_Quiz_1.3.pdf").exists()
+    assert (out_dir / "APCalc_Quiz_1.3_solutions.pdf").exists()
 
 
 def test_main_filters_questions(tmp_path, monkeypatch):
@@ -708,8 +705,8 @@ def test_main_name_defaults_to_config_basename(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir))
 
-    assert len(_outputs(out_dir, "APCalc_Quiz_1.3", ".pdf")) == 1
-    assert len(_outputs(out_dir, "APCalc_Quiz_1.3", "_solutions.pdf")) == 1
+    assert (out_dir / "APCalc_Quiz_1.3.pdf").exists()
+    assert (out_dir / "APCalc_Quiz_1.3_solutions.pdf").exists()
 
 
 CONFIG_QUESTIONS_YAML = (
@@ -759,7 +756,7 @@ def test_main_config_only_questions(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main([str(config_file), "--out-dir", str(out_dir), "--figures-dir", str(figures_dir)])
 
-    assert len(_outputs(out_dir, "APCalc_Quiz_1.3", ".pdf")) == 1
+    assert (out_dir / "APCalc_Quiz_1.3.pdf").exists()
     assert "What is 5 + 5?" in tex_contents[0]
 
 
@@ -850,7 +847,7 @@ def test_manifest_contents(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir))
 
-    manifest_file = _the_output(out_dir, "APCalc_Quiz_M", ".manifest.yaml")
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_M")
     manifest = real_yaml.safe_load(manifest_file.read_text())
 
     assert manifest["manifest_version"] == 1
@@ -944,9 +941,9 @@ def test_from_manifest_reproduces(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir))
 
-    manifest_file = _the_output(out_dir, "APCalc_Quiz_M", ".manifest.yaml")
-    student_pdf = _the_output(out_dir, "APCalc_Quiz_M", ".pdf")
-    solution_pdf = _the_output(out_dir, "APCalc_Quiz_M", "_solutions.pdf")
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_M")
+    student_pdf = out_dir / "APCalc_Quiz_M.pdf"
+    solution_pdf = out_dir / "APCalc_Quiz_M_solutions.pdf"
     student_pdf.unlink()
     solution_pdf.unlink()
 
@@ -956,10 +953,10 @@ def test_from_manifest_reproduces(tmp_path, monkeypatch):
 
     # identical tex (same questions, order, choices, form ID) and filenames
     assert second_tex == first_tex
-    assert _the_output(out_dir, "APCalc_Quiz_M", ".pdf") == student_pdf
-    assert _the_output(out_dir, "APCalc_Quiz_M", "_solutions.pdf") == solution_pdf
+    assert student_pdf.exists()
+    assert solution_pdf.exists()
     # no second manifest is written
-    assert _outputs(out_dir, "APCalc_Quiz_M", ".manifest.yaml") == [manifest_file]
+    assert _manifests(out_dir, "APCalc_Quiz_M") == [manifest_file]
 
 
 def test_from_manifest_md5_mismatch_prompt(tmp_path, monkeypatch, capsys):
@@ -968,9 +965,9 @@ def test_from_manifest_md5_mismatch_prompt(tmp_path, monkeypatch, capsys):
 
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir))
-    manifest_file = _the_output(out_dir, "APCalc_Quiz_M", ".manifest.yaml")
-    _the_output(out_dir, "APCalc_Quiz_M", ".pdf").unlink()
-    _the_output(out_dir, "APCalc_Quiz_M", "_solutions.pdf").unlink()
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_M")
+    (out_dir / "APCalc_Quiz_M.pdf").unlink()
+    (out_dir / "APCalc_Quiz_M_solutions.pdf").unlink()
 
     questions_file.write_text(questions_file.read_text() + "# mutated\n")
 
@@ -979,13 +976,13 @@ def test_from_manifest_md5_mismatch_prompt(tmp_path, monkeypatch, capsys):
     with pytest.raises(SystemExit):
         main(["--from-manifest", str(manifest_file), "--out-dir", str(out_dir)])
     assert "MD5 mismatch" in capsys.readouterr().err
-    assert not _outputs(out_dir, "APCalc_Quiz_M", ".pdf")
+    assert not (out_dir / "APCalc_Quiz_M.pdf").exists()
 
     # answering "y" proceeds
     monkeypatch.setattr("builtins.input", lambda prompt="": "y")
     main(["--from-manifest", str(manifest_file), "--out-dir", str(out_dir)])
-    assert len(_outputs(out_dir, "APCalc_Quiz_M", ".pdf")) == 1
-    assert len(_outputs(out_dir, "APCalc_Quiz_M", "_solutions.pdf")) == 1
+    assert (out_dir / "APCalc_Quiz_M.pdf").exists()
+    assert (out_dir / "APCalc_Quiz_M_solutions.pdf").exists()
 
 
 def test_cli_config_with_from_manifest_conflict(tmp_path, capsys):
@@ -1020,8 +1017,8 @@ def test_watch_draft_mode(tmp_path, monkeypatch):
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir) + ["--watch"])
 
-    # stable draft filenames, draft footer, and no manifest
-    assert (out_dir / "APCalc_Quiz_1.3_draft.pdf").exists()
-    assert (out_dir / "APCalc_Quiz_1.3_draft_solutions.pdf").exists()
+    # standard filenames, draft footer, and no manifest
+    assert (out_dir / "APCalc_Quiz_1.3.pdf").exists()
+    assert (out_dir / "APCalc_Quiz_1.3_solutions.pdf").exists()
     assert "\\def \\formid {draft}" in tex_contents[0]
     assert not list(out_dir.glob("*.manifest.yaml"))

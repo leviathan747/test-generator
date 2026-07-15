@@ -77,7 +77,7 @@ def _display_form_id(form_id):
 
 def _output_paths(config, form_id, out_dir, student_only=False, solution_only=False):
     """Return the (path, solution) pairs to generate for this config."""
-    base = f"{config['class_id']}_{config['name']}_{form_id}"
+    base = f"{config['class_id']}_{config['name']}"
     out = Path(out_dir)
     paths = []
     if not solution_only:
@@ -300,7 +300,7 @@ def _watch_mode(args):
     configs = ", ".join(args.config_yaml)
     watched = configs if args.questions is None else f"{configs} and {args.questions}"
     print(f"Watching {watched} for changes. Press Ctrl+C to stop.")
-    print("Draft mode: outputs use 'draft' in place of a form ID and no manifest is written.")
+    print("Draft mode: the footer shows 'draft' in place of a form ID and no manifest is written.")
     _run_once(args, draft=True)
     last_mtimes = _get_watched_mtimes(args.config_yaml, args.questions, args.figures_dir)
     try:

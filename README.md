@@ -45,7 +45,7 @@ python -m test_generator config.yaml [config2.yaml ...] \
 | `--from-manifest` | Recreate an existing version from its manifest file (instead of config files; see below) |
 | `--out-dir` | Directory where generated PDFs are written (default: current directory, created if missing) |
 | `--figures-dir` | Directory containing figures copied into the PDF build environment (default: current directory) |
-| `--watch` | Watch the config file(s), questions file, and figures directory for changes and regenerate drafts automatically (outputs use `draft` in place of a form ID; no manifest is written) |
+| `--watch` | Watch the config file(s), questions file, and figures directory for changes and regenerate drafts automatically (the footer shows `draft` in place of a form ID; no manifest is written) |
 | `--student-only` | Generate only the student copy (default: both copies) |
 | `--solution-only` | Generate only the solution copy (default: both copies) |
 
@@ -94,11 +94,12 @@ questions:
 
 Each run mints a fresh form ID — 8 random hex characters — that is printed
 (grouped, e.g. `3f9a-1c2e`) in the bottom-left page footer and used
-(ungrouped) in the output filenames. Output files are written to the output
-directory as `<class_id>_<name>_<form_id>.pdf` (student copy),
-`<class_id>_<name>_<form_id>_solutions.pdf` (solution copy), and
+(ungrouped) in the manifest filename. Output files are written to the output
+directory as `<class_id>_<name>.pdf` (student copy),
+`<class_id>_<name>_solutions.pdf` (solution copy), and
 `<class_id>_<name>_<form_id>.manifest.yaml` (the version manifest). Re-runs
-mint a new ID, so generated versions accumulate side by side.
+overwrite the PDFs but mint a new ID, so manifests accumulate side by side
+and any prior version can still be recreated from its manifest.
 
 The manifest records everything needed to recreate that exact version: the
 input files (config, question bank, and referenced figures) with their MD5
