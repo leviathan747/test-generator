@@ -133,6 +133,39 @@ class Range:
             for alternative in self._alternatives
         )
 
+    def concrete_sections(self) -> set[Version] | None:
+        """Every concrete section this range matches, or None if unbounded.
+
+        A range is enumerable when each alternative pins exact versions or
+        has finite lower and upper bounds within a single major (e.g.
+        ``1.3 - 1.7``). Wildcards, cross-major spans, and one-sided bounds
+        (e.g. ``1.x``, ``>=1.3``) return None.
+        """
+        sections: set[Version] = set()
+        for alternative in self._alternatives:
+            pins = {ref for op, ref in alternative if op == "=="}
+            if pins:
+                sections.update(
+                    pin for pin in pins
+                    if all(_satisfies(pin, op, ref) for op, ref in alternative)
+                )
+                continue
+            lower: Version | None = None
+            upper: Version | None = None
+            for op, ref in alternative:
+                if op in (">=", ">"):
+                    bound = ref if op == ">=" else (ref[0], ref[1] + 1)
+                    lower = bound if lower is None else max(lower, bound)
+                else:  # "<" or "<="
+                    if op == "<" and ref[1] == 0:
+                        return None  # the last minor of the prior major is unknown
+                    bound = ref if op == "<=" else (ref[0], ref[1] - 1)
+                    upper = bound if upper is None else min(upper, bound)
+            if lower is None or upper is None or lower[0] != upper[0]:
+                return None
+            sections.update((lower[0], m) for m in range(lower[1], upper[1] + 1))
+        return sections
+
 
 def parse_range(spec: str) -> Range:
     """Parse a range specification string into a :class:`Range`.

@@ -116,3 +116,21 @@ def test_invalid_ranges(bad: str) -> None:
 def test_match_invalid_version_raises() -> None:
     with pytest.raises(ValueError):
         parse_range("1.3").match("unknown")
+
+
+def test_concrete_sections_hyphen_range() -> None:
+    result = parse_range("1.3 - 1.7").concrete_sections()
+    assert result == {(1, 3), (1, 4), (1, 5), (1, 6), (1, 7)}
+
+
+def test_concrete_sections_exact_and_alternatives() -> None:
+    assert parse_range("1.3").concrete_sections() == {(1, 3)}
+    result = parse_range("1.3 || 2.1 - 2.2").concrete_sections()
+    assert result == {(1, 3), (2, 1), (2, 2)}
+
+
+def test_concrete_sections_unbounded() -> None:
+    assert parse_range("*").concrete_sections() is None
+    assert parse_range("1.x").concrete_sections() is None
+    assert parse_range(">=1.3").concrete_sections() is None
+    assert parse_range("1.3 - 2.4").concrete_sections() is None

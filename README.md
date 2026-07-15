@@ -73,6 +73,8 @@ assessment_type: quiz
 | `assessment_type` | Optional filter: keep only questions whose `assessment_type` matches |
 | `sections` | Optional filter: a section range (see below) |
 | `calculator_active` | Optional filter: `true` keeps only calculator-active questions, `false` keeps only no-calculator questions; a question missing the field counts as no-calculator |
+| `question_count` | Optional: randomly select exactly this many questions from the filtered pool (see below); errors if fewer questions match the filters |
+| `scramble_questions` | Optional: `true` shuffles the order of the selected questions (default `false`, keeping question-bank order) |
 | `questions` | Optional list of questions, in the same format as the questions file |
 | `work_space` | Default height of the FRQ answer work space (e.g. `2in`); questions and parts can override it with their own `work_space` field (default: `1in`) |
 
@@ -90,6 +92,25 @@ questions:
     distractors: [3, 5]
     solution: Because $2+2=4$.
 ```
+
+#### Question selection and the report
+
+When `question_count` is set, that many questions are chosen at random
+from the pool of questions matching the filters. Selection maximizes the
+number of unique sections covered, and questions linked by a
+`related_to` field are not chosen together unless the pool is too small
+to satisfy `question_count` otherwise. Selected questions keep their
+question-bank order unless `scramble_questions: true`. Selection and
+scrambling re-randomize on every run (including `--watch` draft
+regeneration); use the manifest to recreate a specific version.
+
+After each generation a report is printed showing a histogram of the
+number of questions covering each section, a histogram of DOK levels
+(a multipart question is rated by its hardest part), and the average
+DOK of the selected questions. When the `sections` filter is a bounded
+range (e.g. `1.1 - 1.16`), every section in the range is listed, even
+with zero questions, so coverage gaps stand out; DOK levels 1-4 are
+always listed.
 
 #### Form IDs and manifests
 

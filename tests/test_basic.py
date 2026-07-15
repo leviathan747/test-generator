@@ -1,3 +1,4 @@
+import random
 import re
 import shutil
 import sys
@@ -12,7 +13,8 @@ import yaml as real_yaml
 
 import test_generator
 from test_generator.__main__ import main
-from test_generator.core import Question
+from test_generator.core import Question, select_questions
+from test_generator.report import format_report
 
 
 def test_version_present() -> None:
@@ -1225,3 +1227,310 @@ def test_watch_draft_mode(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> No
     assert (out_dir / "APCalc_Quiz_1.3_solutions.pdf").exists()
     assert "\\def \\formid {draft}" in tex_contents[0]
     assert not list(out_dir.glob("*.manifest.yaml"))
+
+
+def _sel_q(
+    qid: str,
+    sections: list[str] | None = None,
+    related_to: list[str] | None = None,
+) -> Question:
+    q: Question = {"id": qid}
+    if sections is not None:
+        q["sections"] = sections
+    if related_to is not None:
+        q["related_to"] = related_to
+    return q
+
+
+def test_select_questions_count_and_order() -> None:
+    pool = [_sel_q(str(i)) for i in range(6)]
+    random.seed(0)
+    selected = select_questions(pool, 4)
+    assert len(selected) == 4
+    ids = [q["id"] for q in selected]
+    assert len(set(ids)) == 4
+    # bank order is preserved
+    assert ids == [q["id"] for q in pool if q["id"] in set(ids)]
+
+
+def test_select_questions_randomness() -> None:
+    pool = [_sel_q(str(i)) for i in range(6)]
+    selections: set[frozenset[str]] = set()
+    for seed in range(10):
+        random.seed(seed)
+        selections.add(frozenset(q["id"] for q in select_questions(pool, 3)))
+    assert len(selections) > 1
+
+
+def test_select_questions_maximizes_section_coverage() -> None:
+    pool = [
+        _sel_q("a1", ["1.1"]),
+        _sel_q("a2", ["1.1"]),
+        _sel_q("a3", ["1.1"]),
+        _sel_q("b", ["1.2"]),
+        _sel_q("c", ["1.3"]),
+    ]
+    for seed in range(10):
+        random.seed(seed)
+        selected = select_questions(pool, 3)
+        covered = {s for q in selected for s in q["sections"]}
+        assert covered == {"1.1", "1.2", "1.3"}
+
+
+def test_select_questions_avoids_related_pairs() -> None:
+    # the edge is declared only on "a"; avoidance must be symmetric
+    pool = [
+        _sel_q("a", related_to=["b"]),
+        _sel_q("b"),
+        _sel_q("c"),
+        _sel_q("d"),
+    ]
+    for seed in range(10):
+        random.seed(seed)
+        ids = {q["id"] for q in select_questions(pool, 3)}
+        assert not {"a", "b"} <= ids
+
+
+def test_select_questions_relaxes_related_when_necessary() -> None:
+    pool = [_sel_q("a", related_to=["b"]), _sel_q("b")]
+    random.seed(0)
+    assert {q["id"] for q in select_questions(pool, 2)} == {"a", "b"}
+
+
+def test_select_questions_ignores_dangling_related_ids() -> None:
+    pool = [_sel_q("a", related_to=["missing"]), _sel_q("b")]
+    random.seed(0)
+    assert len(select_questions(pool, 2)) == 2
+
+
+def test_select_questions_count_exceeds_pool() -> None:
+    pool = [_sel_q("a"), _sel_q("b")]
+    with pytest.raises(RuntimeError, match=r"3.*2"):
+        select_questions(pool, 3)
+
+
+def test_format_report_sections_sorted_and_counted() -> None:
+    questions: list[Question] = [
+        {"id": 1, "sections": ["1.2", "1.10"], "dok": 1},
+        {"id": 2, "sections": ["1.10"], "dok": 2},
+    ]
+    report = format_report(questions)
+    lines = report.splitlines()
+    assert lines[0] == "Test report: 2 question(s)"
+    assert "  1.2  █ 1" in lines
+    assert "  1.10 ██ 2" in lines
+    assert lines.index("  1.2  █ 1") < lines.index("  1.10 ██ 2")
+
+
+def test_format_report_multipart_and_missing_dok() -> None:
+    questions: list[Question] = [
+        {
+            "id": 1,
+            "parts": [
+                {"sections": ["2.1"], "dok": 1},
+                {"sections": ["2.2"], "dok": 3},
+            ],
+        },
+        {"id": 2, "sections": ["2.1"]},  # no DOK anywhere
+    ]
+    report = format_report(questions)
+    assert "  2.1 ██ 2" in report  # part sections counted, union per question
+    assert "  2.2 █ 1" in report
+    assert "  3   █ 1" in report  # multipart rated by its hardest part
+    assert "  n/a █ 1" in report
+    assert "Average DOK: 3.00" in report  # n/a excluded
+
+
+def test_format_report_average_two_decimals() -> None:
+    questions: list[Question] = [
+        {"id": i, "dok": dok} for i, dok in enumerate([1, 2, 2])
+    ]
+    assert "Average DOK: 1.67" in format_report(questions)
+
+
+def test_format_report_no_dok_at_all() -> None:
+    assert "Average DOK: n/a" in format_report([{"id": 1}])
+
+
+def test_main_question_count_selects_subset(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(
+        tmp_path, "question_count: 1\n"
+    )
+    _fake_pdflatex(monkeypatch, [])
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_1.3")
+    manifest = real_yaml.safe_load(manifest_file.read_text())
+    assert len(manifest["questions"]) == 1
+    assert manifest["questions"][0]["id"] in (1, 2)
+
+
+@pytest.mark.parametrize("value", ["0", "-1", "nope", "true", "1.5"])
+def test_main_question_count_rejects_invalid(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    value: str,
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(
+        tmp_path, f"question_count: {value}\n"
+    )
+    _fake_pdflatex(monkeypatch, [])
+
+    with pytest.raises(SystemExit):
+        main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out"))
+    assert "positive integer" in capsys.readouterr().err
+
+
+def test_main_question_count_exceeds_pool(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(
+        tmp_path, "question_count: 99\n"
+    )
+    _fake_pdflatex(monkeypatch, [])
+
+    with pytest.raises(SystemExit):
+        main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out"))
+    err = capsys.readouterr().err
+    assert "99" in err
+    assert "2 question(s)" in err
+
+
+def test_main_scramble_questions(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    question_lines = "".join(
+        f"  - id: q{i}\n"
+        f"    question: 'Question {i}?'\n"
+        f"    answer: {i}\n"
+        f"    distractors: [{i + 100}]\n"
+        for i in range(6)
+    )
+    config_file = tmp_path / "config.yaml"
+    config_file.write_text(
+        "name: Quiz_S\n"
+        "class_id: APCalc\n"
+        "scramble_questions: true\n"
+        "questions:\n"
+        + question_lines
+    )
+    figures_dir = tmp_path / "figures"
+    figures_dir.mkdir()
+    _fake_pdflatex(monkeypatch, [])
+
+    bank_order = [f"q{i}" for i in range(6)]
+    orders: list[list[str]] = []
+    for seed in range(5):
+        random.seed(seed)
+        out_dir = tmp_path / f"out{seed}"
+        main([str(config_file), "--out-dir", str(out_dir),
+              "--figures-dir", str(figures_dir)])
+        manifest_file = _the_manifest(out_dir, "APCalc_Quiz_S")
+        manifest = real_yaml.safe_load(manifest_file.read_text())
+        orders.append([q["id"] for q in manifest["questions"]])
+
+    assert all(sorted(order) == bank_order for order in orders)
+    assert any(order != bank_order for order in orders)
+
+
+def test_main_scramble_questions_rejects_non_bool(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(
+        tmp_path, "scramble_questions: maybe\n"
+    )
+    _fake_pdflatex(monkeypatch, [])
+
+    with pytest.raises(SystemExit):
+        main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out"))
+    assert "must be a boolean" in capsys.readouterr().err
+
+
+def test_main_prints_report(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    config_file = tmp_path / "config.yaml"
+    config_file.write_text(
+        "name: Quiz_R\n"
+        "class_id: APCalc\n"
+        "questions:\n"
+        "  - id: r1\n"
+        "    question: 'One?'\n"
+        "    answer: 1\n"
+        "    distractors: [2]\n"
+        "    sections: ['1.1']\n"
+        "    dok: 1\n"
+        "  - id: r2\n"
+        "    question: 'Two?'\n"
+        "    answer: 2\n"
+        "    distractors: [3]\n"
+        "    sections: ['1.2']\n"
+        "    dok: 2\n"
+    )
+    figures_dir = tmp_path / "figures"
+    figures_dir.mkdir()
+    _fake_pdflatex(monkeypatch, [])
+
+    main([str(config_file), "--out-dir", str(tmp_path / "out"),
+          "--figures-dir", str(figures_dir)])
+
+    out = capsys.readouterr().out
+    assert "Test report: 2 question(s)" in out
+    assert "Section coverage:" in out
+    assert "DOK levels:" in out
+    assert "Average DOK: 1.50" in out
+
+
+def test_main_from_manifest_prints_report_same_questions(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(
+        tmp_path, "question_count: 1\n"
+    )
+    first_tex: list[str] = []
+    _fake_pdflatex(monkeypatch, first_tex)
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_1.3")
+    manifest = real_yaml.safe_load(manifest_file.read_text())
+    capsys.readouterr()
+
+    second_tex: list[str] = []
+    _fake_pdflatex(monkeypatch, second_tex)
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir)
+         + ["--from-manifest", str(manifest_file)])
+
+    # replay regenerates the same single question, never re-selecting
+    assert second_tex == first_tex
+    assert len(manifest["questions"]) == 1
+    out = capsys.readouterr().out
+    assert "Test report: 1 question(s)" in out
+    assert "Average DOK:" in out
+
+
+def test_format_report_lists_all_sections_in_range() -> None:
+    questions: list[Question] = [{"id": 1, "sections": ["1.2"], "dok": 2}]
+    report = format_report(questions, sections="1.1 - 1.3")
+    assert "  1.1 0" in report
+    assert "  1.2 █ 1" in report
+    assert "  1.3 0" in report
+
+
+def test_format_report_unbounded_range_shows_observed_only() -> None:
+    questions: list[Question] = [{"id": 1, "sections": ["1.2"], "dok": 2}]
+    report = format_report(questions, sections="1.x")
+    assert "1.2" in report
+    assert "1.1" not in report
+
+
+def test_format_report_always_lists_dok_1_through_4() -> None:
+    report = format_report([{"id": 1, "dok": 2}])
+    for line in ("  1 0", "  2 █ 1", "  3 0", "  4 0"):
+        assert line in report
+    assert "n/a" not in report

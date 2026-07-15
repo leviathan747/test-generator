@@ -166,6 +166,80 @@ def filter_questions(
     return filtered
 
 
+def _question_sections(q: Question) -> set[tuple[int, int]]:
+    """Return the normalized ``(major, minor)`` sections a question covers.
+
+    For a multipart question the union of each part's sections is used;
+    otherwise the question-level ``sections`` list. Values that fail to
+    parse are skipped.
+    """
+    parts = q.get("parts") or []
+    if parts:
+        raw = [s for part in parts for s in (part.get("sections") or [])]
+    else:
+        raw = list(q.get("sections") or [])
+
+    covered: set[tuple[int, int]] = set()
+    for s in raw:
+        try:
+            covered.add(parse_version(s))
+        except ValueError:
+            continue
+    return covered
+
+
+def select_questions(pool: list[Question], count: int) -> list[Question]:
+    """Randomly select ``count`` questions from ``pool``.
+
+    Selection prefers, in order: questions not ``related_to`` any already
+    selected question (relatedness is treated as undirected and is relaxed
+    only when every remaining candidate is related to a selection), then
+    questions covering the most not-yet-covered sections, then uniform
+    random tie-breaking. The result preserves the pool's original order.
+
+    Note that selection is re-randomized on every call; reproducibility
+    comes from persisting the selected order (e.g. in a manifest).
+
+    Raises:
+        RuntimeError: If ``count`` exceeds the pool size.
+    """
+    if count > len(pool):
+        raise RuntimeError(
+            f"question_count is {count} but only {len(pool)} question(s) "
+            f"match the filters"
+        )
+
+    neighbors: dict[Any, set[Any]] = {q["id"]: set() for q in pool}
+    for q in pool:
+        for rid in q.get("related_to") or []:
+            if rid in neighbors and rid != q["id"]:
+                neighbors[q["id"]].add(rid)
+                neighbors[rid].add(q["id"])
+
+    shuffled = pool.copy()
+    random.shuffle(shuffled)
+
+    selected_ids: set[Any] = set()
+    covered: set[tuple[int, int]] = set()
+    for _ in range(count):
+        best: Question | None = None
+        best_key: tuple[int, int] | None = None
+        for q in shuffled:
+            if q["id"] in selected_ids:
+                continue
+            key = (
+                len(neighbors[q["id"]] & selected_ids),
+                -len(_question_sections(q) - covered),
+            )
+            if best_key is None or key < best_key:
+                best, best_key = q, key
+        assert best is not None
+        selected_ids.add(best["id"])
+        covered |= _question_sections(best)
+
+    return [q for q in pool if q["id"] in selected_ids]
+
+
 def _figure_include(figure: str, figure_width: str | None = None) -> str:
     """LaTeX snippet including a figure file from the figures/ build dir."""
     name = str(figure)

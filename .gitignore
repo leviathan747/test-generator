@@ -8,7 +8,7 @@ build/
 dist/
 .mypy_cache/
 *.egg-info/
-tests/output_pdfs/
+/tests/output_pdfs/
 *.pdf
 *.log
 *.aux

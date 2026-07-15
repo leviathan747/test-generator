@@ -12,14 +12,21 @@ Usage: python -m test_generator config.yaml [config2.yaml ...] \
 Each config file describes an assessment (title, author, class name,
 duration, and question filters); the question bank comes from the
 optional questions YAML file, a `questions` list in the config file
-itself, or both combined. Each run mints a fresh hex form ID and writes
-a manifest alongside the PDFs; `--from-manifest` replays a manifest to
-exactly recreate that version. Replay takes the same config, question
-bank, and figures arguments as a normal run — the input files may live
-anywhere, as long as their contents (MD5 sums) match the manifest.
+itself, or both combined. A `question_count` config field randomly
+selects that many questions from the filtered pool (maximizing section
+coverage and avoiding `related_to` pairs when possible), and
+`scramble_questions: true` shuffles the question order; both re-randomize
+on every run, including draft/watch regeneration. Each run mints a fresh
+hex form ID and writes a manifest alongside the PDFs; `--from-manifest`
+replays a manifest to exactly recreate that version. Replay takes the
+same config, question bank, and figures arguments as a normal run — the
+input files may live anywhere, as long as their contents (MD5 sums)
+match the manifest. After each generation a report of section coverage
+and DOK levels is printed.
 """
 import argparse
 import hashlib
+import random
 import secrets
 import sys
 import time
@@ -37,7 +44,9 @@ from .core import (
     generate_test,
     load_question_pool,
     make_choice_orders,
+    select_questions,
 )
+from .report import format_report
 
 MANIFEST_VERSION = 1
 
@@ -65,6 +74,20 @@ def _load_config(config_path: str) -> dict[str, Any]:
 
     if config.get("questions") is not None and not isinstance(config["questions"], list):
         raise RuntimeError(f"Config field 'questions' must be a list: {config_path}")
+
+    count = config.get("question_count")
+    if count is not None and (
+        isinstance(count, bool) or not isinstance(count, int) or count < 1
+    ):
+        raise RuntimeError(
+            f"Config field 'question_count' must be a positive integer: {config_path}"
+        )
+
+    scramble = config.get("scramble_questions")
+    if scramble is not None and not isinstance(scramble, bool):
+        raise RuntimeError(
+            f"Config field 'scramble_questions' must be a boolean: {config_path}"
+        )
 
     return config
 
@@ -226,6 +249,11 @@ def _run_once(args: argparse.Namespace, draft: bool = False) -> bool:
                 calculator_active=config.get("calculator_active"),
             )
             _validate_question_ids(included)
+            question_count = config.get("question_count")
+            if question_count is not None:
+                included = select_questions(included, question_count)
+            if config.get("scramble_questions"):
+                random.shuffle(included)
             form_id = "draft" if draft else _new_form_id()
             question_order = [q["id"] for q in included]
             choice_orders = make_choice_orders(included)
@@ -239,6 +267,7 @@ def _run_once(args: argparse.Namespace, draft: bool = False) -> bool:
                     form_id, config_path, args.questions, figures_dir,
                     included, choice_orders,
                 ))
+            print(format_report(included, config.get("sections")))
         except Exception as e:
             print(f"Error: {e}", file=sys.stderr)
             ok = False
@@ -318,6 +347,7 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
         args, config, manifest["form_id"], args.questions,
         figures_dir, question_order, choice_orders,
     )
+    print(format_report(selected, config.get("sections")))
     return True
 
 
