@@ -1,4 +1,8 @@
+title: "Unit 1: Limits and Continuity"
+author: Levi Starrett
+class_name: AP Calculus AB
 class_id: APCalc
+duration: 30 min
 questions:
   - id: 3be46b22-c917-426f-a12c-66d274b43e6b
     legacy_ids:
@@ -287,7 +291,7 @@ questions:
       $\lim_{x \to \infty} \frac{\frac{6x}{x^2} + \frac{1}{x^2}}{\frac{-8x^2}{x^2} - \frac{4}{x^2}}$
       $= \lim_{x \to \infty} \frac{\frac{6}{x} + \frac{1}{x^2}}{-8 - \frac{4}{x^2}}$
       $= \frac{0 + 0}{-8 - 0} = 0$
-    calculator_active: true
+    calculator_active: false
     sections:
       - 1.15
     dok: 2
@@ -312,7 +316,7 @@ questions:
       $\lim_{x \to 2^-} (f(x) \cdot g(x - 1)) = 0 \cdot 1 = 0$
       $\quad \lim_{x \to 2^+} (f(x) \cdot g(x - 1)) = 0 \cdot -1 = 0$
       $\quad \therefore \quad \lim_{x \to 2} (f(x) \cdot g(x - 1)) = 0$
-    calculator_active: true
+    calculator_active: false
     sections:
       - 1.3
       - 1.5
@@ -336,7 +340,7 @@ questions:
       H.A. at $y = 2 \implies a = 2$ \\
       V.A. at $x = -3 \implies c = 3$ \\
       $\therefore a + c = 5$
-    calculator_active: true
+    calculator_active: false
     sections:
       - 1.14
       - 1.15
@@ -360,7 +364,7 @@ questions:
       $= \lim_{h \to 0} \frac{2xh + h^2 + 3h}{h}$
       $= \lim_{h \to 0} \frac{\cancel{h}(2x + h + 3)}{\cancel{h}}$
       $= 2x + 0 + 3 = 2x + 3$
-    calculator_active: true
+    calculator_active: false
     sections:
       - 1.6
       - 1.7
@@ -385,7 +389,7 @@ questions:
       - I and III only
       - I, II, and III
     solution: $g(2) = 3 \quad \lim_{x \to 2} g(x) = 1 \quad \therefore \quad \lim_{x \to 2} g(x) \ne g(2)$ and $g$ is \emph{not} continuous at $x = 2$.
-    calculator_active: true
+    calculator_active: false
     sections:
       - 1.3
       - 1.11
@@ -673,7 +677,7 @@ questions:
       H.A. at $y = 0 \implies a \le 1$ \\
       V.A. at $x = 2 \implies c = 4$ \\
       $\therefore a + c \le 5$
-    calculator_active: true
+    calculator_active: false
     sections:
       - 1.14
       - 1.15
@@ -696,7 +700,7 @@ questions:
       $\lim_{x \to -\infty} \frac{\frac{6x^2}{x^2} - \frac{1}{x^2}}{\frac{2x^2}{x^2} + \frac{4}{x^2}}$
       $= \lim_{x \to \infty} \frac{6 - \frac{1}{x^2}}{2 + \frac{4}{x^2}}$
       $= \frac{6 + 0}{2 - 0} = 3$
-    calculator_active: true
+    calculator_active: false
     sections:
       - 1.15
     dok: 2
@@ -720,7 +724,7 @@ questions:
       - I and III only
       - I, II, and III
     solution: $\lim_{x \to 2} g(x) = 1 \quad g(2) = 3$
-    calculator_active: true
+    calculator_active: false
     sections:
       - 1.3
       - 1.11
@@ -746,7 +750,7 @@ questions:
       $= \lim_{\Delta x \to 0} 3x^2 + 3x\Delta x + \Delta x^2 - 7$
       $= 3x^2 + 3x(0) + (0)^2 - 7$
       $= 3x^2 - 7$
-    calculator_active: true
+    calculator_active: false
     sections:
       - 1.6
       - 1.7
@@ -775,7 +779,7 @@ questions:
       $\quad \lim_{x \to 2^+} (f(x) \cdot g(x - 1)) = 0 \cdot -1 = 0$
       $\quad \therefore \quad \lim_{x \to 2} (f(x) \cdot g(x - 1)) = 0 \Rightarrow$ false \\
       D: $\lim_{x \to 1^-} g(x) = 1 \Rightarrow$ false
-    calculator_active: true
+    calculator_active: false
     sections:
       - 1.3
       - 1.5

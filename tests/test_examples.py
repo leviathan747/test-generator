@@ -25,14 +25,14 @@ EXAMPLE_CASES = [
     ("appc", None, "unit3a"),
     ("appc", None, "unit3b"),
     ("appc", None, "unit3c"),
-    ("apcalc", "test_questions", "unit1"),
-    ("apcalc", "test_questions", "unit2"),
-    ("apcalc", "test_questions", "unit3"),
-    ("apcalc", "test_questions", "unit4"),
-    ("apcalc", "test_questions", "unit5"),
-    ("apcalc", "test_questions", "unit6"),
-    ("apcalc", "test_questions", "unit7"),
-    ("apcalc", "test_questions", "unit8"),
+    ("apcalc", "tests", "unit1"),
+    ("apcalc", "tests", "unit2"),
+    ("apcalc", "tests", "unit3"),
+    ("apcalc", "tests", "unit4"),
+    ("apcalc", "tests", "unit5"),
+    ("apcalc", "tests", "unit6"),
+    ("apcalc", "tests", "unit7"),
+    ("apcalc", "tests", "unit8"),
 ]
 
 
@@ -42,7 +42,7 @@ EXAMPLE_CASES = [
     ids=[f"{c}/{s + '/' if s else ''}{u}" for c, s, u in EXAMPLE_CASES],
 )
 def test_example_builds_pdf(course: str, subdir: str | None, unit: str) -> None:
-    # apcalc keeps its YAML files in test_questions/ and quiz_questions/
+    # apcalc keeps its YAML files in tests/ and quiz_questions/
     # subdirectories and uses a single flat figures/ directory; other courses
     # keep YAML files at the course root and per-unit figure subdirectories
     # under figures/.
