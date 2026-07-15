@@ -69,9 +69,6 @@ def _load_config(config_path: str) -> dict[str, Any]:
             f"generated automatically) — delete it from {config_path}"
         )
 
-    if not config.get("class_id"):
-        raise RuntimeError("Config is missing required field(s): class_id")
-
     if config.get("questions") is not None and not isinstance(config["questions"], list):
         raise RuntimeError(f"Config field 'questions' must be a list: {config_path}")
 
@@ -103,6 +100,13 @@ def _display_form_id(form_id: str) -> str:
     return form_id
 
 
+def _output_base(config: dict[str, Any]) -> str:
+    """Output filename base: `<class_id>_<name>`, or `<name>` if no class_id."""
+    class_id = config.get("class_id")
+    name = config["name"]
+    return f"{class_id}_{name}" if class_id else str(name)
+
+
 def _output_paths(
     config: dict[str, Any],
     form_id: str,
@@ -111,7 +115,7 @@ def _output_paths(
     solution_only: bool = False,
 ) -> list[tuple[Path, bool]]:
     """Return the (path, solution) pairs to generate for this config."""
-    base = f"{config['class_id']}_{config['name']}"
+    base = _output_base(config)
     out = Path(out_dir)
     paths: list[tuple[Path, bool]] = []
     if not solution_only:
@@ -122,7 +126,7 @@ def _output_paths(
 
 
 def _manifest_path(config: dict[str, Any], form_id: str, out_dir: str) -> Path:
-    return Path(out_dir) / f"{config['class_id']}_{config['name']}_{form_id}.manifest.yaml"
+    return Path(out_dir) / f"{_output_base(config)}_{form_id}.manifest.yaml"
 
 
 def _validate_question_ids(questions: list[Question]) -> None:

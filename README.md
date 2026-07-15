@@ -65,7 +65,7 @@ assessment_type: quiz
 | Key | Description |
 |-----|-------------|
 | `name` | Assessment name, used in the output filename (defaults to the config file's basename) |
-| `class_id` | Class identifier, used in the output filename (required) |
+| `class_id` | Optional class identifier; if set, output filenames are prefixed with `<class_id>_` |
 | `title` | Test title |
 | `author` | Author name |
 | `class_name` | Class name |
@@ -119,7 +119,8 @@ Each run mints a fresh form ID — 8 random hex characters — that is printed
 (ungrouped) in the manifest filename. Output files are written to the output
 directory as `<class_id>_<name>.pdf` (student copy),
 `<class_id>_<name>_solutions.pdf` (solution copy), and
-`<class_id>_<name>_<form_id>.manifest.yaml` (the version manifest). Re-runs
+`<class_id>_<name>_<form_id>.manifest.yaml` (the version manifest); without
+a `class_id` the `<class_id>_` prefix is dropped. Re-runs
 overwrite the PDFs but mint a new ID, so manifests accumulate side by side
 and any prior version can still be recreated from its manifest.
 

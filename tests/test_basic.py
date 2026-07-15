@@ -935,8 +935,8 @@ def test_main_config_questions_must_be_list(
     assert "'questions' must be a list" in capsys.readouterr().err
 
 
-def test_main_missing_required_config_field(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+def test_main_class_id_optional(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     questions_file = tmp_path / "questions.yaml"
     questions_file.write_text(QUESTIONS_YAML)
@@ -946,9 +946,13 @@ def test_main_missing_required_config_field(
     figures_dir.mkdir()
     _fake_pdflatex(monkeypatch, [])
 
-    with pytest.raises(SystemExit):
-        main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out"))
-    assert "class_id" in capsys.readouterr().err
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+
+    # without class_id, output names start with the config name only
+    assert (out_dir / "Quiz_1.3.pdf").exists()
+    assert (out_dir / "Quiz_1.3_solutions.pdf").exists()
+    _the_manifest(out_dir, "Quiz_1.3")
 
 
 def _write_manifest_inputs(tmp_path: Path) -> tuple[Path, Path, Path]:
