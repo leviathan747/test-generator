@@ -1,0 +1,179 @@
+title: "Unit 1 Test FRQ: Limits and Continuity (No Calculator)"
+author: Levi Starrett
+class_name: AP Calculus AB
+class_id: APCalc
+duration: 15 min
+questions:
+  - id: 5506d1fe-8daf-4b58-9cb8-2a6933640ade
+    question: |
+      Let $a$ and $b$ represent real numbers and let $f(x)$ be the piecewise
+      function defined below.
+      \[
+        f(x) = \begin{cases}
+                ax^2 + x - b & x \le 2 \\
+                ax + b & 2 < x < 5 \\
+                2ax - 7 & x \ge 5 \\
+              \end{cases}
+      \]
+    parts:
+      - question: |
+          Using the definition of continuity, find the values of $a$ and $b$ such
+          that $f$ is continuous on the entire real number line. Be sure to
+          demonstrate proper notation.
+          \textbf{(4 points)}
+        solution: |
+          \begin{multicols}{2}
+
+            \begin{align*}
+              \lim_{x \to 2^-} f(x) &= \lim_{x \to 2^+} f(x) \\
+              \lim_{x \to 2^-} ax^2 + x - b &= \lim_{x \to 2^+} ax + b \\
+              4a + 2 - b &= 2a + b \\
+              2b &= 2a + 2 \\
+              b &= a + 1
+            \end{align*}
+
+            \begin{align*}
+              \lim_{x \to 5^-} f(x) &= \lim_{x \to 5^+} f(x) \\
+              \lim_{x \to 5^-} ax + b &= \lim_{x \to 5^+} 2ax - 7 \\
+              5a + b &= 10a - 7 \\
+              b &= 5a - 7
+            \end{align*}
+
+          \end{multicols}
+          \vspace{-3em}
+          \begin{gather*}
+            a + 1 = 5a - 7 \qquad 4a = 8 \qquad
+            \boxed{a = 2} \qquad \boxed{b = 3}
+          \end{gather*}
+          \emph{Grading: 1 point for each equation with limit notation, 1 point
+          for the value of $a$, 1 point for the value of $b$}
+        sections:
+          - 1.11
+          - 1.12
+        dok: 3
+        work_space: 2in
+      - question: |
+          Evaluate $\lim_{x \to 3} f(x)$ using the values of $a$ and $b$ you
+          found above.
+          \textbf{(2 points)}
+        solution: |
+          $\lim_{x \to 3} f(x) = \lim_{x \to 3} 2x + 3 = 2(3) + 3 = 9$
+
+          \emph{Note: answers using incorrect answers from part "a" are eligible
+          for full credit if evaluated correctly}
+
+          \emph{Grading: 1 point for a correct limit statement, 1 point for the
+          answer}
+        sections:
+          - 1.5
+          - 1.6
+          - 1.7
+        dok: 2
+        work_space: 1in
+      - question: |
+          Let the functions $g$ and $h$ be given by
+          \[
+            g(x) = \begin{cases}
+              x^3 - 8 & x \le 3 \\
+              x^2 + 2x - 8 & x > 3 \\
+            \end{cases}
+            \qquad \text{and} \qquad
+            h(x) = \frac{g(x)}{x - 2}
+          \]
+          Evaluate $\lim_{x \to 2} h(x)$. Be sure to show proper limit notation
+          throughout your solution.
+          \textbf{(3 points)}
+        solution: |
+          $\lim_{x \to 2} h(x) = \lim_{x \to 2} \frac{x^3 - 8}{x - 2}$
+          $= \lim_{x \to 2} \frac{(\cancel{x - 2})(x^2 + 2x + 4)}{\cancel{x - 2}}$
+
+          $= \lim_{x \to 2} x^2 + 2x + 4$
+          $= (2)^2 + 2(2) + 4 = 12$
+
+          \emph{Grading: 1 point for a correct limit statement, 1 point for
+          factoring and canceling, 1 point for the answer}
+        sections:
+          - 1.6
+          - 1.7
+        dok: 2
+        work_space: 1.5in
+    calculator_active: false
+    question_type: FRQ
+
+  - id: 548a953d-78fd-41d9-a0bd-f36347fcf803
+    question: |
+      The number of fish in a pond is modeled by the function $N(t)$ where $N$
+      is the number of fish and $t$ is the time in years since the creation of
+      the pond. $N(t)$ is given by the piecewise function below, where $f(t)$
+      is a continuous function such that $f(0) = 80$.
+      \[
+        N(t) = \begin{cases}
+                f(t) & 0 \le t < 6 \\
+                25t + 150 & 6 \le t < 8 \\
+                \frac{200 + 80t}{2 + 0.05t} & t \ge 8 \\
+              \end{cases}
+      \]
+    parts:
+      - question: |
+          Find $\lim_{t \to \infty} N(t)$. Explain the meaning of
+          $\lim_{t \to \infty} N(t)$ in the context of the problem.
+          \textbf{(3 points)}
+        solution: |
+          \begin{align*}
+            \lim_{t \to \infty} N(t) &= \lim_{t \to \infty} \frac{200 + 80t}{2 + 0.05t}
+            = \lim_{t \to \infty} \frac{\frac{200}{t} + \frac{80t}{t}}{\frac{2}{t} + \frac{0.05t}{t}} \\
+            &= \lim_{t \to \infty} \frac{\frac{200}{t} + 80}{\frac{2}{t} + 0.05}
+            = \frac{80}{0.05} = 1600 \\
+          \end{align*}
+          The number of fish in the pond approaches 1,600 individuals as time
+          increases without bound -- this is the maximum population the pond
+          can support.
+
+          \emph{Grading: 1 point for a correct limit expression, 1 point for
+          the answer, 1 point for the interpretation}
+        sections:
+          - 1.15
+        dok: 3
+        work_space: 2in
+      - question: |
+          Is the function $N$ continuous at $t = 8$? Justify your answer with
+          proper notation.
+          \textbf{(3 points)}
+        solution: |
+          \begin{gather*}
+            N(8) = \frac{200 + 80(8)}{2 + 0.05(8)} = \frac{840}{2.4} = 350 \\
+            \lim_{t \to 8^-} N(t) = \lim_{t \to 8^-} 25t + 150 = 25(8) + 150 = 350 \\
+            \lim_{t \to 8^+} N(t) = \lim_{t \to 8^+} \frac{200 + 80t}{2 + 0.05t} = \frac{200 + 80(8)}{2 + 0.05(8)} = 350 \\
+            \lim_{t \to 8} N(t) = N(8) \\
+          \end{gather*}
+          $N(t)$ is continuous at $t = 8$ because
+          $\lim_{t \to 8} N(t) = N(8)$.
+
+          \emph{Grading: 1 point for $N(8)$, 1 point for
+          $\lim_{t \to 8} N(t)$ (including each one-sided limit), 1 point for
+          the answer with justification}
+        sections:
+          - 1.11
+        dok: 3
+        work_space: 2in
+      - question: |
+          The function $N$ is continuous at $t = 6$. Is there a time, $t$, in
+          $0 \le t \le 6$ at which $N(t) = 250$? Justify your answer.
+          \textbf{(3 points)}
+        solution: |
+          \begin{gather*}
+            N(0) = f(0) = 80 \\
+            N(6) = 25(6) + 150 = 300
+          \end{gather*}
+          Since $N(t)$ is continuous on the interval $0 \le t \le 6$ and
+          $N(0) \le 250 \le N(6). \\ \therefore$ by Intermediate Value Theorem,
+          there is a time $t$ such that $N(t) = 250$ in $0 \le t \le 6$
+
+          \emph{Grading: 1 point for $N(0)$ and $N(6)$, 1 point for $N(t)$ is
+          continuous, 1 point for $N(0) \le 250 \le N(6)$}
+        sections:
+          - 1.16
+        dok: 3
+        work_space: 2in
+    calculator_active: false
+    question_type: FRQ
