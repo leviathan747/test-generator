@@ -780,3 +780,1431 @@ questions:
       - 1.5
     dok: 3
     review: none
+
+  - id: 8fcf9d3a-a558-4b71-bd74-478aecf1ba4e
+    question: |
+      A car's position at time $t$ is given by a function $s(t)$. A student
+      attempts to find the car's instantaneous velocity at $t = 2$ by
+      evaluating $\frac{s(t) - s(2)}{t - 2}$ at $t = 2$. Why does this
+      calculation fail?
+    answer: At $t = 2$ the change in $t$ is zero, so the expression is undefined.
+    distractors:
+      - Position functions are not defined at a single instant.
+      - Average rates of change can only be computed for linear functions.
+      - The expression gives the position, not the velocity, at $t = 2$.
+    solution: |
+      Substituting $t = 2$ gives $\frac{s(2) - s(2)}{2 - 2} = \frac{0}{0}$,
+      which is undefined. The instantaneous velocity must instead be defined
+      as $\lim_{t \to 2} \frac{s(t) - s(2)}{t - 2}$.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 2
+    review: generated
+
+  - id: e2a9327b-5eac-4c66-a81d-e590e926781a
+    question: |
+      A ball is dropped from a tall building, and the distance in feet it has
+      fallen after $t$ seconds is given by $s(t) = 16t^2$. What is the average
+      velocity of the ball, in feet per second, over the interval $[3, 3.1]$?
+    answer: 97.6
+    distractors:
+      - 96
+      - 99.2
+      - 9.76
+    solution: |
+      $\frac{s(3.1) - s(3)}{3.1 - 3} = \frac{16(3.1)^2 - 16(3)^2}{0.1}
+      = \frac{153.76 - 144}{0.1} = 97.6$ ft/s
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 2
+    review: generated
+
+  - id: e5578d01-38be-4d97-a1fc-ae9990d56bb3
+    question: |
+      An object moves so that its position at time $t$ is $s(t)$. Which of the
+      following expressions gives the instantaneous velocity of the object at
+      $t = 2$?
+    answer: $\lim_{t \to 2} \frac{s(t) - s(2)}{t - 2}$
+    distractors:
+      - $\frac{s(2) - s(0)}{2 - 0}$
+      - $\frac{s(2)}{2}$
+      - $\lim_{t \to 2} \frac{s(t) + s(2)}{t - 2}$
+    solution: |
+      Instantaneous velocity is the limit of the average rate of change
+      $\frac{s(t) - s(2)}{t - 2}$ as the interval shrinks to the instant,
+      i.e.\ as $t \to 2$.
+    calculator_active: false
+    sections:
+      - 1.1
+      - 1.2
+    dok: 1
+    review: generated
+
+  - id: 2c0b67e0-2f51-4449-82ee-6365323769a8
+    question: |
+      Which of the following correctly expresses the statement ``the limit of
+      $f(x)$ as $x$ approaches 3 from the left is 7''?
+    answer: $\lim_{x \to 3^-} f(x) = 7$
+    distractors:
+      - $\lim_{x \to 3^+} f(x) = 7$
+      - $\lim_{x \to 7} f(x) = 3$
+      - $f(3) = 7$
+    solution: |
+      Approaching from the left is denoted with a superscript minus sign on
+      the value $x$ approaches.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 1
+    review: generated
+
+  - id: bafedd81-dfcc-4fe5-89fc-d587657d4568
+    question: |
+      Suppose $\lim_{x \to 5} f(x) = 2$. Which of the following statements
+      must be true?
+    answer: $f(x)$ can be made arbitrarily close to 2 by taking $x$ sufficiently close (but not equal) to 5.
+    distractors:
+      - $f(5) = 2$
+      - $f(x) = 2$ for all $x$ sufficiently close to 5.
+      - $f(x)$ approaches 2 only as $x$ approaches 5 from the right.
+    solution: |
+      The limit describes the values of $f$ \emph{near} $x = 5$, not at
+      $x = 5$; $f(5)$ may differ from 2 or be undefined.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 1
+    review: generated
+
+  - id: 26ab894a-07e4-4e52-ba70-07ef19074eb8
+    question: |
+      A function $h$ has the following properties: as $x$ approaches 4, the
+      values of $h(x)$ become arbitrarily close to $-1$, and the value of the
+      function at 4 is 6. Which of the following is consistent with this
+      description?
+    answer: $\lim_{x \to 4} h(x) = -1$ and $h(4) = 6$
+    distractors:
+      - $\lim_{x \to 4} h(x) = 6$ and $h(4) = -1$
+      - $\lim_{x \to 4} h(x)$ does not exist because $h(4) \ne -1$
+      - $\lim_{x \to -1} h(x) = 4$ and $h(6) = 4$
+    solution: |
+      The values $h(x)$ approach $-1$, so $\lim_{x \to 4} h(x) = -1$;
+      the function value $h(4) = 6$ is independent of the limit.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 2
+    review: generated
+
+  - id: e8b0b976-54eb-4fec-b67b-587a58baa20a
+    question: |
+      The graph of the function $f$ is shown below. Find $\lim_{x \to 1^-} f(x)$.
+    figure: 30.tex
+    answer: 2
+    distractors:
+      - -1
+      - 1
+      - The limit does not exist.
+    solution: |
+      Following the left branch of the graph toward $x = 1$, the $y$ values
+      approach the open circle at $(1, 2)$, so $\lim_{x \to 1^-} f(x) = 2$.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 1
+    review: generated
+
+  - id: 81c58f45-d0f5-45f5-b2cf-6cb5050a8b91
+    question: |
+      The graph of the function $f$ is shown below. Which of the following are true?
+
+      \textbf{I.\phantom{II}} \quad $\lim_{x \to 1^-} f(x) = 2$ \\
+      \textbf{II.\phantom{I}} \quad $\lim_{x \to 1^+} f(x) = -1$ \\
+      \textbf{III.} \quad $\lim_{x \to 1} f(x)$ does not exist \\
+    figure: 30.tex
+    answer: I, II, and III
+    distractors:
+      - I only
+      - I and II only
+      - III only
+    solution: |
+      $\lim_{x \to 1^-} f(x) = 2$ and $\lim_{x \to 1^+} f(x) = -1$.
+      Since the one-sided limits are not equal, $\lim_{x \to 1} f(x)$
+      does not exist. All three statements are true.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 2
+    review: generated
+
+  - id: 79905fa3-6570-45ab-82e8-5e7cc07b861e
+    question: |
+      The graph of the function $f$ is shown below. Find $\lim_{x \to -2} f(x)$.
+    figure: 33.tex
+    answer: 1
+    distractors:
+      - 2
+      - -1
+      - The limit does not exist.
+    solution: |
+      From both sides of $x = -2$ the graph approaches the open circle at
+      $(-2, 1)$, so the limit is 1. The value $f(-2) = 2$ does not affect
+      the limit.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 1
+    review: generated
+
+  - id: ad3a9431-fee5-4372-9b28-d2869dcdaf00
+    question: |
+      The graph of the function $f$ is shown below. Which of the following
+      best explains why $\lim_{x \to 0} f(x)$ does not exist?
+    figure: 34.tex
+    figure_width: 3in
+    figure_placement: below
+    answer: $f$ oscillates between two fixed values and does not approach a single value as $x \to 0$.
+    distractors:
+      - $f$ increases without bound as $x \to 0$.
+      - The left- and right-hand limits exist but are unequal.
+      - $f(0)$ is undefined.
+    solution: |
+      Near $x = 0$ the graph oscillates between $-1$ and 1 infinitely often,
+      so $f(x)$ does not approach a single value. (A function can have a
+      limit at a point where it is undefined, so D is not a valid reason.)
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 2
+    review: generated
+
+  - id: ff29597b-efb3-4f4d-941b-622ee6c466eb
+    question: |
+      The graph of the function $f$ is shown below. Find $\lim_{x \to \infty} f(x)$.
+    figure: 32.tex
+    answer: 3
+    distractors:
+      - $\infty$
+      - 0
+      - The limit does not exist.
+    solution: |
+      As $x$ increases without bound, the graph approaches the dashed
+      horizontal asymptote $y = 3$, so $\lim_{x \to \infty} f(x) = 3$.
+    calculator_active: false
+    sections:
+      - 1.3
+      - 1.15
+    dok: 2
+    review: generated
+
+  - id: 74dd9da4-e850-4559-ad3a-2ff0879f7e47
+    question: |
+      The graph of the function $f$ is shown below. Find $\lim_{x \to 1^-} f(f(x))$.
+    figure: 33.tex
+    answer: 3
+    distractors:
+      - 1
+      - 2
+      - The limit does not exist.
+    solution: |
+      For $-2 < x < 1$ the graph is horizontal with $f(x) = 1$, so
+      $f(f(x)) = f(1) = 3$ for all such $x$
+      $\quad \therefore \lim_{x \to 1^-} f(f(x)) = 3$.
+    calculator_active: false
+    sections:
+      - 1.3
+      - 1.5
+    dok: 3
+    review: generated
+
+  - id: 08cb7aca-11f6-4ffc-962e-2a0d315b75a2
+    question: |
+      The table below gives values of a function $f$ near $x = 2$.
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{5in}{ |*{7}{Y|} }
+          \hline
+          \bm{$x$} & 1.9 & 1.99 & 1.999 & 2.001 & 2.01 & 2.1 \\
+          \hline
+          \bm{$f(x)$} & 6.82 & 6.98 & 6.998 & 7.002 & 7.02 & 7.18 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      Based on the table, what is the best estimate of $\lim_{x \to 2} f(x)$?
+    answer: 7
+    distractors:
+      - 2
+      - 6.998
+      - The limit does not exist.
+    solution: |
+      From both sides of $x = 2$ the values of $f(x)$ approach 7.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 1
+    review: generated
+
+  - id: 7e09a298-d2fc-466f-b122-8de338829b8f
+    question: |
+      The table below gives values of a function $f$ near $x = 4$.
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{5in}{ |*{7}{Y|} }
+          \hline
+          \bm{$x$} & 3.9 & 3.99 & 3.999 & 4.001 & 4.01 & 4.1 \\
+          \hline
+          \bm{$f(x)$} & 2.9 & 2.99 & 2.999 & -1.999 & -1.99 & -1.9 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      Based on the table, which of the following is the best conclusion about
+      $\lim_{x \to 4} f(x)$?
+    answer: The limit does not exist because the left- and right-hand limits appear to be unequal.
+    distractors:
+      - The limit is 3.
+      - The limit is $-2$.
+      - The limit is 0.5, the average of the one-sided limits.
+    solution: |
+      $\lim_{x \to 4^-} f(x) \approx 3$ and $\lim_{x \to 4^+} f(x) \approx -2$.
+      Since the one-sided limits differ, the limit does not exist.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 2
+    review: generated
+
+  - id: e8f42d6d-94db-455d-b5ce-eebc99904a64
+    question: |
+      The table below gives values of a function $g$ near $x = 0$. ($g(0)$ is
+      undefined.)
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |*{5}{Y|} }
+          \hline
+          \bm{$x$} & -0.1 & -0.01 & 0.01 & 0.1 \\
+          \hline
+          \bm{$g(x)$} & 0.99833 & 0.99998 & 0.99998 & 0.99833 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      Based on the table, what is the best estimate of $\lim_{x \to 0} g(x)$?
+    answer: 1
+    distractors:
+      - 0
+      - 0.99833
+      - The limit does not exist because $g(0)$ is undefined.
+    solution: |
+      From both sides of $x = 0$ the values of $g(x)$ approach 1. A limit
+      can exist at a point where the function is undefined.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 2
+    review: generated
+
+  - id: 6fed3a8d-b840-43b8-b814-668af12dee7c
+    question: |
+      A student computes $f(2.9) = 3.9$, $f(2.99) = 3.99$, $f(3.01) = 4.01$,
+      and $f(3.1) = 4.1$, and concludes that $\lim_{x \to 3} f(x) = 4$.
+      Which of the following best evaluates the student's conclusion?
+    answer: The values support an estimate of 4, but a table of selected values alone cannot confirm the limit.
+    distractors:
+      - The conclusion is proven because the values agree from both sides.
+      - The conclusion is valid only if $f(3) = 4$.
+      - The conclusion is wrong because a limit cannot be estimated from a table.
+    solution: |
+      Tables give estimates only; the behavior of $f$ between or beyond the
+      sampled $x$ values could differ (e.g.\ oscillation or a spike), so the
+      limit cannot be confirmed from finitely many values.
+    calculator_active: false
+    sections:
+      - 1.3
+      - 1.4
+    dok: 3
+    review: generated
+
+  - id: 3da011b8-7a3e-4112-b366-925bbe6634f9
+    question: |
+      Given that $\lim_{x \to c} f(x) = 4$ and $\lim_{x \to c} g(x) = -2$,
+      find $\lim_{x \to c} \left[3f(x) - g(x)\right]$.
+    answer: 14
+    distractors:
+      - 10
+      - 6
+      - -24
+    solution: |
+      $\lim_{x \to c} \left[3f(x) - g(x)\right]
+      = 3\lim_{x \to c} f(x) - \lim_{x \to c} g(x) = 3(4) - (-2) = 14$
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 1
+    review: generated
+
+  - id: 1c77eca5-d6f2-45e6-9e2e-720b08dd1ef7
+    question: |
+      Given that $\lim_{x \to a} f(x) = 5$ and $\lim_{x \to a} g(x) = 2$,
+      find $\lim_{x \to a} \sqrt{f(x) \cdot g(x) + 6}$.
+    answer: 4
+    distractors:
+      - 16
+      - $\sqrt{10}$
+      - 8
+    solution: |
+      $\lim_{x \to a} \sqrt{f(x) \cdot g(x) + 6}
+      = \sqrt{\lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x) + 6}
+      = \sqrt{(5)(2) + 6} = \sqrt{16} = 4$
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 2
+    review: generated
+
+  - id: 3948b44a-f6d5-4fe3-855d-cb9620be67fe
+    question: |
+      Suppose $\lim_{x \to 4} g(x) = 2$ and $f$ is continuous for all real
+      numbers with $f(2) = 9$. Find $\lim_{x \to 4} f(g(x))$.
+    answer: 9
+    distractors:
+      - 2
+      - 4
+      - The limit cannot be determined with the given information.
+    solution: |
+      Because $f$ is continuous at 2,
+      $\lim_{x \to 4} f(g(x)) = f\left(\lim_{x \to 4} g(x)\right) = f(2) = 9$.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 2
+    review: generated
+
+  - id: 45618c95-69a1-4727-8a3d-9b5852387af0
+    question: |
+      Suppose $\lim_{x \to c} \left[f(x) + g(x)\right] = 7$. Which of the
+      following statements must be true?
+    answer: If $\lim_{x \to c} f(x)$ exists, then $\lim_{x \to c} g(x)$ also exists.
+    distractors:
+      - Both $\lim_{x \to c} f(x)$ and $\lim_{x \to c} g(x)$ must exist.
+      - $\lim_{x \to c} f(x) = 7 - g(c)$
+      - $f + g$ must be continuous at $x = c$.
+    solution: |
+      If $\lim_{x \to c} f(x) = L$ exists, then
+      $\lim_{x \to c} g(x) = \lim_{x \to c} \left[(f(x) + g(x)) - f(x)\right] = 7 - L$ exists. \\
+      A is false: e.g.\ $f(x) = \frac{1}{x - c}$ and $g(x) = 7 - \frac{1}{x - c}$
+      have no limits at $c$, but their sum does. The sum need not be defined
+      at $c$ at all, so C and D can fail.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 3
+    review: generated
+
+  - id: 6ffb40e1-96ff-458f-aadd-d8c499a2d3f9
+    question: |
+      Find the limit: $\lim_{x \to 2} \left(x^2 - 3x + 1\right)$
+    answer: -1
+    distractors:
+      - 1
+      - 11
+      - The limit does not exist.
+    solution: |
+      Polynomials are continuous everywhere, so substitute directly:
+      $2^2 - 3(2) + 1 = 4 - 6 + 1 = -1$.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 1
+    review: generated
+
+  - id: cae08422-eb19-44f6-bf29-6083c826e0e4
+    question: |
+      Find the limit: $\lim_{x \to 1} \frac{x^2 + x + 4}{x + 1}$
+    answer: 3
+    distractors:
+      - The limit does not exist.
+      - 6
+      - 2
+    solution: |
+      The denominator is nonzero at $x = 1$, so substitute directly:
+      $\frac{1 + 1 + 4}{1 + 1} = \frac{6}{2} = 3$.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 1
+    review: generated
+
+  - id: d1563434-f366-40c4-8239-cebb7f7a9f61
+    question: |
+      Find the limit: $\lim_{x \to 3} \frac{x^2 - x - 6}{x - 3}$
+    answer: 5
+    distractors:
+      - The limit does not exist.
+      - 0
+      - 3
+    solution: |
+      $\lim_{x \to 3} \frac{(x - 3)(x + 2)}{x - 3}
+      = \lim_{x \to 3} (x + 2) = 5$
+    calculator_active: false
+    sections:
+      - 1.6
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: 1122c489-feae-4480-863a-8e455b848240
+    question: |
+      Find the limit: $\lim_{x \to -2} \frac{x^2 - 4}{x^2 + 5x + 6}$
+    answer: -4
+    distractors:
+      - 4
+      - 0
+      - The limit does not exist.
+    solution: |
+      $\lim_{x \to -2} \frac{(x - 2)\cancel{(x + 2)}}{\cancel{(x + 2)}(x + 3)}
+      = \lim_{x \to -2} \frac{x - 2}{x + 3} = \frac{-4}{1} = -4$
+    calculator_active: false
+    sections:
+      - 1.6
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: 3c920d43-511f-453e-aac6-7dfa9fdba612
+    question: |
+      Find the limit: $\lim_{x \to 0} \frac{\frac{1}{x + 4} - \frac{1}{4}}{x}$
+    answer: $-\frac{1}{16}$
+    distractors:
+      - $\frac{1}{16}$
+      - $-\frac{1}{4}$
+      - 0
+    solution: |
+      $\lim_{x \to 0} \frac{\frac{4 - (x + 4)}{4(x + 4)}}{x}
+      = \lim_{x \to 0} \frac{-\cancel{x}}{4\cancel{x}(x + 4)}
+      = \lim_{x \to 0} \frac{-1}{4(x + 4)} = -\frac{1}{16}$
+    calculator_active: false
+    sections:
+      - 1.6
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: 61adc072-2c84-4791-86b0-8d2b36957e35
+    question: |
+      Find the limit: $\lim_{x \to 0} \frac{\sin(5x)}{x}$
+    answer: 5
+    distractors:
+      - 1
+      - 0
+      - The limit does not exist.
+    solution: |
+      $\lim_{x \to 0} \frac{\sin(5x)}{x}
+      = \lim_{x \to 0} 5 \cdot \frac{\sin(5x)}{5x} = 5 \cdot 1 = 5$
+    calculator_active: false
+    sections:
+      - 1.6
+      - 1.8
+    dok: 2
+    review: generated
+
+  - id: c00c92d4-a122-4a4b-850e-d1a91388b3f3
+    question: |
+      Find $\lim_{x \to 2} f(x)$ where $f$ is given by
+      \[
+        f(x) = \begin{cases}
+                x^2 + 1 & x < 2 \\
+                6x - 7 & x \ge 2 \\
+              \end{cases}
+      \]
+    answer: 5
+    distractors:
+      - The limit does not exist.
+      - 1
+      - 4
+    solution: |
+      $\lim_{x \to 2^-} f(x) = 2^2 + 1 = 5$ \quad
+      $\lim_{x \to 2^+} f(x) = 6(2) - 7 = 5$ \\
+      The one-sided limits agree, so $\lim_{x \to 2} f(x) = 5$.
+    calculator_active: false
+    sections:
+      - 1.6
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: ac522b0b-c0d3-4324-a134-98576448f5bd
+    question: |
+      For which of the following limits is multiplying by a conjugate an
+      appropriate first step?
+    answer: $\lim_{x \to 9} \frac{\sqrt{x} - 3}{x - 9}$
+    distractors:
+      - $\lim_{x \to 0} \frac{\sin x}{x}$
+      - $\lim_{x \to 2} \frac{x^2 - 4}{x - 2}$
+      - $\lim_{x \to \infty} \frac{3x + 1}{x - 2}$
+    solution: |
+      $\frac{\sqrt{x} - 3}{x - 9}$ has the indeterminate form $\frac{0}{0}$
+      with a radical; multiplying by $\frac{\sqrt{x} + 3}{\sqrt{x} + 3}$
+      clears it. The others call for the special trig limit, factoring, and
+      dividing by the highest power of $x$, respectively.
+    calculator_active: false
+    sections:
+      - 1.7
+    dok: 3
+    review: generated
+
+  - id: b907a72d-6467-4751-8d15-e6858d714165
+    question: |
+      Suppose $g(x) \le f(x) \le h(x)$ for all $x$ near $c$ (except possibly
+      at $c$ itself), and $\lim_{x \to c} g(x) = \lim_{x \to c} h(x) = L$.
+      Which of the following conclusions follows from the Squeeze Theorem?
+    answer: $\lim_{x \to c} f(x) = L$
+    distractors:
+      - $f(c) = L$
+      - $\lim_{x \to c} f(x)$ exists but may not equal $L$.
+      - No conclusion can be drawn without a formula for $f$.
+    solution: |
+      This is exactly the conclusion of the Squeeze Theorem. It says nothing
+      about $f(c)$, which may differ from $L$ or be undefined.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 1
+    review: generated
+
+  - id: aed931b3-1939-4a7d-87d2-34b8dcafd018
+    question: |
+      Find the limit: $\lim_{x \to 0} x^2 \cos\left(\frac{1}{x}\right)$
+    answer: 0
+    distractors:
+      - The limit does not exist because $\cos\left(\frac{1}{x}\right)$ oscillates.
+      - 1
+      - -1
+    solution: |
+      $-x^2 \le x^2 \cos\left(\frac{1}{x}\right) \le x^2$ and
+      $\lim_{x \to 0} (-x^2) = \lim_{x \to 0} x^2 = 0$,
+      so by the Squeeze Theorem the limit is 0.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 2
+    review: generated
+
+  - id: 4bfa8b62-de96-475d-a53f-1089e5c83663
+    question: |
+      Suppose $4 - x^2 \le g(x) \le 4 + x^2$ for all $x$. Find
+      $\lim_{x \to 0} g(x)$.
+    answer: 4
+    distractors:
+      - 0
+      - 8
+      - The limit cannot be determined with the given information.
+    solution: |
+      $\lim_{x \to 0} (4 - x^2) = 4 = \lim_{x \to 0} (4 + x^2)$,
+      so by the Squeeze Theorem $\lim_{x \to 0} g(x) = 4$.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 2
+    review: generated
+
+  - id: 2c6144b8-0639-4af9-a621-57b55163a9da
+    question: |
+      Find the limit: $\lim_{x \to \infty} \frac{\sin x}{x}$
+    answer: 0
+    distractors:
+      - 1
+      - The limit does not exist because $\sin x$ oscillates.
+      - $\infty$
+    solution: |
+      For $x > 0$, $-\frac{1}{x} \le \frac{\sin x}{x} \le \frac{1}{x}$ and
+      $\lim_{x \to \infty} \left(\pm\frac{1}{x}\right) = 0$, so by the
+      Squeeze Theorem the limit is 0. (Note this differs from
+      $\lim_{x \to 0} \frac{\sin x}{x} = 1$.)
+    calculator_active: false
+    sections:
+      - 1.8
+      - 1.15
+    dok: 2
+    review: generated
+
+  - id: c32c44ef-993f-49d3-b1f2-ddff7e2cc1ab
+    question: |
+      Suppose $g(x) \le f(x) \le h(x)$ for all $x \ne 2$, with
+      $\lim_{x \to 2} g(x) = 3$ and $\lim_{x \to 2} h(x) = 5$. What can be
+      concluded about $\lim_{x \to 2} f(x)$?
+    answer: Nothing can be concluded about its existence; the Squeeze Theorem does not apply.
+    distractors:
+      - $\lim_{x \to 2} f(x) = 4$
+      - $\lim_{x \to 2} f(x)$ exists and is between 3 and 5.
+      - $\lim_{x \to 2} f(x)$ does not exist.
+    solution: |
+      The Squeeze Theorem requires the two outer limits to be \emph{equal}.
+      Since $3 \ne 5$, the theorem gives no conclusion: $f$ could have any
+      limit between 3 and 5, or oscillate and have no limit at all.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 3
+    review: generated
+
+  - id: a0b3479d-11e6-4d51-b6b5-626dd5db7ca1
+    question: |
+      Which of the following best describes the graph of
+      $f(x) = \frac{x^2 - 9}{x - 3}$?
+    answer: The line $y = x + 3$ with a hole at $(3, 6)$
+    distractors:
+      - The line $y = x + 3$
+      - The line $y = x - 3$ with a hole at $(3, 0)$
+      - A curve with a vertical asymptote at $x = 3$
+    solution: |
+      For $x \ne 3$, $f(x) = \frac{(x - 3)(x + 3)}{x - 3} = x + 3$, but
+      $f(3)$ is undefined, so the graph is the line $y = x + 3$ with a hole
+      at $(3, 6)$.
+    calculator_active: false
+    sections:
+      - 1.9
+      - 1.13
+    dok: 2
+    review: generated
+
+  - id: 463d4511-ea84-47b6-83dc-be52c1bb23e6
+    question: |
+      A function $f$ satisfies $f(1.9) = 4.98$, $f(1.99) = 4.9998$,
+      $f(2.01) = 5.0002$, $f(2.1) = 5.02$, and $f(2) = 1$. Which of the
+      following graphical features is consistent with these values?
+    answer: A hole at $(2, 5)$ with the point $(2, 1)$ plotted separately
+    distractors:
+      - The graph passes through $(2, 5)$ with no break.
+      - A jump discontinuity at $x = 2$ with a gap from $y = 4.98$ to $y = 5.02$
+      - A vertical asymptote at $x = 2$
+    solution: |
+      The table suggests $\lim_{x \to 2} f(x) = 5$, while $f(2) = 1$; a limit
+      that exists but differs from the function value is a removable
+      discontinuity --- a hole at $(2, 5)$ with the point at $(2, 1)$.
+    calculator_active: false
+    sections:
+      - 1.4
+      - 1.9
+      - "1.10"
+    dok: 2
+    review: generated
+
+  - id: 1e3af2e1-4837-4fec-87dd-9b1b324cf009
+    question: |
+      As $x$ increases without bound, the values of $g(x)$ approach 4. As $x$
+      approaches 1 from the right, $g(x)$ decreases without bound. Which of
+      the following pairs of statements expresses this behavior?
+    answer: $\lim_{x \to \infty} g(x) = 4$ and $\lim_{x \to 1^+} g(x) = -\infty$
+    distractors:
+      - $\lim_{x \to 4} g(x) = \infty$ and $\lim_{x \to 1^-} g(x) = -\infty$
+      - $\lim_{x \to \infty} g(x) = 4$ and $\lim_{x \to 1^+} g(x) = \infty$
+      - $\lim_{x \to -\infty} g(x) = 4$ and $\lim_{x \to 1^-} g(x) = -\infty$
+    solution: |
+      ``$x$ increases without bound'' is $x \to \infty$; ``approaches 1 from
+      the right'' is $x \to 1^+$; ``decreases without bound'' is $-\infty$.
+    calculator_active: false
+    sections:
+      - 1.9
+      - 1.14
+      - 1.15
+    dok: 2
+    review: generated
+
+  - id: 3c28e51e-8e2e-4f01-8996-4149034d47f5
+    question: |
+      At $x = c$, both one-sided limits of a function $f$ exist and are
+      finite, but they are not equal to each other. Which type of
+      discontinuity does $f$ have at $x = c$?
+    answer: Jump
+    distractors:
+      - Removable
+      - Discontinuity due to a vertical asymptote
+      - None; $f$ is continuous at $x = c$
+    solution: |
+      Unequal finite one-sided limits define a jump discontinuity.
+    calculator_active: false
+    sections:
+      - "1.10"
+    dok: 1
+    review: generated
+
+  - id: bdffb64a-87b7-4c1b-9bef-4ec865ecf8c1
+    question: |
+      Suppose $\lim_{x \to c} f(x)$ exists, but $f(c)$ is undefined. Which
+      type of discontinuity does $f$ have at $x = c$?
+    answer: Removable
+    distractors:
+      - Jump
+      - Discontinuity due to a vertical asymptote
+      - None; $f$ is continuous at $x = c$
+    solution: |
+      When the limit exists, the discontinuity can be removed by defining
+      $f(c)$ to equal the limit --- a removable discontinuity (hole).
+    calculator_active: false
+    sections:
+      - "1.10"
+    dok: 1
+    review: generated
+
+  - id: 87320d33-b9e5-4e32-baa0-14992e164f10
+    question: |
+      The function shown on the graph below has which type of discontinuity
+      at $x = 1$?
+    figure: 30.tex
+    answer: Non-removable, jump
+    distractors:
+      - Removable, hole
+      - Non-removable, asymptote
+      - The function is continuous at $x = 1$
+    solution: |
+      $\lim_{x \to 1^-} f(x) = 2 \ne -1 = \lim_{x \to 1^+} f(x)$;
+      unequal finite one-sided limits make a jump discontinuity, which
+      cannot be removed by redefining $f(1)$.
+    calculator_active: false
+    sections:
+      - 1.3
+      - "1.10"
+    dok: 2
+    review: generated
+
+  - id: 86336300-994e-4896-ac4b-2e6336cc6e95
+    question: |
+      Let $h(x) = \frac{x^2 - 3x - 10}{x - 5}$. Which of the following
+      describes the discontinuity of $h$ at $x = 5$?
+    answer: Removable, because $\lim_{x \to 5} h(x)$ exists but $h(5)$ is undefined
+    distractors:
+      - Jump, because the one-sided limits are unequal
+      - Due to a vertical asymptote, because the denominator is 0 at $x = 5$
+      - There is no discontinuity at $x = 5$.
+    solution: |
+      $h(x) = \frac{(x - 5)(x + 2)}{x - 5} = x + 2$ for $x \ne 5$, so
+      $\lim_{x \to 5} h(x) = 7$ exists while $h(5)$ is undefined ---
+      a removable discontinuity, not an asymptote.
+    calculator_active: false
+    sections:
+      - "1.10"
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: cabbf3fb-6a1a-4f80-bc72-7ba557901cb5
+    question: |
+      Which of the following is \emph{not} required for a function $f$ to be
+      continuous at $x = c$?
+    answer: $f(x)$ is defined for all real numbers $x$
+    distractors:
+      - $f(c)$ exists
+      - $\lim_{x \to c} f(x)$ exists
+      - $\lim_{x \to c} f(x) = f(c)$
+    solution: |
+      Continuity at a point requires only the three conditions $f(c)$ exists,
+      $\lim_{x \to c} f(x)$ exists, and $\lim_{x \to c} f(x) = f(c)$;
+      $f$ need not be defined everywhere.
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 1
+    review: generated
+
+  - id: 216e0d00-b2cd-46d3-bf27-02f175ab7cbe
+    question: |
+      Let $f$ be given by
+      \[
+        f(x) = \begin{cases}
+                x^2 - 1 & x < 2 \\
+                3 & x = 2 \\
+                x + 1 & x > 2 \\
+              \end{cases}
+      \]
+      Which of the following statements is true?
+    answer: $f$ is continuous at $x = 2$.
+    distractors:
+      - $\lim_{x \to 2} f(x)$ does not exist.
+      - $f$ has a removable discontinuity at $x = 2$.
+      - $f$ has a jump discontinuity at $x = 2$.
+    solution: |
+      $\lim_{x \to 2^-} f(x) = 4 - 1 = 3$ \quad
+      $\lim_{x \to 2^+} f(x) = 2 + 1 = 3$ \quad $f(2) = 3$ \\
+      All three continuity conditions hold, so $f$ is continuous at $x = 2$.
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: ecdf0c62-a55c-47a7-97c7-472549b50658
+    question: |
+      Let $f$ be given by
+      \[
+        f(x) = \begin{cases}
+                x^2 & x \ne -1 \\
+                2 & x = -1 \\
+              \end{cases}
+      \]
+      Which condition in the definition of continuity fails at $x = -1$?
+    answer: $\lim_{x \to -1} f(x) = f(-1)$
+    distractors:
+      - $f(-1)$ exists
+      - $\lim_{x \to -1} f(x)$ exists
+      - None; $f$ is continuous at $x = -1$
+    solution: |
+      $f(-1) = 2$ exists and $\lim_{x \to -1} f(x) = (-1)^2 = 1$ exists, but
+      $1 \ne 2$, so the condition $\lim_{x \to -1} f(x) = f(-1)$ fails.
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: 7b4380b3-276e-4029-9fa4-f3f4605c4936
+    question: |
+      Find all $x$ values at which $f(x) = \frac{x - 1}{x^2 - 1}$ is not
+      continuous.
+    answer: Both $-1$ and 1
+    distractors:
+      - 1 only
+      - $-1$ only
+      - $f(x)$ is continuous on $(-\infty, \infty)$
+    solution: |
+      $f(x) = \frac{x - 1}{(x - 1)(x + 1)}$ is undefined at $x = 1$ (hole)
+      and at $x = -1$ (vertical asymptote), so it is discontinuous at both.
+    calculator_active: false
+    sections:
+      - 1.11
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: 446db0d2-6792-4c39-b9ee-50ab016e90d2
+    question: |
+      Suppose $f(2) = 5$ and $\lim_{x \to 2^-} f(x) = 5$. Which additional
+      condition guarantees that $f$ is continuous at $x = 2$?
+    answer: $\lim_{x \to 2^+} f(x) = 5$
+    distractors:
+      - No additional condition is needed.
+      - $\lim_{x \to 2^+} f(x)$ exists.
+      - $f$ is defined on an interval containing 2.
+    solution: |
+      Continuity requires $\lim_{x \to 2} f(x) = f(2) = 5$, which needs both
+      one-sided limits to equal 5. The right-hand limit existing is not
+      enough --- it must equal 5.
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 3
+    review: generated
+
+  - id: 55bb842e-2199-4df5-9e9d-ec6b77c590b8
+    question: |
+      On which interval is $f(x) = \sqrt{x - 4}$ continuous?
+    answer: $[4, \infty)$
+    distractors:
+      - $(-\infty, \infty)$
+      - $(-\infty, 4]$
+      - $(0, \infty)$
+    solution: |
+      $f$ is defined only when $x - 4 \ge 0$; power functions are continuous
+      at every point of their domain, so $f$ is continuous on $[4, \infty)$.
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 1
+    review: generated
+
+  - id: fc00cac6-29d8-44f4-a673-6f9fcecd4d9e
+    question: |
+      Find the intervals on which $g(x) = \frac{x + 3}{x^2 - x - 12}$ is
+      continuous.
+    answer: $(-\infty, -3) \cup (-3, 4) \cup (4, \infty)$
+    distractors:
+      - $(-\infty, 4) \cup (4, \infty)$
+      - $(-\infty, -3) \cup (4, \infty)$
+      - $(-\infty, \infty)$
+    solution: |
+      $x^2 - x - 12 = (x - 4)(x + 3)$, so $g$ is undefined at $x = 4$ and
+      $x = -3$. Rational functions are continuous everywhere else on their
+      domains.
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: 12ab5228-c959-4686-a621-b7c76ae5cb25
+    question: |
+      Which of the following functions is continuous on the closed interval
+      $[-2, 3]$?
+    answer: $g(x) = \sqrt{x + 2}$
+    distractors:
+      - $f(x) = \frac{1}{x - 1}$
+      - $h(x) = \frac{x^2 - 4}{x - 2}$
+      - $k(x) = \frac{|x|}{x}$
+    solution: |
+      $\sqrt{x + 2}$ is continuous on $[-2, \infty) \supseteq [-2, 3]$.
+      The others fail inside the interval: $\frac{1}{x - 1}$ at $x = 1$,
+      $\frac{x^2 - 4}{x - 2}$ at $x = 2$, and $\frac{|x|}{x}$ at $x = 0$.
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: 1130e5da-9d63-40e0-8e46-940261157a8e
+    question: |
+      A function $f$ is continuous on $[0, 5]$, $f(0) = 1$, and
+      $f(x) \ne 3$ for all $x$ in $[0, 5]$. Which of the following must be
+      true?
+    answer: $f(5) < 3$
+    distractors:
+      - $f(5) > 3$
+      - $f(5) = 3$
+      - Nothing can be concluded about $f(5)$.
+    solution: |
+      If $f(5) > 3$, then since $f(0) = 1 < 3 < f(5)$ and $f$ is continuous,
+      the Intermediate Value Theorem would force $f(c) = 3$ for some $c$,
+      contradicting $f(x) \ne 3$. Since also $f(5) \ne 3$, we must have
+      $f(5) < 3$.
+    calculator_active: false
+    sections:
+      - 1.12
+      - 1.16
+    dok: 3
+    review: generated
+
+  - id: 266b6f40-e528-4a34-b32c-34f39eb20c41
+    question: |
+      Let $f(x) = \frac{x^2 - 16}{x - 4}$ for $x \ne 4$. What value should be
+      assigned to $f(4)$ to make $f$ continuous at $x = 4$?
+    answer: 8
+    distractors:
+      - 0
+      - 4
+      - No value can make $f$ continuous at $x = 4$.
+    solution: |
+      $\lim_{x \to 4} \frac{(x - 4)(x + 4)}{x - 4} = \lim_{x \to 4} (x + 4) = 8$,
+      so defining $f(4) = 8$ makes $f(4) = \lim_{x \to 4} f(x)$.
+    calculator_active: false
+    sections:
+      - 1.13
+    dok: 2
+    review: generated
+
+  - id: 8c252834-01c8-48aa-a481-868e675db6ea
+    question: |
+      Find the constant $k$ that makes $f(x)$ continuous for all real numbers.
+      \[
+        f(x) = \begin{cases}
+                kx - 3 & x < 2 \\
+                x^2 + 1 & x \ge 2 \\
+              \end{cases}
+      \]
+    answer: 4
+    distractors:
+      - -1
+      - 1
+      - 8
+    solution: |
+      $\lim_{x \to 2^-} f(x) = 2k - 3$ must equal
+      $\lim_{x \to 2^+} f(x) = f(2) = 5$ \\
+      $2k - 3 = 5 \quad \Rightarrow \quad k = 4$
+    calculator_active: false
+    sections:
+      - 1.11
+      - 1.13
+    dok: 2
+    review: generated
+
+  - id: 4ae1888e-7ced-4b41-b68c-703e699696cb
+    question: |
+      Let $g(x) = \frac{x^2 + 2x - 8}{x^2 - 4}$. What value should be assigned
+      to $g(2)$ to remove the discontinuity at $x = 2$?
+    answer: $\frac{3}{2}$
+    distractors:
+      - 0
+      - 2
+      - The discontinuity at $x = 2$ cannot be removed.
+    solution: |
+      $g(x) = \frac{(x + 4)\cancel{(x - 2)}}{\cancel{(x - 2)}(x + 2)}
+      = \frac{x + 4}{x + 2}$ for $x \ne 2$, so
+      $\lim_{x \to 2} g(x) = \frac{6}{4} = \frac{3}{2}$. Defining
+      $g(2) = \frac{3}{2}$ removes the discontinuity. (The discontinuity at
+      $x = -2$ is a vertical asymptote and cannot be removed.)
+    calculator_active: false
+    sections:
+      - "1.10"
+      - 1.13
+    dok: 2
+    review: generated
+
+  - id: dcd2d248-0db8-4957-9aa1-236b582774b4
+    question: |
+      Let $f$ be given by
+      \[
+        f(x) = \begin{cases}
+                x + a & x < 1 \\
+                4 & x = 1 \\
+                bx^2 + 1 & x > 1 \\
+              \end{cases}
+      \]
+      If $f$ is continuous for all real numbers, then $a + b =$
+    answer: 6
+    distractors:
+      - 3
+      - 4
+      - 7
+    solution: |
+      Continuity at $x = 1$ requires both one-sided limits to equal $f(1) = 4$: \\
+      $\lim_{x \to 1^-} f(x) = 1 + a = 4 \Rightarrow a = 3$ \quad
+      $\lim_{x \to 1^+} f(x) = b + 1 = 4 \Rightarrow b = 3$ \quad
+      $\therefore a + b = 6$
+    calculator_active: false
+    sections:
+      - 1.11
+      - 1.13
+    dok: 3
+    review: generated
+
+  - id: 7ab22243-7268-479b-87bf-5f8bcc93676d
+    question: |
+      The graph of the function $f$ is shown below. Find $\lim_{x \to 2^-} f(x)$.
+    figure: 31.tex
+    answer: $-\infty$
+    distractors:
+      - $\infty$
+      - 0
+      - 2
+    solution: |
+      As $x$ approaches 2 from the left, the graph decreases without bound
+      along the vertical asymptote $x = 2$, so the limit is $-\infty$.
+    calculator_active: false
+    sections:
+      - 1.3
+      - 1.14
+    dok: 1
+    review: generated
+
+  - id: 976e0895-efaf-4bd8-a853-5da170a0cbbb
+    question: |
+      Find all vertical asymptotes of the graph of
+      $f(x) = \frac{x - 1}{x^2 - 2x - 3}$.
+    answer: $x = 3$ and $x = -1$
+    distractors:
+      - $x = 1$, $x = 3$, and $x = -1$
+      - $x = 3$ only
+      - $x = 1$ only
+    solution: |
+      $x^2 - 2x - 3 = (x - 3)(x + 1)$, and neither factor cancels with the
+      numerator, so $f$ increases or decreases without bound at $x = 3$ and
+      $x = -1$. ($x = 1$ is a zero of $f$, not an asymptote.)
+    calculator_active: false
+    sections:
+      - 1.14
+    dok: 2
+    review: generated
+
+  - id: c61d0429-1ce0-45ac-a9d2-221c841fb7e4
+    question: |
+      Find the limit: $\lim_{x \to 3^+} \frac{x + 2}{x - 3}$
+    answer: $\infty$
+    distractors:
+      - $-\infty$
+      - 0
+      - 1
+    solution: |
+      As $x \to 3^+$, the numerator approaches 5 and the denominator
+      approaches 0 through positive values, so the quotient increases
+      without bound.
+    calculator_active: false
+    sections:
+      - 1.14
+    dok: 2
+    review: generated
+
+  - id: 666ab368-5547-41f2-8bc6-a4f356c9e43c
+    question: |
+      Which of the following functions has a vertical asymptote at $x = 2$
+      and a removable discontinuity at $x = -1$?
+    answer: $f(x) = \frac{x + 1}{(x - 2)(x + 1)}$
+    distractors:
+      - $f(x) = \frac{x - 2}{(x + 1)(x - 2)}$
+      - $f(x) = \frac{x + 1}{x - 2}$
+      - $f(x) = (x - 2)(x + 1)$
+    solution: |
+      In $\frac{x + 1}{(x - 2)(x + 1)}$ the factor $x + 1$ cancels, leaving a
+      hole at $x = -1$, while $x - 2$ remains in the denominator, giving a
+      vertical asymptote at $x = 2$. Choice B has the roles reversed; C has
+      no removable discontinuity; D is a polynomial, continuous everywhere.
+    calculator_active: false
+    sections:
+      - "1.10"
+      - 1.13
+      - 1.14
+    dok: 3
+    review: generated
+
+  - id: a0a54081-1157-4b2e-a727-1762188fc8a4
+    question: |
+      Find the limit: $\lim_{x \to \infty} \left(5 - \frac{3}{x}\right)$
+    answer: 5
+    distractors:
+      - 0
+      - 3
+      - $\infty$
+    solution: |
+      $\lim_{x \to \infty} \frac{3}{x} = 0$, so the limit is $5 - 0 = 5$.
+    calculator_active: false
+    sections:
+      - 1.15
+    dok: 1
+    review: generated
+
+  - id: d71bbfee-9ea0-48e7-a4db-fb5e27efed5c
+    question: |
+      What is the horizontal asymptote of the graph of
+      $y = \frac{4x + 5}{2x^2 + 1}$?
+    answer: $y = 0$
+    distractors:
+      - $y = 2$
+      - $y = 4$
+      - The graph has no horizontal asymptote.
+    solution: |
+      The degree of the numerator is less than the degree of the denominator,
+      so $\lim_{x \to \pm\infty} y = 0$ and the horizontal asymptote is $y = 0$.
+    calculator_active: false
+    sections:
+      - 1.15
+    dok: 1
+    review: generated
+
+  - id: 6220bc10-9fd9-4a7c-aa0c-420737a58596
+    question: |
+      Find the limit: $\lim_{x \to \infty} \frac{2x^3 + 5}{3x^2 + 1}$
+    answer: $\infty$
+    distractors:
+      - $\frac{2}{3}$
+      - 0
+      - $-\infty$
+    solution: |
+      Dividing by $x^2$:
+      $\lim_{x \to \infty} \frac{2x + \frac{5}{x^2}}{3 + \frac{1}{x^2}}$;
+      the numerator increases without bound while the denominator approaches
+      3, so the limit is $\infty$.
+    calculator_active: false
+    sections:
+      - 1.15
+    dok: 2
+    review: generated
+
+  - id: bb27e0a5-f0c2-4ee2-af2a-a6e1165d370a
+    question: |
+      What are all horizontal asymptotes of the graph of
+      $y = \frac{5 + 2^x}{1 - 2^x}$ in the $xy$-plane?
+    answer: $y = -1$ and $y = 5$
+    distractors:
+      - $y = -1$ only
+      - $y = 5$ only
+      - $y = 0$ and $y = 5$
+    solution: |
+      As $x \to \infty$, divide by $2^x$:
+      $\frac{\frac{5}{2^x} + 1}{\frac{1}{2^x} - 1} \to \frac{0 + 1}{0 - 1} = -1$. \\
+      As $x \to -\infty$, $2^x \to 0$, so $y \to \frac{5 + 0}{1 - 0} = 5$.
+      Both $y = -1$ and $y = 5$ are horizontal asymptotes.
+    calculator_active: false
+    sections:
+      - 1.15
+    dok: 2
+    review: generated
+
+  - id: e3e0e887-4100-4b83-bb8d-a4a0453ca02d
+    question: |
+      Find the limit: $\lim_{x \to \infty} \frac{1 - 4x^3}{2x^3 + 7x}$
+    answer: -2
+    distractors:
+      - 2
+      - 0
+      - $\infty$
+    solution: |
+      $\lim_{x \to \infty} \frac{\frac{1}{x^3} - 4}{2 + \frac{7}{x^2}}
+      = \frac{0 - 4}{2 + 0} = -2$
+    calculator_active: false
+    sections:
+      - 1.15
+    dok: 2
+    review: generated
+
+  - id: 7e7d7082-b7ec-4618-a75c-7c855cde88a2
+    question: |
+      Find the limit: $\lim_{x \to -\infty} \frac{3x + 2}{\sqrt{x^2 + 1}}$
+    answer: -3
+    distractors:
+      - 3
+      - 0
+      - The limit does not exist.
+    solution: |
+      For $x < 0$, $\sqrt{x^2} = -x$, so dividing by $x$:
+      $\lim_{x \to -\infty} \frac{3 + \frac{2}{x}}{-\sqrt{1 + \frac{1}{x^2}}}
+      = \frac{3 + 0}{-\sqrt{1 + 0}} = -3$
+    calculator_active: false
+    sections:
+      - 1.15
+    dok: 2
+    review: generated
+
+  - id: af590588-e87e-4da7-a383-d1b33b92b51a
+    question: |
+      Suppose the line $y = 2$ is a horizontal asymptote of the graph of $f$.
+      Which of the following statements must be true?
+    answer: $\lim_{x \to \infty} f(x) = 2$ or $\lim_{x \to -\infty} f(x) = 2$
+    distractors:
+      - The graph of $f$ never intersects the line $y = 2$.
+      - $\lim_{x \to \infty} f(x) = 2$ and $\lim_{x \to -\infty} f(x) = 2$
+      - $f$ is continuous on $(-\infty, \infty)$.
+    solution: |
+      By definition $y = 2$ is a horizontal asymptote if \emph{either}
+      end-behavior limit equals 2. A graph may cross its horizontal asymptote
+      (e.g.\ $y = 2 + \frac{\sin x}{x}$), and the two ends may approach
+      different values, so the other statements can fail.
+    calculator_active: false
+    sections:
+      - 1.15
+    dok: 3
+    review: generated
+
+  - id: f3015b8f-e393-4c63-bf5b-60dd31d50f51
+    question: |
+      Let $f$ be a function on the closed interval $[a, b]$, and let $d$ be a
+      number between $f(a)$ and $f(b)$. Which hypothesis must hold in order
+      for the Intermediate Value Theorem to guarantee a number $c$ between
+      $a$ and $b$ with $f(c) = d$?
+    answer: $f$ is continuous on $[a, b]$
+    distractors:
+      - $f$ is increasing on $[a, b]$
+      - $f(a) < f(b)$
+      - $f(a) = f(b)$
+    solution: |
+      The Intermediate Value Theorem requires continuity on the closed
+      interval; it does not require $f$ to be increasing or any particular
+      order of $f(a)$ and $f(b)$.
+    calculator_active: false
+    sections:
+      - 1.16
+    dok: 1
+    review: generated
+
+  - id: e30db8b0-e610-40e6-a7c6-473b428285ff
+    question: |
+      A function $f$ is continuous on the closed interval $[1, 5]$ with
+      $f(1) = -4$ and $f(5) = 10$. Which of the following is guaranteed by
+      the Intermediate Value Theorem?
+    answer: $f(c) = 0$ for some $c$ in $(1, 5)$
+    distractors:
+      - $f(c) = 12$ for some $c$ in $(1, 5)$
+      - $f(3) = 3$
+      - $f$ has exactly one zero in $(1, 5)$
+    solution: |
+      Since $f$ is continuous on $[1, 5]$ and $f(1) < 0 < f(5)$, IVT
+      guarantees at least one $c$ with $f(c) = 0$. It says nothing about
+      values outside $[-4, 10]$, specific points, or the number of zeros.
+    calculator_active: false
+    sections:
+      - 1.16
+    dok: 2
+    review: generated
+
+  - id: 4873b70d-115f-4a52-b813-81f83fcdf7af
+    question: |
+      Let $f(x) = x^3 + x - 3$. On which of the following intervals does the
+      Intermediate Value Theorem guarantee that $f$ has a zero?
+    answer: $[1, 2]$
+    distractors:
+      - $[0, 1]$
+      - $[-1, 0]$
+      - $[2, 3]$
+    solution: |
+      $f$ is a polynomial, hence continuous. $f(1) = -1 < 0$ and
+      $f(2) = 7 > 0$, so IVT guarantees a zero in $[1, 2]$. On the other
+      intervals $f$ does not change sign: $f(0) = -3$, $f(-1) = -5$,
+      $f(3) = 27$.
+    calculator_active: false
+    sections:
+      - 1.16
+    dok: 2
+    review: generated
+
+  - id: ede7432b-a423-4dd1-8d28-354c3061ee33
+    question: |
+      The function $f(x)$ is continuous on the closed interval $[0, 6]$ and
+      has values that are given in the table below.
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |*{5}{Y|} }
+          \hline
+          \bm{$x$} & 0 & 2 & 4 & 6 \\
+          \hline
+          \bm{$f(x)$} & 5 & 1 & -3 & 4 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+
+      What is the \emph{minimum} number of solutions to the equation
+      $f(x) = 2$ in the interval $[0, 6]$?
+    answer: 2
+    distractors:
+      - 1
+      - 3
+      - 0
+    solution: |
+      $f(0) = 5 > 2 > 1 = f(2)$ and $f(4) = -3 < 2 < 4 = f(6)$, so IVT
+      guarantees a solution in each of $(0, 2)$ and $(4, 6)$. On $(2, 4)$,
+      2 is not between $f(2) = 1$ and $f(4) = -3$, so no solution is
+      guaranteed there.
+    calculator_active: false
+    sections:
+      - 1.16
+    dok: 3
+    review: generated
+
+  - id: e880255e-8687-48dd-8adf-31593b6fe2dc
+    question: |
+      A function $g$ is defined on $[0, 4]$ with $g(0) = -2$ and $g(4) = 6$,
+      but $g$ is \emph{not} continuous on $[0, 4]$. Which of the following
+      statements is true?
+    answer: It is possible that $g(x) \ne 0$ for all $x$ in $[0, 4]$.
+    distractors:
+      - There must still be a $c$ in $[0, 4]$ with $g(c) = 0$.
+      - $g(x) \ne 0$ for all $x$ in $[0, 4]$.
+      - $g$ must take every value between $-2$ and 6.
+    solution: |
+      Without continuity, IVT does not apply: $g$ could jump from negative
+      to positive values without ever equaling 0 (though it still might),
+      so no intermediate value is guaranteed.
+    calculator_active: false
+    sections:
+      - 1.16
+    dok: 3
+    review: generated
+
+  - id: 08c8fdf8-c45e-4310-82bd-2ba66016bf83
+    question: |
+      At 6 a.m. the outdoor temperature was $48^\circ$F, and at noon it was
+      $68^\circ$F. Assuming temperature is a continuous function of time,
+      which of the following must be true?
+    answer: At some time between 6 a.m. and noon, the temperature was exactly $60^\circ$F.
+    distractors:
+      - The temperature increased during the entire morning.
+      - The temperature was exactly $60^\circ$F at exactly one time during the morning.
+      - The temperature never dropped below $48^\circ$F during the morning.
+    solution: |
+      Since 60 is between 48 and 68 and temperature is continuous, the
+      Intermediate Value Theorem guarantees some time when the temperature
+      was exactly $60^\circ$F. IVT does not say the temperature increased
+      monotonically, hit 60 only once, or stayed above 48.
+    calculator_active: false
+    sections:
+      - 1.16
+    dok: 2
+    review: generated
