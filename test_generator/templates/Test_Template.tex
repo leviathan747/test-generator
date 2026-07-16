@@ -163,14 +163,16 @@
 
 % place a grading rubric to the right of solution content
 % usage: \begin{gradedsolution}{<points & criterion \\ rows>} <solution> \end{gradedsolution}
-% Falls back to full-width solution content with the rubric flush right
-% below it when the rubric would leave less than ~12em of solution column.
+% The rubric's opening brace is anchored 2/3 of the way across the line so
+% rubrics on consecutive solutions line up. Falls back to full-width solution
+% content with the rubric flush right below it when the rubric is too wide
+% for the right third of the line.
 \newsavebox{\rubricbox}
 \newlength{\rubricparskip}
 \newif\ifrubricfits
 \newenvironment{gradedsolution}[1]{%
   \sbox{\rubricbox}{$\left\{\,\begin{tabular}{@{}r@{\quad}l@{}}#1\end{tabular}\right.$}%
-  \ifdim\wd\rubricbox<\dimexpr\linewidth-12em\relax
+  \ifdim\wd\rubricbox<\dimexpr0.3333\linewidth\relax
     \rubricfitstrue
   \else
     \rubricfitsfalse
@@ -178,12 +180,12 @@
   \ifrubricfits
     \setlength{\rubricparskip}{\parskip}%
     \par\noindent
-    \begin{minipage}[t]{\dimexpr\linewidth-\wd\rubricbox-1em\relax}%
+    \begin{minipage}[t]{\dimexpr0.6667\linewidth-1em\relax}%
       \setlength{\parskip}{\rubricparskip}%
   \fi
 }{%
   \ifrubricfits
-    \end{minipage}\hfill
+    \end{minipage}\hspace{1em}%
     \begin{minipage}[t]{\wd\rubricbox}%
       \vspace{0pt}%
       \usebox{\rubricbox}%
