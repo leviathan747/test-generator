@@ -1,4 +1,4 @@
-title: "Unit 1 Test FRQ: Limits and Continuity (Calculator Active)"
+title: "Unit 1 Test FRQ: Limits and Continuity"
 author: Levi Starrett
 class_name: AP Calculus AB
 class_id: APCalc
@@ -35,7 +35,7 @@ questions:
           - 1.5
           - 1.11
         dok: 2
-        work_space: 1in
+        work_space: 2in
       - question: |
           Is the function $f(x)$ continuous at $x = 1$? Thoroughly justify your
           conclusion in a manner specific to this function using each condition
@@ -56,13 +56,13 @@ questions:
         sections:
           - 1.11
         dok: 3
-        work_space: 1in
+        work_space: 2in
       - question: |
           Consider the following graph of the function $y = g(x)$. Explain why
           $g(x)$ is discontinuous at $x = 2$ using the specific condition(s) in
           the definition of continuity.
         figure: 17C.tex
-        figure_width: 1.75in
+        figure_width: 2.75in
         solution: |
           $g(2) = 5$
           \quad $\lim_{x \to 2} g(x) = 3$
@@ -78,7 +78,7 @@ questions:
           - 1.3
           - 1.11
         dok: 3
-        work_space: 1in
+        work_space: 2in
       - question: |
           Using the functions $f(x)$ and $g(x)$ from above, find the limit:
           $\lim_{x \to 0} \frac{g(x)}{f(x)}$
@@ -133,7 +133,7 @@ questions:
           - 1.4
           - 1.5
         dok: 2
-        work_space: 1in
+        work_space: 2in
       - question: |
           For each of the values $a = 1$, $a = 2$, and $a = 6$, find
           $\lim_{x \to a} f(x)$ or explain why $\lim_{x \to a} f(x)$ does not
@@ -151,10 +151,10 @@ questions:
             criterion: Limit at $a = 6$
         sections:
           - 1.3
-          - '1.10'
+          - "1.10"
           - 1.11
         dok: 2
-        work_space: 1.25in
+        work_space: 2in
       - question: |
           Is $f$ continuous at $x = -3$? Using correct notation, justify your
           answer.
@@ -170,10 +170,10 @@ questions:
             criterion: Answer with reason
         sections:
           - 1.3
-          - '1.10'
+          - "1.10"
           - 1.11
         dok: 3
-        work_space: 1.25in
+        work_space: 3in
       - question: |
           Estimate the instantaneous rate of change of $g$ at $x = 0$.
         solution: |
@@ -184,6 +184,6 @@ questions:
         sections:
           - 1.1
         dok: 2
-        work_space: 0.75in
+        work_space: 2in
     calculator_active: true
     question_type: FRQ
