@@ -63,6 +63,23 @@
 % command for ensuring questions don't break across pages
 \newlength{\currentparskip}
 \newsavebox{\fitbox}
+
+% stem of a multipart question: typeset into a box now but held back, so
+% the next \fitquestion (the first part) measures the stem and the part
+% together and page-breaks before both if the pair doesn't fit
+\newsavebox{\fitstembox}
+\newif\ifpendingstem
+\newcommand{\fitstem}[1]{%
+  \sbox{\fitstembox}{%
+    \setlength{\currentparskip}{\parskip}
+    \begin{minipage}{\linewidth}
+    \setlength{\parskip}{\currentparskip}
+      #1
+    \end{minipage}
+  }%
+  \global\pendingstemtrue
+}
+
 \newcommand{\fitquestion}[1]{%
   % typeset content into a box
   \sbox{\fitbox}{%
@@ -81,9 +98,22 @@
   % the box is placed on the page
   \dimen1=\dimexpr\ht\fitbox+\dp\fitbox+\parskip+\baselineskip\relax
 
+  % a held-back stem must land on the same page as this box
+  \ifpendingstem
+    \advance\dimen1 \dimexpr\ht\fitstembox+\dp\fitstembox+\parskip+\baselineskip\relax
+  \fi
+
   % if it doesn't fit, force page break
   \ifdim\dimen1>\dimen0
     \newpage
+  \fi
+
+  % print the held-back stem first, out-dented from the parts list back
+  % to the full question width it was typeset at
+  \ifpendingstem
+    \par\noindent\hspace*{\dimexpr\linewidth-\wd\fitstembox\relax}%
+    \usebox{\fitstembox}\par
+    \global\pendingstemfalse
   \fi
 
   % print content
