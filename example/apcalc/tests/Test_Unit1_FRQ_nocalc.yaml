@@ -20,7 +20,6 @@ questions:
           Using the definition of continuity, find the values of $a$ and $b$ such
           that $f$ is continuous on the entire real number line. Be sure to
           demonstrate proper notation.
-          \textbf{(4 points)}
         solution: |
           \begin{multicols}{2}
 
@@ -45,8 +44,15 @@ questions:
             a + 1 = 5a - 7 \qquad 4a = 8 \qquad
             \boxed{a = 2} \qquad \boxed{b = 3}
           \end{gather*}
-          \emph{Grading: 1 point for each equation with limit notation, 1 point
-          for the value of $a$, 1 point for the value of $b$}
+        grading:
+          - points: 1
+            criterion: 'Eq.\ at $x = 2$ with limit notation'
+          - points: 1
+            criterion: 'Eq.\ at $x = 5$ with limit notation'
+          - points: 1
+            criterion: Value of $a$
+          - points: 1
+            criterion: Value of $b$
         sections:
           - 1.11
           - 1.12
@@ -55,15 +61,16 @@ questions:
       - question: |
           Evaluate $\lim_{x \to 3} f(x)$ using the values of $a$ and $b$ you
           found above.
-          \textbf{(2 points)}
         solution: |
           $\lim_{x \to 3} f(x) = \lim_{x \to 3} 2x + 3 = 2(3) + 3 = 9$
 
           \emph{Note: answers using incorrect answers from part "a" are eligible
           for full credit if evaluated correctly}
-
-          \emph{Grading: 1 point for a correct limit statement, 1 point for the
-          answer}
+        grading:
+          - points: 1
+            criterion: Correct limit statement
+          - points: 1
+            criterion: Answer
         sections:
           - 1.5
           - 1.6
@@ -82,16 +89,19 @@ questions:
           \]
           Evaluate $\lim_{x \to 2} h(x)$. Be sure to show proper limit notation
           throughout your solution.
-          \textbf{(3 points)}
         solution: |
           $\lim_{x \to 2} h(x) = \lim_{x \to 2} \frac{x^3 - 8}{x - 2}$
           $= \lim_{x \to 2} \frac{(\cancel{x - 2})(x^2 + 2x + 4)}{\cancel{x - 2}}$
 
           $= \lim_{x \to 2} x^2 + 2x + 4$
           $= (2)^2 + 2(2) + 4 = 12$
-
-          \emph{Grading: 1 point for a correct limit statement, 1 point for
-          factoring and canceling, 1 point for the answer}
+        grading:
+          - points: 1
+            criterion: Correct limit statement
+          - points: 1
+            criterion: Factor and cancel
+          - points: 1
+            criterion: Answer
         sections:
           - 1.6
           - 1.7
@@ -117,7 +127,6 @@ questions:
       - question: |
           Find $\lim_{t \to \infty} N(t)$. Explain the meaning of
           $\lim_{t \to \infty} N(t)$ in the context of the problem.
-          \textbf{(3 points)}
         solution: |
           \begin{align*}
             \lim_{t \to \infty} N(t) &= \lim_{t \to \infty} \frac{200 + 80t}{2 + 0.05t}
@@ -128,9 +137,13 @@ questions:
           The number of fish in the pond approaches 1,600 individuals as time
           increases without bound -- this is the maximum population the pond
           can support.
-
-          \emph{Grading: 1 point for a correct limit expression, 1 point for
-          the answer, 1 point for the interpretation}
+        grading:
+          - points: 1
+            criterion: Correct limit expression
+          - points: 1
+            criterion: Answer
+          - points: 1
+            criterion: Interpretation
         sections:
           - 1.15
         dok: 3
@@ -138,7 +151,6 @@ questions:
       - question: |
           Is the function $N$ continuous at $t = 8$? Justify your answer with
           proper notation.
-          \textbf{(3 points)}
         solution: |
           \begin{gather*}
             N(8) = \frac{200 + 80(8)}{2 + 0.05(8)} = \frac{840}{2.4} = 350 \\
@@ -148,10 +160,13 @@ questions:
           \end{gather*}
           $N(t)$ is continuous at $t = 8$ because
           $\lim_{t \to 8} N(t) = N(8)$.
-
-          \emph{Grading: 1 point for $N(8)$, 1 point for
-          $\lim_{t \to 8} N(t)$ (including each one-sided limit), 1 point for
-          the answer with justification}
+        grading:
+          - points: 1
+            criterion: $N(8)$
+          - points: 1
+            criterion: '$\lim_{t \to 8} N(t)$ (including each one-sided limit)'
+          - points: 1
+            criterion: Answer with justification
         sections:
           - 1.11
         dok: 3
@@ -159,7 +174,6 @@ questions:
       - question: |
           The function $N$ is continuous at $t = 6$. Is there a time, $t$, in
           $0 \le t \le 6$ at which $N(t) = 250$? Justify your answer.
-          \textbf{(3 points)}
         solution: |
           \begin{gather*}
             N(0) = f(0) = 80 \\
@@ -168,9 +182,13 @@ questions:
           Since $N(t)$ is continuous on the interval $0 \le t \le 6$ and
           $N(0) \le 250 \le N(6). \\ \therefore$ by Intermediate Value Theorem,
           there is a time $t$ such that $N(t) = 250$ in $0 \le t \le 6$
-
-          \emph{Grading: 1 point for $N(0)$ and $N(6)$, 1 point for $N(t)$ is
-          continuous, 1 point for $N(0) \le 250 \le N(6)$}
+        grading:
+          - points: 1
+            criterion: $N(0)$ and $N(6)$
+          - points: 1
+            criterion: $N(t)$ is continuous
+          - points: 1
+            criterion: '$N(0) \le 250 \le N(6)$'
         sections:
           - 1.16
         dok: 3

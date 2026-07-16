@@ -16,7 +16,6 @@ questions:
     parts:
       - question: |
           Find $\lim_{x \to 1} f(x)$ if it exists. Justify your answer.
-          \textbf{(3 points)}
         solution: |
           \begin{gather*}
             \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} 3x + 2
@@ -25,8 +24,13 @@ questions:
             = 2(1)^2 - 3(1) + 6 = 5 \\
             \therefore \lim_{x \to 1} f(x) = 5
           \end{gather*}
-          \emph{Grading: 1 point for each one-sided limit, 1 point for the
-          answer}
+        grading:
+          - points: 1
+            criterion: '$\lim_{x \to 1^-} f(x)$'
+          - points: 1
+            criterion: '$\lim_{x \to 1^+} f(x)$'
+          - points: 1
+            criterion: Answer
         sections:
           - 1.5
           - 1.11
@@ -36,15 +40,19 @@ questions:
           Is the function $f(x)$ continuous at $x = 1$? Thoroughly justify your
           conclusion in a manner specific to this function using each condition
           of the definition of continuity.
-          \textbf{(3 points)}
         solution: |
           $f(1) = 2(1)^2 - 3(1) + 6 = 5$ \quad $f(1)$ is defined,
           $\lim_{x \to 1} f(x)$ exists and $f(1) = \lim_{x \to 1} f(x)$,
           $\therefore f(x)$ is continuous at $x = 1$.
 
-          \emph{Grading: 1 point for $f(1)$, 1 point for
-          $\lim_{x \to 1} f(x)$, 1 point for $f(1) = \lim_{x \to 1} f(x)$.
-          Note: for full credit, $f(1)$ must be evaluated}
+          \emph{Note: for full credit, $f(1)$ must be evaluated}
+        grading:
+          - points: 1
+            criterion: $f(1)$
+          - points: 1
+            criterion: '$\lim_{x \to 1} f(x)$'
+          - points: 1
+            criterion: '$f(1) = \lim_{x \to 1} f(x)$'
         sections:
           - 1.11
         dok: 3
@@ -53,7 +61,6 @@ questions:
           Consider the following graph of the function $y = g(x)$. Explain why
           $g(x)$ is discontinuous at $x = 2$ using the specific condition(s) in
           the definition of continuity.
-          \textbf{(2 points)}
         figure: 17C.tex
         figure_width: 1.75in
         solution: |
@@ -62,9 +69,11 @@ questions:
 
           $g(x)$ is discontinuous at $x = 2$ because
           $g(2) \ne \lim_{x \to 2} g(x)$.
-
-          \emph{Grading: 1 point for evaluating $g(2)$ and
-          $\lim_{x \to 2} g(x)$, 1 point for the reasoning}
+        grading:
+          - points: 1
+            criterion: '$g(2)$ and $\lim_{x \to 2} g(x)$'
+          - points: 1
+            criterion: Reasoning
         sections:
           - 1.3
           - 1.11
@@ -73,14 +82,15 @@ questions:
       - question: |
           Using the functions $f(x)$ and $g(x)$ from above, find the limit:
           $\lim_{x \to 0} \frac{g(x)}{f(x)}$
-          \textbf{(1 point)}
         solution: |
           $\lim_{x \to 0} \frac{g(x)}{f(x)}$
           $= \frac{\lim_{x \to 0} g(x)}{\lim_{x \to 0} f(x)}$
           $= \frac{1}{\lim_{x \to 0} 3x + 2}$
           $= \frac{1}{3(0) + 2}$
           $= \frac{1}{2}$
-          \quad \emph{(Grading: 1 point for the answer)}
+        grading:
+          - points: 1
+            criterion: Answer
         sections:
           - 1.5
         dok: 2
@@ -108,15 +118,16 @@ questions:
           Using the graph of $f$ and the table for $g$, estimate
           $\lim_{x \to 0} (f(x) - g(x))$. Give your response to the nearest
           whole number.
-          \textbf{(2 points)}
         solution: |
           $\lim_{x \to 0} (f(x) - g(x)) = \lim_{x \to 0} f(x) - \lim_{x \to 0} g(x) = 2 - 2 = 0$
 
           \emph{Note: a response is not eligible for full credit unless the
           final answer is correct.}
-
-          \emph{Grading: 1 point for $\lim_{x \to 0} f(x)$, 1 point for
-          $\lim_{x \to 0} g(x)$}
+        grading:
+          - points: 1
+            criterion: '$\lim_{x \to 0} f(x)$'
+          - points: 1
+            criterion: '$\lim_{x \to 0} g(x)$'
         sections:
           - 1.3
           - 1.4
@@ -127,13 +138,17 @@ questions:
           For each of the values $a = 1$, $a = 2$, and $a = 6$, find
           $\lim_{x \to a} f(x)$ or explain why $\lim_{x \to a} f(x)$ does not
           exist. Use correct limit notation in your responses.
-          \textbf{(3 points)}
         solution: |
           $\lim_{x \to 1} f(x)$ does not exist $\Rightarrow \lim_{x \to 1^-} f(x) \ne \lim_{x \to 1^+} f(x)$ \\
           $\lim_{x \to 2} f(x) = 1$ \\
           $\lim_{x \to 6} f(x) = \infty$ (does not exist) $\Rightarrow \lim_{x \to 6^-} f(x) = \infty$ and $\lim_{x \to 6^+} f(x) = \infty$
-
-          \emph{Grading: 1 point for each limit}
+        grading:
+          - points: 1
+            criterion: Limit at $a = 1$
+          - points: 1
+            criterion: Limit at $a = 2$
+          - points: 1
+            criterion: Limit at $a = 6$
         sections:
           - 1.3
           - '1.10'
@@ -143,13 +158,16 @@ questions:
       - question: |
           Is $f$ continuous at $x = -3$? Using correct notation, justify your
           answer.
-          \textbf{(3 points)}
         solution: |
           $f(-3) = 2 \quad \lim_{x \to -3} f(x) = -1 \quad f(-3) \ne \lim_{x \to -3} f(x)$ \\
           $f$ is not continuous at $x = -3$ because $f(-3) \ne \lim_{x \to -3} f(x)$
-
-          \emph{Grading: 1 point for $f(-3)$, 1 point for
-          $\lim_{x \to -3} f(x)$, 1 point for the answer with reason}
+        grading:
+          - points: 1
+            criterion: $f(-3)$
+          - points: 1
+            criterion: '$\lim_{x \to -3} f(x)$'
+          - points: 1
+            criterion: Answer with reason
         sections:
           - 1.3
           - '1.10'
@@ -158,10 +176,11 @@ questions:
         work_space: 1.25in
       - question: |
           Estimate the instantaneous rate of change of $g$ at $x = 0$.
-          \textbf{(1 point)}
         solution: |
           $\approx \frac{2.001 - 1.999}{0.001 - (-0.001)} = 1$
-          \quad \emph{(Grading: 1 point for the answer)}
+        grading:
+          - points: 1
+            criterion: Answer
         sections:
           - 1.1
         dok: 2

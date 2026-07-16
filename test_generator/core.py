@@ -240,6 +240,50 @@ def select_questions(pool: list[Question], count: int) -> list[Question]:
     return [q for q in pool if q["id"] in selected_ids]
 
 
+def _format_points(value: Any) -> str:
+    """Format a point value, dropping a trailing ``.0`` from whole numbers."""
+    number = float(value)
+    return str(int(number)) if number.is_integer() else f"{number:g}"
+
+
+def _apply_grading(
+    question_text: str, solution_text: str, item: Question
+) -> tuple[str, str]:
+    """Apply an item's ``grading`` rubric to its question and solution text.
+
+    ``grading`` is a list of ``{points, criterion}`` mappings. The summed
+    points are appended to the question text in bold parentheses, and the
+    solution is wrapped in the template's ``gradedsolution`` environment,
+    which typesets the braced rubric to the right of the solution.
+    """
+    grading = item.get("grading") or []
+    if not grading:
+        return question_text, solution_text
+
+    for entry in grading:
+        if "points" not in entry or "criterion" not in entry:
+            raise RuntimeError(
+                f"grading entries need 'points' and 'criterion': {entry!r}"
+            )
+
+    total = sum(float(entry["points"]) for entry in grading)
+    label = "point" if total == 1 else "points"
+    question_text = (
+        f"{question_text.rstrip()}\n\\textbf{{({_format_points(total)} {label})}}\n"
+    )
+
+    rows = " \\\\\n".join(
+        f"{_format_points(entry['points'])} & {str(entry['criterion']).strip()}"
+        for entry in grading
+    )
+    solution_text = (
+        f"\\begin{{gradedsolution}}{{{rows}}}\n"
+        f"{solution_text.rstrip()}\n"
+        f"\\end{{gradedsolution}}"
+    )
+    return question_text, solution_text
+
+
 def _figure_include(figure: str, figure_width: str | None = None) -> str:
     """LaTeX snippet including a figure file from the figures/ build dir."""
     name = str(figure)
@@ -401,9 +445,12 @@ def generate_test(
         if q_type == "FRQ" and parts:
             part_blocks = []
             for part in parts:
+                p_question, p_solution = _apply_grading(
+                    str(part.get("question", "")), str(part.get("solution", "")), part
+                )
                 p_block = _apply_figure_placeholders(question_templates["FRQ_PART"], part)
-                p_block = p_block.replace("$QUESTION", str(part.get("question", "")))
-                p_block = p_block.replace("$SOLUTION", str(part.get("solution", "")))
+                p_block = p_block.replace("$QUESTION", p_question)
+                p_block = p_block.replace("$SOLUTION", p_solution)
                 p_block = p_block.replace(
                     "$SIZE", str(part.get("work_space", q.get("work_space", default_work_space)))
                 )
@@ -414,6 +461,7 @@ def generate_test(
             q_blocks.append(q_block)
             continue
 
+        question_text, solution_text = _apply_grading(question_text, solution_text, q)
         q_block = _apply_figure_placeholders(question_templates[q_type], q)
         q_block = q_block.replace("$QUESTION", question_text)
         q_block = q_block.replace("$SOLUTION", solution_text)

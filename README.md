@@ -180,6 +180,34 @@ Questions may instead embed figures as raw LaTeX in the question text
 for a full-width centered figure), but don't combine that `\fullwidth`
 escape with the `figure` field on the same question.
 
+#### Grading rubrics
+
+A question (or an individual part of a multipart FRQ) can carry a
+grading rubric in the optional `grading` field — a list of entries with
+a numerical `points` value and a `criterion` string:
+
+```yaml
+questions:
+  - id: 1
+    question: Evaluate $\lim_{x \to 2} h(x)$.
+    question_type: FRQ
+    solution: The limit is 12.
+    grading:
+      - points: 1
+        criterion: Correct limit statement
+      - points: 1
+        criterion: Factor and cancel
+      - points: 1
+        criterion: Answer
+```
+
+When `grading` is present, the summed points are appended to the
+question text in bold parentheses (e.g. `(3 points)`), and the solution
+copy shows the rubric as a braced points/criterion list to the right of
+the solution. A rubric too wide to leave a usable solution column is
+placed flush right below the solution instead. Point values and
+criteria are not written manually in the question or solution text.
+
 #### Section filtering
 
 The `sections` config key filters questions by their `sections` metadata

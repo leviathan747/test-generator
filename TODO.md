@@ -7,3 +7,6 @@
   same test (same questions, scrambled order)
 - Add ability to pass in a manifest and filter out questions that have already
   been used
+- Print coverage/DOK report from a manifest file
+- Don't print the report unless requested with command line argument
+- Min average DOK target

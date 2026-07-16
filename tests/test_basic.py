@@ -383,6 +383,87 @@ def test_generate_test_frq_multipart(
     assert Path(result).exists()
 
 
+def test_generate_test_grading_rubric(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    yaml_file = tmp_path / "q.yaml"
+    yaml_file.write_text(
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: Evaluate the limit.\n"
+        "    solution: The limit is 2.\n"
+        "    question_type: FRQ\n"
+        "    grading:\n"
+        "      - points: 1\n"
+        "        criterion: Correct limit statement\n"
+        "      - points: 2\n"
+        "        criterion: Answer\n"
+        "  - id: 2\n"
+        "    question: Consider the function f.\n"
+        "    question_type: FRQ\n"
+        "    parts:\n"
+        "      - question: Find the vertical asymptotes.\n"
+        "        solution: One at x = -3.\n"
+        "        grading:\n"
+        "          - points: 1\n"
+        "            criterion: Asymptote\n"
+        "      - question: Find the horizontal asymptotes.\n"
+        "        solution: At y = -1 and y = 1.\n"
+        "  - id: 3\n"
+        "    question: Ungraded question.\n"
+        "    solution: Ungraded solution.\n"
+        "    question_type: FRQ\n"
+    )
+
+    tex_contents: list[str] = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    out_pdf = tmp_path / "out.pdf"
+    result = test_generator.generate_test(str(yaml_file), str(out_pdf))
+    assert Path(result).exists()
+
+    tex = tex_contents[0]
+    # summed points are appended in bold after the question text
+    q1_block = tex.split("Evaluate the limit.")[1].split("\\begin{solution}")[0]
+    assert "\\textbf{(3 points)}" in q1_block
+    # a 1-point total uses the singular label
+    part_block = tex.split("Find the vertical asymptotes.")[1].split("\\part")[0]
+    assert "\\textbf{(1 point)}" in part_block
+    # the rubric rows wrap the solution in a gradedsolution environment
+    assert (
+        "\\begin{gradedsolution}{1 & Correct limit statement \\\\\n2 & Answer}\n"
+        "The limit is 2.\n"
+        "\\end{gradedsolution}" in tex
+    )
+    assert "\\begin{gradedsolution}{1 & Asymptote}" in part_block
+    # questions/parts without grading are untouched
+    ungraded = tex.split("Ungraded question.")[1].split("\\end{questions}")[0]
+    assert "gradedsolution" not in ungraded
+    assert "\\textbf{(" not in ungraded
+    horizontal = tex.split("Find the horizontal asymptotes.")[1].split("}")[0]
+    assert "gradedsolution" not in horizontal
+
+
+def test_generate_test_grading_rejects_bad_entries(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    yaml_file = tmp_path / "q.yaml"
+    yaml_file.write_text(
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: Evaluate the limit.\n"
+        "    solution: The limit is 2.\n"
+        "    question_type: FRQ\n"
+        "    grading:\n"
+        "      - points: 1\n"
+    )
+
+    _fake_pdflatex(monkeypatch, [])
+
+    with pytest.raises(RuntimeError, match="criterion"):
+        test_generator.generate_test(str(yaml_file), str(tmp_path / "out.pdf"))
+
+
 def test_generate_test_figure_placement(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
