@@ -1,20 +1,22 @@
 """Simple CLI for generating tests from YAML files.
 
 Usage: python -m test_generator config.yaml [config2.yaml ...] \
-           [--questions questions.yaml] \
-           [--figures-dir <dir>] [--out-dir <dir>] \
+           [--questions questions.yaml]... \
+           [--figures-dir <dir>]... [--out-dir <dir>] \
            [--student-only | --solution-only] [--report]
 
        python -m test_generator config.yaml --from-manifest <manifest.yaml> \
-           [--questions questions.yaml] [--figures-dir <dir>] \
+           [--questions questions.yaml]... [--figures-dir <dir>]... \
            [--out-dir <dir>] [--student-only | --solution-only] [--report]
 
        python -m test_generator --report-from-manifest <manifest.yaml>
 
 Each config file describes an assessment (title, author, class name,
 duration, and question filters); the question bank comes from the
-optional questions YAML file, a `questions` list in the config file
-itself, or both combined. A `question_count` config field randomly
+optional questions YAML file(s), a `questions` list in the config file
+itself, or all combined. `--questions` and `--figures-dir` may each be
+given multiple times; on figure filename collisions the earliest-listed
+directory wins. A `question_count` config field randomly
 selects that many questions from the filtered pool (maximizing section
 coverage and avoiding `related_to` pairs when possible), and
 `scramble_questions: true` shuffles the question order; both re-randomize
@@ -166,20 +168,26 @@ def _md5(path: str | Path) -> str:
 
 def _manifest_files(
     config_path: str,
-    questions_path: str | None,
-    figures_dir: str,
+    questions_paths: list[str] | None,
+    figures_dirs: list[str],
     questions: list[Question],
 ) -> list[str]:
-    """Input files to record: config, question bank, and referenced figures."""
+    """Input files to record: config, question bank(s), and referenced figures.
+
+    Each figure is recorded from the first directory in ``figures_dirs``
+    that contains it (falling back to the first directory, so a missing
+    figure still fails when its MD5 is computed).
+    """
     paths = [str(config_path)]
-    if questions_path:
-        paths.append(str(questions_path))
+    paths.extend(str(p) for p in questions_paths or [])
     for q in questions:
         items = [q] + list(q.get("parts") or [])
         for item in items:
             figure = item.get("figure")
             if figure:
-                paths.append(str(Path(figures_dir) / str(figure)))
+                candidates = [Path(d) / str(figure) for d in figures_dirs]
+                found = next((c for c in candidates if c.exists()), candidates[0])
+                paths.append(str(found))
     seen: set[str] = set()
     unique: list[str] = []
     for p in paths:
@@ -193,13 +201,13 @@ def _write_manifest(
     manifest_path: str | Path,
     form_id: str,
     config_path: str,
-    questions_path: str | None,
-    figures_dir: str,
+    questions_paths: list[str] | None,
+    figures_dirs: list[str],
     questions: list[Question],
     choice_orders: dict[Any, list[int]],
     sections_spec: str | None = None,
 ) -> str:
-    file_paths = _manifest_files(config_path, questions_path, figures_dir, questions)
+    file_paths = _manifest_files(config_path, questions_paths, figures_dirs, questions)
     question_entries: list[dict[str, Any]] = []
     for q in questions:
         entry: dict[str, Any] = {"id": q["id"]}
@@ -232,8 +240,8 @@ def _generate_copies(
     args: argparse.Namespace,
     config: dict[str, Any],
     form_id: str,
-    questions_path: str | None,
-    figures_dir: str,
+    questions_paths: list[str] | None,
+    figures_dirs: list[str],
     question_order: list[Any],
     choice_orders: dict[Any, list[int]],
 ) -> None:
@@ -241,14 +249,14 @@ def _generate_copies(
         config, form_id, args.out_dir, args.student_only, args.solution_only
     ):
         out = generate_test(
-            questions_path,
+            questions_paths,
             str(output_pdf),
             title=str(config.get("title") or ""),
             author=str(config.get("author") or ""),
             class_name=str(config.get("class_name") or ""),
             form_id=_display_form_id(form_id),
             duration=str(config.get("duration") or ""),
-            figures_dir=figures_dir,
+            figures_dir=figures_dirs,
             solution=solution,
             questions=config.get("questions"),
             work_space=config.get("work_space"),
@@ -260,7 +268,7 @@ def _generate_copies(
 
 def _run_once(args: argparse.Namespace, draft: bool = False) -> bool:
     ok = True
-    figures_dir = args.figures_dir if args.figures_dir is not None else "."
+    figures_dirs = args.figures_dir or ["."]
     for config_path in args.config_yaml:
         try:
             config = _load_config(config_path)
@@ -281,13 +289,13 @@ def _run_once(args: argparse.Namespace, draft: bool = False) -> bool:
             question_order = [q["id"] for q in included]
             choice_orders = make_choice_orders(included)
             _generate_copies(
-                args, config, form_id, args.questions, figures_dir,
+                args, config, form_id, args.questions, figures_dirs,
                 question_order, choice_orders,
             )
             if not draft:
                 print(_write_manifest(
                     _manifest_path(config, form_id, args.out_dir),
-                    form_id, config_path, args.questions, figures_dir,
+                    form_id, config_path, args.questions, figures_dirs,
                     included, choice_orders,
                     sections_spec=config.get("sections"),
                 ))
@@ -355,7 +363,7 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
 
     config_path = args.config_yaml[0]
     config = _load_config(config_path)
-    figures_dir = args.figures_dir if args.figures_dir is not None else "."
+    figures_dirs = args.figures_dir or ["."]
     question_order = [entry["id"] for entry in manifest.get("questions") or []]
     choice_orders = {
         entry["id"]: entry["choice_order"]
@@ -366,7 +374,7 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
     pool = load_question_pool(args.questions, config.get("questions"))
     by_id = {q.get("id"): q for q in pool}
     selected = [by_id[qid] for qid in question_order if qid in by_id]
-    loaded_paths = _manifest_files(config_path, args.questions, figures_dir, selected)
+    loaded_paths = _manifest_files(config_path, args.questions, figures_dirs, selected)
 
     problems: list[str] = []
     loaded_md5s: set[str] = set()
@@ -398,7 +406,7 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
 
     _generate_copies(
         args, config, manifest["form_id"], args.questions,
-        figures_dir, question_order, choice_orders,
+        figures_dirs, question_order, choice_orders,
     )
     if args.report:
         print(format_report(selected, config.get("sections")))
@@ -407,33 +415,32 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
 
 def _get_watched_mtimes(
     config_paths: list[str],
-    questions_path: str | None,
-    figures_dir: str | None,
+    questions_paths: list[str] | None,
+    figures_dirs: list[str] | None,
 ) -> dict[str, float]:
     mtimes: dict[str, float] = {}
     watched = [Path(p) for p in config_paths]
-    if questions_path:
-        watched.append(Path(questions_path))
+    watched.extend(Path(p) for p in questions_paths or [])
     for p in watched:
         if p.exists():
             mtimes[str(p)] = p.stat().st_mtime
-    fig_dir: Path | None
-    if figures_dir:
-        fig_dir = Path(figures_dir)
-    elif questions_path:
-        fig_dir = Path(questions_path).parent / "figures"
+    fig_dirs: list[Path]
+    if figures_dirs:
+        fig_dirs = [Path(d) for d in figures_dirs]
+    elif questions_paths:
+        fig_dirs = [Path(questions_paths[0]).parent / "figures"]
     else:
-        fig_dir = None
-    if fig_dir is not None and fig_dir.is_dir():
-        for f in fig_dir.rglob("*"):
-            if f.is_file():
-                mtimes[str(f)] = f.stat().st_mtime
+        fig_dirs = []
+    for fig_dir in fig_dirs:
+        if fig_dir.is_dir():
+            for f in fig_dir.rglob("*"):
+                if f.is_file():
+                    mtimes[str(f)] = f.stat().st_mtime
     return mtimes
 
 
 def _watch_mode(args: argparse.Namespace) -> None:
-    configs = ", ".join(args.config_yaml)
-    watched = configs if args.questions is None else f"{configs} and {args.questions}"
+    watched = ", ".join(args.config_yaml + (args.questions or []))
     print(f"Watching {watched} for changes. Press Ctrl+C to stop.")
     print("Draft mode: the footer shows 'draft' in place of a form ID and no manifest is written.")
     _run_once(args, draft=True)
@@ -456,9 +463,9 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("config_yaml", nargs="*", help="Path(s) to YAML config file(s) describing the assessment(s); each is generated in sequence")
     p.add_argument("--from-manifest", dest="from_manifest", metavar="PATH", help="Recreate an existing version from its manifest file; provide the config (and --questions/--figures-dir) as in a normal run")
     p.add_argument("--report-from-manifest", dest="report_from_manifest", metavar="PATH", help="Print the coverage/DOK report recorded in a manifest and exit; no other arguments are needed and nothing is generated")
-    p.add_argument("--questions", help="Path to YAML file containing questions (combined with any 'questions' list in the config file)")
+    p.add_argument("--questions", action="append", metavar="PATH", help="Path to a YAML file containing questions; may be given multiple times to combine banks (also combined with any 'questions' list in the config file)")
     p.add_argument("--out-dir", dest="out_dir", default=".", help="Directory where generated PDFs are written (default: current directory)")
-    p.add_argument("--figures-dir", dest="figures_dir", default=None, help="Directory containing figures (default: current directory)")
+    p.add_argument("--figures-dir", dest="figures_dir", action="append", metavar="DIR", help="Directory containing figures; may be given multiple times, earlier directories win on filename collisions (default: current directory)")
     p.add_argument("--watch", action="store_true", help="Watch for changes and regenerate drafts automatically (no manifest is written)")
     p.add_argument("--report", action="store_true", help="Print a section-coverage and DOK report after each generation")
     only = p.add_mutually_exclusive_group()

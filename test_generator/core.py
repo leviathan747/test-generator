@@ -4,6 +4,7 @@ import shutil
 import subprocess
 import tempfile
 import yaml
+from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
@@ -55,15 +56,24 @@ def _quote_backslash_scalar_lines(text: str) -> str:
         output_lines.append(line)
     return "\n".join(output_lines) + "\n"
 
+def _as_paths(value: str | Path | Sequence[str | Path] | None) -> list[Path]:
+    """Normalize a single path, a sequence of paths, or None to a list."""
+    if value is None:
+        return []
+    if isinstance(value, (str, Path)):
+        return [Path(value)]
+    return [Path(v) for v in value]
+
+
 def load_question_pool(
-    yaml_path: str | Path | None,
+    yaml_path: str | Path | Sequence[str | Path] | None,
     inline_questions: list[Question] | None = None,
 ) -> list[Question]:
-    """Combine questions from a YAML file and an inline list.
+    """Combine questions from YAML file(s) and an inline list.
 
     Args:
-        yaml_path: Path to a YAML file with a top-level ``questions``
-            list, or None.
+        yaml_path: Path (or sequence of paths, loaded in order) to YAML
+            file(s) with a top-level ``questions`` list, or None.
         inline_questions: Optional list of question mappings appended
             after those loaded from ``yaml_path``.
 
@@ -71,10 +81,9 @@ def load_question_pool(
         The combined list of question mappings (file questions first).
     """
     pool: list[Question] = []
-    if yaml_path is not None:
-        yaml_file = Path(yaml_path)
+    for yaml_file in _as_paths(yaml_path):
         if not yaml_file.exists():
-            raise FileNotFoundError(yaml_path)
+            raise FileNotFoundError(str(yaml_file))
         raw_text = yaml_file.read_text()
         data = yaml.safe_load(_quote_backslash_scalar_lines(raw_text)) or {}
         pool.extend(data.get("questions") or [])
@@ -342,14 +351,14 @@ def _apply_figure_placeholders(block: str, item: Question) -> str:
 
 
 def generate_test(
-    yaml_path: str | None,
+    yaml_path: str | Sequence[str] | None,
     output_pdf: str,
     title: str = "",
     author: str = "",
     class_name: str = "",
     form_id: str = "",
     duration: str = "",
-    figures_dir: str | None = None,
+    figures_dir: str | Sequence[str] | None = None,
     solution: bool = False,
     assessment_type: str | None = None,
     sections: str | None = None,
@@ -362,18 +371,21 @@ def generate_test(
     """Generate a test PDF from a YAML file.
 
     Args:
-        yaml_path: Path to a YAML file describing questions (must contain
-            a top-level `questions` list of mappings with an `id` key).
-            May be None when ``questions`` supplies the questions directly.
+        yaml_path: Path (or sequence of paths, loaded in order) to YAML
+            file(s) describing questions (each must contain a top-level
+            `questions` list of mappings with an `id` key). May be None
+            when ``questions`` supplies the questions directly.
         output_pdf: Path where the generated PDF will be written.
         title: Test title.
         author: Author name.
         class_name: Class name.
         form_id: Form identifier printed in the page footer.
         duration: Duration string (e.g. "30 min").
-        figures_dir: Directory containing figure files to copy into the build
-            environment. Defaults to a ``figures/`` subdirectory next to the
-            YAML file when not specified.
+        figures_dir: Directory (or sequence of directories) containing
+            figure files to copy into the build environment. On filename
+            collisions the earliest-listed directory wins. Defaults to a
+            ``figures/`` subdirectory next to the first YAML file when
+            not specified.
         solution: When True, render the solution/answer-key copy.
         assessment_type: Optional filter; see :func:`filter_questions`.
         sections: Optional section range filter; see :func:`filter_questions`.
@@ -399,7 +411,7 @@ def generate_test(
         RuntimeError: if YAML can't be parsed, template can't be loaded, or
             PDF generation via `pdflatex` fails.
     """
-    yaml_file = Path(yaml_path) if yaml_path is not None else None
+    yaml_files = _as_paths(yaml_path)
     all_questions = load_question_pool(yaml_path, questions)
 
     if question_order is not None:
@@ -527,14 +539,15 @@ def generate_test(
         tex_path = td_path / "output.tex"
         tex_path.write_text(tex_content)
 
-        if figures_dir is not None:
-            figures_src = Path(figures_dir)
-        elif yaml_file is not None:
-            figures_src = yaml_file.parent / "figures"
-        else:
-            figures_src = None
-        if figures_src is not None and figures_src.is_dir():
-            shutil.copytree(str(figures_src), str(td_path / "figures"))
+        figures_dirs = _as_paths(figures_dir)
+        if not figures_dirs and yaml_files:
+            figures_dirs = [yaml_files[0].parent / "figures"]
+        # copy in reverse so the earliest-listed directory wins collisions
+        for figures_src in reversed(figures_dirs):
+            if figures_src.is_dir():
+                shutil.copytree(
+                    str(figures_src), str(td_path / "figures"), dirs_exist_ok=True
+                )
 
         cmd = [
             "pdflatex",

@@ -9,9 +9,6 @@
   - If the target is impossible to achieve while satisfying the rest of the
     filter requirements, get as close as possible and highlight the actual average
     DOK in yellow in the report on the command line.
-- Update the `--questions` and `--figures-dir` command line arguments to be
-  passed multiple times to include multiple banks of questions or multiple figure
-  dirs.
 - Add ability to pass in a previous manifest and generate a new version of the
   same test (same questions, scrambled question and choice order).
 - Add ability to pass in a previous manifest (or multiple manifests) and filter

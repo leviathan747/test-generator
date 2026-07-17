@@ -1283,6 +1283,136 @@ def test_from_manifest_md5_mismatch_prompt(
     assert (out_dir / "APCalc_Quiz_M_solutions.pdf").exists()
 
 
+def test_main_multiple_question_banks(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
+    extra_bank = tmp_path / "more_questions.yaml"
+    extra_bank.write_text(
+        "questions:\n"
+        "  - id: 99\n"
+        "    question: What is 5 + 5?\n"
+        "    answer: 10\n"
+        "    distractors: [9, 11]\n"
+        "    solution: Because.\n"
+    )
+    tex_contents: list[str] = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir)
+         + ["--questions", str(extra_bank)])
+
+    student_tex = tex_contents[0]
+    assert "What is 2 + 2?" in student_tex
+    assert "What is 5 + 5?" in student_tex
+    manifest = real_yaml.safe_load(
+        _the_manifest(out_dir, "APCalc_Quiz_1.3").read_text()
+    )
+    recorded = {entry["name"] for entry in manifest["files"]}
+    assert {questions_file.name, extra_bank.name} <= recorded
+
+
+def test_main_duplicate_ids_across_banks(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
+    _fake_pdflatex(monkeypatch, [])
+
+    with pytest.raises(SystemExit):
+        main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out")
+             + ["--questions", str(questions_file)])
+    assert "Duplicate question ID(s)" in capsys.readouterr().err
+
+
+def test_main_multiple_figures_dirs_first_wins(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    config_file = tmp_path / "config.yaml"
+    config_file.write_text(
+        "name: Quiz_F\n"
+        "class_id: APCalc\n"
+        "questions:\n"
+        "  - id: f1\n"
+        "    question: 'See figure.'\n"
+        "    answer: 1\n"
+        "    distractors: [2]\n"
+        "    figure: shared.png\n"
+        "  - id: f2\n"
+        "    question: 'See other figure.'\n"
+        "    answer: 3\n"
+        "    distractors: [4]\n"
+        "    figure: only_second.png\n"
+    )
+    first_dir = tmp_path / "figs_a"
+    second_dir = tmp_path / "figs_b"
+    first_dir.mkdir()
+    second_dir.mkdir()
+    (first_dir / "shared.png").write_bytes(b"first version")
+    (second_dir / "shared.png").write_bytes(b"second version")
+    (second_dir / "only_second.png").write_bytes(b"only in second")
+
+    copied: dict[str, bytes] = {}
+
+    def fake_run(
+        cmd: list[str], check: bool, stdout: int, stderr: int
+    ) -> subprocess.CompletedProcess[bytes]:
+        outdir = Path(cmd[cmd.index("-output-directory") + 1])
+        for f in (outdir / "figures").iterdir():
+            copied[f.name] = f.read_bytes()
+        (outdir / "output.pdf").write_bytes(b"%PDF-1.4\n%EOF")
+        return subprocess.CompletedProcess(cmd, 0, stdout=b"", stderr=b"")
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+
+    out_dir = tmp_path / "out"
+    main([str(config_file), "--out-dir", str(out_dir),
+          "--figures-dir", str(first_dir), "--figures-dir", str(second_dir)])
+
+    assert copied["shared.png"] == b"first version"
+    assert copied["only_second.png"] == b"only in second"
+
+    # the manifest records the winning copy of the shared figure
+    manifest = real_yaml.safe_load(
+        _the_manifest(out_dir, "APCalc_Quiz_F").read_text()
+    )
+    by_name = {entry["name"]: entry["md5"] for entry in manifest["files"]}
+    assert by_name["shared.png"] == _md5_of(first_dir / "shared.png")
+    assert by_name["only_second.png"] == _md5_of(second_dir / "only_second.png")
+
+
+def test_from_manifest_with_multiple_banks(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
+    extra_bank = tmp_path / "more_questions.yaml"
+    extra_bank.write_text(
+        "questions:\n"
+        "  - id: 99\n"
+        "    question: What is 5 + 5?\n"
+        "    answer: 10\n"
+        "    distractors: [9, 11]\n"
+        "    solution: Because.\n"
+    )
+    first_tex: list[str] = []
+    _fake_pdflatex(monkeypatch, first_tex)
+
+    out_dir = tmp_path / "out"
+    bank_args = ["--questions", str(extra_bank)]
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir) + bank_args)
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_1.3")
+
+    second_tex: list[str] = []
+    _fake_pdflatex(monkeypatch, second_tex)
+    monkeypatch.setattr(
+        "builtins.input",
+        lambda prompt="": pytest.fail("unexpected verification prompt"),
+    )
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir)
+         + bank_args + ["--from-manifest", str(manifest_file)])
+    assert second_tex == first_tex
+
+
 def test_from_manifest_accepts_version_1(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
