@@ -3,6 +3,7 @@
 Usage: python -m test_generator config.yaml [config2.yaml ...] \
            [--questions questions.yaml]... \
            [--figures-dir <dir>]... [--out-dir <dir>] \
+           [--exclude-manifest <manifest.yaml>]... \
            [--student-only | --solution-only] [--report]
 
        python -m test_generator config.yaml --from-manifest <manifest.yaml> \
@@ -29,7 +30,10 @@ replays a manifest to exactly recreate that version, and with
 manifest. Replay takes the
 same config, question bank, and figures arguments as a normal run — the
 input files may live anywhere, as long as their contents (MD5 sums)
-match the manifest. A `dok_target` config field steers the selection's
+match the manifest. `--exclude-manifest` (repeatable) drops the
+questions recorded in earlier manifests from the pool, so a follow-up
+assessment reuses nothing from those versions.
+A `dok_target` config field steers the selection's
 average DOK to at least — and as close as possible to — the target.
 With `--report`, a report of section coverage and DOK levels is printed
 after each generation; it shows the average DOK against the target,
@@ -293,13 +297,33 @@ def _generate_copies(
         print(out)
 
 
+def _load_excluded_ids(manifest_paths: list[str]) -> set[Any]:
+    """Union of question ids recorded in the given manifests.
+
+    Exclusion is by id only — no MD5 verification — since the question
+    banks typically evolve after a version is generated.
+    """
+    excluded: set[Any] = set()
+    for path in manifest_paths:
+        manifest = _load_manifest(path, warn_version=False)
+        excluded.update(entry["id"] for entry in manifest.get("questions") or [])
+    return excluded
+
+
 def _run_once(args: argparse.Namespace, draft: bool = False) -> bool:
     ok = True
     figures_dirs = args.figures_dir or ["."]
+    try:
+        excluded = _load_excluded_ids(args.exclude_manifests or [])
+    except Exception as e:
+        print(f"Error: {e}", file=sys.stderr)
+        return False
     for config_path in args.config_yaml:
         try:
             config = _load_config(config_path)
             pool = load_question_pool(args.questions, config.get("questions"))
+            if excluded:
+                pool = [q for q in pool if q.get("id") not in excluded]
             included = filter_questions(
                 pool,
                 assessment_type=config.get("assessment_type"),
@@ -309,9 +333,18 @@ def _run_once(args: argparse.Namespace, draft: bool = False) -> bool:
             _validate_question_ids(included)
             question_count = config.get("question_count")
             if question_count is not None:
-                included = select_questions(
-                    included, question_count, dok_target=config.get("dok_target")
-                )
+                try:
+                    included = select_questions(
+                        included, question_count,
+                        dok_target=config.get("dok_target"),
+                    )
+                except RuntimeError as e:
+                    if excluded:
+                        raise RuntimeError(
+                            f"{e} ({len(excluded)} question id(s) excluded "
+                            f"via --exclude-manifest)"
+                        ) from e
+                    raise
             if config.get("scramble_questions"):
                 random.shuffle(included)
             form_id = "draft" if draft else _new_form_id()
@@ -522,6 +555,7 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--from-manifest", dest="from_manifest", metavar="PATH", help="Recreate an existing version from its manifest file; provide the config (and --questions/--figures-dir) as in a normal run")
     p.add_argument("--report-from-manifest", dest="report_from_manifest", metavar="PATH", help="Print the coverage/DOK report recorded in a manifest and exit; no other arguments are needed and nothing is generated")
     p.add_argument("--new-version", dest="new_version", action="store_true", help="With --from-manifest: generate a new version of the same test (same questions, new form ID, re-scrambled question and choice order) and write a new manifest")
+    p.add_argument("--exclude-manifest", dest="exclude_manifests", action="append", metavar="PATH", help="Exclude the questions recorded in this manifest from the pool (matched by id only; may be given multiple times)")
     p.add_argument("--questions", action="append", metavar="PATH", help="Path to a YAML file containing questions; may be given multiple times to combine banks (also combined with any 'questions' list in the config file)")
     p.add_argument("--out-dir", dest="out_dir", default=".", help="Directory where generated PDFs are written (default: current directory)")
     p.add_argument("--figures-dir", dest="figures_dir", action="append", metavar="DIR", help="Directory containing figures; may be given multiple times, earlier directories win on filename collisions (default: current directory)")
@@ -534,6 +568,11 @@ def main(argv: list[str] | None = None) -> None:
 
     if args.new_version and not args.from_manifest:
         p.error("--new-version requires --from-manifest")
+    if args.exclude_manifests and args.from_manifest:
+        p.error(
+            "--exclude-manifest cannot be used with --from-manifest "
+            "(replay keeps the manifest's question set)"
+        )
     if args.report_from_manifest:
         if args.config_yaml or args.from_manifest or args.watch:
             p.error(

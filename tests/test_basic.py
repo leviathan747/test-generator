@@ -1548,6 +1548,102 @@ def test_cli_report_from_manifest_is_standalone(
         assert "standalone" in capsys.readouterr().err
 
 
+def _manifest_ids(manifest_file: Path) -> set[str]:
+    manifest = real_yaml.safe_load(manifest_file.read_text())
+    return {entry["id"] for entry in manifest["questions"]}
+
+
+def test_exclude_manifest_filters_used_questions(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(
+        tmp_path, "question_count: 1\n"
+    )
+    _fake_pdflatex(monkeypatch, [])
+
+    out_dir = tmp_path / "out"
+    cli = _cli_args(config_file, questions_file, figures_dir, out_dir)
+    main(cli)
+    first = _the_manifest(out_dir, "APCalc_Quiz_1.3")
+
+    main(cli + ["--exclude-manifest", str(first)])
+
+    second = next(
+        m for m in _manifests(out_dir, "APCalc_Quiz_1.3") if m != first
+    )
+    assert _manifest_ids(first).isdisjoint(_manifest_ids(second))
+
+
+def test_exclude_multiple_manifests(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    config_file = tmp_path / "config.yaml"
+    config_file.write_text(
+        "name: Quiz_X\n"
+        "class_id: APCalc\n"
+        "question_count: 1\n"
+        "questions:\n"
+        + "".join(
+            f"  - id: x{i}\n"
+            f"    question: 'Q{i}?'\n"
+            f"    answer: {i}\n"
+            f"    distractors: [{i + 10}]\n"
+            for i in range(3)
+        )
+    )
+    figures_dir = tmp_path / "figures"
+    figures_dir.mkdir()
+    _fake_pdflatex(monkeypatch, [])
+
+    out_dir = tmp_path / "out"
+    cli = [str(config_file), "--out-dir", str(out_dir),
+           "--figures-dir", str(figures_dir)]
+    main(cli)
+    manifests = _manifests(out_dir, "APCalc_Quiz_X")
+    main(cli + ["--exclude-manifest", str(manifests[0])])
+    manifests = _manifests(out_dir, "APCalc_Quiz_X")
+    assert len(manifests) == 2
+    exclude_args = [a for m in manifests for a in ("--exclude-manifest", str(m))]
+    main(cli + exclude_args)
+
+    manifests = _manifests(out_dir, "APCalc_Quiz_X")
+    assert len(manifests) == 3
+    id_sets = [_manifest_ids(m) for m in manifests]
+    # three runs, each excluding all earlier versions, use up the pool
+    assert set().union(*id_sets) == {"x0", "x1", "x2"}
+    assert all(len(ids) == 1 for ids in id_sets)
+
+
+def test_exclude_manifest_pool_exhausted(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(
+        tmp_path, "question_count: 2\n"
+    )
+    _fake_pdflatex(monkeypatch, [])
+
+    out_dir = tmp_path / "out"
+    cli = _cli_args(config_file, questions_file, figures_dir, out_dir)
+    main(cli)
+    first = _the_manifest(out_dir, "APCalc_Quiz_1.3")
+    capsys.readouterr()
+
+    with pytest.raises(SystemExit):
+        main(cli + ["--exclude-manifest", str(first)])
+    err = capsys.readouterr().err
+    assert "question_count is 2 but only 0" in err
+    assert "2 question id(s) excluded via --exclude-manifest" in err
+
+
+def test_cli_exclude_manifest_conflicts_with_from_manifest(
+    capsys: pytest.CaptureFixture[str]
+) -> None:
+    with pytest.raises(SystemExit):
+        main(["config.yaml", "--from-manifest", "m.yaml",
+              "--exclude-manifest", "old.yaml"])
+    assert "--exclude-manifest cannot be used" in capsys.readouterr().err
+
+
 def test_cli_from_manifest_requires_one_config(
     capsys: pytest.CaptureFixture[str]
 ) -> None:
