@@ -3,8 +3,6 @@
 ## High priority
 
 - Print coverage/DOK report from a manifest file
-- Don't print the coverage/DOK report by default unless requested with command
-  line argument
 - Pass a "dok_target" value in the config.
   - Select questions such that the average DOK is as close as possible (but at
     least as much as) the target.

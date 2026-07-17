@@ -1536,9 +1536,7 @@ def test_main_scramble_questions_rejects_non_bool(
     assert "must be a boolean" in capsys.readouterr().err
 
 
-def test_main_prints_report(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
-) -> None:
+def _write_report_config(tmp_path: Path) -> tuple[Path, Path]:
     config_file = tmp_path / "config.yaml"
     config_file.write_text(
         "name: Quiz_R\n"
@@ -1559,10 +1557,31 @@ def test_main_prints_report(
     )
     figures_dir = tmp_path / "figures"
     figures_dir.mkdir()
+    return config_file, figures_dir
+
+
+def test_main_no_report_by_default(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    config_file, figures_dir = _write_report_config(tmp_path)
     _fake_pdflatex(monkeypatch, [])
 
     main([str(config_file), "--out-dir", str(tmp_path / "out"),
           "--figures-dir", str(figures_dir)])
+
+    out = capsys.readouterr().out
+    assert "Test report:" not in out
+    assert "Average DOK:" not in out
+
+
+def test_main_prints_report(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    config_file, figures_dir = _write_report_config(tmp_path)
+    _fake_pdflatex(monkeypatch, [])
+
+    main([str(config_file), "--out-dir", str(tmp_path / "out"),
+          "--figures-dir", str(figures_dir), "--report"])
 
     out = capsys.readouterr().out
     assert "Test report: 2 question(s)" in out
@@ -1589,7 +1608,7 @@ def test_main_from_manifest_prints_report_same_questions(
     second_tex: list[str] = []
     _fake_pdflatex(monkeypatch, second_tex)
     main(_cli_args(config_file, questions_file, figures_dir, out_dir)
-         + ["--from-manifest", str(manifest_file)])
+         + ["--from-manifest", str(manifest_file), "--report"])
 
     # replay regenerates the same single question, never re-selecting
     assert second_tex == first_tex

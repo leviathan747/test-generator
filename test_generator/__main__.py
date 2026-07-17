@@ -3,11 +3,11 @@
 Usage: python -m test_generator config.yaml [config2.yaml ...] \
            [--questions questions.yaml] \
            [--figures-dir <dir>] [--out-dir <dir>] \
-           [--student-only | --solution-only]
+           [--student-only | --solution-only] [--report]
 
        python -m test_generator config.yaml --from-manifest <manifest.yaml> \
            [--questions questions.yaml] [--figures-dir <dir>] \
-           [--out-dir <dir>] [--student-only | --solution-only]
+           [--out-dir <dir>] [--student-only | --solution-only] [--report]
 
 Each config file describes an assessment (title, author, class name,
 duration, and question filters); the question bank comes from the
@@ -21,8 +21,8 @@ hex form ID and writes a manifest alongside the PDFs; `--from-manifest`
 replays a manifest to exactly recreate that version. Replay takes the
 same config, question bank, and figures arguments as a normal run — the
 input files may live anywhere, as long as their contents (MD5 sums)
-match the manifest. After each generation a report of section coverage
-and DOK levels is printed.
+match the manifest. With `--report`, a report of section coverage and
+DOK levels is printed after each generation.
 """
 import argparse
 import hashlib
@@ -271,7 +271,8 @@ def _run_once(args: argparse.Namespace, draft: bool = False) -> bool:
                     form_id, config_path, args.questions, figures_dir,
                     included, choice_orders,
                 ))
-            print(format_report(included, config.get("sections")))
+            if args.report:
+                print(format_report(included, config.get("sections")))
         except Exception as e:
             print(f"Error: {e}", file=sys.stderr)
             ok = False
@@ -351,7 +352,8 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
         args, config, manifest["form_id"], args.questions,
         figures_dir, question_order, choice_orders,
     )
-    print(format_report(selected, config.get("sections")))
+    if args.report:
+        print(format_report(selected, config.get("sections")))
     return True
 
 
@@ -409,6 +411,7 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--out-dir", dest="out_dir", default=".", help="Directory where generated PDFs are written (default: current directory)")
     p.add_argument("--figures-dir", dest="figures_dir", default=None, help="Directory containing figures (default: current directory)")
     p.add_argument("--watch", action="store_true", help="Watch for changes and regenerate drafts automatically (no manifest is written)")
+    p.add_argument("--report", action="store_true", help="Print a section-coverage and DOK report after each generation")
     only = p.add_mutually_exclusive_group()
     only.add_argument("--student-only", action="store_true", help="Generate only the student copy")
     only.add_argument("--solution-only", action="store_true", help="Generate only the solution copy")
