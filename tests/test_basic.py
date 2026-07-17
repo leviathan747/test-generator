@@ -1047,6 +1047,8 @@ def _write_manifest_inputs(tmp_path: Path) -> tuple[Path, Path, Path]:
         "    distractors: [3, 5, 6]\n"
         "    solution: Because.\n"
         "    figure: used.png\n"
+        "    sections: ['1.1']\n"
+        "    dok: 2\n"
         "  - id: q-frq\n"
         "    question: Show your work.\n"
         "    solution: Shown.\n"
@@ -1055,6 +1057,8 @@ def _write_manifest_inputs(tmp_path: Path) -> tuple[Path, Path, Path]:
         "      - question: Part one.\n"
         "        solution: Done.\n"
         "        figure: part.png\n"
+        "        sections: ['1.2', '1.3']\n"
+        "        dok: 3\n"
     )
     config_file = tmp_path / "config.yaml"
     config_file.write_text("name: Quiz_M\nclass_id: APCalc\n")
@@ -1083,7 +1087,7 @@ def test_manifest_contents(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> N
     manifest_file = _the_manifest(out_dir, "APCalc_Quiz_M")
     manifest = real_yaml.safe_load(manifest_file.read_text())
 
-    assert manifest["manifest_version"] == 1
+    assert manifest["manifest_version"] == 2
     assert re.fullmatch(r"[0-9a-f]{8}", manifest["form_id"])
     assert manifest["form_id"] in manifest_file.name
     assert manifest["generated"]
@@ -1115,6 +1119,14 @@ def test_manifest_contents(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> N
     mcq, frq = manifest["questions"]
     assert sorted(mcq["choice_order"]) == [0, 1, 2, 3]
     assert "choice_order" not in frq
+
+    # report data is embedded: sections (union across parts) and
+    # effective DOK per question; no section range in this config
+    assert mcq["sections"] == ["1.1"]
+    assert mcq["dok"] == 2
+    assert frq["sections"] == ["1.2", "1.3"]
+    assert frq["dok"] == 3
+    assert "sections" not in manifest
 
     # the printed correct letter position matches choice_order.index(0)
     choices_match = re.search(
@@ -1269,6 +1281,93 @@ def test_from_manifest_md5_mismatch_prompt(
     main(replay_args)
     assert (out_dir / "APCalc_Quiz_M.pdf").exists()
     assert (out_dir / "APCalc_Quiz_M_solutions.pdf").exists()
+
+
+def test_from_manifest_accepts_version_1(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    """Replay still works for manifests written before version 2."""
+    config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
+    first_tex: list[str] = []
+    _fake_pdflatex(monkeypatch, first_tex)
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_M")
+
+    # downgrade to the version-1 schema: no embedded report data
+    manifest = real_yaml.safe_load(manifest_file.read_text())
+    manifest["manifest_version"] = 1
+    for entry in manifest["questions"]:
+        entry.pop("sections", None)
+        entry.pop("dok", None)
+    manifest_file.write_text(real_yaml.safe_dump(manifest, sort_keys=False))
+
+    second_tex: list[str] = []
+    _fake_pdflatex(monkeypatch, second_tex)
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir)
+         + ["--from-manifest", str(manifest_file)])
+    assert second_tex == first_tex
+
+
+def test_report_from_manifest_standalone(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    """The report replays from the manifest alone; nothing is generated."""
+    config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
+    config_file.write_text(config_file.read_text() + "sections: '1.1 - 1.4'\n")
+    _fake_pdflatex(monkeypatch, [])
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_M")
+    for pdf in out_dir.glob("*.pdf"):
+        pdf.unlink()
+    # delete every input: the report must not need them
+    config_file.unlink()
+    questions_file.unlink()
+    shutil.rmtree(figures_dir)
+    capsys.readouterr()
+
+    main(["--report-from-manifest", str(manifest_file)])
+
+    out = capsys.readouterr().out
+    assert "Test report: 2 question(s)" in out
+    assert "  1.1 █ 1" in out
+    assert "  1.4 0" in out  # config's section range came from the manifest
+    assert "Average DOK: 2.50" in out
+    assert not list(out_dir.glob("*.pdf"))
+    assert _manifests(out_dir, "APCalc_Quiz_M") == [manifest_file]
+
+
+def test_report_from_manifest_rejects_version_1(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
+    _fake_pdflatex(monkeypatch, [])
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_M")
+    manifest = real_yaml.safe_load(manifest_file.read_text())
+    manifest["manifest_version"] = 1
+    manifest_file.write_text(real_yaml.safe_dump(manifest, sort_keys=False))
+    capsys.readouterr()
+
+    with pytest.raises(SystemExit):
+        main(["--report-from-manifest", str(manifest_file)])
+    err = capsys.readouterr().err
+    assert "predates" in err
+    assert "--from-manifest" in err
+
+
+def test_cli_report_from_manifest_is_standalone(
+    capsys: pytest.CaptureFixture[str]
+) -> None:
+    for extra in (["config.yaml"], ["--from-manifest", "m.yaml"], ["--watch"]):
+        with pytest.raises(SystemExit):
+            main(["--report-from-manifest", "m.yaml"] + extra)
+        assert "standalone" in capsys.readouterr().err
 
 
 def test_cli_from_manifest_requires_one_config(

@@ -9,6 +9,8 @@ Usage: python -m test_generator config.yaml [config2.yaml ...] \
            [--questions questions.yaml] [--figures-dir <dir>] \
            [--out-dir <dir>] [--student-only | --solution-only] [--report]
 
+       python -m test_generator --report-from-manifest <manifest.yaml>
+
 Each config file describes an assessment (title, author, class name,
 duration, and question filters); the question bank comes from the
 optional questions YAML file, a `questions` list in the config file
@@ -22,7 +24,10 @@ replays a manifest to exactly recreate that version. Replay takes the
 same config, question bank, and figures arguments as a normal run — the
 input files may live anywhere, as long as their contents (MD5 sums)
 match the manifest. With `--report`, a report of section coverage and
-DOK levels is printed after each generation.
+DOK levels is printed after each generation. Manifests also record each
+question's sections and DOK, so `--report-from-manifest` prints that
+report for an existing version on its own, without any other inputs and
+without regenerating anything.
 """
 import argparse
 import hashlib
@@ -39,6 +44,8 @@ import yaml
 from ._version import __version__
 from .core import (
     Question,
+    _effective_dok,
+    _question_sections,
     _quote_backslash_scalar_lines,
     filter_questions,
     generate_test,
@@ -48,7 +55,10 @@ from .core import (
 )
 from .report import format_report
 
-MANIFEST_VERSION = 1
+# Version 2 embeds per-question sections/DOK (and the config's section
+# range) so a report can be printed from the manifest alone.
+MANIFEST_VERSION = 2
+SUPPORTED_MANIFEST_VERSIONS = (1, 2)
 
 
 def _load_config(config_path: str) -> dict[str, Any]:
@@ -187,13 +197,20 @@ def _write_manifest(
     figures_dir: str,
     questions: list[Question],
     choice_orders: dict[Any, list[int]],
+    sections_spec: str | None = None,
 ) -> str:
     file_paths = _manifest_files(config_path, questions_path, figures_dir, questions)
     question_entries: list[dict[str, Any]] = []
     for q in questions:
-        entry = {"id": q["id"]}
+        entry: dict[str, Any] = {"id": q["id"]}
         if q["id"] in choice_orders:
             entry["choice_order"] = choice_orders[q["id"]]
+        covered = sorted(_question_sections(q))
+        if covered:
+            entry["sections"] = [f"{major}.{minor}" for major, minor in covered]
+        dok = _effective_dok(q)
+        if dok is not None:
+            entry["dok"] = dok
         question_entries.append(entry)
     manifest = {
         "manifest_version": MANIFEST_VERSION,
@@ -203,6 +220,8 @@ def _write_manifest(
         "files": [{"name": Path(p).name, "md5": _md5(p)} for p in file_paths],
         "questions": question_entries,
     }
+    if sections_spec is not None:
+        manifest["sections"] = str(sections_spec)
     manifest_path = Path(manifest_path)
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path.write_text(yaml.safe_dump(manifest, sort_keys=False))
@@ -270,6 +289,7 @@ def _run_once(args: argparse.Namespace, draft: bool = False) -> bool:
                     _manifest_path(config, form_id, args.out_dir),
                     form_id, config_path, args.questions, figures_dir,
                     included, choice_orders,
+                    sections_spec=config.get("sections"),
                 ))
             if args.report:
                 print(format_report(included, config.get("sections")))
@@ -287,23 +307,51 @@ def _confirm(prompt: str) -> bool:
     return answer.strip().lower() in ("y", "yes")
 
 
-def _run_from_manifest(args: argparse.Namespace) -> bool:
-    manifest_file = Path(args.from_manifest)
+def _load_manifest(manifest_path: str, warn_version: bool = True) -> dict[str, Any]:
+    """Load and version-check a manifest file."""
+    manifest_file = Path(manifest_path)
     if not manifest_file.exists():
-        raise FileNotFoundError(args.from_manifest)
+        raise FileNotFoundError(manifest_path)
     manifest = yaml.safe_load(manifest_file.read_text()) or {}
-    if manifest.get("manifest_version") != MANIFEST_VERSION:
+    if manifest.get("manifest_version") not in SUPPORTED_MANIFEST_VERSIONS:
+        supported = ", ".join(map(str, SUPPORTED_MANIFEST_VERSIONS))
         raise RuntimeError(
             f"Unsupported manifest_version {manifest.get('manifest_version')!r} "
-            f"(this generator supports version {MANIFEST_VERSION}); the manifest "
+            f"(this generator supports version(s) {supported}); the manifest "
             f"may have been written by a newer generator"
         )
-    if manifest.get("generator_version") != __version__:
+    if warn_version and manifest.get("generator_version") != __version__:
         print(
             f"Warning: manifest was written by generator "
             f"{manifest.get('generator_version')}, running {__version__}",
             file=sys.stderr,
         )
+    return manifest
+
+
+def _report_from_manifest(manifest_path: str) -> bool:
+    """Print the coverage/DOK report recorded in a manifest; generate nothing."""
+    manifest = _load_manifest(manifest_path)
+    if manifest.get("manifest_version") != MANIFEST_VERSION:
+        raise RuntimeError(
+            f"manifest_version {manifest.get('manifest_version')} predates "
+            f"embedded report data; replay it instead with "
+            f"'<config.yaml> --from-manifest {manifest_path} --report'"
+        )
+    questions: list[Question] = [
+        {
+            "id": entry.get("id"),
+            "sections": entry.get("sections") or [],
+            "dok": entry.get("dok"),
+        }
+        for entry in manifest.get("questions") or []
+    ]
+    print(format_report(questions, manifest.get("sections")))
+    return True
+
+
+def _run_from_manifest(args: argparse.Namespace) -> bool:
+    manifest = _load_manifest(args.from_manifest)
 
     config_path = args.config_yaml[0]
     config = _load_config(config_path)
@@ -407,6 +455,7 @@ def main(argv: list[str] | None = None) -> None:
     p = argparse.ArgumentParser(prog="python -m test_generator")
     p.add_argument("config_yaml", nargs="*", help="Path(s) to YAML config file(s) describing the assessment(s); each is generated in sequence")
     p.add_argument("--from-manifest", dest="from_manifest", metavar="PATH", help="Recreate an existing version from its manifest file; provide the config (and --questions/--figures-dir) as in a normal run")
+    p.add_argument("--report-from-manifest", dest="report_from_manifest", metavar="PATH", help="Print the coverage/DOK report recorded in a manifest and exit; no other arguments are needed and nothing is generated")
     p.add_argument("--questions", help="Path to YAML file containing questions (combined with any 'questions' list in the config file)")
     p.add_argument("--out-dir", dest="out_dir", default=".", help="Directory where generated PDFs are written (default: current directory)")
     p.add_argument("--figures-dir", dest="figures_dir", default=None, help="Directory containing figures (default: current directory)")
@@ -417,7 +466,20 @@ def main(argv: list[str] | None = None) -> None:
     only.add_argument("--solution-only", action="store_true", help="Generate only the solution copy")
     args = p.parse_args(argv)
 
-    if args.from_manifest:
+    if args.report_from_manifest:
+        if args.config_yaml or args.from_manifest or args.watch:
+            p.error(
+                "--report-from-manifest is standalone; do not combine it "
+                "with config files, --from-manifest, or --watch"
+            )
+        try:
+            ok = _report_from_manifest(args.report_from_manifest)
+        except Exception as e:
+            print(f"Error: {e}", file=sys.stderr)
+            ok = False
+        if not ok:
+            sys.exit(1)
+    elif args.from_manifest:
         if len(args.config_yaml) != 1:
             p.error("--from-manifest requires exactly one config file")
         if args.watch:

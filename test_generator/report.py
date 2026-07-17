@@ -2,27 +2,11 @@
 
 from collections import Counter
 
-from .core import Question, _question_sections
+from .core import Question, _effective_dok, _question_sections
 from .sections import parse_range
 
 # DOK levels always shown in the histogram, even with zero questions.
 DOK_LEVELS = (1, 2, 3, 4)
-
-
-def _effective_dok(q: Question) -> int | None:
-    """Return a question's DOK level.
-
-    Question-level ``dok`` wins; a multipart question without one is rated
-    by its hardest part. Returns ``None`` when no DOK is recorded.
-    """
-    if q.get("dok") is not None:
-        return int(q["dok"])
-    part_doks = [
-        int(part["dok"])
-        for part in (q.get("parts") or [])
-        if part.get("dok") is not None
-    ]
-    return max(part_doks) if part_doks else None
 
 
 def _histogram_lines(rows: list[tuple[str, int]]) -> list[str]:

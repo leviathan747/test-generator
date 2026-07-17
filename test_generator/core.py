@@ -188,6 +188,22 @@ def _question_sections(q: Question) -> set[tuple[int, int]]:
     return covered
 
 
+def _effective_dok(q: Question) -> int | None:
+    """Return a question's DOK level.
+
+    Question-level ``dok`` wins; a multipart question without one is rated
+    by its hardest part. Returns ``None`` when no DOK is recorded.
+    """
+    if q.get("dok") is not None:
+        return int(q["dok"])
+    part_doks = [
+        int(part["dok"])
+        for part in (q.get("parts") or [])
+        if part.get("dok") is not None
+    ]
+    return max(part_doks) if part_doks else None
+
+
 def select_questions(pool: list[Question], count: int) -> list[Question]:
     """Randomly select ``count`` questions from ``pool``.
 
