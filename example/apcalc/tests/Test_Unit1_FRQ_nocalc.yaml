@@ -110,6 +110,193 @@ questions:
     calculator_active: false
     question_type: FRQ
 
+  - id: 8a7816a3-39db-4234-98e4-3f2942582cfe
+    question: |
+      Consider the function $g$ defined by
+      \[
+        g(x) = \frac{x^2 - 3x - 10}{x^2 - 25}
+      \]
+    parts:
+      - question: |
+          Evaluate $\lim_{x \to 5} g(x)$. Show the algebraic steps that lead to
+          your answer using proper limit notation throughout.
+        solution: |
+          $\lim_{x \to 5} g(x) = \lim_{x \to 5} \frac{x^2 - 3x - 10}{x^2 - 25}$
+          $= \lim_{x \to 5} \frac{(\cancel{x - 5})(x + 2)}{(\cancel{x - 5})(x + 5)}$
+
+          $= \lim_{x \to 5} \frac{x + 2}{x + 5}$
+          $= \frac{5 + 2}{5 + 5} = \frac{7}{10}$
+        grading:
+          - points: 1
+            criterion: Correct limit statement
+          - points: 1
+            criterion: Factor and cancel
+          - points: 1
+            criterion: Answer
+        sections:
+          - 1.6
+          - 1.7
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          The function $g$ is discontinuous at $x = 5$ and at $x = -5$. Classify
+          the type of discontinuity (hole, jump, asymptote) at each
+          $x$-value. Justify each classification using limits.
+        solution: |
+          At $x = 5$: hole because
+          $\lim_{x \to 5} g(x) = \frac{7}{10}$ exists but $g(5)$ is undefined. \\
+          At $x = -5$: vertical asymptote because
+          $\lim_{x \to -5^-} g(x) = \lim_{x \to -5^-} \frac{x + 2}{x + 5} = \infty$
+          and $\lim_{x \to -5^+} g(x) = -\infty$
+
+          \emph{Note: one unbounded one-sided limit is sufficient justification
+          at $x = -5$.}
+        grading:
+          - points: 1
+            criterion: 'Hole at $x = 5$ with reason'
+          - points: 1
+            criterion: 'Asymptote at $x = -5$'
+          - points: 1
+            criterion: 'Unbounded one-sided limit at $x = -5$'
+        sections:
+          - "1.10"
+          - 1.14
+        dok: 3
+        work_space: 2in
+      - question: |
+          Let $h$ be the function defined by
+          \[
+            h(x) = \begin{cases}
+              g(x) & x \ne 5 \\
+              k & x = 5 \\
+            \end{cases}
+          \]
+          Find the value of $k$ for which $h$ is continuous at $x = 5$.
+        solution: |
+          $k = \lim_{x \to 5} g(x) = \frac{7}{10}$
+        grading:
+          - points: 1
+            criterion: Value of $k$
+        sections:
+          - 1.13
+        dok: 2
+        work_space: 0.75in
+      - question: |
+          Find $\lim_{x \to \infty} g(x)$ and give the equation of the
+          horizontal asymptote of the graph of $g$.
+        solution: |
+          \[
+            \lim_{x \to \infty} g(x)
+            = \lim_{x \to \infty} \frac{x^2 - 3x - 10}{x^2 - 25}
+            = \lim_{x \to \infty}
+              \frac{1 - \frac{3}{x} - \frac{10}{x^2}}{1 - \frac{25}{x^2}}
+            = 1
+          \]
+          The horizontal asymptote is $y = 1$.
+        grading:
+          - points: 1
+            criterion: '$\lim_{x \to \infty} g(x)$'
+          - points: 1
+            criterion: Equation of horizontal asymptote
+        sections:
+          - 1.15
+        dok: 2
+        work_space: 1.5in
+    calculator_active: false
+    question_type: FRQ
+    review: generated
+
+  - id: 85479ba2-6b87-4461-83a8-e6f96370f93e
+    question: |
+      Evaluate each of the following limits analytically. Show the work that
+      leads to your answers using proper limit notation throughout.
+    parts:
+      - question: |
+          Find $\lim_{x \to 0} \frac{\sin 4x}{x}$.
+        solution: |
+          \[
+            \lim_{x \to 0} \frac{\sin 4x}{x}
+            = \lim_{x \to 0} 4 \cdot \frac{\sin 4x}{4x}
+            = 4 \lim_{x \to 0} \frac{\sin 4x}{4x}
+            = 4(1) = 4
+          \]
+        grading:
+          - points: 1
+            criterion: 'Rewrite using $\lim_{x \to 0} \frac{\sin x}{x} = 1$'
+          - points: 1
+            criterion: Answer
+        sections:
+          - 1.6
+          - 1.8
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Find $\lim_{x \to 0} \frac{1 - \cos x}{2x}$.
+        solution: |
+          \[
+            \lim_{x \to 0} \frac{1 - \cos x}{2x}
+            = \frac{1}{2} \lim_{x \to 0} \frac{1 - \cos x}{x}
+            = \frac{1}{2}(0) = 0
+          \]
+        grading:
+          - points: 1
+            criterion: 'Rewrite using $\lim_{x \to 0} \frac{1 - \cos x}{x} = 0$'
+          - points: 1
+            criterion: Answer
+        sections:
+          - 1.6
+          - 1.8
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Use the Squeeze Theorem to show that
+          $\lim_{x \to 0} x^2 \cos\left(\frac{1}{x}\right) = 0$. Be sure to
+          demonstrate that each hypothesis of the theorem has been satisfied.
+        solution: |
+          For all $x \ne 0$, $-1 \le \cos\left(\frac{1}{x}\right) \le 1$, so
+          \[
+            -x^2 \le x^2 \cos\left(\tfrac{1}{x}\right) \le x^2
+          \]
+          Since $\lim_{x \to 0} \left(-x^2\right) = 0$ and
+          $\lim_{x \to 0} x^2 = 0$, by the Squeeze Theorem
+          \[
+            \lim_{x \to 0} x^2 \cos\left(\tfrac{1}{x}\right) = 0
+          \]
+        grading:
+          - points: 1
+            criterion: 'Bounding inequality $-x^2 \le x^2 \cos(\frac{1}{x}) \le x^2$'
+          - points: 1
+            criterion: Limits of both bounding functions
+          - points: 1
+            criterion: Conclusion citing Squeeze Theorem
+        sections:
+          - 1.8
+        dok: 3
+        work_space: 2in
+      - question: |
+          Find $\lim_{x \to 0} \dfrac{\frac{1}{x + 2} - \frac{1}{2}}{x}$.
+        solution: |
+          \[
+            \lim_{x \to 0} \frac{\frac{1}{x + 2} - \frac{1}{2}}{x}
+            = \lim_{x \to 0} \frac{\frac{2 - (x + 2)}{2(x + 2)}}{x}
+            = \lim_{x \to 0} \frac{-\cancel{x}}{2\cancel{x}(x + 2)}
+            = \lim_{x \to 0} \frac{-1}{2(x + 2)}
+            = -\frac{1}{4}
+          \]
+        grading:
+          - points: 1
+            criterion: Common denominator and simplify
+          - points: 1
+            criterion: Answer
+        sections:
+          - 1.6
+          - 1.7
+        dok: 2
+        work_space: 2in
+    calculator_active: false
+    question_type: FRQ
+    review: generated
+
   - id: 548a953d-78fd-41d9-a0bd-f36347fcf803
     question: |
       The number of fish in a pond is modeled by the function $N(t)$ where $N$

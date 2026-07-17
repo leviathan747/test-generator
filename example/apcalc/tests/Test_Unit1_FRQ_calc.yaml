@@ -187,3 +187,213 @@ questions:
         work_space: 2in
     calculator_active: true
     question_type: FRQ
+
+  - id: 1a65e94e-4993-4a93-b373-316a52d82518
+    question: |
+      A cup of coffee is placed on a counter to cool. The temperature of the
+      coffee is modeled by the function $C$ defined by
+      $C(t) = 70 + 90e^{-0.15t}$, where $C(t)$ is measured in degrees
+      Fahrenheit and $t$ is the time in minutes since the coffee was placed on
+      the counter.
+    parts:
+      - question: |
+          Find the average rate of change of the temperature of the coffee over
+          the interval $0 \le t \le 5$ minutes. Show the setup for your
+          calculations and indicate units of measure.
+        solution: |
+          \[
+            \frac{C(5) - C(0)}{5 - 0} = \frac{112.513 - 160}{5} = -9.497
+          \]
+          The temperature changes at an average rate of $-9.497$ degrees
+          Fahrenheit per minute over the interval $0 \le t \le 5$.
+        grading:
+          - points: 1
+            criterion: Average rate of change expression
+          - points: 1
+            criterion: Answer with units
+        sections:
+          - 1.1
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Use the average rate of change of $C$ over the interval
+          $4 \le t \le 6$ to estimate the instantaneous rate of change of the
+          temperature of the coffee at time $t = 5$ minutes. Show the setup for
+          your calculations.
+        solution: |
+          \[
+            \frac{C(6) - C(4)}{6 - 4} = \frac{106.591 - 119.393}{2} = -6.401
+          \]
+          The instantaneous rate of change of the temperature at $t = 5$ is
+          approximately $-6.401$ degrees Fahrenheit per minute.
+        grading:
+          - points: 1
+            criterion: Average rate of change over $4 \le t \le 6$
+          - points: 1
+            criterion: Answer
+        sections:
+          - 1.1
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Find $\lim_{t \to \infty} C(t)$. Explain the meaning of
+          $\lim_{t \to \infty} C(t)$ in the context of the problem.
+        solution: |
+          \[
+            \lim_{t \to \infty} C(t)
+            = \lim_{t \to \infty} \left(70 + 90e^{-0.15t}\right)
+            = 70 + 90(0) = 70
+          \]
+          As time increases without bound, the temperature of the coffee
+          approaches $70$ degrees Fahrenheit -- the temperature of the room.
+        grading:
+          - points: 1
+            criterion: '$\lim_{t \to \infty} C(t)$'
+          - points: 1
+            criterion: Interpretation
+        sections:
+          - 1.15
+        dok: 3
+        work_space: 1.5in
+      - question: |
+          Is there a time $t$, for $0 \le t \le 10$, at which the temperature
+          of the coffee is exactly $100$ degrees Fahrenheit? Justify your
+          answer.
+        solution: |
+          \begin{gather*}
+            C(0) = 160 \qquad C(10) = 70 + 90e^{-1.5} = 90.082
+          \end{gather*}
+          $C$ is continuous on $0 \le t \le 10$ (sums and compositions of
+          continuous functions are continuous) and
+          $C(10) = 90.082 \le 100 \le 160 = C(0)$. \\
+          $\therefore$ by the Intermediate Value Theorem, there is a time $t$
+          in $0 \le t \le 10$ such that $C(t) = 100$.
+        grading:
+          - points: 1
+            criterion: $C(0)$ and $C(10)$
+          - points: 1
+            criterion: $C$ is continuous
+          - points: 1
+            criterion: 'IVT conclusion with $C(10) \le 100 \le C(0)$'
+        sections:
+          - 1.16
+        dok: 3
+        work_space: 2in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
+
+  - id: cd8d7ba8-6946-494f-8e71-3f7704b03eeb
+    question: |
+      Consider the function $h$ defined by
+      \[
+        h(x) = \frac{\sqrt{x + 4} - 2}{x}
+      \]
+    parts:
+      - question: |
+          Use your calculator to complete the table below, giving each value to
+          three decimal places. Use the table to estimate
+          $\lim_{x \to 0} h(x)$.
+
+          \begin{center}
+            \begin{tabularx}{4.5in}{ |*{5}{Y|} }
+              \hline
+              \bm{$x$} & -0.1 & -0.01 & 0.01 & 0.1 \\
+              \hline
+              \bm{$h(x)$} & & & & \\
+              \hline
+            \end{tabularx}
+          \end{center}
+        solution: |
+          \begin{center}
+            \begin{tabularx}{4.5in}{ |*{5}{Y|} }
+              \hline
+              \bm{$x$} & -0.1 & -0.01 & 0.01 & 0.1 \\
+              \hline
+              \bm{$h(x)$} & 0.252 & 0.250 & 0.250 & 0.248 \\
+              \hline
+            \end{tabularx}
+          \end{center}
+          $\lim_{x \to 0} h(x) \approx 0.25$
+        grading:
+          - points: 1
+            criterion: Table values to three decimal places
+          - points: 1
+            criterion: Estimate of the limit
+        sections:
+          - 1.4
+        dok: 2
+        work_space: 1in
+      - question: |
+          Confirm your estimate by evaluating $\lim_{x \to 0} h(x)$
+          analytically. Show the algebraic steps that lead to your answer using
+          proper limit notation throughout.
+        solution: |
+          \begin{align*}
+            \lim_{x \to 0} h(x)
+            &= \lim_{x \to 0} \frac{\sqrt{x + 4} - 2}{x} \cdot
+               \frac{\sqrt{x + 4} + 2}{\sqrt{x + 4} + 2}
+             = \lim_{x \to 0} \frac{\cancel{x}}{\cancel{x}\left(\sqrt{x + 4} + 2\right)} \\
+            &= \lim_{x \to 0} \frac{1}{\sqrt{x + 4} + 2}
+             = \frac{1}{\sqrt{4} + 2} = \frac{1}{4}
+          \end{align*}
+        grading:
+          - points: 1
+            criterion: Correct limit statement
+          - points: 1
+            criterion: Multiply by conjugate and simplify
+          - points: 1
+            criterion: Answer
+        sections:
+          - 1.6
+          - 1.7
+        dok: 2
+        work_space: 2in
+      - question: |
+          The function $h$ is not continuous at $x = 0$. Identify the type of
+          discontinuity (hole, jump, asymptote) at $x = 0$ and justify
+          your classification. Then define
+          a function $H$ such that $H(x) = h(x)$ for all $x \ne 0$ and $H$ is
+          continuous at $x = 0$.
+        solution: |
+          The discontinuity at $x = 0$ is a hole because
+          $\lim_{x \to 0} h(x) = \frac{1}{4}$ exists but $h(0)$ is undefined.
+          \[
+            H(x) = \begin{cases}
+              h(x) & x \ne 0 \\
+              \frac{1}{4} & x = 0 \\
+            \end{cases}
+          \]
+        grading:
+          - points: 1
+            criterion: Hole with reason
+          - points: 1
+            criterion: '$H(0) = \frac{1}{4}$'
+        sections:
+          - "1.10"
+          - 1.13
+        dok: 3
+        work_space: 2in
+      - question: |
+          Find $\lim_{x \to \infty} h(x)$ and give the equation of the
+          horizontal asymptote of the graph of $h$.
+        solution: |
+          As $x \to \infty$, the numerator $\sqrt{x + 4} - 2$ grows like
+          $\sqrt{x}$ while the denominator grows like $x$, so
+          \[
+            \lim_{x \to \infty} h(x)
+            = \lim_{x \to \infty} \frac{\sqrt{x + 4} - 2}{x} = 0
+          \]
+          The horizontal asymptote is $y = 0$.
+        grading:
+          - points: 1
+            criterion: '$\lim_{x \to \infty} h(x)$'
+          - points: 1
+            criterion: Equation of horizontal asymptote
+        sections:
+          - 1.15
+        dok: 2
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
