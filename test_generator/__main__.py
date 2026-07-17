@@ -6,8 +6,9 @@ Usage: python -m test_generator config.yaml [config2.yaml ...] \
            [--student-only | --solution-only] [--report]
 
        python -m test_generator config.yaml --from-manifest <manifest.yaml> \
-           [--questions questions.yaml]... [--figures-dir <dir>]... \
-           [--out-dir <dir>] [--student-only | --solution-only] [--report]
+           [--new-version] [--questions questions.yaml]... \
+           [--figures-dir <dir>]... [--out-dir <dir>] \
+           [--student-only | --solution-only] [--report]
 
        python -m test_generator --report-from-manifest <manifest.yaml>
 
@@ -22,7 +23,10 @@ coverage and avoiding `related_to` pairs when possible), and
 `scramble_questions: true` shuffles the question order; both re-randomize
 on every run, including draft/watch regeneration. Each run mints a fresh
 hex form ID and writes a manifest alongside the PDFs; `--from-manifest`
-replays a manifest to exactly recreate that version. Replay takes the
+replays a manifest to exactly recreate that version, and with
+`--new-version` instead reissues the same questions as a fresh version
+(new form ID, re-scrambled question and choice order) with its own
+manifest. Replay takes the
 same config, question bank, and figures arguments as a normal run — the
 input files may live anywhere, as long as their contents (MD5 sums)
 match the manifest. A `dok_target` config field steers the selection's
@@ -436,10 +440,29 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
             print("Aborted.", file=sys.stderr)
             return False
 
+    if args.new_version:
+        # a fresh version of the same test: new form ID, re-scrambled
+        # question and choice order (scrambling is the point, regardless
+        # of the config's scramble_questions), and its own manifest
+        form_id = _new_form_id()
+        random.shuffle(selected)
+        question_order = [q["id"] for q in selected]
+        choice_orders = make_choice_orders(selected)
+    else:
+        form_id = manifest["form_id"]
+
     _generate_copies(
-        args, config, manifest["form_id"], args.questions,
+        args, config, form_id, args.questions,
         figures_dirs, question_order, choice_orders,
     )
+    if args.new_version:
+        print(_write_manifest(
+            _manifest_path(config, form_id, args.out_dir),
+            form_id, config_path, args.questions, figures_dirs,
+            selected, choice_orders,
+            sections_spec=config.get("sections"),
+            dok_target=config.get("dok_target"),
+        ))
     if args.report:
         print(format_report(
             selected, config.get("sections"),
@@ -498,6 +521,7 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("config_yaml", nargs="*", help="Path(s) to YAML config file(s) describing the assessment(s); each is generated in sequence")
     p.add_argument("--from-manifest", dest="from_manifest", metavar="PATH", help="Recreate an existing version from its manifest file; provide the config (and --questions/--figures-dir) as in a normal run")
     p.add_argument("--report-from-manifest", dest="report_from_manifest", metavar="PATH", help="Print the coverage/DOK report recorded in a manifest and exit; no other arguments are needed and nothing is generated")
+    p.add_argument("--new-version", dest="new_version", action="store_true", help="With --from-manifest: generate a new version of the same test (same questions, new form ID, re-scrambled question and choice order) and write a new manifest")
     p.add_argument("--questions", action="append", metavar="PATH", help="Path to a YAML file containing questions; may be given multiple times to combine banks (also combined with any 'questions' list in the config file)")
     p.add_argument("--out-dir", dest="out_dir", default=".", help="Directory where generated PDFs are written (default: current directory)")
     p.add_argument("--figures-dir", dest="figures_dir", action="append", metavar="DIR", help="Directory containing figures; may be given multiple times, earlier directories win on filename collisions (default: current directory)")
@@ -508,6 +532,8 @@ def main(argv: list[str] | None = None) -> None:
     only.add_argument("--solution-only", action="store_true", help="Generate only the solution copy")
     args = p.parse_args(argv)
 
+    if args.new_version and not args.from_manifest:
+        p.error("--new-version requires --from-manifest")
     if args.report_from_manifest:
         if args.config_yaml or args.from_manifest or args.watch:
             p.error(

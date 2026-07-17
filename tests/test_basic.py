@@ -1440,6 +1440,54 @@ def test_from_manifest_accepts_version_1(
     assert second_tex == first_tex
 
 
+def test_new_version_from_manifest(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
+    _fake_pdflatex(monkeypatch, [])
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+    first_manifest_file = _the_manifest(out_dir, "APCalc_Quiz_M")
+    first = real_yaml.safe_load(first_manifest_file.read_text())
+    (out_dir / "APCalc_Quiz_M.pdf").unlink()
+    (out_dir / "APCalc_Quiz_M_solutions.pdf").unlink()
+
+    # deterministic re-scramble: reversal instead of a random shuffle
+    monkeypatch.setattr(random, "shuffle", lambda seq: seq.reverse())
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir)
+         + ["--from-manifest", str(first_manifest_file), "--new-version"])
+
+    manifests = _manifests(out_dir, "APCalc_Quiz_M")
+    assert len(manifests) == 2
+    assert first_manifest_file in manifests
+    second_file = next(m for m in manifests if m != first_manifest_file)
+    second = real_yaml.safe_load(second_file.read_text())
+
+    # same questions, new identity, re-scrambled order and fresh choices
+    assert second["form_id"] != first["form_id"]
+    first_ids = [q["id"] for q in first["questions"]]
+    second_ids = [q["id"] for q in second["questions"]]
+    assert second_ids == list(reversed(first_ids))
+    (mcq,) = [q for q in second["questions"] if q["id"] == "q-mcq"]
+    assert mcq["choice_order"] == [3, 2, 1, 0]  # reversed by the fake shuffle
+    # the recorded inputs are identical (entry order follows question order)
+    assert {(e["name"], e["md5"]) for e in second["files"]} == {
+        (e["name"], e["md5"]) for e in first["files"]
+    }
+    # and the PDFs were regenerated
+    assert (out_dir / "APCalc_Quiz_M.pdf").exists()
+    assert (out_dir / "APCalc_Quiz_M_solutions.pdf").exists()
+
+
+def test_cli_new_version_requires_from_manifest(
+    capsys: pytest.CaptureFixture[str]
+) -> None:
+    with pytest.raises(SystemExit):
+        main(["config.yaml", "--new-version"])
+    assert "--new-version requires --from-manifest" in capsys.readouterr().err
+
+
 def test_report_from_manifest_standalone(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
