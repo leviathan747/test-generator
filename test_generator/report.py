@@ -19,7 +19,12 @@ def _histogram_lines(rows: list[tuple[str, int]]) -> list[str]:
     return lines
 
 
-def format_report(questions: list[Question], sections: str | None = None) -> str:
+def format_report(
+    questions: list[Question],
+    sections: str | None = None,
+    dok_target: float | None = None,
+    color: bool = False,
+) -> str:
     """Return a console report: section coverage, DOK histogram, average DOK.
 
     Each question counts once toward every section it covers (union across
@@ -28,6 +33,10 @@ def format_report(questions: list[Question], sections: str | None = None) -> str
     listed, including those with zero questions; DOK levels 1-4 are always
     listed. Questions without a DOK appear in an ``n/a`` row and are
     excluded from the average.
+
+    When ``dok_target`` is given it is shown next to the average; an
+    average below the target (or an ``n/a`` average) is wrapped in ANSI
+    yellow when ``color`` is also set.
     """
     section_counts: Counter[tuple[int, int]] = Counter()
     dok_counts: Counter[int] = Counter()
@@ -65,10 +74,16 @@ def format_report(questions: list[Question], sections: str | None = None) -> str
     lines.extend(_histogram_lines(dok_rows))
 
     rated = sum(dok_counts.values())
-    if rated:
-        average = sum(dok * n for dok, n in dok_counts.items()) / rated
-        lines.append(f"Average DOK: {average:.2f}")
+    average = (
+        sum(dok * n for dok, n in dok_counts.items()) / rated if rated else None
+    )
+    value = f"{average:.2f}" if average is not None else "n/a"
+    if dok_target is None:
+        lines.append(f"Average DOK: {value}")
     else:
-        lines.append("Average DOK: n/a")
+        target = float(dok_target)
+        if color and (average is None or average < target - 1e-9):
+            value = f"\033[33m{value}\033[0m"
+        lines.append(f"Average DOK: {value} (target: {target:.2f})")
 
     return "\n".join(lines)

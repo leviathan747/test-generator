@@ -1623,6 +1623,83 @@ def test_select_questions_count_exceeds_pool() -> None:
         select_questions(pool, 3)
 
 
+def _dok_q(qid: str, dok: int, related_to: list[str] | None = None) -> Question:
+    q = _sel_q(qid, related_to=related_to)
+    q["dok"] = dok
+    return q
+
+
+def _avg_dok(selected: list[Question]) -> float:
+    doks = [int(q["dok"]) for q in selected if q.get("dok") is not None]
+    return sum(doks) / len(doks)
+
+
+def test_select_questions_dok_target_met_with_minimal_overshoot() -> None:
+    pool = [_dok_q("a", 1), _dok_q("b", 1), _dok_q("c", 3), _dok_q("d", 4)]
+    for seed in range(10):
+        random.seed(seed)
+        selected = select_questions(pool, 2, dok_target=3.0)
+        # only {c, d} (avg 3.5) and {b/a, d}... avg 2.5 miss; {c, d} = 3.5,
+        # {a/b, d} = 2.5, {a/b, c} = 2.0 — meeting the target requires {c, d}
+        assert _avg_dok(selected) >= 3.0
+
+
+def test_select_questions_dok_target_prefers_smallest_overshoot() -> None:
+    pool = [_dok_q("a", 3), _dok_q("b", 3), _dok_q("c", 4), _dok_q("d", 4)]
+    for seed in range(10):
+        random.seed(seed)
+        selected = select_questions(pool, 2, dok_target=3.0)
+        # avg 3.0 ({a, b}) meets the target exactly; 3.5 and 4.0 overshoot
+        assert _avg_dok(selected) == 3.0
+
+
+def test_select_questions_dok_target_unreachable_maximizes_average() -> None:
+    pool = [_dok_q("a", 1), _dok_q("b", 1), _dok_q("c", 2), _dok_q("d", 2)]
+    for seed in range(10):
+        random.seed(seed)
+        selected = select_questions(pool, 2, dok_target=3.0)
+        # the best the pool allows is {c, d} with average 2.0
+        assert _avg_dok(selected) == 2.0
+
+
+def test_select_questions_dok_target_never_adds_related_pair() -> None:
+    # the only DOK-4 question is related to the only other high-DOK one;
+    # chasing the target must not introduce a related pair
+    pool = [
+        _dok_q("a", 3),
+        _dok_q("b", 4, related_to=["a"]),
+        _dok_q("c", 1),
+        _dok_q("d", 1),
+    ]
+    for seed in range(10):
+        random.seed(seed)
+        ids = {q["id"] for q in select_questions(pool, 2, dok_target=4.0)}
+        assert not {"a", "b"} <= ids
+
+
+def test_select_questions_dok_target_keeps_section_coverage() -> None:
+    # swapping "b" out for the high-DOK "c" would drop section 1.2
+    pool = [
+        _dok_q("a", 1),
+        _dok_q("b", 1),
+        _dok_q("c", 4),
+    ]
+    pool[0]["sections"] = ["1.1"]
+    pool[1]["sections"] = ["1.2"]
+    pool[2]["sections"] = ["1.1"]
+    for seed in range(10):
+        random.seed(seed)
+        selected = select_questions(pool, 2, dok_target=4.0)
+        covered = {s for q in selected for s in q.get("sections", [])}
+        assert covered == {"1.1", "1.2"}
+
+
+def test_select_questions_dok_target_all_unrated_is_noop() -> None:
+    pool = [_sel_q("a"), _sel_q("b"), _sel_q("c")]
+    random.seed(0)
+    assert len(select_questions(pool, 2, dok_target=3.0)) == 2
+
+
 def test_format_report_sections_sorted_and_counted() -> None:
     questions: list[Question] = [
         {"id": 1, "sections": ["1.2", "1.10"], "dok": 1},
@@ -1664,6 +1741,68 @@ def test_format_report_average_two_decimals() -> None:
 
 def test_format_report_no_dok_at_all() -> None:
     assert "Average DOK: n/a" in format_report([{"id": 1}])
+
+
+def test_format_report_dok_target_shown() -> None:
+    questions: list[Question] = [{"id": 1, "dok": 3}, {"id": 2, "dok": 4}]
+    report = format_report(questions, dok_target=3)
+    assert "Average DOK: 3.50 (target: 3.00)" in report
+    assert "\033" not in report  # target met: no highlight even with color
+    assert "\033" not in format_report(questions, dok_target=3, color=True)
+
+
+def test_format_report_dok_target_missed_highlights_in_yellow() -> None:
+    questions: list[Question] = [{"id": 1, "dok": 1}, {"id": 2, "dok": 2}]
+    plain = format_report(questions, dok_target=3)
+    assert "Average DOK: 1.50 (target: 3.00)" in plain
+    assert "\033" not in plain  # color off: never emit escapes
+    colored = format_report(questions, dok_target=3, color=True)
+    assert "Average DOK: \033[33m1.50\033[0m (target: 3.00)" in colored
+
+
+def test_format_report_dok_target_with_na_average() -> None:
+    colored = format_report([{"id": 1}], dok_target=2, color=True)
+    assert "Average DOK: \033[33mn/a\033[0m (target: 2.00)" in colored
+
+
+@pytest.mark.parametrize("value", ["0", "5", "true", "nope"])
+def test_main_dok_target_rejects_invalid(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    value: str,
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(
+        tmp_path, f"dok_target: {value}\n"
+    )
+    _fake_pdflatex(monkeypatch, [])
+
+    with pytest.raises(SystemExit):
+        main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out"))
+    assert "dok_target" in capsys.readouterr().err
+
+
+def test_main_dok_target_in_report_and_manifest(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    config_file, figures_dir = _write_report_config(tmp_path)
+    config_file.write_text(config_file.read_text() + "dok_target: 2\n")
+    _fake_pdflatex(monkeypatch, [])
+
+    out_dir = tmp_path / "out"
+    main([str(config_file), "--out-dir", str(out_dir),
+          "--figures-dir", str(figures_dir), "--report"])
+
+    out = capsys.readouterr().out
+    # capsys is not a TTY, so the report is plain text even below target
+    assert "Average DOK: 1.50 (target: 2.00)" in out
+    assert "\033" not in out
+
+    # the target is recorded and replays in --report-from-manifest
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_R")
+    assert real_yaml.safe_load(manifest_file.read_text())["dok_target"] == 2
+    main(["--report-from-manifest", str(manifest_file)])
+    assert "Average DOK: 1.50 (target: 2.00)" in capsys.readouterr().out
 
 
 def test_main_question_count_selects_subset(

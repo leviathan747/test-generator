@@ -213,7 +213,9 @@ def _effective_dok(q: Question) -> int | None:
     return max(part_doks) if part_doks else None
 
 
-def select_questions(pool: list[Question], count: int) -> list[Question]:
+def select_questions(
+    pool: list[Question], count: int, dok_target: float | None = None
+) -> list[Question]:
     """Randomly select ``count`` questions from ``pool``.
 
     Selection prefers, in order: questions not ``related_to`` any already
@@ -221,6 +223,14 @@ def select_questions(pool: list[Question], count: int) -> list[Question]:
     only when every remaining candidate is related to a selection), then
     questions covering the most not-yet-covered sections, then uniform
     random tie-breaking. The result preserves the pool's original order.
+
+    When ``dok_target`` is given, a best-effort swap pass then nudges the
+    selection's average DOK (questions without a DOK are excluded from the
+    average) to at least the target and as close to it as possible — or as
+    close from below as the pool allows when the target is unreachable.
+    Swaps never increase the number of related pairs within the selection
+    and never decrease the number of covered sections, so the constraints
+    above are not degraded.
 
     Note that selection is re-randomized on every call; reproducibility
     comes from persisting the selected order (e.g. in a manifest).
@@ -262,7 +272,76 @@ def select_questions(pool: list[Question], count: int) -> list[Question]:
         selected_ids.add(best["id"])
         covered |= _question_sections(best)
 
+    if dok_target is not None:
+        _optimize_dok(pool, selected_ids, neighbors, float(dok_target))
+
     return [q for q in pool if q["id"] in selected_ids]
+
+
+def _optimize_dok(
+    pool: list[Question],
+    selected_ids: set[Any],
+    neighbors: dict[Any, set[Any]],
+    dok_target: float,
+) -> None:
+    """Swap selected/unselected questions toward the target average DOK.
+
+    Mutates ``selected_ids`` in place. The objective, minimized
+    lexicographically, is ``(missed target?, distance from target)``: any
+    selection whose average meets the target beats any that misses it,
+    then the smallest distance wins. A swap is only admissible when it
+    does not increase the count of related pairs within the selection and
+    does not decrease the count of covered sections.
+    """
+    dok_by_id = {q["id"]: _effective_dok(q) for q in pool}
+    sections_by_id = {q["id"]: _question_sections(q) for q in pool}
+
+    def objective(ids: set[Any]) -> tuple[int, float] | None:
+        doks = [d for i in ids if (d := dok_by_id[i]) is not None]
+        if not doks:
+            return None
+        avg = sum(doks) / len(doks)
+        return (0 if avg >= dok_target - 1e-9 else 1, abs(avg - dok_target))
+
+    def related_pairs(ids: set[Any]) -> int:
+        return sum(len(neighbors[i] & ids) for i in ids) // 2
+
+    def coverage(ids: set[Any]) -> int:
+        covered: set[tuple[int, int]] = set()
+        for i in ids:
+            covered |= sections_by_id[i]
+        return len(covered)
+
+    best_obj = objective(selected_ids)
+    if best_obj is None:
+        return
+
+    scan_order = pool.copy()
+    random.shuffle(scan_order)
+    for _ in range(2 * len(pool)):
+        max_pairs = related_pairs(selected_ids)
+        min_coverage = coverage(selected_ids)
+        best_swap: tuple[tuple[int, float], Any, Any] | None = None
+        for out_id in selected_ids:
+            for q in scan_order:
+                in_id = q["id"]
+                if in_id in selected_ids:
+                    continue
+                candidate = (selected_ids - {out_id}) | {in_id}
+                obj = objective(candidate)
+                if obj is None or obj >= best_obj:
+                    continue
+                if related_pairs(candidate) > max_pairs:
+                    continue
+                if coverage(candidate) < min_coverage:
+                    continue
+                if best_swap is None or obj < best_swap[0]:
+                    best_swap = (obj, out_id, in_id)
+        if best_swap is None:
+            break
+        best_obj, out_id, in_id = best_swap
+        selected_ids.remove(out_id)
+        selected_ids.add(in_id)
 
 
 def _format_points(value: Any) -> str:

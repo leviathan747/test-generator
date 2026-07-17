@@ -25,14 +25,18 @@ hex form ID and writes a manifest alongside the PDFs; `--from-manifest`
 replays a manifest to exactly recreate that version. Replay takes the
 same config, question bank, and figures arguments as a normal run — the
 input files may live anywhere, as long as their contents (MD5 sums)
-match the manifest. With `--report`, a report of section coverage and
-DOK levels is printed after each generation. Manifests also record each
+match the manifest. A `dok_target` config field steers the selection's
+average DOK to at least — and as close as possible to — the target.
+With `--report`, a report of section coverage and DOK levels is printed
+after each generation; it shows the average DOK against the target,
+highlighting the average in yellow when the target was missed. Manifests also record each
 question's sections and DOK, so `--report-from-manifest` prints that
 report for an existing version on its own, without any other inputs and
 without regenerating anything.
 """
 import argparse
 import hashlib
+import os
 import random
 import secrets
 import sys
@@ -98,7 +102,23 @@ def _load_config(config_path: str) -> dict[str, Any]:
             f"Config field 'scramble_questions' must be a boolean: {config_path}"
         )
 
+    dok_target = config.get("dok_target")
+    if dok_target is not None and (
+        isinstance(dok_target, bool)
+        or not isinstance(dok_target, (int, float))
+        or not 1 <= dok_target <= 4
+    ):
+        raise RuntimeError(
+            f"Config field 'dok_target' must be a number between 1 and 4: "
+            f"{config_path}"
+        )
+
     return config
+
+
+def _use_color() -> bool:
+    """Use ANSI color only on a terminal, honoring the NO_COLOR convention."""
+    return sys.stdout.isatty() and not os.environ.get("NO_COLOR")
 
 
 def _new_form_id() -> str:
@@ -206,6 +226,7 @@ def _write_manifest(
     questions: list[Question],
     choice_orders: dict[Any, list[int]],
     sections_spec: str | None = None,
+    dok_target: float | None = None,
 ) -> str:
     file_paths = _manifest_files(config_path, questions_paths, figures_dirs, questions)
     question_entries: list[dict[str, Any]] = []
@@ -230,6 +251,8 @@ def _write_manifest(
     }
     if sections_spec is not None:
         manifest["sections"] = str(sections_spec)
+    if dok_target is not None:
+        manifest["dok_target"] = dok_target
     manifest_path = Path(manifest_path)
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path.write_text(yaml.safe_dump(manifest, sort_keys=False))
@@ -282,7 +305,9 @@ def _run_once(args: argparse.Namespace, draft: bool = False) -> bool:
             _validate_question_ids(included)
             question_count = config.get("question_count")
             if question_count is not None:
-                included = select_questions(included, question_count)
+                included = select_questions(
+                    included, question_count, dok_target=config.get("dok_target")
+                )
             if config.get("scramble_questions"):
                 random.shuffle(included)
             form_id = "draft" if draft else _new_form_id()
@@ -298,9 +323,13 @@ def _run_once(args: argparse.Namespace, draft: bool = False) -> bool:
                     form_id, config_path, args.questions, figures_dirs,
                     included, choice_orders,
                     sections_spec=config.get("sections"),
+                    dok_target=config.get("dok_target"),
                 ))
             if args.report:
-                print(format_report(included, config.get("sections")))
+                print(format_report(
+                    included, config.get("sections"),
+                    dok_target=config.get("dok_target"), color=_use_color(),
+                ))
         except Exception as e:
             print(f"Error: {e}", file=sys.stderr)
             ok = False
@@ -354,7 +383,10 @@ def _report_from_manifest(manifest_path: str) -> bool:
         }
         for entry in manifest.get("questions") or []
     ]
-    print(format_report(questions, manifest.get("sections")))
+    print(format_report(
+        questions, manifest.get("sections"),
+        dok_target=manifest.get("dok_target"), color=_use_color(),
+    ))
     return True
 
 
@@ -409,7 +441,10 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
         figures_dirs, question_order, choice_orders,
     )
     if args.report:
-        print(format_report(selected, config.get("sections")))
+        print(format_report(
+            selected, config.get("sections"),
+            dok_target=config.get("dok_target"), color=_use_color(),
+        ))
     return True
 
 
