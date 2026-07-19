@@ -3,6 +3,8 @@ author: Levi Starrett
 class_name: AP Calculus AB
 class_id: APCalc
 duration: 15 min
+sections: 1.1 - 1.16
+question_count: 1
 questions:
   - id: 5506d1fe-8daf-4b58-9cb8-2a6933640ade
     question: |
@@ -153,11 +155,11 @@ questions:
           at $x = -5$.}
         grading:
           - points: 1
-            criterion: 'Hole at $x = 5$ with reason'
+            criterion: "Hole at $x = 5$ with reason"
           - points: 1
-            criterion: 'Asymptote at $x = -5$'
+            criterion: "Asymptote at $x = -5$"
           - points: 1
-            criterion: 'Unbounded one-sided limit at $x = -5$'
+            criterion: "Unbounded one-sided limit at $x = -5$"
         sections:
           - "1.10"
           - 1.14

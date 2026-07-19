@@ -3,6 +3,8 @@ author: Levi Starrett
 class_name: AP Calculus AB
 class_id: APCalc
 duration: 15 min
+sections: 1.1 - 1.16
+question_count: 1
 questions:
   - id: f293e13f-b201-4b06-8682-ff49d63b1180
     question: |
