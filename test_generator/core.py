@@ -213,6 +213,23 @@ def _effective_dok(q: Question) -> int | None:
     return max(part_doks) if part_doks else None
 
 
+def _review_label(dok: int | None, sections: set[tuple[int, int]]) -> str:
+    """A gray DOK/section label for a solution, shown only in review copies.
+
+    Returns a ``\\reviewinfo{...}`` snippet, or ``""`` when neither a DOK
+    nor any sections are recorded.
+    """
+    parts: list[str] = []
+    if dok is not None:
+        parts.append(f"DOK {dok}")
+    if sections:
+        listed = ", ".join(f"{major}.{minor}" for major, minor in sorted(sections))
+        parts.append(f"Sections: {listed}")
+    if not parts:
+        return ""
+    return "\\reviewinfo{%s}\n" % " \\quad ".join(parts)
+
+
 def select_questions(
     pool: list[Question], count: int, dok_target: float | None = None
 ) -> list[Question]:
@@ -552,8 +569,11 @@ def generate_test(
         if q_type == "FRQ" and parts:
             part_blocks = []
             for part in parts:
+                p_label = _review_label(_effective_dok(part), _question_sections(part))
                 p_question, p_solution = _apply_grading(
-                    str(part.get("question", "")), str(part.get("solution", "")), part
+                    str(part.get("question", "")),
+                    p_label + str(part.get("solution", "")),
+                    part,
                 )
                 p_block = _apply_figure_placeholders(question_templates["FRQ_PART"], part)
                 p_block = p_block.replace("$QUESTION", p_question)
@@ -568,6 +588,7 @@ def generate_test(
             q_blocks.append(q_block)
             continue
 
+        solution_text = _review_label(_effective_dok(q), _question_sections(q)) + solution_text
         question_text, solution_text = _apply_grading(question_text, solution_text, q)
         q_block = _apply_figure_placeholders(question_templates[q_type], q)
         q_block = q_block.replace("$QUESTION", question_text)
