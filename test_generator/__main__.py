@@ -47,6 +47,7 @@ import hashlib
 import os
 import random
 import secrets
+import string
 import sys
 import time
 from datetime import datetime
@@ -70,9 +71,10 @@ from .core import (
 from .report import format_report
 
 # Version 2 embeds per-question sections/DOK (and the config's section
-# range) so a report can be printed from the manifest alone.
-MANIFEST_VERSION = 2
-SUPPORTED_MANIFEST_VERSIONS = (1, 2)
+# range) so a report can be printed from the manifest alone. Version 3
+# adds each MCQ's answer letter and a top-level answer_key summary.
+MANIFEST_VERSION = 3
+SUPPORTED_MANIFEST_VERSIONS = (1, 2, 3)
 
 
 def _load_config(config_path: str) -> dict[str, Any]:
@@ -194,6 +196,15 @@ def _md5(path: str | Path) -> str:
     return hashlib.md5(Path(path).read_bytes()).hexdigest()
 
 
+def _answer_letter(order: list[int]) -> str:
+    """Letter of the correct choice given a display->canonical permutation.
+
+    Canonical index 0 is always the correct answer, so its display
+    position determines the letter (A, B, C, ...).
+    """
+    return string.ascii_uppercase[order.index(0)]
+
+
 def _manifest_files(
     config_path: str,
     questions_paths: list[str] | None,
@@ -238,10 +249,16 @@ def _write_manifest(
 ) -> str:
     file_paths = _manifest_files(config_path, questions_paths, figures_dirs, questions)
     question_entries: list[dict[str, Any]] = []
+    answer_letters: list[str] = []
     for q in questions:
         entry: dict[str, Any] = {"id": q["id"]}
         if q["id"] in choice_orders:
             entry["choice_order"] = choice_orders[q["id"]]
+        is_mcq = str(q.get("question_type", "MCQ")).upper() == "MCQ"
+        if is_mcq and q["id"] in choice_orders:
+            letter = _answer_letter(choice_orders[q["id"]])
+            entry["answer"] = letter
+            answer_letters.append(letter)
         covered = sorted(_question_sections(q))
         if covered:
             entry["sections"] = [f"{major}.{minor}" for major, minor in covered]
@@ -255,8 +272,10 @@ def _write_manifest(
         "generated": datetime.now().astimezone().isoformat(),
         "generator_version": __version__,
         "files": [{"name": Path(p).name, "md5": _md5(p)} for p in file_paths],
-        "questions": question_entries,
     }
+    if answer_letters:
+        manifest["answer_key"] = ", ".join(answer_letters)
+    manifest["questions"] = question_entries
     if sections_spec is not None:
         manifest["sections"] = str(sections_spec)
     if dok_target is not None:
@@ -406,7 +425,8 @@ def _load_manifest(manifest_path: str, warn_version: bool = True) -> dict[str, A
 def _report_from_manifest(manifest_path: str) -> bool:
     """Print the coverage/DOK report recorded in a manifest; generate nothing."""
     manifest = _load_manifest(manifest_path)
-    if manifest.get("manifest_version") != MANIFEST_VERSION:
+    # Version 2 onward embeds the per-question report data; version 1 does not.
+    if manifest.get("manifest_version") not in (2, 3):
         raise RuntimeError(
             f"manifest_version {manifest.get('manifest_version')} predates "
             f"embedded report data; replay it instead with "
