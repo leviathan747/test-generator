@@ -508,9 +508,16 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
         args, config, form_id, args.questions,
         figures_dirs, question_order, choice_orders,
     )
-    if args.new_version:
+    # Always record a manifest for the replay; a plain replay reuses the
+    # manifest's form ID, so its path matches the original — confirm before
+    # overwriting it.
+    manifest_out = _manifest_path(config, form_id, args.out_dir)
+    if manifest_out.exists() and not _confirm(
+            f"Overwrite existing manifest {manifest_out}? [y/N] "):
+        print("Manifest not overwritten.", file=sys.stderr)
+    else:
         print(_write_manifest(
-            _manifest_path(config, form_id, args.out_dir),
+            manifest_out,
             form_id, config_path, args.questions, figures_dirs,
             selected, choice_orders,
             sections_spec=config.get("sections"),
