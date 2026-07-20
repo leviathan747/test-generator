@@ -477,6 +477,7 @@ def generate_test(
     work_space: str | None = None,
     question_order: list[Any] | None = None,
     choice_orders: dict[Any, list[int]] | None = None,
+    instructions: str = "",
 ) -> str:
     """Generate a test PDF from a YAML file.
 
@@ -513,6 +514,8 @@ def generate_test(
             permutation (see :func:`make_choice_orders`). MCQs with an
             entry use it instead of shuffling; MCQs without one shuffle
             randomly.
+        instructions: Optional raw-LaTeX instructions rendered in a framed
+            box at the top of the first page, before the first question.
 
     Returns:
         The path to the generated PDF (same as ``output_pdf``).
@@ -645,6 +648,10 @@ def generate_test(
     tex_content = tex_content.replace("$CLASSNAME", class_name)
     tex_content = tex_content.replace("$FORMID", form_id)
     tex_content = tex_content.replace("$DURATION", duration)
+    instructions_block = (
+        "\\instructionsbox{%s}" % instructions if instructions else ""
+    )
+    tex_content = tex_content.replace("$INSTRUCTIONS", instructions_block)
     if solution:
         tex_content = tex_content.replace("\\begin{document}", "\\printanswers\n\\begin{document}")
 

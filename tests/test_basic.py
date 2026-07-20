@@ -850,6 +850,52 @@ def test_review_label_inside_solution(
     ) == 2
 
 
+def test_instructions_box_rendered(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """An 'instructions' config field renders a framed box before Q1."""
+    config_file, questions_file, figures_dir = _write_cli_inputs(
+        tmp_path, "instructions: |\n  Show all work.\n"
+    )
+    tex_contents: list[str] = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir)
+         + ["--student-only"])
+
+    tex = tex_contents[0]
+    assert "\\instructionsbox{" in tex
+    assert "Show all work." in tex
+    assert tex.index("\\instructionsbox{") < tex.index("\\begin{questions}")
+
+
+def test_no_instructions_box_without_field(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
+    tex_contents: list[str] = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out")
+         + ["--student-only"])
+    # the macro is always defined in the preamble; assert it is never invoked
+    assert "\\instructionsbox{" not in tex_contents[0]
+
+
+def test_instructions_must_be_string(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    config_file, questions_file, figures_dir = _write_cli_inputs(
+        tmp_path, "instructions: [not, a, string]\n"
+    )
+    _fake_pdflatex(monkeypatch, [])
+
+    with pytest.raises(SystemExit):
+        main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out"))
+    assert "instructions" in capsys.readouterr().err
+
+
 def test_from_manifest_tops_up_short_manifest(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:

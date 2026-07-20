@@ -207,6 +207,18 @@
 % small gray DOK/section label printed above a solution (review copy only)
 \newcommand{\reviewinfo}[1]{\par{\itshape\footnotesize\color{gray}#1}\par}
 
+% framed instructions box for the top of the first page: 1pt black border,
+% light gray background
+\newcommand{\instructionsbox}[1]{%
+  \begingroup
+  \setlength{\fboxrule}{1pt}%
+  \setlength{\fboxsep}{6pt}%
+  \noindent\fcolorbox{black}{gray!15}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{#1}}%
+  \par\vspace{1em}%
+  \endgroup
+}
+
 % header and footer
 \firstpageheader{}{}{}
 \runningheader{$NOCALC}{}{}
@@ -229,6 +241,8 @@
   \makeatother
   $NOCALC
   \vspace{1em}
+
+  $INSTRUCTIONS
 
   % questions
   \begin{questions}

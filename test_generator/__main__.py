@@ -45,7 +45,8 @@ question's sections and DOK, so `--report-from-manifest` prints that
 report for an existing version on its own, without any other inputs and
 without regenerating anything. Manifests also record each MCQ's answer
 letter and a top-level `answer_key` summary, and the solution copy prints
-each question's DOK and sections for review.
+each question's DOK and sections for review. An `instructions` config
+field (raw LaTeX) renders a framed box at the top of the first page.
 """
 import argparse
 import hashlib
@@ -102,6 +103,13 @@ def _load_config(config_path: str) -> dict[str, Any]:
 
     if config.get("questions") is not None and not isinstance(config["questions"], list):
         raise RuntimeError(f"Config field 'questions' must be a list: {config_path}")
+
+    if config.get("instructions") is not None and not isinstance(
+        config["instructions"], str
+    ):
+        raise RuntimeError(
+            f"Config field 'instructions' must be a string: {config_path}"
+        )
 
     count = config.get("question_count")
     if count is not None and (
@@ -317,6 +325,7 @@ def _generate_copies(
             work_space=config.get("work_space"),
             question_order=question_order,
             choice_orders=choice_orders,
+            instructions=str(config.get("instructions") or ""),
         )
         print(out)
 
