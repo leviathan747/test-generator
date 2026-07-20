@@ -109,7 +109,9 @@ def test_quiz_configs_build_pdfs() -> None:
         assert len(manifests) == 1, f"expected one manifest for {prefix}"
 
 
-def test_from_manifest_recreates_pdf(tmp_path: Path) -> None:
+def test_from_manifest_recreates_pdf(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     """Deleting a PDF and rerunning from its manifest recreates it."""
     from test_generator.__main__ import main
 
@@ -123,6 +125,8 @@ def test_from_manifest_recreates_pdf(tmp_path: Path) -> None:
     assert student_pdf.exists()
     student_pdf.unlink()
 
+    # the replay rewrites the manifest in place; confirm the overwrite
+    monkeypatch.setattr("builtins.input", lambda prompt="": "y")
     main([str(config), "--from-manifest", str(manifest),
           "--figures-dir", str(figures_dir),
           "--out-dir", str(tmp_path), "--student-only"])

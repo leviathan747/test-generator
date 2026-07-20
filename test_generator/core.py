@@ -197,18 +197,32 @@ def _question_sections(q: Question) -> set[tuple[int, int]]:
     return covered
 
 
+def _parse_dok(value: Any) -> int | None:
+    """Coerce a ``dok`` value to an int, or None when it isn't one.
+
+    Non-integer markers (e.g. the ``unknown`` used throughout the banks)
+    are treated as "no DOK recorded" rather than an error.
+    """
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
 def _effective_dok(q: Question) -> int | None:
     """Return a question's DOK level.
 
     Question-level ``dok`` wins; a multipart question without one is rated
-    by its hardest part. Returns ``None`` when no DOK is recorded.
+    by its hardest part. A ``dok`` that isn't an integer (e.g. ``unknown``)
+    counts as unrecorded. Returns ``None`` when no DOK is recorded.
     """
-    if q.get("dok") is not None:
-        return int(q["dok"])
+    own = _parse_dok(q.get("dok"))
+    if own is not None:
+        return own
     part_doks = [
-        int(part["dok"])
+        d
         for part in (q.get("parts") or [])
-        if part.get("dok") is not None
+        if (d := _parse_dok(part.get("dok"))) is not None
     ]
     return max(part_doks) if part_doks else None
 

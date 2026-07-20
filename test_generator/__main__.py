@@ -27,7 +27,10 @@ hex form ID and writes a manifest alongside the PDFs; `--from-manifest`
 replays a manifest to exactly recreate that version, and with
 `--new-version` instead reissues the same questions as a fresh version
 (new form ID, re-scrambled question and choice order) with its own
-manifest. Replay takes the
+manifest. A replay writes its manifest too (prompting before it would
+overwrite the old one); if the config now asks for more questions than
+the manifest holds, the manifest's questions are kept and the normal
+picker tops up the rest. Replay takes the
 same config, question bank, and figures arguments as a normal run — the
 input files may live anywhere, as long as their contents (MD5 sums)
 match the manifest. `--exclude-manifest` (repeatable) drops the
@@ -40,7 +43,9 @@ after each generation; it shows the average DOK against the target,
 highlighting the average in yellow when the target was missed. Manifests also record each
 question's sections and DOK, so `--report-from-manifest` prints that
 report for an existing version on its own, without any other inputs and
-without regenerating anything.
+without regenerating anything. Manifests also record each MCQ's answer
+letter and a top-level `answer_key` summary, and the solution copy prints
+each question's DOK and sections for review.
 """
 import argparse
 import hashlib
@@ -492,6 +497,38 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
         if not _confirm("Continue anyway? [y/N] "):
             print("Aborted.", file=sys.stderr)
             return False
+
+    # If the config now wants more questions than the manifest recorded,
+    # keep the manifest's questions and top up the rest with the normal
+    # picker. Verification above intentionally covers only the manifest's
+    # original inputs, so the newly picked questions are exempt.
+    question_count = config.get("question_count")
+    if question_count is not None and question_count > len(selected):
+        selected_ids = {q.get("id") for q in selected}
+        candidates = filter_questions(
+            [q for q in pool if q.get("id") not in selected_ids],
+            assessment_type=config.get("assessment_type"),
+            sections=config.get("sections"),
+            calculator_active=config.get("calculator_active"),
+        )
+        needed = question_count - len(selected)
+        try:
+            extra = select_questions(
+                candidates, needed, dok_target=config.get("dok_target")
+            )
+        except RuntimeError as e:
+            raise RuntimeError(
+                f"{e} to top up the {len(selected)} question(s) from the "
+                f"manifest to question_count {question_count}"
+            ) from e
+        print(
+            f"Manifest has {len(selected)} question(s); config wants "
+            f"{question_count}, adding {needed}.",
+            file=sys.stderr,
+        )
+        selected.extend(extra)
+        question_order = [q["id"] for q in selected]
+        choice_orders.update(make_choice_orders(extra))
 
     if args.new_version:
         # a fresh version of the same test: new form ID, re-scrambled

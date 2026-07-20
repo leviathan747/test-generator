@@ -1,6 +1,7 @@
 import random
 import re
 import shutil
+import string
 import sys
 import time
 import types
@@ -707,6 +708,12 @@ def _the_manifest(out_dir: Path, prefix: str) -> Path:
     return matches[0]
 
 
+def _accept_overwrite_only(prompt: str = "") -> str:
+    """Confirm a manifest-overwrite prompt; fail on any other prompt."""
+    assert "Overwrite existing manifest" in prompt, f"unexpected prompt: {prompt}"
+    return "y"
+
+
 def _fake_pdflatex(monkeypatch: pytest.MonkeyPatch, tex_contents: list[str]) -> None:
     def fake_run(
         cmd: list[str], check: bool, stdout: int, stderr: int
@@ -819,6 +826,79 @@ def test_main_student_and_solution_choices_match(
         r"\\begin\{choices\}(.*?)\\end\{choices\}", tex_contents[1], re.S
     )
     assert student_choices and student_choices == solution_choices
+
+
+def test_review_label_inside_solution(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """Each solution carries a DOK/section label, inside the solution env."""
+    config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
+    tex_contents: list[str] = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+
+    solution_tex = tex_contents[1]
+    # the MCQ (question-level) and the FRQ part (part-level) each get a label
+    assert "\\reviewinfo{DOK 2 \\quad Sections: 1.1}" in solution_tex
+    assert "\\reviewinfo{DOK 3 \\quad Sections: 1.2, 1.3}" in solution_tex
+    # every label lives inside a solution env, so it only renders in the
+    # answer-key copy: one label per solution
+    assert solution_tex.count("\\reviewinfo{") == solution_tex.count(
+        "\\begin{solution}"
+    ) == 2
+
+
+def test_from_manifest_tops_up_short_manifest(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    """A manifest with fewer questions than the config is topped up."""
+    questions_file = tmp_path / "questions.yaml"
+    questions_file.write_text(
+        "questions:\n"
+        + "".join(
+            f"  - id: q{i}\n"
+            f"    question: What is {i} + {i}?\n"
+            f"    answer: {2 * i}\n"
+            f"    distractors: [{2 * i + 1}, {2 * i + 2}]\n"
+            f"    solution: Because.\n"
+            f"    sections: ['1.{i}']\n"
+            for i in range(1, 6)
+        )
+    )
+    config_file = tmp_path / "config.yaml"
+    config_file.write_text("name: Quiz_T\nclass_id: APCalc\nquestion_count: 4\n")
+    figures_dir = tmp_path / "figures"
+    figures_dir.mkdir()
+    _fake_pdflatex(monkeypatch, [])
+
+    out_dir = tmp_path / "out"
+    main([str(config_file), "--questions", str(questions_file),
+          "--out-dir", str(out_dir), "--figures-dir", str(figures_dir)])
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_T")
+
+    # shrink the manifest to two questions, leaving the config untouched so
+    # its MD5 still matches on replay (no verification prompt)
+    manifest = real_yaml.safe_load(manifest_file.read_text())
+    kept_ids = [q["id"] for q in manifest["questions"][:2]]
+    manifest["questions"] = manifest["questions"][:2]
+    manifest_file.write_text(real_yaml.safe_dump(manifest, sort_keys=False))
+    capsys.readouterr()
+
+    second_tex: list[str] = []
+    _fake_pdflatex(monkeypatch, second_tex)
+    monkeypatch.setattr("builtins.input", _accept_overwrite_only)
+    main([str(config_file), "--from-manifest", str(manifest_file),
+          "--questions", str(questions_file), "--out-dir", str(out_dir),
+          "--figures-dir", str(figures_dir), "--student-only"])
+
+    assert "adding 2" in capsys.readouterr().err
+    topped = real_yaml.safe_load(manifest_file.read_text())
+    ids = [q["id"] for q in topped["questions"]]
+    assert len(ids) == 4 and len(set(ids)) == 4
+    assert ids[:2] == kept_ids  # the manifest's questions come first, in order
+    assert second_tex[0].count("\\question") == 4
 
 
 def test_main_student_only(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
@@ -1087,7 +1167,7 @@ def test_manifest_contents(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> N
     manifest_file = _the_manifest(out_dir, "APCalc_Quiz_M")
     manifest = real_yaml.safe_load(manifest_file.read_text())
 
-    assert manifest["manifest_version"] == 2
+    assert manifest["manifest_version"] == 3
     assert re.fullmatch(r"[0-9a-f]{8}", manifest["form_id"])
     assert manifest["form_id"] in manifest_file.name
     assert manifest["generated"]
@@ -1119,6 +1199,13 @@ def test_manifest_contents(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> N
     mcq, frq = manifest["questions"]
     assert sorted(mcq["choice_order"]) == [0, 1, 2, 3]
     assert "choice_order" not in frq
+
+    # the MCQ carries its answer letter (canonical index 0 is correct) and
+    # the top-level answer_key summarizes the MCQ letters; the FRQ has none
+    expected_letter = string.ascii_uppercase[mcq["choice_order"].index(0)]
+    assert mcq["answer"] == expected_letter
+    assert "answer" not in frq
+    assert manifest["answer_key"] == expected_letter
 
     # report data is embedded: sections (union across parts) and
     # effective DOK per question; no section range in this config
@@ -1208,6 +1295,9 @@ def test_from_manifest_reproduces(
 
     second_tex: list[str] = []
     _fake_pdflatex(monkeypatch, second_tex)
+    # the replay reuses the manifest's form ID, so its manifest path matches
+    # the original; confirm the overwrite
+    monkeypatch.setattr("builtins.input", lambda prompt="": "y")
     main(_cli_args(config_file, questions_file, figures_dir, out_dir)
          + ["--from-manifest", str(manifest_file)])
 
@@ -1215,7 +1305,7 @@ def test_from_manifest_reproduces(
     assert second_tex == first_tex
     assert student_pdf.exists()
     assert solution_pdf.exists()
-    # no second manifest is written
+    # the manifest is rewritten in place: still exactly one, same filename
     assert _manifests(out_dir, "APCalc_Quiz_M") == [manifest_file]
 
 
@@ -1240,10 +1330,9 @@ def test_from_manifest_relocated_inputs(
 
     second_tex: list[str] = []
     _fake_pdflatex(monkeypatch, second_tex)
-    monkeypatch.setattr(
-        "builtins.input",
-        lambda prompt="": pytest.fail("unexpected verification prompt"),
-    )
+    # only the manifest-overwrite prompt is expected here (inputs still
+    # match by MD5, so no verification prompt should fire)
+    monkeypatch.setattr("builtins.input", _accept_overwrite_only)
     main(_cli_args(config_file, questions_file, figures_dir, out_dir)
          + ["--from-manifest", str(manifest_file)])
 
@@ -1404,10 +1493,7 @@ def test_from_manifest_with_multiple_banks(
 
     second_tex: list[str] = []
     _fake_pdflatex(monkeypatch, second_tex)
-    monkeypatch.setattr(
-        "builtins.input",
-        lambda prompt="": pytest.fail("unexpected verification prompt"),
-    )
+    monkeypatch.setattr("builtins.input", _accept_overwrite_only)
     main(_cli_args(config_file, questions_file, figures_dir, out_dir)
          + bank_args + ["--from-manifest", str(manifest_file)])
     assert second_tex == first_tex
@@ -1435,6 +1521,7 @@ def test_from_manifest_accepts_version_1(
 
     second_tex: list[str] = []
     _fake_pdflatex(monkeypatch, second_tex)
+    monkeypatch.setattr("builtins.input", _accept_overwrite_only)
     main(_cli_args(config_file, questions_file, figures_dir, out_dir)
          + ["--from-manifest", str(manifest_file)])
     assert second_tex == first_tex
@@ -2119,6 +2206,7 @@ def test_main_from_manifest_prints_report_same_questions(
 
     second_tex: list[str] = []
     _fake_pdflatex(monkeypatch, second_tex)
+    monkeypatch.setattr("builtins.input", _accept_overwrite_only)
     main(_cli_args(config_file, questions_file, figures_dir, out_dir)
          + ["--from-manifest", str(manifest_file), "--report"])
 
