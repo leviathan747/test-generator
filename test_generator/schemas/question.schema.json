@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roxsoftware.com/test-generator/schemas/question.schema.json",
+  "title": "Question",
+  "description": "A single question (MCQ or FRQ) as loaded from a YAML question bank or a config's inline questions list.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id"],
+  "properties": {
+    "id": {
+      "description": "Identifier used for manifest lookup. Uniqueness across the included questions is enforced by the generator.",
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "type": "integer" }
+      ]
+    },
+    "question": {
+      "description": "The question stem (LaTeX).",
+      "type": "string"
+    },
+    "solution": {
+      "description": "The worked solution shown in the solution copy (LaTeX).",
+      "type": "string"
+    },
+    "question_type": {
+      "description": "Question type. Compared case-insensitively by the generator.",
+      "enum": ["MCQ", "FRQ", "mcq", "frq"]
+    },
+    "answer": {
+      "description": "The correct MCQ choice (canonical index 0).",
+      "type": ["string", "number"]
+    },
+    "distractors": {
+      "description": "The incorrect MCQ choices.",
+      "type": "array",
+      "items": {
+        "type": ["string", "number"]
+      }
+    },
+    "parts": {
+      "description": "Sub-parts for a multipart FRQ.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/part"
+      }
+    },
+    "sections": {
+      "description": "Standards covered, as 'major.minor' values. Non-numeric tokens (e.g. 'unknown') are tolerated and skipped.",
+      "type": "array",
+      "items": {
+        "type": ["string", "number"]
+      }
+    },
+    "dok": {
+      "description": "Depth of Knowledge (typically 1-4). Non-integer markers are treated as unrecorded.",
+      "type": ["integer", "string"]
+    },
+    "calculator_active": {
+      "description": "Whether a calculator is permitted for this question.",
+      "type": "boolean"
+    },
+    "assessment_type": {
+      "description": "Free-form filter tag (e.g. 'quiz', 'test').",
+      "type": "string"
+    },
+    "related_to": {
+      "description": "Ids of related questions to avoid selecting together.",
+      "type": "array",
+      "items": {
+        "type": ["string", "integer"]
+      }
+    },
+    "grading": {
+      "description": "Rubric entries.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/gradingEntry"
+      }
+    },
+    "work_space": {
+      "description": "FRQ answer-space height (LaTeX length, e.g. '2in').",
+      "type": "string"
+    },
+    "figure": {
+      "description": "Figure filename. A '.tex' file is \\input, otherwise \\includegraphics.",
+      "type": "string"
+    },
+    "figure_placement": {
+      "description": "Where the figure is placed relative to the question.",
+      "enum": ["right", "above", "below"]
+    },
+    "figure_width": {
+      "description": "Figure width (LaTeX length, e.g. '2.5in').",
+      "type": "string"
+    },
+    "legacy_ids": {
+      "description": "Historical identifiers. Editorial metadata; ignored by the generator.",
+      "type": "array",
+      "items": {
+        "type": ["string", "integer"]
+      }
+    },
+    "review": {
+      "description": "Editorial workflow marker. Ignored by the generator.",
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "part": {
+      "title": "Question part",
+      "description": "A sub-part of a multipart FRQ.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "type": "string"
+        },
+        "solution": {
+          "type": "string"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": ["string", "number"]
+          }
+        },
+        "dok": {
+          "type": ["integer", "string"]
+        },
+        "grading": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/gradingEntry"
+          }
+        },
+        "work_space": {
+          "type": "string"
+        },
+        "figure": {
+          "type": "string"
+        },
+        "figure_placement": {
+          "enum": ["right", "above", "below"]
+        },
+        "figure_width": {
+          "type": "string"
+        }
+      }
+    },
+    "gradingEntry": {
+      "title": "Grading entry",
+      "description": "A single rubric line worth a number of points.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["points", "criterion"],
+      "properties": {
+        "points": {
+          "type": "number"
+        },
+        "criterion": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from .sections import parse_range, parse_version
+from .validation import validate_questions
 
 # A question (or question part) mapping as loaded from YAML.
 Question = dict[str, Any]
@@ -81,13 +82,18 @@ def load_question_pool(
         The combined list of question mappings (file questions first).
     """
     pool: list[Question] = []
+    sources: list[str] = []
     for yaml_file in _as_paths(yaml_path):
         if not yaml_file.exists():
             raise FileNotFoundError(str(yaml_file))
         raw_text = yaml_file.read_text()
         data = yaml.safe_load(_quote_backslash_scalar_lines(raw_text)) or {}
         pool.extend(data.get("questions") or [])
-    pool.extend(inline_questions or [])
+        sources.append(str(yaml_file))
+    if inline_questions:
+        pool.extend(inline_questions)
+        sources.append("inline questions")
+    validate_questions(pool, ", ".join(sources) or "questions")
     return pool
 
 

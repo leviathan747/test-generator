@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roxsoftware.com/test-generator/schemas/config.schema.json",
+  "title": "Assessment config",
+  "description": "A test/quiz config file. 'name' defaults to the config file's stem when omitted.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "description": "Assessment name, used in output filenames.",
+      "type": "string"
+    },
+    "class_id": {
+      "description": "Optional class identifier; prefixes output filenames when set.",
+      "type": "string"
+    },
+    "title": {
+      "description": "Test title.",
+      "type": "string"
+    },
+    "author": {
+      "description": "Author name.",
+      "type": "string"
+    },
+    "class_name": {
+      "description": "Class name.",
+      "type": "string"
+    },
+    "duration": {
+      "description": "Duration string (e.g. '30 min').",
+      "type": "string"
+    },
+    "assessment_type": {
+      "description": "Optional filter: keep only questions whose assessment_type matches.",
+      "type": "string"
+    },
+    "sections": {
+      "description": "Optional filter: a section range (e.g. '1.3 - 1.7').",
+      "type": "string"
+    },
+    "calculator_active": {
+      "description": "Optional filter: true keeps calculator-active questions, false keeps no-calculator questions.",
+      "type": "boolean"
+    },
+    "question_count": {
+      "description": "Optional: randomly select exactly this many questions from the filtered pool.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "scramble_questions": {
+      "description": "Optional: shuffle the order of selected questions.",
+      "type": "boolean"
+    },
+    "dok_target": {
+      "description": "Optional target for the average Depth of Knowledge (1-4).",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 4
+    },
+    "instructions": {
+      "description": "Raw LaTeX shown in a framed box on the first page.",
+      "type": "string"
+    },
+    "work_space": {
+      "description": "Default FRQ answer-space height (e.g. '2in'); overridable per question/part.",
+      "type": "string"
+    },
+    "questions": {
+      "description": "Optional inline questions, in the same format as a question bank.",
+      "type": "array",
+      "items": {
+        "$ref": "https://roxsoftware.com/test-generator/schemas/question.schema.json"
+      }
+    }
+  }
+}

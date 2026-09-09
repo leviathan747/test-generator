@@ -237,6 +237,25 @@ Note: YAML parses bare `X.10` as the number `X.1`, so quote section
 numbers with a trailing zero (e.g. `sections: ['1.10']`) in question
 files.
 
+### Schemas
+
+Config files, question banks, and manifests are validated at load time against
+JSON Schemas (Draft 2020-12) bundled in
+[`test_generator/schemas/`](test_generator/schemas):
+
+- `question.schema.json` — a single question (MCQ or FRQ), its `parts`, and
+  `grading` entries. Used for both question-bank files and a config's inline
+  `questions` list.
+- `config.schema.json` — a test/quiz config file (its `questions` reference the
+  question schema).
+- `manifest.schema.json` — a generated manifest artifact (accepts versions
+  1–3).
+
+The schemas are strict: an unknown or misspelled key is rejected with an error
+naming the field and source file. To validate ad hoc, use
+`test_generator.validation.validate_config` / `validate_questions` /
+`validate_manifest`.
+
 ### Python API
 
 ```python

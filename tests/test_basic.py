@@ -1139,7 +1139,9 @@ def test_main_config_questions_must_be_list(
 
     with pytest.raises(SystemExit):
         main([str(config_file), "--out-dir", str(tmp_path / "out"), "--figures-dir", str(figures_dir)])
-    assert "'questions' must be a list" in capsys.readouterr().err
+    err = capsys.readouterr().err
+    assert "Schema validation failed" in err
+    assert "questions" in err
 
 
 def test_main_class_id_optional(
@@ -1293,7 +1295,9 @@ def test_main_missing_question_id(
     with pytest.raises(SystemExit):
         main([str(config_file), "--out-dir", str(tmp_path / "out"),
               "--figures-dir", str(figures_dir)])
-    assert "missing an 'id'" in capsys.readouterr().err
+    err = capsys.readouterr().err
+    assert "Schema validation failed" in err
+    assert "'id' is a required property" in err
 
 
 def test_main_duplicate_question_ids(
@@ -2113,7 +2117,9 @@ def test_main_question_count_rejects_invalid(
 
     with pytest.raises(SystemExit):
         main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out"))
-    assert "positive integer" in capsys.readouterr().err
+    err = capsys.readouterr().err
+    assert "Schema validation failed" in err
+    assert "question_count" in err
 
 
 def test_main_question_count_exceeds_pool(
@@ -2178,7 +2184,9 @@ def test_main_scramble_questions_rejects_non_bool(
 
     with pytest.raises(SystemExit):
         main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out"))
-    assert "must be a boolean" in capsys.readouterr().err
+    err = capsys.readouterr().err
+    assert "Schema validation failed" in err
+    assert "scramble_questions" in err
 
 
 def _write_report_config(tmp_path: Path) -> tuple[Path, Path]:

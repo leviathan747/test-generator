@@ -11,8 +11,15 @@ requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [ { name = "Levi", email = "levi@roxsoftware.com" } ]
 keywords = ["tests", "generator", "pytest"]
+dependencies = [
+    "jsonschema>=4.18",
+    "pyyaml",
+]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
+[tool.setuptools.package-data]
+test_generator = ["schemas/*.json"]

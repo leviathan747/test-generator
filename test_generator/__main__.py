@@ -75,6 +75,7 @@ from .core import (
     select_questions,
 )
 from .report import format_report
+from .validation import validate_config, validate_manifest
 
 # Version 2 embeds per-question sections/DOK (and the config's section
 # range) so a report can be printed from the manifest alone. Version 3
@@ -101,40 +102,10 @@ def _load_config(config_path: str) -> dict[str, Any]:
             f"generated automatically) — delete it from {config_path}"
         )
 
-    if config.get("questions") is not None and not isinstance(config["questions"], list):
-        raise RuntimeError(f"Config field 'questions' must be a list: {config_path}")
-
-    if config.get("instructions") is not None and not isinstance(
-        config["instructions"], str
-    ):
-        raise RuntimeError(
-            f"Config field 'instructions' must be a string: {config_path}"
-        )
-
-    count = config.get("question_count")
-    if count is not None and (
-        isinstance(count, bool) or not isinstance(count, int) or count < 1
-    ):
-        raise RuntimeError(
-            f"Config field 'question_count' must be a positive integer: {config_path}"
-        )
-
-    scramble = config.get("scramble_questions")
-    if scramble is not None and not isinstance(scramble, bool):
-        raise RuntimeError(
-            f"Config field 'scramble_questions' must be a boolean: {config_path}"
-        )
-
-    dok_target = config.get("dok_target")
-    if dok_target is not None and (
-        isinstance(dok_target, bool)
-        or not isinstance(dok_target, (int, float))
-        or not 1 <= dok_target <= 4
-    ):
-        raise RuntimeError(
-            f"Config field 'dok_target' must be a number between 1 and 4: "
-            f"{config_path}"
-        )
+    # Field types and value ranges (question_count, scramble_questions,
+    # dok_target, instructions, questions-is-a-list, and unknown keys) are
+    # enforced by the config JSON Schema.
+    validate_config(config, config_path)
 
     return config
 
@@ -185,13 +156,11 @@ def _manifest_path(config: dict[str, Any], form_id: str, out_dir: str) -> Path:
 
 
 def _validate_question_ids(questions: list[Question]) -> None:
-    """Every included question must have a unique `id` for manifest lookup."""
-    missing = [i + 1 for i, q in enumerate(questions) if not q.get("id")]
-    if missing:
-        raise RuntimeError(
-            f"Question(s) missing an 'id' (position {', '.join(map(str, missing))} "
-            f"of the included questions); every question needs a unique id"
-        )
+    """Every included question must have a unique `id` for manifest lookup.
+
+    Presence and type of `id` are enforced by the question JSON Schema, so
+    only uniqueness is checked here.
+    """
     seen: set[Any] = set()
     duplicates: list[Any] = []
     for q in questions:
@@ -427,6 +396,7 @@ def _load_manifest(manifest_path: str, warn_version: bool = True) -> dict[str, A
             f"(this generator supports version(s) {supported}); the manifest "
             f"may have been written by a newer generator"
         )
+    validate_manifest(manifest, manifest_path)
     if warn_version and manifest.get("generator_version") != __version__:
         print(
             f"Warning: manifest was written by generator "
