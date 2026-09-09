@@ -150,8 +150,8 @@ needed, and nothing is regenerated. (Version-1 manifests predate the
 embedded report data; replay those with `--from-manifest ... --report`
 instead.)
 
-The solution copy also prints each question's DOK and sections beside
-its solution, for review.
+The solution copy also prints each question's DOK, sections, and id
+beside its solution, for review.
 
 #### Form IDs and manifests
 

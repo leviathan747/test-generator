@@ -4,6 +4,10 @@ class_name: AP Precalculus
 class_id: APPC
 duration: 15 min
 sections: 1.1 - 1.6
+instructions: |
+  Read all directions and answer each question completely. Unless otherwise
+  specified, all answers will be real numbers. Decimal approximations must be
+  reported to at least 3 places after the decimal point.
 question_count: 1
 questions:
   - id: 3341d22a-c222-4038-a8d4-499523bfe993
@@ -32,13 +36,13 @@ questions:
           are given.}
         grading:
           - points: 0.5
-            criterion: '$(-4.6692, -9.4844)$ minimum'
+            criterion: "$(-4.6692, -9.4844)$ minimum"
           - points: 0.5
-            criterion: '$(-1.1029, 0.5001)$ maximum'
+            criterion: "$(-1.1029, 0.5001)$ maximum"
           - points: 0.5
-            criterion: '$(1.9185, -2.6331)$ minimum'
+            criterion: "$(1.9185, -2.6331)$ minimum"
           - points: 0.5
-            criterion: '$(3.8536, -1.1680)$ maximum'
+            criterion: "$(3.8536, -1.1680)$ maximum"
         sections:
           - 1.4
         dok: 2
@@ -111,13 +115,13 @@ questions:
           are given.}
         grading:
           - points: 0.5
-            criterion: '$(-2.1113, 47.1025)$ maximum'
+            criterion: "$(-2.1113, 47.1025)$ maximum"
           - points: 0.5
-            criterion: '$(0.0134, 8.1092)$ minimum'
+            criterion: "$(0.0134, 8.1092)$ minimum"
           - points: 0.5
-            criterion: '$(2.8178, 55.7298)$ maximum'
+            criterion: "$(2.8178, 55.7298)$ maximum"
           - points: 0.5
-            criterion: '$(5.2, 0)$ minimum'
+            criterion: "$(5.2, 0)$ minimum"
         sections:
           - 1.4
         dok: 2
@@ -209,11 +213,11 @@ questions:
           are given.}
         grading:
           - points: 1
-            criterion: '$(1.531, 51.900)$ maximum'
+            criterion: "$(1.531, 51.900)$ maximum"
           - points: 1
-            criterion: '$(5.231, 38.633)$ minimum'
+            criterion: "$(5.231, 38.633)$ minimum"
           - points: 1
-            criterion: '$(11.238, 87.066)$ maximum'
+            criterion: "$(11.238, 87.066)$ maximum"
         sections:
           - 1.4
         dok: 2
@@ -289,11 +293,11 @@ questions:
           are given.}
         grading:
           - points: 1
-            criterion: '$(1.731, 52.343)$ maximum'
+            criterion: "$(1.731, 52.343)$ maximum"
           - points: 1
-            criterion: '$(7.148, 3.509)$ minimum'
+            criterion: "$(7.148, 3.509)$ minimum"
           - points: 1
-            criterion: '$(12.120, 42.368)$ maximum'
+            criterion: "$(12.120, 42.368)$ maximum"
         sections:
           - 1.4
         dok: 2
@@ -305,6 +309,8 @@ questions:
         solution: |
           $V$ has even degree with a negative leading coefficient, so
           \[ \lim_{t \to \infty} V(t) = -\infty \]
+          (or "as $t$ increases without bound, $V(t)$ decreases without bound"). \\
+
           The model eventually predicts negative values, but the number of
           visitors cannot be negative. Therefore $V$ is not appropriate for
           large values of $t$.

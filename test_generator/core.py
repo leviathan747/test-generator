@@ -233,11 +233,15 @@ def _effective_dok(q: Question) -> int | None:
     return max(part_doks) if part_doks else None
 
 
-def _review_label(dok: int | None, sections: set[tuple[int, int]]) -> str:
-    """A gray DOK/section label for a solution, shown only in review copies.
+def _review_label(
+    dok: int | None, sections: set[tuple[int, int]], qid: Any = None
+) -> str:
+    """A gray ID/DOK/section label for a solution, shown only in review copies.
 
-    Returns a ``\\reviewinfo{...}`` snippet, or ``""`` when neither a DOK
-    nor any sections are recorded.
+    ``qid`` is the id of the question the solution belongs to (the parent
+    question's id for a part), so a reviewer can trace a solution back to its
+    entry in the question bank. Returns a ``\\reviewinfo{...}`` snippet, or
+    ``""`` when no id, DOK or section is recorded.
     """
     parts: list[str] = []
     if dok is not None:
@@ -245,6 +249,8 @@ def _review_label(dok: int | None, sections: set[tuple[int, int]]) -> str:
     if sections:
         listed = ", ".join(f"{major}.{minor}" for major, minor in sorted(sections))
         parts.append(f"Sections: {listed}")
+    if qid is not None and str(qid):
+        parts.append("ID: \\texttt{%s}" % qid[:8])
     if not parts:
         return ""
     return "\\reviewinfo{%s}\n" % " \\quad ".join(parts)
@@ -592,7 +598,9 @@ def generate_test(
         if q_type == "FRQ" and parts:
             part_blocks = []
             for part in parts:
-                p_label = _review_label(_effective_dok(part), _question_sections(part))
+                p_label = _review_label(
+                    _effective_dok(part), _question_sections(part), q.get("id")
+                )
                 p_question, p_solution = _apply_grading(
                     str(part.get("question", "")),
                     p_label + str(part.get("solution", "")),
@@ -611,7 +619,10 @@ def generate_test(
             q_blocks.append(q_block)
             continue
 
-        solution_text = _review_label(_effective_dok(q), _question_sections(q)) + solution_text
+        solution_text = (
+            _review_label(_effective_dok(q), _question_sections(q), q.get("id"))
+            + solution_text
+        )
         question_text, solution_text = _apply_grading(question_text, solution_text, q)
         q_block = _apply_figure_placeholders(question_templates[q_type], q)
         q_block = q_block.replace("$QUESTION", question_text)

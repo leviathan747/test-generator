@@ -433,6 +433,7 @@ def test_generate_test_grading_rubric(
     # the rubric rows wrap the solution in a gradedsolution environment
     assert (
         "\\begin{gradedsolution}{1 & Correct limit statement \\\\\n2 & Answer}\n"
+        "\\reviewinfo{ID: \\texttt{1}}\n"
         "The limit is 2.\n"
         "\\end{gradedsolution}" in tex
     )
@@ -831,7 +832,7 @@ def test_main_student_and_solution_choices_match(
 def test_review_label_inside_solution(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    """Each solution carries a DOK/section label, inside the solution env."""
+    """Each solution carries an ID/DOK/section label, inside the solution env."""
     config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
     tex_contents: list[str] = []
     _fake_pdflatex(monkeypatch, tex_contents)
@@ -840,9 +841,16 @@ def test_review_label_inside_solution(
     main(_cli_args(config_file, questions_file, figures_dir, out_dir))
 
     solution_tex = tex_contents[1]
-    # the MCQ (question-level) and the FRQ part (part-level) each get a label
-    assert "\\reviewinfo{DOK 2 \\quad Sections: 1.1}" in solution_tex
-    assert "\\reviewinfo{DOK 3 \\quad Sections: 1.2, 1.3}" in solution_tex
+    # the MCQ (question-level) and the FRQ part (part-level) each get a label,
+    # carrying the id of the question the solution belongs to
+    assert (
+        "\\reviewinfo{DOK 2 \\quad Sections: 1.1 \\quad ID: \\texttt{q-mcq}}"
+        in solution_tex
+    )
+    assert (
+        "\\reviewinfo{DOK 3 \\quad Sections: 1.2, 1.3 \\quad ID: \\texttt{q-frq}}"
+        in solution_tex
+    )
     # every label lives inside a solution env, so it only renders in the
     # answer-key copy: one label per solution
     assert solution_tex.count("\\reviewinfo{") == solution_tex.count(

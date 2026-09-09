@@ -45,7 +45,7 @@ question's sections and DOK, so `--report-from-manifest` prints that
 report for an existing version on its own, without any other inputs and
 without regenerating anything. Manifests also record each MCQ's answer
 letter and a top-level `answer_key` summary, and the solution copy prints
-each question's DOK and sections for review. An `instructions` config
+each question's DOK, sections, and id for review. An `instructions` config
 field (raw LaTeX) renders a framed box at the top of the first page.
 """
 import argparse

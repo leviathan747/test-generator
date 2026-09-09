@@ -130,7 +130,7 @@ questions:
       - \resizebox{2.5in}{!}{\input{figures/5.tex}}
       - \resizebox{2.5in}{!}{\input{figures/7.tex}}
     solution: |
-      Downard facing fourth degree polynomial. Yeros at $x = -2$, $x = 0$, and
+      Downard facing fourth degree polynomial. Zeros at $x = -2$, $x = 0$, and
       $x = 3$ (multiplicity 2).
     calculator_active: false
     sections:
@@ -1036,10 +1036,11 @@ questions:
 
       \vspace{1em}
 
-      The table above gives the depth $D(t)$ of water in a tank, in
-      centimeters, at selected times $t$, in minutes. Based on the table, which
-      of the following intervals must contain a time at which the depth changes
-      from increasing to decreasing?
+      The table above gives values of the polynomial function $D(t)$
+      representing the depth of water in a tank, in centimeters, at selected
+      times $t$, in minutes. Based on the table, which of the following
+      intervals must contain a time at which the depth changes from increasing
+      to decreasing?
     answer: $4 < t < 6$
     distractors:
       - $0 < t < 2$
@@ -1785,7 +1786,7 @@ questions:
     calculator_active: false
     sections:
       - 1.4
-    dok: 2
+    dok: 3
     review: generated
 
   - id: 92516a74-6e40-4837-995a-1833b5b2fa03

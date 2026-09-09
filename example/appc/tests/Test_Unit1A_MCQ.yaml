@@ -4,6 +4,10 @@ class_name: AP Precalculus
 class_id: APPC
 duration: 30 min
 sections: 1.1 - 1.6
-# question_count: 15
+question_count: 15
 scramble_questions: true
 calculator_active: false
+dok_target: 2.0
+instructions: |
+  Read all directions and select the correct answer. No work on this packet
+  will be graded -- only the marked answer on your bubble sheet will be scored.

@@ -4,6 +4,9 @@ class_name: AP Calculus AB
 class_id: APCalc
 duration: 15 min
 sections: 1.1 - 1.16
+instructions: |
+  Read all directions and answer each question completely. Unless otherwise
+  specified, all answers will be real numbers.
 question_count: 1
 questions:
   - id: 5506d1fe-8daf-4b58-9cb8-2a6933640ade
