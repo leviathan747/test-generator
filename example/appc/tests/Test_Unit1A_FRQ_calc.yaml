@@ -1,0 +1,322 @@
+title: "Unit 1A Test FRQ: Polynomial Functions"
+author: Levi Starrett
+class_name: AP Precalculus
+class_id: APPC
+duration: 15 min
+sections: 1.1 - 1.6
+question_count: 1
+questions:
+  - id: 3341d22a-c222-4038-a8d4-499523bfe993
+    related_to:
+      - 9d2e9127-44ed-4b0d-b0f5-0e195c8b7d9e
+    question: |
+      The function $f$ is given by
+      \[
+        f(x) = -0.008x^5 + 0.277x^3 - 0.259x^2 - 1.523x - 0.506
+      \]
+    parts:
+      - question: |
+          Identify all relative extrema of $f$. Give your answers as ordered
+          pairs labeled as "maximum" or "minimum".
+        solution: |
+          Use calculator to graph and find extrema with \emph{maximum} and
+          \emph{minimum} tools.
+          \begin{gather*}
+            (-4.6692, -9.4844) \qquad \text{minimum} \\
+            (-1.1029, 0.5001) \qquad \text{maximum} \\
+            (1.9185, -2.6331) \qquad \text{minimum} \\
+            (3.8536, -1.1680) \qquad \text{maximum} \\
+          \end{gather*}
+          \emph{Note: answers are incorrect if not given correctly to three
+          decimal places, and $0.5$ points are deducted if any extra extrema
+          are given.}
+        grading:
+          - points: 0.5
+            criterion: '$(-4.6692, -9.4844)$ minimum'
+          - points: 0.5
+            criterion: '$(-1.1029, 0.5001)$ maximum'
+          - points: 0.5
+            criterion: '$(1.9185, -2.6331)$ minimum'
+          - points: 0.5
+            criterion: '$(3.8536, -1.1680)$ maximum'
+        sections:
+          - 1.4
+        dok: 2
+        work_space: 2in
+      - question: |
+          Find all real zeros of $f$.
+        solution: |
+          Use calculator to graph and find zeros with \emph{zero} tool.
+          \begin{gather*}
+            x = -5.9127 \\
+            x = -1.7581 \\
+            x = -0.3633 \\
+          \end{gather*}
+          \emph{Note: answers are incorrect if not given correctly to three
+          decimal places, and $0.5$ points are deducted if any extra zeros are
+          given.}
+        grading:
+          - points: 1
+            criterion: $x = -5.9127$
+          - points: 1
+            criterion: $x = -1.7581$
+          - points: 1
+            criterion: $x = -0.3633$
+        sections:
+          - 1.5
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          What is the maximum number of non-real zeros possible for the
+          function $f$? Give a reason for your answer.
+        solution: |
+          The number of zeros must be equal to the degree of the polynomial
+          function. $f$ has degree 5 and 3 real zeros. Therefore, there are a
+          maximum of 2 non-real zeros.
+        grading:
+          - points: 1
+            criterion: Answer
+          - points: 1
+            criterion: Reason using Fundamental Theorem of Algebra
+        sections:
+          - 1.5
+        dok: 3
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+
+  - id: 9d2e9127-44ed-4b0d-b0f5-0e195c8b7d9e
+    related_to:
+      - 3341d22a-c222-4038-a8d4-499523bfe993
+    question: |
+      The function $f$ is given by
+      \[
+        f(x) = 0.2x^5 - 1.48x^4 - 0.732x^3 + 15.484x^2 - 0.416x + 8.112
+      \]
+    parts:
+      - question: |
+          Identify all relative extrema of $f$. Give your answers as ordered
+          pairs labeled as "maximum" or "minimum".
+        solution: |
+          Use calculator to graph and find extrema with \emph{maximum} and
+          \emph{minimum} tools.
+          \begin{gather*}
+            (-2.1113, 47.1025) \qquad \text{maximum} \\
+            (0.0134, 8.1092) \qquad \text{minimum} \\
+            (2.8178, 55.7298) \qquad \text{maximum} \\
+            (5.2, 0) \qquad \text{minimum} \\
+          \end{gather*}
+          \emph{Note: answers are incorrect if not given correctly to three
+          decimal places, and $0.5$ points are deducted if any extra extrema
+          are given.}
+        grading:
+          - points: 0.5
+            criterion: '$(-2.1113, 47.1025)$ maximum'
+          - points: 0.5
+            criterion: '$(0.0134, 8.1092)$ minimum'
+          - points: 0.5
+            criterion: '$(2.8178, 55.7298)$ maximum'
+          - points: 0.5
+            criterion: '$(5.2, 0)$ minimum'
+        sections:
+          - 1.4
+        dok: 2
+        work_space: 2in
+      - question: |
+          Find all real zeros of $f$.
+        solution: |
+          Use calculator to graph and find zeros with \emph{zero} tool.
+          \begin{gather*}
+            x = -3 \\
+            x = 5.2 \\
+          \end{gather*}
+          \emph{Note: answers are incorrect if not given correctly to three
+          decimal places, and $0.5$ points are deducted if any extra zeros are
+          given.}
+        grading:
+          - points: 1
+            criterion: $x = -3$
+          - points: 1
+            criterion: $x = 5.2$
+        sections:
+          - 1.5
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          What is the maximum number of non-real zeros possible for the
+          function $f$? Give a reason for your answer.
+        solution: |
+          The number of zeros must be equal to the degree of the polynomial
+          function. $f$ has degree 5. The graph has a minimum at $(5.2, 0)$,
+          so $x = 5.2$ is a repeated zero and 3 of the zeros are real.
+          Therefore, there are a maximum of 2 non-real zeros.
+        grading:
+          - points: 1
+            criterion: Answer
+          - points: 1
+            criterion: Reason using Fundamental Theorem of Algebra
+        sections:
+          - 1.5
+        dok: 3
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+
+  - id: 5c29ca7d-2259-4028-92ac-a7e2c92fcb5d
+    related_to:
+      - c5701ce8-da59-48ae-9e75-2b48f6f6ccfb
+    question: |
+      The population of a town, in thousands of people, is modeled by the
+      function $P$ given by
+      \[
+        P(t) = -0.05t^4 + 1.2t^3 - 8.4t^2 + 18t + 40
+      \]
+      where $t$ is the number of years since 2010 and $0 \le t \le 13$.
+    parts:
+      - question: |
+          Find the average rate of change of $P$ over the interval
+          $2 \le t \le 9$. Using correct units, interpret the meaning of this
+          value in the context of the problem.
+        solution: |
+          \begin{align*}
+            \frac{P(9) - P(2)}{9 - 2} &= \frac{68.35 - 51.2}{7} \\
+                                      &= 2.45 \\
+          \end{align*}
+          From 2012 to 2019, the population of the town increased at an average
+          rate of $2.45$ thousand people per year.
+        grading:
+          - points: 1
+            criterion: $2.45$
+          - points: 1
+            criterion: Interpretation with correct units
+        sections:
+          - 1.2
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Identify all relative extrema of $P$ on the interval $0 < t < 13$.
+          Give your answers as ordered pairs labeled as "maximum" or "minimum".
+        solution: |
+          Use calculator to graph and find extrema with \emph{maximum} and
+          \emph{minimum} tools.
+          \begin{gather*}
+            (1.531, 51.900) \qquad \text{maximum} \\
+            (5.231, 38.633) \qquad \text{minimum} \\
+            (11.238, 87.066) \qquad \text{maximum} \\
+          \end{gather*}
+          \emph{Note: answers are incorrect if not given correctly to three
+          decimal places, and $0.5$ points are deducted if any extra extrema
+          are given.}
+        grading:
+          - points: 1
+            criterion: '$(1.531, 51.900)$ maximum'
+          - points: 1
+            criterion: '$(5.231, 38.633)$ minimum'
+          - points: 1
+            criterion: '$(11.238, 87.066)$ maximum'
+        sections:
+          - 1.4
+        dok: 2
+        work_space: 2in
+      - question: |
+          Describe the end behavior of $P$ as $t$ increases without bound.
+          Explain why $P$ is not an appropriate model for the population of the
+          town far into the future.
+        solution: |
+          $P$ has even degree with a negative leading coefficient, so
+          \[ \lim_{t \to \infty} P(t) = -\infty \]
+          The model eventually predicts negative values, but a population
+          cannot be negative. Therefore $P$ is not appropriate for large values
+          of $t$.
+        grading:
+          - points: 1
+            criterion: '$\lim_{t \to \infty} P(t) = -\infty$'
+          - points: 1
+            criterion: Explanation that a population cannot be negative
+        sections:
+          - 1.6
+        dok: 3
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
+
+  - id: c5701ce8-da59-48ae-9e75-2b48f6f6ccfb
+    related_to:
+      - 5c29ca7d-2259-4028-92ac-a7e2c92fcb5d
+    question: |
+      The number of daily visitors to a website, in thousands, is modeled by
+      the function $V$ given by
+      \[
+        V(t) = -0.06t^4 + 1.68t^3 - 14.4t^2 + 36t + 25
+      \]
+      where $t$ is the number of weeks since the website launched and
+      $0 \le t \le 13$.
+    parts:
+      - question: |
+          Find the average rate of change of $V$ over the interval
+          $3 \le t \le 10$. Using correct units, interpret the meaning of this
+          value in the context of the problem.
+        solution: |
+          \begin{align*}
+            \frac{V(10) - V(3)}{10 - 3} &= \frac{25 - 43.9}{7} \\
+                                        &= -2.7 \\
+          \end{align*}
+          From week 3 to week 10, the number of daily visitors to the website
+          decreased at an average rate of $2.7$ thousand visitors per week.
+        grading:
+          - points: 1
+            criterion: $-2.7$
+          - points: 1
+            criterion: Interpretation with correct units
+        sections:
+          - 1.2
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Identify all relative extrema of $V$ on the interval $0 < t < 13$.
+          Give your answers as ordered pairs labeled as "maximum" or "minimum".
+        solution: |
+          Use calculator to graph and find extrema with \emph{maximum} and
+          \emph{minimum} tools.
+          \begin{gather*}
+            (1.731, 52.343) \qquad \text{maximum} \\
+            (7.148, 3.509) \qquad \text{minimum} \\
+            (12.120, 42.368) \qquad \text{maximum} \\
+          \end{gather*}
+          \emph{Note: answers are incorrect if not given correctly to three
+          decimal places, and $0.5$ points are deducted if any extra extrema
+          are given.}
+        grading:
+          - points: 1
+            criterion: '$(1.731, 52.343)$ maximum'
+          - points: 1
+            criterion: '$(7.148, 3.509)$ minimum'
+          - points: 1
+            criterion: '$(12.120, 42.368)$ maximum'
+        sections:
+          - 1.4
+        dok: 2
+        work_space: 2in
+      - question: |
+          Describe the end behavior of $V$ as $t$ increases without bound.
+          Explain why $V$ is not an appropriate model for the number of daily
+          visitors to the website far into the future.
+        solution: |
+          $V$ has even degree with a negative leading coefficient, so
+          \[ \lim_{t \to \infty} V(t) = -\infty \]
+          The model eventually predicts negative values, but the number of
+          visitors cannot be negative. Therefore $V$ is not appropriate for
+          large values of $t$.
+        grading:
+          - points: 1
+            criterion: '$\lim_{t \to \infty} V(t) = -\infty$'
+          - points: 1
+            criterion: Explanation that a number of visitors cannot be negative
+        sections:
+          - 1.6
+        dok: 3
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated

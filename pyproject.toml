@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "test-generator"
 version = "0.2.0"
-description = "A small test generator package (skeleton)."
+description = "Generate test and quiz PDFs from YAML question banks via LaTeX."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }

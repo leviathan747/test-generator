@@ -1,0 +1,273 @@
+title: "Unit 1A Test FRQ: Polynomial Functions"
+author: Levi Starrett
+class_name: AP Precalculus
+class_id: APPC
+duration: 15 min
+sections: 1.1 - 1.6
+question_count: 1
+questions:
+  - id: 3a60e2fc-7cde-4543-b441-2c01b77d46d1
+    related_to:
+      - 45d1c01a-d91e-4883-96ab-3ba40f07705a
+    question: |
+      Answer the following questions.
+    parts:
+      - question: |
+          The function $g$ is given by $g(x) = x^4 + x^2 - 20$. Find all values
+          of $x$ for which $g(x) = 0$.
+        solution: |
+          \begin{align*}
+            0 &= x^4 + x^2 - 20 \\
+              &= (x^2 - 4)(x^2 + 5) \\
+              &= (x - 2)(x + 2)(x^2 + 5) \\
+            x &= -2, \quad x = 2 \\
+          \end{align*}
+          \emph{Note: $x^2 + 5$ has no real zeros.}
+        grading:
+          - points: 1
+            criterion: $x = -2$
+          - points: 1
+            criterion: $x = 2$
+        sections:
+          - 1.5
+        dok: 2
+        work_space: 2in
+      - question: |
+          On the coordinate axes below, sketch a graph of a polynomial function
+          $f$ with the following features:
+
+          \begin{itemize}
+            \item Two points of inflection
+            \item End behavior $\lim_{x \to -\infty} f(x) = \infty$ and
+              $\lim_{x \to \infty} f(x) = \infty$
+            \item One relative extremum
+          \end{itemize}
+        figure: 22.tex
+        figure_placement: below
+        figure_width: 4in
+        solution: |
+          Graphs may vary.
+          \begin{center}
+            \resizebox{3.5in}{!}{\input{figures/23.tex}}
+          \end{center}
+        grading:
+          - points: 1
+            criterion: Two points of inflection
+          - points: 1
+            criterion: '$\lim_{x \to -\infty} f(x) = \infty$'
+          - points: 1
+            criterion: '$\lim_{x \to \infty} f(x) = \infty$'
+          - points: 1
+            criterion: One relative extremum
+        sections:
+          - 1.4
+          - 1.6
+        dok: 3
+        work_space: 0in
+    calculator_active: false
+    question_type: FRQ
+
+  - id: 45d1c01a-d91e-4883-96ab-3ba40f07705a
+    related_to:
+      - 3a60e2fc-7cde-4543-b441-2c01b77d46d1
+    question: |
+      Answer the following questions.
+    parts:
+      - question: |
+          The function $g$ is given by $g(x) = x^4 - 7x^3 + 3x^2 - 21x$. Find
+          all values of $x$ for which $g(x) = 0$.
+        solution: |
+          \begin{align*}
+            0 &= x^4 - 7x^3 + 3x^2 - 21x \\
+              &= x(x^3 - 7x^2 + 3x - 21) \\
+              &= x \left[ x^2(x - 7) + 3(x - 7) \right] \\
+              &= x(x^2 + 3)(x - 7) \\
+            x &= 0, \quad x = 7 \\
+          \end{align*}
+          \emph{Note: $x^2 + 3$ has no real zeros.}
+        grading:
+          - points: 1
+            criterion: $x = 0$
+          - points: 1
+            criterion: $x = 7$
+        sections:
+          - 1.5
+        dok: 2
+        work_space: 2in
+      - question: |
+          On the coordinate axes below, sketch a graph of a polynomial function
+          $f$ with the following features:
+
+          \begin{itemize}
+            \item Concave up on the interval $(-\infty, -1)$; concave down on
+              the interval $(-1, \infty)$
+            \item Zeros at $x = -3$ and $x = 3$
+          \end{itemize}
+        figure: 22.tex
+        figure_placement: below
+        figure_width: 4in
+        solution: |
+          Graphs may vary.
+          \begin{center}
+            \resizebox{3.5in}{!}{\input{figures/24.tex}}
+          \end{center}
+        grading:
+          - points: 1
+            criterion: Concave up on $(-\infty, -1)$
+          - points: 1
+            criterion: Concave down on $(-1, \infty)$
+          - points: 1
+            criterion: Zero at $x = -3$
+          - points: 1
+            criterion: Zero at $x = 3$
+        sections:
+          - 1.4
+          - 1.6
+        dok: 3
+        work_space: 0in
+    calculator_active: false
+    question_type: FRQ
+
+  - id: af9100e2-9fb8-4162-a375-16922a8a84e1
+    related_to:
+      - 2895fd3c-a3ad-4673-85ca-96cc16abe991
+    question: |
+      The table below gives values of a function $f$ at selected values of
+      $x$.
+
+      \begin{center}
+        \begin{tabularx}{4in}{ |*{5}{Y|} }
+          \hline
+          \bm{$x$}    & -2 & 0  & 3  & 7  \\
+          \hline
+          \bm{$f(x)$} & 5  & 11 & 26 & 54 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+    parts:
+      - question: |
+          Find the average rate of change of $f$ over the interval
+          $-2 \le x \le 0$ and over the interval $3 \le x \le 7$.
+        solution: |
+          \begin{align*}
+            \frac{f(0) - f(-2)}{0 - (-2)} &= \frac{11 - 5}{2} = 3 \\
+            \frac{f(7) - f(3)}{7 - 3} &= \frac{54 - 26}{4} = 7 \\
+          \end{align*}
+        grading:
+          - points: 1
+            criterion: Average rate of change of $3$ on $[-2, 0]$
+          - points: 1
+            criterion: Average rate of change of $7$ on $[3, 7]$
+        sections:
+          - 1.2
+        dok: 1
+        work_space: 1.5in
+      - question: |
+          Over the interval $-2 \le x \le 7$, is $f$ increasing at an
+          increasing rate or increasing at a decreasing rate? Give a reason for
+          your answer.
+        solution: |
+          The average rates of change over the consecutive intervals
+          $[-2, 0]$, $[0, 3]$, and $[3, 7]$ are
+          \[ 3, \qquad \frac{26 - 11}{3} = 5, \qquad 7 \]
+          These rates are positive, so $f$ is increasing, and they are getting
+          larger. Therefore $f$ is increasing at an increasing rate.
+        grading:
+          - points: 1
+            criterion: Increasing at an increasing rate
+          - points: 1
+            criterion: Reason using increasing average rates of change
+        sections:
+          - 1.1
+        dok: 3
+        work_space: 1.5in
+      - question: |
+          Explain why $f$ cannot be a linear function.
+        solution: |
+          A linear function has the same average rate of change over every
+          interval. The average rate of change of $f$ is $3$ over $[-2, 0]$ but
+          $7$ over $[3, 7]$, so $f$ is not linear.
+        grading:
+          - points: 1
+            criterion: A linear function has a constant average rate of change
+          - points: 1
+            criterion: The average rates of change of $f$ are not constant
+        sections:
+          - 1.3
+        dok: 2
+        work_space: 1.5in
+    calculator_active: false
+    question_type: FRQ
+    review: generated
+
+  - id: 2895fd3c-a3ad-4673-85ca-96cc16abe991
+    related_to:
+      - af9100e2-9fb8-4162-a375-16922a8a84e1
+    question: |
+      The table below gives values of a function $g$ at selected values of
+      $x$.
+
+      \begin{center}
+        \begin{tabularx}{4in}{ |*{5}{Y|} }
+          \hline
+          \bm{$x$}    & -3 & 1  & 4 & 6 \\
+          \hline
+          \bm{$g(x)$} & 40 & 16 & 7 & 3 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+    parts:
+      - question: |
+          Find the average rate of change of $g$ over the interval
+          $-3 \le x \le 1$ and over the interval $4 \le x \le 6$.
+        solution: |
+          \begin{align*}
+            \frac{g(1) - g(-3)}{1 - (-3)} &= \frac{16 - 40}{4} = -6 \\
+            \frac{g(6) - g(4)}{6 - 4} &= \frac{3 - 7}{2} = -2 \\
+          \end{align*}
+        grading:
+          - points: 1
+            criterion: Average rate of change of $-6$ on $[-3, 1]$
+          - points: 1
+            criterion: Average rate of change of $-2$ on $[4, 6]$
+        sections:
+          - 1.2
+        dok: 1
+        work_space: 1.5in
+      - question: |
+          Over the interval $-3 \le x \le 6$, is $g$ decreasing at an
+          increasing rate or decreasing at a decreasing rate? Give a reason for
+          your answer.
+        solution: |
+          The average rates of change over the consecutive intervals
+          $[-3, 1]$, $[1, 4]$, and $[4, 6]$ are
+          \[ -6, \qquad \frac{7 - 16}{3} = -3, \qquad -2 \]
+          These rates are negative, so $g$ is decreasing, and they are getting
+          closer to zero. Therefore $g$ is decreasing at a decreasing rate.
+        grading:
+          - points: 1
+            criterion: Decreasing at a decreasing rate
+          - points: 1
+            criterion: Reason using increasing average rates of change
+        sections:
+          - 1.1
+        dok: 3
+        work_space: 1.5in
+      - question: |
+          Explain why $g$ cannot be a linear function.
+        solution: |
+          A linear function has the same average rate of change over every
+          interval. The average rate of change of $g$ is $-6$ over $[-3, 1]$
+          but $-2$ over $[4, 6]$, so $g$ is not linear.
+        grading:
+          - points: 1
+            criterion: A linear function has a constant average rate of change
+          - points: 1
+            criterion: The average rates of change of $g$ are not constant
+        sections:
+          - 1.3
+        dok: 2
+        work_space: 1.5in
+    calculator_active: false
+    question_type: FRQ
+    review: generated

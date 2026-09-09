@@ -19,7 +19,7 @@ questions:
     calculator_active: false
     sections:
       - 1.1
-    dok: unknown
+    dok: 2
     review: none
 
   - id: d1f25f9c-65d0-4ab5-9e20-e6a548d6a5e7
@@ -42,7 +42,7 @@ questions:
     calculator_active: false
     sections:
       - 1.6
-    dok: unknown
+    dok: 2
     review: none
 
   - id: a5896f7e-0129-40f3-9190-1433f75e2e25
@@ -72,7 +72,7 @@ questions:
     calculator_active: false
     sections:
       - 1.2
-    dok: unknown
+    dok: 3
     review: none
 
   - id: 45b72f41-b165-4fca-b48f-75eaa74301c1
@@ -113,7 +113,7 @@ questions:
     calculator_active: false
     sections:
       - 1.3
-    dok: unknown
+    dok: 2
     review: none
 
   - id: a3776af3-cec1-499a-87d6-589a55dc148f
@@ -137,7 +137,7 @@ questions:
       - 1.4
       - 1.5
       - 1.6
-    dok: unknown
+    dok: 2
     review: none
 
   - id: abdcefc6-3bfe-4c74-91ed-264d2904eda5
@@ -159,7 +159,7 @@ questions:
     calculator_active: false
     sections:
       - 1.5
-    dok: unknown
+    dok: 2
     review: none
 
   - id: d514bf75-f6b3-4dcf-b1b4-6317939db267
@@ -189,7 +189,7 @@ questions:
     calculator_active: false
     sections:
       - 1.2
-    dok: unknown
+    dok: 3
     review: none
 
   - id: be06bf61-540d-4e98-a227-8546b0de75b3
@@ -213,7 +213,7 @@ questions:
     calculator_active: false
     sections:
       - 1.4
-    dok: unknown
+    dok: 2
     review: none
 
   - id: b1b10672-5b32-4d1d-a6f4-33f6431bebb7
@@ -265,7 +265,7 @@ questions:
     calculator_active: false
     sections:
       - 1.5
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 8a6f7dc4-5beb-42b3-907b-2455a989a7cd
@@ -291,7 +291,7 @@ questions:
     calculator_active: true
     sections:
       - 1.4
-    dok: unknown
+    dok: 2
     review: none
 
   - id: e2375da7-bea8-403a-b863-6ebf14a8e0bc
@@ -319,7 +319,7 @@ questions:
     calculator_active: true
     sections:
       - 1.4
-    dok: unknown
+    dok: 2
     review: none
 
   - id: ed518ec4-c536-4691-906c-9f05351f7a24
@@ -350,7 +350,7 @@ questions:
     calculator_active: true
     sections:
       - 1.4
-    dok: unknown
+    dok: 3
     review: none
 
   - id: 23157c19-461a-4ac0-ad69-4e5475cf910a
@@ -381,7 +381,7 @@ questions:
     calculator_active: true
     sections:
       - 1.1
-    dok: unknown
+    dok: 2
     review: none
 
   - id: a9418125-f1f6-49b1-803b-63929617b23b
@@ -413,7 +413,7 @@ questions:
     calculator_active: true
     sections:
       - 1.4
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 8306f09a-c413-4c45-8ed9-2e8ded089c69
@@ -435,7 +435,7 @@ questions:
     calculator_active: false
     sections:
       - 1.5
-    dok: unknown
+    dok: 2
     review: none
 
   - id: d58e90b0-21a9-4ed7-9137-e257706d82f5
@@ -471,7 +471,7 @@ questions:
     calculator_active: false
     sections:
       - 1.3
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 80684e48-9250-458f-a622-d54e8ab3fea6
@@ -497,7 +497,7 @@ questions:
     calculator_active: false
     sections:
       - 1.4
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 05c92d7b-aee5-45ca-8506-2e2d7247834d
@@ -520,7 +520,7 @@ questions:
     calculator_active: false
     sections:
       - 1.4
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 69133f4b-67bf-4caf-a3f6-fad72b93b27a
@@ -542,7 +542,7 @@ questions:
     calculator_active: false
     sections:
       - 1.5
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 7e1dd106-8286-479d-9678-bf0d4f6e3de9
@@ -565,7 +565,7 @@ questions:
     calculator_active: false
     sections:
       - 1.1
-    dok: unknown
+    dok: 2
     review: none
 
   - id: e2955b05-de97-4356-a71b-ae300943c2d1
@@ -588,7 +588,7 @@ questions:
     calculator_active: false
     sections:
       - 1.6
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 62c27824-d379-41f9-aa26-9aaf185b5039
@@ -610,7 +610,7 @@ questions:
       - 1.4
       - 1.5
       - 1.6
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 1de9fc18-42c9-4b9f-b9d9-5bc37d290fb1
@@ -641,10 +641,10 @@ questions:
 
         \resizebox{2.5in}{!}{\input{figures/15.tex}}
       \end{multicols}
-    calculator_active: false
+    calculator_active: true
     sections:
       - 1.4
-    dok: unknown
+    dok: 3
     review: none
 
   - id: d86c4280-4ede-4137-a3c5-a8e08d522052
@@ -675,7 +675,7 @@ questions:
     calculator_active: true
     sections:
       - 1.4
-    dok: unknown
+    dok: 3
     review: none
 
   - id: c9965af5-f6c6-4b21-b768-bf68e5259d5a
@@ -704,7 +704,7 @@ questions:
     calculator_active: true
     sections:
       - 1.4
-    dok: unknown
+    dok: 2
     review: none
 
   - id: ae6a2860-f2f3-4190-9eaa-796b309c7c7b
@@ -736,5 +736,1854 @@ questions:
     calculator_active: true
     sections:
       - 1.1
-    dok: unknown
+    dok: 2
     review: none
+
+  - id: ad749096-2975-4ec9-a2bc-d53bd10bb151
+    related_to:
+      - 16277e53-8b18-4487-815a-16f3b952c7c5
+    question: |
+      The graph of the function $f$ is decreasing and concave up on the interval
+      $(a, b)$. Which of the following describes the rate of change of $f$ on
+      $(a, b)$?
+    answer: The rate of change of $f$ is negative and increasing.
+    distractors:
+      - The rate of change of $f$ is negative and decreasing.
+      - The rate of change of $f$ is positive and increasing.
+      - The rate of change of $f$ is positive and decreasing.
+    solution: |
+      A decreasing graph has a negative rate of change, and a concave up graph
+      has a rate of change that is increasing.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 2
+    review: generated
+
+  - id: 16277e53-8b18-4487-815a-16f3b952c7c5
+    related_to:
+      - ad749096-2975-4ec9-a2bc-d53bd10bb151
+    question: |
+      The rate of change of the function $g$ is positive and decreasing on the
+      interval $(a, b)$. Which of the following describes the graph of $g$ on
+      $(a, b)$?
+    answer: The graph of $g$ is increasing and concave down.
+    distractors:
+      - The graph of $g$ is increasing and concave up.
+      - The graph of $g$ is decreasing and concave down.
+      - The graph of $g$ is decreasing and concave up.
+    solution: |
+      A positive rate of change means the graph is increasing, and a decreasing
+      rate of change means the graph is concave down.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 2
+    review: generated
+
+  - id: 81deb0ff-490a-4e6f-8ab2-b06c4be60a50
+    question: |
+      A conical container with its vertex pointing down is filled with water at
+      a constant rate. Which of the following best describes the graph of the
+      depth of the water as a function of time?
+    answer: The graph is increasing and concave down.
+    distractors:
+      - The graph is increasing and concave up.
+      - The graph is increasing and linear.
+      - The graph is decreasing and concave down.
+    solution: |
+      The depth always increases, so the graph is increasing. As the container
+      fills, the horizontal cross sections get larger, so the same amount of
+      water raises the depth less and less. The rate of change is decreasing,
+      so the graph is concave down.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 3
+    review: generated
+
+  - id: 1679192e-f453-4304-9a07-b2c887781d1c
+    question: |
+      \begin{center}
+        \begin{tabularx}{6in}{ |*{6}{Y|} }
+          \hline
+          \bm{$x$} & 0 & 1 & 2 & 3 & 4 \\
+          \hline
+          \bm{$f(x)$} & 3 & 5 & 8 & 12 & 17 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above gives values of a function $f$ at selected values of $x$.
+      Which of the following best describes $f$ on the interval $[0, 4]$?
+    answer: $f$ is increasing, and the rate of change of $f$ is increasing.
+    distractors:
+      - $f$ is increasing, and the rate of change of $f$ is decreasing.
+      - $f$ is decreasing, and the rate of change of $f$ is increasing.
+      - $f$ is increasing, and the rate of change of $f$ is constant.
+    solution: |
+      \hspace{1.5in}
+      \begin{tabularx}{4.5in}{ *{4}{Y} }
+        $5 - 3 = \bm{2}$ & $8 - 5 = \bm{3}$ & $12 - 8 = \bm{4}$ & $17 - 12 = \bm{5}$ \\
+      \end{tabularx}
+
+      The output values increase, and the changes in output over consecutive
+      equal-length input intervals increase.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 2
+    review: generated
+
+  - id: e1b2ae82-0876-43ae-8e39-2c65ecb584b1
+    question: |
+      A cup of hot coffee is left on a counter. The temperature of the coffee
+      decreases over time and gets closer and closer to the temperature of the
+      room. The amount by which the temperature drops each minute becomes
+      smaller and smaller. Which of the following best describes the graph of
+      the temperature of the coffee as a function of time?
+    answer: The graph is decreasing and concave up.
+    distractors:
+      - The graph is decreasing and concave down.
+      - The graph is increasing and concave up.
+      - The graph is decreasing and linear.
+    solution: |
+      The temperature falls, so the graph is decreasing. The rate of change is
+      negative but is getting closer to zero, so the rate of change is
+      increasing and the graph is concave up.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 2
+    review: generated
+
+  - id: a3601051-0833-4e9c-b331-d72aa66910be
+    question: |
+      The graph of the function $f$ is concave up on the interval $(a, b)$.
+      Which of the following must be true on $(a, b)$?
+    answer: The rate of change of $f$ is increasing on $(a, b)$.
+    distractors:
+      - $f$ is increasing on $(a, b)$.
+      - The values of $f$ are positive on $(a, b)$.
+      - The rate of change of $f$ is positive on $(a, b)$.
+    solution: |
+      Concavity describes the behavior of the rate of change only. A concave up
+      graph has an increasing rate of change, but the function itself may be
+      increasing or decreasing and may take positive or negative values.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 2
+    review: generated
+
+  - id: 3b798416-9d4d-4dd0-81c5-7638e20c79b8
+    question: |
+      The graph of a function $f$ changes from concave down to concave up at
+      $x = 2$. Which of the following must be true about the rate of change of
+      $f$?
+    answer: The rate of change of $f$ has a relative minimum at $x = 2$.
+    distractors:
+      - The rate of change of $f$ has a relative maximum at $x = 2$.
+      - The rate of change of $f$ is equal to zero at $x = 2$.
+      - The rate of change of $f$ changes sign at $x = 2$.
+    solution: |
+      Concave down means the rate of change is decreasing and concave up means
+      the rate of change is increasing. At $x = 2$ the rate of change switches
+      from decreasing to increasing, which is a relative minimum of the rate of
+      change.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 2
+    review: generated
+
+  - id: 5fe71ffa-0c70-4924-9dab-d99b91e2e005
+    question: |
+      A cyclist rides along a straight road. The distance $d$ the cyclist has
+      traveled is an increasing function of time $t$, and the graph of $d$ is
+      concave down. Which of the following best describes the cyclist's speed?
+    answer: The speed is positive and decreasing.
+    distractors:
+      - The speed is positive and increasing.
+      - The speed is negative and decreasing.
+      - The speed is positive and constant.
+    solution: |
+      Speed is the rate of change of distance with respect to time. The
+      distance is increasing, so the speed is positive; the graph is concave
+      down, so that rate of change is decreasing.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 2
+    review: generated
+
+  - id: c16a508c-51f4-48e0-a451-baa723739eed
+    question: |
+      On the interval $[0, 5]$, the values of a function $f$ decrease and the
+      graph of $f$ is concave down. Which of the following describes the
+      average rates of change of $f$ over consecutive equal-length
+      subintervals of $[0, 5]$?
+    answer: The average rates of change are negative and are decreasing.
+    distractors:
+      - The average rates of change are negative and are increasing.
+      - The average rates of change are positive and are decreasing.
+      - The average rates of change are negative and are constant.
+    solution: |
+      Decreasing values give negative average rates of change, and concave down
+      means those rates of change get smaller as $x$ increases.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 2
+    review: generated
+
+  - id: 0e942dd8-8451-4d22-ad87-d1c632d6f68b
+    question: |
+      The value of a new car drops quickly during the first years after it is
+      purchased and then drops more and more slowly as time passes. Which of
+      the following best describes the graph of the value $V$ of the car as a
+      function of time $t$?
+    answer: The graph of $V$ is decreasing and concave up.
+    distractors:
+      - The graph of $V$ is decreasing and concave down.
+      - The graph of $V$ is increasing and concave down.
+      - The graph of $V$ is decreasing and linear.
+    solution: |
+      The value decreases, so the graph is decreasing. The rate of change is
+      negative but its magnitude is shrinking, so the rate of change is
+      increasing and the graph is concave up.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 2
+    review: generated
+
+  - id: b296aca4-209f-4d75-9809-ac978123529f
+    question: |
+      The function $f$ is increasing and concave down on the interval
+      $[1, 4]$, with $f(1) = 2$ and $f(4) = 8$. Which of the following must be
+      true?
+    answer: $f(2) > 4$
+    distractors:
+      - $f(2) < 4$
+      - $f(2) = 4$
+      - $f(3) < 6$
+    solution: |
+      The line through $(1, 2)$ and $(4, 8)$ has slope
+      $\frac{8 - 2}{4 - 1} = 2$, so at $x = 2$ the line has value
+      $2 + 2(1) = 4$. A concave down graph lies above the line segment joining
+      its endpoints, so $f(2) > 4$. (The same reasoning gives $f(3) > 6$.)
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 3
+    review: generated
+
+  - id: 9f985838-fce0-4153-a360-ba09358da54a
+    question: |
+      The graph of the function $f$ is decreasing and concave down over the
+      interval $[-3, 1]$. Which of the following could be the values of
+      $f(-3)$, $f(-1)$, and $f(1)$, in that order?
+    answer: 8, 5, 0
+    distractors:
+      - 8, 3, 0
+      - 0, 3, 8
+      - 0, 5, 8
+    solution: |
+      The values must decrease, which eliminates the two increasing lists. For
+      $8$, $5$, $0$ the changes are $-3$ and $-5$, so the average rates of
+      change are decreasing and the graph is concave down. For $8$, $3$, $0$
+      the changes are $-5$ and $-3$, which would be concave up.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 3
+    review: generated
+
+  - id: 019c11e0-0544-4944-a5c0-7d152d80aa1f
+    question: |
+      A quantity $y$ increases at a constant rate of change as $x$ increases.
+      Which of the following best describes the graph of $y$ as a function of
+      $x$?
+    answer: The graph is a line with positive slope and is neither concave up nor concave down.
+    distractors:
+      - The graph is increasing and concave up.
+      - The graph is increasing and concave down.
+      - The graph is a line with negative slope and is neither concave up nor concave down.
+    solution: |
+      A constant rate of change is the defining feature of a linear function,
+      and the rate of change is positive because the quantity increases. A line
+      has no concavity because its rate of change never changes.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 1
+    review: generated
+
+  - id: b03c7b83-786d-4e67-87db-a3f59724d360
+    question: |
+      \begin{center}
+        \begin{tabularx}{6in}{ |*{6}{Y|} }
+          \hline
+          \bm{$t$} & 0 & 2 & 4 & 6 & 8 \\
+          \hline
+          \bm{$D(t)$} & 20 & 24 & 27 & 25 & 20 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above gives the depth $D(t)$ of water in a tank, in
+      centimeters, at selected times $t$, in minutes. Based on the table, which
+      of the following intervals must contain a time at which the depth changes
+      from increasing to decreasing?
+    answer: $4 < t < 6$
+    distractors:
+      - $0 < t < 2$
+      - $2 < t < 4$
+      - $6 < t < 8$
+    solution: |
+      \hspace{1.5in}
+      \begin{tabularx}{4.5in}{ *{4}{Y} }
+        $24 - 20 = \bm{4}$ & $27 - 24 = \bm{3}$ & $25 - 27 = \bm{-2}$ & $20 - 25 = \bm{-5}$ \\
+      \end{tabularx}
+
+      The depth increases on $[0, 4]$ and decreases on $[4, 8]$, so the change
+      from increasing to decreasing happens between $t = 4$ and $t = 6$.
+    calculator_active: false
+    sections:
+      - 1.1
+    dok: 2
+    review: generated
+
+  - id: 58188ea1-6e11-4917-8e08-9ac83c04eaf8
+    related_to:
+      - fd91997c-10e1-4177-8676-152f8f4e7db2
+    question: |
+      The function $f$ is given by $f(x) = x^2 - 4x + 1$. What is the average
+      rate of change of $f$ over the interval $[1, 5]$?
+    answer: 2
+    distractors:
+      - 8
+      - 4
+      - $\frac{1}{2}$
+    solution: |
+      $f(1) = 1 - 4 + 1 = -2$ and $f(5) = 25 - 20 + 1 = 6$, so the average rate
+      of change is $\frac{6 - (-2)}{5 - 1} = \frac{8}{4} = 2$.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 2
+    review: generated
+
+  - id: fd91997c-10e1-4177-8676-152f8f4e7db2
+    related_to:
+      - 58188ea1-6e11-4917-8e08-9ac83c04eaf8
+    question: |
+      The function $f$ is given by $f(x) = x^3 - 2x$. What is the average rate
+      of change of $f$ over the interval $[-1, 2]$?
+    answer: 1
+    distractors:
+      - 3
+      - $\frac{5}{3}$
+      - $-1$
+    solution: |
+      $f(-1) = -1 + 2 = 1$ and $f(2) = 8 - 4 = 4$, so the average rate of
+      change is $\frac{4 - 1}{2 - (-1)} = \frac{3}{3} = 1$.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 2
+    review: generated
+
+  - id: e9470152-9ee0-49f1-9aba-9a4f5f515279
+    question: |
+      \begin{center}
+        \begin{tabularx}{5in}{ |*{5}{Y|} }
+          \hline
+          \bm{$x$} & 1 & 3 & 6 & 10 \\
+          \hline
+          \bm{$g(x)$} & 4 & 10 & 13 & 5 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above gives values of the function $g$ at selected values of
+      $x$. What is the average rate of change of $g$ over the interval
+      $[3, 10]$?
+    answer: $-\frac{5}{7}$
+    distractors:
+      - $\frac{5}{7}$
+      - $-\frac{5}{9}$
+      - 1
+    solution: |
+      $\frac{g(10) - g(3)}{10 - 3} = \frac{5 - 10}{7} = -\frac{5}{7}$
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 1
+    review: generated
+
+  - id: 822ba590-55dd-4d1c-9a87-5f47654886a0
+    question: |
+      \begin{center}
+        \begin{tabularx}{6in}{ |*{6}{Y|} }
+          \hline
+          \bm{$x$} & 0 & 2 & 4 & 6 & 8 \\
+          \hline
+          \bm{$f(x)$} & 3 & 7 & 8 & 16 & 20 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above gives values of the function $f$ at selected values of
+      $x$. Over which of the following intervals is the average rate of change
+      of $f$ the greatest?
+    answer: $[4, 6]$
+    distractors:
+      - $[0, 2]$
+      - $[2, 4]$
+      - $[6, 8]$
+    solution: |
+      \hspace{1.5in}
+      \begin{tabularx}{4.5in}{ *{4}{Y} }
+        $\frac{7 - 3}{2} = \bm{2}$ & $\frac{8 - 7}{2} = \bm{0.5}$ & $\frac{16 - 8}{2} = \bm{4}$ & $\frac{20 - 16}{2} = \bm{2}$ \\
+      \end{tabularx}
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 2
+    review: generated
+
+  - id: d79c6dad-b229-41db-b916-3c824bc740aa
+    question: |
+      The average rate of change of the function $f$ over the interval
+      $[2, 7]$ is 3. If $f(2) = -3$, what is $f(7)$?
+    answer: 12
+    distractors:
+      - 15
+      - 6
+      - 18
+    solution: |
+      $\frac{f(7) - (-3)}{7 - 2} = 3 \implies f(7) + 3 = 15 \implies f(7) = 12$
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 2
+    review: generated
+
+  - id: 700aab15-60e4-4335-9bf0-e79d284bec1a
+    question: |
+      The function $P$ gives the population of a town, in thousands of people,
+      $t$ years after the year 2000. The average rate of change of $P$ over the
+      interval $[5, 15]$ is 1.2. Which of the following is the best
+      interpretation of this value?
+    answer: From 2005 to 2015, the population of the town grew by an average of 1.2 thousand people per year.
+    distractors:
+      - From 2005 to 2015, the population of the town grew by a total of 1.2 thousand people.
+      - In 2015, the population of the town was 1.2 thousand people greater than in 2005.
+      - The population of the town grows at a constant rate of 1.2 thousand people per year.
+    solution: |
+      An average rate of change is a change in output per unit change in input,
+      so its units are thousands of people per year, and it describes an
+      average over the interval rather than a constant rate.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 2
+    review: generated
+
+  - id: 878f7e1f-066f-4517-ba14-a607a8d8db88
+    question: |
+      The rate of change of the function $f$ is given by the function $R$,
+      where $R(1) = 4$ and $R(5) = -4$. What is the average rate of change of
+      $R$ over the interval $[1, 5]$?
+    answer: $-2$
+    distractors:
+      - 2
+      - $-8$
+      - 0
+    solution: |
+      $\frac{R(5) - R(1)}{5 - 1} = \frac{-4 - 4}{4} = -2$
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 1
+    review: generated
+
+  - id: 4eb52419-e6bd-4923-9810-27918983c983
+    question: |
+      The function $f$ is given by $f(x) = \frac{1}{x}$. What is the average
+      rate of change of $f$ over the interval $[1, 4]$?
+    answer: $-\frac{1}{4}$
+    distractors:
+      - $-\frac{3}{4}$
+      - $\frac{1}{4}$
+      - $-\frac{5}{12}$
+    solution: |
+      $f(1) = 1$ and $f(4) = \frac{1}{4}$, so the average rate of change is
+      $\frac{\frac{1}{4} - 1}{4 - 1} = \frac{-\frac{3}{4}}{3} = -\frac{1}{4}$.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 2
+    review: generated
+
+  - id: ea5da2a7-2639-4e4b-ab90-10b62878a7b1
+    question: |
+      The function $f$ is given by $f(x) = x^2 - 6x + 5$. If the average rate
+      of change of $f$ over the interval $[1, b]$ is 0, what is the value of
+      $b$?
+    answer: 5
+    distractors:
+      - 3
+      - 6
+      - 11
+    solution: |
+      $f(1) = 0$, so the average rate of change is
+      $\frac{f(b) - 0}{b - 1} = \frac{(b - 1)(b - 5)}{b - 1} = b - 5$ for
+      $b \ne 1$. This equals 0 when $b = 5$.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 2
+    review: generated
+
+  - id: e4a0202e-9cca-42b7-8eb2-c5b39ae7149d
+    question: |
+      The function $f$ is given by $f(x) = 2x^2$. Over which of the following
+      intervals is the average rate of change of $f$ equal to 6?
+    answer: $[1, 2]$
+    distractors:
+      - $[0, 2]$
+      - $[2, 4]$
+      - $[-1, 2]$
+    solution: |
+      $\frac{2b^2 - 2a^2}{b - a} = \frac{2(b - a)(b + a)}{b - a} = 2(a + b)$,
+      so the average rate of change is 6 when $a + b = 3$.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 2
+    review: generated
+
+  - id: cb062252-3c26-4225-953d-3490ec7fe0ff
+    question: |
+      The average rate of change of a function $f$ over the interval $[a, b]$
+      is equal to which of the following?
+    answer: The slope of the line through the points $(a, f(a))$ and $(b, f(b))$
+    distractors:
+      - The difference $f(b) - f(a)$
+      - The value of $f$ at the midpoint of the interval
+      - The average of $f(a)$ and $f(b)$
+    solution: |
+      $\frac{f(b) - f(a)}{b - a}$ is exactly the slope of the secant line
+      joining the two points on the graph of $f$.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 1
+    review: generated
+
+  - id: 5bc7d7a8-bf2d-427b-9ce1-4716cce59744
+    question: |
+      Over a certain interval, the average rates of change of a function $f$
+      over consecutive equal-length input-value intervals are increasing. Which
+      of the following best describes the graph of $f$ on that interval?
+    answer: The graph of $f$ is concave up.
+    distractors:
+      - The graph of $f$ is concave down.
+      - The graph of $f$ is increasing.
+      - The graph of $f$ is decreasing.
+    solution: |
+      Increasing average rates of change means the rate of change of $f$ is
+      increasing, which is what it means for a graph to be concave up. The
+      rates of change could still all be negative, so $f$ need not be
+      increasing.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 2
+    review: generated
+
+  - id: da9dc9d4-33d9-486d-b8d3-237288ee897b
+    question: |
+      \begin{center}
+        \begin{tabularx}{4in}{ |*{4}{Y|} }
+          \hline
+          \bm{$x$} & 2 & 4 & 6 \\
+          \hline
+          \bm{$f(x)$} & 5 & 11 & 15 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above gives values of the function $f$ at selected values of
+      $x$. Based on the table, which of the following is the best estimate of
+      the rate of change of $f$ at $x = 4$?
+    answer: 2.5
+    distractors:
+      - 2
+      - 3
+      - 6
+    solution: |
+      The best estimate uses the interval centered at $x = 4$:
+      $\frac{f(6) - f(2)}{6 - 2} = \frac{15 - 5}{4} = 2.5$. This is the average
+      of the average rates of change over $[2, 4]$ and $[4, 6]$.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 2
+    review: generated
+
+  - id: e0906fab-accf-4d25-86e4-f7b55a15dfc2
+    question: |
+      The function $f$ is given by $f(x) = x^3 - 3x$. What is the average rate
+      of change of $f$ over the interval $[-2, 1]$?
+    answer: 0
+    distractors:
+      - $-\frac{4}{3}$
+      - 1
+      - $-2$
+    solution: |
+      $f(-2) = -8 + 6 = -2$ and $f(1) = 1 - 3 = -2$, so the average rate of
+      change is $\frac{-2 - (-2)}{1 - (-2)} = \frac{0}{3} = 0$.
+    calculator_active: false
+    sections:
+      - 1.2
+    dok: 2
+    review: generated
+
+  - id: 1dfe2bb3-accf-46bc-a060-c5e84bf01c63
+    related_to:
+      - f0322aed-b70d-4409-96da-ddc27ee8d1c1
+    question: |
+      \begin{center}
+        \begin{tabularx}{6in}{ |*{6}{Y|} }
+          \hline
+          \bm{$x$} & 1 & 3 & 5 & 7 & 9 \\
+          \hline
+          \bm{$f(x)$} & 2 & 6 & 14 & 26 & 42 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above shows values for a function $f$ at selected values of
+      $x$. Which of the following statements about $f$ best fits these data?
+    answer: $f$ is best modeled by a quadratic function because the change in the average rates of change over consecutive equal-length input-value intervals is constant.
+    distractors:
+      - $f$ is best modeled by a linear function because the rate of change over consecutive equal-length input-value intervals is constant.
+      - $f$ is best modeled by a quadratic function because the rate of change over consecutive equal-length input-value intervals is constant.
+      - $f$ is best modeled by a linear function because the change in the average rates of change over consecutive equal-length input-value intervals is constant.
+    solution: |
+      \hspace{1.5in}
+      \begin{tabularx}{4.5in}{ *{4}{Y} }
+        $6 - 2 = \bm{4}$ & $14 - 6 = \bm{8}$ & $26 - 14 = \bm{12}$ & $42 - 26 = \bm{16}$ \\
+      \end{tabularx}
+
+      \hspace{2in}
+      \begin{tabularx}{3.5in}{ *{3}{Y} }
+        $8 - 4 = \bm{4}$ & $12 - 8 = \bm{4}$ & $16 - 12 = \bm{4}$ \\
+      \end{tabularx}
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 2
+    review: generated
+
+  - id: f0322aed-b70d-4409-96da-ddc27ee8d1c1
+    related_to:
+      - 1dfe2bb3-accf-46bc-a060-c5e84bf01c63
+    question: |
+      \begin{center}
+        \begin{tabularx}{6in}{ |*{6}{Y|} }
+          \hline
+          \bm{$x$} & -3 & 0 & 3 & 6 & 9 \\
+          \hline
+          \bm{$f(x)$} & 7 & 4 & 1 & -2 & -5 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above shows values for a function $f$ at selected values of
+      $x$. Which of the following statements about $f$ best fits these data?
+    answer: $f$ is best modeled by a linear function because the rate of change over consecutive equal-length input-value intervals is constant.
+    distractors:
+      - $f$ is best modeled by a quadratic function because the change in the average rates of change over consecutive equal-length input-value intervals is constant.
+      - $f$ is best modeled by a linear function because the change in the average rates of change over consecutive equal-length input-value intervals is constant.
+      - $f$ is best modeled by a quadratic function because the rate of change over consecutive equal-length input-value intervals is constant.
+    solution: |
+      \hspace{1.5in}
+      \begin{tabularx}{4.5in}{ *{4}{Y} }
+        $4 - 7 = \bm{-3}$ & $1 - 4 = \bm{-3}$ & $-2 - 1 = \bm{-3}$ & $-5 - (-2) = \bm{-3}$ \\
+      \end{tabularx}
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 2
+    review: generated
+
+  - id: a8b9ee96-455e-45ea-8a77-d687fe9bf508
+    question: |
+      Let $f$ be a quadratic function. Which of the following describes the
+      average rates of change of $f$ over consecutive equal-length input-value
+      intervals?
+    answer: The average rates of change change at a constant rate.
+    distractors:
+      - The average rates of change are constant.
+      - The average rates of change are always positive.
+      - The average rates of change are always equal to zero.
+    solution: |
+      A quadratic function has constant second differences, which means the
+      average rates of change over consecutive equal-length intervals change by
+      the same amount each time.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 1
+    review: generated
+
+  - id: 4a103694-cecd-42bd-a693-eeaa60e00db3
+    question: |
+      The function $f$ is linear, and the average rate of change of $f$ over
+      the interval $[0, 4]$ is 5. What is the average rate of change of $f$
+      over the interval $[10, 12]$?
+    answer: 5
+    distractors:
+      - 2.5
+      - 10
+      - 15
+    solution: |
+      A linear function has a constant rate of change, so its average rate of
+      change is the same over every interval.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 1
+    review: generated
+
+  - id: 76433069-c20a-4de8-ab06-554958029070
+    question: |
+      The graph of the quadratic function $f$ has its vertex at $x = 3$. Over
+      which of the following intervals is the average rate of change of $f$
+      equal to 0?
+    answer: $[1, 5]$
+    distractors:
+      - $[0, 3]$
+      - $[3, 6]$
+      - $[2, 7]$
+    solution: |
+      The graph of a quadratic function is symmetric about the vertical line
+      through its vertex, so $f(a) = f(b)$ exactly when $a$ and $b$ are
+      equidistant from $x = 3$. Only $[1, 5]$ has midpoint 3.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 2
+    review: generated
+
+  - id: 7a14b850-af1d-4d69-bcfb-f423354cb181
+    question: |
+      A quadratic function $g$ is evaluated at input values that increase by 1.
+      The change in the average rates of change over these consecutive
+      equal-length intervals is a constant 6. What is the leading coefficient
+      of $g$?
+    answer: 3
+    distractors:
+      - 6
+      - 1.5
+      - 12
+    solution: |
+      For $g(x) = ax^2 + bx + c$ and input values spaced 1 apart, the second
+      differences are all equal to $2a$. So $2a = 6$ and $a = 3$.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 3
+    review: generated
+
+  - id: bec8fd59-0e8c-4f5c-b75f-3ae087c85105
+    question: |
+      \begin{center}
+        \begin{tabularx}{6in}{ |*{6}{Y|} }
+          \hline
+          \bm{$x$} & 0 & 1 & 2 & 3 & 4 \\
+          \hline
+          \bm{$f(x)$} & 1 & 3 & 9 & 19 & ? \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above gives values of a quadratic function $f$ at selected
+      values of $x$. What is the value of $f(4)$?
+    answer: 33
+    distractors:
+      - 29
+      - 31
+      - 35
+    solution: |
+      \hspace{2in}
+      \begin{tabularx}{4in}{ *{3}{Y} }
+        $3 - 1 = \bm{2}$ & $9 - 3 = \bm{6}$ & $19 - 9 = \bm{10}$ \\
+      \end{tabularx}
+
+      The second differences are a constant 4, so the next first difference is
+      $10 + 4 = 14$ and $f(4) = 19 + 14 = 33$.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 2
+    review: generated
+
+  - id: fd1198a2-1969-4645-8144-28f7c9d9133e
+    question: |
+      The function $f$ is linear with $f(2) = 7$ and $f(6) = -1$. What is
+      $f(10)$?
+    answer: $-9$
+    distractors:
+      - $-5$
+      - $-17$
+      - 3
+    solution: |
+      The rate of change is $\frac{-1 - 7}{6 - 2} = -2$. Since the rate of
+      change is constant, $f(10) = -1 + (-2)(4) = -9$.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 2
+    review: generated
+
+  - id: 6184d6b5-6eb1-417d-a1bf-25095bf50e43
+    question: |
+      The quadratic function $f$ has a positive leading coefficient. Which of
+      the following is true about the rate of change of $f$?
+    answer: The rate of change of $f$ is increasing for all values of $x$.
+    distractors:
+      - The rate of change of $f$ is constant for all values of $x$.
+      - The rate of change of $f$ is decreasing for all values of $x$.
+      - The rate of change of $f$ is positive for all values of $x$.
+    solution: |
+      A positive leading coefficient makes the parabola concave up everywhere,
+      and a concave up graph has an increasing rate of change. The rate of
+      change is still negative to the left of the vertex.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 2
+    review: generated
+
+  - id: e409795a-5dad-46e0-89c7-4ac279ffe534
+    question: |
+      The average rate of change of the quadratic function $f$ over the
+      interval $[-1, 5]$ is 0. Which of the following must be true?
+    answer: The graph of $f$ has its vertex at $x = 2$.
+    distractors:
+      - The graph of $f$ has zeros at $x = -1$ and $x = 5$.
+      - The graph of $f$ has its vertex at $x = 0$.
+      - The function $f$ is constant.
+    solution: |
+      An average rate of change of 0 means $f(-1) = f(5)$. Because a parabola
+      is symmetric about the vertical line through its vertex, the vertex lies
+      at the midpoint $x = \frac{-1 + 5}{2} = 2$.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 3
+    review: generated
+
+  - id: 58cd8c61-ecfd-44ad-a093-e5431093a121
+    question: |
+      The height of an object above the ground is recorded at times that are
+      equally spaced. The average rates of change of the height over these
+      consecutive equal-length time intervals decrease by the same amount each
+      interval. Which type of function best models the height of the object?
+    answer: A quadratic function
+    distractors:
+      - A linear function
+      - A cubic function
+      - A constant function
+    solution: |
+      Average rates of change that change by a constant amount over
+      consecutive equal-length input intervals is the defining characteristic
+      of a quadratic function.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 2
+    review: generated
+
+  - id: fbc07214-6ce3-4538-88ad-2eec78a854ff
+    question: |
+      \begin{center}
+        \begin{tabularx}{6in}{ |*{6}{Y|} }
+          \hline
+          \bm{$x$} & 0 & 1 & 2 & 3 & 4 \\
+          \hline
+          \bm{$f(x)$} & 2 & 4 & 8 & 16 & 32 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above shows values for a function $f$ at selected values of
+      $x$. Which of the following statements about $f$ best fits these data?
+    answer: $f$ is neither linear nor quadratic because neither the average rates of change nor the changes in the average rates of change over consecutive equal-length input-value intervals are constant.
+    distractors:
+      - $f$ is linear because the average rate of change over consecutive equal-length input-value intervals is constant.
+      - $f$ is quadratic because the change in the average rates of change over consecutive equal-length input-value intervals is constant.
+      - $f$ is quadratic because the average rate of change over consecutive equal-length input-value intervals is constant.
+    solution: |
+      \hspace{1.5in}
+      \begin{tabularx}{4.5in}{ *{4}{Y} }
+        $4 - 2 = \bm{2}$ & $8 - 4 = \bm{4}$ & $16 - 8 = \bm{8}$ & $32 - 16 = \bm{16}$ \\
+      \end{tabularx}
+
+      \hspace{2in}
+      \begin{tabularx}{3.5in}{ *{3}{Y} }
+        $4 - 2 = \bm{2}$ & $8 - 4 = \bm{4}$ & $16 - 8 = \bm{8}$ \\
+      \end{tabularx}
+
+      Neither the first differences nor the second differences are constant.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 2
+    review: generated
+
+  - id: 8950e671-f609-428a-9496-015d62d4a920
+    question: |
+      How many points of inflection does the graph of a quadratic function
+      have?
+    answer: 0
+    distractors:
+      - 1
+      - 2
+      - It depends on the leading coefficient.
+    solution: |
+      The rate of change of a quadratic function is linear, so it is always
+      increasing or always decreasing. The concavity therefore never changes,
+      and the graph has no point of inflection.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 1
+    review: generated
+
+  - id: c5ad2867-d885-4d09-bce0-53c7967bc505
+    question: |
+      The function $f$ is given by $f(x) = x^2$. The average rate of change of
+      $f$ over the interval $[a, b]$ is equal to the rate of change of $f$ at
+      which of the following values of $x$?
+    answer: $x = \frac{a + b}{2}$
+    distractors:
+      - $x = a$
+      - $x = b$
+      - $x = \sqrt{ab}$
+    solution: |
+      The average rate of change of $f$ over $[a, b]$ is
+      $\frac{b^2 - a^2}{b - a} = a + b$, and the rate of change of $f$ at $x$
+      is $2x$. Setting $2x = a + b$ gives $x = \frac{a + b}{2}$, the midpoint
+      of the interval.
+    calculator_active: false
+    sections:
+      - 1.3
+    dok: 3
+    review: generated
+
+  - id: 4f744847-e0a9-441c-9605-ecb216c878a5
+    related_to:
+      - c62e8833-92df-4789-a6f9-033d881852bb
+    question: |
+      What is the maximum number of relative extrema that the graph of a
+      polynomial function of degree 5 can have?
+    answer: 4
+    distractors:
+      - 3
+      - 5
+      - 6
+    solution: |
+      A polynomial of degree $n$ has at most $n - 1$ relative extrema, because
+      its rate of change is a polynomial of degree $n - 1$ and can change sign
+      at most $n - 1$ times.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 1
+    review: generated
+
+  - id: c62e8833-92df-4789-a6f9-033d881852bb
+    related_to:
+      - 4f744847-e0a9-441c-9605-ecb216c878a5
+    question: |
+      What is the maximum number of points of inflection that the graph of a
+      polynomial function of degree 6 can have?
+    answer: 4
+    distractors:
+      - 3
+      - 5
+      - 6
+    solution: |
+      A polynomial of degree $n$ has at most $n - 2$ points of inflection. The
+      concavity can change at most $n - 2$ times.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 1
+    review: generated
+
+  - id: ec793d02-d18b-4674-a201-6a20be572bee
+    question: |
+      The rate of change of the polynomial function $f$ is given by the
+      function $R$, where $R(x) = (x - 2)(x + 4)$. On which of the following
+      intervals is $f$ decreasing?
+    answer: $(-4, 2)$
+    distractors:
+      - $(-\infty, -4)$
+      - $(2, \infty)$
+      - $(-\infty, -4) \cup (2, \infty)$
+    solution: |
+      $f$ is decreasing where its rate of change is negative. The parabola
+      $R(x) = (x - 2)(x + 4)$ opens upward with zeros at $x = -4$ and $x = 2$,
+      so $R(x) < 0$ exactly on $(-4, 2)$.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 2
+    review: generated
+
+  - id: 1927c4c5-517d-4baf-857c-1e6b3550a766
+    question: |
+      The rate of change of the polynomial function $f$ is given by the
+      function $R$, where $R(x) = 3x^2 - 12$. At which of the following values
+      of $x$ does $f$ have a relative maximum?
+    answer: $x = -2$
+    distractors:
+      - $x = 2$
+      - $x = 0$
+      - $x = -12$
+    solution: |
+      $R(x) = 3(x - 2)(x + 2)$, so $R$ is positive on $(-\infty, -2)$,
+      negative on $(-2, 2)$, and positive on $(2, \infty)$. At $x = -2$ the
+      rate of change changes from positive to negative, so $f$ changes from
+      increasing to decreasing.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 2
+    review: generated
+
+  - id: 92516a74-6e40-4837-995a-1833b5b2fa03
+    question: |
+      The polynomial function $p$ has a relative minimum at $x = 1$. Which of
+      the following must be true about the rate of change of $p$?
+    answer: The rate of change of $p$ changes from negative to positive at $x = 1$.
+    distractors:
+      - The rate of change of $p$ changes from positive to negative at $x = 1$.
+      - The rate of change of $p$ has a relative minimum at $x = 1$.
+      - The rate of change of $p$ is negative for all $x$ near $x = 1$.
+    solution: |
+      A relative minimum occurs where the function changes from decreasing to
+      increasing, so its rate of change changes from negative to positive.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 2
+    review: generated
+
+  - id: 08526d4b-66a0-4f8c-95fc-66afd613fb07
+    question: |
+      Let $f$ be a polynomial function of odd degree. Which of the following
+      must be true?
+    answer: The graph of $f$ has no absolute maximum and no absolute minimum.
+    distractors:
+      - The graph of $f$ has both an absolute maximum and an absolute minimum.
+      - The graph of $f$ has an absolute maximum but no absolute minimum.
+      - The graph of $f$ has at least one relative extremum.
+    solution: |
+      An odd-degree polynomial has one end going up and the other going down,
+      so its output values increase and decrease without bound. A function like
+      $f(x) = x^3$ shows that an odd-degree polynomial need not have any
+      relative extrema.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 3
+    review: generated
+
+  - id: d8d7a13e-7ccd-4257-af1d-ea9d36e9193d
+    related_to:
+      - bd2dc1ea-6095-431a-92bd-01e097077005
+    question: |
+      The rate of change of the polynomial function $f$ is given by the
+      function $R$, whose graph is a parabola that opens upward with vertex at
+      the point $(3, -5)$. How many relative extrema does the graph of $f$
+      have?
+    answer: 2
+    distractors:
+      - 0
+      - 1
+      - 3
+    solution: |
+      An upward-opening parabola with a vertex below the $x$-axis crosses the
+      $x$-axis twice. The rate of change therefore changes sign twice, giving
+      $f$ two relative extrema.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 3
+    review: generated
+
+  - id: bd2dc1ea-6095-431a-92bd-01e097077005
+    related_to:
+      - d8d7a13e-7ccd-4257-af1d-ea9d36e9193d
+    question: |
+      The rate of change of the polynomial function $f$ is given by the
+      function $R$, whose graph is a parabola that opens upward with vertex at
+      the point $(3, -5)$. How many points of inflection does the graph of $f$
+      have?
+    answer: 1
+    distractors:
+      - 0
+      - 2
+      - 3
+    solution: |
+      Points of inflection of $f$ occur where the rate of change $R$ changes
+      from decreasing to increasing or from increasing to decreasing. That
+      happens only at the vertex of the parabola, $x = 3$.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 3
+    review: generated
+
+  - id: 2aedf347-5965-4d61-a551-5e2f208889eb
+    question: |
+      The rate of change of the polynomial function $f$ is given by the
+      function $R$, where $R(x) = -2(x - 1)(x - 5)$. On which of the following
+      intervals is $f$ increasing?
+    answer: $(1, 5)$
+    distractors:
+      - $(-\infty, 1)$
+      - $(5, \infty)$
+      - $(-\infty, 1) \cup (5, \infty)$
+    solution: |
+      The parabola $R$ opens downward with zeros at $x = 1$ and $x = 5$, so
+      $R(x) > 0$ exactly on $(1, 5)$. A positive rate of change means $f$ is
+      increasing.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 2
+    review: generated
+
+  - id: 1a43c2a3-b70c-47f7-8027-e0635ad8a862
+    question: |
+      \begin{center}
+        \begin{tabularx}{6in}{ |*{6}{Y|} }
+          \hline
+          \bm{$x$} & 0 & 1 & 2 & 3 & 4 \\
+          \hline
+          \bm{$f(x)$} & 2 & 6 & 9 & 5 & 1 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above gives values of the polynomial function $f$ at selected
+      values of $x$. Which of the following must be true?
+    answer: $f$ has at least one relative maximum on the interval $(1, 3)$.
+    distractors:
+      - $f$ has at least one relative minimum on the interval $(1, 3)$.
+      - $f$ has at least one relative maximum on the interval $(0, 1)$.
+      - $f$ is decreasing on the interval $(0, 4)$.
+    solution: |
+      The values increase from $x = 1$ to $x = 2$ and decrease from $x = 2$ to
+      $x = 3$. A polynomial is continuous, so somewhere on $(1, 3)$ it changes
+      from increasing to decreasing, which is a relative maximum.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 3
+    review: generated
+
+  - id: 00a61311-8615-4efe-b8a5-25efddd99e0e
+    question: |
+      The graph of the polynomial function $f$ has exactly three relative
+      extrema. What is the least possible degree of $f$?
+    answer: 4
+    distractors:
+      - 2
+      - 3
+      - 5
+    solution: |
+      A polynomial of degree $n$ has at most $n - 1$ relative extrema, so three
+      relative extrema require $n - 1 \ge 3$, that is $n \ge 4$.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 2
+    review: generated
+
+  - id: 45d5a3d1-ff42-4dd1-ba9d-03ee9fc2b256
+    question: |
+      The function $f$ is a polynomial with $f(-2) = -5$ and $f(3) = 7$. Which
+      of the following must be true?
+    answer: $f$ has at least one zero on the interval $(-2, 3)$.
+    distractors:
+      - $f$ is increasing on the interval $(-2, 3)$.
+      - $f$ has exactly one zero on the interval $(-2, 3)$.
+      - $f$ has a relative extremum on the interval $(-2, 3)$.
+    solution: |
+      Polynomial functions are continuous, so a polynomial that takes a
+      negative value and a positive value must take the value 0 somewhere in
+      between. It could cross more than once, and it need not be increasing
+      throughout.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 3
+    review: generated
+
+  - id: afc31df3-021d-4f98-b295-b27d7ce0d0ba
+    question: |
+      The graph of the rate of change of a polynomial function $f$ crosses the
+      $x$-axis exactly twice and touches, but does not cross, the $x$-axis
+      exactly once. How many relative extrema does the graph of $f$ have?
+    answer: 2
+    distractors:
+      - 1
+      - 3
+      - 4
+    solution: |
+      A relative extremum of $f$ requires the rate of change to change sign.
+      The rate of change changes sign only where its graph crosses the
+      $x$-axis, which happens twice. Where the graph touches without crossing,
+      the rate of change keeps the same sign.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 3
+    review: generated
+
+  - id: d3ccdbe8-a276-4404-b1a8-4046652feb94
+    question: |
+      The graph of a polynomial function $f$ has a point of inflection at
+      $x = c$. Which of the following must be true?
+    answer: The concavity of the graph of $f$ changes at $x = c$.
+    distractors:
+      - The graph of $f$ has a relative extremum at $x = c$.
+      - The rate of change of $f$ is equal to zero at $x = c$.
+      - The graph of $f$ crosses the $x$-axis at $x = c$.
+    solution: |
+      A point of inflection is by definition a point where the graph changes
+      from concave up to concave down or from concave down to concave up.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 1
+    review: generated
+
+  - id: 9d46773d-affa-41b2-a10e-ce26c7343a29
+    question: |
+      The polynomial function $f$ is increasing on the intervals
+      $(-\infty, -1)$ and $(4, \infty)$ and decreasing on the interval
+      $(-1, 4)$. Which of the following could be an expression for the rate of
+      change of $f$?
+    answer: $(x + 1)(x - 4)$
+    distractors:
+      - $-(x + 1)(x - 4)$
+      - $(x - 1)(x + 4)$
+      - $(x + 1)^2(x - 4)$
+    solution: |
+      The rate of change must be positive on $(-\infty, -1)$ and
+      $(4, \infty)$ and negative on $(-1, 4)$, so it must change sign at
+      $x = -1$ and $x = 4$ and open upward.
+    calculator_active: false
+    sections:
+      - 1.4
+    dok: 3
+    review: generated
+
+  - id: 9fa2aa08-8b50-452d-b62a-4070ad63b6d1
+    question: |
+      The polynomial function $p$ is given by $p(x) = (x - 1)^2(x + 3)$. Which
+      of the following describes the graph of $p$ at $x = 1$?
+    answer: The graph of $p$ touches the $x$-axis at $x = 1$ but does not cross it.
+    distractors:
+      - The graph of $p$ crosses the $x$-axis at $x = 1$.
+      - The graph of $p$ does not intersect the $x$-axis at $x = 1$.
+      - The graph of $p$ has a point of inflection at $x = 1$.
+    solution: |
+      The zero $x = 1$ has multiplicity 2. At a zero of even multiplicity the
+      output values do not change sign, so the graph touches the $x$-axis and
+      turns around.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 2
+    review: generated
+
+  - id: 036600a3-0955-4b1f-bbb5-fb66182ff00e
+    question: |
+      The polynomial function $p$ is given by
+      $p(x) = x^3(x - 2)^4(x + 1)$. At which of the following values of $x$
+      does the graph of $p$ touch the $x$-axis but not cross it?
+    answer: $x = 2$
+    distractors:
+      - $x = 0$
+      - $x = -1$
+      - $x = 3$
+    solution: |
+      The zeros are $x = 0$ with multiplicity 3, $x = 2$ with multiplicity 4,
+      and $x = -1$ with multiplicity 1. Only the even multiplicity at $x = 2$
+      gives a graph that touches the $x$-axis without crossing.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 2
+    review: generated
+
+  - id: 8a787d6a-d6ea-4d70-92a3-5f5237d28fc8
+    question: |
+      The polynomial function $p$ has degree 5 and real coefficients. Three of
+      its zeros are $2$, $1 + i$, and $3 - 2i$. How many real zeros does $p$
+      have, counted with multiplicity?
+    answer: 1
+    distractors:
+      - 2
+      - 3
+      - 5
+    solution: |
+      Non-real zeros of a polynomial with real coefficients occur in conjugate
+      pairs, so $1 - i$ and $3 + 2i$ are also zeros. That accounts for four of
+      the five zeros, leaving only the real zero $x = 2$.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 3
+    review: generated
+
+  - id: 02bfe09c-1cad-4933-b95f-a17d6c50b8f0
+    question: |
+      The polynomial function $p$ has degree 4 and real coefficients, and
+      $3 + i$ is a zero of $p$. Which of the following must also be a zero of
+      $p$?
+    answer: $3 - i$
+    distractors:
+      - $-3 + i$
+      - $-3 - i$
+      - $1 + 3i$
+    solution: |
+      For a polynomial with real coefficients, non-real zeros occur in complex
+      conjugate pairs, so $3 - i$ must also be a zero.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 1
+    review: generated
+
+  - id: 72d3da97-9b46-41b8-b1b6-aeba931f0e72
+    question: |
+      How many complex zeros, counted with multiplicity, does the polynomial
+      function $p$ given by $p(x) = (x^2 + 1)^3(x - 4)$ have?
+    answer: 7
+    distractors:
+      - 3
+      - 4
+      - 8
+    solution: |
+      The degree of $p$ is $2 \cdot 3 + 1 = 7$, and a polynomial of degree $n$
+      has exactly $n$ complex zeros counted with multiplicity.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 1
+    review: generated
+
+  - id: 333bb1ac-0eb2-408b-be7b-19df5306a603
+    question: |
+      Which of the following polynomial functions has exactly two distinct real
+      zeros and exactly two non-real zeros?
+    answer: $p(x) = (x^2 - 4)(x^2 + 9)$
+    distractors:
+      - $p(x) = (x^2 - 4)(x^2 - 9)$
+      - $p(x) = (x^2 + 4)(x^2 + 9)$
+      - $p(x) = (x - 4)^2(x + 9)^2$
+    solution: |
+      $x^2 - 4 = (x - 2)(x + 2)$ contributes the real zeros $x = \pm 2$, and
+      $x^2 + 9$ cannot be factored over the reals, so it contributes the
+      non-real zeros $\pm 3i$.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 2
+    review: generated
+
+  - id: 3f593d35-2456-4169-bffd-d5f41bb7292a
+    question: |
+      The polynomial function $p$ is given by $p(x) = (x + 1)^3(x - 2)^2$.
+      Which of the following describes the graph of $p$ at $x = -1$?
+    answer: The graph of $p$ crosses the $x$-axis at $x = -1$, flattening out as it crosses.
+    distractors:
+      - The graph of $p$ touches the $x$-axis at $x = -1$ but does not cross it.
+      - The graph of $p$ crosses the $x$-axis at $x = -1$ in a linear fashion.
+      - The graph of $p$ does not intersect the $x$-axis at $x = -1$.
+    solution: |
+      The zero $x = -1$ has multiplicity 3. Odd multiplicity means the graph
+      crosses the $x$-axis, and a multiplicity greater than 1 makes the graph
+      flatten against the axis near the zero.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 2
+    review: generated
+
+  - id: ceb76db4-086f-405b-92ba-7b921b724760
+    question: |
+      The polynomial function $p$ has degree 3 and real coefficients. Which of
+      the following could be the number of real zeros of $p$, counted with
+      multiplicity?
+    answer: 1
+    distractors:
+      - 0
+      - 2
+      - 4
+    solution: |
+      A degree 3 polynomial has exactly 3 complex zeros, and any non-real zeros
+      come in conjugate pairs. So the number of real zeros must be $3$ or
+      $3 - 2 = 1$.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 3
+    review: generated
+
+  - id: c0045306-0455-49be-8567-58cf875000fd
+    question: |
+      A polynomial function $p$ of least degree with real coefficients has
+      zeros at $x = 0$, $x = 3$, and $x = 2i$. Which of the following could be
+      an expression for $p(x)$?
+    answer: $x(x - 3)(x^2 + 4)$
+    distractors:
+      - $x(x - 3)(x - 2i)$
+      - $x(x - 3)(x^2 - 4)$
+      - $(x - 3)(x^2 + 4)$
+    solution: |
+      Because the coefficients are real, $-2i$ must also be a zero, and
+      $(x - 2i)(x + 2i) = x^2 + 4$. The least degree is therefore 4, with
+      factors $x$, $x - 3$, and $x^2 + 4$.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 3
+    review: generated
+
+  - id: 5e3494d5-f20a-4e8e-ae88-87d2b4ac9dc4
+    question: |
+      \begin{center}
+        \begin{tabularx}{6.5in}{ |*{7}{Y|} }
+          \hline
+          \bm{$x$} & 0 & 1 & 2 & 3 & 4 & 5 \\
+          \hline
+          \bm{$f(x)$} & 1 & 2 & 9 & 28 & 65 & 126 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above shows values for the polynomial function $f$ at selected
+      values of $x$. What is the least possible degree of $f$?
+    answer: 3
+    distractors:
+      - 2
+      - 4
+      - 5
+    solution: |
+      \hspace{1.2in}
+      \begin{tabularx}{5.3in}{ *{5}{Y} }
+        $\bm{1}$ & $\bm{7}$ & $\bm{19}$ & $\bm{37}$ & $\bm{61}$ \\
+      \end{tabularx}
+
+      \hspace{1.6in}
+      \begin{tabularx}{4.4in}{ *{4}{Y} }
+        $\bm{6}$ & $\bm{12}$ & $\bm{18}$ & $\bm{24}$ \\
+      \end{tabularx}
+
+      \hspace{2in}
+      \begin{tabularx}{3.5in}{ *{3}{Y} }
+        $\bm{6}$ & $\bm{6}$ & $\bm{6}$ \\
+      \end{tabularx}
+
+      The third differences are constant, so the least possible degree is 3.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 2
+    review: generated
+
+  - id: e4f0bf98-bc5a-477b-893d-2fc6e93efbf4
+    question: |
+      The graph of the polynomial function $p$ of degree 4 intersects the
+      $x$-axis at exactly two points. Which of the following could be true
+      about $p$?
+    answer: $p$ has exactly two non-real zeros.
+    distractors:
+      - $p$ has exactly one non-real zero.
+      - $p$ has exactly three non-real zeros.
+      - $p$ has four distinct real zeros.
+    solution: |
+      Non-real zeros of a polynomial with real coefficients come in conjugate
+      pairs, so the number of non-real zeros must be even. Two $x$-intercepts
+      means at most two distinct real zeros, so the graph cannot have four
+      distinct real zeros.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 3
+    review: generated
+
+  - id: 5528a61d-dfd0-4c3a-b95c-39db145c9c47
+    question: |
+      The graph of the polynomial function $p$ is tangent to the $x$-axis at
+      $x = 4$. Which of the following must be true?
+    answer: $(x - 4)$ is a factor of $p(x)$ with even multiplicity.
+    distractors:
+      - $(x - 4)$ is a factor of $p(x)$ with odd multiplicity.
+      - $(x + 4)$ is a factor of $p(x)$ with even multiplicity.
+      - $x = 4$ is a non-real zero of $p$.
+    solution: |
+      A graph that touches the $x$-axis without crossing it does not change
+      sign at that zero, which happens exactly when the multiplicity of the
+      zero is even.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 2
+    review: generated
+
+  - id: 800a05ca-e44f-444b-9141-c28243567722
+    question: |
+      The polynomial function $p$ is given by $p(x) = x^4 + 5x^2 + 4$. How
+      many distinct real zeros does $p$ have?
+    answer: 0
+    distractors:
+      - 1
+      - 2
+      - 4
+    solution: |
+      $p(x) = (x^2 + 1)(x^2 + 4)$. Neither factor can be factored over the
+      reals, so all four zeros, $\pm i$ and $\pm 2i$, are non-real.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 2
+    review: generated
+
+  - id: c7e9c465-375f-4385-a2d8-3518ab57dc0f
+    question: |
+      The polynomial function $p$ is given by $p(x) = x^3 - 4x^2 + x - 4$.
+      Which of the following describes the zeros of $p$?
+    answer: $p$ has exactly one real zero and two non-real zeros.
+    distractors:
+      - $p$ has exactly three distinct real zeros.
+      - $p$ has exactly two distinct real zeros and one non-real zero.
+      - $p$ has no real zeros and three non-real zeros.
+    solution: |
+      $p(x) = x^2(x - 4) + 1(x - 4) = (x - 4)(x^2 + 1)$. The factor $x - 4$
+      gives the real zero $x = 4$, and $x^2 + 1$ gives the non-real zeros
+      $\pm i$.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 2
+    review: generated
+
+  - id: ec42d2e8-a617-4c82-8dc2-c58659e3430e
+    question: |
+      The polynomial function $p$ has real coefficients, and $2 - 3i$ is a zero
+      of $p$. Which of the following must be a factor of $p(x)$?
+    answer: $x^2 - 4x + 13$
+    distractors:
+      - $x^2 + 4x + 13$
+      - $x^2 - 4x - 13$
+      - $x^2 - 4x + 5$
+    solution: |
+      Since the coefficients are real, $2 + 3i$ is also a zero, so
+      \[ \left[x - (2 - 3i)\right]\left[x - (2 + 3i)\right] = x^2 - 4x + (4 + 9) = x^2 - 4x + 13 \]
+      is a factor of $p(x)$.
+    calculator_active: false
+    sections:
+      - 1.5
+    dok: 2
+    review: generated
+
+  - id: aac64d09-e219-4bcf-8504-7f6b6e201fbb
+    related_to:
+      - e74cea7c-4d6d-48b8-8201-923c0ee60611
+    question: |
+      The function $g$ is a polynomial with the following end behavior:
+      \[ \lim_{x \to -\infty} g(x) = \infty \qquad \text{and} \qquad \lim_{x \to \infty} g(x) = \infty \]
+      Which of the following could be an expression for $g(x)$?
+    answer: $2x^4 - 3x + 1$
+    distractors:
+      - $-2x^4 + 3x - 1$
+      - $3x^5 - x^2 + 7$
+      - $-x^3 + 5x^2 - 2$
+    solution: |
+      An even-degree polynomial with a positive leading coefficient has output
+      values that increase without bound at both ends.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 2
+    review: generated
+
+  - id: e74cea7c-4d6d-48b8-8201-923c0ee60611
+    related_to:
+      - aac64d09-e219-4bcf-8504-7f6b6e201fbb
+    question: |
+      For which of the following functions is
+      \[ \lim_{x \to -\infty} p(x) = -\infty \qquad \text{and} \qquad \lim_{x \to \infty} p(x) = -\infty \, ? \]
+    answer: $p(x) = -x^6 + 4x^2$
+    distractors:
+      - $p(x) = x^6 - 4x^2$
+      - $p(x) = -x^5 + 4x^2$
+      - $p(x) = x^5 - 4x^2$
+    solution: |
+      An even-degree polynomial with a negative leading coefficient has output
+      values that decrease without bound at both ends.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 2
+    review: generated
+
+  - id: 62df0628-dfc5-4220-bb29-91cae180dc67
+    question: |
+      The polynomial function $g$ is given by $g(x) = -2x^3 + 5x^2 - 1$. Which
+      of the following describes the end behavior of $g$?
+    answer: $\lim_{x \to -\infty} g(x) = \infty$ and $\lim_{x \to \infty} g(x) = -\infty$
+    distractors:
+      - $\lim_{x \to -\infty} g(x) = -\infty$ and $\lim_{x \to \infty} g(x) = \infty$
+      - $\lim_{x \to -\infty} g(x) = \infty$ and $\lim_{x \to \infty} g(x) = \infty$
+      - $\lim_{x \to -\infty} g(x) = -\infty$ and $\lim_{x \to \infty} g(x) = -\infty$
+    solution: |
+      The end behavior is determined by the leading term $-2x^3$. The degree is
+      odd and the leading coefficient is negative, so the left end goes up and
+      the right end goes down.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 1
+    review: generated
+
+  - id: 73574a30-b761-40ef-8715-69770d973c96
+    question: |
+      The polynomial function $p$ is given by $p(x) = 4 - 7x^6 + 2x^3$. What is
+      $\lim_{x \to -\infty} p(x)$?
+    answer: $-\infty$
+    distractors:
+      - $\infty$
+      - 4
+      - $-7$
+    solution: |
+      The leading term is $-7x^6$. Because the degree is even, $x^6$ increases
+      without bound as $x \to -\infty$, and the negative coefficient makes
+      $p(x)$ decrease without bound.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 2
+    review: generated
+
+  - id: b02c4e81-d690-4043-a6d4-4e4fa575cb10
+    question: |
+      Which of the following polynomial functions has end behavior described by
+      \[ \lim_{x \to -\infty} p(x) = -\infty \qquad \text{and} \qquad \lim_{x \to \infty} p(x) = \infty \, ? \]
+    answer: $p(x) = x^3 - 4x$
+    distractors:
+      - $p(x) = -x^3 + 4x$
+      - $p(x) = x^4 - 4x^2$
+      - $p(x) = -x^4 + 4x^2$
+    solution: |
+      An odd-degree polynomial with a positive leading coefficient falls on the
+      left and rises on the right.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 2
+    review: generated
+
+  - id: db208234-ad97-4496-8a18-6d1e886f1563
+    question: |
+      The polynomial function $p$ has degree 4 and a negative leading
+      coefficient. Which of the following must be true about the graph of $p$?
+    answer: The graph of $p$ has an absolute maximum but no absolute minimum.
+    distractors:
+      - The graph of $p$ has an absolute minimum but no absolute maximum.
+      - The graph of $p$ has both an absolute maximum and an absolute minimum.
+      - The graph of $p$ has neither an absolute maximum nor an absolute minimum.
+    solution: |
+      Both ends of the graph go down without bound, so there is no absolute
+      minimum. Because the output values are bounded above, the graph reaches a
+      greatest value somewhere, which is an absolute maximum.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 3
+    review: generated
+
+  - id: fceeae14-81fe-4177-b396-b152c7863c69
+    question: |
+      The end behavior of a polynomial function is determined by which of the
+      following?
+    answer: The degree and the leading coefficient
+    distractors:
+      - The constant term and the leading coefficient
+      - The number of real zeros and the degree
+      - The number of relative extrema
+    solution: |
+      For inputs of large magnitude, the leading term dominates every other
+      term, so only its degree and its coefficient affect the end behavior.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 1
+    review: generated
+
+  - id: a618bd7a-29fd-475d-b561-26cca7c9e5d4
+    question: |
+      The polynomial function $p$ is given by $p(x) = 3x^5 - 200x^4$. Which of
+      the following describes the values of $p(x)$ as $x$ increases without
+      bound?
+    answer: The values of $p(x)$ increase without bound.
+    distractors:
+      - The values of $p(x)$ decrease without bound.
+      - The values of $p(x)$ approach $-200$.
+      - The values of $p(x)$ approach 0.
+    solution: |
+      The end behavior depends only on the leading term $3x^5$, which is odd
+      degree with a positive coefficient. Although $-200x^4$ is larger in
+      magnitude for moderate values of $x$, the term $3x^5$ dominates for
+      large enough $x$.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 2
+    review: generated
+
+  - id: 46e31e1a-3366-42f8-b966-82653fc8f9db
+    question: |
+      Both ends of the graph of a polynomial function $p$ decrease without
+      bound. Which of the following could be the degree and leading coefficient
+      of $p$?
+    answer: Degree 4 with leading coefficient $-3$
+    distractors:
+      - Degree 4 with leading coefficient 3
+      - Degree 3 with leading coefficient $-3$
+      - Degree 5 with leading coefficient $-3$
+    solution: |
+      The two ends behave the same way only when the degree is even, and both
+      ends go down only when the leading coefficient is negative.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 2
+    review: generated
+
+  - id: 3d3cedc4-af6b-4ea8-9506-6d1d5c1a2809
+    question: |
+      The polynomial function $p$ has even degree,
+      $\lim_{x \to -\infty} p(x) = \infty$, $\lim_{x \to \infty} p(x) = \infty$,
+      and $p(0) = -5$. What is the least possible number of distinct real zeros
+      of $p$?
+    answer: 2
+    distractors:
+      - 0
+      - 1
+      - 4
+    solution: |
+      The graph is above the $x$-axis for inputs of large magnitude on both
+      sides and below the $x$-axis at $x = 0$, so it must cross the $x$-axis at
+      least once to the left of 0 and at least once to the right of 0.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 3
+    review: generated
+
+  - id: 2e203c74-d2f4-448f-bf2b-bb7440d6c2ea
+    question: |
+      The polynomial function $p$ is given by $p(x) = (x - 3)^2(x + 1)^3$.
+      Which of the following describes the end behavior of $p$?
+    answer: $\lim_{x \to -\infty} p(x) = -\infty$ and $\lim_{x \to \infty} p(x) = \infty$
+    distractors:
+      - $\lim_{x \to -\infty} p(x) = \infty$ and $\lim_{x \to \infty} p(x) = -\infty$
+      - $\lim_{x \to -\infty} p(x) = \infty$ and $\lim_{x \to \infty} p(x) = \infty$
+      - $\lim_{x \to -\infty} p(x) = -\infty$ and $\lim_{x \to \infty} p(x) = -\infty$
+    solution: |
+      Adding the multiplicities gives degree $2 + 3 = 5$, and the leading
+      coefficient is $1 \cdot 1 = 1$. An odd degree with a positive leading
+      coefficient falls on the left and rises on the right.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 2
+    review: generated
+
+  - id: 9bc7a794-1d2c-4dcc-970d-cf30f4b65889
+    question: |
+      The polynomial function $p$ is given by $p(x) = -5x^7 + 3x^2$. Which of
+      the following describes the values of $p(x)$ as $x$ decreases without
+      bound?
+    answer: The values of $p(x)$ increase without bound.
+    distractors:
+      - The values of $p(x)$ decrease without bound.
+      - The values of $p(x)$ approach 0.
+      - The values of $p(x)$ approach $-5$.
+    solution: |
+      The leading term is $-5x^7$. As $x \to -\infty$, $x^7 \to -\infty$, and
+      multiplying by $-5$ gives values that increase without bound.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 2
+    review: generated
+
+  - id: 7fd5cf04-7390-48f4-b2ad-45014d219842
+    question: |
+      The polynomial function $p$ has even degree and a positive leading
+      coefficient. Which of the following must be true about the graph of $p$?
+    answer: The graph of $p$ has an absolute minimum.
+    distractors:
+      - The graph of $p$ has an absolute maximum.
+      - The graph of $p$ has at least one real zero.
+      - The graph of $p$ has at least one point of inflection.
+    solution: |
+      Both ends of the graph increase without bound, so the output values are
+      bounded below and the graph attains a least value. A function such as
+      $p(x) = x^2 + 1$ shows that there need not be a real zero or a point of
+      inflection.
+    calculator_active: false
+    sections:
+      - 1.6
+    dok: 3
+    review: generated

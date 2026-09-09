@@ -3,7 +3,7 @@
 [![Tests](https://github.com/leviathan747/test-generator/actions/workflows/python-package.yml/badge.svg)](https://github.com/leviathan747/test-generator/actions/workflows/python-package.yml)
 [![PyPI version](https://img.shields.io/pypi/v/test-generator.svg)](https://pypi.org/project/test-generator/)
 
-A tiny Python package skeleton that demonstrates a test-generator utility.
+Generates test and quiz PDFs from YAML question banks via LaTeX (`pdflatex`).
 
 ## Getting Started
 
@@ -41,11 +41,15 @@ python -m test_generator config.yaml [config2.yaml ...] \
 
 | Flag | Description |
 |------|-------------|
-| `--questions` | YAML file containing the question bank (optional; combined with any `questions` list in the config file) |
-| `--from-manifest` | Recreate an existing version from its manifest file; provide the config (and `--questions`/`--figures-dir`) as in a normal run (see below) |
+| `--questions` | YAML file containing the question bank (optional, repeatable; combined with any `questions` list in the config file) |
+| `--figures-dir` | Directory containing figures copied into the PDF build environment (optional, repeatable; on filename collisions the earliest-listed directory wins; default: current directory) |
 | `--out-dir` | Directory where generated PDFs are written (default: current directory, created if missing) |
-| `--figures-dir` | Directory containing figures copied into the PDF build environment (default: current directory) |
-| `--watch` | Watch the config file(s), questions file, and figures directory for changes and regenerate drafts automatically (the footer shows `draft` in place of a form ID; no manifest is written) |
+| `--from-manifest` | Recreate an existing version from its manifest file; provide the config (and `--questions`/`--figures-dir`) as in a normal run (see below) |
+| `--new-version` | With `--from-manifest`: reissue the manifest's questions as a fresh version — new form ID, re-scrambled question and choice order, new manifest |
+| `--exclude-manifest` | Drop the questions recorded in this manifest from the pool, so a follow-up assessment reuses none of them (repeatable; matched by question `id` only, no MD5 check). Cannot be combined with `--from-manifest` |
+| `--report-from-manifest` | Print the coverage/DOK report recorded in a manifest and exit; standalone — takes no config files, generates nothing |
+| `--report` | Print a section-coverage and DOK report after each generation (see below) |
+| `--watch` | Watch the config file(s), questions file(s), and figures directories for changes and regenerate drafts automatically (the footer shows `draft` in place of a form ID; no manifest is written) |
 | `--student-only` | Generate only the student copy (default: both copies) |
 | `--solution-only` | Generate only the solution copy (default: both copies) |
 
@@ -70,16 +74,18 @@ assessment_type: quiz
 | `author` | Author name |
 | `class_name` | Class name |
 | `duration` | Duration string (e.g. `30 min`) |
+| `instructions` | Optional raw LaTeX rendered in a framed box at the top of the first page |
 | `assessment_type` | Optional filter: keep only questions whose `assessment_type` matches |
 | `sections` | Optional filter: a section range (see below) |
 | `calculator_active` | Optional filter: `true` keeps only calculator-active questions, `false` keeps only no-calculator questions; a question missing the field counts as no-calculator |
 | `question_count` | Optional: randomly select exactly this many questions from the filtered pool (see below); errors if fewer questions match the filters |
+| `dok_target` | Optional: steer the selection's average DOK to at least — and as close as possible to — this target (see below) |
 | `scramble_questions` | Optional: `true` shuffles the order of the selected questions (default `false`, keeping question-bank order) |
 | `questions` | Optional list of questions, in the same format as the questions file |
 | `work_space` | Default height of the FRQ answer work space (e.g. `2in`); questions and parts can override it with their own `work_space` field (default: `1in`) |
 
-Questions come from the `--questions` file, the config file's `questions`
-list, or both combined (file questions first). This allows a simple
+Questions come from the `--questions` file(s), the config file's `questions`
+list, or all combined (file questions first). This allows a simple
 assessment to be generated from a single self-contained file:
 
 ```yaml
@@ -93,24 +99,59 @@ questions:
     solution: Because $2+2=4$.
 ```
 
+#### Question fields
+
+| Key | Description |
+|-----|-------------|
+| `id` | Required. Identifier used for manifest lookup; must be unique across the included questions |
+| `question` | The question stem (LaTeX) |
+| `question_type` | `MCQ` (default) or `FRQ`; compared case-insensitively |
+| `answer` | The correct MCQ choice |
+| `distractors` | The incorrect MCQ choices |
+| `solution` | The worked solution shown in the solution copy (LaTeX) |
+| `parts` | Sub-parts of a multipart FRQ; a part may carry its own `question`, `solution`, `sections`, `dok`, `grading`, `work_space`, and figure fields |
+| `sections` | Standards covered, as `major.minor` values; non-numeric tokens (e.g. `unknown`) are tolerated and skipped |
+| `dok` | Depth of Knowledge, typically 1-4; a non-integer marker counts as unrecorded. A multipart question without its own `dok` is rated by its hardest part |
+| `calculator_active` | Whether a calculator is permitted for this question |
+| `assessment_type` | Free-form filter tag (e.g. `quiz`, `test`) |
+| `related_to` | Ids of related questions, to avoid selecting them together |
+| `grading` | Rubric entries (see below) |
+| `work_space` | FRQ answer-space height (LaTeX length, e.g. `2in`) |
+| `figure`, `figure_placement`, `figure_width` | Figure to show with the question (see below) |
+| `legacy_ids` | Historical identifiers; editorial metadata, ignored by the generator |
+| `review` | Editorial workflow marker; ignored by the generator |
+
 #### Question selection and the report
 
 When `question_count` is set, that many questions are chosen at random
 from the pool of questions matching the filters. Selection maximizes the
 number of unique sections covered, and questions linked by a
 `related_to` field are not chosen together unless the pool is too small
-to satisfy `question_count` otherwise. Selected questions keep their
-question-bank order unless `scramble_questions: true`. Selection and
-scrambling re-randomize on every run (including `--watch` draft
-regeneration); use the manifest to recreate a specific version.
+to satisfy `question_count` otherwise. When `dok_target` is set, a
+best-effort swap pass then nudges the selection's average DOK to at
+least the target, as close to it as the pool allows. Selected questions
+keep their question-bank order unless `scramble_questions: true`.
+Selection and scrambling re-randomize on every run (including `--watch`
+draft regeneration); use the manifest to recreate a specific version.
 
-After each generation a report is printed showing a histogram of the
-number of questions covering each section, a histogram of DOK levels
-(a multipart question is rated by its hardest part), and the average
-DOK of the selected questions. When the `sections` filter is a bounded
-range (e.g. `1.1 - 1.16`), every section in the range is listed, even
-with zero questions, so coverage gaps stand out; DOK levels 1-4 are
-always listed.
+With `--report`, a report is printed after each generation showing a
+histogram of the number of questions covering each section, a histogram
+of DOK levels (a multipart question is rated by its hardest part), and
+the average DOK of the selected questions. When a `dok_target` is set,
+the average is shown against it and highlighted in yellow if the target
+was missed. When the `sections` filter is a bounded range (e.g.
+`1.1 - 1.16`), every section in the range is listed, even with zero
+questions, so coverage gaps stand out; DOK levels 1-4 are always listed.
+
+Because manifests record each question's sections and DOK,
+`--report-from-manifest <manifest.yaml>` prints the same report for an
+existing version on its own — no config, question bank, or figures
+needed, and nothing is regenerated. (Version-1 manifests predate the
+embedded report data; replay those with `--from-manifest ... --report`
+instead.)
+
+The solution copy also prints each question's DOK and sections beside
+its solution, for review.
 
 #### Form IDs and manifests
 
@@ -125,18 +166,32 @@ overwrite the PDFs but mint a new ID, so manifests accumulate side by side
 and any prior version can still be recreated from its manifest.
 
 The manifest records everything needed to recreate that exact version: the
-MD5 digests of the input files (config, question bank, and referenced
+MD5 digests of the input files (config, question bank(s), and referenced
 figures), the question IDs in presentation order, and the order in which
-each MCQ's answer choices were shown. Rerunning with the same config plus
-`--from-manifest <manifest.yaml>` (and `--questions`/`--figures-dir` if the
-original run used them) regenerates the same printed pages — same questions,
-order, choices, and form ID — recreating deleted PDFs or overwriting
-existing ones. The input files may have moved since generation; they are
-matched against the manifest by content (MD5), not by path. If a loaded
-file's digest doesn't appear in the manifest — or a manifest entry matches
-no loaded file — the tool reports the mismatches and asks for confirmation
-before continuing. No new manifest is written on reproduce; the existing
-one remains the record for that form ID.
+each MCQ's answer choices were shown. It also records each question's
+sections and DOK, each MCQ's answer letter, and a top-level `answer_key`
+summary string.
+
+Rerunning with the same config plus `--from-manifest <manifest.yaml>`
+(and `--questions`/`--figures-dir` if the original run used them)
+regenerates the same printed pages — same questions, order, choices, and
+form ID — recreating deleted PDFs or overwriting existing ones. The input
+files may have moved since generation; they are matched against the
+manifest by content (MD5), not by path. If a loaded file's digest doesn't
+appear in the manifest — or a manifest entry matches no loaded file — the
+tool reports the mismatches and asks for confirmation before continuing.
+
+A replay writes a manifest of its own. Because a plain replay reuses the
+original form ID, that manifest lands on the original's path, so the tool
+asks before overwriting it. If the config now asks for more questions
+than the manifest holds, the manifest's questions are kept and the normal
+picker tops up the remainder (the added questions are exempt from MD5
+verification).
+
+Adding `--new-version` turns a replay into a fresh version of the same
+test: the manifest's questions are reused, but with a new form ID and
+re-scrambled question and choice order (scrambling happens regardless of
+the config's `scramble_questions`), recorded in its own new manifest.
 
 #### Figures
 
@@ -153,7 +208,7 @@ questions:
     distractors: [3, 5]
 ```
 
-The value is a filename inside the figures directory, extension included
+The value is a filename inside a figures directory, extension included
 (a bare `27` would be parsed as a number). `.tex` files (standalone
 TikZ documents) are included with `\input`; any other extension is
 included with `\includegraphics`. The figure keeps its natural size and
@@ -262,14 +317,15 @@ naming the field and source file. To validate ad hoc, use
 import test_generator
 
 test_generator.generate_test(
-    "questions.yaml",
+    "questions.yaml",             # path, sequence of paths, or None
     "output.pdf",
     title="Unit 1: Limits and Continuity",
     author="Levi Starrett",
     class_name="AP Calculus AB",
-    form_id="3f9a-1c2e",           # printed in the page footer
+    form_id="3f9a-1c2e",          # printed in the page footer
     duration="30 min",
-    figures_dir="path/to/figures",  # optional; defaults to figures/ next to the YAML file
+    figures_dir="path/to/figures",  # path or sequence of paths; defaults to
+                                  # figures/ next to the first YAML file
     solution=False,               # True renders the answer-key copy
     assessment_type="quiz",       # optional question filter
     sections="1.3 - 1.7",         # optional section range filter
@@ -278,9 +334,19 @@ test_generator.generate_test(
     questions=None,               # optional list of question mappings appended
                                   # to those loaded from the YAML file (which
                                   # may be None when questions are passed here)
+    work_space=None,              # default FRQ work-space height
+    question_order=None,          # optional list of question ids fixing the
+                                  # presentation order
+    choice_orders=None,           # optional {question id: permutation} fixing
+                                  # each MCQ's answer-choice order
+    instructions="",              # optional raw LaTeX instruction box
 )
 ```
 
+Also exported: `filter_questions`, `select_questions`, `load_question_pool`,
+`make_choice_orders`, and `format_report` — the building blocks the CLI uses
+to go from a question bank to a selected, ordered set and its report.
+
 ## Publishing
 
-Create a Git tag `v0.1.0` and push; the repository's publish workflow will upload to PyPI when configured with `PYPI_API_TOKEN` secret.
+Create a Git tag `v0.2.0` and push; the repository's publish workflow will upload to PyPI when configured with `PYPI_API_TOKEN` secret.
