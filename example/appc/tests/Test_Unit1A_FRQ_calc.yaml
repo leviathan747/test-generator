@@ -325,4 +325,4 @@ questions:
         work_space: 1.5in
     calculator_active: true
     question_type: FRQ
-    review: generated
+    review: none
