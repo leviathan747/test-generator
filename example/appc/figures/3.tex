@@ -1,0 +1,34 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\definecolor{gridgray}{RGB}{213,213,213}
+\definecolor{crimson}{RGB}{214,0,54}
+\begin{tikzpicture}[color=black, >=stealth, x=0.5cm, y=0.46cm, font=\small\bfseries]
+  % Grid
+  \draw[gridgray, thin] (-3,0) grid (9,6);
+  % Axes
+  \draw[<->, thick] (-3.6,0) -- (9.6,0);
+  \draw[->, thick] (0,-0.4) -- (0,6.5);
+  % Tick labels
+  \foreach \x in {-3,-2,-1,1,2,3,4,5,6,7,8,9} {
+    \node[below, font=\scriptsize\bfseries] at (\x,-0.1) {\x};
+  }
+  \foreach \y in {1,2,3,4,5,6} {
+    \node[left, font=\scriptsize\bfseries] at (-0.15,\y) {\y};
+  }
+  % Graph of h: constant on [-2,0], linear up to (1,4), lower half of the
+  % circle centered (3,4) with radius 2, then linear to (9,6)
+  \draw[line width=1.1pt] (-2,1) -- (0,1) -- (1,4);
+  \draw[line width=1.1pt] (1,4) arc[start angle=180, end angle=360, x radius=2, y radius=2];
+  \draw[line width=1.1pt] (5,4) -- (9,6);
+  % Endpoints and marked points
+  \foreach \p in {(-2,1),(0,1),(1,4),(5,4),(9,6)} { \fill \p circle (1.7pt); }
+  % Solution: the ray y = x/2 + 2 from (-2,1), meeting the graph twice
+  \draw[->, line width=1.1pt, crimson] (-2,1) -- (8.15,6.07);
+  \foreach \p in {(-2,1),(0.4,2.2),(1.456,2.728)} {
+    \fill[crimson] \p circle (2pt);
+  }
+  % Caption
+  \node[font=\bfseries] at (3,-1.3) {Graph of h};
+\end{tikzpicture}
+\end{document}

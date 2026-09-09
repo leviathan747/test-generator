@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[color=black, >=stealth, scale=0.6]
+  % Axes (unlabeled scale)
+  \draw[<->, thick] (-4.75,0) -- (4.75,0);
+  \draw[<->, thick] (0,-4.75) -- (0,4.75);
+  \node[font=\small\bfseries] at (-4.6,0.42) {x};
+  \node[font=\small\bfseries] at (-0.44,4.55) {y};
+  % Quartic, positive leading coefficient: zeros at -1.07, 0 and a double zero at 2.11
+  \begin{scope}
+    \clip (-5,-4.85) rectangle (5,4.85);
+    \draw[line width=1.2pt, smooth, samples=200, domain=-1.45:2.86]
+      plot (\x, {0.815*\x*(\x + 1.07)*(\x - 2.11)^2});
+  \end{scope}
+\end{tikzpicture}
+\end{document}

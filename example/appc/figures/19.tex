@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\definecolor{gridgray}{RGB}{213,213,213}
+\begin{tikzpicture}[color=black, >=stealth, scale=0.3, font=\scriptsize\bfseries]
+  % Grid
+  \draw[gridgray, thin] (-10,-10) grid (10,10);
+  % Axes
+  \draw[<->, thick] (-10.9,0) -- (10.9,0);
+  \draw[<->, thick] (0,-10.9) -- (0,10.9);
+  % Scale labels (even values only)
+  \foreach \n in {-10,-8,-6,-4,-2,2,4,6,8,10} {
+    \node[below, inner sep=2pt] at (\n,-0.15) {\n};
+    \node[left, inner sep=2pt] at (-0.15,\n) {\n};
+  }
+\end{tikzpicture}
+\end{document}

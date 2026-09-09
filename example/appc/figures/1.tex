@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\definecolor{gridgray}{RGB}{213,213,213}
+\begin{tikzpicture}[color=black, >=stealth, scale=0.5]
+  % Grid
+  \draw[gridgray, thin] (-6,-6) grid (6,6);
+  % Axes
+  \draw[<->, thick] (-6.9,0) -- (6.9,0);
+  \draw[<->, thick] (0,-6.9) -- (0,6.9);
+  \node[font=\small\bfseries] at (-6.4,0.55) {x};
+  \node[font=\small\bfseries] at (-0.45,6.5) {y};
+  % Cubic through (1,0) and (5,4):  y = (-x^3 + 3x^2 + 45x - 47)/32
+  \begin{scope}
+    \clip (-6,-6) rectangle (6,6);
+    \draw[line width=1.2pt, smooth, samples=200, domain=-6:6]
+      plot (\x, {(-(\x)^3 + 3*(\x)^2 + 45*\x - 47)/32});
+  \end{scope}
+  % Labeled points: A on the x-axis, B near the local maximum
+  \fill (1,0) circle (3pt);
+  \fill (5,4) circle (3pt);
+  \node[font=\small\bfseries] at (0.55,0.6) {A};
+  \node[font=\small\bfseries] at (4.55,4.6) {B};
+\end{tikzpicture}
+\end{document}

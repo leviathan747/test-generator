@@ -8,10 +8,8 @@ questions:
       The graph of a function $k$ is shown in the figure to the right. Which of
       the following best describes the behavior of the graph of $k$ from point
       $A$ to point $B$.
-
-      \fullwidth{\begin{center}
-        \includegraphics[width=3in]{1}
-      \end{center}}
+    figure: 1.tex
+    figure_width: 2.25in
     answer: The graph of $k$ is increasing and concave down.
     distractors:
       - The graph of $k$ is increasing and concave up.
@@ -56,6 +54,8 @@ questions:
       The figure to the right shows the graph of a function $h$. For how many
       values of $b$ does the function $h$ have an average rate of change of
       $\frac{1}{2}$ over the interval $[-2, b]$?
+    figure: 2.tex
+    figure_width: 2.5in
     answer: 2
     distractors:
       - 0
@@ -65,6 +65,10 @@ questions:
       A ray with slope $\frac{1}{2}$ starting at $(-2, 1)$ intersects with the
       graph of $h$ exactly 2 times. These points are the only two points for
       which the average rate of change of $h$ is equal to $\frac{1}{2}$.
+
+      \begin{center}
+        \resizebox{4in}{!}{\input{figures/3.tex}}
+      \end{center}
     calculator_active: false
     sections:
       - 1.2
@@ -120,11 +124,11 @@ questions:
     question: |
       The polynomial function $p$ is given by $p(x) = -x(x + 2)(x - 3)^2$. Which
       of the following could be the graph of $p$?
-    answer: \includegraphics[width=2.5in]{5A}
+    answer: \resizebox{2.5in}{!}{\input{figures/4.tex}}
     distractors:
-      - \includegraphics[width=2.5in]{5C}
-      - \includegraphics[width=2.5in]{5B}
-      - \includegraphics[width=2.5in]{5D}
+      - \resizebox{2.5in}{!}{\input{figures/6.tex}}
+      - \resizebox{2.5in}{!}{\input{figures/5.tex}}
+      - \resizebox{2.5in}{!}{\input{figures/7.tex}}
     solution: |
       Downard facing fourth degree polynomial. Yeros at $x = -2$, $x = 0$, and
       $x = 3$ (multiplicity 2).
@@ -167,6 +171,8 @@ questions:
       The figure to the right shows the graph of a function $h$. For how many
       values of $c$ does the function $h$ have an average rate of change of
       1 over the interval $[0, c]$?
+    figure: 2.tex
+    figure_width: 2.5in
     answer: 1
     distractors:
       - 0
@@ -176,6 +182,10 @@ questions:
       A ray with slope 1 starting at $(0, 1)$ intersects with the
       graph of $h$ exactly one time. This points is the only point for
       which the average rate of change of $h$ is equal to 1.
+
+      \begin{center}
+        \resizebox{4in}{!}{\input{figures/8.tex}}
+      \end{center}
     calculator_active: false
     sections:
       - 1.2
@@ -267,6 +277,9 @@ questions:
       The graph of $f$ is shown above with the six points $A$, $B$, $C$, $D$,
       $E$, and $F$ labeled. What are all the points where the graph of $f$ has a
       local maximum?
+    figure: 9.tex
+    figure_placement: above
+    figure_width: 4in
     answer: $A$, $C$, and $E$
     distractors:
       - $C$ only
@@ -301,7 +314,7 @@ questions:
         points. Use the \emph{trace} feature of your grphing caclulator to
         evaluate the function at both endpoints.
 
-        \includegraphics[width=2.5in]{11S}
+        \resizebox{2.5in}{!}{\input{figures/10.tex}}
       \end{multicols}
     calculator_active: true
     sections:
@@ -332,7 +345,7 @@ questions:
         degreasing or vice versa). Therefore, $k$ will have two inflection
         points.
 
-        \includegraphics[width=2.5in]{12S}
+        \resizebox{2.5in}{!}{\input{figures/11.tex}}
       \end{multicols}
     calculator_active: true
     sections:
@@ -363,7 +376,7 @@ questions:
         feature to find the approximate values and eliminate incorrect
         choices.
 
-        \includegraphics[width=2.5in]{13s}
+        \resizebox{2.5in}{!}{\input{figures/12.tex}}
       \end{multicols}
     calculator_active: true
     sections:
@@ -395,7 +408,7 @@ questions:
         \emph{trace} feature to find the approximate value and eliminate
         incorrect choices.
 
-        \includegraphics[width=2.5in]{14s}
+        \resizebox{2.5in}{!}{\input{figures/13.tex}}
       \end{multicols}
     calculator_active: true
     sections:
@@ -470,6 +483,9 @@ questions:
       The graph of $f$ is shown above with the six points $A$, $B$, $C$, $D$,
       $E$, and $F$ labeled. What are all the points where the graph of $f$ has an
       absolute minimum?
+    figure: 9.tex
+    figure_placement: above
+    figure_width: 4in
     answer: $B$ only
     distractors:
       - $D$ only
@@ -538,10 +554,8 @@ questions:
       The graph of a function $k$ is shown in the figure to the right. Which of
       the following best describes the behavior of the graph of $k$ from point
       $A$ to point $B$.
-
-      \fullwidth{\begin{center}
-        \includegraphics[width=3in]{1-B}
-      \end{center}}
+    figure: 14.tex
+    figure_width: 2.25in
     answer: The graph of $k$ is increasing and concave up.
     distractors:
       - The graph of $k$ is increasing and concave down.
@@ -585,11 +599,11 @@ questions:
     question: |
       The polynomial function $p$ is given by $p(x) = -x(x + 6)(x - 3)$. Which
       of the following could be the graph of $p$?
-    answer: \includegraphics[width=2.5in]{5B}
+    answer: \resizebox{2.5in}{!}{\input{figures/5.tex}}
     distractors:
-      - \includegraphics[width=2.5in]{5A}
-      - \includegraphics[width=2.5in]{5C}
-      - \includegraphics[width=2.5in]{5D}
+      - \resizebox{2.5in}{!}{\input{figures/4.tex}}
+      - \resizebox{2.5in}{!}{\input{figures/6.tex}}
+      - \resizebox{2.5in}{!}{\input{figures/7.tex}}
     solution: Decreasing third degree polynomial. Zeros at $x = -6$, $x = 0$, and $x = 3$.
     calculator_active: false
     sections:
@@ -625,7 +639,7 @@ questions:
         decreasing (and therefore the number of people reaches a relative
         maximum).
 
-        \includegraphics[width=2.5in]{14S-B}
+        \resizebox{2.5in}{!}{\input{figures/15.tex}}
       \end{multicols}
     calculator_active: false
     sections:
@@ -656,7 +670,7 @@ questions:
         degreasing or vice versa). Therefore, $k$ will have no inflection
         points.
 
-        \includegraphics[width=2.5in]{12S-B}
+        \resizebox{2.5in}{!}{\input{figures/16.tex}}
       \end{multicols}
     calculator_active: true
     sections:
@@ -685,7 +699,7 @@ questions:
         extrema and the endpoints. Keep in mind that the extrema are the values
         of the function and not the corresponding $x$ values where they occur.
 
-        \includegraphics[width=2.5in]{11S-B}
+        \resizebox{2.5in}{!}{\input{figures/17.tex}}
       \end{multicols}
     calculator_active: true
     sections:
@@ -717,7 +731,7 @@ questions:
         \emph{trace} feature to find the approximate values and eliminate
         incorrect choices.
 
-        \includegraphics[width=2.5in]{13S-B}
+        \resizebox{2.5in}{!}{\input{figures/18.tex}}
       \end{multicols}
     calculator_active: true
     sections:

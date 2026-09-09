@@ -1,0 +1,40 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\definecolor{scrbg}{RGB}{231,227,231}
+\definecolor{scrbar}{RGB}{82,85,82}
+\definecolor{batgreen}{RGB}{0,158,0}
+\definecolor{batorange}{RGB}{255,156,60}
+\definecolor{scrblue}{RGB}{0,0,255}
+\definecolor{scrred}{RGB}{255,0,0}
+\definecolor{scrmagenta}{RGB}{255,0,255}
+% TI-84 screen, drawn in screen pixels (x right, y down)
+\begin{tikzpicture}[color=black, x=0.75pt, y=-0.75pt, line width=0.75pt]
+  % Screen background, black bezel and status bar
+  \fill[scrbg] (0,0) rectangle (244,184);
+  \draw[line width=1.5pt] (0.75,0.75) rectangle (243.25,183.25);
+  \fill[scrbar] (1.5,1.5) rectangle (242.5,25);
+  \node[anchor=base west, white, font=\fontsize{8.2pt}{9pt}\ttfamily] at (4,11) {NORMAL FLOAT AUTO REAL RADIAN MP};
+  % Battery indicator
+  \fill[batgreen] (232,3) rectangle (237,6);
+  \fill[batorange] (229,5) rectangle (240,20);
+  \fill[batgreen] (232,7) rectangle (237,19);
+  % Plot area
+  \fill[white] (22,37) rectangle (221,159);
+  \begin{scope}
+    \clip (22,37) rectangle (221,159);
+    %% Axes with 1-unit tick marks
+    \draw (22,98.0) -- (221,98.0);
+    \draw (121.0,37) -- (121.0,159);
+    \foreach \k in {-40,...,40} {
+      \draw ({121.00 + \k*19.2308},100.5) -- ++(0,-5);
+    }
+    \foreach \k in {-120,...,120} {
+      \draw (118.50,{98.0 + \k*5.3333}) -- ++(5,0);
+    }
+    %% R(x) = -3.261x^3 + 5.362x - 1.584
+    \draw[scrred, line width=1.2pt, smooth, samples=300, domain=-1.96:1.91]
+      plot ({121.00 + \x*19.2308}, {98.00 - ((-3.261*\x*\x + 5.362)*\x - 1.584)*5.3333});
+  \end{scope}
+\end{tikzpicture}
+\end{document}

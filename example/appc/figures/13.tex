@@ -1,0 +1,48 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\definecolor{scrbg}{RGB}{231,227,231}
+\definecolor{scrbar}{RGB}{82,85,82}
+\definecolor{batgreen}{RGB}{0,158,0}
+\definecolor{batorange}{RGB}{255,156,60}
+\definecolor{scrblue}{RGB}{0,0,255}
+\definecolor{scrred}{RGB}{255,0,0}
+\definecolor{scrmagenta}{RGB}{255,0,255}
+% TI-84 screen, drawn in screen pixels (x right, y down)
+\begin{tikzpicture}[color=black, x=0.75pt, y=-0.75pt, line width=0.75pt]
+  % Screen background, black bezel and status bar
+  \fill[scrbg] (0,0) rectangle (244,184);
+  \draw[line width=1.5pt] (0.75,0.75) rectangle (243.25,183.25);
+  \fill[scrbar] (1.5,1.5) rectangle (242.5,25);
+  \node[anchor=base west, white, font=\fontsize{8.2pt}{9pt}\ttfamily] at (4,11) {NORMAL FLOAT AUTO REAL RADIAN MP};
+  \node[anchor=base west, white, font=\fontsize{8.2pt}{9pt}\ttfamily] at (4,21) {CALC MAXIMUM};
+  % Battery indicator
+  \fill[batgreen] (232,3) rectangle (237,6);
+  \fill[batorange] (229,5) rectangle (240,20);
+  \fill[batgreen] (232,7) rectangle (237,19);
+  % Function entered in the Y= editor
+  \node[anchor=base west, scrmagenta, font=\fontsize{8.2pt}{9pt}\ttfamily] at (22,34.5) {$\mathtt{Y_4{=}0.03X^3{-}0.846X^2{+}6.587X{+}1.428}$};
+  % Plot area
+  \fill[white] (22,37) rectangle (221,159);
+  \begin{scope}
+    \clip (22,37) rectangle (221,159);
+    %% Axes with 1-unit tick marks
+    \draw (22,158.0) -- (221,158.0);
+    \draw (22.0,37) -- (22.0,159);
+    \foreach \k in {-40,...,40} {
+      \draw ({22.00 + \k*9.9010},160.5) -- ++(0,-5);
+    }
+    \foreach \k in {-120,...,120} {
+      \draw (19.50,{158.0 + \k*6.0976}) -- ++(5,0);
+    }
+    %% r(t) = 0.03t^3 - 0.846t^2 + 6.587t + 1.428 on [0, 20]
+    \draw[scrmagenta, line width=1.2pt, smooth, samples=300, domain=0:17.9]
+      plot ({22.00 + \x*9.9010}, {158.00 - (((0.03*\x - 0.846)*\x + 6.587)*\x + 1.428)*6.0976});
+    %% Trace cursor
+    \draw[line width=1.1pt] (73.0,54.0) -- ++(7,0) (76.5,50.5) -- ++(0,7);
+  \end{scope}
+  \node[anchor=base west, scrmagenta, font=\fontsize{8.2pt}{9pt}\ttfamily] at (23,169.5) {Maximum};
+  \node[anchor=base west, scrmagenta, font=\fontsize{8.2pt}{9pt}\ttfamily] at (23,178.5) {X=5.5049908};
+  \node[anchor=base west, scrmagenta, font=\fontsize{8.2pt}{9pt}\ttfamily] at (123,178.5) {Y=17.056259};
+\end{tikzpicture}
+\end{document}

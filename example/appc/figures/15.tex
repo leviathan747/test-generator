@@ -1,0 +1,48 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\definecolor{scrbg}{RGB}{231,227,231}
+\definecolor{scrbar}{RGB}{82,85,82}
+\definecolor{batgreen}{RGB}{0,158,0}
+\definecolor{batorange}{RGB}{255,156,60}
+\definecolor{scrblue}{RGB}{0,0,255}
+\definecolor{scrred}{RGB}{255,0,0}
+\definecolor{scrmagenta}{RGB}{255,0,255}
+% TI-84 screen, drawn in screen pixels (x right, y down)
+\begin{tikzpicture}[color=black, x=0.75pt, y=-0.75pt, line width=0.75pt]
+  % Screen background, black bezel and status bar
+  \fill[scrbg] (0,0) rectangle (244,184);
+  \draw[line width=1.5pt] (0.75,0.75) rectangle (243.25,183.25);
+  \fill[scrbar] (1.5,1.5) rectangle (242.5,25);
+  \node[anchor=base west, white, font=\fontsize{8.2pt}{9pt}\ttfamily] at (4,11) {NORMAL FLOAT AUTO REAL RADIAN MP};
+  \node[anchor=base west, white, font=\fontsize{8.2pt}{9pt}\ttfamily] at (4,21) {CALC ZERO};
+  % Battery indicator
+  \fill[batgreen] (232,3) rectangle (237,6);
+  \fill[batorange] (229,5) rectangle (240,20);
+  \fill[batgreen] (232,7) rectangle (237,19);
+  % Function entered in the Y= editor
+  \node[anchor=base west, scrmagenta, font=\fontsize{8.2pt}{9pt}\ttfamily] at (22,34.5) {$\mathtt{Y_4{=}1.013X^2{-}16.214X{+}52.191}$};
+  % Plot area
+  \fill[white] (22,37) rectangle (221,159);
+  \begin{scope}
+    \clip (22,37) rectangle (221,159);
+    %% Axes with 1-unit tick marks
+    \draw (22,124.0) -- (221,124.0);
+    \draw (23.0,37) -- (23.0,159);
+    \foreach \k in {-40,...,40} {
+      \draw ({23.00 + \k*24.3902},126.5) -- ++(0,-5);
+    }
+    \foreach \k in {-120,...,120} {
+      \draw (20.50,{124.0 + \k*1.7391}) -- ++(5,0);
+    }
+    %% R(t) = 1.013t^2 - 16.214t + 52.191 on [0, 8]
+    \draw[scrmagenta, line width=1.2pt, smooth, samples=300, domain=0.1:8.1]
+      plot ({23.00 + \x*24.3902}, {124.00 - ((1.013*\x - 16.214)*\x + 52.191)*1.7391});
+    %% Trace cursor
+    \draw[line width=1.1pt] (128.4,124.0) -- ++(7,0) (131.9,120.5) -- ++(0,7);
+  \end{scope}
+  \node[anchor=base west, scrmagenta, font=\fontsize{8.2pt}{9pt}\ttfamily] at (23,169.5) {Zero};
+  \node[anchor=base west, scrmagenta, font=\fontsize{8.2pt}{9pt}\ttfamily] at (23,178.5) {X=4.4637287};
+  \node[anchor=base west, scrmagenta, font=\fontsize{8.2pt}{9pt}\ttfamily] at (123,178.5) {Y=0};
+\end{tikzpicture}
+\end{document}

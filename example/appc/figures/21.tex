@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\definecolor{gridgray}{RGB}{213,213,213}
+\definecolor{crimson}{RGB}{214,0,54}
+\begin{tikzpicture}[color=black, >=stealth, scale=0.3, font=\scriptsize\bfseries]
+  % Grid
+  \draw[gridgray, thin] (-10,-10) grid (10,10);
+  % Axes
+  \draw[<->, thick] (-10.9,0) -- (10.9,0);
+  \draw[<->, thick] (0,-10.9) -- (0,10.9);
+  % Scale labels (even values only)
+  \foreach \n in {-10,-8,-6,-4,-2,2,4,6,8,10} {
+    \node[below, inner sep=2pt] at (\n,-0.15) {\n};
+    \node[left, inner sep=2pt] at (-0.15,\n) {\n};
+  }
+  % Cubic:  y = -0.065(x - 3)(x + 3)^2, tangent to the x-axis at x = -3
+  \draw[<->, line width=1.2pt, crimson, smooth, samples=200, domain=-6.93:5.25]
+    plot (\x, {-0.065*(\x - 3)*(\x + 3)^2});
+  % Point of inflection at x = -1
+  \draw[crimson, dashed, thick] (-1,-10.5) -- (-1,10.5);
+  \fill[crimson] (-3,0) circle (3pt);
+  \fill[crimson] (3,0) circle (3pt);
+\end{tikzpicture}
+\end{document}

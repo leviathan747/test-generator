@@ -18,13 +18,13 @@ OUTPUT_DIR = Path(__file__).parent / "output_pdfs"
 # Each entry: (course_dir_name, subdir, yaml_stem); subdir is None when the
 # YAML files live at the course root.
 EXAMPLE_CASES = [
-    ("appc", None, "unit1a"),
-    ("appc", None, "unit1b"),
-    ("appc", None, "unit2a"),
-    ("appc", None, "unit2b"),
-    ("appc", None, "unit3a"),
-    ("appc", None, "unit3b"),
-    ("appc", None, "unit3c"),
+    ("appc", "tests", "unit1a"),
+    ("appc", "tests", "unit1b"),
+    ("appc", "tests", "unit2a"),
+    ("appc", "tests", "unit2b"),
+    ("appc", "tests", "unit3a"),
+    ("appc", "tests", "unit3b"),
+    ("appc", "tests", "unit3c"),
     ("apcalc", "tests", "unit1"),
     ("apcalc", "tests", "unit2"),
     ("apcalc", "tests", "unit3"),
@@ -42,17 +42,13 @@ EXAMPLE_CASES = [
     ids=[f"{c}/{s + '/' if s else ''}{u}" for c, s, u in EXAMPLE_CASES],
 )
 def test_example_builds_pdf(course: str, subdir: str | None, unit: str) -> None:
-    # apcalc keeps its YAML files in tests/ and quiz_questions/
-    # subdirectories and uses a single flat figures/ directory; other courses
-    # keep YAML files at the course root and per-unit figure subdirectories
-    # under figures/.
-    if course == "apcalc":
-        assert subdir is not None
-        yaml_path = EXAMPLE_DIR / course / subdir / f"{unit}.yaml"
-        figures_dir = EXAMPLE_DIR / course / "figures"
-    else:
-        yaml_path = EXAMPLE_DIR / course / f"{unit}.yaml"
-        figures_dir = EXAMPLE_DIR / course / "figures" / unit
+    # Figures live either in a per-unit subdirectory under figures/ or,
+    # once converted to TikZ, in the course's flat figures/ directory.
+    course_dir = EXAMPLE_DIR / course
+    yaml_path = (course_dir / subdir if subdir else course_dir) / f"{unit}.yaml"
+    figures_dir = course_dir / "figures" / unit
+    if not figures_dir.is_dir():
+        figures_dir = course_dir / "figures"
 
     assert yaml_path.exists(), f"YAML not found: {yaml_path}"
 
