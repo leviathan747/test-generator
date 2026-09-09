@@ -4,6 +4,9 @@ class_name: AP Precalculus
 class_id: APPC
 duration: 15 min
 sections: 1.1 - 1.6
+instructions: |
+  Read all directions and answer each question completely. Unless otherwise
+  specified, all answers will be real numbers.
 question_count: 1
 questions:
   - id: 3a60e2fc-7cde-4543-b441-2c01b77d46d1
