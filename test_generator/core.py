@@ -250,7 +250,7 @@ def _review_label(
         listed = ", ".join(f"{major}.{minor}" for major, minor in sorted(sections))
         parts.append(f"Sections: {listed}")
     if qid is not None and str(qid):
-        parts.append("ID: \\texttt{%s}" % qid[:8])
+        parts.append("ID: \\texttt{%s}" % str(qid)[:8])
     if not parts:
         return ""
     return "\\reviewinfo{%s}\n" % " \\quad ".join(parts)
