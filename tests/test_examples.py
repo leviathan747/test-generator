@@ -125,7 +125,7 @@ def test_from_manifest_recreates_pdf(
     monkeypatch.setattr("builtins.input", lambda prompt="": "y")
     main([str(config), "--from-manifest", str(manifest),
           "--figures-dir", str(figures_dir),
-          "--out-dir", str(tmp_path), "--student-only"])
+          "--out-dir", str(tmp_path)])
 
     assert student_pdf.exists(), f"PDF was not recreated: {student_pdf}"
     assert student_pdf.stat().st_size > 0, f"PDF is empty: {student_pdf}"

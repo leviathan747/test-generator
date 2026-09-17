@@ -4,12 +4,16 @@ Usage: python -m test_generator config.yaml [config2.yaml ...] \
            [--questions questions.yaml]... \
            [--figures-dir <dir>]... [--out-dir <dir>] \
            [--exclude-manifest <manifest.yaml>]... \
-           [--student-only | --solution-only] [--report]
+           [--report] [--archive]
 
        python -m test_generator config.yaml --from-manifest <manifest.yaml> \
            [--new-version] [--questions questions.yaml]... \
            [--figures-dir <dir>]... [--out-dir <dir>] \
-           [--student-only | --solution-only] [--report]
+           [--report] [--archive]
+
+       python -m test_generator config.yaml [config2.yaml ...] --watch \
+           [--questions questions.yaml]... [--figures-dir <dir>]... \
+           [--out-dir <dir>] [--student-only | --solution-only] [--report]
 
        python -m test_generator --report-from-manifest <manifest.yaml>
 
@@ -47,6 +51,9 @@ without regenerating anything. Manifests also record each MCQ's answer
 letter and a top-level `answer_key` summary, and the solution copy prints
 each question's DOK, sections, and id for review. An `instructions` config
 field (raw LaTeX) renders a framed box at the top of the first page.
+`--archive` also writes a self-contained ZIP of the version (pruned
+sources, referenced figures, manifest, .tex sources, and a README with the
+report and rebuild commands); it is not available in watch mode.
 """
 import argparse
 import hashlib
@@ -63,15 +70,17 @@ from typing import Any
 import yaml
 
 from ._version import __version__
+from .archive import format_readme, prune_questions_yaml, write_archive
 from .core import (
     Question,
     _effective_dok,
     _question_sections,
     _quote_backslash_scalar_lines,
+    compile_tex,
     filter_questions,
-    generate_test,
     load_question_pool,
     make_choice_orders,
+    render_tex,
     select_questions,
 )
 from .report import format_report
@@ -155,6 +164,10 @@ def _manifest_path(config: dict[str, Any], form_id: str, out_dir: str) -> Path:
     return Path(out_dir) / f"{_output_base(config)}_{form_id}.manifest.yaml"
 
 
+def _archive_path(config: dict[str, Any], form_id: str, out_dir: str) -> Path:
+    return Path(out_dir) / f"{_output_base(config)}_{form_id}.zip"
+
+
 def _validate_question_ids(questions: list[Question]) -> None:
     """Every included question must have a unique `id` for manifest lookup.
 
@@ -187,28 +200,37 @@ def _answer_letter(order: list[int]) -> str:
     return string.ascii_uppercase[order.index(0)]
 
 
+def _figure_files(
+    figures_dirs: list[str], questions: list[Question]
+) -> list[tuple[str, Path]]:
+    """Referenced figures as unique ``(figure name, resolved path)`` pairs.
+
+    Each figure resolves to the first directory in ``figures_dirs`` that
+    contains it (falling back to the first directory, so a missing figure
+    still fails when it is read).
+    """
+    figures: dict[str, Path] = {}
+    for q in questions:
+        items = [q] + list(q.get("parts") or [])
+        for item in items:
+            figure = item.get("figure")
+            if figure and str(figure) not in figures:
+                candidates = [Path(d) / str(figure) for d in figures_dirs]
+                found = next((c for c in candidates if c.exists()), candidates[0])
+                figures[str(figure)] = found
+    return list(figures.items())
+
+
 def _manifest_files(
     config_path: str,
     questions_paths: list[str] | None,
     figures_dirs: list[str],
     questions: list[Question],
 ) -> list[str]:
-    """Input files to record: config, question bank(s), and referenced figures.
-
-    Each figure is recorded from the first directory in ``figures_dirs``
-    that contains it (falling back to the first directory, so a missing
-    figure still fails when its MD5 is computed).
-    """
+    """Input files to record: config, question bank(s), and referenced figures."""
     paths = [str(config_path)]
     paths.extend(str(p) for p in questions_paths or [])
-    for q in questions:
-        items = [q] + list(q.get("parts") or [])
-        for item in items:
-            figure = item.get("figure")
-            if figure:
-                candidates = [Path(d) / str(figure) for d in figures_dirs]
-                found = next((c for c in candidates if c.exists()), candidates[0])
-                paths.append(str(found))
+    paths.extend(str(path) for _, path in _figure_files(figures_dirs, questions))
     seen: set[str] = set()
     unique: list[str] = []
     for p in paths:
@@ -218,8 +240,7 @@ def _manifest_files(
     return unique
 
 
-def _write_manifest(
-    manifest_path: str | Path,
+def _build_manifest(
     form_id: str,
     config_path: str,
     questions_paths: list[str] | None,
@@ -228,7 +249,7 @@ def _write_manifest(
     choice_orders: dict[Any, list[int]],
     sections_spec: str | None = None,
     dok_target: float | None = None,
-) -> str:
+) -> dict[str, Any]:
     file_paths = _manifest_files(config_path, questions_paths, figures_dirs, questions)
     question_entries: list[dict[str, Any]] = []
     answer_letters: list[str] = []
@@ -262,6 +283,10 @@ def _write_manifest(
         manifest["sections"] = str(sections_spec)
     if dok_target is not None:
         manifest["dok_target"] = dok_target
+    return manifest
+
+
+def _write_manifest(manifest_path: str | Path, manifest: dict[str, Any]) -> str:
     manifest_path = Path(manifest_path)
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path.write_text(yaml.safe_dump(manifest, sort_keys=False))
@@ -276,19 +301,24 @@ def _generate_copies(
     figures_dirs: list[str],
     question_order: list[Any],
     choice_orders: dict[Any, list[int]],
-) -> None:
+) -> dict[bool, str]:
+    """Compile the requested copies; return their ``.tex`` keyed by solution.
+
+    Only watch mode can limit the copies (``--student-only`` /
+    ``--solution-only``); archives are never written there, so they
+    always receive both sources.
+    """
+    texs: dict[bool, str] = {}
     for output_pdf, solution in _output_paths(
         config, form_id, args.out_dir, args.student_only, args.solution_only
     ):
-        out = generate_test(
+        texs[solution] = render_tex(
             questions_paths,
-            str(output_pdf),
             title=str(config.get("title") or ""),
             author=str(config.get("author") or ""),
             class_name=str(config.get("class_name") or ""),
             form_id=_display_form_id(form_id),
             duration=str(config.get("duration") or ""),
-            figures_dir=figures_dirs,
             solution=solution,
             questions=config.get("questions"),
             work_space=config.get("work_space"),
@@ -296,7 +326,103 @@ def _generate_copies(
             choice_orders=choice_orders,
             instructions=str(config.get("instructions") or ""),
         )
-        print(out)
+        print(compile_tex(
+            texs[solution], str(output_pdf), figures_dirs, questions_paths
+        ))
+    return texs
+
+
+def _unique_name(name: str, taken: set[str]) -> str:
+    """``name``, or ``stem-2.ext``, ``stem-3.ext``, ... if already taken."""
+    candidate = name
+    stem, suffix = Path(name).stem, Path(name).suffix
+    n = 2
+    while candidate in taken:
+        candidate = f"{stem}-{n}{suffix}"
+        n += 1
+    taken.add(candidate)
+    return candidate
+
+
+def _write_archive(
+    args: argparse.Namespace,
+    config: dict[str, Any],
+    config_path: str,
+    form_id: str,
+    figures_dirs: list[str],
+    questions: list[Question],
+    manifest: dict[str, Any],
+    texs: dict[bool, str],
+) -> str | None:
+    """Write the version's self-contained ZIP archive; see archive.py.
+
+    Sources are pruned to the selected questions, so the enclosed manifest
+    matches ``manifest`` except for its ``files`` entries. Returns the
+    archive path, or None when the user declines to overwrite one.
+    """
+    zip_path = _archive_path(config, form_id, args.out_dir)
+    if zip_path.exists() and not _confirm(
+            f"Overwrite existing archive {zip_path}? [y/N] "):
+        print("Archive not overwritten.", file=sys.stderr)
+        return None
+
+    keep_ids = {q["id"] for q in questions}
+    base = _output_base(config)
+    root = f"{base}_{form_id}"
+    manifest_name = f"{root}.manifest.yaml"
+    config_name = Path(config_path).name
+    sources: dict[str, bytes] = {}
+
+    config_text, _ = prune_questions_yaml(Path(config_path).read_text(), keep_ids)
+    sources[config_name] = config_text.encode()
+    replay_args = [config_name, "--from-manifest", manifest_name]
+
+    taken = {config_name}
+    seen_banks: set[str] = set()
+    for bank in args.questions or []:
+        if str(bank) in seen_banks:
+            continue
+        seen_banks.add(str(bank))
+        bank_text, kept = prune_questions_yaml(Path(bank).read_text(), keep_ids)
+        if not kept:
+            continue
+        name = "questions/" + _unique_name(Path(bank).name, taken)
+        sources[name] = bank_text.encode()
+        replay_args += ["--questions", name]
+
+    figures = _figure_files(figures_dirs, questions)
+    for figure, path in figures:
+        sources[f"figures/{figure}"] = path.read_bytes()
+    if figures:
+        replay_args += ["--figures-dir", "figures"]
+    replay_args += ["--out-dir", "rebuilt"]
+
+    inner = dict(manifest)
+    inner["files"] = [
+        {"name": Path(name).name, "md5": hashlib.md5(data).hexdigest()}
+        for name, data in sources.items()
+    ]
+    tex_names = [f"{base}.tex", f"{base}_solutions.tex"]
+    readme = format_readme(
+        root,
+        inner,
+        title=str(config.get("title") or ""),
+        replay_args=replay_args,
+        tex_names=tex_names,
+        file_names=[manifest_name, *sources, *tex_names],
+        report=format_report(
+            questions, config.get("sections"),
+            dok_target=config.get("dok_target"), color=False,
+        ),
+    )
+    entries: dict[str, bytes] = {
+        "README.md": readme.encode(),
+        manifest_name: yaml.safe_dump(inner, sort_keys=False).encode(),
+        **sources,
+        tex_names[0]: texs[False].encode(),
+        tex_names[1]: texs[True].encode(),
+    }
+    return write_archive(zip_path, root, entries)
 
 
 def _load_excluded_ids(manifest_paths: list[str]) -> set[Any]:
@@ -352,18 +478,27 @@ def _run_once(args: argparse.Namespace, draft: bool = False) -> bool:
             form_id = "draft" if draft else _new_form_id()
             question_order = [q["id"] for q in included]
             choice_orders = make_choice_orders(included)
-            _generate_copies(
+            texs = _generate_copies(
                 args, config, form_id, args.questions, figures_dirs,
                 question_order, choice_orders,
             )
             if not draft:
-                print(_write_manifest(
-                    _manifest_path(config, form_id, args.out_dir),
+                manifest = _build_manifest(
                     form_id, config_path, args.questions, figures_dirs,
                     included, choice_orders,
                     sections_spec=config.get("sections"),
                     dok_target=config.get("dok_target"),
+                )
+                print(_write_manifest(
+                    _manifest_path(config, form_id, args.out_dir), manifest
                 ))
+                if args.archive:
+                    archive = _write_archive(
+                        args, config, config_path, form_id, figures_dirs,
+                        included, manifest, texs,
+                    )
+                    if archive:
+                        print(archive)
             if args.report:
                 print(format_report(
                     included, config.get("sections"),
@@ -520,9 +655,15 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
     else:
         form_id = manifest["form_id"]
 
-    _generate_copies(
+    texs = _generate_copies(
         args, config, form_id, args.questions,
         figures_dirs, question_order, choice_orders,
+    )
+    manifest = _build_manifest(
+        form_id, config_path, args.questions, figures_dirs,
+        selected, choice_orders,
+        sections_spec=config.get("sections"),
+        dok_target=config.get("dok_target"),
     )
     # Always record a manifest for the replay; a plain replay reuses the
     # manifest's form ID, so its path matches the original — confirm before
@@ -532,13 +673,14 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
             f"Overwrite existing manifest {manifest_out}? [y/N] "):
         print("Manifest not overwritten.", file=sys.stderr)
     else:
-        print(_write_manifest(
-            manifest_out,
-            form_id, config_path, args.questions, figures_dirs,
-            selected, choice_orders,
-            sections_spec=config.get("sections"),
-            dok_target=config.get("dok_target"),
-        ))
+        print(_write_manifest(manifest_out, manifest))
+    if args.archive:
+        archive = _write_archive(
+            args, config, config_path, form_id, figures_dirs,
+            selected, manifest, texs,
+        )
+        if archive:
+            print(archive)
     if args.report:
         print(format_report(
             selected, config.get("sections"),
@@ -603,10 +745,11 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--out-dir", dest="out_dir", default=".", help="Directory where generated PDFs are written (default: current directory)")
     p.add_argument("--figures-dir", dest="figures_dir", action="append", metavar="DIR", help="Directory containing figures; may be given multiple times, earlier directories win on filename collisions (default: current directory)")
     p.add_argument("--watch", action="store_true", help="Watch for changes and regenerate drafts automatically (no manifest is written)")
+    p.add_argument("--archive", action="store_true", help="Also write <class_id>_<name>_<form_id>.zip: the manifest, the config and question bank(s) pruned to the selected questions, referenced figures, the .tex sources, and a README with the report and rebuild commands (not available with --watch)")
     p.add_argument("--report", action="store_true", help="Print a section-coverage and DOK report after each generation")
     only = p.add_mutually_exclusive_group()
-    only.add_argument("--student-only", action="store_true", help="Generate only the student copy")
-    only.add_argument("--solution-only", action="store_true", help="Generate only the solution copy")
+    only.add_argument("--student-only", action="store_true", help="With --watch: regenerate only the student copy")
+    only.add_argument("--solution-only", action="store_true", help="With --watch: regenerate only the solution copy")
     args = p.parse_args(argv)
 
     if args.new_version and not args.from_manifest:
@@ -616,11 +759,18 @@ def main(argv: list[str] | None = None) -> None:
             "--exclude-manifest cannot be used with --from-manifest "
             "(replay keeps the manifest's question set)"
         )
+    if (args.student_only or args.solution_only) and not args.watch:
+        p.error(
+            "--student-only and --solution-only are only valid with --watch "
+            "(normal runs and replays always generate both copies)"
+        )
+    if args.archive and args.watch:
+        p.error("--archive cannot be used with --watch (drafts are not archived)")
     if args.report_from_manifest:
-        if args.config_yaml or args.from_manifest or args.watch:
+        if args.config_yaml or args.from_manifest or args.watch or args.archive:
             p.error(
                 "--report-from-manifest is standalone; do not combine it "
-                "with config files, --from-manifest, or --watch"
+                "with config files, --from-manifest, --watch, or --archive"
             )
         try:
             ok = _report_from_manifest(args.report_from_manifest)

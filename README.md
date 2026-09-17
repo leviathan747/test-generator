@@ -49,9 +49,10 @@ python -m test_generator config.yaml [config2.yaml ...] \
 | `--exclude-manifest` | Drop the questions recorded in this manifest from the pool, so a follow-up assessment reuses none of them (repeatable; matched by question `id` only, no MD5 check). Cannot be combined with `--from-manifest` |
 | `--report-from-manifest` | Print the coverage/DOK report recorded in a manifest and exit; standalone — takes no config files, generates nothing |
 | `--report` | Print a section-coverage and DOK report after each generation (see below) |
+| `--archive` | Also write a self-contained `<class_id>_<name>_<form_id>.zip` for long-term storage (see below). Cannot be combined with `--watch` |
 | `--watch` | Watch the config file(s), questions file(s), and figures directories for changes and regenerate drafts automatically (the footer shows `draft` in place of a form ID; no manifest is written) |
-| `--student-only` | Generate only the student copy (default: both copies) |
-| `--solution-only` | Generate only the solution copy (default: both copies) |
+| `--student-only` | With `--watch`: regenerate only the student copy, for faster iteration (default: both copies). Not valid outside watch mode |
+| `--solution-only` | With `--watch`: regenerate only the solution copy, for faster iteration (default: both copies). Not valid outside watch mode |
 
 #### Config file
 
@@ -192,6 +193,28 @@ Adding `--new-version` turns a replay into a fresh version of the same
 test: the manifest's questions are reused, but with a new form ID and
 re-scrambled question and choice order (scrambling happens regardless of
 the config's `scramble_questions`), recorded in its own new manifest.
+
+#### Archives
+
+`--archive` writes `<class_id>_<name>_<form_id>.zip` next to the PDFs and
+manifest (which are still written, and `--report` still prints) for normal
+runs and replays. It holds everything needed to recreate that version under
+a single `<class_id>_<name>_<form_id>/` folder:
+
+- `README.md` — the coverage/DOK report, the generator command that
+  replays the version from the archived files, and `pdflatex` commands
+- the manifest
+- the config file and question bank(s) (under `questions/`), pruned to the
+  selected questions; kept questions are copied byte-for-byte, and banks
+  contributing no questions are left out
+- only the referenced figures (under `figures/`)
+- `<class_id>_<name>.tex` and `<class_id>_<name>_solutions.tex`, which
+  build the PDFs with `pdflatex` alone, without the generator
+
+The archived manifest matches the standalone one (same form ID, timestamp,
+questions, and answer key) except for its `files` MD5 sums, which describe
+the pruned copies. Rebuilt PDFs match in content but not byte-for-byte,
+since `pdflatex` embeds the build time.
 
 #### Figures
 

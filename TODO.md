@@ -1,8 +1,7 @@
 # TODO list
 
 - Friendly name for forms
-- Put everything needed to recreate a test in a ZIP archive
-  - Generate from the ZIP archive
+- Generate from the ZIP archive
 
 ## Low priority
 

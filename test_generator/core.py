@@ -472,15 +472,13 @@ def _apply_figure_placeholders(block: str, item: Question) -> str:
     )
 
 
-def generate_test(
+def render_tex(
     yaml_path: str | Sequence[str] | None,
-    output_pdf: str,
     title: str = "",
     author: str = "",
     class_name: str = "",
     form_id: str = "",
     duration: str = "",
-    figures_dir: str | Sequence[str] | None = None,
     solution: bool = False,
     assessment_type: str | None = None,
     sections: str | None = None,
@@ -491,52 +489,12 @@ def generate_test(
     choice_orders: dict[Any, list[int]] | None = None,
     instructions: str = "",
 ) -> str:
-    """Generate a test PDF from a YAML file.
+    """Render the LaTeX source for a test; see :func:`generate_test`.
 
-    Args:
-        yaml_path: Path (or sequence of paths, loaded in order) to YAML
-            file(s) describing questions (each must contain a top-level
-            `questions` list of mappings with an `id` key). May be None
-            when ``questions`` supplies the questions directly.
-        output_pdf: Path where the generated PDF will be written.
-        title: Test title.
-        author: Author name.
-        class_name: Class name.
-        form_id: Form identifier printed in the page footer.
-        duration: Duration string (e.g. "30 min").
-        figures_dir: Directory (or sequence of directories) containing
-            figure files to copy into the build environment. On filename
-            collisions the earliest-listed directory wins. Defaults to a
-            ``figures/`` subdirectory next to the first YAML file when
-            not specified.
-        solution: When True, render the solution/answer-key copy.
-        assessment_type: Optional filter; see :func:`filter_questions`.
-        sections: Optional section range filter; see :func:`filter_questions`.
-        calculator_active: Optional calculator_active filter; see :func:`filter_questions`.
-        questions: Optional list of question mappings appended to those
-            loaded from ``yaml_path``.
-        work_space: Default height of the answer work space for FRQ
-            questions (e.g. "2in"). Questions and parts may override it
-            with their own ``work_space`` field. Defaults to "1in".
-        question_order: Optional list of question IDs. When set, the
-            filters are skipped and questions are selected from the
-            combined pool by ID in this order; unknown or ambiguous
-            (duplicated in the pool) IDs are errors.
-        choice_orders: Optional mapping of question ID to a choice
-            permutation (see :func:`make_choice_orders`). MCQs with an
-            entry use it instead of shuffling; MCQs without one shuffle
-            randomly.
-        instructions: Optional raw-LaTeX instructions rendered in a framed
-            box at the top of the first page, before the first question.
-
-    Returns:
-        The path to the generated PDF (same as ``output_pdf``).
-
-    Raises:
-        RuntimeError: if YAML can't be parsed, template can't be loaded, or
-            PDF generation via `pdflatex` fails.
+    Takes the same arguments as :func:`generate_test` except ``output_pdf``
+    and ``figures_dir``, and returns the complete ``.tex`` document. Figures
+    are referenced as ``figures/<name>`` relative to the compile directory.
     """
-    yaml_files = _as_paths(yaml_path)
     all_questions = load_question_pool(yaml_path, questions)
 
     if question_order is not None:
@@ -672,6 +630,28 @@ def generate_test(
     if solution:
         tex_content = tex_content.replace("\\begin{document}", "\\printanswers\n\\begin{document}")
 
+    return tex_content
+
+
+def compile_tex(
+    tex_content: str,
+    output_pdf: str,
+    figures_dir: str | Sequence[str] | None = None,
+    yaml_path: str | Sequence[str] | None = None,
+) -> str:
+    """Compile LaTeX source to ``output_pdf`` with a single `pdflatex` pass.
+
+    Figures from ``figures_dir`` (earliest-listed wins collisions; defaults
+    to a ``figures/`` subdirectory next to the first ``yaml_path``) are
+    copied into the build directory's ``figures/``.
+
+    Returns:
+        The path to the generated PDF (same as ``output_pdf``).
+
+    Raises:
+        RuntimeError: if `pdflatex` fails.
+    """
+    yaml_files = _as_paths(yaml_path)
     with tempfile.TemporaryDirectory() as td:
         td_path = Path(td)
         tex_path = td_path / "output.tex"
@@ -708,3 +688,87 @@ def generate_test(
         shutil.move(str(generated_pdf), str(outp))
 
     return str(outp)
+
+
+def generate_test(
+    yaml_path: str | Sequence[str] | None,
+    output_pdf: str,
+    title: str = "",
+    author: str = "",
+    class_name: str = "",
+    form_id: str = "",
+    duration: str = "",
+    figures_dir: str | Sequence[str] | None = None,
+    solution: bool = False,
+    assessment_type: str | None = None,
+    sections: str | None = None,
+    calculator_active: bool | None = None,
+    questions: list[Question] | None = None,
+    work_space: str | None = None,
+    question_order: list[Any] | None = None,
+    choice_orders: dict[Any, list[int]] | None = None,
+    instructions: str = "",
+) -> str:
+    """Generate a test PDF from a YAML file.
+
+    Args:
+        yaml_path: Path (or sequence of paths, loaded in order) to YAML
+            file(s) describing questions (each must contain a top-level
+            `questions` list of mappings with an `id` key). May be None
+            when ``questions`` supplies the questions directly.
+        output_pdf: Path where the generated PDF will be written.
+        title: Test title.
+        author: Author name.
+        class_name: Class name.
+        form_id: Form identifier printed in the page footer.
+        duration: Duration string (e.g. "30 min").
+        figures_dir: Directory (or sequence of directories) containing
+            figure files to copy into the build environment. On filename
+            collisions the earliest-listed directory wins. Defaults to a
+            ``figures/`` subdirectory next to the first YAML file when
+            not specified.
+        solution: When True, render the solution/answer-key copy.
+        assessment_type: Optional filter; see :func:`filter_questions`.
+        sections: Optional section range filter; see :func:`filter_questions`.
+        calculator_active: Optional calculator_active filter; see :func:`filter_questions`.
+        questions: Optional list of question mappings appended to those
+            loaded from ``yaml_path``.
+        work_space: Default height of the answer work space for FRQ
+            questions (e.g. "2in"). Questions and parts may override it
+            with their own ``work_space`` field. Defaults to "1in".
+        question_order: Optional list of question IDs. When set, the
+            filters are skipped and questions are selected from the
+            combined pool by ID in this order; unknown or ambiguous
+            (duplicated in the pool) IDs are errors.
+        choice_orders: Optional mapping of question ID to a choice
+            permutation (see :func:`make_choice_orders`). MCQs with an
+            entry use it instead of shuffling; MCQs without one shuffle
+            randomly.
+        instructions: Optional raw-LaTeX instructions rendered in a framed
+            box at the top of the first page, before the first question.
+
+    Returns:
+        The path to the generated PDF (same as ``output_pdf``).
+
+    Raises:
+        RuntimeError: if YAML can't be parsed, template can't be loaded, or
+            PDF generation via `pdflatex` fails.
+    """
+    tex_content = render_tex(
+        yaml_path,
+        title=title,
+        author=author,
+        class_name=class_name,
+        form_id=form_id,
+        duration=duration,
+        solution=solution,
+        assessment_type=assessment_type,
+        sections=sections,
+        calculator_active=calculator_active,
+        questions=questions,
+        work_space=work_space,
+        question_order=question_order,
+        choice_orders=choice_orders,
+        instructions=instructions,
+    )
+    return compile_tex(tex_content, output_pdf, figures_dir, yaml_path)

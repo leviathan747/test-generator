@@ -769,7 +769,7 @@ def test_main_form_id_format_and_no_date(
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_dir = tmp_path / "out"
-    main(_cli_args(config_file, questions_file, figures_dir, out_dir) + ["--student-only"])
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
 
     tex = tex_contents[0]
     # footer shows the grouped form ID and no date
@@ -870,7 +870,7 @@ def test_instructions_box_rendered(
 
     out_dir = tmp_path / "out"
     main(_cli_args(config_file, questions_file, figures_dir, out_dir)
-         + ["--student-only"])
+        )
 
     tex = tex_contents[0]
     assert "\\instructionsbox{" in tex
@@ -886,7 +886,7 @@ def test_no_instructions_box_without_field(
     _fake_pdflatex(monkeypatch, tex_contents)
 
     main(_cli_args(config_file, questions_file, figures_dir, tmp_path / "out")
-         + ["--student-only"])
+        )
     # the macro is always defined in the preamble; assert it is never invoked
     assert "\\instructionsbox{" not in tex_contents[0]
 
@@ -945,7 +945,7 @@ def test_from_manifest_tops_up_short_manifest(
     monkeypatch.setattr("builtins.input", _accept_overwrite_only)
     main([str(config_file), "--from-manifest", str(manifest_file),
           "--questions", str(questions_file), "--out-dir", str(out_dir),
-          "--figures-dir", str(figures_dir), "--student-only"])
+          "--figures-dir", str(figures_dir)])
 
     assert "adding 2" in capsys.readouterr().err
     topped = real_yaml.safe_load(manifest_file.read_text())
@@ -955,12 +955,22 @@ def test_from_manifest_tops_up_short_manifest(
     assert second_tex[0].count("\\question") == 4
 
 
+def _watch_once(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Stop watch mode after its initial generation."""
+    def raise_interrupt(_seconds: float) -> None:
+        raise KeyboardInterrupt
+
+    monkeypatch.setattr(time, "sleep", raise_interrupt)
+
+
 def test_main_student_only(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
     _fake_pdflatex(monkeypatch, [])
+    _watch_once(monkeypatch)
 
     out_dir = tmp_path / "out"
-    main(_cli_args(config_file, questions_file, figures_dir, out_dir) + ["--student-only"])
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir)
+         + ["--watch", "--student-only"])
 
     assert (out_dir / "APCalc_Quiz_1.3.pdf").exists()
     assert not (out_dir / "APCalc_Quiz_1.3_solutions.pdf").exists()
@@ -969,12 +979,24 @@ def test_main_student_only(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> N
 def test_main_solution_only(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     config_file, questions_file, figures_dir = _write_cli_inputs(tmp_path)
     _fake_pdflatex(monkeypatch, [])
+    _watch_once(monkeypatch)
 
     out_dir = tmp_path / "out"
-    main(_cli_args(config_file, questions_file, figures_dir, out_dir) + ["--solution-only"])
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir)
+         + ["--watch", "--solution-only"])
 
     assert not (out_dir / "APCalc_Quiz_1.3.pdf").exists()
     assert (out_dir / "APCalc_Quiz_1.3_solutions.pdf").exists()
+
+
+@pytest.mark.parametrize("flag", ["--student-only", "--solution-only"])
+def test_main_single_copy_flags_require_watch(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], flag: str
+) -> None:
+    for extra in ([], ["--from-manifest", "m.yaml"]):
+        with pytest.raises(SystemExit):
+            main([str(tmp_path / "config.yaml"), flag] + extra)
+        assert "only valid with --watch" in capsys.readouterr().err
 
 
 def test_main_filters_questions(
@@ -989,7 +1011,7 @@ def test_main_filters_questions(
     _fake_pdflatex(monkeypatch, tex_contents)
 
     out_dir = tmp_path / "out"
-    main(_cli_args(config_file, questions_file, figures_dir, out_dir) + ["--student-only"])
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
 
     assert "What is 2 + 2?" in tex_contents[0]
     assert "What is 3 + 3?" not in tex_contents[0]
@@ -1023,7 +1045,7 @@ def test_main_filters_calculator_active(
 
     out_dir = tmp_path / "out"
     main([str(config_file), "--out-dir", str(out_dir),
-          "--figures-dir", str(figures_dir), "--student-only"])
+          "--figures-dir", str(figures_dir)])
 
     assert "Calculator allowed here." in tex_contents[0]
     assert "No calculator here." not in tex_contents[0]
