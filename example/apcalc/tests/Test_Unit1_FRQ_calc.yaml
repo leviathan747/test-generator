@@ -293,8 +293,8 @@ questions:
       \]
     parts:
       - question: |
-          Use your calculator to complete the table below, giving each value to
-          three decimal places. Use the table to estimate
+          Use your calculator to complete the table below, giving each value
+          \emph{\textbf{rounded down}} to three decimal places. Use the table to estimate
           $\lim_{x \to 0} h(x)$.
 
           \begin{center}
@@ -302,20 +302,11 @@ questions:
               \hline
               \bm{$x$} & -0.1 & -0.01 & 0.01 & 0.1 \\
               \hline
-              \bm{$h(x)$} & & & & \\
+              \bm{$h(x)$}\answerstrut & \ans{0.251} & \ans{0.250} & \ans{0.249} & \ans{0.248} \\
               \hline
             \end{tabularx}
           \end{center}
         solution: |
-          \begin{center}
-            \begin{tabularx}{4.5in}{ |*{5}{Y|} }
-              \hline
-              \bm{$x$} & -0.1 & -0.01 & 0.01 & 0.1 \\
-              \hline
-              \bm{$h(x)$} & 0.252 & 0.250 & 0.250 & 0.248 \\
-              \hline
-            \end{tabularx}
-          \end{center}
           $\lim_{x \to 0} h(x) \approx 0.25$
         grading:
           - points: 1
@@ -356,7 +347,7 @@ questions:
           discontinuity (hole, jump, asymptote) at $x = 0$ and justify
           your classification. Then define
           a function $H$ such that $H(x) = h(x)$ for all $x \ne 0$ and $H$ is
-          continuous at $x = 0$.
+          continuous at $x = 0$. \emph{Hint: Use a piecewise definition for $H(x)$}
         solution: |
           The discontinuity at $x = 0$ is a hole because
           $\lim_{x \to 0} h(x) = \frac{1}{4}$ exists but $h(0)$ is undefined.
@@ -398,4 +389,4 @@ questions:
         work_space: 1.5in
     calculator_active: true
     question_type: FRQ
-    review: generated
+    review: none
