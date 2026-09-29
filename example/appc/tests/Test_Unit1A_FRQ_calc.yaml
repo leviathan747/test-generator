@@ -243,7 +243,7 @@ questions:
         work_space: 1.5in
     calculator_active: true
     question_type: FRQ
-    review: generated
+    review: none
 
   - id: c5701ce8-da59-48ae-9e75-2b48f6f6ccfb
     related_to:

@@ -835,7 +835,7 @@ questions:
     sections:
       - 1.1
     dok: 2
-    review: generated
+    review: none
 
   - id: e1b2ae82-0876-43ae-8e39-2c65ecb584b1
     question: |
@@ -1000,7 +1000,7 @@ questions:
     sections:
       - 1.1
     dok: 3
-    review: generated
+    review: none
 
   - id: 019c11e0-0544-4944-a5c0-7d152d80aa1f
     question: |
@@ -1020,44 +1020,6 @@ questions:
     sections:
       - 1.1
     dok: 1
-    review: generated
-
-  - id: b03c7b83-786d-4e67-87db-a3f59724d360
-    question: |
-      \begin{center}
-        \begin{tabularx}{6in}{ |*{6}{Y|} }
-          \hline
-          \bm{$t$} & 0 & 2 & 4 & 6 & 8 \\
-          \hline
-          \bm{$D(t)$} & 20 & 24 & 27 & 25 & 20 \\
-          \hline
-        \end{tabularx}
-      \end{center}
-
-      \vspace{1em}
-
-      The table above gives values of the polynomial function $D(t)$
-      representing the depth of water in a tank, in centimeters, at selected
-      times $t$, in minutes. Based on the table, which of the following
-      intervals must contain a time at which the depth changes from increasing
-      to decreasing?
-    answer: $4 < t < 6$
-    distractors:
-      - $0 < t < 2$
-      - $2 < t < 4$
-      - $6 < t < 8$
-    solution: |
-      \hspace{1.5in}
-      \begin{tabularx}{4.5in}{ *{4}{Y} }
-        $24 - 20 = \bm{4}$ & $27 - 24 = \bm{3}$ & $25 - 27 = \bm{-2}$ & $20 - 25 = \bm{-5}$ \\
-      \end{tabularx}
-
-      The depth increases on $[0, 4]$ and decreases on $[4, 8]$, so the change
-      from increasing to decreasing happens between $t = 4$ and $t = 6$.
-    calculator_active: false
-    sections:
-      - 1.1
-    dok: 2
     review: none
 
   - id: 58188ea1-6e11-4917-8e08-9ac83c04eaf8
@@ -1078,7 +1040,7 @@ questions:
     sections:
       - 1.2
     dok: 2
-    review: generated
+    review: none
 
   - id: fd91997c-10e1-4177-8676-152f8f4e7db2
     related_to:
@@ -1362,7 +1324,7 @@ questions:
     sections:
       - 1.2
     dok: 2
-    review: generated
+    review: none
 
   - id: 1dfe2bb3-accf-46bc-a060-c5e84bf01c63
     related_to:
@@ -1474,7 +1436,7 @@ questions:
     sections:
       - 1.3
     dok: 1
-    review: generated
+    review: none
 
   - id: 76433069-c20a-4de8-ab06-554958029070
     question: |
@@ -2059,7 +2021,7 @@ questions:
     sections:
       - 1.5
     dok: 2
-    review: generated
+    review: none
 
   - id: 8a787d6a-d6ea-4d70-92a3-5f5237d28fc8
     question: |
@@ -2079,7 +2041,7 @@ questions:
     sections:
       - 1.5
     dok: 3
-    review: generated
+    review: none
 
   - id: 02bfe09c-1cad-4933-b95f-a17d6c50b8f0
     question: |
@@ -2315,7 +2277,7 @@ questions:
     sections:
       - 1.5
     dok: 2
-    review: generated
+    review: none
 
   - id: ec42d2e8-a617-4c82-8dc2-c58659e3430e
     question: |
@@ -2334,7 +2296,7 @@ questions:
     sections:
       - 1.5
     dok: 2
-    review: generated
+    review: none
 
   - id: aac64d09-e219-4bcf-8504-7f6b6e201fbb
     related_to:
@@ -2413,7 +2375,7 @@ questions:
     sections:
       - 1.6
     dok: 2
-    review: generated
+    review: none
 
   - id: b02c4e81-d690-4043-a6d4-4e4fa575cb10
     question: |
@@ -2431,7 +2393,7 @@ questions:
     sections:
       - 1.6
     dok: 2
-    review: generated
+    review: none
 
   - id: db208234-ad97-4496-8a18-6d1e886f1563
     question: |
