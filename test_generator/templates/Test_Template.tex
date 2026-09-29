@@ -204,6 +204,23 @@
 % inline simplified form shown only in answer-key mode
 \newcommand{\simplesol}[1]{\ifprintanswers#1\fi}
 
+% in-question answer shown only in answer-key mode, in the solution color, so a
+% table or graph in the question itself can be filled in in place instead of
+% being duplicated inside the solution. \textcolor rather than \color: it
+% starts a paragraph first, so an answer opening a tabularx cell keeps its
+% baseline on the row instead of dropping a line below it
+\newcommand{\ans}[1]{\ifprintanswers\textcolor{red}{#1}\fi}
+
+% strut that gives a table row enough height to write an answer in by hand;
+% place it in a row of a table the student fills in. The optional argument is
+% the row height. The height is split about 0.4\ht\strutbox above the baseline
+% (roughly half the cap height) so a line of text sits centered in the row
+% rather than on its midline, and it is unconditional, so the student copy and
+% the key get the same table with the row labels aligned with whatever \ans
+% fills in
+\newcommand{\answerstrut}[1][0.4in]{%
+  \rule[\dimexpr0.4\ht\strutbox-0.5\dimexpr#1\relax\relax]{0pt}{#1}}
+
 % small gray id/DOK/section label printed above a solution (review copy only)
 \newcommand{\reviewinfo}[1]{\par{\itshape\footnotesize\color{gray}#1}\par}
 

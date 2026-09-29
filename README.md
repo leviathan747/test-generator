@@ -45,12 +45,12 @@ python -m test_generator config.yaml [config2.yaml ...] \
 | `--figures-dir` | Directory containing figures copied into the PDF build environment (optional, repeatable; on filename collisions the earliest-listed directory wins; default: current directory) |
 | `--out-dir` | Directory where generated PDFs are written (default: current directory, created if missing) |
 | `--from-manifest` | Recreate an existing version from its manifest file; provide the config (and `--questions`/`--figures-dir`) as in a normal run (see below) |
-| `--new-version` | With `--from-manifest`: reissue the manifest's questions as a fresh version — new form ID, re-scrambled question and choice order, new manifest |
+| `--new-version` | With `--from-manifest`: reissue the manifest's questions as a fresh version — new form ID, re-scrambled question and choice order, new manifest. Cannot be combined with `--watch` |
 | `--exclude-manifest` | Drop the questions recorded in this manifest from the pool, so a follow-up assessment reuses none of them (repeatable; matched by question `id` only, no MD5 check). Cannot be combined with `--from-manifest` |
 | `--report-from-manifest` | Print the coverage/DOK report recorded in a manifest and exit; standalone — takes no config files, generates nothing |
 | `--report` | Print a section-coverage and DOK report after each generation (see below) |
 | `--archive` | Also write a self-contained `<class_id>_<name>_<form_id>.zip` for long-term storage (see below). Cannot be combined with `--watch` |
-| `--watch` | Watch the config file(s), questions file(s), and figures directories for changes and regenerate drafts automatically (the footer shows `draft` in place of a form ID; no manifest is written) |
+| `--watch` | Watch the config file(s), questions file(s), and figures directories for changes and regenerate drafts automatically (the footer shows `draft` in place of a form ID; no manifest is written). May be combined with `--from-manifest` to iterate on an existing version's questions |
 | `--student-only` | With `--watch`: regenerate only the student copy, for faster iteration (default: both copies). Not valid outside watch mode |
 | `--solution-only` | With `--watch`: regenerate only the solution copy, for faster iteration (default: both copies). Not valid outside watch mode |
 
@@ -193,6 +193,15 @@ Adding `--new-version` turns a replay into a fresh version of the same
 test: the manifest's questions are reused, but with a new form ID and
 re-scrambled question and choice order (scrambling happens regardless of
 the config's `scramble_questions`), recorded in its own new manifest.
+
+Adding `--watch` instead turns a replay into a draft loop, for revising
+the wording or figures of a version you have already issued: the
+manifest's questions, question order, and choice orders are kept on every
+regeneration, but the footer shows `draft`, no manifest is written, and
+nothing overwrites the original. Editing a watched file necessarily
+changes its MD5, so verification mismatches are printed as warnings
+rather than prompting for confirmation. `--new-version` is not available
+here — a draft has no form ID to reissue.
 
 #### Archives
 

@@ -13,7 +13,7 @@ import pytest
 import yaml as real_yaml
 
 import test_generator
-from test_generator.__main__ import main
+from test_generator.__main__ import _display_form_id, main
 from test_generator.core import Question, select_questions
 from test_generator.report import format_report
 
@@ -1826,12 +1826,82 @@ def test_cli_requires_config_or_manifest(capsys: pytest.CaptureFixture[str]) -> 
     assert "--from-manifest" in capsys.readouterr().err
 
 
-def test_cli_from_manifest_rejects_watch(
+def test_cli_new_version_rejects_watch(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
     with pytest.raises(SystemExit):
-        main(["config.yaml", "--from-manifest", "m.yaml", "--watch"])
-    assert "--watch" in capsys.readouterr().err
+        main(["config.yaml", "--from-manifest", "m.yaml", "--watch",
+              "--new-version"])
+    assert "--new-version cannot be used with --watch" in capsys.readouterr().err
+
+
+def _refuse_prompts(prompt: str = "") -> str:
+    """Fail if any interactive prompt is issued."""
+    raise AssertionError(f"unexpected prompt: {prompt}")
+
+
+def test_watch_from_manifest_replays_as_draft(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """--watch with --from-manifest keeps the question set but records nothing."""
+    config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
+    first_tex: list[str] = []
+    _fake_pdflatex(monkeypatch, first_tex)
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_M")
+    manifest_before = manifest_file.read_text()
+    form_id = real_yaml.safe_load(manifest_before)["form_id"]
+
+    draft_tex: list[str] = []
+    _fake_pdflatex(monkeypatch, draft_tex)
+    _watch_once(monkeypatch)
+    monkeypatch.setattr("builtins.input", _refuse_prompts)
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir)
+         + ["--watch", "--from-manifest", str(manifest_file)])
+
+    # same pages as the replayed version, but stamped draft
+    assert "\\def \\formid {draft}" in draft_tex[0]
+    assert _display_form_id(form_id) not in draft_tex[0]
+    stamped = [
+        tex.replace("{draft}", "{" + _display_form_id(form_id) + "}")
+        for tex in draft_tex
+    ]
+    assert stamped == first_tex
+    # nothing recorded: no new manifest, and the replayed one is untouched
+    assert _manifests(out_dir, "APCalc_Quiz_M") == [manifest_file]
+    assert manifest_file.read_text() == manifest_before
+
+
+def test_watch_from_manifest_warns_on_md5_mismatch(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """Editing a watched file warns instead of prompting, and still builds."""
+    config_file, questions_file, figures_dir = _write_manifest_inputs(tmp_path)
+    _fake_pdflatex(monkeypatch, [])
+
+    out_dir = tmp_path / "out"
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir))
+    manifest_file = _the_manifest(out_dir, "APCalc_Quiz_M")
+
+    # revise the wording, as watch mode exists to let you do
+    questions_file.write_text(
+        questions_file.read_text().replace("What is 2 + 2?", "What is two + two?")
+    )
+
+    draft_tex: list[str] = []
+    _fake_pdflatex(monkeypatch, draft_tex)
+    _watch_once(monkeypatch)
+    monkeypatch.setattr("builtins.input", _refuse_prompts)
+    main(_cli_args(config_file, questions_file, figures_dir, out_dir)
+         + ["--watch", "--from-manifest", str(manifest_file)])
+
+    err = capsys.readouterr().err
+    assert "draft, continuing" in err
+    assert "MD5 not in manifest" in err
+    assert "What is two + two?" in draft_tex[0]
 
 
 def test_watch_draft_mode(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:

@@ -12,6 +12,7 @@ Usage: python -m test_generator config.yaml [config2.yaml ...] \
            [--report] [--archive]
 
        python -m test_generator config.yaml [config2.yaml ...] --watch \
+           [--from-manifest <manifest.yaml>] \
            [--questions questions.yaml]... [--figures-dir <dir>]... \
            [--out-dir <dir>] [--student-only | --solution-only] [--report]
 
@@ -34,7 +35,11 @@ replays a manifest to exactly recreate that version, and with
 manifest. A replay writes its manifest too (prompting before it would
 overwrite the old one); if the config now asks for more questions than
 the manifest holds, the manifest's questions are kept and the normal
-picker tops up the rest. Replay takes the
+picker tops up the rest. Adding `--watch` to a replay iterates on that
+version's questions in draft mode: the manifest's question and choice
+order are kept, but the footer shows `draft`, no manifest is written, and
+the MD5 mismatches caused by editing the watched files are reported as
+warnings instead of prompting. Replay takes the
 same config, question bank, and figures arguments as a normal run — the
 input files may live anywhere, as long as their contents (MD5 sums)
 match the manifest. `--exclude-manifest` (repeatable) drops the
@@ -566,7 +571,15 @@ def _report_from_manifest(manifest_path: str) -> bool:
     return True
 
 
-def _run_from_manifest(args: argparse.Namespace) -> bool:
+def _run_from_manifest(args: argparse.Namespace, draft: bool = False) -> bool:
+    """Replay a manifest; in draft mode nothing is recorded.
+
+    A draft replay keeps the manifest's question set, order, and choice
+    orders, but stamps ``draft`` instead of the manifest's form ID and
+    writes no manifest, so watch mode can loop over it. Editing a watched
+    file necessarily breaks the manifest's MD5s, so drafts report the
+    mismatches as a warning instead of prompting.
+    """
     manifest = _load_manifest(args.from_manifest)
 
     config_path = args.config_yaml[0]
@@ -605,10 +618,14 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
                 f"(md5 {entry['md5']})"
             )
     if problems:
-        print("Manifest verification failed:", file=sys.stderr)
+        label = (
+            "Manifest verification failed (draft, continuing):" if draft
+            else "Manifest verification failed:"
+        )
+        print(label, file=sys.stderr)
         for problem in problems:
             print(f"  {problem}", file=sys.stderr)
-        if not _confirm("Continue anyway? [y/N] "):
+        if not draft and not _confirm("Continue anyway? [y/N] "):
             print("Aborted.", file=sys.stderr)
             return False
 
@@ -644,7 +661,9 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
         question_order = [q["id"] for q in selected]
         choice_orders.update(make_choice_orders(extra))
 
-    if args.new_version:
+    if draft:
+        form_id = "draft"
+    elif args.new_version:
         # a fresh version of the same test: new form ID, re-scrambled
         # question and choice order (scrambling is the point, regardless
         # of the config's scramble_questions), and its own manifest
@@ -659,28 +678,29 @@ def _run_from_manifest(args: argparse.Namespace) -> bool:
         args, config, form_id, args.questions,
         figures_dirs, question_order, choice_orders,
     )
-    manifest = _build_manifest(
-        form_id, config_path, args.questions, figures_dirs,
-        selected, choice_orders,
-        sections_spec=config.get("sections"),
-        dok_target=config.get("dok_target"),
-    )
-    # Always record a manifest for the replay; a plain replay reuses the
-    # manifest's form ID, so its path matches the original — confirm before
-    # overwriting it.
-    manifest_out = _manifest_path(config, form_id, args.out_dir)
-    if manifest_out.exists() and not _confirm(
-            f"Overwrite existing manifest {manifest_out}? [y/N] "):
-        print("Manifest not overwritten.", file=sys.stderr)
-    else:
-        print(_write_manifest(manifest_out, manifest))
-    if args.archive:
-        archive = _write_archive(
-            args, config, config_path, form_id, figures_dirs,
-            selected, manifest, texs,
+    if not draft:
+        manifest = _build_manifest(
+            form_id, config_path, args.questions, figures_dirs,
+            selected, choice_orders,
+            sections_spec=config.get("sections"),
+            dok_target=config.get("dok_target"),
         )
-        if archive:
-            print(archive)
+        # Always record a manifest for the replay; a plain replay reuses the
+        # manifest's form ID, so its path matches the original — confirm
+        # before overwriting it.
+        manifest_out = _manifest_path(config, form_id, args.out_dir)
+        if manifest_out.exists() and not _confirm(
+                f"Overwrite existing manifest {manifest_out}? [y/N] "):
+            print("Manifest not overwritten.", file=sys.stderr)
+        else:
+            print(_write_manifest(manifest_out, manifest))
+        if args.archive:
+            archive = _write_archive(
+                args, config, config_path, form_id, figures_dirs,
+                selected, manifest, texs,
+            )
+            if archive:
+                print(archive)
     if args.report:
         print(format_report(
             selected, config.get("sections"),
@@ -715,11 +735,32 @@ def _get_watched_mtimes(
     return mtimes
 
 
+def _watch_regenerate(args: argparse.Namespace) -> None:
+    """Generate one draft round for watch mode, plain or from a manifest.
+
+    Errors are reported but never stop the loop: a half-saved YAML file
+    should leave the watcher running for the next save.
+    """
+    if args.from_manifest:
+        try:
+            _run_from_manifest(args, draft=True)
+        except Exception as e:
+            print(f"Error: {e}", file=sys.stderr)
+    else:
+        _run_once(args, draft=True)
+
+
 def _watch_mode(args: argparse.Namespace) -> None:
     watched = ", ".join(args.config_yaml + (args.questions or []))
     print(f"Watching {watched} for changes. Press Ctrl+C to stop.")
     print("Draft mode: the footer shows 'draft' in place of a form ID and no manifest is written.")
-    _run_once(args, draft=True)
+    if args.from_manifest:
+        print(
+            f"Replaying {args.from_manifest}: its question and choice order "
+            "are kept, and edits to the watched files are expected, so MD5 "
+            "mismatches are reported as warnings."
+        )
+    _watch_regenerate(args)
     last_mtimes = _get_watched_mtimes(args.config_yaml, args.questions, args.figures_dir)
     try:
         while True:
@@ -727,7 +768,7 @@ def _watch_mode(args: argparse.Namespace) -> None:
             current_mtimes = _get_watched_mtimes(args.config_yaml, args.questions, args.figures_dir)
             if current_mtimes != last_mtimes:
                 print("Change detected, regenerating...")
-                _run_once(args, draft=True)
+                _watch_regenerate(args)
                 last_mtimes = current_mtimes
     except KeyboardInterrupt:
         print("\nWatch mode stopped.")
@@ -739,12 +780,12 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("config_yaml", nargs="*", help="Path(s) to YAML config file(s) describing the assessment(s); each is generated in sequence")
     p.add_argument("--from-manifest", dest="from_manifest", metavar="PATH", help="Recreate an existing version from its manifest file; provide the config (and --questions/--figures-dir) as in a normal run")
     p.add_argument("--report-from-manifest", dest="report_from_manifest", metavar="PATH", help="Print the coverage/DOK report recorded in a manifest and exit; no other arguments are needed and nothing is generated")
-    p.add_argument("--new-version", dest="new_version", action="store_true", help="With --from-manifest: generate a new version of the same test (same questions, new form ID, re-scrambled question and choice order) and write a new manifest")
+    p.add_argument("--new-version", dest="new_version", action="store_true", help="With --from-manifest: generate a new version of the same test (same questions, new form ID, re-scrambled question and choice order) and write a new manifest (not available with --watch)")
     p.add_argument("--exclude-manifest", dest="exclude_manifests", action="append", metavar="PATH", help="Exclude the questions recorded in this manifest from the pool (matched by id only; may be given multiple times)")
     p.add_argument("--questions", action="append", metavar="PATH", help="Path to a YAML file containing questions; may be given multiple times to combine banks (also combined with any 'questions' list in the config file)")
     p.add_argument("--out-dir", dest="out_dir", default=".", help="Directory where generated PDFs are written (default: current directory)")
     p.add_argument("--figures-dir", dest="figures_dir", action="append", metavar="DIR", help="Directory containing figures; may be given multiple times, earlier directories win on filename collisions (default: current directory)")
-    p.add_argument("--watch", action="store_true", help="Watch for changes and regenerate drafts automatically (no manifest is written)")
+    p.add_argument("--watch", action="store_true", help="Watch for changes and regenerate drafts automatically (no manifest is written); may be combined with --from-manifest to iterate on an existing version's questions")
     p.add_argument("--archive", action="store_true", help="Also write <class_id>_<name>_<form_id>.zip: the manifest, the config and question bank(s) pruned to the selected questions, referenced figures, the .tex sources, and a README with the report and rebuild commands (not available with --watch)")
     p.add_argument("--report", action="store_true", help="Print a section-coverage and DOK report after each generation")
     only = p.add_mutually_exclusive_group()
@@ -754,6 +795,11 @@ def main(argv: list[str] | None = None) -> None:
 
     if args.new_version and not args.from_manifest:
         p.error("--new-version requires --from-manifest")
+    if args.new_version and args.watch:
+        p.error(
+            "--new-version cannot be used with --watch (a draft has no form "
+            "ID to reissue and writes no manifest)"
+        )
     if args.exclude_manifests and args.from_manifest:
         p.error(
             "--exclude-manifest cannot be used with --from-manifest "
@@ -783,7 +829,8 @@ def main(argv: list[str] | None = None) -> None:
         if len(args.config_yaml) != 1:
             p.error("--from-manifest requires exactly one config file")
         if args.watch:
-            p.error("--watch cannot be used with --from-manifest")
+            _watch_mode(args)
+            return
         try:
             ok = _run_from_manifest(args)
         except Exception as e:

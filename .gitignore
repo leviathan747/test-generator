@@ -14,3 +14,4 @@ dist/
 *.aux
 .claude/
 *.manifest.yaml
+*.zip
