@@ -25,7 +25,7 @@ questions:
     calculator_active: false
     sections:
       - 2.4
-    dok: unknown
+    dok: 2
     review: none
     related_to:
       - f7714349-1af1-49f5-bddc-aa88461d68f4
@@ -52,7 +52,7 @@ questions:
       - 2.6
       - 2.7
       - 2.8
-    dok: unknown
+    dok: 2
     review: none
     related_to:
       - ce2d2d5d-302d-4760-a89a-75e6a53efac5
@@ -71,8 +71,9 @@ questions:
     calculator_active: false
     sections:
       - 2.2
-      - '2.10'
-    dok: unknown
+      - 2.7
+      - "2.10"
+    dok: 2
     review: none
     related_to:
       - b51d4701-c6f7-4912-a58f-743a97acf585
@@ -91,8 +92,8 @@ questions:
     sections:
       - 2.7
       - 2.8
-      - '2.10'
-    dok: unknown
+      - "2.10"
+    dok: 2
     review: none
     related_to:
       - 18e0bebf-0ac1-4807-9251-97369ad6f272
@@ -110,7 +111,7 @@ questions:
     calculator_active: false
     sections:
       - 2.2
-    dok: unknown
+    dok: 1
     review: none
     related_to:
       - ee3687cf-dd78-4603-8b9e-72f3a41de8eb
@@ -128,7 +129,7 @@ questions:
     calculator_active: false
     sections:
       - 2.2
-    dok: unknown
+    dok: 1
     review: none
     related_to:
       - 1c5b02f5-3b58-4bb1-b066-3373fe3dad5a
@@ -151,7 +152,7 @@ questions:
       - 2.5
       - 2.7
       - 2.9
-    dok: unknown
+    dok: 2
     review: none
     related_to:
       - 3ebf07ac-7270-47f2-a455-600be80d8265
@@ -178,8 +179,8 @@ questions:
     calculator_active: false
     sections:
       - 2.3
-      - 2.9
-    dok: unknown
+      - 2.8
+    dok: 2
     review: none
     related_to:
       - 8695429a-6a5e-4e11-9eab-007aba3fca34
@@ -201,7 +202,7 @@ questions:
       - 2.5
       - 2.6
       - 2.7
-    dok: unknown
+    dok: 2
     review: none
     related_to:
       - afdce30c-565e-4d81-8dd6-ced16bdd239a
@@ -214,7 +215,7 @@ questions:
       tangent line whose slope is 3 when $x = 4$
     answer: $a = -4$
     distractors:
-      - $a = -53$
+      - $a = -5$
       - $a = -\frac{1}{4}$
       - $a = -6$
     solution: |
@@ -226,8 +227,11 @@ questions:
       $a = -1 \cdot 2 \sqrt 4 \Rightarrow$
       $a = -4$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.2
+      - 2.5
+      - 2.6
+    dok: 2
     review: none
     related_to:
       - 7ba5783c-4216-4db1-b063-ffa02af482f3
@@ -248,7 +252,7 @@ questions:
     calculator_active: true
     sections:
       - 2.8
-    dok: unknown
+    dok: 2
     review: none
     related_to:
       - 159c8887-b334-4fbd-abbb-da5a8c286853
@@ -269,7 +273,7 @@ questions:
     calculator_active: true
     sections:
       - 2.9
-    dok: unknown
+    dok: 2
     review: none
     related_to:
       - c9429258-3a74-4ca8-ba52-86221833f497
@@ -289,8 +293,8 @@ questions:
     solution: Definition of the derivative
     calculator_active: true
     sections:
-      - 2.2
-    dok: unknown
+      - 2.1
+    dok: 2
     review: none
 
   - id: e7b7ef4b-8357-4ff2-929b-a5dd92d502b6
@@ -330,9 +334,9 @@ questions:
       $\therefore f'(2) = 4$
     calculator_active: true
     sections:
-      - 2.2
+      - 2.1
       - 2.4
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 98a4d19c-6f0b-4c33-9cad-f27a44544b41
@@ -368,7 +372,8 @@ questions:
     calculator_active: true
     sections:
       - 2.1
-    dok: unknown
+      - 2.3
+    dok: 2
     review: none
 
   - id: f7714349-1af1-49f5-bddc-aa88461d68f4
@@ -394,8 +399,9 @@ questions:
       graph is continuous, but it has a sharp corner so it is not
       differentiable.
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.4
+    dok: 2
     review: none
 
   - id: ce2d2d5d-302d-4760-a89a-75e6a53efac5
@@ -418,8 +424,12 @@ questions:
       $+ 3 \cdot \cos\left(\frac{\pi}{2}\right)$
       $= \frac{3\pi}{2} \cdot -1 + 3 \cdot 0 = -\frac{3\pi}{2}$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.2
+      - 2.6
+      - 2.7
+      - 2.8
+    dok: 2
     review: none
 
   - id: b51d4701-c6f7-4912-a58f-743a97acf585
@@ -440,8 +450,10 @@ questions:
 
       (Definition of the derivative)
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.1
+      - 2.7
+    dok: 2
     review: none
 
   - id: 18e0bebf-0ac1-4807-9251-97369ad6f272
@@ -457,8 +469,10 @@ questions:
       - $\sec(x) + \csc(x)$
     solution: $\frac{dy}{dx} = \sec^2(x) - (-\csc^2(x)) = \sec^2(x) + \csc^2(x)$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.6
+      - "2.10"
+    dok: 2
     review: none
 
   - id: ee3687cf-dd78-4603-8b9e-72f3a41de8eb
@@ -478,8 +492,9 @@ questions:
       $f'(1) = \frac{7 - (-2)}{1 - (-2)} = \frac{9}{3} = 3$
       \qquad $f'(1)$ represents the slope of the line tangent to the point at $x = 1$.
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.2
+    dok: 2
     review: none
 
   - id: 1c5b02f5-3b58-4bb1-b066-3373fe3dad5a
@@ -497,8 +512,9 @@ questions:
       - $\lim_{x \to 0} \frac{(3(x + h)^2 + 2(x + h)) - (3x^2 + 2x)}{h}$
     solution: Definition of the derivative
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.2
+    dok: 1
     review: none
 
   - id: 3ebf07ac-7270-47f2-a455-600be80d8265
@@ -517,8 +533,11 @@ questions:
       $= \frac{t^2 \cdot e^t(t - 3)}{t^6}$
       $= \frac{e^t(t - 3)}{t^4}$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.5
+      - 2.7
+      - 2.9
+    dok: 2
     review: none
 
   - id: 8695429a-6a5e-4e11-9eab-007aba3fca34
@@ -533,7 +552,7 @@ questions:
       \fullwidth{\begin{center}
         \input{figures/8.tex}
       \end{center}}
-    answer: -$\frac{11}{2}$
+    answer: $-\frac{11}{2}$
     distractors:
       - $\frac{13}{2}$
       - -1
@@ -542,8 +561,10 @@ questions:
       $h'(x) = f(x)g'(x) + g(x)f'(x)$ \qquad (Product Rule) \\
       $h'(2) = 3 \cdot -2 + 1 \cdot \frac{1}{2} = -\frac{12}{2} + \frac{1}{2} = -\frac{11}{2}$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.3
+      - 2.8
+    dok: 2
     review: none
 
   - id: afdce30c-565e-4d81-8dd6-ced16bdd239a
@@ -564,8 +585,9 @@ questions:
       $= \left(e^{\ln 2 \cdot x}\right) \cdot \ln 2$
       $= (2^x) \cdot \ln 2$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.7
+    dok: 1
     review: none
 
   - id: 7ba5783c-4216-4db1-b063-ffa02af482f3
@@ -592,8 +614,10 @@ questions:
 
       $x = 0, -4$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.2
+      - 2.9
+    dok: 2
     review: none
 
   - id: 159c8887-b334-4fbd-abbb-da5a8c286853
@@ -618,8 +642,10 @@ questions:
       $h'(6) = \frac{4 \cdot -2 - \left(2 \cdot -\frac{1}{2}\right)}{4^2}$
       $= \frac{-8 + 1}{16} = -\frac{7}{16}$
     calculator_active: true
-    sections: []
-    dok: unknown
+    sections:
+      - 2.3
+      - 2.9
+    dok: 2
     review: none
 
   - id: c9429258-3a74-4ca8-ba52-86221833f497
@@ -652,10 +678,10 @@ questions:
       $h'(0) = \frac{2 \cdot 4 - (3 \cdot \pi)}{2^2}$
       $= \frac{8 - 3\pi}{4}$
     calculator_active: true
-    sections: []
-    dok: unknown
+    sections:
+      - 2.9
+    dok: 2
     review: none
-
 
   - id: 753fbcbc-9488-4009-a925-3c36bb226d50
     legacy_ids:
@@ -679,8 +705,9 @@ questions:
       Not continuous on $(1, 2)$ and $(3, 4)$ \\
       Continuous but not differentiable on $(2, 3)$ (sharp corner) \\
     calculator_active: true
-    sections: []
-    dok: unknown
+    sections:
+      - 2.4
+    dok: 2
     review: none
 
   - id: a41511cf-5e28-496d-8142-bbd31891401c
@@ -709,6 +736,1505 @@ questions:
       - $-\frac{2}{5}$
     solution: $\frac{f(10) - f(0)}{10 - 0} = \frac{-20 - 5}{10} = \frac{-25}{10} = -\frac{5}{2}$
     calculator_active: true
-    sections: []
-    dok: unknown
+    sections:
+      - 2.1
+    dok: 1
     review: none
+
+  - id: 26fd00b0-53f9-48c4-8046-b8d6309674cc
+    question: |
+      What is the average rate of change of $f(x) = x^3 - 2x$ over the interval
+      $[1, 3]$?
+    answer: 11
+    distractors:
+      - 10
+      - 22
+      - 25
+    solution: |
+      $\frac{f(3) - f(1)}{3 - 1} = \frac{(27 - 6) - (1 - 2)}{2} = \frac{21 - (-1)}{2} = \frac{22}{2} = 11$
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 1
+    review: generated
+
+  - id: 881f584f-b715-4a79-978a-60a047371b94
+    question: |
+      Which of the following expressions gives the average rate of change of
+      $g(x) = \sqrt x$ over the interval $[4, 4 + h]$, where $h > 0$?
+    answer: $\frac{\sqrt{4 + h} - 2}{h}$
+    distractors:
+      - $\lim_{h \to 0} \frac{\sqrt{4 + h} - 2}{h}$
+      - $\frac{\sqrt{4 + h} - 2}{4 + h}$
+      - $\frac{\sqrt 4 + h - 2}{h}$
+    solution: |
+      $\frac{g(4 + h) - g(4)}{(4 + h) - 4} = \frac{\sqrt{4 + h} - \sqrt 4}{h} = \frac{\sqrt{4 + h} - 2}{h}$
+
+      Taking the limit as $h \to 0$ would give the instantaneous rate of change
+      at $x = 4$, not the average rate of change over the interval.
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 1
+    review: generated
+
+  - id: 729039d3-c684-4660-96d7-32157915ed31
+    question: |
+      The position of an object moving along a line is given by
+      $s(t) = t^2 + 3t$, where $s$ is measured in meters and $t$ is measured
+      in seconds. What is the average velocity of the object over the time
+      interval $1 \le t \le 4$?
+    answer: 8 meters per second
+    distractors:
+      - 24 meters per second
+      - 11 meters per second
+      - 5 meters per second
+    solution: |
+      $\frac{s(4) - s(1)}{4 - 1} = \frac{28 - 4}{3} = \frac{24}{3} = 8$ meters per second
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 1
+    review: generated
+
+  - id: d326187d-453f-4bf5-b0c9-1798ef5f5cfc
+    question: |
+      The temperature of a pot of water, in degrees Fahrenheit, is recorded at
+      selected times $t$, in minutes, as shown in the table below. What is the
+      average rate of change of the temperature $W(t)$ over the interval
+      $2 \le t \le 10$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+          \hline
+          \bm{$t$} & 0 & 2 & 5 & 10 & 12 \\
+          \hline
+          \bm{$W(t)$} & 40 & 46 & 55 & 70 & 74 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: 3 degrees Fahrenheit per minute
+    distractors:
+      - $\frac{1}{3}$ degree Fahrenheit per minute
+      - 24 degrees Fahrenheit per minute
+      - 7 degrees Fahrenheit per minute
+    solution: |
+      $\frac{W(10) - W(2)}{10 - 2} = \frac{70 - 46}{8} = \frac{24}{8} = 3$ degrees Fahrenheit per minute
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 1
+    review: generated
+
+  - id: b1fdbfcd-9aeb-41fb-964d-98f244e64d84
+    question: |
+      Let $f(x) = x^2$. Which of the following expressions are equal to
+      $f'(3)$?
+
+      \fullwidth{\begin{center}
+        I. $\lim_{h \to 0} \frac{(3 + h)^2 - 9}{h}$ \qquad
+        II. $\lim_{x \to 3} \frac{x^2 - 9}{x - 3}$ \qquad
+        III. $\lim_{x \to 0} \frac{x^2 - 9}{x - 3}$
+      \end{center}}
+    answer: I and II only
+    distractors:
+      - I only
+      - II and III only
+      - I, II, and III
+    solution: |
+      I and II are the two equivalent forms of the definition of the derivative
+      at $x = 3$; both equal 6.
+
+      III uses $x \to 0$ instead of $x \to 3$: $\lim_{x \to 0} \frac{x^2 - 9}{x - 3} = \frac{-9}{-3} = 3 \ne 6$
+    calculator_active: false
+    sections:
+      - 2.1
+      - 2.2
+    dok: 2
+    review: generated
+
+  - id: 8b504d8f-ad64-4f66-8d68-04b43f70e145
+    question: |
+      The limit $\lim_{x \to 2} \frac{x^3 - 8}{x - 2}$ represents $f'(a)$ for
+      some function $f$ and some number $a$. Which of the following could be
+      $f$ and $a$?
+    answer: $f(x) = x^3$ and $a = 2$
+    distractors:
+      - $f(x) = x^3$ and $a = 8$
+      - $f(x) = x - 2$ and $a = 8$
+      - $f(x) = x^3$ and $a = -2$
+    solution: |
+      The limit has the form $\lim_{x \to a} \frac{f(x) - f(a)}{x - a}$ with
+      $a = 2$, $f(x) = x^3$, and $f(2) = 8$.
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 1
+    review: generated
+
+  - id: edf368b2-c292-4554-9823-fa0890e581c9
+    question: |
+      For a function $f$, $f(1) = 4$, and the average rate of change of $f$ over
+      the interval $[1, 5]$ is $-2$. What is the value of $f(5)$?
+    answer: -4
+    distractors:
+      - -6
+      - -8
+      - 12
+    solution: |
+      $\frac{f(5) - f(1)}{5 - 1} = -2 \implies \frac{f(5) - 4}{4} = -2 \implies f(5) - 4 = -8 \implies f(5) = -4$
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 2
+    review: generated
+
+  - id: b1f8303c-2998-4f0d-92eb-51bdf6608405
+    question: |
+      Let $f(x) = x^2 - 4x$. For what value of $b > 0$ is the average rate of
+      change of $f$ over the interval $[0, b]$ equal to the instantaneous rate
+      of change of $f$ at $x = 3$?
+    answer: 6
+    distractors:
+      - 3
+      - 2
+      - 4
+    solution: |
+      $f'(x) = 2x - 4 \implies f'(3) = 2$
+
+      $\frac{f(b) - f(0)}{b - 0} = \frac{b^2 - 4b - 0}{b} = b - 4$
+
+      $b - 4 = 2 \implies b = 6$
+    calculator_active: false
+    sections:
+      - 2.1
+      - 2.5
+      - 2.6
+    dok: 3
+    review: generated
+
+  - id: 09b2bafc-ffe2-479f-b1ca-a417efb7eecd
+    question: |
+      If $y = f(x)$, which of the following is NOT a notation for the derivative
+      of $f$?
+    answer: $\frac{\Delta y}{\Delta x}$
+    distractors:
+      - $\frac{dy}{dx}$
+      - $f'(x)$
+      - $y'$
+    solution: |
+      Notations for the derivative include $\frac{dy}{dx}$, $f'(x)$, and $y'$.
+      $\frac{\Delta y}{\Delta x}$ represents an average rate of change over an
+      interval.
+    calculator_active: false
+    sections:
+      - 2.2
+    dok: 1
+    review: generated
+
+  - id: 66d0867e-d6d7-4c9d-a6ce-e87f9af03386
+    question: |
+      Which of the following is an equation of the line tangent to the graph of
+      $f(x) = x^2 - 3x$ at $x = 4$?
+    answer: $y - 4 = 5(x - 4)$
+    distractors:
+      - $y - 4 = 8(x - 4)$
+      - $y - 5 = 4(x - 4)$
+      - $y = 5(x - 4)$
+    solution: |
+      $f(4) = 16 - 12 = 4$
+
+      $f'(x) = 2x - 3 \implies f'(4) = 5$
+
+      $y - f(4) = f'(4)(x - 4) \implies y - 4 = 5(x - 4)$
+    calculator_active: false
+    sections:
+      - 2.2
+      - 2.5
+      - 2.6
+    dok: 2
+    review: generated
+
+  - id: 61bcfe9a-afe6-4d59-bf05-a5c9ac28f3f4
+    question: |
+      The line tangent to the graph of a function $f$ at $x = 2$ has equation
+      $y = 3x - 5$. What is the value of $f(2) + f'(2)$?
+    answer: 4
+    distractors:
+      - 3
+      - 1
+      - -2
+    solution: |
+      The tangent line passes through $(2, f(2))$: $f(2) = 3(2) - 5 = 1$
+
+      The slope of the tangent line is $f'(2) = 3$
+
+      $f(2) + f'(2) = 1 + 3 = 4$
+    calculator_active: false
+    sections:
+      - 2.2
+    dok: 2
+    review: generated
+
+  - id: 9cee05d6-9818-42e9-80d8-b73a905ebcba
+    question: $\lim_{h \to 0} \frac{(x + h)^3 - x^3}{h} =$
+    answer: $3x^2$
+    distractors:
+      - 0
+      - $x^3$
+      - $3x^2 + 3xh$
+    solution: |
+      The limit is the definition of the derivative of $f(x) = x^3$:
+
+      $\lim_{h \to 0} \frac{(x + h)^3 - x^3}{h} = \frac{d}{dx}\left[ x^3 \right] = 3x^2$
+    calculator_active: false
+    sections:
+      - 2.2
+      - 2.5
+    dok: 1
+    review: generated
+
+  - id: 73c9b911-c9c2-4039-8924-3955d68e8cbd
+    question: |
+      Which of the following is equal to
+      $\lim_{h \to 0} \frac{\frac{1}{x + h} - \frac{1}{x}}{h}$?
+    answer: $-\frac{1}{x^2}$
+    distractors:
+      - $\frac{1}{x^2}$
+      - $-\frac{1}{x}$
+      - $\ln x$
+    solution: |
+      $\frac{\frac{1}{x + h} - \frac{1}{x}}{h} = \frac{\frac{x - (x + h)}{x(x + h)}}{h} = \frac{-h}{hx(x + h)} = \frac{-1}{x(x + h)}$
+
+      $\lim_{h \to 0} \frac{-1}{x(x + h)} = -\frac{1}{x^2}$
+    calculator_active: false
+    sections:
+      - 2.2
+      - 2.5
+    dok: 2
+    review: generated
+
+  - id: 79815af4-bb59-4444-a4ce-96cc8ac3d1c1
+    question: |
+      The amount of water in a tank, in gallons, is modeled by $W(t)$, where $t$
+      is measured in minutes. Which of the following is the best interpretation
+      of the statement $W'(5) = -2$?
+    answer: At time $t = 5$ minutes, the amount of water in the tank is decreasing at a rate of 2 gallons per minute.
+    distractors:
+      - During the first 5 minutes, the amount of water in the tank decreased by 2 gallons.
+      - At time $t = 5$ minutes, there are 2 fewer gallons of water in the tank than at $t = 0$.
+      - The average rate of change of the amount of water in the tank over $0 \le t \le 5$ is $-2$ gallons per minute.
+    solution: |
+      $W'(5)$ is the instantaneous rate of change of $W$ at $t = 5$. Its units
+      are gallons per minute, and the negative sign means the amount of water
+      is decreasing.
+    calculator_active: false
+    sections:
+      - 2.2
+    dok: 2
+    review: generated
+
+  - id: 4dc48b2e-da69-45c6-804f-91a141d26e91
+    question: |
+      The line $y = 4x + b$ is tangent to the graph of $f(x) = x^2$. What is the
+      value of $b$?
+    answer: -4
+    distractors:
+      - 4
+      - -8
+      - 0
+    solution: |
+      The slope of the tangent line is 4, so $f'(x) = 2x = 4 \implies x = 2$
+
+      The point of tangency is $(2, f(2)) = (2, 4)$
+
+      $4 = 4(2) + b \implies b = -4$
+    calculator_active: false
+    sections:
+      - 2.2
+      - 2.5
+    dok: 3
+    review: generated
+
+  - id: 3539cb43-c453-402e-a4a2-b6adfec37779
+    question: |
+      The line tangent to the graph of $f(x) = x^3$ at $x = 1$ intersects the
+      graph of $f$ at one other point. What is that point?
+    answer: $(-2, -8)$
+    distractors:
+      - $(2, 8)$
+      - $(0, -2)$
+      - $(-1, -1)$
+    solution: |
+      $f(1) = 1$, $f'(x) = 3x^2 \implies f'(1) = 3$
+
+      Tangent line: $y - 1 = 3(x - 1) \implies y = 3x - 2$
+
+      $x^3 = 3x - 2 \implies x^3 - 3x + 2 = 0 \implies (x - 1)^2(x + 2) = 0$
+
+      $x = -2 \implies y = (-2)^3 = -8$
+    calculator_active: false
+    sections:
+      - 2.2
+      - 2.5
+    dok: 3
+    review: generated
+
+  - id: 918e1502-6cac-469b-877c-44c68e411f39
+    question: If $y = 5x^2$, then $\frac{dy}{dx}\Big|_{x = 3} =$
+    answer: 30
+    distractors:
+      - 45
+      - $10x$
+      - 15
+    solution: |
+      $\frac{dy}{dx} = 10x$
+
+      $\frac{dy}{dx}\Big|_{x = 3} = 10(3) = 30$
+    calculator_active: false
+    sections:
+      - 2.2
+      - 2.5
+      - 2.6
+    dok: 1
+    review: generated
+
+  - id: 3ea78234-1f96-400c-99af-a797a804c1d5
+    question: |
+      Selected values of a differentiable function $f$ are given in the table
+      below. Using the data in the table, what is the best estimate of $f'(5)$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+          \hline
+          \bm{$x$} & 1 & 3 & 4 & 7 \\
+          \hline
+          \bm{$f(x)$} & 2 & 8 & 9 & 17 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: $\frac{8}{3}$
+    distractors:
+      - 8 \phantom{$\frac{8}{3}$}
+      - 1 \phantom{$\frac{8}{3}$}
+      - $\frac{5}{2}$
+    solution: |
+      Use the closest values on either side of $x = 5$:
+
+      $f'(5) \approx \frac{f(7) - f(4)}{7 - 4} = \frac{17 - 9}{3} = \frac{8}{3}$
+    calculator_active: false
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
+
+  - id: 4fa764ae-9b8d-4bac-af20-461cf0c6f145
+    question: |
+      Let $f(x) = x^x$ for $x > 0$. What is the value of $f'(2)$?
+    answer: "6.773"
+    distractors:
+      - "2.773"
+      - "4.000"
+      - "1.386"
+    solution: |
+      Using the numerical derivative feature of a graphing calculator:
+
+      $f'(2) \approx 6.773$
+    calculator_active: true
+    sections:
+      - 2.3
+    dok: 1
+    review: generated
+
+  - id: 3dc50e80-df8e-4fbd-8a2d-43dd6a4154c0
+    question: |
+      The height of a plant, in centimeters, is measured at selected times $t$,
+      in days, as shown in the table below. Using the data in the table, what is
+      the best estimate of $H'(6)$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+          \hline
+          \bm{$t$} & 0 & 4 & 8 & 12 \\
+          \hline
+          \bm{$H(t)$} & 3 & 7 & 15 & 18 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: 2 centimeters per day
+    distractors:
+      - 8 centimeters per day
+      - $\frac{1}{2}$ centimeter per day
+      - $\frac{5}{4}$ centimeters per day
+    solution: |
+      $H'(6) \approx \frac{H(8) - H(4)}{8 - 4} = \frac{15 - 7}{4} = 2$ centimeters per day
+    calculator_active: false
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
+
+  - id: a2aea0ef-d3c1-4970-9247-9b262a556c6d
+    question: |
+      Selected values of a differentiable function $f$ are given in the table
+      below. Using the values at $x = 1.9$ and $x = 2.1$, what is the estimate
+      of $f'(2)$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{3}{Y|} }
+          \hline
+          \bm{$x$} & 1.9 & 2.0 & 2.1 \\
+          \hline
+          \bm{$f(x)$} & 5.42 & 5.80 & 6.20 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: "3.9"
+    distractors:
+      - "4.0"
+      - "3.8"
+      - "0.78"
+    solution: |
+      $f'(2) \approx \frac{f(2.1) - f(1.9)}{2.1 - 1.9} = \frac{6.20 - 5.42}{0.2} = \frac{0.78}{0.2} = 3.9$
+    calculator_active: false
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
+
+  - id: af784a69-cf46-4fb9-9685-d9002be61a3d
+    question: |
+      Let $f(x) = x^{\ln x}$ for $x > 0$. What is the value of $f'(e)$?
+    answer: "2.000"
+    distractors:
+      - "2.718"
+      - "1.000"
+      - "0.736"
+    solution: |
+      Using the numerical derivative feature of a graphing calculator:
+
+      $f'(e) \approx 2.000$
+    calculator_active: true
+    sections:
+      - 2.3
+    dok: 1
+    review: generated
+
+  - id: 69d9ed18-ef08-4be6-9729-a6b68cfec9a5
+    question: |
+      Selected values of a differentiable function $f$ are given in the table
+      below. Using the data in the table, what is the best estimate of $f'(5)$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+          \hline
+          \bm{$t$} & 0 & 3 & 7 & 12 \\
+          \hline
+          \bm{$f(t)$} & 10 & 16 & 30 & 35 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: $\frac{7}{2}$
+    distractors:
+      - 14 \phantom{$\frac{7}{2}$}
+      - $\frac{25}{12}$
+      - 2 \phantom{$\frac{7}{2}$}
+    solution: |
+      $f'(5) \approx \frac{f(7) - f(3)}{7 - 3} = \frac{30 - 16}{4} = \frac{14}{4} = \frac{7}{2}$
+    calculator_active: false
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
+
+  - id: 975fcff8-2bb9-4d7c-bd80-82858d3c7353
+    question: |
+      Let $f(x) = \ln x$ and let $A(h) = \frac{f(2 + h) - f(2)}{h}$ be the
+      average rate of change of $f$ over the interval $[2, 2 + h]$. The table
+      below shows $A(h)$ for decreasing values of $h$. Which of the following
+      best describes the value these average rates of change approach as
+      $h \to 0$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{3}{Y|} }
+          \hline
+          \bm{$h$} & 0.1 & 0.01 & 0.001 \\
+          \hline
+          \bm{$A(h)$} & 0.4879 & 0.4988 & 0.4999 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: $\frac{1}{2}$, the instantaneous rate of change of $f$ at $x = 2$
+    distractors:
+      - 0.4879, the instantaneous rate of change of $f$ at $x = 2$
+      - $\frac{1}{2}$, the average rate of change of $f$ over $[2, 2.1]$
+      - $\ln 2$, the value of $f'(2)$
+    solution: |
+      As $h \to 0$, the average rates of change approach the instantaneous
+      rate of change at $x = 2$:
+
+      $\lim_{h \to 0} \frac{f(2 + h) - f(2)}{h} = f'(2) = \frac{1}{2}$ since $f'(x) = \frac{1}{x}$
+    calculator_active: false
+    sections:
+      - 2.1
+      - 2.3
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: 88f8a2b6-c32c-4590-9c28-150751e93c21
+    question: Which of the following is true about $f(x) = |x - 3|$ at $x = 3$?
+    answer: $f$ is continuous but not differentiable at $x = 3$.
+    distractors:
+      - $f$ is differentiable but not continuous at $x = 3$.
+      - $f$ is both continuous and differentiable at $x = 3$.
+      - $f$ is neither continuous nor differentiable at $x = 3$.
+    solution: |
+      $\lim_{x \to 3} |x - 3| = 0 = f(3)$, so $f$ is continuous at $x = 3$.
+
+      The left-hand limit of the difference quotient is $-1$ and the right-hand
+      limit is $1$, so $f'(3)$ does not exist (the graph has a corner).
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 1
+    review: generated
+
+  - id: 4690ba66-ad49-447b-88d0-8642958cb8a2
+    question: Why is $f(x) = \sqrt[3]{x}$ not differentiable at $x = 0$?
+    answer: The graph of $f$ has a vertical tangent line at $x = 0$.
+    distractors:
+      - $f$ is not continuous at $x = 0$.
+      - The graph of $f$ has a corner at $x = 0$.
+      - $f(0)$ is undefined.
+    solution: |
+      $f$ is continuous at $x = 0$ and $f(0) = 0$, but the tangent line at
+      $x = 0$ is vertical and has no slope:
+
+      $\lim_{h \to 0} \frac{\sqrt[3]{h} - 0}{h} = \lim_{h \to 0} \frac{1}{h^{2/3}} = \infty$
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 2
+    review: generated
+
+  - id: 9cf08df4-cb6a-4e65-a9eb-d6b1ae55d577
+    question: |
+      Let $f$ be the function defined by $f(x) = \begin{cases}
+        ax^2 + b & x \le 1 \\
+        4x - 1 & x > 1 \\
+      \end{cases}$. For what values of $a$ and $b$ is $f$ differentiable at
+      $x = 1$?
+    answer: $a = 2$, $b = 1$
+    distractors:
+      - $a = 2$, $b = 3$
+      - $a = 4$, $b = -1$
+      - $a = 1$, $b = 2$
+    solution: |
+      Continuity at $x = 1$: $a(1)^2 + b = 4(1) - 1 \implies a + b = 3$
+
+      Equal slopes at $x = 1$: $2a(1) = 4 \implies a = 2$
+
+      $2 + b = 3 \implies b = 1$
+    calculator_active: false
+    sections:
+      - 2.4
+      - 2.5
+    dok: 3
+    review: generated
+
+  - id: 46d95665-086d-49c7-9fa2-729599de2281
+    question: |
+      Suppose $f$ is differentiable at $x = a$. Which of the following must be
+      true?
+
+      \fullwidth{\begin{center}
+        I. $f$ is continuous at $x = a$. \\
+        II. $\lim_{x \to a} \frac{f(x) - f(a)}{x - a}$ exists. \\
+        III. $\lim_{x \to a} f(x) = f'(a)$
+      \end{center}}
+    answer: I and II only
+    distractors:
+      - I only
+      - II only
+      - I, II, and III
+    solution: |
+      I: If a function is differentiable at a point, then it is continuous at
+      that point.
+
+      II: This limit is the definition of $f'(a)$, which exists.
+
+      III: Not necessarily true. For $f(x) = x$ and $a = 2$,
+      $\lim_{x \to 2} f(x) = 2$ but $f'(2) = 1$.
+    calculator_active: false
+    sections:
+      - 2.1
+      - 2.4
+    dok: 3
+    review: generated
+
+  - id: 9e8c647f-bfd9-43df-81ef-c2182e2743e3
+    question: |
+      Which of the following functions is continuous at $x = 0$ but NOT
+      differentiable at $x = 0$?
+    answer: $f(x) = x^{2/3}$
+    distractors:
+      - $f(x) = x^3$
+      - $f(x) = \frac{1}{x}$
+      - $f(x) = x^{5/3}$
+    solution: |
+      $x^{2/3}$ is continuous at 0, but $f'(x) = \frac{2}{3x^{1/3}}$ is
+      undefined at $x = 0$ (the graph has a cusp).
+
+      $\frac{1}{x}$ is not continuous at $x = 0$.
+
+      $x^3$ and $x^{5/3}$ are differentiable at $x = 0$: the derivatives are
+      $3x^2$ and $\frac{5}{3}x^{2/3}$, which both equal 0 at $x = 0$.
+    calculator_active: false
+    sections:
+      - 2.4
+      - 2.5
+    dok: 2
+    review: generated
+
+  - id: fa17ec0c-f462-48f6-9a60-39bde1d948a7
+    question: |
+      At $x = 1$, the function given by $f(x) = \begin{cases}
+        x^2 & x < 1 \\
+        2x & x \ge 1 \\
+      \end{cases}$ is
+    answer: neither continuous nor differentiable
+    distractors:
+      - differentiable, but not continuous
+      - both continuous and differentiable
+      - continuous, but not differentiable
+    solution: |
+      $\lim_{x \to 1^-} f(x) = 1^2 = 1$ \quad
+      $\lim_{x \to 1^+} f(x) = 2(1) = 2$
+
+      The limit does not exist, so $f$ is not continuous at $x = 1$.
+      Because $f$ is not continuous at $x = 1$, it is not differentiable at
+      $x = 1$, even though both pieces have slope 2 at $x = 1$.
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 2
+    review: generated
+
+  - id: 9e00e219-02bc-4b1b-924e-c4e79a0b4458
+    question: |
+      Let $f(x) = \begin{cases}
+        kx + 3 & x < 2 \\
+        x^2 + k & x \ge 2 \\
+      \end{cases}$. For the value of $k$ that makes $f$ continuous at $x = 2$,
+      which of the following is true?
+    answer: $k = 1$, and $f$ is not differentiable at $x = 2$.
+    distractors:
+      - $k = 1$, and $f$ is differentiable at $x = 2$.
+      - $k = 4$, and $f$ is differentiable at $x = 2$.
+      - $k = -1$, and $f$ is not differentiable at $x = 2$.
+    solution: |
+      Continuity: $2k + 3 = 2^2 + k \implies k = 1$
+
+      Slope from the left: $k = 1$ \quad Slope from the right: $2x = 2(2) = 4$
+
+      The slopes are not equal, so $f$ is not differentiable at $x = 2$.
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 3
+    review: generated
+
+  - id: ad97858f-00b9-40c8-a156-ac61cba14fb0
+    question: Which of the following statements is false?
+    answer: If $f$ is continuous at $x = a$, then $f$ is differentiable at $x = a$.
+    distractors:
+      - If $f$ is differentiable at $x = a$, then $f$ is continuous at $x = a$.
+      - If $f$ is not continuous at $x = a$, then $f$ is not differentiable at $x = a$.
+      - If $x = a$ is not in the domain of $f$, then $x = a$ is not in the domain of $f'$.
+    solution: |
+      A continuous function may fail to be differentiable at a point in its
+      domain. For example, $f(x) = |x|$ is continuous at $x = 0$ but not
+      differentiable there.
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 2
+    review: generated
+
+  - id: 75b75a87-ad50-491d-b9b2-9f856cdb0194
+    question: |
+      Let $g(x) = \frac{x^2 - 4}{x - 2}$. What is the value of $g'(2)$?
+    answer: $g'(2)$ does not exist.
+    distractors:
+      - 1
+      - 4
+      - 0
+    solution: |
+      $x = 2$ is not in the domain of $g$, so it is not in the domain of $g'$.
+      Although $g(x) = x + 2$ for $x \ne 2$, $g(2)$ is undefined, so
+      $g'(2)$ does not exist.
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 2
+    review: generated
+
+  - id: 45b86fd4-2ae4-4775-a6c2-4d82fe8170ca
+    question: If $y = \frac{1}{x^4}$, then $\frac{dy}{dx} =$
+    answer: $-\frac{4}{x^5}$
+    distractors:
+      - $-\frac{4}{x^3}$
+      - $\frac{1}{4x^3}$
+      - $-\frac{1}{4x^5}$
+    solution: |
+      $y = x^{-4}$
+
+      $\frac{dy}{dx} = -4x^{-5} = -\frac{4}{x^5}$
+    calculator_active: false
+    sections:
+      - 2.5
+    dok: 1
+    review: generated
+
+  - id: 0711fcd3-fdfa-4f13-9f5d-fde5440ab54e
+    question: If $f(x) = x^{2/3}$, what is the value of $f'(8)$?
+    answer: $\frac{1}{3}$
+    distractors:
+      - $\frac{4}{3}$
+      - $\frac{2}{3}$
+      - $\frac{1}{12}$
+    solution: |
+      $f'(x) = \frac{2}{3}x^{-1/3} = \frac{2}{3\sqrt[3]{x}}$
+
+      $f'(8) = \frac{2}{3 \cdot 2} = \frac{1}{3}$
+    calculator_active: false
+    sections:
+      - 2.5
+    dok: 1
+    review: generated
+
+  - id: 5b9eca67-9154-4df5-95b6-f009ba432f8a
+    question: If $f(x) = x^2 \sqrt x$, what is the value of $f'(4)$?
+    answer: 20
+    distractors:
+      - 2
+      - 32
+      - 10
+    solution: |
+      $f(x) = x^2 \cdot x^{1/2} = x^{5/2}$
+
+      $f'(x) = \frac{5}{2}x^{3/2}$
+
+      $f'(4) = \frac{5}{2} \cdot 4^{3/2} = \frac{5}{2} \cdot 8 = 20$
+    calculator_active: false
+    sections:
+      - 2.5
+    dok: 2
+    review: generated
+
+  - id: c9245a30-a55d-473a-98a8-f5d6306de868
+    question: If $y = \frac{x^4 - 3x^2}{x^2}$ for $x \ne 0$, then $\frac{dy}{dx} =$
+    answer: $2x$
+    distractors:
+      - $2x^2 - 3$
+      - $4x^3 - 6x$
+      - $2x - 3$
+    solution: |
+      $y = \frac{x^4}{x^2} - \frac{3x^2}{x^2} = x^2 - 3$
+
+      $\frac{dy}{dx} = 2x$
+    calculator_active: false
+    sections:
+      - 2.5
+      - 2.6
+    dok: 2
+    review: generated
+
+  - id: 74ca59a3-185a-4540-8ef9-87812a33c290
+    question: If $f(x) = \frac{6}{\sqrt[3]{x}}$, then $f'(x) =$
+    answer: $-2x^{-4/3}$
+    distractors:
+      - $-2x^{-2/3}$
+      - $2x^{-4/3}$
+      - $-18x^{-4/3}$
+    solution: |
+      $f(x) = 6x^{-1/3}$
+
+      $f'(x) = 6 \cdot -\frac{1}{3}x^{-4/3} = -2x^{-4/3}$
+    calculator_active: false
+    sections:
+      - 2.5
+      - 2.6
+    dok: 1
+    review: generated
+
+  - id: 1db488ac-db5d-4b63-a53c-2dd932d6a7d4
+    question: If $f(x) = 4x^5 - 3x^2 + 7x - 9$, then $f'(x) =$
+    answer: $20x^4 - 6x + 7$
+    distractors:
+      - $20x^4 - 6x - 2$
+      - $20x^4 - 6x$
+      - $5x^4 - 2x + 1$
+    solution: |
+      $f'(x) = 4 \cdot 5x^4 - 3 \cdot 2x + 7 - 0 = 20x^4 - 6x + 7$
+    calculator_active: false
+    sections:
+      - 2.5
+      - 2.6
+    dok: 1
+    review: generated
+
+  - id: 16744097-96fc-4ae3-9bb2-0380e093f329
+    question: |
+      The table below gives values of the differentiable functions $f$ and $g$
+      and their derivatives at $x = 1$. If $h(x) = 3f(x) - 2g(x)$, what is the
+      value of $h'(1)$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+          \hline
+          \bm{$x$} & \bm{$f(x)$} & \bm{$f'(x)$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
+          \hline
+          1 & 2 & $-1$ & 5 & 4 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: -11
+    distractors:
+      - -4
+      - 5
+      - -5
+    solution: |
+      $h'(x) = 3f'(x) - 2g'(x)$
+
+      $h'(1) = 3(-1) - 2(4) = -3 - 8 = -11$
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 2
+    review: generated
+
+  - id: 7c4db1ee-550f-46c0-aeb8-be35d8c14e4d
+    question: |
+      Let $f(x) = x^3$ and $g(x) = 3x^2 + 9x$. At which values of $x$ are the
+      lines tangent to the graphs of $f$ and $g$ parallel?
+    answer: $x = -1$ and $x = 3$
+    distractors:
+      - $x = 1$ and $x = -3$
+      - $x = 3$ only
+      - $x = -1$ only
+    solution: |
+      Parallel tangent lines have equal slopes: $f'(x) = g'(x)$
+
+      $3x^2 = 6x + 9 \implies 3x^2 - 6x - 9 = 0 \implies 3(x - 3)(x + 1) = 0$
+
+      $x = -1$ and $x = 3$
+    calculator_active: false
+    sections:
+      - 2.2
+      - 2.5
+      - 2.6
+    dok: 3
+    review: generated
+
+  - id: 054a4f9e-829d-480b-ac23-55120b89cb18
+    question: |
+      The cost, in dollars, to produce $x$ items is
+      $C(x) = 0.02x^2 + 5x + 100$. What is the value of $C'(50)$, including
+      units?
+    answer: 7 dollars per item
+    distractors:
+      - 400 dollars
+      - 7 dollars
+      - 8 dollars per item
+    solution: |
+      $C'(x) = 0.04x + 5$
+
+      $C'(50) = 0.04(50) + 5 = 7$ dollars per item
+    calculator_active: false
+    sections:
+      - 2.2
+      - 2.6
+    dok: 2
+    review: generated
+
+  - id: e84aab7c-b0ee-47c5-8458-593b4a1d1483
+    question: If $f(x) = (2x + 1)^2$, then $f'(x) =$
+    answer: $8x + 4$
+    distractors:
+      - $4x + 2$
+      - $8x + 1$
+      - $4x + 4$
+    solution: |
+      $f(x) = 4x^2 + 4x + 1$
+
+      $f'(x) = 8x + 4$
+    calculator_active: false
+    sections:
+      - 2.5
+      - 2.6
+    dok: 2
+    review: generated
+
+  - id: bbf38785-4661-4b4c-9af0-836d10f6141e
+    question: $\frac{d}{dx}\left[ \sin x - \cos x \right] =$
+    answer: $\cos x + \sin x$
+    distractors:
+      - $\cos x - \sin x$
+      - $-\cos x - \sin x$
+      - $-\cos x + \sin x$
+    solution: |
+      $\frac{d}{dx}\left[ \sin x \right] - \frac{d}{dx}\left[ \cos x \right] = \cos x - (-\sin x) = \cos x + \sin x$
+    calculator_active: false
+    sections:
+      - 2.6
+      - 2.7
+    dok: 1
+    review: generated
+
+  - id: 96016b0d-16e9-4ce9-bd81-752fd8d38641
+    question: If $f(x) = 3e^x - 4 \ln x$, what is the value of $f'(1)$?
+    answer: $3e - 4$
+    distractors:
+      - $3e$
+      - $3e + 4$
+      - -1
+    solution: |
+      $f'(x) = 3e^x - \frac{4}{x}$
+
+      $f'(1) = 3e - 4$
+    calculator_active: false
+    sections:
+      - 2.6
+      - 2.7
+    dok: 1
+    review: generated
+
+  - id: 20c72002-ea87-47ec-9b4b-bf8059de5ef3
+    question: Find $\lim_{h \to 0} \frac{e^{2 + h} - e^2}{h}$
+    answer: $e^2$
+    distractors:
+      - 1
+      - $2e$
+      - The limit does not exist.
+    solution: |
+      The limit is the definition of the derivative of $f(x) = e^x$ at $x = 2$:
+
+      $\lim_{h \to 0} \frac{e^{2 + h} - e^2}{h} = \frac{d}{dx}\left[ e^x \right] \Big|_{x = 2} = e^2$
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: 699db1a2-7f6d-46c8-88e9-1d456c3ec898
+    question: Find $\lim_{x \to \pi} \frac{\cos x + 1}{x - \pi}$
+    answer: 0
+    distractors:
+      - -1
+      - 1
+      - The limit does not exist.
+    solution: |
+      Since $\cos \pi = -1$, the limit is
+      $\lim_{x \to \pi} \frac{\cos x - \cos \pi}{x - \pi}$, the definition of
+      the derivative of $f(x) = \cos x$ at $x = \pi$:
+
+      $\frac{d}{dx}\left[ \cos x \right] \Big|_{x = \pi} = -\sin \pi = 0$
+    calculator_active: false
+    sections:
+      - 2.1
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: 3be69da2-b0f1-49b8-b73f-ab83133499ba
+    question: Find $\lim_{h \to 0} \frac{\ln(1 + h)}{h}$
+    answer: 1
+    distractors:
+      - 0
+      - $e$
+      - The limit does not exist.
+    solution: |
+      Since $\ln 1 = 0$, the limit is
+      $\lim_{h \to 0} \frac{\ln(1 + h) - \ln 1}{h}$, the definition of the
+      derivative of $f(x) = \ln x$ at $x = 1$:
+
+      $\frac{d}{dx}\left[ \ln x \right] \Big|_{x = 1} = \frac{1}{1} = 1$
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: c895309b-6e14-4475-8710-1b70ea34ad9d
+    question: |
+      Which of the following is an equation of the line tangent to the graph of
+      $y = e^x$ at $x = 0$?
+    answer: $y = x + 1$
+    distractors:
+      - $y = x$
+      - $y = ex$
+      - $y = x - 1$
+    solution: |
+      At $x = 0$: $y = e^0 = 1$ and $\frac{dy}{dx} = e^0 = 1$
+
+      $y - 1 = 1(x - 0) \implies y = x + 1$
+    calculator_active: false
+    sections:
+      - 2.2
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: c03d6475-5b1e-44cb-ab80-42d00f8086db
+    question: |
+      On the interval $0 < x < 2\pi$, at which values of $x$ does the graph of
+      $y = \sin x + \cos x$ have a horizontal tangent line?
+    answer: $x = \frac{\pi}{4}$ and $x = \frac{5\pi}{4}$
+    distractors:
+      - $x = \frac{3\pi}{4}$ and $x = \frac{7\pi}{4}$
+      - $x = \frac{\pi}{4}$ only
+      - $x = \frac{\pi}{2}$ and $x = \frac{3\pi}{2}$
+    solution: |
+      $\frac{dy}{dx} = \cos x - \sin x = 0 \implies \sin x = \cos x$
+
+      $x = \frac{\pi}{4}$ and $x = \frac{5\pi}{4}$
+    calculator_active: false
+    sections:
+      - 2.6
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: 6465bc10-be0f-49de-9a78-7cf7735a1bba
+    question: |
+      The line $y = x + b$ is tangent to the graph of $y = \ln x$. What is the
+      value of $b$?
+    answer: -1
+    distractors:
+      - 0
+      - 1
+      - $-e$
+    solution: |
+      The slope of the tangent line is 1: $\frac{1}{x} = 1 \implies x = 1$
+
+      The point of tangency is $(1, \ln 1) = (1, 0)$
+
+      $0 = 1 + b \implies b = -1$
+    calculator_active: false
+    sections:
+      - 2.2
+      - 2.7
+    dok: 3
+    review: generated
+
+  - id: 1bcdd186-44ea-42cd-80d9-47bd991258bd
+    question: If $f(x) = e^x + e^2$, then $f'(x) =$
+    answer: $e^x$
+    distractors:
+      - $e^x + 2e$
+      - $e^x + e^2$
+      - $xe^{x - 1} + 2e$
+    solution: |
+      $e^2$ is a constant, so its derivative is 0.
+
+      $f'(x) = e^x + 0 = e^x$
+    calculator_active: false
+    sections:
+      - 2.6
+      - 2.7
+    dok: 1
+    review: generated
+
+  - id: d50a0a24-953d-4bef-8bbb-63c4261739d5
+    question: |
+      Which of the following limits are equal to 1?
+
+      \fullwidth{\begin{center}
+        I. $\lim_{h \to 0} \frac{e^h - 1}{h}$ \qquad
+        II. $\lim_{h \to 0} \frac{\sin h}{h}$ \qquad
+        III. $\lim_{x \to 1} \frac{\ln x}{x - 1}$
+      \end{center}}
+    answer: I, II, and III
+    distractors:
+      - I only
+      - II only
+      - I and III only
+    solution: |
+      Each limit is the definition of a derivative:
+
+      I. $\lim_{h \to 0} \frac{e^{0 + h} - e^0}{h} = \frac{d}{dx}\left[ e^x \right] \Big|_{x = 0} = e^0 = 1$
+
+      II. $\lim_{h \to 0} \frac{\sin(0 + h) - \sin 0}{h} = \frac{d}{dx}\left[ \sin x \right] \Big|_{x = 0} = \cos 0 = 1$
+
+      III. $\lim_{x \to 1} \frac{\ln x - \ln 1}{x - 1} = \frac{d}{dx}\left[ \ln x \right] \Big|_{x = 1} = \frac{1}{1} = 1$
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 3
+    review: generated
+
+  - id: 5438599f-2b14-4b2e-bbee-7c60f484f3a1
+    question: If $y = x^2 e^x$, then $\frac{dy}{dx} =$
+    answer: $xe^x(x + 2)$
+    distractors:
+      - $2xe^x$
+      - $e^x(x^2 + 2)$
+      - $xe^x(x + 1)$
+    solution: |
+      $\frac{dy}{dx} = x^2 e^x + 2xe^x = xe^x(x + 2)$ \quad (Product Rule)
+    calculator_active: false
+    sections:
+      - 2.5
+      - 2.7
+      - 2.8
+    dok: 1
+    review: generated
+
+  - id: c1dcc021-7c4d-4963-8e4c-ce0688d6ecc2
+    question: If $f(x) = x \ln x$, what is the value of $f'(e)$?
+    answer: 2
+    distractors:
+      - 1
+      - $e$
+      - $\frac{1}{e}$
+    solution: |
+      $f'(x) = x \cdot \frac{1}{x} + 1 \cdot \ln x = 1 + \ln x$ \quad (Product Rule)
+
+      $f'(e) = 1 + \ln e = 1 + 1 = 2$
+    calculator_active: false
+    sections:
+      - 2.7
+      - 2.8
+    dok: 1
+    review: generated
+
+  - id: 31a2920c-dce6-4f7f-80e1-b12c0b533067
+    question: If $f(x) = \sin x \cos x$, then $f'(x) =$
+    answer: $\cos^2 x - \sin^2 x$
+    distractors:
+      - $-\sin x \cos x$
+      - $\sin^2 x - \cos^2 x$
+      - $\cos^2 x + \sin^2 x$
+    solution: |
+      $f'(x) = \sin x \cdot (-\sin x) + \cos x \cdot \cos x = \cos^2 x - \sin^2 x$ \quad (Product Rule)
+    calculator_active: false
+    sections:
+      - 2.7
+      - 2.8
+    dok: 2
+    review: generated
+
+  - id: 6a63e5a8-737b-44c1-8cf3-068ef89d8556
+    question: |
+      The table below gives values of the differentiable functions $f$ and $g$
+      and their derivatives at $x = 2$. If $h(x) = f(x) \cdot g(x)$, what is the
+      value of $h'(2)$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+          \hline
+          \bm{$x$} & \bm{$f(x)$} & \bm{$f'(x)$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
+          \hline
+          2 & 3 & $-1$ & $-2$ & 4 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: 14
+    distractors:
+      - -4
+      - 10
+      - -6
+    solution: |
+      $h'(x) = f(x)g'(x) + g(x)f'(x)$ \quad (Product Rule)
+
+      $h'(2) = 3 \cdot 4 + (-2)(-1) = 12 + 2 = 14$
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 2
+    review: generated
+
+  - id: 5075f0e3-4538-4786-b1df-a05ac46ebd8c
+    question: |
+      A student found the derivative of $y = x^3 \sin x$ as shown below.
+
+      \fullwidth{\begin{center}
+        $\frac{dy}{dx} = \frac{d}{dx}\left[ x^3 \right] \cdot \frac{d}{dx}\left[ \sin x \right] = 3x^2 \cos x$
+      \end{center}}
+
+      Which of the following correctly describes the student's work?
+    answer: The student multiplied the derivatives of the factors; $\frac{dy}{dx} = 3x^2 \sin x + x^3 \cos x$
+    distractors:
+      - The student multiplied the derivatives of the factors; $\frac{dy}{dx} = 3x^2 \sin x - x^3 \cos x$
+      - The student used the wrong derivative of $\sin x$; $\frac{dy}{dx} = -3x^2 \cos x$
+      - The student should have used the quotient rule; $\frac{dy}{dx} = \frac{3x^2 \sin x - x^3 \cos x}{\sin^2 x}$
+    solution: |
+      The derivative of a product is not the product of the derivatives.
+
+      $\frac{dy}{dx} = \frac{d}{dx}\left[ x^3 \right] \cdot \sin x + x^3 \cdot \frac{d}{dx}\left[ \sin x \right] = 3x^2 \sin x + x^3 \cos x$ \quad (Product Rule)
+    calculator_active: false
+    sections:
+      - 2.7
+      - 2.8
+    dok: 3
+    review: generated
+
+  - id: afab828e-84a8-4f76-8bf7-96bf7cfba53e
+    question: |
+      Let $h(x) = x \cdot f(x)$, where $f$ is a differentiable function. If
+      $f(2) = 3$ and $h'(2) = 11$, what is the value of $f'(2)$?
+    answer: 4
+    distractors:
+      - 8
+      - $\frac{11}{2}$
+      - 14
+    solution: |
+      $h'(x) = x \cdot f'(x) + 1 \cdot f(x)$ \quad (Product Rule)
+
+      $h'(2) = 2f'(2) + f(2) \implies 11 = 2f'(2) + 3 \implies f'(2) = 4$
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 3
+    review: generated
+
+  - id: 13d78aa7-e570-4a2c-a235-e94e41f05a8f
+    question: |
+      Let $f(x) = x^2 g(x)$, where $g$ is a differentiable function. The line
+      $y = 3x + 1$ is tangent to the graph of $f$ at $x = 1$. What is the value
+      of $g'(1)$?
+    answer: -5
+    distractors:
+      - 3
+      - 4
+      - -1
+    solution: |
+      From the tangent line: $f(1) = 3(1) + 1 = 4$ and $f'(1) = 3$
+
+      $f(1) = 1^2 \cdot g(1) \implies g(1) = 4$
+
+      $f'(x) = 2x \cdot g(x) + x^2 \cdot g'(x)$ \quad (Product Rule)
+
+      $f'(1) = 2g(1) + g'(1) \implies 3 = 8 + g'(1) \implies g'(1) = -5$
+    calculator_active: false
+    sections:
+      - 2.2
+      - 2.8
+    dok: 3
+    review: generated
+
+  - id: 862457d1-b3eb-4363-9837-d547322a66fa
+    question: If $y = \frac{x}{x + 1}$, then $\frac{dy}{dx} =$
+    answer: $\frac{1}{(x + 1)^2}$
+    distractors:
+      - 1
+      - $-\frac{1}{(x + 1)^2}$
+      - $\frac{2x + 1}{(x + 1)^2}$
+    solution: |
+      $\frac{dy}{dx} = \frac{(x + 1) \cdot 1 - x \cdot 1}{(x + 1)^2} = \frac{1}{(x + 1)^2}$ \quad (Quotient Rule)
+    calculator_active: false
+    sections:
+      - 2.9
+    dok: 1
+    review: generated
+
+  - id: dfb7b2c8-6fc9-48a5-a0e5-093980df7e25
+    question: If $f(x) = \frac{x^2 + 1}{x - 1}$, what is the value of $f'(2)$?
+    answer: -1
+    distractors:
+      - 1
+      - 4
+      - 5
+    solution: |
+      $f'(x) = \frac{(x - 1) \cdot 2x - (x^2 + 1) \cdot 1}{(x - 1)^2}$ \quad (Quotient Rule)
+
+      $f'(2) = \frac{(1)(4) - (5)(1)}{1^2} = -1$
+    calculator_active: false
+    sections:
+      - 2.9
+    dok: 2
+    review: generated
+
+  - id: bf71dd87-2b17-4b71-a079-2da6fc2c7135
+    question: If $y = \frac{\sin x}{x}$, then $\frac{dy}{dx} =$
+    answer: $\frac{x \cos x - \sin x}{x^2}$
+    distractors:
+      - $\frac{\sin x - x \cos x}{x^2}$
+      - $\cos x$
+      - $\frac{x \cos x + \sin x}{x^2}$
+    solution: |
+      $\frac{dy}{dx} = \frac{x \cdot \cos x - \sin x \cdot 1}{x^2} = \frac{x \cos x - \sin x}{x^2}$ \quad (Quotient Rule)
+    calculator_active: false
+    sections:
+      - 2.7
+      - 2.9
+    dok: 2
+    review: generated
+
+  - id: f13cbb5c-f4dd-46cf-948f-6369c1687b5e
+    question: |
+      For what value of $x$ does the graph of $f(x) = \frac{e^x}{1 + x}$ have a
+      horizontal tangent line?
+    answer: $x = 0$
+    distractors:
+      - $x = -1$
+      - $x = 1$
+      - $x = -2$
+    solution: |
+      $f'(x) = \frac{(1 + x)e^x - e^x \cdot 1}{(1 + x)^2} = \frac{xe^x}{(1 + x)^2}$ \quad (Quotient Rule)
+
+      $f'(x) = 0 \implies xe^x = 0 \implies x = 0$ (since $e^x > 0$)
+    calculator_active: false
+    sections:
+      - 2.7
+      - 2.9
+    dok: 2
+    review: generated
+
+  - id: b8cfd29b-f6ff-41b9-933d-b85faab4ae94
+    question: |
+      The table below gives values of the differentiable functions $f$ and $g$
+      and their derivatives at $x = 3$. If $h(x) = \frac{f(x)}{g(x)}$, what is
+      the value of $h'(3)$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+          \hline
+          \bm{$x$} & \bm{$f(x)$} & \bm{$f'(x)$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
+          \hline
+          3 & 4 & 2 & $-2$ & 5 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: -6
+    distractors:
+      - 6 \phantom{$\frac{2}{5}$}
+      - $\frac{2}{5}$
+      - 12 \phantom{$\frac{2}{5}$}
+    solution: |
+      $h'(x) = \frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}$ \quad (Quotient Rule)
+
+      $h'(3) = \frac{(-2)(2) - (4)(5)}{(-2)^2} = \frac{-4 - 20}{4} = -6$
+    calculator_active: false
+    sections:
+      - 2.9
+    dok: 2
+    review: generated
+
+  - id: 6dc3fd65-f262-4496-b2ba-0d042be4537e
+    question: |
+      Let $h(x) = \frac{f(x)}{x}$, where $f$ is a differentiable function. The
+      line tangent to the graph of $f$ at $x = 2$ is $y = 5x - 4$. What is the
+      value of $h'(2)$?
+    answer: 1
+    distractors:
+      - 5
+      - -1
+      - $\frac{3}{2}$
+    solution: |
+      From the tangent line: $f(2) = 5(2) - 4 = 6$ and $f'(2) = 5$
+
+      $h'(x) = \frac{x \cdot f'(x) - f(x) \cdot 1}{x^2}$ \quad (Quotient Rule)
+
+      $h'(2) = \frac{2 \cdot 5 - 6}{2^2} = \frac{4}{4} = 1$
+    calculator_active: false
+    sections:
+      - 2.2
+      - 2.9
+    dok: 3
+    review: generated
+
+  - id: 6de186f2-9361-4dca-b7e3-9ac704e68509
+    question: |
+      What is the slope of the line tangent to the graph of $y = \sec x$ at
+      $x = \frac{\pi}{4}$?
+    answer: $\sqrt 2$
+    distractors:
+      - 1
+      - 2
+      - $\frac{\sqrt 2}{2}$
+    solution: |
+      $\frac{dy}{dx} = \sec x \tan x$
+
+      $\sec \frac{\pi}{4} \tan \frac{\pi}{4} = \sqrt 2 \cdot 1 = \sqrt 2$
+    calculator_active: false
+    sections:
+      - 2.2
+      - "2.10"
+    dok: 1
+    review: generated
+
+  - id: c6d0eccd-53ba-4f9b-90d7-a9f5b0526e72
+    question: |
+      To find the derivative of $\cot x$, a student writes
+      $\cot x = \frac{\cos x}{\sin x}$ and applies the quotient rule. Which of
+      the following is the correct result of applying the quotient rule, before
+      simplifying?
+    answer: $\frac{\sin x(-\sin x) - \cos x(\cos x)}{\sin^2 x}$
+    distractors:
+      - $\frac{\cos x(\cos x) - \sin x(-\sin x)}{\sin^2 x}$
+      - $\frac{\sin x(-\sin x) - \cos x(\cos x)}{\cos^2 x}$
+      - $\frac{-\sin x}{\cos x}$
+    solution: |
+      $\frac{d}{dx}\left[ \frac{\cos x}{\sin x} \right] = \frac{\sin x(-\sin x) - \cos x(\cos x)}{\sin^2 x}$ \quad (Quotient Rule)
+
+      $= \frac{-(\sin^2 x + \cos^2 x)}{\sin^2 x} = -\frac{1}{\sin^2 x} = -\csc^2 x$
+    calculator_active: false
+    sections:
+      - 2.9
+      - "2.10"
+    dok: 2
+    review: generated
+
+  - id: a80d8e83-5cba-4b22-91df-2814b388ab08
+    question: If $y = x \tan x$, then $\frac{dy}{dx} =$
+    answer: $\tan x + x \sec^2 x$
+    distractors:
+      - $\sec^2 x$
+      - $\tan x + \sec^2 x$
+      - $x \sec^2 x$
+    solution: |
+      $\frac{dy}{dx} = 1 \cdot \tan x + x \cdot \sec^2 x = \tan x + x \sec^2 x$ \quad (Product Rule)
+    calculator_active: false
+    sections:
+      - 2.8
+      - "2.10"
+    dok: 1
+    review: generated
+
+  - id: 42aeae1e-222f-45a2-80c2-8df9464112ce
+    question: If $f(x) = \csc x$, what is the value of $f'\left(\frac{\pi}{6}\right)$?
+    answer: $-2\sqrt 3$
+    distractors:
+      - $2\sqrt 3$
+      - $-\frac{2\sqrt 3}{3}$
+      - -4
+    solution: |
+      $f'(x) = -\csc x \cot x$
+
+      $f'\left(\frac{\pi}{6}\right) = -\csc \frac{\pi}{6} \cot \frac{\pi}{6} = -(2)(\sqrt 3) = -2\sqrt 3$
+    calculator_active: false
+    sections:
+      - "2.10"
+    dok: 2
+    review: generated
+
+  - id: c1bb8503-fab7-4b3e-8174-b13b78adcbb7
+    question: If $f(x) = \frac{\sec x}{\tan x}$, then $f'(x) =$
+    answer: $-\csc x \cot x$
+    distractors:
+      - $\frac{\sec x \tan x}{\sec^2 x}$
+      - $\csc x \cot x$
+      - $-\csc^2 x$
+    solution: |
+      Rewrite using identities:
+      $\frac{\sec x}{\tan x} = \frac{\frac{1}{\cos x}}{\frac{\sin x}{\cos x}} = \frac{1}{\sin x} = \csc x$
+
+      $f'(x) = \frac{d}{dx}\left[ \csc x \right] = -\csc x \cot x$
+    calculator_active: false
+    sections:
+      - "2.10"
+    dok: 3
+    review: generated

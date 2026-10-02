@@ -1,0 +1,155 @@
+title: "Unit 2 Test FRQ: Derivatives: Fundamental Properties"
+author: Levi Starrett
+class_name: AP Calculus AB
+class_id: APCalc
+duration: 15 min
+sections: 2.1 - 2.10
+question_count: 2
+questions:
+  - id: 6d655747-308b-4f29-a9af-97f2a562117c
+    legacy_ids:
+      - 2.A.17
+    question: |
+      The functions $f(x)$ and $g(x)$ are differentiable for all values of $x$.
+      Selected values for $f(x)$, $g(x)$, and their derivatives are shown in the
+      table below.
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |*{5}{Y|} }
+          \hline
+          \rowcolor{lightgray}
+          \bm{$x$} & \bm{$f(x)$} & \bm{$g(x)$} & \bm{$f'(x)$} & \bm{$g'(x)$} \\
+          \hline
+          1 & 2 & -5 & -4 & 2 \\
+          \hline
+          2 & $\textstyle \frac{1}{2}$ & -2 & $\textstyle -\frac{1}{2}$ & 4 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    parts:
+      - question: |
+          If $s(x) = f(x) - g(x)$, find $s'(2)$.
+        solution: |
+          $s'(2) = f'(2) - g'(2) = -\frac{1}{2} - 4 = -\frac{9}{2}$
+        grading:
+          - points: 1
+            criterion: Answer
+        sections:
+          - 2.6
+        work_space: 1in
+      - question: |
+          If $h(x) = f(x) \cdot g(x)$, find $h'(1)$.
+        solution: |
+          $h'(1) = f(1) \cdot g'(1) + f'(1) \cdot g(1) = 2 \cdot 2 + -4 \cdot -5 = 24$
+        grading:
+          - points: 1
+            criterion: Use of Product Rule
+          - points: 1
+            criterion: Answer
+        sections:
+          - 2.8
+        work_space: 1.5in
+      - question: |
+          If $k(x) = \frac{g(x)}{f(x)}$, find $k'(1)$.
+        solution: |
+          $k'(1) = \frac{f(1) \cdot g'(1) - g(1) \cdot f'(1)}{\left(f(1)\right)^2}$
+          $= \frac{2 \cdot 2 - (-5 \cdot -4)}{(2)^2}$
+          $= \frac{-16}{4} = -4$
+        grading:
+          - points: 2
+            criterion: Use of Quotient Rule
+          - points: 1
+            criterion: Answer
+        sections:
+          - 2.9
+        work_space: 1.5in
+      - question: |
+          If $j(x) = e^x \cdot f(x)$, find $j'(1)$. Give an exact answer in terms of $e$.
+        solution: |
+          $j'(1) = e^1 \cdot f'(1) + f(1) \cdot e^1 = e \cdot -4 + 2 \cdot e = -2e$
+        grading:
+          - points: 1
+            criterion: Use of Product Rule
+          - points: 1
+            criterion: Answer
+        sections:
+          - 2.7
+          - 2.8
+        work_space: 1.5in
+      - question: |
+          Find $\lim_{\Delta x \to 0} \frac{f(2 + \Delta x) - f(2)}{\Delta x}$
+        solution: |
+          $\lim_{\Delta x \to 0} \frac{f(2 + \Delta x) - f(2)}{\Delta x} = f'(2) = -\frac{1}{2}$
+        grading:
+          - points: 1
+            criterion: Answer
+        sections:
+          - 2.2
+        work_space: 1in
+    calculator_active: true
+    question_type: FRQ
+
+  - id: 60c97f92-d4f4-4199-b3d1-4d89fcbd02e4
+    legacy_ids:
+      - 2.B.17
+    question: |
+      Let $f$ be the continuous function defined on $[-1, 8]$ whose graph,
+      consisting of two line segments, is shown above. Let $g$ and $h$ be the
+      functions defined by $g(x) = e^x + \cos(x)$ and $h(x) = 5e^x -
+      9\sin(x)$.
+    figure: 36.tex
+    figure_placement: above
+    parts:
+      - question: |
+          The function $k$ is defined by $k(x) = f(x) \cdot g(x)$. Find $k'(0)$.
+        solution: |
+          $g'(x) = e^x - \sin(x)$ \qquad $g(0) = 2$, \quad $g'(0) = 1$
+
+          $k'(0) = f(0) \cdot g'(0) + f'(0) \cdot g(0) = 3 \cdot 1 + 2 \cdot 2 = \boxed{7}$
+        grading:
+          - points: 1
+            criterion: $g'(x)$
+          - points: 1
+            criterion: $k'(x)$ using Product Rule
+          - points: 1
+            criterion: Answer
+        sections:
+          - 2.7
+          - 2.8
+        work_space: 2in
+      - question: |
+          The function $m$ is defined by $m(x) = \frac{f(x)}{2g(x)}$. Find $m'(0)$.
+        solution: |
+          $m'(0) = \frac{2g(0) \cdot f'(0) - f(0) \cdot 2g'(0)}{[2g(0)]^2}$
+          $= \frac{4 \cdot 2 - 3 \cdot 2}{4^2} = \frac{2}{16} = \boxed{\frac{1}{8}}$
+        grading:
+          - points: 2
+            criterion: Use of Quotient Rule
+          - points: 1
+            criterion: Answer
+        sections:
+          - 2.7
+          - 2.9
+        work_space: 2in
+      - question: |
+          Find the value of $x$ for $-1 < x < 2$ such that $f'(x) = h'(x)$.
+        solution: |
+          \begin{gather*}
+            h'(x) = 5e^x - 9 \cos(x) \\
+            2 = 5e^x - 9 \cos(x) \qquad \text{(solve for $x$ with calculator)} \\
+            x \approx 0.622 \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: $h'(x)$
+          - points: 1
+            criterion: Setting up the equation
+          - points: 1
+            criterion: Answer
+        sections:
+          - 2.6
+          - 2.7
+        work_space: 2in
+    calculator_active: true
+    question_type: FRQ
+    review: check
