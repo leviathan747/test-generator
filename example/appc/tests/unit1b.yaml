@@ -17,7 +17,7 @@ questions:
     sections:
       - 1.9
       - '1.10'
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 78d3131c-4446-4ba8-b183-f72b8f9d594b
@@ -44,7 +44,7 @@ questions:
     calculator_active: false
     sections:
       - 1.8
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 39d1e0b4-b444-4c97-a6a1-9f122285cbeb
@@ -65,7 +65,7 @@ questions:
     calculator_active: false
     sections:
       - 1.11
-    dok: unknown
+    dok: 2
     review: none
 
   - id: cdca8f44-0b2e-47c3-814d-21d5cae6c43c
@@ -93,7 +93,7 @@ questions:
     calculator_active: false
     sections:
       - 1.12
-    dok: unknown
+    dok: 2
     review: none
 
   - id: e3af9b12-1a45-4e1b-bc5d-cd06fc4c8d13
@@ -106,13 +106,13 @@ questions:
     distractors:
       - The graph of $r$ has a horizontal asymptote at $y = 2$.
       - The graph of $r$ has a slant asymptote at $y = 2x - 3$.
-      - The graph of $r$ has a no horizontal or slant asymptotes.
+      - The graph of $r$ has no horizontal or slant asymptotes.
     solution: $\polylongdiv{2x^2 - 3x + 7}{x - 4}$
     calculator_active: false
     sections:
       - 1.7
       - 1.11
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 619c1f64-0172-4a91-a688-98918d2a2f86
@@ -138,7 +138,7 @@ questions:
     sections:
       - 1.7
       - 1.14
-    dok: unknown
+    dok: 2
     review: none
 
   - id: e6ef6f52-ec60-4a21-acea-9182bdfc5277
@@ -147,14 +147,14 @@ questions:
     related_to:
       - 3cb17e93-2d05-45dd-89e2-0e188b328144
     question: |
-      The rational function $f$ is given by $f(x) = \frac{n(x)}{d(x)}$, where and
-      $n$, and $d$ are polynomial functions. The degree of $n$ is less than the
+      The rational function $f$ is given by $f(x) = \frac{n(x)}{d(x)}$, where $n$
+      and $d$ are polynomial functions. The degree of $n$ is less than the
       degree of $d$. Which of the following could be the graph of $f(x)$?
-    answer: \includegraphics[width=2in]{7D}
+    answer: \resizebox{2in}{!}{\input{figures/28.tex}}
     distractors:
-      - \includegraphics[width=2in]{7A}
-      - \includegraphics[width=2in]{7B}
-      - \includegraphics[width=2in]{7C}
+      - \resizebox{2in}{!}{\input{figures/25.tex}}
+      - \resizebox{2in}{!}{\input{figures/26.tex}}
+      - \resizebox{2in}{!}{\input{figures/27.tex}}
     solution: |
       A rational function where the polynomial in the denominator has a higher
       degree than the polynomial in the numerator will have a horizontal
@@ -162,7 +162,7 @@ questions:
     calculator_active: false
     sections:
       - 1.7
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 731681bd-2137-48de-9f2c-715c6e0d1220
@@ -191,7 +191,7 @@ questions:
     calculator_active: false
     sections:
       - 1.11
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 912e62a6-edae-44b5-bc67-b07b369eb2e6
@@ -221,7 +221,7 @@ questions:
       - 1.7
       - 1.9
       - '1.10'
-    dok: unknown
+    dok: 3
     review: none
 
   - id: 0dad1e4c-a71d-4d6e-bb85-5e9738cecba3
@@ -233,16 +233,22 @@ questions:
       The graph of $f(x)$, consisting of three line segments, is shown above
       for $-3 \le x \le 4$. Which of the following is the transformed graph
       for $y = -2f(x + 3) + 1$?
-    answer: \includegraphics[width=2in]{11C}
+    figure: 29.tex
+    figure_placement: above
+    figure_width: 2.5in
+    answer: \resizebox{2in}{!}{\input{figures/32.tex}}
     distractors:
-      - \includegraphics[width=2in]{11A}
-      - \includegraphics[width=2in]{11B}
-      - \includegraphics[width=2in]{11D}
-    solution: TODO
+      - \resizebox{2in}{!}{\input{figures/30.tex}}
+      - \resizebox{2in}{!}{\input{figures/31.tex}}
+      - \resizebox{2in}{!}{\input{figures/33.tex}}
+    solution: |
+      Each point $(x, y)$ on the graph of $f$ maps to $(x - 3, -2y + 1)$:
+      $(-3, 2) \to (-6, -3)$, $(-1, 2) \to (-4, -3)$,
+      $(2, -1) \to (-1, 3)$, $(4, 1) \to (1, -1)$.
     calculator_active: true
     sections:
       - 1.12
-    dok: unknown
+    dok: 2
     review: none
 
   - id: b4dcb43f-ffe1-428a-8927-ae37a8401410
@@ -252,7 +258,7 @@ questions:
       - 7db2fcc9-bcbf-4e7e-acbe-1993559bd972
     question: |
       Starting at time $t = 0$ minutes, a copy machine makes copies at a constant
-      rate of 30 pages per minute. Two minutes after the first copy machine
+      rate of 30 copies per minute. Two minutes after the first copy machine
       begins making copies, a second copy machine makes copies at a constant rate
       of 40 copies per minute so that both machines are simultaneously making
       copies. Both copy machines continue to make copies at their respective
@@ -271,13 +277,13 @@ questions:
       copies are being made at the combined rate of 70 copies per minute. We
       know that at 2 minutes, $2 \cdot 30 = 60$ copies have already been
       made. Using the point slope formula for a line ($y = y_1 + m(x - x_1)$),
-      with $m = 70$ and the point $(2, 60)$, We can come up the the regression
+      with $m = 70$ and the point $(2, 60)$, We can come up with the regression
       $60 + 70(t - 2)$ for $2 < t \le 6$.
     calculator_active: true
     sections:
       - 1.12
       - 1.13
-    dok: unknown
+    dok: 2
     review: none
 
   - id: a2ac7c6d-6dcb-46e3-91d9-597edf190c41
@@ -295,7 +301,7 @@ questions:
       - $x = 2.462$
     solution: |
       \begin{multicols}{2}
-        \includegraphics[width=2in]{13S}
+        \resizebox{2in}{!}{\input{figures/34.tex}}
 
         The hole occurs at the location where both the numerator and
         denominator have a zero.
@@ -303,7 +309,7 @@ questions:
     calculator_active: true
     sections:
       - '1.10'
-    dok: unknown
+    dok: 2
     review: none
 
   - id: ae7359ca-3814-499b-8989-537af2b5d7c0
@@ -326,9 +332,9 @@ questions:
       - $t = 5.000$
     solution: |
       \begin{multicols}{3}
-        \includegraphics[width=2in]{14S-1}
+        \resizebox{2in}{!}{\input{figures/36.tex}}
 
-        \includegraphics[width=2in]{14S-2}
+        \resizebox{2in}{!}{\input{figures/37.tex}}
 
         Calculate a quadratic regression and then use the zero function to
         predict when the rocket will land.
@@ -336,7 +342,7 @@ questions:
     calculator_active: true
     sections:
       - 1.14
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 4897dc84-deed-4c32-bae9-92792f29ffc2
@@ -349,13 +355,13 @@ questions:
     distractors:
       - The graph of $r$ has a horizontal asymptote at $y = 4$.
       - The graph of $r$ has a slant asymptote at $y = 4x - 9$.
-      - The graph of $r$ has a no horizontal or slant asymptotes.
+      - The graph of $r$ has no horizontal or slant asymptotes.
     solution: $\polylongdiv{4x^2 + 3x - 9}{x - 3}$
     calculator_active: false
     sections:
       - 1.7
       - 1.11
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 3cb17e93-2d05-45dd-89e2-0e188b328144
@@ -365,13 +371,13 @@ questions:
       - e6ef6f52-ec60-4a21-acea-9182bdfc5277
     question: |
       The rational function $f$ is given by $f(x) = \frac{n(x)}{d(x)}$, where
-      and $n$, and $d$ are polynomial functions. The degree of $n$ is 4 and the
+      $n$ and $d$ are polynomial functions. The degree of $n$ is 4 and the
       degree of $d$ is 2. Which of the following could be the graph of $f(x)$?
-    answer: \includegraphics[width=2in]{7B}
+    answer: \resizebox{2in}{!}{\input{figures/26.tex}}
     distractors:
-      - \includegraphics[width=2in]{7D}
-      - \includegraphics[width=2in]{7C}
-      - \includegraphics[width=2in]{7A}
+      - \resizebox{2in}{!}{\input{figures/28.tex}}
+      - \resizebox{2in}{!}{\input{figures/27.tex}}
+      - \resizebox{2in}{!}{\input{figures/25.tex}}
     solution: |
       A rational function where the polynomial in the numerator has a higher
       degree than the polynomial in the denominator will not have a
@@ -380,7 +386,7 @@ questions:
     calculator_active: false
     sections:
       - 1.7
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 1425d7e4-9d43-40b3-bc5d-c9cd390c6fc7
@@ -405,7 +411,7 @@ questions:
     calculator_active: false
     sections:
       - 1.8
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 4c678054-7dd9-4275-a2ff-68ee520bfdd0
@@ -434,7 +440,7 @@ questions:
     calculator_active: false
     sections:
       - 1.11
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 1c148c02-d333-4165-a9c7-632efa41cd42
@@ -455,7 +461,7 @@ questions:
     calculator_active: false
     sections:
       - 1.11
-    dok: unknown
+    dok: 2
     review: none
 
   - id: b21e092c-9b1a-4ec0-acc4-63f89be506a4
@@ -477,7 +483,7 @@ questions:
     sections:
       - 1.8
       - '1.10'
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 43dea07c-027b-4c07-8f6e-0dfd75acf7a9
@@ -505,7 +511,7 @@ questions:
     calculator_active: false
     sections:
       - 1.12
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 20883980-0c20-455e-ac06-c2e45c27ab93
@@ -532,7 +538,7 @@ questions:
     sections:
       - 1.7
       - 1.14
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 219cc1e8-cd1d-4b25-ad1b-f0d1d764155f
@@ -542,8 +548,8 @@ questions:
       - 912e62a6-edae-44b5-bc67-b07b369eb2e6
     question: |
       A rational function $q(x)$ has a horizontal asymptote at $y = 3$, a
-      vertical asymptote at $x = -1$, and a horizontal asymptote at $y =
-      -\frac{1}{2}$. $q(x)$ has no other holes or asymptotes. Which of the
+      vertical asymptote at $x = -1$, and a hole at $x = -\frac{1}{2}$.
+      $q(x)$ has no other holes or asymptotes. Which of the
       following limit statements may be true.
 
       I.\phantom{II} \quad $\lim_{x \to -1^+} q(x) = \infty$ \qquad
@@ -560,7 +566,7 @@ questions:
       - 1.7
       - 1.9
       - '1.10'
-    dok: unknown
+    dok: 3
     review: none
 
   - id: 5f06321b-06bb-402a-99c1-e0dac3a96bbc
@@ -578,7 +584,7 @@ questions:
       - $x = 0$
     solution: |
       \begin{multicols}{2}
-        \includegraphics[width=2in]{13S-B}
+        \resizebox{2in}{!}{\input{figures/35.tex}}
 
         The vertical asymptote occurs at the location where the denominator
         has a zero that is not also a zero of the numerator.
@@ -586,7 +592,7 @@ questions:
     calculator_active: true
     sections:
       - 1.9
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 7db2fcc9-bcbf-4e7e-acbe-1993559bd972
@@ -618,7 +624,7 @@ questions:
     sections:
       - 1.12
       - 1.13
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 9db06961-6a75-47cd-8556-9399da407902
@@ -630,16 +636,22 @@ questions:
       The graph of $f(x)$, consisting of three line segments, is shown above
       for $-3 \le x \le 4$. Which of the following is the transformed graph
       for $y = -2f(x - 3) - 1$?
-    answer: \includegraphics[width=2in]{11A}
+    figure: 29.tex
+    figure_placement: above
+    figure_width: 2.5in
+    answer: \resizebox{2in}{!}{\input{figures/30.tex}}
     distractors:
-      - \includegraphics[width=2in]{11B}
-      - \includegraphics[width=2in]{11C}
-      - \includegraphics[width=2in]{11D}
-    solution: TODO
+      - \resizebox{2in}{!}{\input{figures/31.tex}}
+      - \resizebox{2in}{!}{\input{figures/32.tex}}
+      - \resizebox{2in}{!}{\input{figures/33.tex}}
+    solution: |
+      Each point $(x, y)$ on the graph of $f$ maps to $(x + 3, -2y - 1)$:
+      $(-3, 2) \to (0, -5)$, $(-1, 2) \to (2, -5)$,
+      $(2, -1) \to (5, 1)$, $(4, 1) \to (7, -3)$.
     calculator_active: true
     sections:
       - 1.12
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 9bfb3f28-7798-4887-a2d7-1ee2c90a82ff
@@ -663,9 +675,9 @@ questions:
       - $t = 4.0$
     solution: |
       \begin{multicols}{3}
-        \includegraphics[width=2in]{14S-1-B}
+        \resizebox{2in}{!}{\input{figures/38.tex}}
 
-        \includegraphics[width=2in]{14S-2-B}
+        \resizebox{2in}{!}{\input{figures/39.tex}}
 
         Calculate a quadratic regression and then use the zero function to
         predict when the baseball will land.
@@ -673,5 +685,1662 @@ questions:
     calculator_active: true
     sections:
       - 1.14
-    dok: unknown
+    dok: 2
     review: none
+
+  - id: da135ff7-3c77-4de3-888c-01d412b4389a
+    related_to:
+      - 31e5687e-3b33-4262-87e5-4698d2160140
+    question: |
+      The rational function $r$ is given by
+      $r(x) = \frac{6x^3 - 2x + 1}{3x^3 + 5x^2 - 4}$. Which of the following is
+      an equation of the horizontal asymptote of the graph of $r$?
+    answer: $y = 2$
+    distractors:
+      - $y = 0$
+      - $y = -\frac{1}{4}$
+      - The graph of $r$ has no horizontal asymptote.
+    solution: |
+      The degrees of the numerator and denominator are equal, so the end
+      behavior is given by the quotient of the leading terms:
+      $\frac{6x^3}{3x^3} = 2$.
+    calculator_active: false
+    sections:
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: 31e5687e-3b33-4262-87e5-4698d2160140
+    related_to:
+      - da135ff7-3c77-4de3-888c-01d412b4389a
+    question: |
+      The rational function $r$ is given by
+      $r(x) = \frac{-8x^2 + x - 3}{2x^2 + 7}$. Which of the following is an
+      equation of the horizontal asymptote of the graph of $r$?
+    answer: $y = -4$
+    distractors:
+      - $y = 0$
+      - $y = -\frac{3}{7}$
+      - The graph of $r$ has no horizontal asymptote.
+    solution: |
+      The degrees of the numerator and denominator are equal, so the end
+      behavior is given by the quotient of the leading terms:
+      $\frac{-8x^2}{2x^2} = -4$.
+    calculator_active: false
+    sections:
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: 84f444e5-b53f-494c-b10f-397d5e63be58
+    related_to:
+      - f19c8cbd-bda2-40eb-a56f-90bd707318c4
+    question: |
+      The rational function $r$ is given by $r(x) = \frac{4x^2 - x}{x^3 + 2}$.
+      Which of the following statements about $r$ is true?
+    answer: $\lim_{x \to -\infty} r(x) = 0$
+    distractors:
+      - $\lim_{x \to \infty} r(x) = 4$
+      - $\lim_{x \to -\infty} r(x) = -\infty$
+      - $\lim_{x \to \infty} r(x) = \infty$
+    solution: |
+      The denominator has the greater degree, so it dominates for input values
+      of large magnitude. The quotient of the leading terms is
+      $\frac{4x^2}{x^3} = \frac{4}{x}$, so $r(x)$ approaches 0 as $x$
+      increases or decreases without bound.
+    calculator_active: false
+    sections:
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: f19c8cbd-bda2-40eb-a56f-90bd707318c4
+    related_to:
+      - 84f444e5-b53f-494c-b10f-397d5e63be58
+    question: |
+      The rational function $r$ is given by $r(x) = \frac{2x^4 + 1}{x^3 - 5x}$.
+      Which of the following statements about $r$ is true?
+    answer: $\lim_{x \to -\infty} r(x) = -\infty$
+    distractors:
+      - $\lim_{x \to -\infty} r(x) = \infty$
+      - $\lim_{x \to \infty} r(x) = 2$
+      - $\lim_{x \to \infty} r(x) = 0$
+    solution: |
+      The numerator has the greater degree, so it dominates for input values
+      of large magnitude. The quotient of the leading terms is
+      $\frac{2x^4}{x^3} = 2x$, so $r$ has the end behavior of $y = 2x$, which
+      decreases without bound as $x$ decreases without bound.
+    calculator_active: false
+    sections:
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: 9c8664a0-2de1-462e-b769-e153b78e716e
+    related_to:
+      - a7b56be2-2240-475c-982d-ecb35de4884c
+    question: |
+      Which of the following rational functions has a graph with a slant
+      asymptote?
+    answer: $r(x) = \frac{x^3 + 2}{x^2 - 4}$
+    distractors:
+      - $r(x) = \frac{x^3 + 2}{x^3 - 4}$
+      - $r(x) = \frac{x^2 + 2}{x^3 - 4}$
+      - $r(x) = \frac{x^4 + 2}{x^2 - 4}$
+    solution: |
+      A slant asymptote occurs when the quotient of the leading terms is
+      linear. Only $\frac{x^3}{x^2} = x$ is linear. The other quotients are
+      the constant 1, $\frac{1}{x}$, and $x^2$.
+    calculator_active: false
+    sections:
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: a7b56be2-2240-475c-982d-ecb35de4884c
+    related_to:
+      - 9c8664a0-2de1-462e-b769-e153b78e716e
+    question: |
+      Which of the following rational functions has a graph with a horizontal
+      asymptote at $y = 0$?
+    answer: $r(x) = \frac{3x^2 + 1}{x^3 + 2x}$
+    distractors:
+      - $r(x) = \frac{3x^3 + 1}{x^3 + 2x}$
+      - $r(x) = \frac{3x^4 + 1}{x^3 + 2x}$
+      - $r(x) = \frac{x^3 + 1}{3x^3 + 2x}$
+    solution: |
+      The graph has a horizontal asymptote at $y = 0$ when the denominator has
+      the greater degree. Only $\frac{3x^2 + 1}{x^3 + 2x}$ has a denominator of
+      greater degree than its numerator. The other functions have a horizontal
+      asymptote at $y = 3$, a slant asymptote, and a horizontal asymptote at
+      $y = \frac{1}{3}$.
+    calculator_active: false
+    sections:
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: 187e910f-6db2-4a96-8ec1-9747a3429771
+    related_to:
+      - bb3e0b3a-164b-4558-84cd-306f2df81c50
+    question: |
+      The rational function $r$ is given by $r(x) = \frac{-3x^5 + x}{x^3 + 1}$.
+      Which of the following describes the end behavior of $r$?
+    answer: $\lim_{x \to -\infty} r(x) = -\infty$ and $\lim_{x \to \infty} r(x) = -\infty$
+    distractors:
+      - $\lim_{x \to -\infty} r(x) = \infty$ and $\lim_{x \to \infty} r(x) = \infty$
+      - $\lim_{x \to -\infty} r(x) = \infty$ and $\lim_{x \to \infty} r(x) = -\infty$
+      - $\lim_{x \to -\infty} r(x) = -3$ and $\lim_{x \to \infty} r(x) = -3$
+    solution: |
+      The quotient of the leading terms is $\frac{-3x^5}{x^3} = -3x^2$, so $r$
+      has the end behavior of $y = -3x^2$, which decreases without bound in
+      both directions.
+    calculator_active: false
+    sections:
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: bb3e0b3a-164b-4558-84cd-306f2df81c50
+    related_to:
+      - 187e910f-6db2-4a96-8ec1-9747a3429771
+    question: |
+      The rational function $r$ is given by $r(x) = \frac{2x^4 - x^2}{-x + 5}$.
+      Which of the following describes the end behavior of $r$?
+    answer: $\lim_{x \to -\infty} r(x) = \infty$ and $\lim_{x \to \infty} r(x) = -\infty$
+    distractors:
+      - $\lim_{x \to -\infty} r(x) = -\infty$ and $\lim_{x \to \infty} r(x) = \infty$
+      - $\lim_{x \to -\infty} r(x) = \infty$ and $\lim_{x \to \infty} r(x) = \infty$
+      - $\lim_{x \to -\infty} r(x) = -2$ and $\lim_{x \to \infty} r(x) = -2$
+    solution: |
+      The quotient of the leading terms is $\frac{2x^4}{-x} = -2x^3$, so $r$
+      has the end behavior of $y = -2x^3$, which increases without bound as $x$
+      decreases without bound and decreases without bound as $x$ increases
+      without bound.
+    calculator_active: false
+    sections:
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: c65a59f1-9318-4572-82ad-6d2695bac05a
+    question: |
+      The graph of the rational function $r$ has a horizontal asymptote at
+      $y = -5$. Which of the following must be true?
+    answer: As $x$ increases without bound, $r(x)$ gets arbitrarily close to $-5$.
+    distractors:
+      - $r(x) \ne -5$ for all $x$ in the domain of $r$.
+      - As $x$ approaches $-5$, $r(x)$ increases or decreases without bound.
+      - $\lim_{x \to -5} r(x) = 0$
+    solution: |
+      A horizontal asymptote at $y = -5$ means
+      $\lim_{x \to \infty} r(x) = -5$ and $\lim_{x \to -\infty} r(x) = -5$.
+      The graph of a rational function may cross its horizontal asymptote, and
+      a horizontal asymptote gives no information about the behavior of $r$
+      near $x = -5$.
+    calculator_active: false
+    sections:
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: 590465aa-b23c-4180-af6d-3fd0afd98290
+    question: |
+      The rational function $r$ is given by $r(x) = \frac{p(x)}{q(x)}$, where
+      $p$ and $q$ are polynomial functions. The degree of $p$ is 3 and the
+      degree of $q$ is 5. Which of the following must be true?
+    answer: $\lim_{x \to \infty} r(x) = 0$
+    distractors:
+      - $\lim_{x \to \infty} r(x) = \frac{3}{5}$
+      - $\lim_{x \to \infty} r(x) = \infty$
+      - The graph of $r$ has a slant asymptote.
+    solution: |
+      The denominator has the greater degree, so it dominates for input values
+      of large magnitude, and the graph of $r$ has a horizontal asymptote at
+      $y = 0$.
+    calculator_active: false
+    sections:
+      - 1.7
+    dok: 2
+    review: generated
+
+  - id: 7f3b7e27-f9b1-4965-88e2-6b874070642a
+    related_to:
+      - 36995313-12f6-435a-a9d2-47ae0386847a
+    question: |
+      The function $r$ is given by $r(x) = \frac{x^2 - x - 6}{x^2 - 9}$. What
+      are all the real zeros of $r$?
+    answer: $x = -2$ only
+    distractors:
+      - $x = -2$ and $x = 3$
+      - $x = -3$ and $x = 3$
+      - $x = -3$ only
+    solution: |
+      $r(x) = \frac{(x - 3)(x + 2)}{(x - 3)(x + 3)}$
+
+      The zeros of the numerator are $x = 3$ and $x = -2$, but $x = 3$ is not
+      in the domain of $r$.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 2
+    review: generated
+
+  - id: 36995313-12f6-435a-a9d2-47ae0386847a
+    related_to:
+      - 7f3b7e27-f9b1-4965-88e2-6b874070642a
+    question: |
+      The function $r$ is given by $r(x) = \frac{x^2 + 3x - 10}{x^2 - 4x + 4}$.
+      What are all the real zeros of $r$?
+    answer: $x = -5$ only
+    distractors:
+      - $x = -5$ and $x = 2$
+      - $x = 2$ only
+      - $x = 5$ and $x = -2$
+    solution: |
+      $r(x) = \frac{(x + 5)(x - 2)}{(x - 2)^2}$
+
+      The zeros of the numerator are $x = -5$ and $x = 2$, but $x = 2$ is not
+      in the domain of $r$.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 2
+    review: generated
+
+  - id: 4d5974c2-a17c-46ad-af2b-75ebbc87f436
+    related_to:
+      - cf13cce2-8fd4-4b9a-99ba-f74e5725db79
+    question: |
+      What are all values of $x$ for which $\frac{x - 4}{x + 1} \le 0$?
+    answer: $(-1, 4]$
+    distractors:
+      - $[-1, 4]$
+      - $(-1, 4)$
+      - $(-\infty, -1) \cup [4, \infty)$
+    solution: |
+      The real zero of the numerator is $x = 4$ and the real zero of the
+      denominator is $x = -1$. Testing a value in each interval shows that
+      $\frac{x - 4}{x + 1}$ is negative only on $(-1, 4)$. The expression
+      equals 0 at $x = 4$ and is undefined at $x = -1$.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 2
+    review: generated
+
+  - id: cf13cce2-8fd4-4b9a-99ba-f74e5725db79
+    related_to:
+      - 4d5974c2-a17c-46ad-af2b-75ebbc87f436
+    question: |
+      What are all values of $x$ for which $\frac{x + 3}{x - 2} > 0$?
+    answer: $(-\infty, -3) \cup (2, \infty)$
+    distractors:
+      - $(-3, 2)$
+      - $(-\infty, -3] \cup (2, \infty)$
+      - $(-\infty, -3) \cup [2, \infty)$
+    solution: |
+      The real zero of the numerator is $x = -3$ and the real zero of the
+      denominator is $x = 2$. Testing a value in each interval shows that
+      $\frac{x + 3}{x - 2}$ is positive on $(-\infty, -3)$ and $(2, \infty)$.
+      Neither endpoint is included: the expression equals 0 at $x = -3$ and is
+      undefined at $x = 2$.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 2
+    review: generated
+
+  - id: 5c999e01-1a1f-4270-aa39-fa02c142c65d
+    related_to:
+      - 048e709e-00f7-42b3-8151-704b819e86c1
+    question: |
+      What are all values of $x$ for which
+      $\frac{(x - 1)(x + 2)}{x - 3} \ge 0$?
+    answer: $[-2, 1] \cup (3, \infty)$
+    distractors:
+      - $(-\infty, -2] \cup [1, 3)$
+      - $[-2, 1] \cup [3, \infty)$
+      - $(-2, 1) \cup (3, \infty)$
+    solution: |
+      The real zeros of the numerator and denominator divide the number line
+      at $x = -2$, $x = 1$, and $x = 3$. Testing a value in each interval, the
+      expression is negative on $(-\infty, -2)$, positive on $(-2, 1)$,
+      negative on $(1, 3)$, and positive on $(3, \infty)$. The expression
+      equals 0 at $x = -2$ and $x = 1$ and is undefined at $x = 3$.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 2
+    review: generated
+
+  - id: 048e709e-00f7-42b3-8151-704b819e86c1
+    related_to:
+      - 5c999e01-1a1f-4270-aa39-fa02c142c65d
+    question: |
+      What are all values of $x$ for which $\frac{x(x - 4)}{x + 2} < 0$?
+    answer: $(-\infty, -2) \cup (0, 4)$
+    distractors:
+      - $(-2, 0) \cup (4, \infty)$
+      - $(-\infty, -2] \cup [0, 4]$
+      - $(-\infty, -2) \cup [0, 4]$
+    solution: |
+      The real zeros of the numerator and denominator divide the number line
+      at $x = -2$, $x = 0$, and $x = 4$. Testing a value in each interval, the
+      expression is negative on $(-\infty, -2)$, positive on $(-2, 0)$,
+      negative on $(0, 4)$, and positive on $(4, \infty)$.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 2
+    review: generated
+
+  - id: dcf3d2d2-7f86-40b5-8850-c98fd2cbced9
+    related_to:
+      - e4593f4c-498f-428b-a740-3f9e2710f13c
+    question: |
+      Let $f(x) = \frac{6}{x}$ and $g(x) = x + 1$. What are all the intervals on
+      which $g(x) > f(x)$?
+    answer: $(-3, 0) \cup (2, \infty)$
+    distractors:
+      - $(-\infty, -3) \cup (0, 2)$
+      - $(2, \infty)$
+      - $[-3, 0) \cup [2, \infty)$
+    solution: |
+      $x + 1 > \frac{6}{x} \implies
+      \frac{x^2 + x - 6}{x} > 0 \implies
+      \frac{(x + 3)(x - 2)}{x} > 0$
+
+      Testing a value in each interval, the expression is negative on
+      $(-\infty, -3)$, positive on $(-3, 0)$, negative on $(0, 2)$, and
+      positive on $(2, \infty)$.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 2
+    review: generated
+
+  - id: e4593f4c-498f-428b-a740-3f9e2710f13c
+    related_to:
+      - dcf3d2d2-7f86-40b5-8850-c98fd2cbced9
+    question: |
+      Let $f(x) = \frac{8}{x}$ and $g(x) = x - 2$. What are all the intervals on
+      which $g(x) \le f(x)$?
+    answer: $(-\infty, -2] \cup (0, 4]$
+    distractors:
+      - $[-2, 0) \cup [4, \infty)$
+      - $(-\infty, -2] \cup [0, 4]$
+      - $(0, 4]$
+    solution: |
+      $x - 2 \le \frac{8}{x} \implies
+      \frac{x^2 - 2x - 8}{x} \le 0 \implies
+      \frac{(x - 4)(x + 2)}{x} \le 0$
+
+      Testing a value in each interval, the expression is negative on
+      $(-\infty, -2)$, positive on $(-2, 0)$, negative on $(0, 4)$, and
+      positive on $(4, \infty)$. The expression equals 0 at $x = -2$ and
+      $x = 4$ and is undefined at $x = 0$.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 2
+    review: generated
+
+  - id: 20c9201a-fcf3-43f7-b73c-2da24891a685
+    question: |
+      The function $r$ is given by $r(x) = \frac{x^3 - 4x}{x^2 + 2x}$. What are
+      all the real zeros of $r$?
+    answer: $x = 2$ only
+    distractors:
+      - $x = 0$ and $x = 2$
+      - $x = -2$, $x = 0$, and $x = 2$
+      - $x = -2$ and $x = 0$
+    solution: |
+      $r(x) = \frac{x(x - 2)(x + 2)}{x(x + 2)}$
+
+      The zeros of the numerator are $x = 0$, $x = 2$, and $x = -2$, but
+      $x = 0$ and $x = -2$ are not in the domain of $r$.
+    calculator_active: false
+    sections:
+      - 1.8
+      - '1.10'
+    dok: 2
+    review: generated
+
+  - id: 929f15eb-77f5-45c1-870a-55df9686fbdf
+    question: |
+      The function $r$ is given by $r(x) = \frac{(x - 5)^2}{x + 1}$. What are
+      all values of $x$ for which $r(x) \ge 0$?
+    answer: $(-1, \infty)$
+    distractors:
+      - $[5, \infty)$
+      - $(-1, 5]$
+      - $(-\infty, -1) \cup [5, \infty)$
+    solution: |
+      The numerator $(x - 5)^2$ is positive for all $x \ne 5$ and equals 0 at
+      $x = 5$. The denominator is positive for $x > -1$ and negative for
+      $x < -1$, so $r(x) \ge 0$ exactly when $x > -1$.
+    calculator_active: false
+    sections:
+      - 1.8
+    dok: 2
+    review: generated
+
+  - id: cadfb13a-418a-4ba4-9c17-1cdc4286162d
+    related_to:
+      - 677bca31-9df6-4e10-9743-953dd721c20c
+    question: |
+      The function $r$ is given by $r(x) = \frac{x^2 - 1}{x^2 + x - 6}$. At
+      which values of $x$ does the graph of $r$ have a vertical asymptote?
+    answer: $x = -3$ and $x = 2$
+    distractors:
+      - $x = 3$ and $x = -2$
+      - $x = -1$ and $x = 1$
+      - $x = -3$, $x = -1$, $x = 1$, and $x = 2$
+    solution: |
+      $r(x) = \frac{(x - 1)(x + 1)}{(x + 3)(x - 2)}$
+
+      The real zeros of the denominator are $x = -3$ and $x = 2$, and neither
+      is a zero of the numerator.
+    calculator_active: false
+    sections:
+      - 1.9
+    dok: 2
+    review: generated
+
+  - id: 677bca31-9df6-4e10-9743-953dd721c20c
+    related_to:
+      - cadfb13a-418a-4ba4-9c17-1cdc4286162d
+    question: |
+      The function $r$ is given by $r(x) = \frac{x^2 + 4x}{x^2 - 3x - 10}$. At
+      which values of $x$ does the graph of $r$ have a vertical asymptote?
+    answer: $x = -2$ and $x = 5$
+    distractors:
+      - $x = -5$ and $x = 2$
+      - $x = -4$ and $x = 0$
+      - $x = -4$, $x = -2$, $x = 0$, and $x = 5$
+    solution: |
+      $r(x) = \frac{x(x + 4)}{(x - 5)(x + 2)}$
+
+      The real zeros of the denominator are $x = 5$ and $x = -2$, and neither
+      is a zero of the numerator.
+    calculator_active: false
+    sections:
+      - 1.9
+    dok: 2
+    review: generated
+
+  - id: 01b5e4b7-52ce-486c-85e7-e5b9d9af2cf2
+    related_to:
+      - 3e1d87ba-573e-48cb-8bf0-1c5a9b65a486
+    question: |
+      The function $r$ is given by
+      $r(x) = \frac{(x - 2)(x + 1)}{(x - 2)^2(x + 3)}$. At which values of $x$
+      does the graph of $r$ have a vertical asymptote?
+    answer: $x = -3$ and $x = 2$
+    distractors:
+      - $x = -3$ only
+      - $x = 2$ only
+      - $x = -2$ and $x = 3$
+    solution: |
+      $x = -3$ is a zero of the denominator only. $x = 2$ is a zero of
+      multiplicity 2 in the denominator and multiplicity 1 in the numerator.
+      Because its multiplicity in the denominator is greater, the graph also
+      has a vertical asymptote at $x = 2$.
+    calculator_active: false
+    sections:
+      - 1.9
+    dok: 2
+    review: generated
+
+  - id: 3e1d87ba-573e-48cb-8bf0-1c5a9b65a486
+    related_to:
+      - 01b5e4b7-52ce-486c-85e7-e5b9d9af2cf2
+    question: |
+      The function $r$ is given by
+      $r(x) = \frac{x(x + 4)^2}{(x + 4)^3(x - 1)}$. At which values of $x$ does
+      the graph of $r$ have a vertical asymptote?
+    answer: $x = -4$ and $x = 1$
+    distractors:
+      - $x = 1$ only
+      - $x = -4$ only
+      - $x = -1$ and $x = 4$
+    solution: |
+      $x = 1$ is a zero of the denominator only. $x = -4$ is a zero of
+      multiplicity 3 in the denominator and multiplicity 2 in the numerator.
+      Because its multiplicity in the denominator is greater, the graph also
+      has a vertical asymptote at $x = -4$.
+    calculator_active: false
+    sections:
+      - 1.9
+    dok: 2
+    review: generated
+
+  - id: ac533b67-c20f-4aab-b3fd-bb3d575654ac
+    related_to:
+      - 66008050-39bc-4e07-b1c9-e8e04635d583
+    question: |
+      The function $r$ is given by $r(x) = \frac{x + 1}{x - 3}$. Which of the
+      following statements about $r$ is true?
+    answer: $\lim_{x \to 3^-} r(x) = -\infty$
+    distractors:
+      - $\lim_{x \to 3^-} r(x) = \infty$
+      - $\lim_{x \to 3^+} r(x) = -\infty$
+      - $\lim_{x \to 3} r(x) = 1$
+    solution: |
+      For $x$ near 3, the numerator is close to 4. For $x$ slightly less than
+      3, the denominator is a negative number close to 0, so $r(x)$ decreases
+      without bound. For $x$ slightly greater than 3, the denominator is a
+      positive number close to 0, so $r(x)$ increases without bound.
+    calculator_active: false
+    sections:
+      - 1.9
+    dok: 2
+    review: generated
+
+  - id: 66008050-39bc-4e07-b1c9-e8e04635d583
+    related_to:
+      - ac533b67-c20f-4aab-b3fd-bb3d575654ac
+    question: |
+      The function $r$ is given by $r(x) = \frac{2 - x}{x + 4}$. Which of the
+      following statements about $r$ is true?
+    answer: $\lim_{x \to -4^+} r(x) = \infty$
+    distractors:
+      - $\lim_{x \to -4^+} r(x) = -\infty$
+      - $\lim_{x \to -4^-} r(x) = \infty$
+      - $\lim_{x \to -4} r(x) = -1$
+    solution: |
+      For $x$ near $-4$, the numerator is close to 6. For $x$ slightly greater
+      than $-4$, the denominator is a positive number close to 0, so $r(x)$
+      increases without bound. For $x$ slightly less than $-4$, the
+      denominator is a negative number close to 0, so $r(x)$ decreases without
+      bound.
+    calculator_active: false
+    sections:
+      - 1.9
+    dok: 2
+    review: generated
+
+  - id: 33e127c9-8398-4fae-9b33-1d04801ff71c
+    related_to:
+      - 4557e91e-ce2c-49bf-bc02-008997c9041c
+    question: |
+      The function $r$ is given by $r(x) = \frac{x - 5}{(x - 2)^2}$. Which of
+      the following describes the behavior of $r$ near $x = 2$?
+    answer: $\lim_{x \to 2^-} r(x) = -\infty$ and $\lim_{x \to 2^+} r(x) = -\infty$
+    distractors:
+      - $\lim_{x \to 2^-} r(x) = \infty$ and $\lim_{x \to 2^+} r(x) = \infty$
+      - $\lim_{x \to 2^-} r(x) = -\infty$ and $\lim_{x \to 2^+} r(x) = \infty$
+      - $\lim_{x \to 2^-} r(x) = \infty$ and $\lim_{x \to 2^+} r(x) = -\infty$
+    solution: |
+      For $x$ near 2, the numerator is close to $-3$. The denominator
+      $(x - 2)^2$ is a positive number close to 0 on both sides of $x = 2$, so
+      $r(x)$ decreases without bound from both sides.
+    calculator_active: false
+    sections:
+      - 1.9
+    dok: 2
+    review: generated
+
+  - id: 4557e91e-ce2c-49bf-bc02-008997c9041c
+    related_to:
+      - 33e127c9-8398-4fae-9b33-1d04801ff71c
+    question: |
+      The function $r$ is given by $r(x) = \frac{3x}{(x - 4)^3}$. Which of the
+      following describes the behavior of $r$ near $x = 4$?
+    answer: $\lim_{x \to 4^-} r(x) = -\infty$ and $\lim_{x \to 4^+} r(x) = \infty$
+    distractors:
+      - $\lim_{x \to 4^-} r(x) = \infty$ and $\lim_{x \to 4^+} r(x) = \infty$
+      - $\lim_{x \to 4^-} r(x) = -\infty$ and $\lim_{x \to 4^+} r(x) = -\infty$
+      - $\lim_{x \to 4^-} r(x) = \infty$ and $\lim_{x \to 4^+} r(x) = -\infty$
+    solution: |
+      For $x$ near 4, the numerator is close to 12. The denominator
+      $(x - 4)^3$ is a negative number close to 0 for $x$ slightly less than 4
+      and a positive number close to 0 for $x$ slightly greater than 4.
+    calculator_active: false
+    sections:
+      - 1.9
+    dok: 2
+    review: generated
+
+  - id: 0d5f64a6-0960-45aa-8d20-94981e6dfcae
+    question: |
+      The graph of the function $f$ has vertical asymptotes at $x = -5$ and
+      $x = 2$ and has no holes. Which of the following could be $f(x)$?
+    answer: $f(x) = \frac{x + 1}{x^2 + 3x - 10}$
+    distractors:
+      - $f(x) = \frac{x + 1}{x^2 - 3x - 10}$
+      - $f(x) = \frac{x - 2}{x^2 + 3x - 10}$
+      - $f(x) = \frac{x^2 + 3x - 10}{x + 1}$
+    solution: |
+      $\frac{x + 1}{x^2 + 3x - 10} = \frac{x + 1}{(x + 5)(x - 2)}$
+
+      $x = -5$ and $x = 2$ are zeros of the denominator only, and no factor
+      divides out.
+    calculator_active: false
+    sections:
+      - 1.9
+    dok: 2
+    review: generated
+
+  - id: 0fd6ec33-81c0-4373-84b3-9e70f8380eb9
+    question: |
+      The function $r$ is given by $r(x) = \frac{p(x)}{q(x)}$, where $p$ and
+      $q$ are polynomial functions. If $q(4) = 0$ and $p(4) \ne 0$, which of
+      the following must be true?
+    answer: The graph of $r$ has a vertical asymptote at $x = 4$.
+    distractors:
+      - The graph of $r$ has a hole at $x = 4$.
+      - $r(4) = 0$
+      - The graph of $r$ has a horizontal asymptote at $y = 4$.
+    solution: |
+      $x = 4$ is a real zero of the denominator and is not a real zero of the
+      numerator, so the graph of $r$ has a vertical asymptote at $x = 4$.
+    calculator_active: false
+    sections:
+      - 1.9
+    dok: 2
+    review: generated
+
+  - id: c4568e09-84d4-4ca8-89e7-196f19af09d6
+    related_to:
+      - 0930e8ed-0589-43eb-b183-c63d35347716
+    question: |
+      The function $r$ is given by $r(x) = \frac{x^2 + x - 12}{x^2 - 9}$. What
+      are the coordinates of the hole in the graph of $r$?
+    answer: $\left(3, \frac{7}{6}\right)$
+    distractors:
+      - $(3, 0)$
+      - $(-4, 0)$
+      - $\left(-3, -\frac{1}{6}\right)$
+    solution: |
+      $r(x) = \frac{(x + 4)(x - 3)}{(x + 3)(x - 3)}$
+
+      The factor $x - 3$ divides out, so the hole is at $x = 3$. For $x \ne 3$,
+      $r(x) = \frac{x + 4}{x + 3}$, so $\lim_{x \to 3} r(x) = \frac{7}{6}$.
+    calculator_active: false
+    sections:
+      - '1.10'
+    dok: 2
+    review: generated
+
+  - id: 0930e8ed-0589-43eb-b183-c63d35347716
+    related_to:
+      - c4568e09-84d4-4ca8-89e7-196f19af09d6
+    question: |
+      The function $r$ is given by $r(x) = \frac{x^2 - 3x - 10}{x^2 + 5x + 6}$.
+      What are the coordinates of the hole in the graph of $r$?
+    answer: $(-2, -7)$
+    distractors:
+      - $(-2, 0)$
+      - $(5, 0)$
+      - $\left(2, -\frac{3}{5}\right)$
+    solution: |
+      $r(x) = \frac{(x - 5)(x + 2)}{(x + 2)(x + 3)}$
+
+      The factor $x + 2$ divides out, so the hole is at $x = -2$. For
+      $x \ne -2$, $r(x) = \frac{x - 5}{x + 3}$, so
+      $\lim_{x \to -2} r(x) = \frac{-7}{1} = -7$.
+    calculator_active: false
+    sections:
+      - '1.10'
+    dok: 2
+    review: generated
+
+  - id: 5b889289-e7f1-4ed4-8557-605c68cac3f5
+    related_to:
+      - cbc64447-36c0-4e2e-a22a-162fd1ac4d9b
+    question: |
+      The function $r$ is given by $r(x) = \frac{2x^2 - 2x}{x^2 - 1}$. What is
+      $\lim_{x \to 1} r(x)$?
+    answer: 1
+    distractors:
+      - 0
+      - 2
+      - The limit does not exist.
+    solution: |
+      $r(x) = \frac{2x(x - 1)}{(x - 1)(x + 1)}$
+
+      For $x \ne 1$, $r(x) = \frac{2x}{x + 1}$, so
+      $\lim_{x \to 1} r(x) = \frac{2}{2} = 1$. The graph of $r$ has a hole at
+      $(1, 1)$.
+    calculator_active: false
+    sections:
+      - '1.10'
+    dok: 2
+    review: generated
+
+  - id: cbc64447-36c0-4e2e-a22a-162fd1ac4d9b
+    related_to:
+      - 5b889289-e7f1-4ed4-8557-605c68cac3f5
+    question: |
+      The function $r$ is given by $r(x) = \frac{x^2 + 5x}{x^2 + 2x - 15}$. What
+      is $\lim_{x \to -5} r(x)$?
+    answer: $\frac{5}{8}$
+    distractors:
+      - 0
+      - $-\frac{5}{8}$
+      - The limit does not exist.
+    solution: |
+      $r(x) = \frac{x(x + 5)}{(x + 5)(x - 3)}$
+
+      For $x \ne -5$, $r(x) = \frac{x}{x - 3}$, so
+      $\lim_{x \to -5} r(x) = \frac{-5}{-8} = \frac{5}{8}$. The graph of $r$
+      has a hole at $\left(-5, \frac{5}{8}\right)$.
+    calculator_active: false
+    sections:
+      - '1.10'
+    dok: 2
+    review: generated
+
+  - id: 1d991172-6787-4c9c-851a-7de8f3fd07bf
+    related_to:
+      - ffbb26bd-e179-4d5f-b13b-c7dfee18dcc8
+    question: |
+      The function $r$ is given by
+      $r(x) = \frac{(x - 1)^2(x + 2)}{(x - 1)(x + 4)}$. Which of the following
+      statements about the graph of $r$ at $x = 1$ is true?
+    answer: The graph of $r$ has a hole at $x = 1$.
+    distractors:
+      - The graph of $r$ has a vertical asymptote at $x = 1$.
+      - The graph of $r$ has neither a hole nor a vertical asymptote at $x = 1$.
+      - $r(1) = 0$
+    solution: |
+      $x = 1$ is a zero of multiplicity 2 in the numerator and multiplicity 1
+      in the denominator. Because its multiplicity in the numerator is greater
+      than or equal to its multiplicity in the denominator, the graph has a
+      hole at $x = 1$. $r(1)$ is undefined.
+    calculator_active: false
+    sections:
+      - 1.9
+      - '1.10'
+    dok: 2
+    review: generated
+
+  - id: ffbb26bd-e179-4d5f-b13b-c7dfee18dcc8
+    related_to:
+      - 1d991172-6787-4c9c-851a-7de8f3fd07bf
+    question: |
+      The function $r$ is given by
+      $r(x) = \frac{(x + 3)(x - 2)}{(x + 3)^2(x - 5)}$. Which of the following
+      statements about the graph of $r$ at $x = -3$ is true?
+    answer: The graph of $r$ has a vertical asymptote at $x = -3$.
+    distractors:
+      - The graph of $r$ has a hole at $x = -3$.
+      - The graph of $r$ has neither a hole nor a vertical asymptote at $x = -3$.
+      - $r(-3) = 0$
+    solution: |
+      $x = -3$ is a zero of multiplicity 2 in the denominator and multiplicity
+      1 in the numerator. Because its multiplicity in the denominator is
+      greater, the graph has a vertical asymptote at $x = -3$.
+    calculator_active: false
+    sections:
+      - 1.9
+      - '1.10'
+    dok: 2
+    review: generated
+
+  - id: d5cdd606-f551-432d-bf82-b9e19fc45d45
+    related_to:
+      - 5667760f-96c1-44b2-ae8b-09c54fe25366
+    question: |
+      The graph of the function $f$ has a hole at the point $(2, 5)$. Which of
+      the following could be $f(x)$?
+    answer: $f(x) = \frac{x^2 + x - 6}{x - 2}$
+    distractors:
+      - $f(x) = \frac{x^2 - x - 2}{x - 2}$
+      - $f(x) = \frac{x^2 + x - 6}{x + 3}$
+      - $f(x) = \frac{x + 3}{x - 2}$
+    solution: |
+      $\frac{x^2 + x - 6}{x - 2} = \frac{(x + 3)(x - 2)}{x - 2}$
+
+      For $x \ne 2$, $f(x) = x + 3$, so the hole is at $(2, 2 + 3) = (2, 5)$.
+    calculator_active: false
+    sections:
+      - '1.10'
+    dok: 2
+    review: generated
+
+  - id: 5667760f-96c1-44b2-ae8b-09c54fe25366
+    related_to:
+      - d5cdd606-f551-432d-bf82-b9e19fc45d45
+    question: |
+      The graph of the function $f$ has a hole at the point $(-1, -4)$. Which
+      of the following could be $f(x)$?
+    answer: $f(x) = \frac{x^2 - 2x - 3}{x + 1}$
+    distractors:
+      - $f(x) = \frac{x^2 + 4x + 3}{x + 1}$
+      - $f(x) = \frac{x^2 - 2x - 3}{x - 3}$
+      - $f(x) = \frac{x - 3}{x + 1}$
+    solution: |
+      $\frac{x^2 - 2x - 3}{x + 1} = \frac{(x - 3)(x + 1)}{x + 1}$
+
+      For $x \ne -1$, $f(x) = x - 3$, so the hole is at $(-1, -1 - 3) = (-1, -4)$.
+    calculator_active: false
+    sections:
+      - '1.10'
+    dok: 2
+    review: generated
+
+  - id: 31cd3ee9-311b-4004-a08d-730a5fac50b9
+    related_to:
+      - 5d509a21-7f14-4e65-af2f-04f94defa735
+    question: |
+      The function $r$ is given by $r(x) = \frac{(x - 2)(x + 1)}{(x - 2)(x - 4)}$.
+      Which of the following statements are true?
+
+      I.\phantom{II} \quad $\lim_{x \to 2} r(x) = -\frac{3}{2}$ \qquad
+      II.\phantom{I} \quad $r(2) = -\frac{3}{2}$ \qquad
+      III. \quad $\lim_{x \to 4^+} r(x) = \infty$
+    answer: I and III
+    distractors:
+      - I only
+      - I and II
+      - I, II, and III
+    solution: |
+      For $x \ne 2$, $r(x) = \frac{x + 1}{x - 4}$, so
+      $\lim_{x \to 2} r(x) = \frac{3}{-2} = -\frac{3}{2}$. $r(2)$ is undefined
+      because the graph has a hole at $x = 2$. Near $x = 4$ the numerator is
+      close to 5, and for $x$ slightly greater than 4 the denominator is a
+      positive number close to 0, so $r(x)$ increases without bound.
+    calculator_active: false
+    sections:
+      - 1.9
+      - '1.10'
+    dok: 3
+    review: generated
+
+  - id: 5d509a21-7f14-4e65-af2f-04f94defa735
+    related_to:
+      - 31cd3ee9-311b-4004-a08d-730a5fac50b9
+    question: |
+      The function $r$ is given by $r(x) = \frac{(x + 3)(x - 1)}{(x + 3)(x + 5)}$.
+      Which of the following statements are true?
+
+      I.\phantom{II} \quad $\lim_{x \to -3} r(x) = -2$ \qquad
+      II.\phantom{I} \quad $r(-3) = -2$ \qquad
+      III. \quad $\lim_{x \to -5^-} r(x) = -\infty$
+    answer: I only
+    distractors:
+      - I and II
+      - I and III
+      - I, II, and III
+    solution: |
+      For $x \ne -3$, $r(x) = \frac{x - 1}{x + 5}$, so
+      $\lim_{x \to -3} r(x) = \frac{-4}{2} = -2$. $r(-3)$ is undefined because
+      the graph has a hole at $x = -3$. Near $x = -5$ the numerator is close
+      to $-6$, and for $x$ slightly less than $-5$ the denominator is a
+      negative number close to 0, so $r(x)$ increases without bound.
+    calculator_active: false
+    sections:
+      - 1.9
+      - '1.10'
+    dok: 3
+    review: generated
+
+  - id: fc2b7b66-ef70-4c84-9cb5-440527399907
+    related_to:
+      - 27c21cca-cbd0-44dc-87e7-66eb5b5139b1
+    question: |
+      The rational function $r$ is given by $r(x) = \frac{x^2 + 5x - 2}{x + 1}$.
+      Which of the following is an equation of the slant asymptote of the graph
+      of $r$?
+    answer: $y = x + 4$
+    distractors:
+      - $y = x + 5$
+      - $y = x + 6$
+      - $y = x - 6$
+    solution: $\polylongdiv{x^2 + 5x - 2}{x + 1}$
+    calculator_active: false
+    sections:
+      - 1.7
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: 27c21cca-cbd0-44dc-87e7-66eb5b5139b1
+    related_to:
+      - fc2b7b66-ef70-4c84-9cb5-440527399907
+    question: |
+      The rational function $r$ is given by $r(x) = \frac{2x^2 - x + 3}{x - 2}$.
+      Which of the following is an equation of the slant asymptote of the graph
+      of $r$?
+    answer: $y = 2x + 3$
+    distractors:
+      - $y = 2x - 1$
+      - $y = 2x - 5$
+      - $y = 2x + 9$
+    solution: $\polylongdiv{2x^2 - x + 3}{x - 2}$
+    calculator_active: false
+    sections:
+      - 1.7
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: eee69b61-5d7d-47cb-b369-58860994dd21
+    related_to:
+      - 93fbba3c-a712-4cc4-a23d-8f99a66b962e
+    question: |
+      The polynomial $f(x) = x^3 - 2x^2 + 4x - 5$ is divided by
+      $g(x) = x^2 + 1$. Which of the following expresses $f(x)$ in the form
+      $g(x)q(x) + r(x)$, where $q$ is the quotient and $r$ is the remainder?
+    answer: $f(x) = (x^2 + 1)(x - 2) + 3x - 3$
+    distractors:
+      - $f(x) = (x^2 + 1)(x - 2) + 3x - 7$
+      - $f(x) = (x^2 + 1)(x - 2) + 5x - 3$
+      - $f(x) = (x^2 + 1)(x + 2) + 3x - 3$
+    solution: $\polylongdiv{x^3 - 2x^2 + 4x - 5}{x^2 + 1}$
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: 93fbba3c-a712-4cc4-a23d-8f99a66b962e
+    related_to:
+      - eee69b61-5d7d-47cb-b369-58860994dd21
+    question: |
+      The polynomial $f(x) = 2x^3 + x^2 - 3x + 4$ is divided by
+      $g(x) = x^2 - 1$. Which of the following expresses $f(x)$ in the form
+      $g(x)q(x) + r(x)$, where $q$ is the quotient and $r$ is the remainder?
+    answer: $f(x) = (x^2 - 1)(2x + 1) - x + 5$
+    distractors:
+      - $f(x) = (x^2 - 1)(2x + 1) - x + 3$
+      - $f(x) = (x^2 - 1)(2x + 1) - 5x + 3$
+      - $f(x) = (x^2 - 1)(2x - 1) - x + 5$
+    solution: $\polylongdiv{2x^3 + x^2 - 3x + 4}{x^2 - 1}$
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: c4f24f72-f7a6-4f27-926f-52aeae30b744
+    related_to:
+      - 8eeee9da-a91e-4f88-aece-c6d3986ac529
+    question: |
+      The polynomial function $p$ is given by $p(x) = x^3 + 2x^2 - 9x - 18$.
+      What are all the $x$-intercepts of the graph of $p$?
+    answer: $x = -3$, $x = -2$, and $x = 3$
+    distractors:
+      - $x = -3$, $x = 2$, and $x = 3$
+      - $x = -2$ and $x = 3$
+      - $x = -2$ and $x = 9$
+    solution: |
+      Factor by grouping:
+
+      $p(x) = x^2(x + 2) - 9(x + 2) = (x + 2)(x^2 - 9) = (x + 2)(x - 3)(x + 3)$
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: 8eeee9da-a91e-4f88-aece-c6d3986ac529
+    related_to:
+      - c4f24f72-f7a6-4f27-926f-52aeae30b744
+    question: |
+      The polynomial function $p$ is given by $p(x) = x^3 - 3x^2 - 4x + 12$.
+      What are all the $x$-intercepts of the graph of $p$?
+    answer: $x = -2$, $x = 2$, and $x = 3$
+    distractors:
+      - $x = -3$, $x = -2$, and $x = 2$
+      - $x = 2$ and $x = 3$
+      - $x = 3$ and $x = 4$
+    solution: |
+      Factor by grouping:
+
+      $p(x) = x^2(x - 3) - 4(x - 3) = (x - 3)(x^2 - 4) = (x - 3)(x - 2)(x + 2)$
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: 8776701e-e680-4766-9faa-fe51d1ad4b55
+    related_to:
+      - 27620134-7d57-486f-a588-640054abc6b4
+    question: |
+      What is the coefficient of the $x^2$ term in the expansion of
+      $(x + 2)^5$?
+    answer: 80
+    distractors:
+      - 10
+      - 20
+      - 40
+    solution: |
+      The 5th row of Pascal's Triangle is 1, 5, 10, 10, 5, 1. The $x^2$ term
+      is $10x^2(2)^3 = 80x^2$.
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: 27620134-7d57-486f-a588-640054abc6b4
+    related_to:
+      - 8776701e-e680-4766-9faa-fe51d1ad4b55
+    question: |
+      What is the coefficient of the $x^3$ term in the expansion of
+      $(x - 3)^4$?
+    answer: $-12$
+    distractors:
+      - 4
+      - 12
+      - $-108$
+    solution: |
+      The 4th row of Pascal's Triangle is 1, 4, 6, 4, 1. The $x^3$ term is
+      $4x^3(-3)^1 = -12x^3$.
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: 9724a5ad-62e4-4e2f-9d29-5b16f3e14bd8
+    related_to:
+      - 3c94e536-0410-4c7a-96b2-79b5f074fb2c
+    question: |
+      Which of the following is equivalent to $(2x + 1)^3$?
+    answer: $8x^3 + 12x^2 + 6x + 1$
+    distractors:
+      - $8x^3 + 1$
+      - $2x^3 + 3x^2 + 3x + 1$
+      - $8x^3 + 6x^2 + 6x + 1$
+    solution: |
+      The 3rd row of Pascal's Triangle is 1, 3, 3, 1.
+
+      $(2x)^3 + 3(2x)^2(1) + 3(2x)(1)^2 + (1)^3 = 8x^3 + 12x^2 + 6x + 1$
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: 3c94e536-0410-4c7a-96b2-79b5f074fb2c
+    related_to:
+      - 9724a5ad-62e4-4e2f-9d29-5b16f3e14bd8
+    question: |
+      Which of the following is equivalent to $(3x - 1)^3$?
+    answer: $27x^3 - 27x^2 + 9x - 1$
+    distractors:
+      - $27x^3 - 1$
+      - $3x^3 - 3x^2 + 3x - 1$
+      - $27x^3 + 27x^2 + 9x - 1$
+    solution: |
+      The 3rd row of Pascal's Triangle is 1, 3, 3, 1.
+
+      $(3x)^3 + 3(3x)^2(-1) + 3(3x)(-1)^2 + (-1)^3 = 27x^3 - 27x^2 + 9x - 1$
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: 8907b216-0527-42f0-a86f-e058604f189a
+    question: |
+      Which of the following gives, in order, the coefficients of the terms in
+      the expansion of $(a + b)^5$?
+    answer: 1, 5, 10, 10, 5, 1
+    distractors:
+      - 1, 4, 6, 4, 1
+      - 1, 5, 10, 5, 1
+      - 1, 6, 15, 20, 15, 6, 1
+    solution: |
+      The coefficients of the expansion of $(a + b)^5$ are the entries in the
+      5th row of Pascal's Triangle.
+    calculator_active: false
+    sections:
+      - 1.11
+    dok: 1
+    review: generated
+
+  - id: 531178fb-92b9-479a-be02-453a0a1651d0
+    question: |
+      The function $r$ is given by $r(x) = \frac{x^3 - 4x}{x^2 - x - 2}$. Which
+      of the following correctly describes the graph of $r$?
+    answer: Zeros at $x = -2$ and $x = 0$, a hole at $x = 2$, and a vertical asymptote at $x = -1$
+    distractors:
+      - Zeros at $x = -2$, $x = 0$, and $x = 2$, and a vertical asymptote at $x = -1$
+      - Zeros at $x = -2$ and $x = 0$, a hole at $x = -1$, and a vertical asymptote at $x = 2$
+      - Zeros at $x = -2$ and $x = 0$, and vertical asymptotes at $x = -1$ and $x = 2$
+    solution: |
+      $r(x) = \frac{x(x - 2)(x + 2)}{(x - 2)(x + 1)}$
+
+      $x = 0$ and $x = -2$ are zeros of the numerator only. $x = 2$ is a zero
+      of both the numerator and the denominator with the same multiplicity, so
+      the graph has a hole there. $x = -1$ is a zero of the denominator only.
+    calculator_active: false
+    sections:
+      - 1.8
+      - 1.9
+      - '1.10'
+      - 1.11
+    dok: 2
+    review: generated
+
+  - id: 7bba6f5c-4d97-4257-b0c9-edb435d8e360
+    related_to:
+      - 1df02d18-c677-4241-ada5-c1b25d723ccc
+    question: |
+      The function $g$ is given by $g(x) = f(x + 4) - 3$. Which of the
+      following describes the transformations that map the graph of $f$ to the
+      graph of $g$?
+    answer: A horizontal translation by $-4$ units and a vertical translation by $-3$ units
+    distractors:
+      - A horizontal translation by $4$ units and a vertical translation by $-3$ units
+      - A horizontal translation by $-4$ units and a vertical translation by $3$ units
+      - A horizontal translation by $4$ units and a vertical translation by $3$ units
+    solution: |
+      $g(x) = f(x + h) + k$ with $h = 4$ and $k = -3$. The graph of $f$ is
+      translated horizontally by $-h = -4$ units and vertically by $k = -3$
+      units.
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: 1df02d18-c677-4241-ada5-c1b25d723ccc
+    related_to:
+      - 7bba6f5c-4d97-4257-b0c9-edb435d8e360
+    question: |
+      The function $g$ is given by $g(x) = f(x - 6) + 2$. Which of the
+      following describes the transformations that map the graph of $f$ to the
+      graph of $g$?
+    answer: A horizontal translation by $6$ units and a vertical translation by $2$ units
+    distractors:
+      - A horizontal translation by $-6$ units and a vertical translation by $2$ units
+      - A horizontal translation by $6$ units and a vertical translation by $-2$ units
+      - A horizontal translation by $-6$ units and a vertical translation by $-2$ units
+    solution: |
+      $g(x) = f(x + h) + k$ with $h = -6$ and $k = 2$. The graph of $f$ is
+      translated horizontally by $-h = 6$ units and vertically by $k = 2$
+      units.
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: 0f584f7d-3660-4658-b34a-d22dfd813484
+    related_to:
+      - aea8cd47-5600-4be5-baaf-80317d29fba7
+    question: |
+      The function $g$ is given by $g(x) = -3f(x)$. Which of the following
+      describes the transformation that maps the graph of $f$ to the graph of
+      $g$?
+    answer: A vertical dilation by a factor of 3 and a reflection over the $x$-axis
+    distractors:
+      - A vertical dilation by a factor of $\frac{1}{3}$ and a reflection over the $x$-axis
+      - A vertical dilation by a factor of 3 and a reflection over the $y$-axis
+      - A horizontal dilation by a factor of 3 and a reflection over the $y$-axis
+    solution: |
+      $g(x) = af(x)$ with $a = -3$. This is a vertical dilation by a factor of
+      $|a| = 3$, and because $a < 0$, it includes a reflection over the
+      $x$-axis.
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: aea8cd47-5600-4be5-baaf-80317d29fba7
+    related_to:
+      - 0f584f7d-3660-4658-b34a-d22dfd813484
+    question: |
+      The function $g$ is given by $g(x) = f\left(-\frac{1}{2}x\right)$. Which
+      of the following describes the transformation that maps the graph of $f$
+      to the graph of $g$?
+    answer: A horizontal dilation by a factor of 2 and a reflection over the $y$-axis
+    distractors:
+      - A horizontal dilation by a factor of $\frac{1}{2}$ and a reflection over the $y$-axis
+      - A horizontal dilation by a factor of 2 and a reflection over the $x$-axis
+      - A vertical dilation by a factor of $\frac{1}{2}$ and a reflection over the $x$-axis
+    solution: |
+      $g(x) = f(bx)$ with $b = -\frac{1}{2}$. This is a horizontal dilation by
+      a factor of $\left|\frac{1}{b}\right| = 2$, and because $b < 0$, it
+      includes a reflection over the $y$-axis.
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: b0acca05-6c37-410c-a2c8-25224929c711
+    related_to:
+      - 2aa145bb-dde0-454f-be74-a1e37a46c3f9
+    question: |
+      The point $(4, -2)$ is on the graph of the function $f$. The function $g$
+      is given by $g(x) = 2f(x - 1) + 3$. Which of the following points must be
+      on the graph of $g$?
+    answer: $(5, -1)$
+    distractors:
+      - $(3, -1)$
+      - $(5, 2)$
+      - $(5, -7)$
+    solution: |
+      Each point $(x, y)$ on the graph of $f$ maps to $(x + 1, 2y + 3)$ on the
+      graph of $g$: $(4, -2) \to (4 + 1, 2(-2) + 3) = (5, -1)$.
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: 2aa145bb-dde0-454f-be74-a1e37a46c3f9
+    related_to:
+      - b0acca05-6c37-410c-a2c8-25224929c711
+    question: |
+      The point $(-6, 4)$ is on the graph of the function $f$. The function
+      $g$ is given by $g(x) = -f(2x) + 1$. Which of the following points must
+      be on the graph of $g$?
+    answer: $(-3, -3)$
+    distractors:
+      - $(-12, -3)$
+      - $(-3, 5)$
+      - $(-3, -5)$
+    solution: |
+      Each point $(x, y)$ on the graph of $f$ maps to $\left(\frac{1}{2}x,
+      -y + 1\right)$ on the graph of $g$:
+      $(-6, 4) \to \left(\frac{1}{2}(-6), -4 + 1\right) = (-3, -3)$.
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: 54bf1c6b-b49f-44a6-9c93-75bda6cfd8b8
+    related_to:
+      - 26215473-27b5-49c4-9fa8-c090d853fec6
+    question: |
+      The function $f$ has domain $[-2, 6]$ and range $[1, 5]$. The function
+      $g$ is given by $g(x) = f(x + 3) - 4$. What are the domain and range of
+      $g$?
+    answer: Domain $[-5, 3]$ and range $[-3, 1]$
+    distractors:
+      - Domain $[1, 9]$ and range $[-3, 1]$
+      - Domain $[-5, 3]$ and range $[5, 9]$
+      - Domain $[1, 9]$ and range $[5, 9]$
+    solution: |
+      The horizontal translation by $-3$ units shifts the domain to
+      $[-2 - 3, 6 - 3] = [-5, 3]$. The vertical translation by $-4$ units
+      shifts the range to $[1 - 4, 5 - 4] = [-3, 1]$.
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: 26215473-27b5-49c4-9fa8-c090d853fec6
+    related_to:
+      - 54bf1c6b-b49f-44a6-9c93-75bda6cfd8b8
+    question: |
+      The function $f$ has domain $[0, 8]$ and range $[-2, 4]$. The function
+      $g$ is given by $g(x) = 3f\left(\frac{1}{2}x\right)$. What are the
+      domain and range of $g$?
+    answer: Domain $[0, 16]$ and range $[-6, 12]$
+    distractors:
+      - Domain $[0, 4]$ and range $[-6, 12]$
+      - Domain $[0, 16]$ and range $\left[-\frac{2}{3}, \frac{4}{3}\right]$
+      - Domain $[0, 4]$ and range $\left[-\frac{2}{3}, \frac{4}{3}\right]$
+    solution: |
+      The horizontal dilation by a factor of 2 stretches the domain to
+      $[2 \cdot 0, 2 \cdot 8] = [0, 16]$. The vertical dilation by a factor of
+      3 stretches the range to $[3 \cdot (-2), 3 \cdot 4] = [-6, 12]$.
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: adfdca1f-d283-4db9-ad3d-5b1de52156d2
+    related_to:
+      - 6f96d9cf-713d-41bd-8e94-91865e4382c6
+    question: |
+      The functions $f$ and $g$ are defined for all real numbers. In the
+      $xy$-plane, the graph of $g$ is constructed by applying two
+      transformations to the graph of $f$ in this order:
+
+      \begin{itemize}
+        \item horizontal translation of $-5$ units
+        \item horizontal dilation by a factor of 3
+      \end{itemize}
+
+      Which of the following is $g(x)$?
+    answer: $g(x) = f\left(\frac{1}{3}x + 5\right)$
+    distractors:
+      - $g(x) = f\left(\frac{1}{3}(x + 5)\right)$
+      - $g(x) = f(3x + 5)$
+      - $g(x) = f(3(x + 5))$
+    solution: |
+      $f(x) \implies f(x + 5) \implies f\left(\frac{1}{3}x + 5\right)$
+
+      The dilation replaces $x$ with $\frac{1}{3}x$ in $f(x + 5)$.
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: 6f96d9cf-713d-41bd-8e94-91865e4382c6
+    related_to:
+      - adfdca1f-d283-4db9-ad3d-5b1de52156d2
+    question: |
+      The functions $f$ and $g$ are defined for all real numbers. In the
+      $xy$-plane, the graph of $g$ is constructed by applying two
+      transformations to the graph of $f$ in this order:
+
+      \begin{itemize}
+        \item vertical translation of 4 units
+        \item vertical dilation by a factor of 3
+      \end{itemize}
+
+      Which of the following is $g(x)$?
+    answer: $g(x) = 3f(x) + 12$
+    distractors:
+      - $g(x) = 3f(x) + 4$
+      - $g(x) = 3f(x + 4)$
+      - $g(x) = f(3x) + 12$
+    solution: |
+      $f(x) \implies f(x) + 4 \implies 3(f(x) + 4) = 3f(x) + 12$
+    calculator_active: false
+    sections:
+      - 1.12
+    dok: 2
+    review: generated
+
+  - id: 0b3e3031-884d-44ff-8b58-3554b9269948
+    related_to:
+      - 65f0db2d-3d7e-4533-9b79-0f0065bd0538
+    question: |
+      \begin{center}
+        \begin{tabularx}{6in}{ |*{6}{Y|} }
+          \hline
+          \bm{$x$} & 0 & 1 & 2 & 3 & 4 \\
+          \hline
+          \bm{$f(x)$} & 2 & 5 & 12 & 23 & 38 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above gives values of a function $f$ at selected values of $x$.
+      Which type of function is most appropriate to model the data?
+    answer: Quadratic
+    distractors:
+      - Linear
+      - Cubic
+      - Quartic
+    solution: |
+      First differences: 3, 7, 11, 15. Second differences: 4, 4, 4.
+
+      The second differences are constant and nonzero, so a quadratic function
+      is most appropriate.
+    calculator_active: false
+    sections:
+      - 1.13
+    dok: 2
+    review: generated
+
+  - id: 65f0db2d-3d7e-4533-9b79-0f0065bd0538
+    related_to:
+      - 0b3e3031-884d-44ff-8b58-3554b9269948
+    question: |
+      \begin{center}
+        \begin{tabularx}{6in}{ |*{6}{Y|} }
+          \hline
+          \bm{$x$} & 0 & 1 & 2 & 3 & 4 \\
+          \hline
+          \bm{$f(x)$} & 1 & 3 & 11 & 31 & 69 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      \vspace{1em}
+
+      The table above gives values of a function $f$ at selected values of $x$.
+      Which type of function is most appropriate to model the data?
+    answer: Cubic
+    distractors:
+      - Linear
+      - Quadratic
+      - Quartic
+    solution: |
+      First differences: 2, 8, 20, 38. Second differences: 6, 12, 18. Third
+      differences: 6, 6.
+
+      The third differences are constant and nonzero, so a cubic function is
+      most appropriate.
+    calculator_active: false
+    sections:
+      - 1.13
+    dok: 2
+    review: generated
+
+  - id: 2dc7a39f-878e-4f03-9199-46cf5e87c1b3
+    related_to:
+      - 89296f86-e8fb-42a7-9507-d14c3bfcd797
+    question: |
+      A box with an open top is made from a 20-inch by 30-inch sheet of
+      cardboard by cutting a square with side length $x$ inches from each
+      corner and folding up the sides. Which type of function is most
+      appropriate to model the volume of the box as a function of $x$?
+    answer: Cubic
+    distractors:
+      - Linear
+      - Quadratic
+      - Quartic
+    solution: |
+      The volume is the product of three dimensions that each depend on $x$:
+      $V(x) = x(20 - 2x)(30 - 2x)$, which is a cubic function.
+    calculator_active: false
+    sections:
+      - 1.13
+    dok: 2
+    review: generated
+
+  - id: 89296f86-e8fb-42a7-9507-d14c3bfcd797
+    related_to:
+      - 2dc7a39f-878e-4f03-9199-46cf5e87c1b3
+    question: |
+      A rectangular garden is enclosed by 100 feet of fencing. Which type of
+      function is most appropriate to model the area of the garden as a
+      function of its width $w$, in feet?
+    answer: Quadratic
+    distractors:
+      - Linear
+      - Cubic
+      - Quartic
+    solution: |
+      The length of the garden is $50 - w$, so the area is the product of two
+      dimensions that each depend on $w$: $A(w) = w(50 - w)$, which is a
+      quadratic function.
+    calculator_active: false
+    sections:
+      - 1.13
+    dok: 2
+    review: generated
+
+  - id: ac8e9b85-fdab-4c15-9c03-40802ee2996b
+    question: |
+      A data set consists of 5 points, each with a different $x$-value. What is
+      the least value of $n$ for which a polynomial function of degree $n$ or
+      less is guaranteed to have a graph that passes through all 5 points?
+    answer: 4
+    distractors:
+      - 3
+      - 5
+      - 6
+    solution: |
+      A polynomial function of degree $n$ or less can be used to model a graph
+      of $n + 1$ points with distinct input values. For 5 points, $n + 1 = 5$,
+      so $n = 4$.
+    calculator_active: false
+    sections:
+      - 1.13
+    dok: 2
+    review: generated
+
+  - id: b78a4f67-954b-4734-ae13-749babb563db
+    question: |
+      A ball is launched upward from the ground. The height of the ball, in
+      feet, $t$ seconds after it is launched is modeled by
+      $h(t) = -16t^2 + 64t$. Which of the following is the most appropriate
+      domain for the model?
+    answer: $0 \le t \le 4$
+    distractors:
+      - $t \ge 0$
+      - $0 \le t \le 2$
+      - $0 \le t \le 64$
+    solution: |
+      $h(t) = -16t(t - 4) = 0$ when $t = 0$ and $t = 4$. The ball is in the
+      air between these times, and the model gives negative heights for
+      $t > 4$.
+    calculator_active: false
+    sections:
+      - 1.13
+    dok: 2
+    review: generated
+
+  - id: 2d8f9702-1352-4b28-9216-aba50fb8d1db
+    related_to:
+      - a14e9190-5c37-4e37-9226-01fafe7eeec6
+    question: |
+      The intensity of light from a bulb is inversely proportional to the
+      square of the distance from the bulb. At a distance of 2 meters, the
+      intensity is 50 lux. What is the intensity, in lux, at a distance of 5
+      meters?
+    answer: 8
+    distractors:
+      - 2
+      - 20
+      - 312.5
+    solution: |
+      $I(d) = \frac{k}{d^2}$. Since $I(2) = 50$, $k = 50 \cdot 2^2 = 200$.
+      Then $I(5) = \frac{200}{5^2} = 8$.
+    calculator_active: false
+    sections:
+      - 1.14
+    dok: 2
+    review: generated
+
+  - id: a14e9190-5c37-4e37-9226-01fafe7eeec6
+    related_to:
+      - 2d8f9702-1352-4b28-9216-aba50fb8d1db
+    question: |
+      The magnitude of the gravitational force between two objects is
+      inversely proportional to the square of the distance between them. When
+      the objects are 3 meters apart, the force is 36 newtons. What is the
+      force, in newtons, when the objects are 6 meters apart?
+    answer: 9
+    distractors:
+      - 4.5
+      - 18
+      - 144
+    solution: |
+      $F(d) = \frac{k}{d^2}$. Since $F(3) = 36$, $k = 36 \cdot 3^2 = 324$.
+      Then $F(6) = \frac{324}{6^2} = 9$.
+    calculator_active: false
+    sections:
+      - 1.14
+    dok: 2
+    review: generated
+
+  - id: 3b9d6ee6-3eb9-49d8-b267-2879e860ffbb
+    related_to:
+      - 19a1d280-b3fc-44c8-b5cf-d21bb2054a21
+    question: |
+      A tank contains 50 gallons of water. Starting at time $t = 0$ minutes,
+      water drains from the tank at a constant rate of 3 gallons per minute
+      for 10 minutes. After that, water drains at a constant rate of 2 gallons
+      per minute until the tank is empty. Let $V$ represent the volume of water
+      in the tank, in gallons, after $t$ minutes. Which of the following
+      piecewise functions is an appropriate model for $V(t)$?
+    answer: $V(t) = \begin{cases} 50 - 3t & 0 \le t \le 10 \\ 20 - 2(t - 10) & 10 < t \le 20 \\ \end{cases}$
+    distractors:
+      - $V(t) = \begin{cases} 50 - 3t & 0 \le t \le 10 \\ 50 - 2(t - 10) & 10 < t \le 20 \\ \end{cases}$
+      - $V(t) = \begin{cases} 50 - 3t & 0 \le t \le 10 \\ 20 - 2t & 10 < t \le 20 \\ \end{cases}$
+      - $V(t) = \begin{cases} 50 - 3t & 0 \le t \le 10 \\ 30 - 2(t - 10) & 10 < t \le 20 \\ \end{cases}$
+    solution: |
+      For the first 10 minutes, the volume follows the rule $50 - 3t$. At
+      $t = 10$, $50 - 3 \cdot 10 = 20$ gallons remain. After that, the volume
+      decreases by 2 gallons per minute starting from 20 gallons at $t = 10$,
+      so $V(t) = 20 - 2(t - 10)$, which reaches 0 at $t = 20$.
+    calculator_active: false
+    sections:
+      - 1.13
+      - 1.14
+    dok: 2
+    review: generated
+
+  - id: 19a1d280-b3fc-44c8-b5cf-d21bb2054a21
+    related_to:
+      - 3b9d6ee6-3eb9-49d8-b267-2879e860ffbb
+    question: |
+      A cyclist rides at a constant speed of 12 miles per hour for 2 hours and
+      then rides at a constant speed of 9 miles per hour for 1 more hour. Let
+      $D$ represent the total distance, in miles, the cyclist has ridden after
+      $t$ hours. Which of the following piecewise functions is an appropriate
+      model for $D(t)$?
+    answer: $D(t) = \begin{cases} 12t & 0 \le t \le 2 \\ 24 + 9(t - 2) & 2 < t \le 3 \\ \end{cases}$
+    distractors:
+      - $D(t) = \begin{cases} 12t & 0 \le t \le 2 \\ 9(t - 2) & 2 < t \le 3 \\ \end{cases}$
+      - $D(t) = \begin{cases} 12t & 0 \le t \le 2 \\ 24 + 9t & 2 < t \le 3 \\ \end{cases}$
+      - $D(t) = \begin{cases} 12t & 0 \le t \le 2 \\ 21t - 18 & 2 < t \le 3 \\ \end{cases}$
+    solution: |
+      For the first 2 hours, the distance follows the rule $12t$. At $t = 2$,
+      the cyclist has ridden $12 \cdot 2 = 24$ miles. After that, the distance
+      increases by 9 miles per hour starting from 24 miles at $t = 2$, so
+      $D(t) = 24 + 9(t - 2)$.
+    calculator_active: false
+    sections:
+      - 1.13
+      - 1.14
+    dok: 2
+    review: generated
+
+  - id: ef25d94e-5b35-4ef8-a151-3b6c34751841
+    question: |
+      A ball is thrown upward. A quadratic function $h$ models the height of
+      the ball, in meters, $t$ seconds after it is thrown. The ball reaches a
+      maximum height of 30 meters at $t = 2$ seconds, and $h(0) = 10$. Which of
+      the following is $h(t)$?
+    answer: $h(t) = -5(t - 2)^2 + 30$
+    distractors:
+      - $h(t) = -5(t + 2)^2 + 30$
+      - $h(t) = -10(t - 2)^2 + 30$
+      - $h(t) = 5(t - 2)^2 + 30$
+    solution: |
+      The maximum at $(2, 30)$ is the vertex, so $h(t) = a(t - 2)^2 + 30$.
+      Then $h(0) = 4a + 30 = 10$, so $a = -5$.
+    calculator_active: false
+    sections:
+      - 1.12
+      - 1.14
+    dok: 2
+    review: generated
+
+  - id: 0bfa6e8c-888e-485b-9878-9100cc25c462
+    question: |
+      The average cost, in dollars per item, for a company to produce $n$
+      items is modeled by $C(n) = \frac{500 + 2n}{n}$ for $n > 0$. Which of the
+      following describes the average cost as the number of items increases?
+    answer: The average cost decreases and approaches \$2 per item.
+    distractors:
+      - The average cost decreases and approaches \$0 per item.
+      - The average cost decreases and approaches \$500 per item.
+      - The average cost increases without bound.
+    solution: |
+      $C(n) = \frac{500}{n} + 2$. As $n$ increases, $\frac{500}{n}$ decreases
+      and approaches 0. The degrees of the numerator and denominator are
+      equal, so the horizontal asymptote is the ratio of the leading
+      coefficients, $\frac{2}{1} = 2$.
+    calculator_active: false
+    sections:
+      - 1.7
+      - 1.14
+    dok: 2
+    review: generated

@@ -1,0 +1,53 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\definecolor{scrbg}{RGB}{231,227,231}%
+\definecolor{scrbar}{RGB}{82,85,82}%
+\definecolor{batgreen}{RGB}{0,158,0}%
+\definecolor{batorange}{RGB}{255,156,60}%
+\definecolor{scrmagenta}{RGB}{255,0,255}%
+% TI-84 screen, drawn in screen pixels (x right, y down)
+\begin{tikzpicture}[color=black, x=0.75pt, y=-0.75pt, line width=0.75pt]
+  % Screen background, black bezel and two-line status bar
+  \fill[scrbg] (0,0) rectangle (244,184);
+  \draw[line width=1.5pt] (0.75,0.75) rectangle (243.25,183.25);
+  \fill[scrbar] (1.5,1.5) rectangle (242.5,24);
+  \node[anchor=base west, white, font=\fontsize{8.2pt}{9pt}\ttfamily] at (0,10.5) {NORMAL FLOAT AUTO REAL RADIAN MP};
+  \node[anchor=base west, white, font=\fontsize{8.2pt}{9pt}\ttfamily] at (0,21) {CALC ZERO};
+  % Battery indicator
+  \fill[batgreen] (232,3) rectangle (237,6);
+  \fill[batorange] (229,5) rectangle (240,20);
+  \fill[batgreen] (232,7) rectangle (237,19);
+  % Equation of the selected (black) graph
+  \node[anchor=base west, black, font=\fontsize{8.2pt}{9pt}\ttfamily] at (18,32.5) {Y$_{\mathtt{3}}$=2.08X\textsuperscript{2}-3.3X-4.48};
+  % Plot area: Xmin=-10, Xmax=10, Ymin=-10, Ymax=10, scale 1
+  % (origin at pixel (121,98); 9.9 px per x-unit, 6.1 px per y-unit)
+  \fill[white] (22,37) rectangle (221,160);
+  \begin{scope}
+    \clip (22,37) rectangle (221,160);
+    %% Axes with 1-unit tick marks
+    \draw (22,98) -- (221,98);
+    \draw (121,37) -- (121,160);
+    \foreach \k in {-10,...,10} {
+      \draw ({121 + \k*9.9},95.5) -- ++(0,5);
+    }
+    \foreach \k in {-10,...,10} {
+      \draw (118.5,{98 - \k*6.1}) -- ++(5,0);
+    }
+    %% Magenta: 1.44x^2 + 8.62x + 6.44 (denominator from the question text;
+    %% no equation for this graph is shown on screen)
+    \draw[scrmagenta, line width=1.2pt, smooth, samples=300, domain=-7.2:0.8]
+      plot ({121 + \x*9.9}, {98 - ((1.44*\x + 8.62)*\x + 6.44)*6.1});
+    %% Black: Y3 = 2.08x^2 - 3.3x - 4.48
+    \draw[black, line width=1.2pt, smooth, samples=300, domain=-2.3:3.8]
+      plot ({121 + \x*9.9}, {98 - ((2.08*\x - 3.3)*\x - 4.48)*6.1});
+    %% Zero cursor at x = -0.875 (pixel 112.3)
+    \fill (108.8,95) -- (115.8,95) -- (113.8,98) -- (115.8,101.5)
+      -- (108.8,101.5) -- (110.8,98) -- cycle;
+  \end{scope}
+  % Result text
+  \node[anchor=base west, black, font=\fontsize{8.2pt}{9pt}\ttfamily] at (19.5,169.5) {Zero};
+  \node[anchor=base west, black, font=\fontsize{8.2pt}{9pt}\ttfamily] at (19.5,178.5) {X=\textsuperscript{-}0.875};
+  \node[anchor=base west, black, font=\fontsize{8.2pt}{9pt}\ttfamily] at (120.5,178.5) {Y=0};
+\end{tikzpicture}
+\end{document}
