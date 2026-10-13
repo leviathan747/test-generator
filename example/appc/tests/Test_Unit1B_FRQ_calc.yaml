@@ -1,0 +1,360 @@
+title: "Unit 1B Test FRQ: Polynomial and Rational Functions"
+author: Levi Starrett
+class_name: AP Precalculus
+class_id: APPC
+duration: 15 min
+sections: 1.7 - 1.14
+instructions: |
+  Read all directions and answer each question completely. Unless otherwise
+  specified, all answers will be real numbers. Decimal approximations must be
+  reported to at least 3 places after the decimal point.
+question_count: 1
+questions:
+  - id: e9a51b21-f84e-4bc1-8a98-bf15845add2d
+    related_to:
+      - 6444969e-5aa3-4b04-8a9f-d6e574e030f8
+    question: |
+      Morgan Wallen fans are leaving Lucas Oil Stadium after a great concert.
+      The concert organizers keep track of the number of fans remaining in the
+      stadium at 5 minute intervals starting at 11:00 pm. The data is given in
+      the table below where $t$ is measured in minutes since 11:00pm and $P$ is
+      the number of people in the stadium.
+
+      \begin{center}
+        \footnotesize
+        \begin{tabularx}{6in}{ |*{2}{Y|}|*{2}{Y|}|*{2}{Y|} }
+          \hline
+          \rowcolor{lightgray}
+          \bm{$t$} (min) & \bm{$P$} (people) & \bm{$t$} (min) & \bm{$P$} (people) & \bm{$t$} (min) & \bm{$P$} (people) \\
+          \hline
+          0  & 69971 & 20 & 44801 & 40 & 23059 \\
+          5  & 63432 & 25 & 39116 & 45 & 18223 \\
+          10 & 57005 & 30 & 33574 & 50 & 13574 \\
+          15 & 50777 & 35 & 28161 & 55 &  9075 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+    parts:
+      - question: |
+          What type of model is most appropriate for these data? Give an
+          equation for your model. Justify your response with specific
+          characteristics from the data.
+        solution: |
+          A quadratic model fits the data best. The curve appears to match the
+          data well and the residual plot is evenly distributed around the
+          $x$-axis with no discernible pattern.
+
+          $P(t) = 4.322157842t^2 - 1345.483716t + 70008.52747$
+
+          \emph{Note: If the student chose a linear model with a reasonable
+          justification and got the model correct as below, give 1 out of 3.}
+
+          $P(t) = 68027.538 - 1107.765t$
+        grading:
+          - points: 1
+            criterion: Correct model
+          - points: 1
+            criterion: Correct equation
+          - points: 1
+            criterion: Justification
+        sections:
+          - 1.13
+          - 1.14
+        dok: 3
+        work_space: 2in
+      - question: |
+          Use the model to estimate the time when the stadium will be empty.
+          Give your response with correct units.
+        solution: |
+          $P(t) = 0 \implies t = 66.0438$
+
+          The stadium will be empty at approximately 12:06 am \\ (66.044
+          minutes after 11:00 pm).
+
+          $t = 61.4097$ \emph{(give full credit for this answer if student
+          picked linear model)}
+        grading:
+          - points: 1
+            criterion: Answer with units
+        sections:
+          - 1.14
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          What is the relevant domain of the model in the context of this
+          problem. Give a reason for your answer.
+        solution: |
+          The relevant domain is $0 \le t \le 66.044$. Negative time does not
+          make sense in this context since the organizers were not collecting
+          data until after 11:00 pm. Also, when $t > 66.044$ the model predicts
+          the stadium will contain a negative number of people.
+
+          \emph{Note: if the upper bound is consistent with student's answer
+          from \textbf{b}, give credit.}
+        grading:
+          - points: 1
+            criterion: Correct domain
+          - points: 1
+            criterion: Reasoning
+        sections:
+          - 1.13
+        dok: 3
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: none
+
+  - id: 6444969e-5aa3-4b04-8a9f-d6e574e030f8
+    related_to:
+      - e9a51b21-f84e-4bc1-8a98-bf15845add2d
+    question: |
+      A group of researchers is studying mushrooms. In one study, they
+      collected data on the weight of the mushrooms and the diameter of the
+      cap. The following data was collected where $d$ is the diameter of the
+      cap in millimeters and $m$ is the mass of the mushroom in grams.
+
+      \begin{center}
+        \footnotesize
+        \begin{tabularx}{7in}{ |*{2}{Y|}|*{2}{Y|}|*{2}{Y|}|*{2}{Y|} }
+          \hline
+          \rowcolor{lightgray}
+          \bm{$d$} (mm) & \bm{$m$} (g) & \bm{$d$} (mm) & \bm{$m$} (g) & \bm{$d$} (mm) & \bm{$m$} (g) & \bm{$d$} (mm) & \bm{$m$} (g) \\
+          \hline
+          39 & 216.13 & 31 & 107.84 & 10 &   2.67 & 31 & 108.06 \\
+          18 &  20.68 & 10 &   3.98 & 35 & 157.09 & 19 &  24.19 \\
+          18 &  20.44 & 22 &  37.83 & 28 &  80.67 & 17 &  18.37 \\
+          13 &   7.73 & 19 &  25.19 & 16 &  14.44 & 38 & 199.41 \\
+          11 &   5.12 & 39 & 215.73 & 39 & 216.63 & 37 & 184.78 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+    parts:
+      - question: |
+          What type of model is most appropriate for these data? Give an
+          equation for your model. Justify your response with specific
+          characteristics from the data.
+        solution: |
+          A cubic model fits the data best. The curve appears to match the
+          data well and the residual plot is evenly distributed around the
+          $x$-axis with no discernible pattern.
+
+          $m(d) = 0.0035159981d^3 + 0.0104930979d^2 - 0.2538308897d + 1.522982654$
+        grading:
+          - points: 1
+            criterion: Correct model
+          - points: 1
+            criterion: Correct equation
+          - points: 1
+            criterion: Justification
+        sections:
+          - 1.13
+          - 1.14
+        dok: 3
+        work_space: 2in
+      - question: |
+          What is the average diameter of a mushroom in the study? What does
+          the model predict the weight of a mushroom of this diameter to be?
+        solution: |
+          Average diameter $\Rightarrow 24.5$ mm
+
+          $m(24.5) = 53.3093$ grams
+        grading:
+          - points: 1
+            criterion: Correct diameter
+          - points: 1
+            criterion: Correct mass
+        sections:
+          - 1.14
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Explain why we might expect the mass of an object to be related to
+          the cube of a linear dimension like diameter?
+        solution: |
+          Because mass of an object is proportional to volume (assuming uniform
+          density), the mass will grow cubically as the object scales linearly.
+        grading:
+          - points: 1
+            criterion: Explanation
+        sections:
+          - 1.13
+        dok: 3
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: none
+
+  - id: aa8d95f8-70c1-48bb-941f-b8a969ab6589
+    related_to:
+      - 823c0a21-5698-45b4-b998-677002f29cd1
+    question: |
+      Water is drained from a large storage tank. Starting when the drain
+      valve is opened, a technician records the volume of water remaining in
+      the tank every 4 minutes. The data is given in the table below where $t$
+      is measured in minutes since the valve was opened and $V$ is the volume
+      of water in the tank, in liters.
+
+      \begin{center}
+        \footnotesize
+        \begin{tabularx}{6in}{ |*{2}{Y|}|*{2}{Y|}|*{2}{Y|} }
+          \hline
+          \rowcolor{lightgray}
+          \bm{$t$} (min) & \bm{$V$} (L) & \bm{$t$} (min) & \bm{$V$} (L) & \bm{$t$} (min) & \bm{$V$} (L) \\
+          \hline
+          0  & 3600 & 16 & 2033 & 32 & 887 \\
+          4  & 3180 & 20 & 1695 & 36 & 661 \\
+          8  & 2764 & 24 & 1422 & 40 & 492 \\
+          12 & 2373 & 28 & 1181 & 44 & 318 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+    parts:
+      - question: |
+          What type of model is most appropriate for these data? Give an
+          equation for your model. Justify your response with specific
+          characteristics from the data.
+        solution: |
+          A quadratic model fits the data best. The curve appears to match the
+          data well and the residual plot is evenly distributed around the
+          $t$-axis with no discernible pattern.
+
+          $V(t) = 0.827204046t^2 - 110.9371878t + 3599.697802$
+
+          \emph{Note: If the student chose a linear model with a reasonable
+          justification and got the model correct as below, give 1 out of 3.}
+
+          $V(t) = 3357.051 - 74.540t$
+        grading:
+          - points: 1
+            criterion: Correct model
+          - points: 1
+            criterion: Correct equation
+          - points: 1
+            criterion: Justification
+        sections:
+          - 1.13
+          - 1.14
+        dok: 3
+        work_space: 2in
+      - question: |
+          Use the model to estimate the time when the tank will be empty. Give
+          your response with correct units.
+        solution: |
+          $V(t) = 0 \implies t = 55.0223$
+
+          The tank will be empty approximately 55.022 minutes after the valve
+          was opened. \emph{(The model's other zero, $t = 79.0887$, comes after
+          the tank is already empty.)}
+
+          $t = 45.0368$ \emph{(give full credit for this answer if student
+          picked linear model)}
+        grading:
+          - points: 1
+            criterion: Answer with units
+        sections:
+          - 1.14
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          What is the relevant domain of the model in the context of this
+          problem? Give a reason for your answer.
+        solution: |
+          The relevant domain is $0 \le t \le 55.022$. Negative time does not
+          make sense in this context since the tank did not start draining
+          until the valve was opened at $t = 0$. Also, when $t > 55.022$ the
+          model predicts the tank will contain a negative volume of water.
+
+          \emph{Note: if the upper bound is consistent with student's answer
+          from \textbf{b}, give credit.}
+        grading:
+          - points: 1
+            criterion: Correct domain
+          - points: 1
+            criterion: Reasoning
+        sections:
+          - 1.13
+        dok: 3
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
+
+  - id: 823c0a21-5698-45b4-b998-677002f29cd1
+    related_to:
+      - aa8d95f8-70c1-48bb-941f-b8a969ab6589
+    question: |
+      A fisheries biologist measures the length and mass of 16 trout caught in
+      a lake. The following data was collected where $L$ is the length of the
+      fish in centimeters and $m$ is the mass of the fish in grams.
+
+      \begin{center}
+        \footnotesize
+        \begin{tabularx}{7in}{ |*{2}{Y|}|*{2}{Y|}|*{2}{Y|}|*{2}{Y|} }
+          \hline
+          \rowcolor{lightgray}
+          \bm{$L$} (cm) & \bm{$m$} (g) & \bm{$L$} (cm) & \bm{$m$} (g) & \bm{$L$} (cm) & \bm{$m$} (g) & \bm{$L$} (cm) & \bm{$m$} (g) \\
+          \hline
+          12 &  20.8 & 22 & 127.0 & 30 & 328.8 & 38 &  667.4 \\
+          15 &  41.6 & 24 & 164.1 & 32 & 378.7 & 40 &  765.9 \\
+          18 &  71.7 & 26 & 213.3 & 34 & 486.4 & 44 & 1014.5 \\
+          20 &  95.0 & 28 & 263.1 & 36 & 558.8 & 48 & 1339.4 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+    parts:
+      - question: |
+          What type of model is most appropriate for these data? Give an
+          equation for your model. Justify your response with specific
+          characteristics from the data.
+        solution: |
+          A cubic model fits the data best. The curve appears to match the
+          data well and the residual plot is evenly distributed around the
+          $L$-axis with no discernible pattern.
+
+          $m(L) = 0.01268596511L^3 - 0.05227691338L^2 + 1.254658635L - 8.96404222$
+        grading:
+          - points: 1
+            criterion: Correct model
+          - points: 1
+            criterion: Correct equation
+          - points: 1
+            criterion: Justification
+        sections:
+          - 1.13
+          - 1.14
+        dok: 3
+        work_space: 2in
+      - question: |
+          What is the average length of a fish in the study? What does the
+          model predict the mass of a fish of this length to be?
+        solution: |
+          Average length $\Rightarrow 29.1875$ cm
+
+          $m(29.1875) = 298.5592$ grams
+        grading:
+          - points: 1
+            criterion: Correct length
+          - points: 1
+            criterion: Correct mass
+        sections:
+          - 1.14
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          A young trout in the lake is 5 centimeters long. Would it be
+          appropriate to use the model to predict the mass of this fish? Give a
+          reason for your answer.
+        solution: |
+          No. The model predicts $m(5) = -2.4119$ grams, but a fish cannot have
+          a negative mass. A length of 5 cm is outside the range of lengths in
+          the data (12 cm to 48 cm), so the model should not be used for it.
+        grading:
+          - points: 1
+            criterion: No, with a reason
+        sections:
+          - 1.14
+        dok: 3
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
