@@ -1264,11 +1264,11 @@ questions:
           \hline
         \end{tabularx}
       \end{center}}
-    answer: $\frac{1}{2}$, the instantaneous rate of change of $f$ at $x = 2$
+    answer: The average rates of change are approaching $\frac{1}{2}$ which is the instantaneous rate of change of $f$ at $x = 2$
     distractors:
-      - 0.4879, the instantaneous rate of change of $f$ at $x = 2$
-      - $\frac{1}{2}$, the average rate of change of $f$ over $[2, 2.1]$
-      - $\ln 2$, the value of $f'(2)$
+      - The average rates of change are approaching 0.4879 which is the instantaneous rate of change of $f$ at $x = 2$
+      - The average rates of change are approaching $\frac{1}{2}$ which is the average rate of change of $f$ over $[2, 2.1]$
+      - The average rates of change are approaching $\ln 2$ which is the value of $f'(2)$
     solution: |
       As $h \to 0$, the average rates of change approach the instantaneous
       rate of change at $x = 2$:

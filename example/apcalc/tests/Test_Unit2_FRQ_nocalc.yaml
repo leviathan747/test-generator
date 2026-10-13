@@ -7,7 +7,7 @@ sections: 2.1 - 2.10
 instructions: |
   Read all directions and answer each question completely. Unless otherwise
   specified, all answers will be real numbers.
-question_count: 2
+question_count: 1
 questions:
   - id: 37874785-f22f-4bcc-b741-409e92820354
     legacy_ids:
@@ -28,6 +28,7 @@ questions:
             criterion: Answer
         sections:
           - 2.1
+        dok: 1
         work_space: 1.5in
       - question: |
           Find the instantaneous rate of change of $f(x)$ when $x = 4$.
@@ -45,6 +46,7 @@ questions:
           - 2.2
           - 2.5
           - 2.6
+        dok: 1
         work_space: 1.5in
       - question: |
           Write an equation for the line tangent to $f(x)$ at the point where $x = 4$.
@@ -59,6 +61,7 @@ questions:
             criterion: Answer
         sections:
           - 2.2
+        dok: 2
         work_space: 1.5in
       - question: |
           If $g(x) = \frac{f(x)}{e^x}$, find all values of $x$ where $g$ has a
@@ -86,6 +89,7 @@ questions:
           - 2.2
           - 2.7
           - 2.9
+        dok: 3
         work_space: 2.5in
     calculator_active: false
     question_type: FRQ
@@ -117,6 +121,7 @@ questions:
             criterion: Answer with explanation
         sections:
           - 2.1
+        dok: 3
         work_space: 2in
       - question: |
           Write an equation for the line tangent to the graph of $f$ at $x = 1$.
@@ -131,6 +136,7 @@ questions:
             criterion: Correct equation
         sections:
           - 2.2
+        dok: 2
         work_space: 1.5in
       - question: |
           For each of $\lim_{x \to 2} \frac{f(x) - f(2)}{x - 2}$ and $\lim_{x \to
@@ -152,6 +158,7 @@ questions:
             criterion: Explanation
         sections:
           - 2.2
+        dok: 2
         work_space: 2in
       - question: |
           Let $g$ be the function defined by $g(x) = (e^x) \cdot f(x)$. Find $g'(0)$.
@@ -167,6 +174,7 @@ questions:
         sections:
           - 2.7
           - 2.8
+        dok: 2
         work_space: 1.5in
     calculator_active: false
     question_type: FRQ

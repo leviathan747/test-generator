@@ -4,7 +4,11 @@ class_name: AP Calculus AB
 class_id: APCalc
 duration: 15 min
 sections: 2.1 - 2.10
-question_count: 2
+instructions: |
+  Read all directions and answer each question completely. Unless otherwise
+  specified, all answers will be real numbers. Decimal approximations must be
+  reported to at least 3 places after the decimal point.
+question_count: 1
 questions:
   - id: 6d655747-308b-4f29-a9af-97f2a562117c
     legacy_ids:
@@ -36,6 +40,7 @@ questions:
             criterion: Answer
         sections:
           - 2.6
+        dok: 2
         work_space: 1in
       - question: |
           If $h(x) = f(x) \cdot g(x)$, find $h'(1)$.
@@ -48,6 +53,7 @@ questions:
             criterion: Answer
         sections:
           - 2.8
+        dok: 2
         work_space: 1.5in
       - question: |
           If $k(x) = \frac{g(x)}{f(x)}$, find $k'(1)$.
@@ -62,6 +68,7 @@ questions:
             criterion: Answer
         sections:
           - 2.9
+        dok: 2
         work_space: 1.5in
       - question: |
           If $j(x) = e^x \cdot f(x)$, find $j'(1)$. Give an exact answer in terms of $e$.
@@ -75,6 +82,7 @@ questions:
         sections:
           - 2.7
           - 2.8
+        dok: 2
         work_space: 1.5in
       - question: |
           Find $\lim_{\Delta x \to 0} \frac{f(2 + \Delta x) - f(2)}{\Delta x}$
@@ -85,6 +93,7 @@ questions:
             criterion: Answer
         sections:
           - 2.2
+        dok: 1
         work_space: 1in
     calculator_active: true
     question_type: FRQ
@@ -116,6 +125,7 @@ questions:
         sections:
           - 2.7
           - 2.8
+        dok: 2
         work_space: 2in
       - question: |
           The function $m$ is defined by $m(x) = \frac{f(x)}{2g(x)}$. Find $m'(0)$.
@@ -130,6 +140,7 @@ questions:
         sections:
           - 2.7
           - 2.9
+        dok: 2
         work_space: 2in
       - question: |
           Find the value of $x$ for $-1 < x < 2$ such that $f'(x) = h'(x)$.
@@ -149,6 +160,7 @@ questions:
         sections:
           - 2.6
           - 2.7
+        dok: 3
         work_space: 2in
     calculator_active: true
     question_type: FRQ
