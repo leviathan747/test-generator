@@ -77,12 +77,12 @@ questions:
       - question: |
           Sketch the graph of $r$ on the axes below. Include all asymptotes,
           intercepts, and holes.
-        figure: 25.tex
+        figure: 40.tex
         figure_placement: below
         figure_width: 4in
         solution: |
           \begin{center}
-            \resizebox{3.5in}{!}{\input{figures/26.tex}}
+            \resizebox{3.5in}{!}{\input{figures/41.tex}}
           \end{center}
         grading:
           - points: 1
@@ -160,12 +160,12 @@ questions:
       - question: |
           Sketch the graph of $r$ on the axes below. Include all asymptotes,
           intercepts, and holes.
-        figure: 25.tex
+        figure: 40.tex
         figure_placement: below
         figure_width: 4in
         solution: |
           \begin{center}
-            \resizebox{3.5in}{!}{\input{figures/27.tex}}
+            \resizebox{3.5in}{!}{\input{figures/42.tex}}
           \end{center}
         grading:
           - points: 1
@@ -247,12 +247,12 @@ questions:
       - question: |
           Sketch the graph of $r$ on the axes below. Include all asymptotes,
           intercepts, and holes.
-        figure: 25.tex
+        figure: 40.tex
         figure_placement: below
         figure_width: 4in
         solution: |
           \begin{center}
-            \resizebox{3.5in}{!}{\input{figures/28.tex}}
+            \resizebox{3.5in}{!}{\input{figures/43.tex}}
           \end{center}
         grading:
           - points: 1
@@ -333,12 +333,12 @@ questions:
       - question: |
           Sketch the graph of $r$ on the axes below. Include all asymptotes,
           intercepts, and holes.
-        figure: 25.tex
+        figure: 40.tex
         figure_placement: below
         figure_width: 4in
         solution: |
           \begin{center}
-            \resizebox{3.5in}{!}{\input{figures/29.tex}}
+            \resizebox{3.5in}{!}{\input{figures/44.tex}}
           \end{center}
         grading:
           - points: 1
