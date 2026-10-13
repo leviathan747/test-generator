@@ -1,0 +1,35 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=0.35]
+  % Same blank grid as 25.tex, with the graph of
+  % r(x) = 2(x + 2)(x - 5) / ((x + 4)(x - 4)), hole at (2, 2)
+  \draw[gray!45, very thin] (-10,-8) grid (10,8);
+  % Axes and labels drawn before the graph so the label halos
+  % never hide part of the curve
+  \draw[<->, thick] (-11,0) -- (11,0);
+  \draw[<->, thick] (0,-9) -- (0,9);
+  \foreach \x in {-10,-8,-6,-4,-2,2,4,6,8,10} {
+    \node[below, font=\scriptsize, fill=white, inner sep=1pt] at (\x,-0.15) {$\x$};
+  }
+  \foreach \y in {-8,-6,-4,-2,2,4,6,8} {
+    \node[left, font=\scriptsize, fill=white, inner sep=1pt] at (-0.25,\y) {$\y$};
+  }
+  % Asymptotes: x = -4, x = 4, y = 2
+  \draw[<->, dashed, blue] (-4,-8) -- (-4,8);
+  \draw[<->, dashed, blue] (4,-8) -- (4,8);
+  \draw[dashed, blue] (-10,2) -- (10,2);
+  % Each branch ends where the graph leaves the window (|r| = 8)
+  \draw[<->, thick, blue, samples=100, domain=-10:-4.773]
+    plot (\x, {2*(\x+2)*(\x-5)/((\x+4)*(\x-4))});
+  \draw[<->, thick, blue, samples=200, domain=-3.558:3.771]
+    plot (\x, {2*(\x+2)*(\x-5)/((\x+4)*(\x-4))});
+  \draw[<->, thick, blue, samples=100, domain=4.160:10]
+    plot (\x, {2*(\x+2)*(\x-5)/((\x+4)*(\x-4))});
+  % Zeros, y-intercept, and hole
+  \fill[black] (-2,0) circle (3.5pt);
+  \fill[black] (5,0) circle (3.5pt);
+  \fill[black] (0,1.25) circle (3.5pt);
+  \draw[fill=white, draw=black] (2,2) circle (4pt);
+\end{tikzpicture}
+\end{document}

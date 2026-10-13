@@ -1,0 +1,352 @@
+title: "Unit 1B Test FRQ: Polynomial and Rational Functions"
+author: Levi Starrett
+class_name: AP Precalculus
+class_id: APPC
+duration: 15 min
+sections: 1.7 - 1.14
+instructions: |
+  Read all directions and answer each question completely. Unless otherwise
+  specified, all answers will be real numbers.
+question_count: 1
+questions:
+  - id: 0253b26a-0543-451d-b034-6549ef479933
+    related_to:
+      - d4360d97-6911-4e16-87dc-f80d510cbffb
+    question: |
+      A rational function $r$ is given by
+      $r(x) = \frac{2x^3 - 10x^2 - 8x + 40}{x^3 - 2x^2 - 16x + 32}$.
+    parts:
+      - question: |
+          Determine equations for all vertical asymptotes of the graph of $r$,
+          or state that no vertical asymptotes exist.
+        solution: |
+          $r(x) = \frac{2(x - 2)(x + 2)(x - 5)}{(x - 2)(x + 4)(x - 4)}$.
+
+          Vertical asymptotes at $x = -4$ and $x = 4$ \quad (hole at $x = 2$)
+
+          \emph{Note: $0.5$ points are deducted if the hole is included.}
+
+          \emph{If V.A. are not correct, award up to 1 point for correct
+          factoring. Do not take points away for incorrect factoring if answer
+          is correct.}
+        grading:
+          - points: 1
+            criterion: Correct factoring of $r$
+          - points: 0.5
+            criterion: $x = -4$
+          - points: 0.5
+            criterion: $x = 4$
+        sections:
+          - 1.9
+        dok: 2
+        work_space: 2in
+      - question: |
+          Find all real zeros of $r$, or state that no real zeros exist.
+        solution: |
+          Zeros at $x = -2$ and $x = 5$ \quad (hole at $x = 2$)
+
+          \emph{Note: $0.5$ points are deducted if the hole is included.}
+        grading:
+          - points: 0.5
+            criterion: $x = -2$
+          - points: 0.5
+            criterion: $x = 5$
+        sections:
+          - 1.8
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Determine if the graph of $r$ has any horizontal asymptotes or slant
+          asymptotes. Write equations for those asymptotes, or state that no
+          horizontal asymptotes or slant asymptotes exist. \emph{Give a reason
+          for your answer.}
+        solution: |
+          Horizontal asymptote at $y = 2$ since the degree of the numerator is
+          equal to the degree of the denominator and the ratio of the leading
+          coefficients is 2. \\
+          No slant asymptotes exist.
+        grading:
+          - points: 1
+            criterion: Horizontal asymptote
+          - points: 1
+            criterion: Reasoning
+        sections:
+          - 1.7
+        dok: 3
+        work_space: 2in
+      - question: |
+          Sketch the graph of $r$ on the axes below. Include all asymptotes,
+          intercepts, and holes.
+        figure: 25.tex
+        figure_placement: below
+        figure_width: 4in
+        solution: |
+          \begin{center}
+            \resizebox{3.5in}{!}{\input{figures/26.tex}}
+          \end{center}
+        grading:
+          - points: 1
+            criterion: Correct sketch
+        sections:
+          - 1.11
+        dok: 3
+        work_space: 0in
+    calculator_active: false
+    question_type: FRQ
+    review: none
+
+  - id: d4360d97-6911-4e16-87dc-f80d510cbffb
+    related_to:
+      - 0253b26a-0543-451d-b034-6549ef479933
+    question: |
+      A rational function $r$ is given by
+      $r(x) = \frac{5x^2 + 25x + 30}{x^3 + 4x^2 - 4x - 16}$.
+    parts:
+      - question: |
+          Determine equations for all vertical asymptotes of the graph of $r$,
+          or state that no vertical asymptotes exist.
+        solution: |
+          $r(x) = \frac{5(x + 2)(x + 3)}{(x + 2)(x - 2)(x + 4)}$.
+
+          Vertical asymptotes at $x = -4$ and $x = 2$ \quad (hole at $x = -2$)
+
+          \emph{Note: $0.5$ points are deducted if the hole is included.}
+
+          \emph{If V.A. are not correct, award up to 1 point for correct
+          factoring. Do not take points away for incorrect factoring if answer
+          is correct.}
+        grading:
+          - points: 1
+            criterion: Correct factoring of $r$
+          - points: 0.5
+            criterion: $x = -4$
+          - points: 0.5
+            criterion: $x = 2$
+        sections:
+          - 1.9
+        dok: 2
+        work_space: 2in
+      - question: |
+          Find all real zeros of $r$, or state that no real zeros exist.
+        solution: |
+          Zero at $x = -3$ \quad (hole at $x = -2$)
+
+          \emph{Note: $0.5$ points are deducted if the hole is included.}
+        grading:
+          - points: 1
+            criterion: Correct zero
+        sections:
+          - 1.8
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Determine if the graph of $r$ has any horizontal asymptotes or slant
+          asymptotes. Write equations for those asymptotes, or state that no
+          horizontal asymptotes or slant asymptotes exist. \emph{Give a reason
+          for your answer.}
+        solution: |
+          Horizontal asymptote at $y = 0$ since the degree of the numerator is
+          less than the degree of the denominator. \\
+          No slant asymptotes exist.
+        grading:
+          - points: 1
+            criterion: Horizontal asymptote
+          - points: 1
+            criterion: Reasoning
+        sections:
+          - 1.7
+        dok: 3
+        work_space: 2in
+      - question: |
+          Sketch the graph of $r$ on the axes below. Include all asymptotes,
+          intercepts, and holes.
+        figure: 25.tex
+        figure_placement: below
+        figure_width: 4in
+        solution: |
+          \begin{center}
+            \resizebox{3.5in}{!}{\input{figures/27.tex}}
+          \end{center}
+        grading:
+          - points: 1
+            criterion: Correct sketch
+        sections:
+          - 1.11
+        dok: 3
+        work_space: 0in
+    calculator_active: false
+    question_type: FRQ
+    review: none
+
+  - id: 1308ce29-8427-4b48-a324-fbf83c5d7645
+    related_to:
+      - 48a8e7ab-44f0-4b28-9331-5cec5eb05aeb
+    question: |
+      A rational function $r$ is given by
+      $r(x) = \frac{x^3 - 3x^2 - 4x + 12}{x^2 - x - 2}$.
+    parts:
+      - question: |
+          Determine equations for all vertical asymptotes of the graph of $r$,
+          or state that no vertical asymptotes exist.
+        solution: |
+          $r(x) = \frac{(x - 2)(x + 2)(x - 3)}{(x - 2)(x + 1)}$.
+
+          Vertical asymptote at $x = -1$ \quad (hole at $x = 2$)
+
+          \emph{Note: $0.5$ points are deducted if the hole is included.}
+
+          \emph{If V.A. are not correct, award up to 1 point for correct
+          factoring. Do not take points away for incorrect factoring if answer
+          is correct.}
+        grading:
+          - points: 1
+            criterion: Correct factoring of $r$
+          - points: 1
+            criterion: $x = -1$
+        sections:
+          - 1.9
+        dok: 2
+        work_space: 2in
+      - question: |
+          Find all real zeros of $r$, or state that no real zeros exist.
+        solution: |
+          Zeros at $x = -2$ and $x = 3$ \quad (hole at $x = 2$)
+
+          \emph{Note: $0.5$ points are deducted if the hole is included.}
+        grading:
+          - points: 0.5
+            criterion: $x = -2$
+          - points: 0.5
+            criterion: $x = 3$
+        sections:
+          - 1.8
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Determine if the graph of $r$ has any horizontal asymptotes or slant
+          asymptotes. Write equations for those asymptotes, or state that no
+          horizontal asymptotes or slant asymptotes exist. \emph{Give a reason
+          for your answer.}
+        solution: |
+          Slant asymptote at $y = x - 2$ since the degree of the numerator is
+          one more than the degree of the denominator.
+          \[
+            \frac{x^3 - 3x^2 - 4x + 12}{x^2 - x - 2}
+              = x - 2 + \frac{-4x + 8}{x^2 - x - 2}
+          \]
+          No horizontal asymptotes exist.
+        grading:
+          - points: 1
+            criterion: Slant asymptote $y = x - 2$
+          - points: 1
+            criterion: Reasoning
+        sections:
+          - 1.7
+        dok: 3
+        work_space: 2in
+      - question: |
+          Sketch the graph of $r$ on the axes below. Include all asymptotes,
+          intercepts, and holes.
+        figure: 25.tex
+        figure_placement: below
+        figure_width: 4in
+        solution: |
+          \begin{center}
+            \resizebox{3.5in}{!}{\input{figures/28.tex}}
+          \end{center}
+        grading:
+          - points: 1
+            criterion: Correct sketch
+        sections:
+          - 1.11
+        dok: 3
+        work_space: 0in
+    calculator_active: false
+    question_type: FRQ
+    review: generated
+
+  - id: 48a8e7ab-44f0-4b28-9331-5cec5eb05aeb
+    related_to:
+      - 1308ce29-8427-4b48-a324-fbf83c5d7645
+    question: |
+      A rational function $r$ is given by
+      $r(x) = \frac{3x^3 + 9x^2 - 12x - 36}{x^3 - x^2 - 9x + 9}$.
+    parts:
+      - question: |
+          Determine equations for all vertical asymptotes of the graph of $r$,
+          or state that no vertical asymptotes exist.
+        solution: |
+          $r(x) = \frac{3(x + 3)(x - 2)(x + 2)}{(x + 3)(x - 1)(x - 3)}$.
+
+          Vertical asymptotes at $x = 1$ and $x = 3$ \quad (hole at $x = -3$)
+
+          \emph{Note: $0.5$ points are deducted if the hole is included.}
+
+          \emph{If V.A. are not correct, award up to 1 point for correct
+          factoring. Do not take points away for incorrect factoring if answer
+          is correct.}
+        grading:
+          - points: 1
+            criterion: Correct factoring of $r$
+          - points: 0.5
+            criterion: $x = 1$
+          - points: 0.5
+            criterion: $x = 3$
+        sections:
+          - 1.9
+        dok: 2
+        work_space: 2in
+      - question: |
+          Find all real zeros of $r$, or state that no real zeros exist.
+        solution: |
+          Zeros at $x = -2$ and $x = 2$ \quad (hole at $x = -3$)
+
+          \emph{Note: $0.5$ points are deducted if the hole is included.}
+        grading:
+          - points: 0.5
+            criterion: $x = -2$
+          - points: 0.5
+            criterion: $x = 2$
+        sections:
+          - 1.8
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Determine if the graph of $r$ has any horizontal asymptotes or slant
+          asymptotes. Write equations for those asymptotes, or state that no
+          horizontal asymptotes or slant asymptotes exist. \emph{Give a reason
+          for your answer.}
+        solution: |
+          Horizontal asymptote at $y = 3$ since the degree of the numerator is
+          equal to the degree of the denominator and the ratio of the leading
+          coefficients is 3. \\
+          No slant asymptotes exist.
+        grading:
+          - points: 1
+            criterion: Horizontal asymptote
+          - points: 1
+            criterion: Reasoning
+        sections:
+          - 1.7
+        dok: 3
+        work_space: 2in
+      - question: |
+          Sketch the graph of $r$ on the axes below. Include all asymptotes,
+          intercepts, and holes.
+        figure: 25.tex
+        figure_placement: below
+        figure_width: 4in
+        solution: |
+          \begin{center}
+            \resizebox{3.5in}{!}{\input{figures/29.tex}}
+          \end{center}
+        grading:
+          - points: 1
+            criterion: Correct sketch
+        sections:
+          - 1.11
+        dok: 3
+        work_space: 0in
+    calculator_active: false
+    question_type: FRQ
+    review: generated
