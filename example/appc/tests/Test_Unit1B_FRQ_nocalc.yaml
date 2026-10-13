@@ -77,13 +77,9 @@ questions:
       - question: |
           Sketch the graph of $r$ on the axes below. Include all asymptotes,
           intercepts, and holes.
-        figure: 40.tex
+        figure: 41.tex
         figure_placement: below
         figure_width: 4in
-        solution: |
-          \begin{center}
-            \resizebox{3.5in}{!}{\input{figures/41.tex}}
-          \end{center}
         grading:
           - points: 1
             criterion: Correct sketch
@@ -160,13 +156,9 @@ questions:
       - question: |
           Sketch the graph of $r$ on the axes below. Include all asymptotes,
           intercepts, and holes.
-        figure: 40.tex
+        figure: 42.tex
         figure_placement: below
         figure_width: 4in
-        solution: |
-          \begin{center}
-            \resizebox{3.5in}{!}{\input{figures/42.tex}}
-          \end{center}
         grading:
           - points: 1
             criterion: Correct sketch
@@ -247,13 +239,9 @@ questions:
       - question: |
           Sketch the graph of $r$ on the axes below. Include all asymptotes,
           intercepts, and holes.
-        figure: 40.tex
+        figure: 43.tex
         figure_placement: below
         figure_width: 4in
-        solution: |
-          \begin{center}
-            \resizebox{3.5in}{!}{\input{figures/43.tex}}
-          \end{center}
         grading:
           - points: 1
             criterion: Correct sketch
@@ -333,13 +321,9 @@ questions:
       - question: |
           Sketch the graph of $r$ on the axes below. Include all asymptotes,
           intercepts, and holes.
-        figure: 40.tex
+        figure: 44.tex
         figure_placement: below
         figure_width: 4in
-        solution: |
-          \begin{center}
-            \resizebox{3.5in}{!}{\input{figures/44.tex}}
-          \end{center}
         grading:
           - points: 1
             criterion: Correct sketch
@@ -349,4 +333,4 @@ questions:
         work_space: 0in
     calculator_active: false
     question_type: FRQ
-    review: generated
+    review: none

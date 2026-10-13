@@ -220,6 +220,11 @@ questions:
 
           $V(t) = 0.827204046t^2 - 110.9371878t + 3599.697802$
 
+          \emph{Note: If the student chose a cubic model with a reasonable
+          justification and got the model correct as below, give full credit.}
+
+          $V(t) = -0.001679454804t^3 + 0.938048063t^2 - 112.8047416t + 3605.018315$
+
           \emph{Note: If the student chose a linear model with a reasonable
           justification and got the model correct as below, give 1 out of 3.}
 
@@ -245,6 +250,9 @@ questions:
           The tank will be empty approximately 55.022 minutes after the valve
           was opened. \emph{(The model's other zero, $t = 79.0887$, comes after
           the tank is already empty.)}
+
+          $t = 53.4152$ \emph{(give full credit for this answer if student
+          picked cubic model)}
 
           $t = 45.0368$ \emph{(give full credit for this answer if student
           picked linear model)}
@@ -277,7 +285,7 @@ questions:
         work_space: 1.5in
     calculator_active: true
     question_type: FRQ
-    review: generated
+    review: none
 
   - id: 823c0a21-5698-45b4-b998-677002f29cd1
     related_to:

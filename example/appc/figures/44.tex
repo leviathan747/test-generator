@@ -1,5 +1,8 @@
 \documentclass{standalone}
 \usepackage{tikz}
+% Show the answer when compiled on its own; the test template's
+% \ans shows it only in the answer key
+\providecommand{\ans}[1]{#1}
 \begin{document}
 \begin{tikzpicture}[>=stealth, scale=0.35]
   % Same blank grid as 40.tex, with the graph of
@@ -15,21 +18,24 @@
   \foreach \y in {-8,-6,-4,-2,2,4,6,8} {
     \node[left, font=\scriptsize, fill=white, inner sep=1pt] at (-0.25,\y) {$\y$};
   }
-  % Asymptotes: x = 1, x = 3, y = 3
-  \draw[<->, dashed, blue] (1,-8) -- (1,8);
-  \draw[<->, dashed, blue] (3,-8) -- (3,8);
-  \draw[dashed, blue] (-10,3) -- (10,3);
-  % Each branch ends where the graph leaves the window (|r| = 8)
-  \draw[<->, thick, blue, samples=200, domain=-10:0.442]
-    plot (\x, {3*(\x-2)*(\x+2)/((\x-1)*(\x-3))});
-  \draw[<->, thick, blue, samples=200, domain=1.457:2.466]
-    plot (\x, {3*(\x-2)*(\x+2)/((\x-1)*(\x-3))});
-  \draw[<->, thick, blue, samples=200, domain=4.944:10]
-    plot (\x, {3*(\x-2)*(\x+2)/((\x-1)*(\x-3))});
-  % Zeros, y-intercept, and hole
-  \fill[black] (-2,0) circle (3.5pt);
-  \fill[black] (2,0) circle (3.5pt);
-  \fill[black] (0,-4) circle (3.5pt);
-  \draw[fill=white, draw=black] (-3,0.625) circle (4pt);
+  % Answer strokes, drawn only in the answer key
+  \ans{%
+    % Asymptotes: x = 1, x = 3, y = 3
+    \draw[<->, dashed, blue] (1,-8) -- (1,8);
+    \draw[<->, dashed, blue] (3,-8) -- (3,8);
+    \draw[dashed, blue] (-10,3) -- (10,3);
+    % Each branch ends where the graph leaves the window (|r| = 8)
+    \draw[<->, thick, blue, samples=200, domain=-10:0.442]
+      plot (\x, {3*(\x-2)*(\x+2)/((\x-1)*(\x-3))});
+    \draw[<->, thick, blue, samples=200, domain=1.457:2.466]
+      plot (\x, {3*(\x-2)*(\x+2)/((\x-1)*(\x-3))});
+    \draw[<->, thick, blue, samples=200, domain=4.944:10]
+      plot (\x, {3*(\x-2)*(\x+2)/((\x-1)*(\x-3))});
+    % Zeros, y-intercept, and hole
+    \fill[black] (-2,0) circle (3.5pt);
+    \fill[black] (2,0) circle (3.5pt);
+    \fill[black] (0,-4) circle (3.5pt);
+    \draw[fill=white, draw=black] (-3,0.625) circle (4pt);
+  }
 \end{tikzpicture}
 \end{document}
