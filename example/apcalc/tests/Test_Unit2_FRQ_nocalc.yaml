@@ -178,4 +178,4 @@ questions:
         work_space: 1.5in
     calculator_active: false
     question_type: FRQ
-    review: check
+    review: none

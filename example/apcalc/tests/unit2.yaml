@@ -911,7 +911,7 @@ questions:
       - 2.5
       - 2.6
     dok: 3
-    review: generated
+    review: none
 
   - id: 09b2bafc-ffe2-479f-b1ca-a417efb7eecd
     question: |
@@ -992,7 +992,7 @@ questions:
       - 2.2
       - 2.5
     dok: 1
-    review: generated
+    review: none
 
   - id: 73c9b911-c9c2-4039-8924-3955d68e8cbd
     question: |
@@ -1032,7 +1032,7 @@ questions:
     sections:
       - 2.2
     dok: 2
-    review: generated
+    review: none
 
   - id: 4dc48b2e-da69-45c6-804f-91a141d26e91
     question: |
@@ -1126,7 +1126,7 @@ questions:
     sections:
       - 2.3
     dok: 2
-    review: generated
+    review: none
 
   - id: 4fa764ae-9b8d-4bac-af20-461cf0c6f145
     question: |
@@ -1478,7 +1478,7 @@ questions:
     sections:
       - 2.4
     dok: 2
-    review: generated
+    review: none
 
   - id: 45b86fd4-2ae4-4775-a6c2-4d82fe8170ca
     question: If $y = \frac{1}{x^4}$, then $\frac{dy}{dx} =$
@@ -1583,7 +1583,7 @@ questions:
       - 2.5
       - 2.6
     dok: 1
-    review: generated
+    review: none
 
   - id: 16744097-96fc-4ae3-9bb2-0380e093f329
     question: |
@@ -1613,7 +1613,7 @@ questions:
     sections:
       - 2.6
     dok: 2
-    review: generated
+    review: none
 
   - id: 7c4db1ee-550f-46c0-aeb8-be35d8c14e4d
     question: |
@@ -1845,7 +1845,7 @@ questions:
       - 2.6
       - 2.7
     dok: 1
-    review: generated
+    review: none
 
   - id: d50a0a24-953d-4bef-8bbb-63c4261739d5
     question: |
@@ -1890,7 +1890,7 @@ questions:
       - 2.7
       - 2.8
     dok: 1
-    review: generated
+    review: none
 
   - id: c1dcc021-7c4d-4963-8e4c-ce0688d6ecc2
     question: If $f(x) = x \ln x$, what is the value of $f'(e)$?
@@ -1954,7 +1954,7 @@ questions:
     sections:
       - 2.8
     dok: 2
-    review: generated
+    review: none
 
   - id: 5075f0e3-4538-4786-b1df-a05ac46ebd8c
     question: |

@@ -164,4 +164,4 @@ questions:
         work_space: 2in
     calculator_active: true
     question_type: FRQ
-    review: check
+    review: none
