@@ -1,0 +1,345 @@
+title: "Unit 3 Test FRQ: Advanced Differentiation Techniques"
+author: Levi Starrett
+class_name: AP Calculus AB
+class_id: APCalc
+duration: 15 min
+sections: 1.1 - 3.6
+instructions: |
+  Read all directions and answer each question completely. Unless otherwise
+  specified, all answers will be real numbers. Decimal approximations must be
+  reported to at least 3 places after the decimal point.
+question_count: 1
+questions:
+  - id: 69ad3642-30d7-476e-b0be-0a868756ed48
+    legacy_ids:
+      - 3.A.17
+    question: |
+      The graph of the relation $2y^3 + y^2 - y^5 = x^4 - 2x^3 + x^2$ is shown to the right.
+      This graph has been referred to as "the bouncing wagon".
+    figure: 37.tex
+    figure_width: 2.5in
+    parts:
+      - question: |
+          Find $\dydx$ for the relation above.
+        solution: |
+          \begin{gather*}
+            6y^2 \dydx + 2y \dydx - 5y^4 \dydx = 4x^3 - 6x^2 + 2x \\
+            \dydx = \frac{4x^3 - 6x^2 + 2x}{6y^2 + 2y - 5y^4} \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Implicit differentiation with Chain Rule
+          - points: 2
+            criterion: Correct answer
+        sections:
+          - 3.1
+          - 3.2
+        dok: 2
+        work_space: 2in
+      - question: |
+          There are several points on the graph where a vertical tangent line can be drawn.
+          Point $A$ is one of those points. Find the $y$-coordinate of Point $A$.
+        solution: |
+          Vertical tangent lines occur where $\textstyle \dydx \to \infty \implies 6y^2 + 2y - 5y^4 = 0$ \\
+          Use calculator to solve the equation. From the graph you can expect $y$ to be in the interval $\textstyle -\frac{1}{2} < y < 0$. \\
+
+          $y \approx -0.3785$
+        grading:
+          - points: 1
+            criterion: Sets the denom. equal to 0
+          - points: 2
+            criterion: Correct answer
+        sections:
+          - 3.1
+          - 3.2
+        dok: 3
+        work_space: 2in
+      - question: |
+          There are also several points on the graph where a horizontal tangent line can be drawn.
+          Find all the $x$-coordinates where these horizontal tangent lines exist.
+        solution: |
+          Horizontal tangent lines occur where $\textstyle \dydx = 0 \implies 4x^3 - 6x^2 + 2x = 0$ \\
+          Use calculator to solve the equation. \\
+
+          $x = 0, \frac{1}{2}, 1$
+
+          \emph{Note: deduct 0.5 points for each missing/additional $x$ value}
+        grading:
+          - points: 1
+            criterion: Sets num. equal to 0
+          - points: 2
+            criterion: Correct answer
+        sections:
+          - 3.1
+          - 3.2
+        dok: 3
+        work_space: 2in
+    calculator_active: true
+    question_type: FRQ
+    review: check
+
+  - id: 64a47f5c-fcb5-4fdf-9601-d6bce304af68
+    legacy_ids:
+      - 3.B.17
+    question: |
+      The table to the right gives values of a twice-differentiable $f$ and its derivative
+      $f'$ for selected values of $x$. Let $g$ be the function defined by $g(x) = f(x^2 - x)$.
+    figure: 38.tex
+    parts:
+      - question: |
+          What is the value of $g'(3)$?
+        solution: |
+          \begin{gather*}
+            g'(x) = f'(x^2 - x) \cdot (2x - 1) \\
+            g'(3) = f'((3)^2 - 3) \cdot (2(3) - 1)
+            = f'(6) \cdot 5
+            = 4 \cdot 5 = 20 \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Use of Chain Rule
+          - points: 1
+            criterion: Correct answer
+        sections:
+          - 3.1
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          It is known that $g''(0) = -1$. What is the value of $f''(0)$?
+        solution: |
+          \begin{gather*}
+            g''(x) = f'(x^2 - x) \cdot 2 + (2x - 1) \cdot \left[ f''(x^2 - x) \cdot (2x - 1) \right] \\
+            g''(0) = f'((0)^2 - 0) \cdot 2 + (2(0) - 1) \cdot \left[ f''((0)^2 - 0) \cdot (2(0) - 1) \right] \\
+            -1 = f'(0) \cdot 2 + -1 \cdot f''(0) \cdot -1 \\
+            -1 = 2 \cdot 2 + f''(0) \\
+            -1 = 4 + f''(0) \\
+            f''(0) = -5 \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Use of Product Rule
+          - points: 1
+            criterion: Sets $g''(0) = -1$
+          - points: 1
+            criterion: Correct answer
+        sections:
+          - 3.1
+          - 3.6
+        dok: 3
+        work_space: 2.5in
+      - question: |
+          Is there a value $c$, for $0 < c < 3$, such that $g(c) = 5$? Justify your answer.
+        solution: |
+          Since $f$ is differentiable, it is also continuous. $g(x)$ is continuous because it
+          is made from a polynomial composed with the continuous function $f$.
+          \begin{gather*}
+            g(0) = f((0)^2 - 0) = f(0) = 4 \\
+            g(3) = f((3)^2 - 3) = f(6) = 7 \\
+          \end{gather*}
+          Since $g(0) < 5 < g(3)$, there must be a value $c$, for $0 < c < 3$, such that $g(c) = 5$ by Intermediate Value Theorem
+        grading:
+          - points: 1
+            criterion: States $g$ is continuous
+          - points: 1
+            criterion: Finds $g(0)$ and $g(3)$
+          - points: 1
+            criterion: Conclusion
+        sections:
+          - 1.16
+          - 2.4
+        dok: 3
+        work_space: 2in
+      - question: |
+          Let $h$ be the function with derivative given by $h'(x) = 4e^{\cos x}$. At what value
+          of $x$ in the interval $-3 \le x \le 0$ does the instantaneous rate of change of $h$ equal the average
+          rate of change of $f$ over the interval $-3 \le x \le 0$?
+        solution: |
+          \begin{gather*}
+            h'(x) = \frac{f(0) - f(-3)}{0 - (-3)} = \frac{4 - (-5)}{3} = \frac{9}{3} = 3 \\
+            4e^{\cos x} = 3 \\
+            x \approx -1.8626 \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Correct answer
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: none
+
+  - id: 00ebe67a-b1ac-42a3-8ca9-71bd2c6c3962
+    question: |
+      A diver descends into a lake. The diver's depth below the surface, in meters,
+      is modeled by $d(t) = 30\left(1 - e^{-0.2t}\right)$, where $t$ is measured in
+      minutes, for $0 \le t \le 10$. The temperature of the water, in degrees Celsius,
+      at a depth of $x$ meters is modeled by $T(x) = 4 + 16e^{-0.05x}$. Let $W$ be
+      the function defined by $W(t) = T(d(t))$, the temperature of the water at
+      the diver's location at time $t$.
+    parts:
+      - question: |
+          Find $W'(5)$. Indicate units of measure.
+        solution: |
+          \begin{gather*}
+            W'(t) = T'(d(t)) \cdot d'(t) \\
+            d(5) = 30\left(1 - e^{-1}\right) \approx 18.9636 \\
+            d'(5) = 6e^{-1} \approx 2.2073 \\
+            T'(18.9636) = -0.8e^{-0.05(18.9636)} \approx -0.3100 \\
+            W'(5) \approx (-0.3100)(2.2073) \approx -0.684 \text{ degrees Celsius per minute} \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Use of Chain Rule
+          - points: 1
+            criterion: Correct answer
+          - points: 1
+            criterion: Units
+        sections:
+          - 3.1
+        dok: 2
+        work_space: 2in
+      - question: |
+          Find the time $t$, for $0 \le t \le 10$, at which the temperature of the water
+          at the diver's location is changing at a rate of $-0.5$ degrees Celsius per
+          minute.
+        solution: |
+          \begin{gather*}
+            W'(t) = -0.8e^{-0.05 \cdot 30\left(1 - e^{-0.2t}\right)} \cdot 6e^{-0.2t} = -0.5 \\
+            t \approx 6.047 \qquad \text{(solve with calculator)} \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Sets $W'(t) = -0.5$
+          - points: 1
+            criterion: Correct answer
+        sections:
+          - 3.1
+        dok: 2
+        work_space: 2in
+      - question: |
+          The function $d$ is increasing and has an inverse function $d^{-1}$. Find
+          $(d^{-1})'(20)$. Indicate units of measure.
+        solution: |
+          \begin{gather*}
+            d(t) = 20 \implies t = d^{-1}(20) \approx 5.4931 \qquad \text{(solve with calculator)} \\
+            (d^{-1})'(20) = \frac{1}{d'(d^{-1}(20))} = \frac{1}{d'(5.4931)} = \frac{1}{2} \text{ minutes per meter} \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Evaluated $d^{-1}(20)$
+          - points: 1
+            criterion: Correct answer
+          - points: 1
+            criterion: Units
+        sections:
+          - 3.3
+        dok: 3
+        work_space: 2in
+      - question: |
+          Is the rate of change of the temperature of the water at the diver's
+          location increasing or decreasing at time $t = 5$? Give a reason for your
+          answer.
+        solution: |
+          $W''(5) \approx 0.212 > 0$ \quad (calculator derivative of $W'(t)$ at $t = 5$) \\
+
+          Since $W''(5) > 0$, the rate of change of the temperature is increasing at
+          $t = 5$.
+        grading:
+          - points: 1
+            criterion: Value of $W''(5)$
+          - points: 1
+            criterion: Conclusion with reason
+        sections:
+          - 3.6
+        dok: 3
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
+
+  - id: f8b3f5a9-7812-4d4f-ae63-dfbf1de47af0
+    question: |
+      Let $f$ be the function defined by $f(x) = 2x + \sin x$. The function $f$ is
+      increasing for all $x$, and $g$ is the inverse function of $f$.
+    parts:
+      - question: |
+          Find the value of $g(3)$.
+        solution: |
+          \begin{gather*}
+            g(3) = x \text{ where } f(x) = 3 \\
+            2x + \sin x = 3 \\
+            g(3) \approx 1.0631 \qquad \text{(solve with calculator)} \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Sets $f(x) = 3$
+          - points: 1
+            criterion: Correct answer
+        sections:
+          - 3.3
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Find the value of $g'(3)$.
+        solution: |
+          \begin{gather*}
+            f'(x) = 2 + \cos x \\
+            g'(3) = \frac{1}{f'(g(3))} = \frac{1}{2 + \cos(1.0631)} \approx 0.4022 \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Expression for $g'(3)$
+          - points: 1
+            criterion: Correct answer
+        sections:
+          - 3.3
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Let $p$ be the function defined by $p(x) = f\left(\tan^{-1} x\right)$. Find
+          $p'(1)$.
+        solution: |
+          \begin{gather*}
+            p'(x) = f'\left(\tan^{-1} x\right) \cdot \frac{1}{1 + x^2}
+            = \frac{2 + \cos\left(\tan^{-1} x\right)}{1 + x^2} \\
+            p'(1) = \frac{2 + \cos\left(\frac{\pi}{4}\right)}{2} = 1 + \frac{\sqrt{2}}{4} \approx 1.3536 \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Derivative of $\tan^{-1}$
+          - points: 1
+            criterion: Use of Chain Rule
+          - points: 1
+            criterion: Correct answer
+        sections:
+          - 3.1
+          - 3.4
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Find the value of $g''(3)$.
+        solution: |
+          \begin{gather*}
+            g'(x) = \frac{1}{2 + \cos(g(x))} = \left[ 2 + \cos(g(x)) \right]^{-1} \\
+            g''(x) = -\left[ 2 + \cos(g(x)) \right]^{-2} \cdot \left( -\sin(g(x)) \cdot g'(x) \right)
+            = \frac{\sin(g(x)) \cdot g'(x)}{\left[ 2 + \cos(g(x)) \right]^2} \\
+            g''(3) = \frac{\sin(1.0631) \cdot 0.4022}{\left[ 2 + \cos(1.0631) \right]^2} \approx 0.0569 \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Use of Chain Rule on $g'(x)$
+          - points: 1
+            criterion: Expression for $g''(x)$
+          - points: 1
+            criterion: Correct answer
+        sections:
+          - 3.1
+          - 3.3
+          - 3.6
+        dok: 3
+        work_space: 2.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated

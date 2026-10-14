@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage[table]{xcolor}
+\usepackage{tabularx}
+\usepackage{bm}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\begin{document}
+\begin{tabularx}{2in}{ |*{3}{Y|} }
+  \hline
+  \rowcolor{lightgray}
+  \bm{$x$} & \bm{$f(x)$} & \bm{$f'(x)$} \\
+  \hline
+  -3 & -5 & -1 \\
+  \hline
+  0 & 4 & 2 \\
+  \hline
+  3 & 1 & -2 \\
+  \hline
+  6 & 7 & 4 \\
+  \hline
+\end{tabularx}
+\end{document}

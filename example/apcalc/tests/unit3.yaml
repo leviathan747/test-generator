@@ -14,7 +14,7 @@ questions:
     calculator_active: false
     sections:
       - 3.3
-    dok: unknown
+    dok: 2
     review: none
 
   - id: b4f08287-1ee5-4146-bffd-b62ea8155c84
@@ -41,7 +41,7 @@ questions:
     calculator_active: false
     sections:
       - 3.1
-    dok: unknown
+    dok: 2
     review: none
 
   - id: ce6ccf9c-25ae-4354-b3dc-ee6f7c1522ab
@@ -64,7 +64,7 @@ questions:
       - 3.1
       - 3.4
       - 3.5
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 046db7ba-0b2c-405b-b1c9-2edf441b3a01
@@ -83,7 +83,7 @@ questions:
     sections:
       - 3.1
       - 3.5
-    dok: unknown
+    dok: 2
     review: none
 
   - id: ac2e6c35-d800-4d14-bb66-604677e73da0
@@ -102,7 +102,7 @@ questions:
     sections:
       - 3.1
       - 3.5
-    dok: unknown
+    dok: 2
     review: none
 
   - id: f7308239-176e-435d-804b-3ac9a895e8a8
@@ -125,7 +125,7 @@ questions:
       - 3.1
       - 3.5
       - 3.6
-    dok: unknown
+    dok: 2
     review: none
 
   - id: f3d8038a-1709-4a66-bafe-5ec5e6e30c42
@@ -147,7 +147,7 @@ questions:
     sections:
       - 3.1
       - 3.5
-    dok: unknown
+    dok: 2
     review: none
 
   - id: d633c478-8d43-4d7a-ba7d-584da4fd7d5e
@@ -177,7 +177,7 @@ questions:
       - 3.1
       - 3.3
       - 3.5
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 6770cc6c-8779-434a-9b9c-30ae8df0cf37
@@ -197,7 +197,7 @@ questions:
     sections:
       - 3.1
       - 3.5
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 3e42eebc-d2d1-47b7-8481-b9d785ab37cb
@@ -220,7 +220,7 @@ questions:
     sections:
       - 3.1
       - 3.2
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 3125017b-d607-422c-9610-1636e4ac9148
@@ -242,7 +242,7 @@ questions:
     calculator_active: true
     sections:
       - 3.1
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 69b8c41c-2d77-4d39-a3be-72e8a37ece79
@@ -266,7 +266,7 @@ questions:
     calculator_active: true
     sections:
       - 3.3
-    dok: unknown
+    dok: 2
     review: none
 
   - id: ab915e3d-56a2-43e3-bc29-0685e5ecc388
@@ -288,7 +288,7 @@ questions:
     sections:
       - 3.1
       - 3.2
-    dok: unknown
+    dok: 2
     review: none
 
   - id: b8f8b18c-9e3b-4f53-89ba-590f19ea2b6b
@@ -313,7 +313,7 @@ questions:
     calculator_active: true
     sections:
       - 3.3
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 0542e9b6-b256-4fd2-96a2-e7e0fbc84b3c
@@ -338,7 +338,7 @@ questions:
     sections:
       - 3.1
       - 3.2
-    dok: unknown
+    dok: 2
     review: none
 
   - id: dad6c597-fa7a-4b5b-938c-8327ede859fc
@@ -360,7 +360,7 @@ questions:
       \end{gather*}
     calculator_active: false
     sections: []
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 91652591-a82d-466c-879d-64eab3f9b02c
@@ -388,7 +388,7 @@ questions:
       \end{gather*}
     calculator_active: false
     sections: []
-    dok: unknown
+    dok: 2
     review: none
 
   - id: a7f8a5d8-4625-4dd2-ba4c-da5c1fe5a072
@@ -409,7 +409,7 @@ questions:
       \end{gather*}
     calculator_active: false
     sections: []
-    dok: unknown
+    dok: 1
     review: none
 
   - id: 8180f4dc-d68e-4dec-bacc-fab434b69b0f
@@ -430,7 +430,7 @@ questions:
       \end{gather*}
     calculator_active: false
     sections: []
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 667211fc-debf-4c96-9d0f-8f89c4f6f16d
@@ -451,7 +451,7 @@ questions:
       \end{gather*}
     calculator_active: false
     sections: []
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 24851b50-ce47-4a53-955f-22a77da23a54
@@ -472,7 +472,7 @@ questions:
       \end{gather*}
     calculator_active: false
     sections: []
-    dok: unknown
+    dok: 2
     review: none
 
   - id: b11d7c80-1115-42b0-8d7f-d9864ceed964
@@ -490,7 +490,7 @@ questions:
     calculator_active: false
     sections:
       - 3.3
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 407feb1d-5d5f-4857-b282-018da1145343
@@ -519,7 +519,7 @@ questions:
     calculator_active: false
     sections:
       - 3.1
-    dok: unknown
+    dok: 2
     review: none
 
   - id: e894b876-83a9-4bcc-9b69-3b4cdc1de676
@@ -539,7 +539,7 @@ questions:
       \end{gather*}
     calculator_active: false
     sections: []
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 8e3d9e5e-1af1-48ea-99a9-c6b7bc1edc56
@@ -560,7 +560,7 @@ questions:
       \end{gather*}
     calculator_active: false
     sections: []
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 93fac5c3-e76d-49f9-a2a6-d6458ad3d8f1
@@ -585,7 +585,7 @@ questions:
     calculator_active: true
     sections:
       - 3.3
-    dok: unknown
+    dok: 2
     review: none
 
   - id: ff8fde2a-48dd-4771-a6f3-3e4ef777bc24
@@ -607,7 +607,7 @@ questions:
     sections:
       - 3.1
       - 3.2
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 5a2c90ed-535e-420d-82e4-f6136a5c758a
@@ -629,7 +629,7 @@ questions:
     calculator_active: true
     sections:
       - 3.1
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 1306a0db-d442-45d0-9ff6-d3239c5cfb05
@@ -656,7 +656,7 @@ questions:
     sections:
       - 3.1
       - 3.2
-    dok: unknown
+    dok: 2
     review: none
 
   - id: 44aaa212-0c94-43f1-8b06-dd3b0ffb4a2f
@@ -680,5 +680,1383 @@ questions:
     calculator_active: true
     sections:
       - 3.3
-    dok: unknown
+    dok: 2
     review: none
+
+  - id: 2c68e6ad-72e5-4eff-a5e3-380725d3c94e
+    question: If $f(x) = \sin(4x)$, then $f'(x) =$
+    answer: $4\cos(4x)$
+    distractors:
+      - $\cos(4x)$
+      - $-4\cos(4x)$
+      - $4\cos x$
+    solution: $f'(x) = \cos(4x) \cdot 4 = 4\cos(4x)$ \quad (Chain Rule)
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: 1bef4d40-fdcd-4145-a478-4bac9e176223
+    question: If $f(x) = (\sin x)^4$, then $f'(x) =$
+    answer: $4\sin^3 x \cos x$
+    distractors:
+      - $4\cos^3 x$
+      - $4\sin^3 x$
+      - $-4\sin^3 x \cos x$
+    solution: $f'(x) = 4(\sin x)^3 \cdot \cos x = 4\sin^3 x \cos x$ \quad (Chain Rule)
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: 413373f4-f375-43b6-a1de-6b688971a642
+    question: If $y = \tan(2x - 1)$, then $\dydx =$
+    answer: $2\sec^2(2x - 1)$
+    distractors:
+      - $\sec^2(2x - 1)$
+      - $2\sec(2x - 1)\tan(2x - 1)$
+      - $\sec^2(2)$
+    solution: $\dydx = \sec^2(2x - 1) \cdot 2 = 2\sec^2(2x - 1)$ \quad (Chain Rule)
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: 24ee79ae-c5d3-4ba4-9886-19517ac91582
+    question: If $f(x) = e^{x^2}$, then $f'(x) =$
+    answer: $2xe^{x^2}$
+    distractors:
+      - $e^{x^2}$
+      - $x^2 e^{x^2 - 1}$
+      - $2xe^{2x}$
+    solution: $f'(x) = e^{x^2} \cdot 2x = 2xe^{x^2}$ \quad (Chain Rule)
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: d4261ded-e636-48d7-88c3-e8f42ad8be3d
+    question: If $y = \sqrt{x^2 + 9}$, what is the value of $\dydx$ at $x = 4$?
+    answer: $\frac{4}{5}$
+    distractors:
+      - $\frac{1}{10}$
+      - $\frac{8}{5}$
+      - $\frac{4}{25}$
+    solution: |
+      $\dydx = \frac{1}{2}(x^2 + 9)^{-\frac{1}{2}} \cdot 2x = \frac{x}{\sqrt{x^2 + 9}}$
+
+      $\dydx \Big|_{x = 4} = \frac{4}{\sqrt{25}} = \frac{4}{5}$
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: bbf3a710-d8c3-4d83-846e-369796ff64a8
+    question: If $f(x) = \ln(x^2 + 1)$, what is the value of $f'(1)$?
+    answer: 1
+    distractors:
+      - $\frac{1}{2}$
+      - 2
+      - $\ln 2$
+    solution: |
+      $f'(x) = \frac{1}{x^2 + 1} \cdot 2x = \frac{2x}{x^2 + 1}$
+
+      $f'(1) = \frac{2(1)}{1^2 + 1} = \frac{2}{2} = 1$
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: none
+
+  - id: d195505e-265d-40d9-b998-f953c4bd971e
+    question: If $f(x) = \cos(x^3)$, then $f'(x) =$
+    answer: $-3x^2\sin(x^3)$
+    distractors:
+      - $3x^2\sin(x^3)$
+      - $-\sin(3x^2)$
+      - $-\sin(x^3)$
+    solution: $f'(x) = -\sin(x^3) \cdot 3x^2 = -3x^2\sin(x^3)$ \quad (Chain Rule)
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: 570b719e-4c8f-4228-80ed-33f55418302b
+    question: |
+      The table below gives values of the differentiable functions $f$ and $g$
+      and their derivatives at selected values of $x$. If $h(x) = f(g(x))$, what
+      is the value of $h'(1)$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+          \hline
+          \bm{$x$} & \bm{$f(x)$} & \bm{$f'(x)$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
+          \hline
+          1 & 3 & $-2$ & 2 & 4 \\
+          \hline
+          2 & 1 & 5 & 3 & $-1$ \\
+          \hline
+          3 & 4 & 6 & 1 & 2 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: 20
+    distractors:
+      - $-8$
+      - 5
+      - 10
+    solution: |
+      $h'(x) = f'(g(x)) \cdot g'(x)$ \quad (Chain Rule)
+
+      $h'(1) = f'(g(1)) \cdot g'(1) = f'(2) \cdot 4 = 5 \cdot 4 = 20$
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: 00b7c9ef-0a14-4fc2-bfe1-54238db29e8e
+    question: |
+      If $y = u^3$ and $u = 2x + 1$, what is the value of $\dydx$ when
+      $x = 1$?
+    answer: 54
+    distractors:
+      - 27
+      - 18
+      - 6
+    solution: |
+      $\dydx = \frac{dy}{du} \cdot \frac{du}{dx} = 3u^2 \cdot 2 = 6(2x + 1)^2$
+
+      When $x = 1$: $u = 3$, so $\dydx = 6(3)^2 = 54$
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: none
+
+  - id: 71f7d1b6-021d-48c2-b87b-945c8522da14
+    question: |
+      The pressure $P$, in pounds per square inch (psi), experienced by a diver
+      is a function of the diver's depth $d$, in meters, and the depth is a
+      function of time $t$, in minutes. At a certain time,
+      $\frac{dP}{dd} = 1.5$ psi per meter and $\frac{dd}{dt} = 4$ meters per
+      minute. What is the rate of change of the pressure with respect to time
+      at that moment?
+    answer: 6 psi per minute
+    distractors:
+      - 5.5 psi per minute
+      - $\frac{8}{3}$ psi per minute
+      - $\frac{3}{8}$ psi per minute
+    solution: |
+      $\frac{dP}{dt} = \frac{dP}{dd} \cdot \frac{dd}{dt}$ \quad (Chain Rule)
+
+      $\frac{dP}{dt} = 1.5 \, \frac{\text{psi}}{\text{m}} \cdot 4 \, \frac{\text{m}}{\text{min}} = 6 \, \frac{\text{psi}}{\text{min}}$
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: f1e79827-e17b-4b41-8314-fa4d9c25f753
+    question: |
+      Which of the following functions has derivative
+      $3\cos(3x)e^{\sin(3x)}$?
+    answer: $e^{\sin(3x)}$
+    distractors:
+      - $e^{3\sin(3x)}$
+      - $e^{\cos(3x)}$
+      - $\sin(3x)e^{\sin(3x)}$
+    solution: |
+      $\frac{d}{dx}\left[ e^{\sin(3x)} \right] = e^{\sin(3x)} \cdot \cos(3x) \cdot 3 = 3\cos(3x)e^{\sin(3x)}$
+
+      Check the others: $\frac{d}{dx}\left[ e^{3\sin(3x)} \right] = 9\cos(3x)e^{3\sin(3x)}$,
+      $\frac{d}{dx}\left[ e^{\cos(3x)} \right] = -3\sin(3x)e^{\cos(3x)}$, and
+      $\sin(3x)e^{\sin(3x)}$ requires the product rule, giving an extra term.
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 3
+    review: generated
+
+  - id: 4a9b70bf-96a2-4219-b7c5-3a8b27a4ffa3
+    question: |
+      A student finds the derivative of $f(x) = \sin^2(3x)$ and writes
+      $f'(x) = 2\sin(3x)\cos(3x)$. Which of the following describes the
+      student's error?
+    answer: The derivative of the inner function $3x$ was not included.
+    distractors:
+      - The derivative of $\sin(3x)$ should be $-\cos(3x)$.
+      - The exponent should not have been reduced, so the result should be $2\sin^2(3x)\cos(3x)$.
+      - There is no error; the derivative is correct.
+    solution: |
+      $f(x) = \left[ \sin(3x) \right]^2$ is a composition of three functions.
+
+      $f'(x) = 2\sin(3x) \cdot \cos(3x) \cdot 3 = 6\sin(3x)\cos(3x)$
+
+      The student stopped before multiplying by the derivative of $3x$.
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 3
+    review: generated
+
+  - id: b9b3a946-c3b4-438b-98ff-8a12fea84a0a
+    question: If $f(x) = \sec(x^2)$, then $f'(x) =$
+    answer: $2x\sec(x^2)\tan(x^2)$
+    distractors:
+      - $\sec(x^2)\tan(x^2)$
+      - $2x\sec^2(x^2)$
+      - $\sec(2x)\tan(2x)$
+    solution: $f'(x) = \sec(x^2)\tan(x^2) \cdot 2x = 2x\sec(x^2)\tan(x^2)$ \quad (Chain Rule)
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: a3b89ee5-9c4f-4066-b1ba-e76c9a358fcb
+    question: If $f(x) = 3^{x^2}$, then $f'(x) =$
+    answer: $2x \ln 3 \cdot 3^{x^2}$
+    distractors:
+      - $x^2 \cdot 3^{x^2 - 1}$
+      - $2x \cdot 3^{x^2}$
+      - $\ln 3 \cdot 3^{x^2}$
+    solution: $f'(x) = (\ln 3) 3^{x^2} \cdot 2x = 2x \ln 3 \cdot 3^{x^2}$ \quad (Chain Rule)
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.5
+    dok: 2
+    review: none
+
+  - id: 023e58ad-4546-432b-b48a-6cbf2f0a4154
+    question: If $f(x) = \sin^2(e^x)$, then $f'(x) =$
+    answer: $2e^x\sin(e^x)\cos(e^x)$
+    distractors:
+      - $2\sin(e^x)\cos(e^x)$
+      - $2e^x\cos(e^x)$
+      - $2e^x\sin(e^x)$
+    solution: |
+      $f(x) = \left[ \sin(e^x) \right]^2$
+
+      $f'(x) = 2\sin(e^x) \cdot \cos(e^x) \cdot e^x = 2e^x\sin(e^x)\cos(e^x)$ \quad (Chain Rule)
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: 38b1b440-8e38-4a3d-8be6-2444760841c9
+    question: If $f(x) = \sqrt{\cos(2x)}$, then $f'(x) =$
+    answer: $-\frac{\sin(2x)}{\sqrt{\cos(2x)}}$
+    distractors:
+      - $-\frac{\sin(2x)}{2\sqrt{\cos(2x)}}$
+      - $\frac{\sin(2x)}{\sqrt{\cos(2x)}}$
+      - $\frac{1}{2\sqrt{\cos(2x)}}$
+    solution: |
+      $f'(x) = \frac{1}{2}\left( \cos(2x) \right)^{-\frac{1}{2}} \cdot -\sin(2x) \cdot 2$
+
+      $= -\frac{\sin(2x)}{\sqrt{\cos(2x)}}$
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: 3a569515-c8f6-49eb-bb97-6302213cb947
+    question: |
+      Let $f$ be a differentiable function with $f'(6) = 4$. If $g(x) = f(3x)$,
+      what is the value of $g'(2)$?
+    answer: 12
+    distractors:
+      - 4
+      - $\frac{4}{3}$
+      - 7
+    solution: |
+      $g'(x) = f'(3x) \cdot 3$ \quad (Chain Rule)
+
+      $g'(2) = f'(6) \cdot 3 = 4 \cdot 3 = 12$
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: 22db7753-571a-4eaf-9e8f-b82b25245f88
+    question: |
+      Which of the following is an equation of the line tangent to the graph of
+      $y = (x^2 - 3)^3$ at $x = 2$?
+    answer: $y - 1 = 12(x - 2)$
+    distractors:
+      - $y - 1 = 3(x - 2)$
+      - $y - 1 = 6(x - 2)$
+      - $y = 12(x - 2)$
+    solution: |
+      $y(2) = (4 - 3)^3 = 1$
+
+      $\dydx = 3(x^2 - 3)^2 \cdot 2x$ \quad (Chain Rule)
+
+      $\dydx \Big|_{x = 2} = 3(1)^2 \cdot 4 = 12$
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: f2e9d08e-7995-4347-8f19-80e7d238e23e
+    question: |
+      At what value of $x$ in the interval $0 < x < \pi$ does the graph of
+      $y = \sin^2 x$ have a horizontal tangent line?
+    answer: $\frac{\pi}{2}$
+    distractors:
+      - $\frac{\pi}{4}$
+      - $\frac{3\pi}{4}$
+      - $\frac{\pi}{3}$
+    solution: |
+      $\dydx = 2\sin x \cos x$
+
+      $\dydx = 0$ when $\sin x = 0$ or $\cos x = 0$. On $0 < x < \pi$,
+      $\sin x \ne 0$, and $\cos x = 0$ at $x = \frac{\pi}{2}$.
+    calculator_active: false
+    sections:
+      - 3.1
+    dok: 2
+    review: generated
+
+  - id: f0a234ca-1da4-4ae7-a404-928a813e206b
+    question: If $f(x) = xe^{-2x}$, then $f'(x) =$
+    answer: $e^{-2x}(1 - 2x)$
+    distractors:
+      - $-2e^{-2x}$
+      - $e^{-2x}(1 + 2x)$
+      - $-2xe^{-2x}$
+    solution: |
+      $f'(x) = 1 \cdot e^{-2x} + x \cdot e^{-2x} \cdot (-2)$ \quad (Product and Chain Rules)
+
+      $= e^{-2x}(1 - 2x)$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.5
+    dok: 2
+    review: none
+
+  - id: 1eed9877-169d-47bf-b8a1-a77be1c4e8e6
+    question: If $x^2 + y^2 = 25$, then $\dydx =$
+    answer: $-\frac{x}{y}$
+    distractors:
+      - $\frac{x}{y}$
+      - $-\frac{y}{x}$
+      - $-x$
+    solution: |
+      $2x + 2y\dydx = 0$
+
+      $\dydx = -\frac{2x}{2y} = -\frac{x}{y}$
+    calculator_active: false
+    sections:
+      - 3.2
+    dok: 2
+    review: generated
+
+  - id: f60d3e7d-ea38-4c12-88d3-8baacfe5f12e
+    question: If $xy = 6$, what is the value of $\dydx$ at the point $(2, 3)$?
+    answer: $-\frac{3}{2}$
+    distractors:
+      - $-\frac{2}{3}$
+      - $\frac{3}{2}$
+      - $-3$
+    solution: |
+      $y + x\dydx = 0$ \quad (Product Rule)
+
+      $\dydx = -\frac{y}{x}$
+
+      $\dydx \Big|_{(2, 3)} = -\frac{3}{2}$
+    calculator_active: false
+    sections:
+      - 3.2
+    dok: 2
+    review: generated
+
+  - id: 40365a3e-ecd9-4654-b21e-40acfaf37900
+    question: If $x^3 + y^3 = 9$, what is the value of $\dydx$ at the point $(1, 2)$?
+    answer: $-\frac{1}{4}$
+    distractors:
+      - $\frac{1}{4}$
+      - $-\frac{1}{2}$
+      - $-4$
+    solution: |
+      $3x^2 + 3y^2\dydx = 0$
+
+      $\dydx = -\frac{x^2}{y^2}$
+
+      $\dydx \Big|_{(1, 2)} = -\frac{1}{4}$
+    calculator_active: false
+    sections:
+      - 3.2
+    dok: 2
+    review: generated
+
+  - id: 2822fb86-9898-423e-bddd-7aa25d948781
+    question: If $\sin y = x$, then $\dydx$ in terms of $y$ is
+    answer: $\frac{1}{\cos y}$
+    distractors:
+      - $\cos y$
+      - $-\frac{1}{\cos y}$
+      - $\frac{1}{\cos x}$
+    solution: |
+      $\cos y \dydx = 1$
+
+      $\dydx = \frac{1}{\cos y}$
+    calculator_active: false
+    sections:
+      - 3.2
+    dok: 2
+    review: generated
+
+  - id: ff8202b0-9093-4fe6-a9ad-0b2e8ec93781
+    question: If $x^2y + y^2 = 5$, then $\dydx =$
+    answer: $-\frac{2xy}{x^2 + 2y}$
+    distractors:
+      - $\frac{2xy}{x^2 + 2y}$
+      - $-\frac{2xy}{x^2}$
+      - $-\frac{x^2 + 2y}{2xy}$
+    solution: |
+      $2xy + x^2\dydx + 2y\dydx = 0$ \quad (Product Rule on $x^2y$)
+
+      $\dydx(x^2 + 2y) = -2xy$
+
+      $\dydx = -\frac{2xy}{x^2 + 2y}$
+    calculator_active: false
+    sections:
+      - 3.2
+    dok: 2
+    review: generated
+
+  - id: 71e9baca-9372-4335-9ee3-83aa26f40dbb
+    question: If $e^y + y = x^2$, then $\dydx =$
+    answer: $\frac{2x}{e^y + 1}$
+    distractors:
+      - $\frac{2x}{e^y}$
+      - $2x(e^y + 1)$
+      - $\frac{2x - 1}{e^y}$
+    solution: |
+      $e^y\dydx + \dydx = 2x$
+
+      $\dydx(e^y + 1) = 2x$
+
+      $\dydx = \frac{2x}{e^y + 1}$
+    calculator_active: false
+    sections:
+      - 3.2
+    dok: 2
+    review: generated
+
+  - id: 8316a7d0-24ae-4e8e-a0fd-cae9ec0609bb
+    question: |
+      Which of the following is an equation of the line tangent to the curve
+      $x^2 - xy + y^2 = 7$ at the point $(-1, 2)$?
+    answer: $y - 2 = \frac{4}{5}(x + 1)$
+    distractors:
+      - $y - 2 = -\frac{4}{5}(x + 1)$
+      - $y - 2 = \frac{5}{4}(x + 1)$
+      - $y - 2 = \frac{4}{3}(x + 1)$
+    solution: |
+      $2x - \left( y + x\dydx \right) + 2y\dydx = 0$
+
+      $\dydx(2y - x) = y - 2x$
+
+      $\dydx = \frac{y - 2x}{2y - x}$
+
+      $\dydx \Big|_{(-1, 2)} = \frac{2 + 2}{4 + 1} = \frac{4}{5}$
+    calculator_active: false
+    sections:
+      - 3.2
+    dok: 2
+    review: generated
+
+  - id: e434c28d-69ae-4ca4-8ebf-0a903c446b33
+    question: |
+      At which points on the curve $x^2 + xy + y^2 = 3$ is the line tangent to
+      the curve horizontal?
+    answer: $(1, -2)$ and $(-1, 2)$
+    distractors:
+      - $(2, -1)$ and $(-2, 1)$
+      - $(0, \sqrt 3)$ and $(0, -\sqrt 3)$
+      - $(1, 1)$ and $(-1, -1)$
+    solution: |
+      $2x + y + x\dydx + 2y\dydx = 0$
+
+      $\dydx = -\frac{2x + y}{x + 2y}$
+
+      $\dydx = 0$ when $y = -2x$. Substitute into the curve:
+
+      $x^2 + x(-2x) + (-2x)^2 = 3 \Rightarrow 3x^2 = 3 \Rightarrow x = \pm 1$
+
+      $x = 1 \Rightarrow y = -2$ \qquad $x = -1 \Rightarrow y = 2$
+    calculator_active: false
+    sections:
+      - 3.2
+    dok: 3
+    review: generated
+
+  - id: a3ec2e5d-8f22-4fbe-bd69-494c4d289f77
+    question: If $x^2 + y^2 = 1$, then $\frac{d^2y}{dx^2} =$
+    answer: $-\frac{1}{y^3}$
+    distractors:
+      - $\frac{1}{y^3}$
+      - $-\frac{1}{y^2}$
+      - $-\frac{y + x}{y^2}$
+    solution: |
+      $2x + 2y\dydx = 0 \Rightarrow \dydx = -\frac{x}{y}$
+
+      $\frac{d^2y}{dx^2} = -\frac{y \cdot 1 - x\dydx}{y^2}$ \quad (Quotient Rule)
+
+      $= -\frac{y - x\left( -\frac{x}{y} \right)}{y^2} = -\frac{y^2 + x^2}{y^3} = -\frac{1}{y^3}$
+
+      since $x^2 + y^2 = 1$.
+    calculator_active: false
+    sections:
+      - 3.2
+      - 3.6
+    dok: 2
+    review: none
+
+  - id: d7e39fed-5815-453f-9239-e50c357ebc5a
+    question: If $y$ is a differentiable function of $x$, then $\frac{d}{dx}\left[ y^3 \right] =$
+    answer: $3y^2\dydx$
+    distractors:
+      - $3y^2$
+      - $3x^2$
+      - $3y^2 + \dydx$
+    solution: |
+      Because $y$ depends on $x$, the chain rule applies:
+
+      $\frac{d}{dx}\left[ y^3 \right] = 3y^2 \cdot \dydx$
+    calculator_active: false
+    sections:
+      - 3.2
+    dok: 1
+    review: none
+
+  - id: 8621974e-1829-4844-b513-a9babb14ec50
+    question: If $x^2 - 4y^2 = 9$, what is the value of $\dydx$ at the point $(5, 2)$?
+    answer: $\frac{5}{8}$
+    distractors:
+      - $-\frac{5}{8}$
+      - $\frac{8}{5}$
+      - $\frac{5}{2}$
+    solution: |
+      $2x - 8y\dydx = 0$
+
+      $\dydx = \frac{x}{4y}$
+
+      $\dydx \Big|_{(5, 2)} = \frac{5}{8}$
+    calculator_active: false
+    sections:
+      - 3.2
+    dok: 2
+    review: generated
+
+  - id: dc1d4ac1-f1ca-4c82-b437-f824d078182f
+    question: If $y + \sin y = x$, then $\dydx =$
+    answer: $\frac{1}{1 + \cos y}$
+    distractors:
+      - $\frac{1}{1 - \cos y}$
+      - $1 + \cos y$
+      - $\frac{1}{\cos y}$
+    solution: |
+      $\dydx + \cos y \dydx = 1$
+
+      $\dydx(1 + \cos y) = 1$
+
+      $\dydx = \frac{1}{1 + \cos y}$
+    calculator_active: false
+    sections:
+      - 3.2
+    dok: 2
+    review: generated
+
+  - id: f2304152-3ab9-421c-ad8b-8bc4c3ab0750
+    question: |
+      Let $f(x) = x^3 + x + 1$. Given that $f(1) = 3$, what is the value of
+      $(f^{-1})'(3)$?
+    answer: $\frac{1}{4}$
+    distractors:
+      - 4
+      - $\frac{1}{28}$
+      - 28
+    solution: |
+      $(f^{-1})'(3) = \frac{1}{f'(f^{-1}(3))} = \frac{1}{f'(1)}$
+
+      $f'(x) = 3x^2 + 1 \Rightarrow f'(1) = 4$
+
+      $(f^{-1})'(3) = \frac{1}{4}$
+    calculator_active: false
+    sections:
+      - 3.3
+    dok: 2
+    review: generated
+
+  - id: 4b69a014-594a-4e20-b053-e7b2058f2333
+    question: |
+      Let $f(x) = 2x + e^x$ and let $g$ be the inverse function of $f$. Given
+      that $f(0) = 1$, what is the value of $g'(1)$?
+    answer: $\frac{1}{3}$
+    distractors:
+      - 3
+      - $\frac{1}{2 + e}$
+      - $2 + e$
+    solution: |
+      $g'(1) = \frac{1}{f'(g(1))} = \frac{1}{f'(0)}$
+
+      $f'(x) = 2 + e^x \Rightarrow f'(0) = 3$
+
+      $g'(1) = \frac{1}{3}$
+    calculator_active: false
+    sections:
+      - 3.3
+    dok: 2
+    review: generated
+
+  - id: 7f25c95d-a341-45ac-8bd1-108d68db46fa
+    question: |
+      The table below gives selected values of the differentiable, increasing
+      function $f$ and its derivative. If $g$ is the inverse function of $f$,
+      what is the value of $g'(4)$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{3in}{ |Y||*{2}{Y|} }
+          \hline
+          \bm{$x$} & \bm{$f(x)$} & \bm{$f'(x)$} \\
+          \hline
+          1 & 3 & 1 \\
+          \hline
+          2 & 4 & 2 \\
+          \hline
+          3 & 6 & 3 \\
+          \hline
+          4 & 8 & 5 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: $\frac{1}{2}$
+    distractors:
+      - $\frac{1}{5}$
+      - 2
+      - 5
+    solution: |
+      $g'(4) = \frac{1}{f'(g(4))}$
+
+      $f(2) = 4$, so $g(4) = 2$
+
+      $g'(4) = \frac{1}{f'(2)} = \frac{1}{2}$
+    calculator_active: false
+    sections:
+      - 3.3
+    dok: 2
+    review: generated
+
+  - id: 3033c267-590b-4b9c-82cd-c59ab9261d7b
+    question: |
+      The table below gives selected values of the differentiable, increasing
+      function $f$ and its derivative. Which of the following is an equation of
+      the line tangent to the graph of $f^{-1}$ at $x = 6$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{3in}{ |Y||*{2}{Y|} }
+          \hline
+          \bm{$x$} & \bm{$f(x)$} & \bm{$f'(x)$} \\
+          \hline
+          1 & 3 & 1 \\
+          \hline
+          2 & 4 & 2 \\
+          \hline
+          3 & 6 & 3 \\
+          \hline
+          4 & 8 & 5 \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: $y - 3 = \frac{1}{3}(x - 6)$
+    distractors:
+      - $y - 6 = 3(x - 3)$
+      - $y - 3 = 3(x - 6)$
+      - $y - 6 = \frac{1}{3}(x - 3)$
+    solution: |
+      $f(3) = 6$, so $f^{-1}(6) = 3$ and the point of tangency is $(6, 3)$.
+
+      $(f^{-1})'(6) = \frac{1}{f'(3)} = \frac{1}{3}$
+
+      $y - 3 = \frac{1}{3}(x - 6)$
+    calculator_active: false
+    sections:
+      - 3.3
+    dok: 2
+    review: generated
+
+  - id: 8afcc21e-40f4-41d4-825d-0ee96ecf2368
+    question: |
+      Let $f(x) = x^5 + 2x - 3$. Given that $f(1) = 0$, what is the value of
+      $(f^{-1})'(0)$?
+    answer: $\frac{1}{7}$
+    distractors:
+      - $\frac{1}{2}$
+      - 7
+      - 2
+    solution: |
+      $(f^{-1})'(0) = \frac{1}{f'(f^{-1}(0))} = \frac{1}{f'(1)}$
+
+      $f'(x) = 5x^4 + 2 \Rightarrow f'(1) = 7$
+
+      $(f^{-1})'(0) = \frac{1}{7}$
+    calculator_active: false
+    sections:
+      - 3.3
+    dok: 2
+    review: none
+
+  - id: a170c224-5c32-473c-9412-a19ebe5d10e6
+    question: |
+      Let $f$ be a differentiable function with an inverse $g$. If $f(2) = 5$
+      and $f'(2) = -3$, what is the value of $g'(5)$?
+    answer: $-\frac{1}{3}$
+    distractors:
+      - $\frac{1}{3}$
+      - $-3$
+      - $-\frac{1}{5}$
+    solution: |
+      $g'(5) = \frac{1}{f'(g(5))}$
+
+      $f(2) = 5$, so $g(5) = 2$
+
+      $g'(5) = \frac{1}{f'(2)} = -\frac{1}{3}$
+    calculator_active: false
+    sections:
+      - 3.3
+    dok: 2
+    review: generated
+
+  - id: 9c8fdb21-190f-4876-b6a5-4f36d7484061
+    question: Let $f(x) = x^3 + 2$. What is the value of $(f^{-1})'(10)$?
+    answer: $\frac{1}{12}$
+    distractors:
+      - $\frac{1}{300}$
+      - 12
+      - $\frac{1}{4}$
+    solution: |
+      Solve $f(x) = 10$: $x^3 + 2 = 10 \Rightarrow x = 2$, so $f^{-1}(10) = 2$
+
+      $f'(x) = 3x^2 \Rightarrow f'(2) = 12$
+
+      $(f^{-1})'(10) = \frac{1}{f'(2)} = \frac{1}{12}$
+    calculator_active: false
+    sections:
+      - 3.3
+    dok: 2
+    review: generated
+
+  - id: b7eff4d1-347b-460d-8ec0-5daf81342a41
+    question: |
+      Let $f$ be a differentiable, strictly increasing function with $f(1) = 4$
+      and $f'(1) = 6$, and let $g$ be the inverse function of $f$. Which of the
+      following must be true?
+
+      \fullwidth{\begin{center}
+        I. $g(4) = 1$ \qquad
+        II. $g'(4) = \frac{1}{6}$ \qquad
+        III. $g'(1) = \frac{1}{6}$
+      \end{center}}
+    answer: I and II only
+    distractors:
+      - I only
+      - II only
+      - I, II, and III
+    solution: |
+      I. True: $f(1) = 4$ means $g(4) = 1$.
+
+      II. True: $g'(4) = \frac{1}{f'(g(4))} = \frac{1}{f'(1)} = \frac{1}{6}$.
+
+      III. Not necessarily true: $g'(1) = \frac{1}{f'(g(1))}$, and nothing is
+      known about $g(1)$ or the value of $f'$ there.
+    calculator_active: false
+    sections:
+      - 3.3
+    dok: 3
+    review: generated
+
+  - id: 9d3a93c8-a96a-4440-bee6-195d9d0d4549
+    question: |
+      Let $f(x) = 2x + \cos x$. Given that $f(0) = 1$, what is the value of
+      $(f^{-1})'(1)$?
+    answer: $\frac{1}{2}$
+    distractors:
+      - 2
+      - $\frac{1}{2 - \sin 1}$
+      - $-\frac{1}{2}$
+    solution: |
+      $(f^{-1})'(1) = \frac{1}{f'(f^{-1}(1))} = \frac{1}{f'(0)}$
+
+      $f'(x) = 2 - \sin x \Rightarrow f'(0) = 2$
+
+      $(f^{-1})'(1) = \frac{1}{2}$
+    calculator_active: false
+    sections:
+      - 3.3
+    dok: 2
+    review: generated
+
+  - id: 57ae9f8a-8711-47b4-9a56-99219d86ef7d
+    question: |
+      Let $f(x) = x^3 - 3x^2 + 4x$. Given that $f(1) = 2$, what is the value of
+      $(f^{-1})'(2)$?
+    answer: 1
+    distractors:
+      - $\frac{1}{4}$
+      - 4
+      - $\frac{1}{2}$
+    solution: |
+      $(f^{-1})'(2) = \frac{1}{f'(f^{-1}(2))} = \frac{1}{f'(1)}$
+
+      $f'(x) = 3x^2 - 6x + 4 \Rightarrow f'(1) = 3 - 6 + 4 = 1$
+
+      $(f^{-1})'(2) = \frac{1}{1} = 1$
+    calculator_active: false
+    sections:
+      - 3.3
+    dok: 2
+    review: generated
+
+  - id: 392b526b-4f15-48d2-9717-9e1e250540cc
+    question: $\frac{d}{dx}\left[ \sin^{-1}(3x) \right] =$
+    answer: $\frac{3}{\sqrt{1 - 9x^2}}$
+    distractors:
+      - $\frac{1}{\sqrt{1 - 9x^2}}$
+      - $\frac{3}{\sqrt{1 - 3x^2}}$
+      - $\frac{3}{1 + 9x^2}$
+    solution: $\frac{d}{dx}\left[ \sin^{-1}(3x) \right] = \frac{1}{\sqrt{1 - (3x)^2}} \cdot 3 = \frac{3}{\sqrt{1 - 9x^2}}$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.4
+    dok: 2
+    review: generated
+
+  - id: ce53b3e7-988e-4091-82d6-d190fec512ea
+    question: $\frac{d}{dx}\left[ \tan^{-1}(x^2) \right] =$
+    answer: $\frac{2x}{1 + x^4}$
+    distractors:
+      - $\frac{1}{1 + x^4}$
+      - $\frac{2x}{1 + x^2}$
+      - $\frac{2x}{\sqrt{1 - x^4}}$
+    solution: $\frac{d}{dx}\left[ \tan^{-1}(x^2) \right] = \frac{1}{1 + (x^2)^2} \cdot 2x = \frac{2x}{1 + x^4}$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.4
+    dok: 2
+    review: generated
+
+  - id: 239d3544-ce37-4776-87e1-cd0e48eb6ecd
+    question: If $f(x) = \cos^{-1}\left( \frac{x}{2} \right)$, then $f'(x) =$
+    answer: $-\frac{1}{\sqrt{4 - x^2}}$
+    distractors:
+      - $\frac{1}{\sqrt{4 - x^2}}$
+      - $-\frac{1}{2\sqrt{4 - x^2}}$
+      - $-\frac{2}{\sqrt{4 - x^2}}$
+    solution: |
+      $f'(x) = -\frac{1}{\sqrt{1 - \left( \frac{x}{2} \right)^2}} \cdot \frac{1}{2}$
+
+      $= -\frac{1}{2\sqrt{\frac{4 - x^2}{4}}} = -\frac{1}{2 \cdot \frac{\sqrt{4 - x^2}}{2}} = -\frac{1}{\sqrt{4 - x^2}}$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.4
+    dok: 2
+    review: generated
+
+  - id: 5c059fee-4b1b-43c1-b426-6b26bdd26997
+    question: If $f(x) = \tan^{-1}(e^x)$, what is the value of $f'(0)$?
+    answer: $\frac{1}{2}$
+    distractors:
+      - 1
+      - $\frac{\pi}{4}$
+      - 2
+    solution: |
+      $f'(x) = \frac{1}{1 + (e^x)^2} \cdot e^x = \frac{e^x}{1 + e^{2x}}$
+
+      $f'(0) = \frac{1}{1 + 1} = \frac{1}{2}$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.4
+    dok: 2
+    review: generated
+
+  - id: 44021fd7-7951-4cf0-aafd-e4e2e05f744a
+    question: If $y = x\sin^{-1} x$, then $\dydx =$
+    answer: $\sin^{-1} x + \frac{x}{\sqrt{1 - x^2}}$
+    distractors:
+      - $\frac{x}{\sqrt{1 - x^2}}$
+      - $\sin^{-1} x + \frac{1}{\sqrt{1 - x^2}}$
+      - $\frac{1}{\sqrt{1 - x^2}}$
+    solution: |
+      $\dydx = 1 \cdot \sin^{-1} x + x \cdot \frac{1}{\sqrt{1 - x^2}}$ \quad (Product Rule)
+
+      $= \sin^{-1} x + \frac{x}{\sqrt{1 - x^2}}$
+    calculator_active: false
+    sections:
+      - 3.4
+      - 3.5
+    dok: 2
+    review: generated
+
+  - id: 69349cf2-7c16-4e60-8e19-f82b387927fd
+    question: If $f(x) = \sin^{-1} x$, what is the value of $f'\left( \frac{1}{2} \right)$?
+    answer: $\frac{2\sqrt 3}{3}$
+    distractors:
+      - $\frac{\sqrt 3}{2}$
+      - $-\frac{2\sqrt 3}{3}$
+      - $\frac{4}{3}$
+    solution: |
+      $f'(x) = \frac{1}{\sqrt{1 - x^2}}$
+
+      $f'\left( \frac{1}{2} \right) = \frac{1}{\sqrt{1 - \frac{1}{4}}} = \frac{1}{\sqrt{\frac{3}{4}}} = \frac{2}{\sqrt 3} = \frac{2\sqrt 3}{3}$
+    calculator_active: false
+    sections:
+      - 3.4
+    dok: 2
+    review: generated
+
+  - id: 0bea117e-f05b-42b2-9f83-9bf5360fe702
+    question: |
+      Which of the following is an equation of the line tangent to the graph of
+      $y = \tan^{-1} x$ at $x = 1$?
+    answer: $y - \frac{\pi}{4} = \frac{1}{2}(x - 1)$
+    distractors:
+      - $y - \frac{\pi}{4} = x - 1$
+      - $y - 1 = \frac{1}{2}\left( x - \frac{\pi}{4} \right)$
+      - $y - \frac{\pi}{4} = 2(x - 1)$
+    solution: |
+      $y(1) = \tan^{-1} 1 = \frac{\pi}{4}$
+
+      $\dydx = \frac{1}{1 + x^2} \Rightarrow \dydx \Big|_{x = 1} = \frac{1}{2}$
+
+      $y - \frac{\pi}{4} = \frac{1}{2}(x - 1)$
+    calculator_active: false
+    sections:
+      - 3.4
+    dok: 2
+    review: generated
+
+  - id: 9ca02c14-0469-4177-9278-e388820a4d6e
+    question: $\frac{d}{dx}\left[ \cot^{-1}(3x) \right] =$
+    answer: $-\frac{3}{1 + 9x^2}$
+    distractors:
+      - $\frac{3}{1 + 9x^2}$
+      - $-\frac{1}{1 + 9x^2}$
+      - $-\frac{3}{1 + 3x^2}$
+    solution: $\frac{d}{dx}\left[ \cot^{-1}(3x) \right] = -\frac{1}{1 + (3x)^2} \cdot 3 = -\frac{3}{1 + 9x^2}$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.4
+    dok: 2
+    review: none
+
+  - id: 3bfdca8d-0acf-4856-8b75-cd87d4392d9c
+    question: If $f(x) = \left( \sin^{-1} x \right)^2$, then $f'(x) =$
+    answer: $\frac{2\sin^{-1} x}{\sqrt{1 - x^2}}$
+    distractors:
+      - $2\sin^{-1} x$
+      - $\frac{2}{\sqrt{1 - x^2}}$
+      - $\frac{2x}{\sqrt{1 - x^4}}$
+    solution: $f'(x) = 2\sin^{-1} x \cdot \frac{1}{\sqrt{1 - x^2}} = \frac{2\sin^{-1} x}{\sqrt{1 - x^2}}$ \quad (Chain Rule)
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.4
+    dok: 2
+    review: generated
+
+  - id: 1598cd5e-a59f-4d3d-a2b0-e22433153ac7
+    question: If $g(x) = \cos^{-1}(x^2)$, then $g'(x) =$
+    answer: $-\frac{2x}{\sqrt{1 - x^4}}$
+    distractors:
+      - $\frac{2x}{\sqrt{1 - x^4}}$
+      - $-\frac{1}{\sqrt{1 - x^4}}$
+      - $-\frac{2x}{\sqrt{1 - x^2}}$
+    solution: $g'(x) = -\frac{1}{\sqrt{1 - (x^2)^2}} \cdot 2x = -\frac{2x}{\sqrt{1 - x^4}}$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.4
+    dok: 2
+    review: generated
+
+  - id: 398dfcce-157b-46e3-902a-e87c3840eb99
+    question: If $f(x) = x^2\sin(3x)$, then $f'(x) =$
+    answer: $2x\sin(3x) + 3x^2\cos(3x)$
+    distractors:
+      - $6x\cos(3x)$
+      - $2x\sin(3x) + x^2\cos(3x)$
+      - $2x\sin(3x) - 3x^2\cos(3x)$
+    solution: |
+      $f'(x) = 2x \cdot \sin(3x) + x^2 \cdot \cos(3x) \cdot 3$ \quad (Product and Chain Rules)
+
+      $= 2x\sin(3x) + 3x^2\cos(3x)$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.5
+    dok: 2
+    review: generated
+
+  - id: 0dc49e7b-82fe-4d62-90be-c36a21358051
+    question: If $y = \frac{e^{3x}}{x}$, then $\dydx =$
+    answer: $\frac{e^{3x}(3x - 1)}{x^2}$
+    distractors:
+      - $3e^{3x}$
+      - $\frac{e^{3x}(1 - 3x)}{x^2}$
+      - $\frac{e^{3x}(3x - 1)}{x}$
+    solution: |
+      $\dydx = \frac{x \cdot 3e^{3x} - e^{3x} \cdot 1}{x^2}$ \quad (Quotient and Chain Rules)
+
+      $= \frac{e^{3x}(3x - 1)}{x^2}$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.5
+    dok: 2
+    review: generated
+
+  - id: 2d9aa7aa-f96b-4dd8-83b0-53ac552bab7a
+    question: If $f(x) = \ln(\sin x)$, then $f'(x) =$
+    answer: $\cot x$
+    distractors:
+      - $\frac{1}{\sin x}$
+      - $\tan x$
+      - $-\cot x$
+    solution: $f'(x) = \frac{1}{\sin x} \cdot \cos x = \frac{\cos x}{\sin x} = \cot x$ \quad (Chain Rule)
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.5
+    dok: 2
+    review: generated
+
+  - id: cfd6d1f0-7c80-4796-b0d7-6dcdcfacc1e8
+    question: |
+      The table below gives values of the differentiable functions $f$ and $g$
+      and their derivatives at selected values of $x$. If $h(x) = f(x)g(2x)$,
+      what is the value of $h'(1)$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+          \hline
+          \bm{$x$} & \bm{$f(x)$} & \bm{$f'(x)$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
+          \hline
+          1 & 2 & $-1$ & 4 & 2 \\
+          \hline
+          2 & 4 & 3 & 1 & $-2$ \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: $-9$
+    distractors:
+      - $-5$
+      - 4
+      - 9
+    solution: |
+      $h'(x) = f'(x)g(2x) + f(x) \cdot g'(2x) \cdot 2$ \quad (Product and Chain Rules)
+
+      $h'(1) = f'(1)g(2) + 2f(1)g'(2) = (-1)(1) + 2(2)(-2) = -1 - 8 = -9$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.5
+    dok: 2
+    review: generated
+
+  - id: 2b6a5a6d-545a-42c5-abe0-9e38e039501f
+    question: |
+      The table below gives values of the differentiable functions $f$ and $g$
+      and their derivatives at selected values of $x$. If $k(x) = \sqrt{f(x)}$,
+      what is the value of $k'(2)$?
+
+      \fullwidth{\begin{center}
+        \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+          \hline
+          \bm{$x$} & \bm{$f(x)$} & \bm{$f'(x)$} & \bm{$g(x)$} & \bm{$g'(x)$} \\
+          \hline
+          1 & 2 & $-1$ & 4 & 2 \\
+          \hline
+          2 & 4 & 3 & 1 & $-2$ \\
+          \hline
+        \end{tabularx}
+      \end{center}}
+    answer: $\frac{3}{4}$
+    distractors:
+      - $\frac{3}{2}$
+      - $\frac{1}{4}$
+      - 3
+    solution: |
+      $k'(x) = \frac{1}{2}\left( f(x) \right)^{-\frac{1}{2}} \cdot f'(x) = \frac{f'(x)}{2\sqrt{f(x)}}$
+
+      $k'(2) = \frac{f'(2)}{2\sqrt{f(2)}} = \frac{3}{2\sqrt 4} = \frac{3}{4}$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.5
+    dok: 2
+    review: generated
+
+  - id: 102e5c4b-4ea3-4802-9fe3-adf445af4030
+    question: |
+      Which of the following functions requires the chain rule to find its
+      derivative?
+    answer: $\sin^2 x$
+    distractors:
+      - $x^2\sin x$
+      - $\frac{\sin x}{x}$
+      - $\sin x + x^2$
+    solution: |
+      $\sin^2 x = (\sin x)^2$ is a composition: the outer function is $u^2$ and
+      the inner function is $\sin x$, so the chain rule applies. The others
+      need only the product, quotient, or sum rules.
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.5
+    dok: 1
+    review: generated
+
+  - id: 05e18dc8-aea5-45e1-b4e5-f06653b944c9
+    question: If $f(x) = e^x\cos(2x)$, what is the value of $f'(0)$?
+    answer: 1
+    distractors:
+      - 0
+      - 2
+      - $-1$
+    solution: |
+      $f'(x) = e^x\cos(2x) + e^x \cdot (-\sin(2x)) \cdot 2$ \quad (Product and Chain Rules)
+
+      $f'(0) = e^0\cos 0 - 2e^0\sin 0 = 1 - 0 = 1$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.5
+    dok: 2
+    review: generated
+
+  - id: cb6997a4-a549-42cb-82d4-95c6985b8fe5
+    question: If $f(x) = \ln\left( x^2e^x \right)$ for $x > 0$, then $f'(x) =$
+    answer: $\frac{2}{x} + 1$
+    distractors:
+      - $\frac{1}{x^2e^x}$
+      - $\frac{2}{x}$
+      - $\frac{2}{x} + e^x$
+    solution: |
+      Rewrite using properties of logarithms:
+      $f(x) = \ln x^2 + \ln e^x = 2\ln x + x$
+
+      $f'(x) = \frac{2}{x} + 1$
+    calculator_active: false
+    sections:
+      - 3.5
+    dok: 2
+    review: none
+
+  - id: 2f4792f7-bc2c-4179-8f92-b42382a79e68
+    question: If $f(x) = \log_2(x^2 + 3)$, then $f'(x) =$
+    answer: $\frac{2x}{(x^2 + 3)\ln 2}$
+    distractors:
+      - $\frac{2x}{x^2 + 3}$
+      - $\frac{1}{(x^2 + 3)\ln 2}$
+      - $\frac{2x\ln 2}{x^2 + 3}$
+    solution: $f'(x) = \frac{1}{(x^2 + 3)\ln 2} \cdot 2x = \frac{2x}{(x^2 + 3)\ln 2}$ \quad (Chain Rule)
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.5
+    dok: 2
+    review: generated
+
+  - id: 0f2510f6-0fb0-43d3-8eab-98a0a7f6484a
+    question: If $y = \sin(2x)$, then $\frac{d^2y}{dx^2} =$
+    answer: $-4\sin(2x)$
+    distractors:
+      - $4\sin(2x)$
+      - $-2\sin(2x)$
+      - $-4\cos(2x)$
+    solution: |
+      $\dydx = 2\cos(2x)$
+
+      $\frac{d^2y}{dx^2} = -2\sin(2x) \cdot 2 = -4\sin(2x)$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.6
+    dok: 2
+    review: generated
+
+  - id: acd6d2de-e7a2-488b-b292-df5744368408
+    question: If $f(x) = e^{-3x}$, then $f'''(x) =$
+    answer: $-27e^{-3x}$
+    distractors:
+      - $27e^{-3x}$
+      - $-9e^{-3x}$
+      - $-3e^{-3x}$
+    solution: |
+      $f'(x) = -3e^{-3x}$
+
+      $f''(x) = 9e^{-3x}$
+
+      $f'''(x) = -27e^{-3x}$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.6
+    dok: 2
+    review: none
+
+  - id: 1dfa11de-a706-4f05-9189-5dea42cdd5d1
+    question: |
+      If $y = f(x)$, which of the following is NOT a notation for the second
+      derivative of $f$?
+    answer: $\left( \dydx \right)^2$
+    distractors:
+      - $\frac{d^2y}{dx^2}$
+      - $f''(x)$
+      - $y''$
+    solution: |
+      $\frac{d^2y}{dx^2}$, $f''(x)$, and $y''$ all denote the second derivative.
+
+      $\left( \dydx \right)^2$ is the square of the first derivative.
+    calculator_active: false
+    sections:
+      - 3.6
+    dok: 1
+    review: generated
+
+  - id: 91ee4e10-e9a9-48d7-aa09-e71557dbc51a
+    question: If $f(x) = x^4 - 2x^3$, what is the value of $f''(1)$?
+    answer: 0
+    distractors:
+      - $-2$
+      - 12
+      - $-1$
+    solution: |
+      $f'(x) = 4x^3 - 6x^2$
+
+      $f''(x) = 12x^2 - 12x$
+
+      $f''(1) = 12 - 12 = 0$
+    calculator_active: false
+    sections:
+      - 3.6
+    dok: 1
+    review: none
+
+  - id: 62bebf21-b17b-4a2d-b1ab-001973d61d5d
+    question: If $y = \ln x$, then $\frac{d^4y}{dx^4} =$
+    answer: $-\frac{6}{x^4}$
+    distractors:
+      - $\frac{6}{x^4}$
+      - $\frac{2}{x^3}$
+      - $-\frac{24}{x^5}$
+    solution: |
+      $y' = \frac{1}{x} = x^{-1}$
+
+      $y'' = -x^{-2}$
+
+      $y''' = 2x^{-3}$
+
+      $y^{(4)} = -6x^{-4} = -\frac{6}{x^4}$
+    calculator_active: false
+    sections:
+      - 3.6
+    dok: 2
+    review: generated
+
+  - id: b01906fe-c3c0-40ec-a345-a4d80ad2acc9
+    question: If $f(x) = e^{2x}$, then for any positive integer $n$, $f^{(n)}(x) =$
+    answer: $2^ne^{2x}$
+    distractors:
+      - $2ne^{2x}$
+      - $ne^{2x}$
+      - $2e^{2x}$
+    solution: |
+      $f'(x) = 2e^{2x}$
+
+      $f''(x) = 4e^{2x} = 2^2e^{2x}$
+
+      $f'''(x) = 8e^{2x} = 2^3e^{2x}$
+
+      Each derivative multiplies by another factor of 2, so $f^{(n)}(x) = 2^ne^{2x}$.
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.6
+    dok: 3
+    review: generated
+
+  - id: 70a4d715-e8d3-4d1a-abea-1c9a6e182c8d
+    question: $\frac{d^{50}}{dx^{50}}\left[ \cos x \right] =$
+    answer: $-\cos x$
+    distractors:
+      - $\cos x$
+      - $\sin x$
+      - $-\sin x$
+    solution: |
+      The derivatives of $\cos x$ repeat every four:
+      $-\sin x, -\cos x, \sin x, \cos x, \ldots$
+
+      $50 = 4 \cdot 12 + 2$, so the 50th derivative equals the 2nd derivative,
+      $-\cos x$.
+    calculator_active: false
+    sections:
+      - 3.6
+    dok: 3
+    review: generated
+
+  - id: abef42a9-b70f-4e56-9223-7178e99b7b71
+    question: If $f(x) = xe^x$, then $f''(x) =$
+    answer: $e^x(x + 2)$
+    distractors:
+      - $e^x$
+      - $e^x(x + 1)$
+      - $xe^x$
+    solution: |
+      $f'(x) = e^x + xe^x = e^x(x + 1)$ \quad (Product Rule)
+
+      $f''(x) = e^x(x + 1) + e^x \cdot 1 = e^x(x + 2)$
+    calculator_active: false
+    sections:
+      - 3.5
+      - 3.6
+    dok: 2
+    review: generated
+
+  - id: 47a75ab1-e55c-4f9f-b2ca-6b23c6386197
+    question: If $f'(x) = (x^2 + 1)^3$, what is the value of $f''(1)$?
+    answer: 24
+    distractors:
+      - 12
+      - 8
+      - 6
+    solution: |
+      $f''(x) = 3(x^2 + 1)^2 \cdot 2x$ \quad (Chain Rule)
+
+      $f''(1) = 3(2)^2 \cdot 2 = 24$
+    calculator_active: false
+    sections:
+      - 3.1
+      - 3.6
+    dok: 2
+    review: generated
