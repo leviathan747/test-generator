@@ -17,9 +17,10 @@ questions:
       guarantees that $f$ attains an absolute maximum value $f(c)$ for some $c$
       in $[a, b]$, so $f(c) \ge f(x)$ for all $x$ in $[a, b]$.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.2
+    dok: 3
+    review: none
 
   - id: a73a79b6-2444-45f8-82fc-35ce65ad363e
     legacy_ids:
@@ -30,10 +31,9 @@ questions:
       The graphs of the \emph{derivatives} of the functions $f$, $g$, and $h$ are
       shown below.  Which of the functions $f$, $g$ or $h$ have a relative
       maximum on the open interval $a<x<b$ ?
-
-      \fullwidth{\begin{center}
-        \includestandalone[width=7in]{figures/18}
-      \end{center}}
+    figure: 18.tex
+    figure_width: 7in
+    figure_placement: below
     answer: $f$ only
     distractors:
       - $g$ only
@@ -41,9 +41,11 @@ questions:
       - $f$ and $g$ only
     solution: Only the graph of $f'$ changes from positive to negative on $a < x < b$, indicating a relative maximum.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.4
+      - 5.8
+    dok: 2
+    review: none
 
   - id: 143b8581-b327-40d5-bc53-d1df79d0992d
     legacy_ids:
@@ -53,10 +55,8 @@ questions:
     question: |
       The graph of $y=h(x)$ is shown below. Which of the following could be the
       graph of $y=h'(x)$?
-
-      \fullwidth{\begin{center}
-        \input{figures/19.tex}
-      \end{center}}
+    figure: 19.tex
+    figure_placement: below
     answer: \input{figures/20.tex}
     distractors:
       - \input{figures/21.tex}
@@ -64,9 +64,10 @@ questions:
       - \input{figures/23.tex}
     solution: The graph of $h'$ must be positive where $h$ is increasing, negative where $h$ is decreasing, and zero where $h$ has a horizontal tangent.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.8
+    dok: 2
+    review: none
 
   - id: b3af64b8-07bf-4193-9a87-9fe99ed5fd55
     legacy_ids:
@@ -80,7 +81,7 @@ questions:
 
       \textbf{I.\phantom{II}} \quad $f'(c)$ must exist. \\
       \textbf{II.\phantom{I}} \quad If $f'(c)$ exists, then $f'(c) = 0$. \\
-      \textbf{III.} \quad If $f''(c)$ exists, then $f''(c) > 0$. \\
+      \textbf{III.} \quad If $f''(c)$ exists, then $f''(c) > 0$.
     answer: II only
     distractors:
       - III only
@@ -93,9 +94,11 @@ questions:
       \textbf{III.} False: if $f''(c)$ exists at a relative maximum, the graph is
       concave down, so $f''(c) \le 0$.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.2
+      - 5.7
+    dok: 3
+    review: none
 
   - id: 26aee9f5-33cf-410a-baf2-f3d600aedacd
     legacy_ids:
@@ -119,9 +122,10 @@ questions:
       \end{gather*}
       ($c = \sqrt{10}$ since $c$ must be in $(2, 5)$)
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.1
+    dok: 2
+    review: none
 
   - id: 9eaac5c4-b4bc-473c-a0f2-096b642424d8
     legacy_ids:
@@ -144,9 +148,10 @@ questions:
         f''(2) = 3(2)^2 - 4 = 8 > 0 \implies \text{relative minimum}
       \end{gather*}
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.7
+    dok: 2
+    review: none
 
   - id: 3f16797c-5211-4199-9aaa-c7f06dcdffb1
     legacy_ids:
@@ -170,11 +175,13 @@ questions:
         \hline
         \bm{$f(x)$} & -8 & 12 & 8 & 28 \\
       \end{tabularx}
+
       The absolute maximum value of 28 occurs at $x = 4$.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.5
+    dok: 2
+    review: none
 
   - id: 5c96c1db-c162-4a04-a65d-714de9d346b2
     legacy_ids:
@@ -196,9 +203,10 @@ questions:
       \end{gather*}
       $f''$ changes sign only at $x = 1$ (at $x = 0$ the factor $x^2$ does not change sign), so the only point of inflection is at $x = 1$.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.6
+    dok: 2
+    review: none
 
   - id: 004288bc-3f02-40ef-afef-98ee413b16c4
     legacy_ids:
@@ -220,9 +228,10 @@ questions:
       \sgchart{-3,1}{f'(x): +-+}
       $f$ is increasing where $f'(x) > 0$: $x < -3$ or $x > 1$.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.3
+    dok: 2
+    review: none
 
   - id: 888c3e6a-0147-4840-900d-ae4b0bd07f32
     legacy_ids:
@@ -244,9 +253,10 @@ questions:
       \sgchart{-2,2}{f'(x): -+-}
       $f$ has a relative minimum at $x = -2$ and a relative maximum at $x = 2$.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.4
+    dok: 3
+    review: none
 
   - id: cbb9f348-6598-47f6-86f7-dd40ba6c02e1
     legacy_ids:
@@ -265,9 +275,10 @@ questions:
       \sgchart{-1,0,2}{f''(x): +-++}
       $f''$ changes sign at $x = -1$ and $x = 0$. At $x = 2$ the factor $(x - 2)^2$ does not change sign, so there is no inflection point there.
     calculator_active: true
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.6
+    dok: 2
+    review: none
 
   - id: c926ebb0-8a68-4509-87c0-eaa2575196ff
     legacy_ids:
@@ -289,9 +300,10 @@ questions:
       \sgchart{-3,0,2}{f'(x): +--+}
       $f'$ changes from positive to negative only at $x = -3$, so $f$ has one relative maximum.
     calculator_active: true
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.4
+    dok: 2
+    review: none
 
   - id: e8bed730-a622-4721-b0d1-9d186ab7a7a0
     legacy_ids:
@@ -310,9 +322,10 @@ questions:
       Graphing $f'(x) = \frac{\cos x}{x} - \frac{1}{5}$ on $(0, 10)$ shows that
       $f'$ changes sign exactly once, so $f$ has one critical value.
     calculator_active: true
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.2
+    dok: 2
+    review: none
 
   - id: a7681429-13fd-40d8-ad13-f8b4e83fe5cf
     legacy_ids:
@@ -320,23 +333,25 @@ questions:
     related_to:
       - c2385d31-bd97-496d-837a-b5047c6ecce5
     question: |
-      The graph of $f'(x)$ is shown in the figure below. For what values of
-      $x$, on the interval $-4 < x < 6$ is the graph of $f$ both increasing and
-      concave down?
-
-      \fullwidth{\begin{center}
-        \input{figures/24.tex}
-      \end{center}}
-    answer: $(-4, -3)$ and $(1, 3)$
+      The graph of $f'(x)$ is shown in the figure below. $f'(x)$ has zeros at
+      $x = -4$ and $x = 6$ and local extrema at $x = -2$, $x = 1$, and $x = 4$.
+      For what values of $x$, on the interval $-5 < x < 7$ is the graph of $f$
+      both increasing and concave down?
+    figure: 24.tex
+    figure_placement: below
+    answer: $(-5, -4)$
     distractors:
-      - $(-4, -3)$ and $(4, 6)$
-      - $(-2, 1)$ and $(4, 6)$
-      - $(4, 6)$
-    solution: $f$ is increasing where $f'(x) > 0$ and concave down where $f'$ is decreasing. Both occur on $(-4, -3)$ and $(1, 3)$.
+      - $(-5, -4)$ and $(6, 7)$
+      - $(-5, -2)$ and $(1, 4)$
+      - $(6, 7)$
+    solution: $f$ is increasing where $f'(x) > 0$ and concave down where $f'$ is decreasing. Both occur only on $(-5, -4)$.
     calculator_active: true
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.3
+      - 5.6
+      - 5.9
+    dok: 2
+    review: none
 
   - id: 84a0636e-23ce-45f0-8f9c-b869e4be73c1
     legacy_ids:
@@ -348,14 +363,15 @@ questions:
       $f(x) = \frac{2}{(x + 1.5)^2}$ on the interval $[-3, 0]$.
     answer: $f$ is not continuous at $x = -1.5$
     distractors:
-      - Both (B) and (D)
+      - $f$ is not defined at $x = -3$ and $x = 0$, and $f(-3) \ne f(0)$
       - $f$ is not defined at $x = -3$ and $x = 0$
       - $f(-3) \ne f(0)$
     solution: $f$ is undefined at $x = -1.5$, which lies in $[-3, 0]$, so $f$ is not continuous on the interval and Rolle's Theorem does not apply.
     calculator_active: true
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.1
+    dok: 2
+    review: none
 
   - id: c5290fac-2bfc-4765-ad67-9355b25bee4b
     legacy_ids:
@@ -376,8 +392,9 @@ questions:
       \end{gather*}
       \sgchart{1,2,3}{f'(x): +-+-}
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 5.4
+    dok: 3
     review: none
 
   - id: 567877cb-ce02-44fd-801b-ee3aa07e8aba
@@ -399,8 +416,9 @@ questions:
       \end{gather*}
       Since $f'(x) > 0$ for all real numbers, $f(x)$ is increasing for all real numbers.
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 5.3
+    dok: 2
     review: none
 
   - id: 8bccf2f3-b409-41d8-b216-c1808a014b6a
@@ -420,11 +438,12 @@ questions:
     solution: |
       \begin{gather*}
         f'(x) = 4x^3 + 12x^2 + 12x + 60 \\
-        f''(x) = 12x^2 + 24x + 12 = 12(x^2 + 2x + 1) = 12(x + 1)^2 \\
+        f''(x) = 12x^2 + 24x + 12 = 12(x^2 + 2x + 1) = 12(x + 1)^2
       \end{gather*}
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 5.6
+    dok: 2
     review: none
 
   - id: f463530d-c4aa-461e-a582-8dac8775555f
@@ -436,10 +455,9 @@ questions:
       The graphs of the \emph{derivatives} of the functions $f$, $g$, and $h$
       are shown below.  Which of the functions $f$, $g$ or $h$ have a relative
       minimum on the open interval $a<x<b$ ?
-
-      \fullwidth{\begin{center}
-        \includestandalone[width=7in]{figures/18}
-      \end{center}}
+    figure: 18.tex
+    figure_width: 7in
+    figure_placement: below
     answer: $f$ and $g$ only
     distractors:
       - $g$ only
@@ -447,8 +465,10 @@ questions:
       - $f$ only
     solution: Graphs show $f'$ and $g'$ going from negative to positive in the interval $a < x < b$.
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 5.4
+      - 5.8
+    dok: 2
     review: none
 
   - id: 9673c318-c664-4fca-949f-c950641f148e
@@ -459,10 +479,8 @@ questions:
     question: |
       The graph of $y=h(x)$ is shown below. Which of the following could be the
       graph of $y=h'(x)$?
-
-      \fullwidth{\begin{center}
-        \input{figures/25.tex}
-      \end{center}}
+    figure: 25.tex
+    figure_placement: below
     answer: \input{figures/23.tex}
     distractors:
       - \input{figures/21.tex}
@@ -470,9 +488,10 @@ questions:
       - \input{figures/20.tex}
     solution: The graph of $h'$ must be positive where $h$ is increasing, negative where $h$ is decreasing, and zero where $h$ has a horizontal tangent.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.8
+    dok: 2
+    review: none
 
   - id: af02cafc-b905-49b1-9de4-305d17dbbf4c
     legacy_ids:
@@ -497,8 +516,9 @@ questions:
         \bm{$f(x)$} & -8 & 12 & 8 & 28 \\
       \end{tabularx}
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 5.5
+    dok: 2
     review: none
 
   - id: 11a89a32-5e4f-4b6e-8bd7-8dc8b008e325
@@ -521,8 +541,9 @@ questions:
         f''(2) = 3(2)^2 - 3 = 9 > 0 \implies \text{relative minimum}
       \end{gather*}
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 5.7
+    dok: 2
     review: none
 
   - id: 92fa180a-a653-4be4-95ed-f5b8136f131a
@@ -537,7 +558,7 @@ questions:
 
       \textbf{I.\phantom{II}} \quad $f'(c)$ must not exist. \\
       \textbf{II.\phantom{I}} \quad If $f'(c)$ exists, then $f'(c) = 0$. \\
-      \textbf{III.} \quad If $f''(c)$ exists, then $f''(c) < 0$. \\
+      \textbf{III.} \quad If $f''(c)$ exists, then $f''(c) < 0$.
     answer: II only
     distractors:
       - II and III only
@@ -548,11 +569,13 @@ questions:
       so it is not required that $f'(c)$ fail to exist. \\
       \textbf{II.} True: if $f'(c)$ exists at a relative minimum, then $f'(c) = 0$. \\
       \textbf{III.} False: at a relative minimum the graph is concave up, so
-      $f''(c) > 0$, not $f''(c) < 0$.
+      $f''(c) \ge 0$, not $f''(c) < 0$.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.2
+      - 5.7
+    dok: 3
+    review: none
 
   - id: e51d31e1-380a-4d98-86ab-408476093611
     legacy_ids:
@@ -581,8 +604,9 @@ questions:
       \end{gather*}
       ($c = -\sqrt{10}$ since $c$ must be in $(-5, -2)$)
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 5.1
+    dok: 2
     review: none
 
   - id: 46f87a40-2ffd-4394-8b5a-ae6d1dceffdb
@@ -603,9 +627,10 @@ questions:
       Mean Value Theorem guarantees that there is a number $c$ in $(a, b)$ such
       that $f'(c) = \frac{f(b) - f(a)}{b - a}$.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.1
+    dok: 3
+    review: none
 
   - id: fbaf77a5-32be-494f-a87a-42e91e3b8f23
     legacy_ids:
@@ -619,7 +644,7 @@ questions:
     distractors:
       - $f$ is not continuous at $x = -1.5$
       - $f$ is not defined at $x = -1$ and $x = 1$
-      - Both \emph{A} and \emph{B}
+      - $f$ is not continuous at $x = -1.5$, and $f(-1) \ne f(1)$
     solution: |
       \begin{gather*}
         f(-1) = \frac{2}{(-1 + 1.5)^2} = \frac{2}{0.25} = 8 \qquad
@@ -627,9 +652,10 @@ questions:
       \end{gather*}
       Since $-1.5$ is not in $[-1, 1]$, $f$ is continuous and differentiable on the interval, but $f(-1) \ne f(1)$, so Rolle's Theorem does not apply.
     calculator_active: true
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.1
+    dok: 2
+    review: none
 
   - id: 974dd223-0c78-4e8b-8ba1-a72f5b7c2a00
     legacy_ids:
@@ -648,9 +674,10 @@ questions:
       Graphing $f'(x) = \frac{25 \sin x}{x^2} - \frac{1}{6}$ on $(0, 10)$ shows that
       $f'$ changes sign three times, so $f$ has three critical values.
     calculator_active: true
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.2
+    dok: 2
+    review: none
 
   - id: c2385d31-bd97-496d-837a-b5047c6ecce5
     legacy_ids:
@@ -658,23 +685,25 @@ questions:
     related_to:
       - a7681429-13fd-40d8-ad13-f8b4e83fe5cf
     question: |
-      The graph of $f'(x)$ is shown in the figure below. For what values of
-      $x$, on the interval $-4 < x < 6$ is the graph of $f$ both decreasing and
-      concave down?
-
-      \fullwidth{\begin{center}
-        \input{figures/24.tex}
-      \end{center}}
-    answer: $(-3, -2)$ and $(3, 4)$
+      The graph of $f'(x)$ is shown in the figure below. $f'(x)$ has zeros at
+      $x = -4$ and $x = 6$ and local extrema at $x = -2$, $x = 1$, and $x = 4$.
+      For what values of $x$, on the interval $-5 < x < 7$ is the graph of $f$
+      both decreasing and concave down?
+    figure: 24.tex
+    figure_placement: below
+    answer: $(-4, -2)$ and $(1, 4)$
     distractors:
-      - $(-4, -3)$ and $(1, 3)$
-      - $(-4, -2)$ and $(1, 4)$
-      - $(4, 5)$
-    solution: $f$ is decreasing where $f'(x) < 0$ and concave down where $f'$ is decreasing. Both occur on $(-3, -2)$ and $(3, 4)$.
+      - $(-5, -4)$
+      - $(-5, -2)$ and $(1, 4)$
+      - $(-2, 1)$ and $(4, 6)$
+    solution: $f$ is decreasing where $f'(x) < 0$ and concave down where $f'$ is decreasing. Both occur on $(-4, -2)$ and $(1, 4)$.
     calculator_active: true
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.3
+      - 5.6
+      - 5.9
+    dok: 2
+    review: none
 
   - id: c819eb33-229f-4868-800b-de1e6ae12428
     legacy_ids:
@@ -696,9 +725,10 @@ questions:
       \sgchart{-1,0,5}{f'(x): -+-+}
       $f'$ changes from negative to positive at $x = -1$ and $x = 5$, so $f$ has two relative minima.
     calculator_active: true
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.4
+    dok: 2
+    review: none
 
   - id: a9b87525-6ace-4c28-a3d3-e08a5e7cda2f
     legacy_ids:
@@ -715,6 +745,1502 @@ questions:
       - -1, 0, and 5
     solution: $x^4 \ge 0$ and $x^2 + 1 > 0$ do not change sign, so $f''$ changes sign only at $x = 5$, giving an inflection point at $x = 5$ only.
     calculator_active: true
-    sections: []
-    dok: unknown
-    review: check solution
+    sections:
+      - 5.6
+    dok: 2
+    review: none
+
+  - id: e263dbdc-110f-405a-9078-6ca904329298
+    question: |
+      Let $f(x) = x^2 - 4x + 1$. What value of $c$ satisfies the conclusion of
+      the Mean Value Theorem for $f$ on the interval $[0, 3]$?
+    answer: $\frac{3}{2}$
+    distractors:
+      - $\frac{1}{2}$
+      - 2
+      - $\frac{5}{2}$
+    solution: |
+      \begin{gather*}
+        \frac{f(3) - f(0)}{3 - 0} = \frac{-2 - 1}{3} = -1 \\
+        f'(c) = 2c - 4 = -1 \implies c = \frac{3}{2}
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.1
+    dok: 2
+    review: generated
+
+  - id: 8337ca6f-8c98-4f33-b933-60a3ef7a0cb0
+    question: |
+      Let $f(x) = x^3$. What value of $c$ satisfies the conclusion of the Mean
+      Value Theorem for $f$ on the interval $[0, 3]$?
+    answer: $\sqrt{3}$
+    distractors:
+      - $\pm\sqrt{3}$
+      - $\frac{3}{2}$
+      - 3
+    solution: |
+      \begin{gather*}
+        \frac{f(3) - f(0)}{3 - 0} = \frac{27 - 0}{3} = 9 \\
+        f'(c) = 3c^2 = 9 \implies c^2 = 3 \implies c = \sqrt{3}
+      \end{gather*}
+      ($c = \sqrt{3}$ since $c$ must be in $(0, 3)$)
+    calculator_active: false
+    sections:
+      - 5.1
+    dok: 2
+    review: generated
+
+  - id: e6b47ada-8e8f-4657-aeab-74e97218a741
+    question: |
+      Let $f(x) = \sqrt{x}$. What value of $c$ satisfies the conclusion of the
+      Mean Value Theorem for $f$ on the interval $[1, 9]$?
+    answer: 4
+    distractors:
+      - 5
+      - 2
+      - $\frac{9}{4}$
+    solution: |
+      \begin{gather*}
+        \frac{f(9) - f(1)}{9 - 1} = \frac{3 - 1}{8} = \frac{1}{4} \\
+        f'(c) = \frac{1}{2\sqrt{c}} = \frac{1}{4} \implies \sqrt{c} = 2
+        \implies c = 4
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.1
+    dok: 2
+    review: generated
+
+  - id: 589c3219-ba8b-458a-ae73-37b69bc71208
+    question: |
+      Which of the following functions satisfies the hypotheses of the Mean
+      Value Theorem on the interval $[-1, 1]$?
+    answer: $f(x) = x^3 - x$
+    distractors:
+      - $f(x) = |x|$
+      - $f(x) = \frac{1}{x}$
+      - $f(x) = x^{2/3}$
+    solution: |
+      $f(x) = x^3 - x$ is a polynomial, so it is continuous on $[-1, 1]$ and
+      differentiable on $(-1, 1)$. $|x|$ and $x^{2/3}$ are not differentiable at
+      $x = 0$, and $\frac{1}{x}$ is not continuous at $x = 0$.
+    calculator_active: false
+    sections:
+      - 5.1
+    dok: 2
+    review: generated
+
+  - id: b5274e72-b67e-477b-a114-89bb8b7d209e
+    question: |
+      Let $f$ be a function that is differentiable for all real numbers, with
+      $f(1) = 3$ and $f(5) = 11$. Which of the following \emph{must} be true?
+    answer: There is a number $c$ in $(1, 5)$ such that $f'(c) = 2$.
+    distractors:
+      - There is a number $c$ in $(1, 5)$ such that $f'(c) = 0$.
+      - There is a number $c$ in $(1, 5)$ such that $f(c) = 2$.
+      - $f'(x) = 2$ for all $x$ in $(1, 5)$.
+    solution: |
+      Because $f$ is differentiable everywhere, it is continuous on $[1, 5]$
+      and differentiable on $(1, 5)$. By the Mean Value Theorem there is a $c$
+      in $(1, 5)$ with
+      \[ f'(c) = \frac{f(5) - f(1)}{5 - 1} = \frac{11 - 3}{4} = 2. \]
+    calculator_active: false
+    sections:
+      - 5.1
+    dok: 3
+    review: generated
+
+  - id: 642091cf-af40-4dc7-8925-a70615b89054
+    question: |
+      Let $f(x) = x^2 - 6x + 5$. Since $f(1) = f(5)$, Rolle's Theorem
+      guarantees a value $c$ in $(1, 5)$ such that $f'(c) = 0$. What is $c$?
+    answer: 3
+    distractors:
+      - 2
+      - 4
+      - 5
+    solution: |
+      \begin{gather*}
+        f'(c) = 2c - 6 = 0 \implies c = 3
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.1
+    dok: 2
+    review: generated
+
+  - id: 0bfc8a34-c867-4ebc-9c91-053889871b03
+    question: |
+      The temperature of a liquid is given by a differentiable function $T$,
+      where $T(t)$ is measured in degrees Celsius and $t$ is measured in
+      minutes. If $T(0) = 20$ and $T(10) = 80$, which of the following is
+      guaranteed by the Mean Value Theorem?
+    answer: At some time $t$ with $0 < t < 10$, the temperature is increasing at a rate of 6 degrees Celsius per minute.
+    distractors:
+      - At some time $t$ with $0 < t < 10$, the temperature is increasing at a rate of 60 degrees Celsius per minute.
+      - $T(5) = 50$
+      - For all $t$ with $0 < t < 10$, the temperature is increasing at a rate of 6 degrees Celsius per minute.
+    solution: |
+      $T$ is differentiable, so it is continuous on $[0, 10]$ and
+      differentiable on $(0, 10)$. By the Mean Value Theorem there is a $t$ in
+      $(0, 10)$ with
+      \[ T'(t) = \frac{T(10) - T(0)}{10 - 0} = \frac{80 - 20}{10} = 6. \]
+    calculator_active: false
+    sections:
+      - 5.1
+    dok: 2
+    review: generated
+
+  - id: e3ecaad4-07ba-4458-ac69-5c171edb307a
+    question: |
+      What are all the critical points of $f(x) = x^3 - 12x$?
+    answer: $x = -2$ and $x = 2$
+    distractors:
+      - $x = 0$, $x = -2\sqrt{3}$, and $x = 2\sqrt{3}$
+      - $x = 2$ only
+      - $x = -4$ and $x = 4$
+    solution: |
+      \begin{gather*}
+        f'(x) = 3x^2 - 12 = 3(x + 2)(x - 2) = 0 \implies x = -2, \ x = 2
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.2
+    dok: 2
+    review: generated
+
+  - id: 74d62231-1f1e-4465-8fd2-cebdde71ad97
+    question: |
+      What are all the critical points of $f(x) = x^{2/3}(x - 5)$?
+    answer: $x = 0$ and $x = 2$
+    distractors:
+      - $x = 2$ only
+      - $x = 0$ and $x = 5$
+      - $x = 5$ only
+    solution: |
+      \begin{gather*}
+        f(x) = x^{5/3} - 5x^{2/3} \\
+        f'(x) = \frac{5}{3}x^{2/3} - \frac{10}{3}x^{-1/3}
+        = \frac{5(x - 2)}{3x^{1/3}}
+      \end{gather*}
+      $f'(2) = 0$ and $f'(0)$ does not exist, so the critical points are
+      $x = 0$ and $x = 2$.
+    calculator_active: false
+    sections:
+      - 5.2
+    dok: 2
+    review: generated
+
+  - id: bcc3d1c0-da78-43b7-a5c0-75ab8813a637
+    question: |
+      What are all the critical points of $f(x) = \frac{x}{x^2 + 4}$?
+    answer: $x = -2$ and $x = 2$
+    distractors:
+      - $x = 0$ only
+      - $x = -4$ and $x = 4$
+      - $x = 2$ only
+    solution: |
+      \begin{gather*}
+        f'(x) = \frac{(x^2 + 4) - x(2x)}{(x^2 + 4)^2} = \frac{4 - x^2}{(x^2 + 4)^2}
+        = 0 \implies x = \pm 2
+      \end{gather*}
+      The denominator is never zero, so there are no other critical points.
+    calculator_active: false
+    sections:
+      - 5.2
+    dok: 2
+    review: generated
+
+  - id: 6ebfbab8-4147-4ae4-8940-67fb8734369b
+    question: |
+      For which of the following functions does the Extreme Value Theorem
+      \emph{not} guarantee an absolute maximum value on the interval $[0, 2]$?
+    answer: $f(x) = \frac{1}{x - 1}$
+    distractors:
+      - $f(x) = x^2$
+      - $f(x) = \sin x$
+      - $f(x) = |x - 1|$
+    solution: |
+      The Extreme Value Theorem requires $f$ to be continuous on $[0, 2]$.
+      $f(x) = \frac{1}{x - 1}$ is not continuous at $x = 1$, so the theorem does
+      not apply. The other three functions are continuous on $[0, 2]$.
+    calculator_active: false
+    sections:
+      - 5.2
+    dok: 2
+    review: generated
+
+  - id: e34a2251-32c6-4b3a-b231-2fafcbc98fdf
+    question: |
+      What are all the critical points of $f(x) = \sin x + \cos x$ on the open
+      interval $(0, 2\pi)$?
+    answer: $x = \frac{\pi}{4}$ and $x = \frac{5\pi}{4}$
+    distractors:
+      - $x = \frac{\pi}{4}$ only
+      - $x = \frac{3\pi}{4}$ and $x = \frac{7\pi}{4}$
+      - $x = \frac{\pi}{2}$ and $x = \frac{3\pi}{2}$
+    solution: |
+      \begin{gather*}
+        f'(x) = \cos x - \sin x = 0 \implies \tan x = 1
+        \implies x = \frac{\pi}{4}, \ \frac{5\pi}{4}
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.2
+    dok: 2
+    review: generated
+
+  - id: b7a0297b-0ffc-441c-b000-b7f57e3fdfd6
+    question: |
+      Which of the following statements are true?
+
+      \textbf{I.\phantom{II}} \quad All relative extrema of a function occur at critical points of the function. \\
+      \textbf{II.\phantom{I}} \quad Every critical point of a function is the location of a relative extremum. \\
+      \textbf{III.} \quad If $f$ is continuous on $[a, b]$, then $f$ has both an absolute maximum and an absolute minimum on $[a, b]$.
+    answer: I and III only
+    distractors:
+      - I only
+      - III only
+      - I, II, and III
+    solution: |
+      \textbf{I.} True: relative extrema occur only where $f'$ is zero or
+      does not exist. \\
+      \textbf{II.} False: $f(x) = x^3$ has a critical point at $x = 0$ but no
+      relative extremum there. \\
+      \textbf{III.} True: this is the Extreme Value Theorem.
+    calculator_active: false
+    sections:
+      - 5.2
+    dok: 3
+    review: generated
+
+  - id: 1b2c641f-4f4d-4ae5-b96d-7dee2f24ab95
+    question: |
+      What are all the critical points of $g(x) = xe^{-x}$?
+    answer: $x = 1$
+    distractors:
+      - $x = 0$
+      - $x = -1$
+      - $x = e$
+    solution: |
+      \begin{gather*}
+        g'(x) = e^{-x} - xe^{-x} = e^{-x}(1 - x) = 0 \implies x = 1
+      \end{gather*}
+      ($e^{-x} > 0$ for all $x$)
+    calculator_active: false
+    sections:
+      - 5.2
+    dok: 2
+    review: generated
+
+  - id: 1b0570f7-a7ea-49ec-8605-856cbaf02dfb
+    question: |
+      What are all values of $x$ for which the function
+      $f(x) = x^4 - 8x^2$ is decreasing?
+    answer: $x < -2$ or $0 < x < 2$
+    distractors:
+      - $-2 < x < 0$ or $x > 2$
+      - $-2 < x < 2$
+      - $x < 0$
+    solution: |
+      \begin{gather*}
+        f'(x) = 4x^3 - 16x = 4x(x + 2)(x - 2)
+      \end{gather*}
+      \sgchart{-2,0,2}{f'(x): -+-+}
+      $f$ is decreasing where $f'(x) < 0$: $x < -2$ or $0 < x < 2$.
+    calculator_active: false
+    sections:
+      - 5.3
+    dok: 2
+    review: generated
+
+  - id: c818100b-7678-4ebd-a63d-082192d3c503
+    question: |
+      What are all values of $x$ for which the function $f(x) = xe^x$ is
+      increasing?
+    answer: $x > -1$
+    distractors:
+      - $x < -1$
+      - $x > 0$
+      - all real numbers
+    solution: |
+      \begin{gather*}
+        f'(x) = e^x + xe^x = e^x(x + 1)
+      \end{gather*}
+      Since $e^x > 0$, $f'(x) > 0$ when $x + 1 > 0$, so $f$ is increasing for
+      $x > -1$.
+    calculator_active: false
+    sections:
+      - 5.3
+    dok: 2
+    review: generated
+
+  - id: 90e1ef5b-371b-4ed1-acbc-b5ac888111ca
+    question: |
+      What are all values of $x$ for which the function
+      $f(x) = \ln(x^2 + 1)$ is increasing?
+    answer: $x > 0$
+    distractors:
+      - $x < 0$
+      - $x > 1$
+      - all real numbers
+    solution: |
+      \begin{gather*}
+        f'(x) = \frac{2x}{x^2 + 1}
+      \end{gather*}
+      Since $x^2 + 1 > 0$, $f'(x) > 0$ when $x > 0$.
+    calculator_active: false
+    sections:
+      - 5.3
+    dok: 2
+    review: generated
+
+  - id: 2907b14c-1a19-4ef8-8bd3-b0429663e281
+    question: |
+      The derivative of a function $f$ is given by $f'(x) = (x - 3)(x + 1)^2$.
+      What are all values of $x$ for which $f$ is decreasing?
+    answer: $x < 3$
+    distractors:
+      - $-1 < x < 3$
+      - $x < -1$
+      - $x > 3$
+    solution: |
+      \sgchart{-1,3}{f'(x): --+}
+      $(x + 1)^2 \ge 0$ does not change sign, so $f'(x) < 0$ for all $x < 3$
+      except $x = -1$, where $f'(x) = 0$. $f$ is decreasing for $x < 3$.
+    calculator_active: false
+    sections:
+      - 5.3
+    dok: 2
+    review: generated
+
+  - id: 804abd8c-6b3b-4f44-bec0-b35b8847f589
+    question: |
+      What are all values of $x$ for which the function
+      $f(x) = x + \frac{4}{x}$ is decreasing?
+    answer: $-2 < x < 0$ or $0 < x < 2$
+    distractors:
+      - $-2 < x < 2$
+      - $x < -2$ or $x > 2$
+      - $0 < x < 2$
+    solution: |
+      \begin{gather*}
+        f'(x) = 1 - \frac{4}{x^2} = \frac{(x + 2)(x - 2)}{x^2}
+      \end{gather*}
+      \sgchart{-2,0,2}{f'(x): +--+}
+      $f$ is decreasing where $f'(x) < 0$: $-2 < x < 0$ or $0 < x < 2$
+      ($f$ is undefined at $x = 0$).
+    calculator_active: false
+    sections:
+      - 5.3
+    dok: 2
+    review: generated
+
+  - id: aec33530-2673-4dd3-8ddd-951eb4ca7655
+    question: |
+      The derivative of a function $g$ is given by $g'(x) = x^2(x - 4)$. What
+      are all values of $x$ for which $g$ is increasing?
+    answer: $x > 4$
+    distractors:
+      - $x < 0$ or $x > 4$
+      - $0 < x < 4$
+      - $x < 4$
+    solution: |
+      \sgchart{0,4}{g'(x): --+}
+      $x^2 \ge 0$, so $g'(x) > 0$ only when $x - 4 > 0$, i.e. $x > 4$.
+    calculator_active: false
+    sections:
+      - 5.3
+    dok: 2
+    review: generated
+
+  - id: 3beee52b-8eb9-42e7-ac66-c6631bdb7407
+    question: |
+      On the open interval $(0, 2\pi)$, what are all values of $x$ for which
+      $f(x) = x - 2\sin x$ is increasing?
+    answer: $\frac{\pi}{3} < x < \frac{5\pi}{3}$
+    distractors:
+      - $0 < x < \frac{\pi}{3}$ or $\frac{5\pi}{3} < x < 2\pi$
+      - $\frac{\pi}{6} < x < \frac{5\pi}{6}$
+      - $\frac{\pi}{3} < x < \frac{2\pi}{3}$
+    solution: |
+      \begin{gather*}
+        f'(x) = 1 - 2\cos x > 0 \implies \cos x < \frac{1}{2}
+        \implies \frac{\pi}{3} < x < \frac{5\pi}{3}
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.3
+    dok: 2
+    review: generated
+
+  - id: 6ccb3a2a-d84f-47c7-85e0-3adddc1755d3
+    question: |
+      The function $f(x) = x^3 - 3x^2 - 9x + 5$ has a relative maximum at
+      $x =$
+    answer: -1
+    distractors:
+      - 3
+      - 1
+      - -3
+    solution: |
+      \begin{gather*}
+        f'(x) = 3x^2 - 6x - 9 = 3(x + 1)(x - 3)
+      \end{gather*}
+      \sgchart{-1,3}{f'(x): +-+}
+      $f'$ changes from positive to negative at $x = -1$, so $f$ has a
+      relative maximum at $x = -1$.
+    calculator_active: false
+    sections:
+      - 5.4
+    dok: 2
+    review: generated
+
+  - id: 6e47fb72-384d-44a0-913e-3dde5cf72a48
+    question: |
+      The derivative of a function $f$ is given by
+      $f'(x) = (x + 2)(x - 1)^2(x - 4)$. Which of the following is true?
+    answer: $f$ has a relative maximum at $x = -2$ and a relative minimum at $x = 4$ only.
+    distractors:
+      - $f$ has a relative minimum at $x = -2$ and a relative maximum at $x = 4$ only.
+      - $f$ has relative maxima at $x = -2$ and $x = 4$ and a relative minimum at $x = 1$.
+      - $f$ has a relative minimum at $x = 1$ only.
+    solution: |
+      \sgchart{-2,1,4}{f'(x): +--+}
+      $f'$ changes from positive to negative at $x = -2$ (relative maximum) and
+      from negative to positive at $x = 4$ (relative minimum). $f'$ does not
+      change sign at $x = 1$, so there is no extremum there.
+    calculator_active: false
+    sections:
+      - 5.4
+    dok: 2
+    review: generated
+
+  - id: 4fb7497e-b70a-4a5c-9422-6624604c910a
+    question: |
+      What is the relative maximum value of $f(x) = x^2e^x$?
+    answer: $\frac{4}{e^2}$
+    distractors:
+      - 0
+      - $\frac{1}{e}$
+      - $-\frac{4}{e^2}$
+    solution: |
+      \begin{gather*}
+        f'(x) = 2xe^x + x^2e^x = xe^x(x + 2)
+      \end{gather*}
+      \sgchart{-2,0}{f'(x): +-+}
+      $f$ has a relative maximum at $x = -2$:
+      $f(-2) = (-2)^2e^{-2} = \frac{4}{e^2}$.
+    calculator_active: false
+    sections:
+      - 5.4
+    dok: 2
+    review: generated
+
+  - id: 0ae58e97-84a2-4f86-86a5-2995cd69f920
+    question: |
+      The function $f(x) = \frac{\ln x}{x}$ has a relative maximum at $x =$
+    answer: $e$
+    distractors:
+      - 1
+      - $\frac{1}{e}$
+      - $e^2$
+    solution: |
+      \begin{gather*}
+        f'(x) = \frac{\frac{1}{x} \cdot x - \ln x}{x^2} = \frac{1 - \ln x}{x^2}
+      \end{gather*}
+      For $x > 0$, $f'(x) > 0$ when $x < e$ and $f'(x) < 0$ when $x > e$, so $f$
+      has a relative maximum at $x = e$.
+    calculator_active: false
+    sections:
+      - 5.4
+    dok: 2
+    review: generated
+
+  - id: 14f4c361-e0aa-4e71-84fd-4038e0cf9e16
+    question: |
+      A function $f$ is continuous for all real numbers. Its derivative
+      satisfies $f'(x) < 0$ for $x < 1$, $f'(x) > 0$ for $1 < x < 3$, and
+      $f'(x) > 0$ for $x > 3$, and $f'(3)$ does not exist. Which of the
+      following is true?
+    answer: $f$ has a relative minimum at $x = 1$ and no relative extremum at $x = 3$.
+    distractors:
+      - $f$ has a relative minimum at $x = 1$ and a relative maximum at $x = 3$.
+      - $f$ has a relative maximum at $x = 1$ and no relative extremum at $x = 3$.
+      - $f$ has relative minima at $x = 1$ and $x = 3$.
+    solution: |
+      \sgchart{1,3}{f'(x): -++}
+      $f'$ changes from negative to positive at $x = 1$ (relative minimum).
+      $f'$ is positive on both sides of $x = 3$, so although $x = 3$ is a
+      critical point, $f$ has no relative extremum there.
+    calculator_active: false
+    sections:
+      - 5.4
+    dok: 2
+    review: generated
+
+  - id: 5b4a2922-1737-4fac-870a-a4ba860ab821
+    question: |
+      Which of the following is true about $f(x) = x^{1/3}(x + 4)$?
+    answer: $f$ has a relative minimum at $x = -1$ and no other relative extrema.
+    distractors:
+      - $f$ has a relative minimum at $x = -1$ and a relative maximum at $x = 0$.
+      - $f$ has a relative maximum at $x = -1$ and a relative minimum at $x = 0$.
+      - $f$ has a relative minimum at $x = 0$ and no other relative extrema.
+    solution: |
+      \begin{gather*}
+        f(x) = x^{4/3} + 4x^{1/3} \\
+        f'(x) = \frac{4}{3}x^{1/3} + \frac{4}{3}x^{-2/3} = \frac{4(x + 1)}{3x^{2/3}}
+      \end{gather*}
+      \sgchart{-1,0}{f'(x): -++}
+      The critical points are $x = -1$ and $x = 0$. $f'$ changes from negative
+      to positive only at $x = -1$; $x^{2/3} > 0$ on both sides of $x = 0$, so
+      there is no extremum there.
+    calculator_active: false
+    sections:
+      - 5.4
+    dok: 2
+    review: generated
+
+  - id: 7edce9d9-ed91-4166-b393-2ac0eefa008a
+    question: |
+      The derivative of a function $f$ is given by $f'(x) = e^x(x^2 - 9)$. The
+      function $f$ has a relative minimum at $x =$
+    answer: 3
+    distractors:
+      - -3
+      - 0
+      - 9
+    solution: |
+      \begin{gather*}
+        f'(x) = e^x(x + 3)(x - 3)
+      \end{gather*}
+      \sgchart{-3,3}{f'(x): +-+}
+      $f'$ changes from negative to positive at $x = 3$, so $f$ has a relative
+      minimum at $x = 3$.
+    calculator_active: false
+    sections:
+      - 5.4
+    dok: 2
+    review: generated
+
+  - id: 43e1e71b-3482-4cc3-8679-8620b1d91476
+    question: |
+      What is the absolute minimum value of $f(x) = x^3 - 6x^2 + 9x + 2$ on
+      the closed interval $[0, 4]$?
+    answer: 2
+    distractors:
+      - 0
+      - 1
+      - 6
+    solution: |
+      \begin{gather*}
+        f'(x) = 3x^2 - 12x + 9 = 3(x - 1)(x - 3)
+      \end{gather*}
+      \begin{tabularx}{3in}{ Y*{4}{|Y} }
+        \bm{$x$} & 0 & 1 & 3 & 4 \\
+        \hline
+        \bm{$f(x)$} & 2 & 6 & 2 & 6 \\
+      \end{tabularx}
+
+      The absolute minimum value is 2.
+    calculator_active: false
+    sections:
+      - 5.5
+    dok: 2
+    review: generated
+
+  - id: b16fae7a-78f3-4091-9580-5da44c248bfb
+    question: |
+      What is the absolute maximum value of $f(x) = x + \frac{9}{x}$ on the
+      closed interval $[1, 6]$?
+    answer: 10
+    distractors:
+      - 6
+      - $\frac{15}{2}$
+      - 3
+    solution: |
+      \begin{gather*}
+        f'(x) = 1 - \frac{9}{x^2} = 0 \implies x = 3 \quad (x = -3 \text{ is not in } [1, 6])
+      \end{gather*}
+      \begin{tabularx}{3in}{ Y*{3}{|Y} }
+        \bm{$x$} & 1 & 3 & 6 \\
+        \hline
+        \bm{$f(x)$} & 10 & 6 & $\frac{15}{2}$ \\
+      \end{tabularx}
+
+      The absolute maximum value is 10.
+    calculator_active: false
+    sections:
+      - 5.5
+    dok: 2
+    review: generated
+
+  - id: 4a98ddd0-fa83-4f2c-8b83-a2a29aaa2497
+    question: |
+      What is the absolute maximum value of $f(x) = 2\sin x + \cos(2x)$ on the
+      closed interval $[0, \pi]$?
+    answer: $\frac{3}{2}$
+    distractors:
+      - 1
+      - 2
+      - 3
+    solution: |
+      \begin{gather*}
+        f'(x) = 2\cos x - 2\sin(2x) = 2\cos x(1 - 2\sin x) = 0 \\
+        x = \frac{\pi}{6}, \ \frac{\pi}{2}, \ \frac{5\pi}{6}
+      \end{gather*}
+      \begin{tabularx}{4in}{ Y*{5}{|Y} }
+        \bm{$x$} & 0 & $\frac{\pi}{6}$ & $\frac{\pi}{2}$ & $\frac{5\pi}{6}$ & $\pi$ \\
+        \hline
+        \bm{$f(x)$} & 1 & $\frac{3}{2}$ & 1 & $\frac{3}{2}$ & 1 \\
+      \end{tabularx}
+
+      The absolute maximum value is $\frac{3}{2}$.
+    calculator_active: false
+    sections:
+      - 5.5
+    dok: 2
+    review: generated
+
+  - id: 75725b80-d28c-4469-bf64-e1947d746d69
+    question: |
+      What is the absolute minimum value of $f(x) = x - 2\ln x$ on the closed
+      interval $[1, e]$?
+    answer: $2 - 2\ln 2$
+    distractors:
+      - $e - 2$
+      - 1
+      - 0
+    solution: |
+      \begin{gather*}
+        f'(x) = 1 - \frac{2}{x} = 0 \implies x = 2
+      \end{gather*}
+      \begin{tabularx}{3in}{ Y*{3}{|Y} }
+        \bm{$x$} & 1 & 2 & $e$ \\
+        \hline
+        \bm{$f(x)$} & 1 & $2 - 2\ln 2$ & $e - 2$ \\
+      \end{tabularx}
+
+      $f'(x) < 0$ on $(1, 2)$ and $f'(x) > 0$ on $(2, e)$, so $f(2)$ is less
+      than both endpoint values. The absolute minimum is $f(2) = 2 - 2\ln 2$.
+    calculator_active: false
+    sections:
+      - 5.5
+    dok: 2
+    review: generated
+
+  - id: 90f56053-a83d-48c0-acd5-6a6447d18256
+    question: |
+      What are the absolute maximum and absolute minimum values of
+      $f(x) = 3x^4 - 4x^3$ on the closed interval $[-1, 2]$?
+    answer: maximum 16, minimum $-1$
+    distractors:
+      - maximum 7, minimum $-1$
+      - maximum 16, minimum 0
+      - maximum 16, minimum $-7$
+    solution: |
+      \begin{gather*}
+        f'(x) = 12x^3 - 12x^2 = 12x^2(x - 1) = 0 \implies x = 0, \ x = 1
+      \end{gather*}
+      \begin{tabularx}{3in}{ Y*{4}{|Y} }
+        \bm{$x$} & -1 & 0 & 1 & 2 \\
+        \hline
+        \bm{$f(x)$} & 7 & 0 & -1 & 16 \\
+      \end{tabularx}
+    calculator_active: false
+    sections:
+      - 5.5
+    dok: 2
+    review: generated
+
+  - id: eaae1090-f82a-4d4b-adbe-d0307c3b0bff
+    question: |
+      A function $f$ is continuous on the closed interval $[-2, 5]$, and its
+      only critical points in $(-2, 5)$ are at $x = 1$ and $x = 3$. If
+      $f(-2) = 4$, $f(1) = -3$, $f(3) = 6$, and $f(5) = 2$, then the absolute
+      maximum value of $f$ on $[-2, 5]$ occurs at $x =$
+    answer: 3
+    distractors:
+      - 5
+      - -2
+      - 1
+    solution: |
+      Absolute extrema on a closed interval occur at critical points or
+      endpoints. The largest of $f(-2) = 4$, $f(1) = -3$, $f(3) = 6$, and
+      $f(5) = 2$ is $f(3) = 6$.
+    calculator_active: false
+    sections:
+      - 5.5
+    dok: 2
+    review: generated
+
+  - id: ef820212-accb-48b7-93f1-ac78f64946a7
+    question: |
+      What are all values of $x$ for which the graph of
+      $f(x) = x^3 - 6x^2 + 5$ is concave up?
+    answer: $x > 2$
+    distractors:
+      - $x < 2$
+      - $x > 0$
+      - $x > 4$
+    solution: |
+      \begin{gather*}
+        f'(x) = 3x^2 - 12x \\
+        f''(x) = 6x - 12 > 0 \implies x > 2
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.6
+    dok: 2
+    review: generated
+
+  - id: 54e9e6b4-80b5-417e-a884-2790af4204c9
+    question: |
+      What are all the $x$-coordinates of points of inflection for the graph of
+      $f(x) = x^4 - 6x^2$?
+    answer: $x = -1$ and $x = 1$
+    distractors:
+      - $x = 0$ only
+      - $x = -\sqrt{3}$ and $x = \sqrt{3}$
+      - $x = 0$, $x = -\sqrt{3}$, and $x = \sqrt{3}$
+    solution: |
+      \begin{gather*}
+        f'(x) = 4x^3 - 12x \\
+        f''(x) = 12x^2 - 12 = 12(x + 1)(x - 1)
+      \end{gather*}
+      \sgchart{-1,1}{f''(x): +-+}
+      $f''$ changes sign at $x = -1$ and $x = 1$.
+    calculator_active: false
+    sections:
+      - 5.6
+    dok: 2
+    review: generated
+
+  - id: aaba739d-5cdc-4d30-a5a8-c1156bcb41f2
+    question: |
+      What are all values of $x$ for which the graph of $f(x) = xe^x$ is
+      concave down?
+    answer: $x < -2$
+    distractors:
+      - $x < -1$
+      - $x > -2$
+      - $x > -1$
+    solution: |
+      \begin{gather*}
+        f'(x) = e^x(x + 1) \\
+        f''(x) = e^x(x + 1) + e^x = e^x(x + 2)
+      \end{gather*}
+      Since $e^x > 0$, $f''(x) < 0$ when $x < -2$.
+    calculator_active: false
+    sections:
+      - 5.6
+    dok: 2
+    review: generated
+
+  - id: 4b09deda-a185-4bc4-b230-ff3957dbb5e3
+    question: |
+      What are all values of $x$ for which the graph of
+      $f(x) = \ln(x^2 + 9)$ is concave up?
+    answer: $-3 < x < 3$
+    distractors:
+      - $x < -3$ or $x > 3$
+      - $x > 0$
+      - all real numbers
+    solution: |
+      \begin{gather*}
+        f'(x) = \frac{2x}{x^2 + 9} \\
+        f''(x) = \frac{2(x^2 + 9) - 2x(2x)}{(x^2 + 9)^2} = \frac{18 - 2x^2}{(x^2 + 9)^2}
+      \end{gather*}
+      $f''(x) > 0$ when $x^2 < 9$, that is, $-3 < x < 3$.
+    calculator_active: false
+    sections:
+      - 5.6
+    dok: 2
+    review: generated
+
+  - id: 08216154-dff9-46db-a012-5bb6b31f409c
+    question: |
+      The derivative of a function $f$ is given by $f'(x) = x^3 - 3x$. On what
+      interval(s) is the graph of $f$ concave down?
+    answer: $-1 < x < 1$
+    distractors:
+      - $x < -\sqrt{3}$ or $0 < x < \sqrt{3}$
+      - $x < -1$ or $x > 1$
+      - $-\sqrt{3} < x < \sqrt{3}$
+    solution: |
+      \begin{gather*}
+        f''(x) = 3x^2 - 3 = 3(x + 1)(x - 1)
+      \end{gather*}
+      \sgchart{-1,1}{f''(x): +-+}
+      The graph of $f$ is concave down where $f''(x) < 0$: $-1 < x < 1$.
+    calculator_active: false
+    sections:
+      - 5.6
+    dok: 2
+    review: generated
+
+  - id: 023e5371-154a-4f70-aa37-8309724bd7ca
+    question: |
+      On the open interval $(0, 2\pi)$, what are all the $x$-coordinates of
+      points of inflection for the graph of $f(x) = x + \cos x$?
+    answer: $x = \frac{\pi}{2}$ and $x = \frac{3\pi}{2}$
+    distractors:
+      - $x = \pi$ only
+      - $x = \frac{\pi}{4}$ and $x = \frac{5\pi}{4}$
+      - $x = \frac{\pi}{2}$ only
+    solution: |
+      \begin{gather*}
+        f'(x) = 1 - \sin x \\
+        f''(x) = -\cos x
+      \end{gather*}
+      \sgchart{\frac{\pi}{2},\frac{3\pi}{2}}{f''(x): -+-}
+      $f''$ changes sign at $x = \frac{\pi}{2}$ and $x = \frac{3\pi}{2}$.
+    calculator_active: false
+    sections:
+      - 5.6
+    dok: 2
+    review: generated
+
+  - id: f3a4a08e-5e3f-41cd-8e0d-42ac65c25af0
+    question: |
+      Let $f$ be a twice-differentiable function. If the graph of $f$ has a
+      point of inflection at $x = 2$, which of the following must be true?
+    answer: $f''(2) = 0$
+    distractors:
+      - $f'(2) = 0$
+      - $f(2) = 0$
+      - $f$ has a relative extremum at $x = 2$.
+    solution: |
+      At a point of inflection the concavity changes, so $f''$ changes sign at
+      $x = 2$. Since $f''(2)$ exists, $f''(2) = 0$. The graph need not have a
+      horizontal tangent or cross the $x$-axis there (e.g. $f(x) = x^3 + x$ at
+      $x = 0$ has $f'(0) = 1$).
+    calculator_active: false
+    sections:
+      - 5.6
+    dok: 2
+    review: generated
+
+  - id: 46501793-5161-4570-9e48-8a005718ad5e
+    question: |
+      Let $f(x) = x^3 - 12x + 1$. Using the second derivative test, which of
+      the following is true?
+    answer: $f$ has a relative maximum at $x = -2$ and a relative minimum at $x = 2$.
+    distractors:
+      - $f$ has a relative minimum at $x = -2$ and a relative maximum at $x = 2$.
+      - $f$ has relative maxima at $x = -2$ and $x = 2$.
+      - $f$ has relative minima at $x = -2$ and $x = 2$.
+    solution: |
+      \begin{gather*}
+        f'(x) = 3x^2 - 12 = 0 \implies x = \pm 2 \\
+        f''(x) = 6x \\
+        f''(-2) = -12 < 0 \implies \text{relative maximum} \\
+        f''(2) = 12 > 0 \implies \text{relative minimum}
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.7
+    dok: 2
+    review: generated
+
+  - id: 663fc098-4ddb-4726-89c0-278fd7e5eba6
+    question: |
+      What is the relative minimum value of $f(x) = 2x^3 + 3x^2 - 12x$?
+    answer: -7
+    distractors:
+      - 20
+      - 1
+      - 0
+    solution: |
+      \begin{gather*}
+        f'(x) = 6x^2 + 6x - 12 = 6(x + 2)(x - 1) = 0 \implies x = -2, \ x = 1 \\
+        f''(x) = 12x + 6 \\
+        f''(-2) = -18 < 0 \implies \text{relative maximum} \\
+        f''(1) = 18 > 0 \implies \text{relative minimum} \\
+        f(1) = 2 + 3 - 12 = -7
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.7
+    dok: 2
+    review: generated
+
+  - id: 87a80929-8d28-406f-bce1-13b462dd45d5
+    question: |
+      Let $f(x) = x^4 - 4x^3$. What does the second derivative test conclude
+      about the critical points of $f$?
+    answer: $f$ has a relative minimum at $x = 3$; the test is inconclusive at $x = 0$.
+    distractors:
+      - $f$ has relative minima at $x = 0$ and $x = 3$.
+      - $f$ has a relative maximum at $x = 0$ and a relative minimum at $x = 3$.
+      - $f$ has a relative maximum at $x = 3$; the test is inconclusive at $x = 0$.
+    solution: |
+      \begin{gather*}
+        f'(x) = 4x^3 - 12x^2 = 4x^2(x - 3) = 0 \implies x = 0, \ x = 3 \\
+        f''(x) = 12x^2 - 24x \\
+        f''(0) = 0 \implies \text{test inconclusive} \\
+        f''(3) = 108 - 72 = 36 > 0 \implies \text{relative minimum}
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.7
+    dok: 2
+    review: generated
+
+  - id: 443c132b-a015-491f-8782-719ecebc2854
+    question: |
+      On the open interval $(0, 2\pi)$, the function $f(x) = x + 2\cos x$ has a
+      relative minimum at $x =$
+    answer: $\frac{5\pi}{6}$
+    distractors:
+      - $\frac{\pi}{6}$
+      - $\frac{7\pi}{6}$
+      - $\frac{\pi}{2}$
+    solution: |
+      \begin{gather*}
+        f'(x) = 1 - 2\sin x = 0 \implies \sin x = \frac{1}{2}
+        \implies x = \frac{\pi}{6}, \ \frac{5\pi}{6} \\
+        f''(x) = -2\cos x \\
+        f''\left(\tfrac{\pi}{6}\right) = -\sqrt{3} < 0 \implies \text{relative maximum} \\
+        f''\left(\tfrac{5\pi}{6}\right) = \sqrt{3} > 0 \implies \text{relative minimum}
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.7
+    dok: 2
+    review: generated
+
+  - id: 232884e7-db08-42d8-bf46-4135f46bdfa4
+    question: |
+      What is the absolute minimum value of $f(x) = x^2 - 8\ln x$ for $x > 0$?
+    answer: $4 - 8\ln 2$
+    distractors:
+      - $4 + 8\ln 2$
+      - 2
+      - $4 - 8\ln 4$
+    solution: |
+      \begin{gather*}
+        f'(x) = 2x - \frac{8}{x} = 0 \implies x^2 = 4 \implies x = 2 \quad (x > 0) \\
+        f''(x) = 2 + \frac{8}{x^2} > 0
+      \end{gather*}
+      $x = 2$ is the only critical point and it is a relative minimum, so it is
+      the absolute minimum: $f(2) = 4 - 8\ln 2$.
+    calculator_active: false
+    sections:
+      - 5.7
+    dok: 2
+    review: generated
+
+  - id: 0bddaa7d-79b2-4b98-890f-d925f3ad45e8
+    question: |
+      Let $f$ be a twice-differentiable function with $f'(3) = 0$ and
+      $f''(3) = -2$. Which of the following is true?
+    answer: $f$ has a relative maximum at $x = 3$.
+    distractors:
+      - $f$ has a relative minimum at $x = 3$.
+      - The graph of $f$ has a point of inflection at $x = 3$.
+      - $f$ is decreasing at $x = 3$.
+    solution: |
+      $f'(3) = 0$ and $f''(3) < 0$, so by the second derivative test $f$ has a
+      relative maximum at $x = 3$.
+    calculator_active: false
+    sections:
+      - 5.7
+    dok: 1
+    review: generated
+
+  - id: b00ffa12-fa60-49d2-9340-df2512b2d9db
+    question: |
+      A function $f$ satisfies $f'(x) > 0$ and $f''(x) < 0$ for all real
+      numbers $x$. Which of the following could be $f$?
+    answer: $f(x) = -e^{-x}$
+    distractors:
+      - $f(x) = e^x$
+      - $f(x) = e^{-x}$
+      - $f(x) = -e^x$
+    solution: |
+      For $f(x) = -e^{-x}$: $f'(x) = e^{-x} > 0$ and $f''(x) = -e^{-x} < 0$.
+      $e^x$ is concave up, $e^{-x}$ is decreasing, and $-e^x$ is decreasing.
+    calculator_active: false
+    sections:
+      - 5.8
+    dok: 2
+    review: generated
+
+  - id: eee9e90a-8ddb-4dd4-ac63-762274f66189
+    question: |
+      The graph of a twice-differentiable function $f$ has a horizontal tangent
+      line at $x = 2$, and $f''(2) > 0$. Which of the following describes the
+      graph of $f'$ at $x = 2$?
+    answer: The graph of $f'$ crosses the $x$-axis from below to above at $x = 2$.
+    distractors:
+      - The graph of $f'$ crosses the $x$-axis from above to below at $x = 2$.
+      - The graph of $f'$ has a relative maximum at $x = 2$.
+      - The graph of $f'$ touches the $x$-axis at $x = 2$ without crossing it.
+    solution: |
+      $f'(2) = 0$, so the graph of $f'$ meets the $x$-axis at $x = 2$.
+      $f''(2) > 0$ means $f'$ is increasing at $x = 2$, so $f'$ goes from
+      negative to positive.
+    calculator_active: false
+    sections:
+      - 5.8
+    dok: 2
+    review: generated
+
+  - id: 5f8be7e5-75cb-4ae6-b291-e15c5ab20042
+    question: |
+      Let $f$ be a twice-differentiable function. On an interval where the
+      graph of $f$ is decreasing and concave up, the graph of $f'$ is
+    answer: negative and increasing
+    distractors:
+      - negative and decreasing
+      - positive and increasing
+      - positive and decreasing
+    solution: |
+      $f$ decreasing means $f'(x) < 0$. $f$ concave up means $f''(x) > 0$, so
+      $f'$ is increasing.
+    calculator_active: false
+    sections:
+      - 5.8
+    dok: 2
+    review: generated
+
+  - id: 820476b7-306a-49e4-98d8-753bb16c50a5
+    question: |
+      The derivative of a function $f$ is given by $f'(x) = x^2 - 4$. Which of
+      the following describes the graph of $f$ at $x = 0$?
+    answer: $f$ is decreasing, and the graph of $f$ has a point of inflection at $x = 0$.
+    distractors:
+      - $f$ has a relative minimum at $x = 0$.
+      - $f$ is increasing, and the graph of $f$ is concave up at $x = 0$.
+      - $f$ is decreasing, and $f$ has a relative maximum at $x = 0$.
+    solution: |
+      \begin{gather*}
+        f'(0) = -4 < 0 \implies f \text{ is decreasing} \\
+        f''(x) = 2x
+      \end{gather*}
+      $f''$ changes sign at $x = 0$, so the graph of $f$ has a point of
+      inflection there.
+    calculator_active: false
+    sections:
+      - 5.8
+    dok: 2
+    review: generated
+
+  - id: d6f8d373-c497-4a72-9f2c-43687b53983e
+    question: |
+      A polynomial function $f$ is increasing for $x < 1$, decreasing for
+      $x > 1$, and concave down for all $x$. Which of the following could be
+      $f$?
+    answer: $f(x) = -x^2 + 2x$
+    distractors:
+      - $f(x) = x^2 - 2x$
+      - $f(x) = -x^2 - 2x$
+      - $f(x) = x^3 - 3x$
+    solution: |
+      For $f(x) = -x^2 + 2x$: $f'(x) = -2x + 2$, which is positive for $x < 1$
+      and negative for $x > 1$, and $f''(x) = -2 < 0$ for all $x$.
+    calculator_active: false
+    sections:
+      - 5.8
+    dok: 2
+    review: generated
+
+  - id: b4780b43-f7fa-4876-aae3-e23e6229e937
+    question: |
+      The derivative of a function $f$ is given by $f'(x) = x^3 - 3x^2$. What
+      are all the $x$-coordinates of points of inflection for the graph of $f$?
+    answer: $x = 0$ and $x = 2$
+    distractors:
+      - $x = 3$ only
+      - $x = 0$ and $x = 3$
+      - $x = 2$ only
+    solution: |
+      \begin{gather*}
+        f''(x) = 3x^2 - 6x = 3x(x - 2)
+      \end{gather*}
+      \sgchart{0,2}{f''(x): +-+}
+      $f''$ changes sign at $x = 0$ and $x = 2$.
+    calculator_active: false
+    sections:
+      - 5.9
+    dok: 2
+    review: generated
+
+  - id: 7e4daefb-3554-4f7c-9a17-2544bfbb6bea
+    question: |
+      The second derivative of a function $f$ is given by $f''(x) = x(x - 4)$.
+      On what interval is the graph of $f'$ decreasing?
+    answer: $0 < x < 4$
+    distractors:
+      - $x < 0$ or $x > 4$
+      - $x < 2$
+      - $x > 4$
+    solution: |
+      \sgchart{0,4}{f''(x): +-+}
+      $f'$ is decreasing where its derivative $f''$ is negative: $0 < x < 4$.
+    calculator_active: false
+    sections:
+      - 5.9
+    dok: 2
+    review: generated
+
+  - id: c38e15f9-156e-4e25-aa79-c98ebc59b74e
+    question: |
+      Let $f$ be a differentiable function. The graph of $f'$ is increasing on
+      $1 < x < 3$ and decreasing on $3 < x < 5$. Which of the following must be
+      true?
+    answer: The graph of $f$ has a point of inflection at $x = 3$.
+    distractors:
+      - $f$ has a relative maximum at $x = 3$.
+      - $f$ has a relative minimum at $x = 3$.
+      - $f'(3) = 0$
+    solution: |
+      $f'$ increasing on $(1, 3)$ means the graph of $f$ is concave up there;
+      $f'$ decreasing on $(3, 5)$ means the graph of $f$ is concave down there.
+      The concavity changes at $x = 3$, so the graph of $f$ has a point of
+      inflection at $x = 3$. Nothing is known about the sign of $f'(3)$.
+    calculator_active: false
+    sections:
+      - 5.9
+    dok: 3
+    review: generated
+
+  - id: ab860648-68ce-4ba1-bc18-406a45df62a3
+    question: |
+      The derivative of a function $f$ is given by $f'(x) = (x - 1)e^x$. On
+      what interval is $f$ decreasing and the graph of $f$ concave up?
+    answer: $0 < x < 1$
+    distractors:
+      - $x < 0$
+      - $x < 1$
+      - $x > 1$
+    solution: |
+      \begin{gather*}
+        f'(x) < 0 \implies x < 1 \\
+        f''(x) = e^x + (x - 1)e^x = xe^x > 0 \implies x > 0
+      \end{gather*}
+      Both conditions hold on $0 < x < 1$.
+    calculator_active: false
+    sections:
+      - 5.9
+    dok: 2
+    review: generated
+
+  - id: cc170382-6428-454d-8fb6-f270d82b18bf
+    question: |
+      The derivative of a function $f$ is given by $f'(x) = \sin x$. On the
+      open interval $(0, 2\pi)$, on what interval is $f$ increasing and the
+      graph of $f$ concave down?
+    answer: $\frac{\pi}{2} < x < \pi$
+    distractors:
+      - $0 < x < \frac{\pi}{2}$
+      - $\pi < x < \frac{3\pi}{2}$
+      - $0 < x < \pi$
+    solution: |
+      \begin{gather*}
+        f'(x) = \sin x > 0 \implies 0 < x < \pi \\
+        f''(x) = \cos x < 0 \implies \frac{\pi}{2} < x < \frac{3\pi}{2}
+      \end{gather*}
+      Both conditions hold on $\frac{\pi}{2} < x < \pi$.
+    calculator_active: false
+    sections:
+      - 5.9
+    dok: 2
+    review: generated
+
+  - id: 48c7438c-43ca-41bb-a06f-f4c75f7cad9e
+    question: |
+      Let $f$ be a twice-differentiable function with $f'(4) = 0$ and
+      $f''(4) > 0$. Which of the following must be true?
+
+      \textbf{I.\phantom{II}} \quad $f$ has a relative minimum at $x = 4$. \\
+      \textbf{II.\phantom{I}} \quad The graph of $f'$ is increasing at $x = 4$. \\
+      \textbf{III.} \quad The graph of $f$ has a point of inflection at $x = 4$.
+    answer: I and II only
+    distractors:
+      - I only
+      - II only
+      - I, II, and III
+    solution: |
+      \textbf{I.} True: second derivative test. \\
+      \textbf{II.} True: $f''(4) > 0$ means $f'$ is increasing at $x = 4$. \\
+      \textbf{III.} False: $f''(4) > 0$, so the graph is concave up at $x = 4$
+      and $f''(4) \ne 0$.
+    calculator_active: false
+    sections:
+      - 5.7
+      - 5.9
+    dok: 3
+    review: generated
+
+  - id: caf00f01-ecc0-4e12-962e-2f51fddd70b6
+    question: |
+      Two positive numbers have a sum of 20. What is the maximum possible value
+      of their product?
+    answer: 100
+    distractors:
+      - 96
+      - 75
+      - 200
+    solution: |
+      \begin{gather*}
+        P(x) = x(20 - x) = 20x - x^2 \\
+        P'(x) = 20 - 2x = 0 \implies x = 10 \\
+        P''(x) = -2 < 0 \implies \text{maximum} \\
+        P(10) = 10 \cdot 10 = 100
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - "5.10"
+    dok: 2
+    review: generated
+
+  - id: 16c28c29-4d9e-4a31-8ec6-48682b1f11c2
+    question: |
+      A rectangle has an area of 64 square units. What is the minimum possible
+      perimeter of the rectangle?
+    answer: 32
+    distractors:
+      - 16
+      - 40
+      - 64
+    solution: |
+      \begin{gather*}
+        P(x) = 2x + 2 \cdot \frac{64}{x} = 2x + \frac{128}{x} \quad (x > 0) \\
+        P'(x) = 2 - \frac{128}{x^2} = 0 \implies x = 8 \\
+        P''(x) = \frac{256}{x^3} > 0 \implies \text{minimum} \\
+        P(8) = 16 + 16 = 32
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - "5.10"
+    dok: 2
+    review: generated
+
+  - id: 7e0d9164-1b39-4e2e-812a-263b9ffeef5f
+    question: |
+      What point on the line $y = 2x + 1$ is closest to the origin?
+    answer: $\left(-\frac{2}{5}, \frac{1}{5}\right)$
+    distractors:
+      - $(0, 1)$
+      - $\left(-\frac{1}{2}, 0\right)$
+      - $\left(\frac{2}{5}, \frac{9}{5}\right)$
+    solution: |
+      Minimize the square of the distance:
+      \begin{gather*}
+        D(x) = x^2 + (2x + 1)^2 = 5x^2 + 4x + 1 \\
+        D'(x) = 10x + 4 = 0 \implies x = -\frac{2}{5} \\
+        D''(x) = 10 > 0 \implies \text{minimum} \\
+        y = 2\left(-\frac{2}{5}\right) + 1 = \frac{1}{5}
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - "5.10"
+    dok: 2
+    review: generated
+
+  - id: 8d5b10bb-84ac-4d45-aac8-373dc87366fe
+    question: |
+      A rectangle has its base on the $x$-axis and its upper two vertices on
+      the parabola $y = 12 - x^2$. What is the largest possible area of the
+      rectangle?
+    answer: 32
+    distractors:
+      - 16
+      - 24
+      - 48
+    solution: |
+      Let the upper vertices be $(\pm x, 12 - x^2)$ with $0 < x < 2\sqrt{3}$.
+      \begin{gather*}
+        A(x) = 2x(12 - x^2) = 24x - 2x^3 \\
+        A'(x) = 24 - 6x^2 = 0 \implies x = 2 \\
+        A''(x) = -12x < 0 \implies \text{maximum} \\
+        A(2) = 2(2)(12 - 4) = 32
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - "5.10"
+    dok: 2
+    review: generated
+
+  - id: ce2092d4-4091-4c5a-a60f-8f5dafa3069c
+    question: |
+      A farmer has 600 feet of fencing to enclose a rectangular field that
+      borders a straight river. No fencing is needed along the river. What is
+      the largest area, in square feet, that the farmer can enclose?
+    answer: 45,000
+    distractors:
+      - 22,500
+      - 90,000
+      - 40,000
+    solution: |
+      Let $x$ be the length of each side perpendicular to the river, so the
+      side parallel to the river is $600 - 2x$.
+      \begin{gather*}
+        A(x) = x(600 - 2x) = 600x - 2x^2 \\
+        A'(x) = 600 - 4x = 0 \implies x = 150 \\
+        A''(x) = -4 < 0 \implies \text{maximum} \\
+        A(150) = 150 \cdot 300 = 45{,}000 \text{ square feet}
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.11
+    dok: 2
+    review: generated
+
+  - id: 58f07e86-27f4-4249-aec2-1f5b10d8cec2
+    question: |
+      An open-top box is made from a 12-inch by 12-inch square sheet of
+      cardboard by cutting a square of side $x$ inches from each corner and
+      folding up the sides. What value of $x$ maximizes the volume of the box?
+    answer: 2
+    distractors:
+      - 3
+      - 4
+      - 6
+    solution: |
+      \begin{gather*}
+        V(x) = x(12 - 2x)^2, \quad 0 < x < 6 \\
+        V'(x) = (12 - 2x)^2 - 4x(12 - 2x) = (12 - 2x)(12 - 6x) = 0
+        \implies x = 2 \quad (x = 6 \text{ is not in the domain})
+      \end{gather*}
+      $V'(x) > 0$ for $0 < x < 2$ and $V'(x) < 0$ for $2 < x < 6$, so the
+      volume is a maximum when $x = 2$.
+    calculator_active: false
+    sections:
+      - 5.11
+    dok: 2
+    review: generated
+
+  - id: e57e79ae-d033-49c3-938d-bd5b10c6878f
+    question: |
+      A company's profit, in dollars, from selling $x$ units of a product is
+      $P(x) = -2x^2 + 120x - 1000$. How many units should the company sell to
+      maximize profit, and what is the maximum profit?
+    answer: 30 units; \$800
+    distractors:
+      - 30 units; \$1800
+      - 15 units; \$350
+      - 60 units; \$1000
+    solution: |
+      \begin{gather*}
+        P'(x) = -4x + 120 = 0 \implies x = 30 \\
+        P''(x) = -4 < 0 \implies \text{maximum} \\
+        P(30) = -2(900) + 3600 - 1000 = 800
+      \end{gather*}
+      Selling 30 units gives the maximum profit of \$800.
+    calculator_active: false
+    sections:
+      - 5.11
+    dok: 2
+    review: generated
+
+  - id: 48e8687f-56e5-4d4b-beff-f45b21fc1849
+    question: |
+      The height of a ball, in feet, is given by a twice-differentiable
+      function $h(t)$ for $0 \le t \le 10$ seconds. The only critical point of
+      $h$ in $(0, 10)$ is at $t = 3$, and $h''(3) < 0$. Which of the following
+      is the best interpretation of $h(3)$?
+    answer: $h(3)$ is the greatest height of the ball for $0 \le t \le 10$.
+    distractors:
+      - $h(3)$ is the least height of the ball for $0 \le t \le 10$.
+      - $h(3)$ is the greatest velocity of the ball for $0 \le t \le 10$.
+      - $h(3)$ is the time at which the ball reaches its greatest height.
+    solution: |
+      $h''(3) < 0$, so $h$ has a relative maximum at $t = 3$. Since it is the
+      only critical point on the interval, $h(3)$ is the absolute maximum: the
+      greatest height of the ball, in feet, on $0 \le t \le 10$.
+    calculator_active: false
+    sections:
+      - 5.7
+      - 5.11
+    dok: 2
+    review: generated
+
+  - id: c53b3e95-6e15-47b4-98f9-c678424bb621
+    question: |
+      At which points on the curve $x^2 + y^2 = 25$ is the tangent line
+      horizontal?
+    answer: $(0, 5)$ and $(0, -5)$
+    distractors:
+      - $(5, 0)$ and $(-5, 0)$
+      - $(0, 5)$ only
+      - $(3, 4)$ and $(-3, -4)$
+    solution: |
+      \begin{gather*}
+        2x + 2y\dydx = 0 \implies \dydx = -\frac{x}{y} \\
+        \dydx = 0 \implies x = 0 \implies y^2 = 25 \implies y = \pm 5
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.12
+    dok: 2
+    review: generated
+
+  - id: a0630c5e-b60e-4eb3-9fa8-92feaea33753
+    question: |
+      At which points on the curve $x^2 + xy + y^2 = 12$ is the tangent line
+      horizontal?
+    answer: $(2, -4)$ and $(-2, 4)$
+    distractors:
+      - $(-4, 2)$ and $(4, -2)$
+      - $(2, 4)$ and $(-2, -4)$
+      - $(0, 2\sqrt{3})$ and $(0, -2\sqrt{3})$
+    solution: |
+      \begin{gather*}
+        2x + y + x\dydx + 2y\dydx = 0 \implies \dydx = -\frac{2x + y}{x + 2y} \\
+        \dydx = 0 \implies y = -2x \\
+        x^2 + x(-2x) + (-2x)^2 = 3x^2 = 12 \implies x = \pm 2
+      \end{gather*}
+      The points are $(2, -4)$ and $(-2, 4)$; at both, $x + 2y \ne 0$.
+    calculator_active: false
+    sections:
+      - 5.12
+    dok: 2
+    review: generated
+
+  - id: f7cd16b3-bf54-4d58-8f0c-65231d016b85
+    question: |
+      At which points on the curve $y^3 - 3y = x$ is the tangent line
+      vertical?
+    answer: $(-2, 1)$ and $(2, -1)$
+    distractors:
+      - $(-2, -1)$ and $(2, 1)$
+      - $(0, 0)$ only
+      - $(0, \sqrt{3})$ and $(0, -\sqrt{3})$
+    solution: |
+      \begin{gather*}
+        3y^2\dydx - 3\dydx = 1 \implies \dydx = \frac{1}{3y^2 - 3}
+      \end{gather*}
+      The tangent line is vertical where $3y^2 - 3 = 0$, so $y = \pm 1$.
+      $y = 1$ gives $x = 1 - 3 = -2$, and $y = -1$ gives $x = -1 + 3 = 2$.
+    calculator_active: false
+    sections:
+      - 5.12
+    dok: 2
+    review: generated
+
+  - id: 469de7b9-7be1-430d-93b2-5ca829d40334
+    question: |
+      For the curve $x^2 + y^2 = 25$, what is the value of
+      $\frac{d^2y}{dx^2}$ at the point $(3, 4)$?
+    answer: $-\frac{25}{64}$
+    distractors:
+      - $-\frac{3}{4}$
+      - $\frac{25}{64}$
+      - $-\frac{7}{64}$
+    solution: |
+      \begin{gather*}
+        \dydx = -\frac{x}{y} \\
+        \frac{d^2y}{dx^2} = -\frac{y - x\dydx}{y^2}
+        = -\frac{y + \frac{x^2}{y}}{y^2} = -\frac{x^2 + y^2}{y^3} = -\frac{25}{y^3} \\
+        \frac{d^2y}{dx^2}\bigg|_{(3, 4)} = -\frac{25}{64}
+      \end{gather*}
+    calculator_active: false
+    sections:
+      - 5.12
+    dok: 2
+    review: generated
