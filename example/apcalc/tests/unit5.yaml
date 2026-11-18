@@ -810,7 +810,7 @@ questions:
     sections:
       - 5.1
     dok: 2
-    review: generated
+    review: none
 
   - id: 589c3219-ba8b-458a-ae73-37b69bc71208
     question: |
@@ -1375,7 +1375,7 @@ questions:
     sections:
       - 5.5
     dok: 2
-    review: generated
+    review: none
 
   - id: 4a98ddd0-fa83-4f2c-8b83-a2a29aaa2497
     question: |
@@ -1494,7 +1494,7 @@ questions:
     sections:
       - 5.6
     dok: 2
-    review: generated
+    review: none
 
   - id: 54e9e6b4-80b5-417e-a884-2790af4204c9
     question: |
@@ -1516,7 +1516,7 @@ questions:
     sections:
       - 5.6
     dok: 2
-    review: generated
+    review: none
 
   - id: aaba739d-5cdc-4d30-a5a8-c1156bcb41f2
     question: |
@@ -1537,7 +1537,7 @@ questions:
     sections:
       - 5.6
     dok: 2
-    review: generated
+    review: none
 
   - id: 4b09deda-a185-4bc4-b230-ff3957dbb5e3
     question: |
@@ -1558,7 +1558,7 @@ questions:
     sections:
       - 5.6
     dok: 2
-    review: generated
+    review: none
 
   - id: 08216154-dff9-46db-a012-5bb6b31f409c
     question: |
@@ -1579,7 +1579,7 @@ questions:
     sections:
       - 5.6
     dok: 2
-    review: generated
+    review: none
 
   - id: 023e5371-154a-4f70-aa37-8309724bd7ca
     question: |
@@ -1687,7 +1687,7 @@ questions:
     sections:
       - 5.7
     dok: 2
-    review: generated
+    review: none
 
   - id: 443c132b-a015-491f-8782-719ecebc2854
     question: |
@@ -1974,7 +1974,7 @@ questions:
       - 5.7
       - 5.9
     dok: 3
-    review: generated
+    review: none
 
   - id: caf00f01-ecc0-4e12-962e-2f51fddd70b6
     question: |
@@ -2018,7 +2018,7 @@ questions:
     sections:
       - "5.10"
     dok: 2
-    review: generated
+    review: none
 
   - id: 7e0d9164-1b39-4e2e-812a-263b9ffeef5f
     question: |
@@ -2158,7 +2158,7 @@ questions:
       - 5.7
       - 5.11
     dok: 2
-    review: generated
+    review: none
 
   - id: c53b3e95-6e15-47b4-98f9-c678424bb621
     question: |
@@ -2243,4 +2243,4 @@ questions:
     sections:
       - 5.12
     dok: 2
-    review: generated
+    review: none
