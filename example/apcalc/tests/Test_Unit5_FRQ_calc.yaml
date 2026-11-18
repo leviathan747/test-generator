@@ -173,3 +173,186 @@ questions:
     calculator_active: true
     question_type: FRQ
     review: generated
+
+  - id: d468e7d0-244d-4383-9908-923a75967452
+    question: |
+      Let $f$ be a twice-differentiable function with $f(0) = 3$. The derivative
+      of $f$ is given by $f'(x) = \cos\left(x^2\right) - \frac{x}{4}$ for
+      $0 \le x \le 2.4$.
+    parts:
+      - question: |
+          Find the $x$-coordinate of each relative extremum of $f$ on the open
+          interval $0 < x < 2.4$. Classify each as the location of a relative
+          minimum or a relative maximum. Justify your answer.
+        solution: |
+          $f'(x) = 0 \implies x \approx 1.1330, 2.3081$ \qquad (solve with calculator) \\
+
+          Relative max. at $x \approx 1.1330$ because $f'(x)$ goes from pos. to neg. \\
+          Relative min. at $x \approx 2.3081$ because $f'(x)$ goes from neg. to pos.
+        grading:
+          - points: 1
+            criterion: Sets $f'(x) = 0$
+          - points: 2
+            criterion: Each classification with justification
+        sections:
+          - 5.4
+        dok: 2
+        work_space: 2in
+      - question: |
+          On what open interval(s) contained in $0 < x < 2.4$ is the graph of $f$
+          concave down? Justify your answer.
+        solution: |
+          \begin{gather*}
+            f''(x) = -2x \sin\left(x^2\right) - \frac{1}{4} = 0
+            \implies x \approx 1.7920 \qquad \text{(solve with calculator)}
+          \end{gather*}
+          The graph of $f$ is concave down on $(0, 1.7920)$ because $f''(x) < 0$
+          (equivalently, $f'$ is decreasing) on that interval.
+        grading:
+          - points: 1
+            criterion: Sets $f''(x) = 0$
+          - points: 1
+            criterion: Correct interval with justification
+        sections:
+          - 5.6
+        dok: 2
+        work_space: 2in
+      - question: |
+          Find the minimum value of $f'(x)$ on the closed interval
+          $0 \le x \le 2.4$. Justify your answer.
+        solution: |
+          Candidates: the critical number of $f'$, $x \approx 1.7920$, and the
+          endpoints $x = 0, 2.4$.
+          \begin{gather*}
+            f'(0) = 1 \\
+            f'(1.7920) \approx -1.446 \\
+            f'(2.4) \approx 0.266
+          \end{gather*}
+          The minimum value of $f'(x)$ on $0 \le x \le 2.4$ is approximately $-1.446$.
+        grading:
+          - points: 1
+            criterion: Considers critical number and endpoints
+          - points: 1
+            criterion: Correct answer
+        sections:
+          - 5.5
+        dok: 3
+        work_space: 2in
+      - question: |
+          Write an equation for the line tangent to the graph of $f$ at $x = 0$.
+          Use the tangent line to approximate $f(0.2)$. Is this approximation an
+          overestimate or an underestimate? Give a reason for your answer.
+        solution: |
+          \begin{gather*}
+            f'(0) = \cos 0 - 0 = 1 \\
+            y - 3 = 1(x - 0) \\
+            f(0.2) \approx 3 + 0.2 = 3.2
+          \end{gather*}
+          The approximation is an overestimate because the graph of $f$ is concave
+          down on $(0, 1.7920)$, so the tangent line lies above the graph there.
+        grading:
+          - points: 1
+            criterion: Tangent line equation
+          - points: 1
+            criterion: Approximation
+          - points: 1
+            criterion: Overestimate with reason
+        sections:
+          - 4.6
+          - 5.6
+        dok: 3
+        work_space: 2in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
+
+  - id: 7fae3bf2-70aa-4138-acd0-f44410755957
+    question: |
+      A closed cylindrical can is to have a volume of 500 cubic centimeters. Let
+      $r$ be the radius of the can and $h$ be its height, both measured in
+      centimeters.
+    parts:
+      - question: |
+          Write an expression for the total surface area $S$ of the can, in square
+          centimeters, as a function of $r$ only.
+        solution: |
+          \begin{gather*}
+            \pi r^2 h = 500 \implies h = \frac{500}{\pi r^2} \\
+            S(r) = 2\pi r^2 + 2\pi r h = 2\pi r^2 + \frac{1000}{r}
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Solves for $h$ in terms of $r$
+          - points: 1
+            criterion: Correct expression for $S(r)$
+        sections:
+          - "5.10"
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Find the radius $r$ that minimizes the surface area of the can. Justify
+          that your answer gives an absolute minimum.
+        solution: |
+          \begin{gather*}
+            S'(r) = 4\pi r - \frac{1000}{r^2} = 0 \implies r^3 = \frac{250}{\pi}
+            \implies r \approx 4.301 \text{ cm}
+          \end{gather*}
+          $S'(r) < 0$ for $0 < r < 4.301$ and $S'(r) > 0$ for $r > 4.301$. Since
+          $r \approx 4.301$ is the only critical number for $r > 0$, $S$ has an
+          absolute minimum there.
+        grading:
+          - points: 1
+            criterion: $S'(r)$
+          - points: 1
+            criterion: Sets $S'(r) = 0$ and solves
+          - points: 1
+            criterion: Justification of absolute minimum
+        sections:
+          - 5.11
+        dok: 3
+        work_space: 2.5in
+      - question: |
+          The material for the top and bottom of the can costs \$0.03 per square
+          centimeter, and the material for the side costs \$0.01 per square
+          centimeter. Write an expression for the cost $C$, in dollars, of the
+          material for the can as a function of $r$ only, and find the radius
+          that minimizes the cost.
+        solution: |
+          \begin{gather*}
+            C(r) = 0.03 \cdot 2\pi r^2 + 0.01 \cdot 2\pi r h = 0.06\pi r^2 + \frac{10}{r} \\
+            C'(r) = 0.12\pi r - \frac{10}{r^2} = 0 \implies r \approx 2.982 \text{ cm}
+          \end{gather*}
+          $C'(r)$ changes from negative to positive at $r \approx 2.982$, the only
+          critical number for $r > 0$, so this gives the minimum cost.
+        grading:
+          - points: 1
+            criterion: Correct expression for $C(r)$
+          - points: 1
+            criterion: Sets $C'(r) = 0$
+          - points: 1
+            criterion: Correct radius with justification
+        sections:
+          - "5.10"
+          - 5.11
+        dok: 3
+        work_space: 2.5in
+      - question: |
+          Find the minimum cost and the height of the can that has the minimum
+          cost. Indicate units of measure.
+        solution: |
+          \begin{gather*}
+            C(2.982) \approx 0.06\pi (2.982)^2 + \frac{10}{2.982} \approx \$5.030 \\
+            h = \frac{500}{\pi (2.982)^2} \approx 17.894 \text{ cm}
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Minimum cost with units
+          - points: 1
+            criterion: Height with units
+        sections:
+          - 5.11
+        dok: 2
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
