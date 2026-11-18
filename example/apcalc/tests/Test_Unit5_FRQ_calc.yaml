@@ -1,0 +1,175 @@
+title: "Unit 5 Test FRQ: Analytical Applications of Differentiation"
+author: Levi Starrett
+class_name: AP Calculus AB
+class_id: APCalc
+duration: 15 min
+sections: 2.1 - 5.12
+instructions: |
+  Read all directions and answer each question completely. Unless otherwise
+  specified, all answers will be real numbers. Decimal approximations must be
+  reported to at least 3 places after the decimal point.
+# question_count: 1
+questions:
+  - id: 8746b2d3-8522-4944-97d3-1b4bc09eb56e
+    legacy_ids:
+      - 5.A.17
+    question: |
+      Let $f$ be a differentiable function defined on the interval $-6 \le x \le 6$.
+      The figure above shows the graph of $f'$, the derivative of $f$, which
+      consists of 3 line segments and a semi-circle on the interval $-6 \le x \le 6$.
+    figure: 44.tex
+    figure_placement: above
+    parts:
+      - question: |
+          State the critical values of $f(x)$ on $-6<x<6$ and classify each as
+          the location of a relative minimum, relative maximum, or neither of the
+          graph of $f(x)$. Justify your answer.
+        solution: |
+          Critical numbers at $x=-4, 0$ \\
+          Neither max. or min. at $x=-4$ because $f'(x)$ does not change sign. \\
+          Relative max. at $x=0$ because $f'(x)$ goes from pos. to neg.
+        grading:
+          - points: 1
+            criterion: Correct critical numbers
+          - points: 2
+            criterion: Each classification and justification
+        sections:
+          - 5.4
+        dok: 2
+        work_space: 2in
+      - question: |
+          On what interval(s) contained on $-6 \le x \le 6$ is $f(x)$ increasing?
+          Justify your answer.
+        solution: |
+          $[-6, 0)$ because $f'(x)>0$ on $[-6, -4)$ and $(-4, 0)$
+        grading:
+          - points: 1
+            criterion: Correct interval
+          - points: 1
+            criterion: Justification
+        sections:
+          - 5.3
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          For what value(s) of $x$ contained on $-6 \le x \le 6$ does $f(x)$ have
+          a point of inflection? Justify your answer.
+        solution: |
+          P.O.I.s at $x=-4, -2, 4$ because $f'(x)$ goes from increasing to
+          decreasing or decreasing to increasing
+        grading:
+          - points: 1
+            criterion: Correct $x$ values
+          - points: 1
+            criterion: Justification
+        sections:
+          - 5.6
+          - 5.9
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          On what open interval(s) contained on $-6 \le x \le 6$ is $f(x)$
+          simultaneously concave up and decreasing? Justify your answer.
+        solution: |
+          $(4, 6)$ because $f'(x)<0$ and $f'(x)$ is increasing on that interval.
+        grading:
+          - points: 1
+            criterion: Correct interval
+          - points: 1
+            criterion: Justification
+        sections:
+          - 5.3
+          - 5.6
+          - 5.9
+        dok: 3
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
+
+  - id: e3bc5d54-e507-4ab9-a0f8-463757321f1e
+    legacy_ids:
+      - 5.B.17
+    question: |
+      Let $f$ be a function defined on the closed interval $-3 \le x \le 4$
+      with $f(0) = 3$ and $f(-1) = 2$. The graph of $f'$, the derivative of
+      $f$, consists of a line segment and a semi-circle, as shown below
+    figure: 45.tex
+    figure_placement: below
+    parts:
+      - question: |
+          On what interval(s), if any, is $f$ increasing? Justify your answer.
+        solution: |
+          $f$ is increasing on $[-2, 4]$ because $f'(x) > 0$ on $(-2, 2)$ and
+          $(2, 4)$.
+        grading:
+          - points: 1
+            criterion: Correct interval
+          - points: 1
+            criterion: Justification
+        sections:
+          - 5.3
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          For what $x$-value does $f$ have a relative minimum? Justify your answer.
+        solution: |
+          Relative min. at $x = -2$ because $f'(x)$ goes from neg. to pos. at
+          $x = -2$.
+        grading:
+          - points: 1
+            criterion: Correct $x$-value
+          - points: 1
+            criterion: Justification
+        sections:
+          - 5.4
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          On what interval(s), if any, is $f$ concave down? Justify your answer.
+        solution: |
+          $f$ is concave down on $(0, 2)$ because $f'$ is decreasing on that
+          interval.
+        grading:
+          - points: 1
+            criterion: Correct interval
+          - points: 1
+            criterion: Justification
+        sections:
+          - 5.6
+          - 5.9
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Find the $x$-coordinate of each point of inflection of the graph of $f$
+          on the open interval $-3 < x < 4$. Justify your answer.
+        solution: |
+          P.O.I.s at $x = 0$ and $x = 2$ because $f'$ changes from increasing to
+          decreasing at $x = 0$ and from decreasing to increasing at $x = 2$.
+        grading:
+          - points: 1
+            criterion: Correct $x$ values
+          - points: 1
+            criterion: Justification
+        sections:
+          - 5.6
+          - 5.9
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Find the equation of the line tangent to the graph of $f$ at the point $(-1, 2)$.
+        solution: |
+          \begin{gather*}
+            f'(-1) = -1 + 2 = 1 \\
+            y - 2 = 1(x + 1)
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Tangent line equation
+        sections:
+          - 2.2
+        dok: 2
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated

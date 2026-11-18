@@ -1,0 +1,241 @@
+title: "Unit 5 Test FRQ: Analytical Applications of Differentiation"
+author: Levi Starrett
+class_name: AP Calculus AB
+class_id: APCalc
+duration: 15 min
+sections: 5.1 - 5.12
+instructions: |
+  Read all directions and answer each question completely. Unless otherwise
+  specified, all answers will be real numbers.
+question_count: 1
+questions:
+  - id: 52187225-8a37-445a-9be6-bfefff98de5d
+    legacy_ids:
+      - 5.A.11
+    question: |
+      The graph of the continuous function $g$ is shown above for $-4 \le x \le 4$.
+      The function $g$ is twice differentiable, except at $x=0$. Let $f$ be
+      the function with $f(0)=2$ and $f'(x)=x^2-2x-3$
+    figure: 42.tex
+    figure_placement: above
+    parts:
+      - question: |
+          Find the \textit{x}-coordinate of each critical point of $f$. Classify
+          each point as the location of a relative minimum, relative maximum or
+          neither. Justify your answer.
+        solution: |
+          \begin{align*}
+          f'(x) &= (x-3)(x+1) \\
+              x &= -1, 3
+          \end{align*}
+          \[
+          \tabskip0pt\openup 3pt
+          \vbox{\halign{#&&\hbox to 0.8in{\cleaders\hbox{#}\hfill}&\hbox to 0pt{\hss$#$\hss}\cr
+          $f'(x)$ & + & 0 & $ - $ & 0 & + \cr
+          &---&\vert&---&\vert&---&\cr
+          &&-1&&3\cr}}
+          \]
+          relative max. at $x=-1$ because $f'(x)$ goes from pos. to neg. at $x=-1$. \\
+          relative min. at $x=3$ because $f'(x)$ goes from neg. to pos. at $x=3$.
+        grading:
+          - points: 2
+            criterion: Each critical value and classification
+          - points: 1
+            criterion: Justification using FDT or SDT
+        sections:
+          - 5.4
+        dok: 2
+        work_space: 2in
+      - question: |
+          Find all values of $x$ at which the graph of $f$ has a point of
+          inflection. Justify your answer.
+        solution: |
+          \begin{align*}
+          f''(x) &= 2x-2 \\
+                &= 2(x-1)
+          \end{align*}
+          \[
+          \tabskip0pt\openup 3pt
+          \vbox{\halign{#&&\hbox to 1.2in{\cleaders\hbox{#}\hfill}&\hbox to 0pt{\hss$#$\hss}\cr
+          $f''(x)$ & - & 0 & + \cr
+          &---&\vert&---&\cr
+          &&1&&\cr}}
+          \]
+
+          P.O.I. at $x=1$ because $f''(x)$ changes sign at $x=1$.
+        grading:
+          - points: 1
+            criterion: Correct point of inflection
+          - points: 1
+            criterion: Justification
+        sections:
+          - 5.6
+        dok: 2
+        work_space: 2in
+      - question: |
+          Fill in the missing entries in the table below to describe the behavior
+          of $g'$ and $g''$ on the interval $-4 \le x \le 4$.
+
+          \begin{center}
+            \begin{tabularx}{\linewidth}{ |*{6}{Y|} }
+              \hline
+              $x$ & $x=-4$ & $-4<x<0$ & $x=0$ & $0<x<4$ & $x=4$ \\
+              \hline
+              $g(x)$ & 6 & positive & $\textstyle \frac{13}{3}$ & positive & 1 \\
+              \hline
+              $g'(x)$\answerstrut & 0 & \ans{negative} & $\textstyle -\frac{5}{3}$ & \ans{negative} & 0 \\
+              \hline
+              $g''(x)$\answerstrut & 0 & \ans{negative} & undefined & \ans{positive} & 0 \\
+              \hline
+            \end{tabularx}
+          \end{center}
+        grading:
+          - points: 1
+            criterion: $g'(x)$ entries
+          - points: 1
+            criterion: $g''(x)$ entries
+        sections:
+          - 5.9
+        dok: 2
+        work_space: 1in
+      - question: |
+          Let $h$ be the function defined by $h(x)=f(x)g(x)$. Is $h$ increasing
+          or decreasing at $x=0$? Give a reason for your answer.
+        solution: |
+          \begin{gather*}
+          h'(x) = f(x)g'(x) + g(x)f'(x) \\
+          f(0) = 2 \\
+          f'(0) = -3 \\
+          g(0) = \frac{13}{3} \\
+          g'(0) = -\frac{5}{3}
+          \end{gather*}
+          \begin{align*}
+          h'(0) &= 2(-\frac{5}{3}) + \frac{13}{3}(-3) \\
+                &= -\frac{10}{3} - 13 < 0
+          \end{align*}
+
+          Decreasing at $x=0$ because $h'(0) < 0$
+        grading:
+          - points: 1
+            criterion: Correct use of product rule
+          - points: 1
+            criterion: Correct answer with reason
+        sections:
+          - 2.8
+          - 5.3
+        dok: 3
+        work_space: 2in
+    calculator_active: false
+    question_type: FRQ
+    review: generated
+
+  - id: 7218390b-eb3e-435e-8ce8-27e43a36cda7
+    legacy_ids:
+      - 5.B.11
+    question: |
+      Let $f$ be a function defined for all $x > 0$ where the derivative of $f$
+      is given by $f'(x) = \frac{x^2 -10x + 16}{x}$ \\ for all $x > 0$.
+    parts:
+      - question: |
+          Find all values of $x$ for which the graph of $f$ has a relative
+          maximum or relative minimum for $x > 0$.
+        solution: |
+          \begin{gather*}
+            f'(x) = \frac{(x - 2)(x - 8)}{x} = 0 \implies x = 2, 8
+          \end{gather*}
+          \[
+          \tabskip0pt\openup 3pt
+          \vbox{\halign{#&&\hbox to 0.8in{\cleaders\hbox{#}\hfill}&\hbox to 0pt{\hss$#$\hss}\cr
+          $f'(x)$ & + & 0 & $ - $ & 0 & + \cr
+          &---&\vert&---&\vert&---&\cr
+          &&2&&8\cr}}
+          \]
+          Relative max. at $x = 2$ because $f'(x)$ goes from pos. to neg. at $x = 2$. \\
+          Relative min. at $x = 8$ because $f'(x)$ goes from neg. to pos. at $x = 8$.
+        grading:
+          - points: 1
+            criterion: Relative max. at $x = 2$ with justification
+          - points: 1
+            criterion: Relative min. at $x = 8$ with justification
+        sections:
+          - 5.4
+        dok: 2
+        work_space: 2in
+      - question: |
+          Find the minimum slope of $f$ for $x > 0$.
+        solution: |
+          The slope of $f$ is $f'(x) = x - 10 + \frac{16}{x}$.
+          \begin{gather*}
+            f''(x) = 1 - \frac{16}{x^2} = \frac{x^2 - 16}{x^2} = 0 \implies x = 4 \quad (x > 0)
+          \end{gather*}
+          $f''(x) < 0$ for $0 < x < 4$ and $f''(x) > 0$ for $x > 4$, so $f'$ has its
+          minimum at $x = 4$.
+          \begin{gather*}
+            f'(4) = 4 - 10 + \frac{16}{4} = -2
+          \end{gather*}
+          The minimum slope of $f$ is $-2$.
+        grading:
+          - points: 1
+            criterion: $f''(x)$
+          - points: 1
+            criterion: Sets $f''(x) = 0$ and justifies minimum at $x = 4$
+          - points: 1
+            criterion: Correct answer
+        sections:
+          - 5.5
+          - 5.7
+        dok: 3
+        work_space: 2.5in
+      - question: |
+          Identify any intervals over which $f$ is concave up for $x > 0$.
+        solution: |
+          \begin{gather*}
+            f''(x) = \frac{x^2 - 16}{x^2} = \frac{(x - 4)(x + 4)}{x^2}
+          \end{gather*}
+          $f$ is concave up on $(4, \infty)$ because $f''(x) > 0$ for $x > 4$.
+        grading:
+          - points: 1
+            criterion: Correct interval
+          - points: 1
+            criterion: Justification
+        sections:
+          - 5.6
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Let $g$ be function that is continuous on the closed interval $[0,
+          3]$. The function $g$ and its derivatives are shown in the table
+          below
+
+          \begin{tabularx}{\linewidth}{ |Y||*{6}{Y|} }
+            \hline
+            \bm{$x$} & $x = 0$ & $0 < x < 1$ & $x = 1$ & $1 < x < 2$ & $x = 2$ & $2 < x < 3$ \\
+            \hline
+            \bm{$g(x)$} & 1 & positive & 0 & negative & -1 & negative \\
+            \hline
+            \bm{$g'(x)$} & undefined & negative & 0 & negative & undefined & positive \\
+            \hline
+            \bm{$g''(x)$} & undefined & positive & 0 & negative & undefined & negative \\
+            \hline
+          \end{tabularx}
+
+          Sketch a possible graph of $g$ on the coordinate plane provided below.
+        figure: 43.tex
+        figure_placement: below
+        solution: |
+          See the graph above: decreasing and concave up on $(0, 1)$, horizontal
+          tangent at $(1, 0)$, decreasing and concave down on $(1, 2)$, sharp turn
+          at $(2, -1)$, increasing and concave down on $(2, 3)$.
+        grading:
+          - points: 1
+            criterion: Points $(0, 1)$, $(1, 0)$, and $(2, -1)$
+          - points: 1
+            criterion: Increasing/decreasing and concavity
+        sections:
+          - 5.8
+          - 5.9
+        dok: 3
+        work_space: 0in
+    calculator_active: false
+    question_type: FRQ
+    review: generated

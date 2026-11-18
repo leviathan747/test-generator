@@ -1,0 +1,44 @@
+\documentclass{standalone}
+\usepackage{tikz}
+% \ifprintanswers comes from the exam class when this file is \input into a
+% test; define it here so the figure also compiles on its own (blank grid).
+% \csname keeps a bare \if... token out of the preamble, which the standalone
+% package skips inside \iffalse when the figure is \input
+\expandafter\newif\csname ifprintanswers\endcsname
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=1.6,
+    sketch/.style={red, line width=1.2pt}]
+  % Coordinate plane for sketching g on [0, 3]. In answer-key mode a possible
+  % graph of g is drawn in red:
+  %   (0,1): g'(0) undefined (vertical tangent)
+  %   0 < x < 1: decreasing, concave up -- y = (1 - sqrt(x))^3
+  %   (1,0): g' = 0, g'' = 0
+  %   1 < x < 2: decreasing, concave down -- y = -(x - 1)^3
+  %   (2,-1): g' undefined (cusp)
+  %   2 < x < 3: increasing, concave down -- y = -1 + 0.85 sqrt(x - 2)
+  \def\xmin{-0.9}\def\xmax{3.8}
+  \def\ymin{-2.8}\def\ymax{2.8}
+
+  % Grid
+  \draw[gray!25] (\xmin,\ymin) grid[step=1] (\xmax,\ymax);
+
+  % Axes
+  \draw[->] (\xmin,0) -- (\xmax+0.2,0) node[above left, font=\small] {$x$};
+  \draw[->] (0,\ymin) -- (0,\ymax+0.2) node[below right, font=\small] {$y$};
+  \foreach \x in {1,2,3}
+    \node[below, font=\scriptsize] at (\x,0) {$\x$};
+  \foreach \y in {-2,-1,1,2}
+    \node[left, font=\scriptsize] at (0,\y) {$\y$};
+
+  \ifprintanswers
+    \draw[sketch, samples=60, domain=0:1]
+      plot (\x, {(1 - sqrt(\x))^3});
+    \draw[sketch, samples=40, domain=1:2]
+      plot (\x, {-(\x - 1)^3});
+    \draw[sketch, samples=60, domain=2:3]
+      plot (\x, {-1 + 0.85*sqrt(\x - 2)});
+    \foreach \p in {(0,1), (1,0), (2,-1), (3,-0.15)}
+      \fill[red] \p circle (2.5pt);
+  \fi
+\end{tikzpicture}
+\end{document}
