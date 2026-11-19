@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\definecolor{gridgray}{RGB}{213,213,213}
+\begin{tikzpicture}[color=black, >=stealth, scale=0.5, font=\scriptsize\bfseries]
+  % Grid
+  \draw[gridgray, thin] (0,-4) grid (12,8);
+  % Axes
+  \draw[<->, thick] (-0.7,0) -- (12.7,0);
+  \draw[<->, thick] (0,-4.7) -- (0,8.7);
+  \node at (12.7,0.6) {n};
+  \node[anchor=west] at (0.2,8.4) {g(n)};
+  \node at (-0.45,0.5) {O};
+  % Tick labels
+  \foreach \x in {1,...,12} \node[below] at (\x,0) {\x};
+  \foreach \y in {-4,-3,-2,-1,1,2,3,4,5,6,7,8} \node[left] at (0,\y) {\y};
+  % Terms of the sequence
+  % g_n = 8(-1/2)^(n-2) for n = 2, ..., 8
+  \foreach \p in {(2,8), (3,-4), (4,2), (5,-1), (6,0.5), (7,-0.25), (8,0.125)}
+    \fill \p circle (4pt);
+\end{tikzpicture}
+\end{document}

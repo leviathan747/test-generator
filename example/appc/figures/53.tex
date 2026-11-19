@@ -1,0 +1,35 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\definecolor{gridgray}{RGB}{200,200,200}
+% From unit2a/15-C.png: residuals of the exponential regression
+% y = 21.682(0.963124)^t and the linear regression
+% y = 16.11355239 - 0.2102157146t for the Unit 2A FRQ purchasing-power data
+% (t = years since 1933). Residuals computed from the data table.
+\begin{tikzpicture}[x=0.05cm, y=0.5cm]
+  % Exponential Regression Model Residuals
+  \begin{scope}[shift={(0,0)}]
+    \draw[gridgray, xstep=10, ystep=1] (0,-3) grid (110,4);
+    \draw[thick] (0,-3) rectangle (110,4);
+    \draw[thick] (0,0) -- (110,0);
+    \foreach \y/\lbl in {4/+4, 3/+3, 2/+2, 1/+1, 0/0, -1/-1, -2/-2, -3/-3}
+      \node[left=2pt, font=\small] at (0,\y) {$\lbl$};
+    \node[above=1pt, font=\footnotesize\bfseries] at (55,4) {Exponential Regression Model Residuals};
+    \node[below=2pt, font=\bfseries] at (55,-3) {years};
+    \foreach \p in {(0,-1.77), (11,0.37), (20,-0.54), (31,1.59), (38,1.19), (54,-0.57), (64,-0.35), (75,-0.09), (87,0.18)}
+      \fill \p circle (2.5pt);
+  \end{scope}
+  % Linear Regression Model Residuals
+  \begin{scope}[shift={(160,0)}]
+    \draw[gridgray, xstep=10, ystep=1] (0,-3) grid (110,4);
+    \draw[thick] (0,-3) rectangle (110,4);
+    \draw[thick] (0,0) -- (110,0);
+    \foreach \y/\lbl in {4/+4, 3/+3, 2/+2, 1/+1, 0/0, -1/-1, -2/-2, -3/-3}
+      \node[left=2pt, font=\small] at (0,\y) {$\lbl$};
+    \node[above=1pt, font=\footnotesize\bfseries] at (55,4) {Linear Regression Model Residuals};
+    \node[below=2pt, font=\bfseries] at (55,-3) {years};
+    \foreach \p in {(0,3.80), (11,0.91), (20,-2.22), (31,-1.25), (38,-1.74), (54,-2.48), (64,-1.05), (75,0.85), (87,3.18)}
+      \fill \p circle (2.5pt);
+  \end{scope}
+\end{tikzpicture}
+\end{document}

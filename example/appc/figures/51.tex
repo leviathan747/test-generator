@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{bm}
+\begin{document}
+\definecolor{gridgray}{RGB}{200,200,200}
+\begin{tikzpicture}[>=stealth, x=0.6cm, y=0.55cm]
+  % From unit2a/10.png: residuals with a clear increasing linear pattern
+  \draw[gridgray] (0,-3) grid (11,3);
+  \draw[thick] (0,-3) rectangle (11,3);
+  \draw[thick] (0,0) -- (11,0);
+  \node[left=4pt] at (0,0) {\large 0};
+  \node[above=2pt, font=\large\bfseries] at (5.5,3) {Residual Plot};
+  \node[below=4pt] at (5.5,-3) {$\bm{x}$};
+  \foreach \p in {(0,-2.5), (1,-2), (2,-1.5), (3,-1), (4,-0.5), (5,0), (6,0.5), (7,1), (8,1.5), (9,2), (10,2.5), (11,3)}
+    \fill \p circle (3pt);
+\end{tikzpicture}
+\end{document}

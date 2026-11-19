@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{bm}
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=0.6, font=\bfseries]
+  % From unit2a/6-C.png: y = 0.9e^(0.45x); exponential growth
+  \draw[->, thick] (-5.2,0) -- (4.6,0) node[right] {$\bm{x}$};
+  \draw[->, thick] (0,-0.8) -- (0,5.6) node[above] {$\bm{y}$};
+  \node[below left] at (0,0) {$\bm{O}$};
+  \begin{scope}
+    \clip (-5.2,-0.8) rectangle (4.6,5.6);
+    \draw[line width=1.4pt, smooth, samples=150, domain=-5.2:4.6] plot (\x, {0.9*exp(0.45*\x)});
+  \end{scope}
+\end{tikzpicture}
+\end{document}

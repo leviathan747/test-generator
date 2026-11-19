@@ -5,11 +5,10 @@ questions:
     related_to:
       - 1b5a32f2-6900-4855-9621-ad94340051fb
     question: |
-      \includegraphics{1}
-
       Values of the terms of a geometric sequence $g_n$ are graphed in the
       figure to the right. Which of the following is an expression  for the
       \emph{n}th term of the geometric sequence?
+    figure: 45.tex
     answer: $g_n = 8 \left( -\frac{1}{2} \right)^{n-2}$
     distractors:
       - $g_n = 8 \left( \frac{1}{2} \right)^n$
@@ -19,11 +18,13 @@ questions:
       $g_n = g_k \cdot r^{n-k}$ \qquad $g_2 = 8$ \\
       The absolute value of each element is half of the element before it and
       alternating between positive and negative values, therefore $r =
-      -\frac{1}{2}$.
+      -\frac{1}{2}$. \\
+      $g_n = 8\left(-\frac{1}{2}\right)^{n-2}$
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: none
+    sections:
+      - 2.1
+    dok: 2
+    review: generated
 
   - id: 41a8ae50-18f0-4282-a316-71f03c6241c6
     legacy_ids:
@@ -31,18 +32,17 @@ questions:
     related_to:
       - 8058de0d-a655-439e-82ee-50f4d540eee8
     question: |
-      \fullwidth{\begin{center}
-        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
-          \hline
-          \bm{$n$} & 1 & 5 & 7 & 8 & 15 \\
-          \hline
-          \bm{$a_n$} & $b$ & 32 & 26 & $c$ & 2 \\
-          \hline
-        \end{tabularx}
-      \end{center}}
-
-      The table above contains selected values of an arithmetic sequence $a_n$ ,
+      The table above contains selected values of an arithmetic sequence $a_n$,
       where $b$ and $c$ are constants. What is the value of $b + c$?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+        \hline
+        \bm{$n$} & 1 & 5 & 7 & 8 & 15 \\
+        \hline
+        \bm{$a_n$} & $b$ & 32 & 26 & $c$ & 2 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
     answer: 67
     distractors:
       - 49
@@ -56,10 +56,11 @@ questions:
       $d = -3$ \\
       $b = 32 - 3(1 - 5) = 32 + 12 = 44$ \\
       $c = 32 - 3(8 - 5) = 32 - 9 = 23$ \\
-      $44 + 23 = 67$ \\
+      $44 + 23 = 67$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.1
+    dok: 2
     review: none
 
   - id: 33756531-0c88-4357-b11d-ee7404873a25
@@ -80,8 +81,10 @@ questions:
       $b = \textstyle \frac{f(x + 1)}{f(x)} = 3$ \\
       $f(x) = 36(3)^{x - 2} = 36(3^{-2})(3)^x = 4(3)^x$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.2
+      - 2.4
+    dok: 2
     review: none
 
   - id: 51aff989-4ef3-42ce-bb3d-b49df548469b
@@ -90,28 +93,28 @@ questions:
     related_to:
       - 68cc6269-0267-452c-a870-3d5691a5ef53
     question: |
-      \fullwidth{\begin{center}
-        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
-          \hline
-          \bm{$x$} & 1 & 2 & 3 & 4 & 5 \\
-          \hline
-          \bm{$g(x)$} & 3 & 6 & 12 & 24 & 48 \\
-          \hline
-        \end{tabularx}
-      \end{center}}
-
       Selected values of the function $g$ are given in the table above. Which of
       the following statements about $g$ is most appropriate?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+        \hline
+        \bm{$x$} & 1 & 2 & 3 & 4 & 5 \\
+        \hline
+        \bm{$g(x)$} & 3 & 6 & 12 & 24 & 48 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
     answer: $g$ could be exponential because over equal-length input-value intervals, the output values change proportionally.
     distractors:
       - $g$ could be linear because over equal-length input-value intervals, the output values change at a constant rate.
       - $g$ could be linear because the output values change linearly as the input values change proportionally.
       - $g$ could be exponential because the output values change linearly as the input values change proportionally.
-    solution: As the $x$ values increase by 1 over each interval, the value of $g(x)$ doubles. This matches the statement in answer C.
+    solution: As the $x$ values increase by 1 over each interval, the value of $g(x)$ doubles. Because the output values change proportionally over equal-length input-value intervals, $g$ could be exponential.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: none
+    sections:
+      - 2.2
+    dok: 2
+    review: generated
 
   - id: 863c6495-99ae-4617-a909-2b7fc5921d38
     legacy_ids:
@@ -127,14 +130,16 @@ questions:
       - $m$ is increasing and the graph of $m$ is concave down.
       - $m$ is decreasing and the graph of $m$ is concave down.
     solution: |
-      $a = 5 \qquad b = \frac{2}{3}$ \\
+      $m(x) = 5\left(\frac{2}{3}\right)^{x-1} = \frac{15}{2}\left(\frac{2}{3}\right)^x$,
+      so $a = \frac{15}{2} \qquad b = \frac{2}{3}$ \\
       Because $0 < b < 1$, this curve represents exponential decay. Because $a
       > 0$, $m$ will be positive on its entire domain, therefore it is
       decreasing and concave up.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: none
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
 
   - id: 88eee4da-1d0a-46f3-b201-01f3de7b05fa
     legacy_ids:
@@ -147,17 +152,23 @@ questions:
         \lim_{x \to -\infty} f(x) = \infty \qquad \text{and} \qquad \lim_{x \to \infty} f(x) = 0
       \]
       Which of the following could be the graph of $f$?
-    answer: \includegraphics[width=2in]{6-D}
+    answer: \resizebox{2in}{!}{\input{figures/50.tex}}
     distractors:
-      - \includegraphics[width=2in]{6-A}
-      - \includegraphics[width=2in]{6-C}\phantom{\includegraphics[width=2in]{6-A}}
-      - \includegraphics[width=2in]{6-B}
+      - \resizebox{2in}{!}{\input{figures/47.tex}}
+      - \resizebox{2in}{!}{\input{figures/49.tex}}
+      - \resizebox{2in}{!}{\input{figures/48.tex}}
     solution: |
-      Note: B has the correct end behavior, but exponential functions are either concave up or concave down over their entire domain.
+      As $x \to -\infty$, $f(x)$ increases without bound, and as $x \to \infty$,
+      $f(x)$ approaches 0. This matches $f(x) = ab^x$ with $a > 0$ and
+      $0 < b < 1$: always decreasing and concave up. The graph with a relative
+      minimum and a relative maximum has the same end behavior, but an
+      exponential function is always increasing or always decreasing, so it
+      can't have extrema.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: none
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
 
   - id: fddd6657-db37-4f90-a0f7-193c63f3c9e3
     legacy_ids:
@@ -165,30 +176,30 @@ questions:
     related_to:
       - 1471965f-0917-46f7-b47d-75743e90dfab
     question: |
-      \fullwidth{\begin{center}
-        \everymath{}
-        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
-          \hline
-          \bm{$x$} & 1 & 2 & 3 & 4 & 5 \\
-          \hline
-          \bm{$g(x)$} & $\frac{1}{12}$ & $\frac{1}{4}$ & $\frac{3}{4}$ & $\frac{9}{4}$ & $\frac{27}{4}$ \\
-          \hline
-        \end{tabularx}
-      \end{center}}
-
       The exponential function $h$ is defined by $h(x) = ab^x$, where $a$ and $b$
       are positive constants. The table above gives values of $h(x)$ at selected
       values of $x$. Which of the following statements is true?
+    figure_latex: |
+      \everymath{}
+      \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+        \hline
+        \bm{$x$} & 1 & 2 & 3 & 4 & 5 \\
+        \hline
+        \bm{$h(x)$} & $\frac{1}{12}$ & $\frac{1}{4}$ & $\frac{3}{4}$ & $\frac{9}{4}$ & $\frac{27}{4}$ \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
     answer: $h$ demonstrates exponential growth because $a > 0$ and $b > 1$.
     distractors:
       - $h$ demonstrates exponential decay because $0 < a < 1$ and $b > 1$.
       - $h$ demonstrates exponential decay because $a > 0$ and $0 < b < 1$.
       - $h$ demonstrates exponential growth because $a > 0$ and $0 < b < 1$.
-    solution: Exponential growth only occurs if $b > 1$. The table of data shows all postive values for $g(x)$ and the value of $g(x)$ is increasing.
+    solution: Exponential growth only occurs if $b > 1$. The table of data shows all positive values for $h(x)$ and the value of $h(x)$ is increasing.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: none
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
 
   - id: fe0cbf16-1af5-4493-a4cd-27abc8879806
     legacy_ids:
@@ -205,8 +216,9 @@ questions:
       - $k(x) = 16 \cdot 81^x$
     solution: $4 \cdot 9^{2x} = 4 \cdot \left(9^2\right)^x = 4 \cdot 81^x$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.4
+    dok: 1
     review: none
 
   - id: c5f407e1-b395-494c-a84b-e46e1086ae13
@@ -215,22 +227,21 @@ questions:
     related_to:
       - 82bade1d-8f38-407a-a778-5b8b25fc6fbb
     question: |
-      \fullwidth{\begin{center}
-        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
-          \hline
-          \bm{$t$} (days) & 0 & 1 & 2 & 3 & 4 \\
-          \hline
-          \bm{$D(t)$} & 81 & 54 & 36 & 24 & 16 \\
-          \hline
-        \end{tabularx}
-      \end{center}}
-
       After returning home from vacation, Mr. Starrett notices a large number of
       dandelions in his yard and decides to apply weed killer. The table above
       gives selected values of $D(t)$, where $D$ is the number of dandelions and
       $t$ is the number of days since Mr. Starrett applied the weed killer. If a
       model is constructed to represent these data, which of the following best
       applies to this situation?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+        \hline
+        \bm{$t$} (days) & 0 & 1 & 2 & 3 & 4 \\
+        \hline
+        \bm{$D(t)$} & 81 & 54 & 36 & 24 & 16 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
     answer: $D(t) = 81 \left( \frac{2}{3} \right)^t$
     distractors:
       - $D(t) = 81 \left( \frac{1}{3} \right)^t$
@@ -242,8 +253,9 @@ questions:
       $\textstyle \frac{2}{3}$. Therefore, an exponential function $ab^x$ where $a = 81$
       and $\textstyle b = \frac{2}{3}$ models this situation.
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.5
+    dok: 2
     review: none
 
   - id: 499cbb43-ee9d-458e-9a81-ac1c485b59db
@@ -253,7 +265,7 @@ questions:
       - 48952deb-45bc-4f48-b292-33682811126a
     question: |
       Mary Jo deposits \$300 each month into her retirement account that pays
-      4.5\% annually. What will be the value of her investment after 20 years?
+      4.5\% annual interest compounded monthly. What will be the value of her investment after 20 years?
     answer: \$116,437.31
     distractors:
       - \$71,625.00
@@ -263,12 +275,13 @@ questions:
       \begin{gather*}
         FV = R \frac{(1 + i)^n - 1}{i} \\
         FV = 300 \frac{(1 + \frac{0.045}{12})^{12 \cdot 20} - 1}{\frac{0.045}{12}} \\
-        FV = 116437.3089 \\
+        FV = 116437.3089
       \end{gather*}
     calculator_active: true
-    sections: []
-    dok: unknown
-    review: none
+    sections:
+      - '2.F'
+    dok: 2
+    review: generated
 
   - id: c1fb128c-74ce-4453-8e01-c02fe839537c
     legacy_ids:
@@ -276,24 +289,26 @@ questions:
     related_to:
       - f8e88f6e-55fa-435f-8983-7458715b0c7b
     question: |
-      \begin{center}
-        \includegraphics{10}
-      \end{center}
-
       A quadratic regression was used to develop a model for a given set of data.
       The figure above shows a graph of the residuals of the quadratic
       regression. Which of the following statements about the quadratic
       regression is true?
+    figure: 51.tex
+    figure_placement: above
     answer: The quadratic model is not appropriate because there is a clear pattern in the graph of the residuals.
     distractors:
       - The quadratic model is not appropriate because there are more positive residual values than negative residual values.
       - The quadratic model is appropriate because there is a linear pattern in the graph of the residuals.
       - The quadratic model is appropriate because none of the residuals fall outside the pattern in the graph of the residuals.
-    solution: TODO
-    calculator_active: true
-    sections: []
-    dok: unknown
-    review: none
+    solution: |
+      The residuals increase steadily from negative to positive, forming a
+      clear linear pattern. A model is appropriate only if its residual plot
+      appears without pattern, so the quadratic model is not appropriate.
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 2
+    review: generated
 
   - id: 73ff5b11-518a-460e-84d3-1f0058837baf
     legacy_ids:
@@ -312,11 +327,12 @@ questions:
     solution: |
       \begin{gather*}
       P(t) = 1543 \cdot 1.038^t \qquad \text{(the common ratio is 1 plus the percentage as a decimal)} \\
-        P(5.2) = 1873.234572 \\
+        P(5.2) = 1873.234572
       \end{gather*}
     calculator_active: true
-    sections: []
-    dok: unknown
+    sections:
+      - 2.5
+    dok: 2
     review: none
 
   - id: cc92781e-6b3e-43a1-a9eb-bb54839266a2
@@ -325,20 +341,19 @@ questions:
     related_to:
       - 18124b09-3e63-4b56-9160-7da48059a4c1
     question: |
-      \fullwidth{\begin{center}
-        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
-          \hline
-          \bm{$x$} & -1 & 1 & 2 & 5 \\
-          \hline
-          \bm{$g(x)$} & 5 & 8 & 10 & 19 \\
-          \hline
-        \end{tabularx}
-      \end{center}}
-
       The table above presents values for a function $g$ at selected values of
       $x$. An exponential regression $y = ab^x$ is used to model these data. What
       is the value of $g(3.2)$ predicted by the exponential function model?
-    answer: 12.880
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+        \hline
+        \bm{$x$} & -1 & 1 & 2 & 5 \\
+        \hline
+        \bm{$g(x)$} & 5 & 8 & 10 & 19 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
+    answer: '12.880'
     distractors:
       - 12.994
       - 13.161
@@ -346,10 +361,11 @@ questions:
     solution: |
       Enter the data into two lists in your calculator and perform an exponential regression: \\
       $y = 6.332862704 \cdot 1.248374122^x$ \\
-      $g(3.2) \approx 12.87962731$ \\
+      $g(3.2) \approx 12.87962731$
     calculator_active: true
-    sections: []
-    dok: unknown
+    sections:
+      - 2.5
+    dok: 2
     review: none
 
   - id: bcc88acb-8ba2-4126-a6c1-603635175b70
@@ -366,14 +382,16 @@ questions:
       - $m$ is decreasing and the graph of $m$ is concave up.
       - $m$ is decreasing and the graph of $m$ is concave down.
     solution: |
-      $a = -2 \qquad b = \frac{1}{2}$ \\
-      Because $0 < b < 1$, this curve represents exponential decay. Because
-      $a < 0$, $m$ will be negative on its entire domain, therefore it is
-      increasing and concave down.
+      $m(x) = -2\left(\frac{1}{2}\right)^{x+2} = -\frac{1}{2}\left(\frac{1}{2}\right)^x$,
+      so $a = -\frac{1}{2}$ and $b = \frac{1}{2}$. Because $0 < b < 1$,
+      $\left(\frac{1}{2}\right)^x$ is decreasing and concave up. Multiplying by
+      $a < 0$ reflects the graph over the $x$-axis, so $m$ is increasing and
+      concave down.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: none
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
 
   - id: 41d121e6-2027-4370-a8d4-1b725de57934
     legacy_ids:
@@ -391,10 +409,12 @@ questions:
       - $12(3)^x$
     solution: |
       $b = \textstyle \frac{f(x + 1)}{f(x)} = \frac{1}{3}$ \\
-      $f(x) = 108\left(\frac{1}{3}\right)^{x + 3} = 108\left(\frac{1}{3}^{3}\right)\left(\frac{1}{3}\right)^x = 4\left(\frac{1}{3}\right)^x$
+      $f(x) = 108\left(\frac{1}{3}\right)^{x + 3} = 108\left(\frac{1}{3}\right)^{3}\left(\frac{1}{3}\right)^x = 4\left(\frac{1}{3}\right)^x$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.2
+      - 2.4
+    dok: 2
     review: none
 
   - id: 7d5c5d2b-12b1-4836-b315-8fa3a4e196bc
@@ -408,16 +428,21 @@ questions:
         \lim_{x \to -\infty} f(x) = -\infty \qquad \text{and} \qquad \lim_{x \to \infty} f(x) = 0
       \]
       Which of the following could be the graph of $f$?
-    answer: \includegraphics[width=2in]{6-A}
+    answer: \resizebox{2in}{!}{\input{figures/47.tex}}
     distractors:
-      - \includegraphics[width=2in]{6-C}\phantom{\includegraphics[width=2in]{6-A}}
-      - \includegraphics[width=2in]{6-B}
-      - \includegraphics[width=2in]{6-D}
-    solution: TODO
+      - \resizebox{2in}{!}{\input{figures/49.tex}}
+      - \resizebox{2in}{!}{\input{figures/48.tex}}
+      - \resizebox{2in}{!}{\input{figures/50.tex}}
+    solution: |
+      As $x \to -\infty$, $f(x)$ decreases without bound, and as
+      $x \to \infty$, $f(x)$ approaches 0 from below. This matches
+      $f(x) = ab^x$ with $a < 0$ and $0 < b < 1$: always increasing and concave
+      down.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: none
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
 
   - id: 68cc6269-0267-452c-a870-3d5691a5ef53
     legacy_ids:
@@ -425,18 +450,17 @@ questions:
     related_to:
       - 51aff989-4ef3-42ce-bb3d-b49df548469b
     question: |
-      \fullwidth{\begin{center}
-        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
-          \hline
-          \bm{$x$} & 1 & 3 & 5 & 7 & 9 \\
-          \hline
-          \bm{$g(x)$} & 3 & 1 & $\textstyle \frac{1}{3}$ & $\textstyle \frac{1}{9}$ & $\textstyle \frac{1}{27}$ \\
-          \hline
-        \end{tabularx}
-      \end{center}}
-
       Selected values of the function $g$ are given in the table above. Which of
       the following statements about $g$ is most appropriate?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+        \hline
+        \bm{$x$} & 1 & 3 & 5 & 7 & 9 \\
+        \hline
+        \bm{$g(x)$} & 3 & 1 & $\textstyle \frac{1}{3}$ & $\textstyle \frac{1}{9}$ & $\textstyle \frac{1}{27}$ \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
     answer: $g$ could be exponential because over equal-length input-value intervals, the output values change proportionally.
     distractors:
       - $g$ could be exponential because the output values change linearly as the input values change proportionally.
@@ -444,11 +468,13 @@ questions:
       - $g$ could be linear because over equal-length input-value intervals, the output values change at a constant rate.
     solution: |
       As the $x$ values increase by 2 over each interval, the value of $g(x)$
-      is multiplied by $\frac{1}{3}$. This matches the statement in answer B.
+      is multiplied by $\frac{1}{3}$. Because the output values change proportionally over equal-length
+      input-value intervals, $g$ could be exponential.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: none
+    sections:
+      - 2.2
+    dok: 2
+    review: generated
 
   - id: 7ebb0ad6-03ee-494c-9fcf-4366a53bc62e
     legacy_ids:
@@ -465,8 +491,9 @@ questions:
       - $k(x) = -15^{2x}$
     solution: $-3 \cdot 5^{2x} = -3 \cdot (5^2)^x = -3 \cdot 25^x$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.4
+    dok: 1
     review: none
 
   - id: 8058de0d-a655-439e-82ee-50f4d540eee8
@@ -475,18 +502,17 @@ questions:
     related_to:
       - 41a8ae50-18f0-4282-a316-71f03c6241c6
     question: |
-      \fullwidth{\begin{center}
-        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
-          \hline
-          \bm{$n$} & 1 & 4 & 7 & 9 & 12 \\
-          \hline
-          \bm{$a_n$} & 15 & $a$ & 33 & $b$ & $c$ \\
-          \hline
-        \end{tabularx}
-      \end{center}}
-
-      The table above contains selected values of an arithmetic sequence $a_n$ ,
+      The table above contains selected values of an arithmetic sequence $a_n$,
       where $a$, $b$, and $c$ are constants. What is the value of $a + b + c$?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+        \hline
+        \bm{$n$} & 1 & 4 & 7 & 9 & 12 \\
+        \hline
+        \bm{$a_n$} & 15 & $a$ & 33 & $b$ & $c$ \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
     answer: 111
     distractors:
       - 24
@@ -501,10 +527,11 @@ questions:
       $a = 15 + 3(4 - 1) = 15 + 9 = 24$ \\
       $b = 15 + 3(9 - 1) = 15 + 24 = 39$ \\
       $c = 15 + 3(12 - 1) = 15 + 33 = 48$ \\
-      $24 + 39 + 48 = 111$ \\
+      $24 + 39 + 48 = 111$
     calculator_active: false
-    sections: []
-    dok: unknown
+    sections:
+      - 2.1
+    dok: 2
     review: none
 
   - id: 82bade1d-8f38-407a-a778-5b8b25fc6fbb
@@ -513,36 +540,36 @@ questions:
     related_to:
       - c5f407e1-b395-494c-a84b-e46e1086ae13
     question: |
-      \fullwidth{\begin{center}
-        \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
-          \hline
-          \bm{$t$} (days) & 0 & 1 & 2 & 3 \\
-          \hline
-          \bm{$F(t)$} & 27 & 36 & 48 & 64 \\
-          \hline
-        \end{tabularx}
-      \end{center}}
-
       When Mr. Starrett moved into his house, he planted a number of daylilies
       in his flower bed. The table above gives selected values of $F(t)$, where
       $F$ is the number of daylily blooms in the flower bed and $t$ is the
       number of years Mr. Starrett has lived at his house. If a model is
       constructed to represent these data, which of the following best applies
       to this situation?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+        \hline
+        \bm{$t$} (days) & 0 & 1 & 2 & 3 \\
+        \hline
+        \bm{$F(t)$} & 27 & 36 & 48 & 64 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
     answer: $F(t) = 27 \left( \frac{4}{3} \right)^t$
     distractors:
-      - $D(t) = 27 + 9t \phantom{\frac{1}{3}}$
+      - $F(t) = 27 + 9t \phantom{\frac{1}{3}}$
       - $F(t) = 27 \left( \frac{3}{4} \right)^t$
-      - $D(t) = 64 + \frac{4}{3}t$
+      - $F(t) = 64 + \frac{4}{3}t$
     solution: |
       The initial value for $F(t)$ is 27. Each successive value of $F(t)$ in
       the table is proportional to the previous value with a ratio of
       $\textstyle \frac{4}{3}$. Therefore, an exponential function $ab^x$ where $a = 27$
       and $\textstyle b = \frac{4}{3}$ models this situation.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: none
+    sections:
+      - 2.5
+    dok: 2
+    review: generated
 
   - id: 1b5a32f2-6900-4855-9621-ad94340051fb
     legacy_ids:
@@ -550,11 +577,10 @@ questions:
     related_to:
       - 3a704c87-9dfa-47e4-8e5f-9e2ca1daa34f
     question: |
-      \includegraphics{8B}
-
       Values of the terms of a geometric sequence $g_n$ are graphed in the
       figure to the right. Which of the following is an expression  for the
       \emph{n}th term of the geometric sequence?
+    figure: 46.tex
     answer: $g_n = 9 \left( \frac{1}{3} \right)^{\frac{1}{2}n - 1}$
     distractors:
       - $g_n = 9 \left( \frac{1}{3} \right)^{n - 2}$
@@ -564,11 +590,13 @@ questions:
       $g_n = g_k \cdot r^{n-k}$ \qquad $g_2 = 9$ \\
       The value of each element is multiplied by $\textstyle \frac{1}{3}$
       every second element, therefore $\textstyle r = \frac{1}{3}$ with a
-      horizontal dilation of 2.
+      horizontal dilation of 2. \\
+      $g_n = 9\left(\frac{1}{3}\right)^{\frac{1}{2}n - 1}$
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: none
+    sections:
+      - 2.1
+    dok: 2
+    review: generated
 
   - id: 1471965f-0917-46f7-b47d-75743e90dfab
     legacy_ids:
@@ -576,30 +604,30 @@ questions:
     related_to:
       - fddd6657-db37-4f90-a0f7-193c63f3c9e3
     question: |
-      \fullwidth{\begin{center}
-        \everymath{}
-        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
-          \hline
-          \bm{$x$} & 1 & 2 & 3 & 4 & 5 \\
-          \hline
-          \bm{$g(x)$} & 2 & 6 & 18 & 54 & 162 \\
-          \hline
-        \end{tabularx}
-      \end{center}}
-
       The exponential function $h$ is defined by $h(x) = ab^x$, where $a$ and $b$
       are positive constants. The table above gives values of $h(x)$ at selected
       values of $x$. Which of the following statements is true?
+    figure_latex: |
+      \everymath{}
+      \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+        \hline
+        \bm{$x$} & 1 & 2 & 3 & 4 & 5 \\
+        \hline
+        \bm{$h(x)$} & 2 & 6 & 18 & 54 & 162 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
     answer: $h$ demonstrates exponential growth because $a > 0$ and $b > 1$.
     distractors:
       - $h$ demonstrates exponential growth because $a > 0$ and $0 < b < 1$.
       - $h$ demonstrates exponential decay because $0 < a < 1$ and $b > 1$.
       - $h$ demonstrates exponential decay because $a > 0$ and $0 < b < 1$.
-    solution: Exponential growth only occurs if $b > 1$. The table of data shows all postive values for $g(x)$ and the value of $g(x)$ is increasing.
+    solution: Exponential growth only occurs if $b > 1$. The table of data shows all positive values for $h(x)$ and the value of $h(x)$ is increasing.
     calculator_active: false
-    sections: []
-    dok: unknown
-    review: none
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
 
   - id: 48952deb-45bc-4f48-b292-33682811126a
     legacy_ids:
@@ -619,11 +647,12 @@ questions:
     solution: |
       \begin{gather*}
       A(t) = 5 \cdot 0.58^t \qquad \text{(the common ratio is 1 minus the percentage as a decimal)} \\
-      A(4.5) = 0.431\text{mg} \\
+      A(4.5) = 0.431\text{mg}
       \end{gather*}
     calculator_active: true
-    sections: []
-    dok: unknown
+    sections:
+      - 2.5
+    dok: 2
     review: none
 
   - id: 18124b09-3e63-4b56-9160-7da48059a4c1
@@ -632,19 +661,18 @@ questions:
     related_to:
       - cc92781e-6b3e-43a1-a9eb-bb54839266a2
     question: |
-      \fullwidth{\begin{center}
-        \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
-          \hline
-          \bm{$x$} & -1 & 1 & 2 & 5 \\
-          \hline
-          \bm{$g(x)$} & 12 & 8 & 6 & 3 \\
-          \hline
-        \end{tabularx}
-      \end{center}}
-
       The table above presents values for a function $g$ at selected values of
       $x$. An exponential regression $y = ab^x$ is used to model these data. What
       is the value of $g(-0.2)$ predicted by the exponential function model?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+        \hline
+        \bm{$x$} & -1 & 1 & 2 & 5 \\
+        \hline
+        \bm{$g(x)$} & 12 & 8 & 6 & 3 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
     answer: 10.162
     distractors:
       - 10.456
@@ -653,10 +681,11 @@ questions:
     solution: |
       Enter the data into two lists in your calculator and perform an exponential regression: \\
       $y = 9.698586503 \cdot 0.7919045749^x$ \\
-      $g(-0.2) \approx 10.16187558$ \\
+      $g(-0.2) \approx 10.16187558$
     calculator_active: true
-    sections: []
-    dok: unknown
+    sections:
+      - 2.5
+    dok: 2
     review: none
 
   - id: aa5e3973-dfc5-484b-bc68-0ab29e89122c
@@ -677,11 +706,12 @@ questions:
         A = P\left(1 + \frac{r}{k}\right)^{kt} \\
         3000 = 500\left(1 + \frac{0.09}{12}\right)^{12t} \\
         \text{(solve for $t$ using your calculator)} \\
-        t \approx 19.983 \\
+        t \approx 19.983
       \end{gather*}
     calculator_active: true
-    sections: []
-    dok: unknown
+    sections:
+      - '2.F'
+    dok: 2
     review: none
 
   - id: f8e88f6e-55fa-435f-8983-7458715b0c7b
@@ -690,21 +720,1511 @@ questions:
     related_to:
       - c1fb128c-74ce-4453-8e01-c02fe839537c
     question: |
-      \begin{center}
-        \includegraphics{14B}
-      \end{center}
-
       A quadratic regression was used to develop a model for a given set of data.
       The figure above shows a graph of the residuals of the quadratic
       regression. Which of the following statements about the quadratic
       regression is true?
+    figure: 52.tex
+    figure_placement: above
     answer: The quadratic model is appropriate because there is no clear pattern in the graph of the residuals.
     distractors:
       - The quadratic model is not appropriate because there is a clear pattern in the graph of the residuals.
       - The quadratic model is not appropriate because there are more positive residual values than negative residual values.
       - The quadratic model is appropriate because there is a linear pattern in the graph of the residuals.
-    solution: TODO
-    calculator_active: true
-    sections: []
-    dok: unknown
-    review: none
+    solution: |
+      The residuals are scattered above and below 0 with no clear pattern, so
+      the quadratic model is appropriate.
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 2
+    review: generated
+
+  - id: 943a05e0-5198-426a-912b-904da6644cf7
+    question: |
+      An arithmetic sequence $a_n$ has $a_3 = 11$ and $a_7 = 27$. Which of the
+      following is an expression for the \emph{n}th term of the sequence?
+    answer: $a_n = 11 + 4(n - 3)$
+    distractors:
+      - $a_n = 11 + 4n$
+      - $a_n = 27 + 4(n - 3)$
+      - $a_n = 11 + 16(n - 3)$
+    solution: |
+      $a_n = a_k + d(n - k)$ \\
+      $27 = 11 + d(7 - 3) \implies 16 = 4d \implies d = 4$ \\
+      $a_n = 11 + 4(n - 3)$
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 2
+    review: generated
+
+  - id: 04ab2e47-9908-4f18-881a-e8bef0242b8e
+    question: |
+      A geometric sequence $g_n$ has $g_1 = 5$ and $g_4 = 40$. What is the value
+      of $g_6$?
+    answer: 160
+    distractors:
+      - 80
+      - 320
+      - 100
+    solution: |
+      $g_4 = g_1 r^{4 - 1} \implies 40 = 5r^3 \implies r^3 = 8 \implies r = 2$ \\
+      $g_6 = g_1 r^{6 - 1} = 5(2)^5 = 160$
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 2
+    review: generated
+
+  - id: 59213355-3a3f-44a1-986e-f7759abec61b
+    question: |
+      A geometric sequence $g_n$ has $g_2 = 48$ and $g_5 = -6$. What is the
+      common ratio of the sequence?
+    answer: $-\frac{1}{2}$
+    distractors:
+      - $\frac{1}{2}$
+      - -2
+      - $-\frac{1}{8}$
+    solution: |
+      $g_5 = g_2 r^{5 - 2} \implies -6 = 48r^3 \implies r^3 = -\frac{1}{8}
+      \implies r = -\frac{1}{2}$
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 2
+    review: generated
+
+  - id: ceb6264b-6e0d-410e-a24e-66a20cb80726
+    question: |
+      An increasing arithmetic sequence $a_n$ and an increasing geometric
+      sequence $g_n$ of positive values both have first term 2 and second term
+      6. Which of the following is true for $n \ge 3$?
+    answer: $g_n > a_n$, and the difference $g_n - a_n$ grows with each step.
+    distractors:
+      - $a_n > g_n$, and the difference $a_n - g_n$ grows with each step.
+      - $a_n = g_n$ for every $n$.
+      - $g_n > a_n$, and the difference $g_n - a_n$ is the same for every $n$.
+    solution: |
+      $a_n$ has common difference $d = 4$: $a_3 = 10$, $a_4 = 14$. \\
+      $g_n$ has common ratio $r = 3$: $g_3 = 18$, $g_4 = 54$. \\
+      An increasing arithmetic sequence increases by the same amount each step,
+      while an increasing geometric sequence of positive values increases by a
+      larger amount each step, so $g_n > a_n$ and the gap keeps growing
+      ($8$, then $40$, \dots).
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 2
+    review: generated
+
+  - id: 9c63b43d-8b3e-4e98-b3f3-1aebe79e6d69
+    question: |
+      The first row of a theater has 20 seats, and each row after the first has
+      3 more seats than the row in front of it. How many seats are in the 15th
+      row?
+    answer: 62
+    distractors:
+      - 65
+      - 59
+      - 45
+    solution: |
+      The number of seats forms an arithmetic sequence with $a_1 = 20$ and
+      $d = 3$. \\
+      $a_n = 20 + 3(n - 1)$ \\
+      $a_{15} = 20 + 3(14) = 62$
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 2
+    review: generated
+
+  - id: 668cf8e0-c090-4d78-8241-bdc439a1aa9d
+    question: |
+      A ball is dropped from a height of 81 feet. Each time it hits the ground,
+      it rebounds to $\frac{2}{3}$ of its previous height. What is the height,
+      in feet, of the ball's 4th rebound?
+    answer: 16
+    distractors:
+      - 24
+      - $\frac{32}{3}$
+      - 54
+    solution: |
+      The rebound heights form a geometric sequence with $h_0 = 81$ and
+      $r = \frac{2}{3}$, so $h_n = 81\left(\frac{2}{3}\right)^n$. \\
+      $h_4 = 81\left(\frac{2}{3}\right)^4 = 81 \cdot \frac{16}{81} = 16$
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 2
+    review: generated
+
+  - id: 55138934-383c-4aaf-8e44-d8605515d5f8
+    question: |
+      Which of the following defines an arithmetic sequence?
+    answer: $a_n = 7 - 2n$
+    distractors:
+      - $a_n = 3(2)^n$
+      - $a_n = n^2 + 1$
+      - $a_n = 5(-1)^n$
+    solution: |
+      Successive terms of $a_n = 7 - 2n$ have a common difference of $-2$.
+      The other sequences don't: $3(2)^n$ has a common ratio, and the
+      differences of $n^2 + 1$ and $5(-1)^n$ change.
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 1
+    review: generated
+
+  - id: f3ddae6e-4f05-4333-815d-8299490bed48
+    question: |
+      The geometric sequence $g_n$ begins $3, 6, 12, 24, \dots$, where $g_1 = 3$.
+      Which term of the sequence is equal to 384?
+    answer: $g_8$
+    distractors:
+      - $g_7$
+      - $g_9$
+      - $g_{128}$
+    solution: |
+      $g_n = 3(2)^{n - 1}$ \\
+      $3(2)^{n - 1} = 384 \implies 2^{n - 1} = 128 = 2^7 \implies n = 8$
+    calculator_active: false
+    sections:
+      - 2.1
+    dok: 2
+    review: generated
+
+  - id: e3836395-81ea-4d29-b812-aea2939f79d8
+    question: |
+      A linear function $f$ has $f(2) = 7$ and $f(6) = 19$. Which of the
+      following is an expression for $f(x)$?
+    answer: $f(x) = 7 + 3(x - 2)$
+    distractors:
+      - $f(x) = 7 + 12(x - 2)$
+      - $f(x) = 7(3)^{x - 2}$
+      - $f(x) = 19 + 3(x - 2)$
+    solution: |
+      $m = \frac{19 - 7}{6 - 2} = 3$ \\
+      $f(x) = y_i + m(x - x_i) = 7 + 3(x - 2)$
+    calculator_active: false
+    sections:
+      - 2.2
+    dok: 2
+    review: generated
+
+  - id: 5613fb68-8d84-4cd3-a660-ddbc5dd36c26
+    question: |
+      An exponential function $f(x) = ab^x$, where $b > 0$, has $f(1) = 6$ and
+      $f(3) = 54$. Which of the following is an expression for $f(x)$?
+    answer: $f(x) = 6(3)^{x - 1}$
+    distractors:
+      - $f(x) = 6(9)^{x - 1}$
+      - $f(x) = 6 + 24(x - 1)$
+      - $f(x) = 2(3)^{x - 1}$
+    solution: |
+      $f(3) = f(1) \cdot b^{3 - 1} \implies 54 = 6b^2 \implies b^2 = 9 \implies
+      b = 3$ (since $b > 0$) \\
+      $f(x) = y_i b^{(x - x_i)} = 6(3)^{x - 1}$
+    calculator_active: false
+    sections:
+      - 2.2
+    dok: 2
+    review: generated
+
+  - id: d5edf2ec-2a21-4de2-a000-70a6cd6a0f2c
+    question: |
+      Selected values of the functions $f$ and $g$ are given in the table above.
+      Which of the following statements is true?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+        \hline
+        \bm{$x$} & 0 & 1 & 2 & 3 \\
+        \hline
+        \bm{$f(x)$} & 5 & 8 & 11 & 14 \\
+        \hline
+        \bm{$g(x)$} & 5 & 10 & 20 & 40 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
+    answer: $f$ could be linear and $g$ could be exponential.
+    distractors:
+      - $f$ could be exponential and $g$ could be linear.
+      - Both $f$ and $g$ could be linear.
+      - Both $f$ and $g$ could be exponential.
+    solution: |
+      Over each input interval of length 1, $f(x)$ increases by 3 (a constant
+      rate of change), so $f$ could be linear. Over the same intervals, $g(x)$
+      is multiplied by 2 (proportional change), so $g$ could be exponential.
+    calculator_active: false
+    sections:
+      - 2.2
+    dok: 2
+    review: generated
+
+  - id: bbc6c70f-6058-4406-a085-28545a2df673
+    question: |
+      An exponential function $f$ has $f(0) = 4$, and over every input-value
+      interval of length 2, the output values of $f$ are multiplied by 9. Which
+      of the following is an expression for $f(x)$?
+    answer: $f(x) = 4(3)^x$
+    distractors:
+      - $f(x) = 4(9)^x$
+      - $f(x) = 4(4.5)^x$
+      - $f(x) = 9(4)^x$
+    solution: |
+      $f(x) = ab^x$ with $a = f(0) = 4$. \\
+      $\frac{f(x + 2)}{f(x)} = b^2 = 9 \implies b = 3$ (since $b > 0$) \\
+      $f(x) = 4(3)^x$
+    calculator_active: false
+    sections:
+      - 2.2
+    dok: 2
+    review: generated
+
+  - id: 1cc78341-dc61-4a7d-8ca5-9b30acd9d036
+    question: |
+      Let $f(x) = b + mx$ be a linear function and $g(x) = ab^x$ be an
+      exponential function. Which of the following statements is true?
+    answer: $f$ is based on repeated addition of $m$, and $g$ is based on repeated multiplication by $b$.
+    distractors:
+      - $f$ is based on repeated multiplication by $m$, and $g$ is based on repeated addition of $b$.
+      - Both $f$ and $g$ are based on repeated multiplication.
+      - Both $f$ and $g$ are based on repeated addition.
+    solution: |
+      Each unit increase in $x$ adds the slope $m$ to $f(x)$, while each unit
+      increase in $x$ multiplies $g(x)$ by the base $b$.
+    calculator_active: false
+    sections:
+      - 2.2
+    dok: 1
+    review: generated
+
+  - id: 98344932-ef28-4373-a569-dcdfc16a4bca
+    question: |
+      An exponential function $f(x) = ab^x$, where $b > 0$, has $f(-1) = 12$
+      and $f(1) = 3$. Which of the following is an expression for $f(x)$?
+    answer: $f(x) = 6\left(\frac{1}{2}\right)^x$
+    distractors:
+      - $f(x) = 12\left(\frac{1}{2}\right)^x$
+      - $f(x) = 6\left(\frac{1}{4}\right)^x$
+      - $f(x) = 3\left(\frac{1}{2}\right)^x$
+    solution: |
+      $f(1) = f(-1) \cdot b^{1 - (-1)} \implies 3 = 12b^2 \implies b^2 =
+      \frac{1}{4} \implies b = \frac{1}{2}$ (since $b > 0$) \\
+      $a = f(0) = f(-1) \cdot b = 12 \cdot \frac{1}{2} = 6$ \\
+      $f(x) = 6\left(\frac{1}{2}\right)^x$
+    calculator_active: false
+    sections:
+      - 2.2
+    dok: 2
+    review: generated
+
+  - id: 5287525a-c73d-4ce1-89d5-dde1c9b294f9
+    question: |
+      The geometric sequence $g_n = 3(2)^n$ is defined for whole numbers $n$,
+      and the exponential function $f(x) = 3(2)^x$ is defined for all real
+      numbers $x$. Which of the following statements is true?
+    answer: $g_n = f(n)$ for every whole number $n$, but only $f$ has a value at $x = \frac{1}{2}$.
+    distractors:
+      - $g_n$ and $f$ have the same domain.
+      - $g_n = f(n)$ only when $n$ is even.
+      - $f$ is defined only for whole-number inputs.
+    solution: |
+      Both rules multiply the initial value 3 by the ratio 2 repeatedly, so
+      $g_n = f(n)$ for every whole number $n$. A sequence is defined only for
+      whole numbers, while the domain of an exponential function is all real
+      numbers; for example, $f\left(\frac{1}{2}\right) = 3\sqrt{2}$.
+    calculator_active: false
+    sections:
+      - 2.2
+    dok: 2
+    review: generated
+
+  - id: 728d0c4f-40d5-4624-8fc2-62ed466a4f1e
+    question: |
+      Let $f$ be a linear function and $g$ be an exponential function with
+      $f(0) = g(0) = 2$ and $f(1) = g(1) = 6$. Which of the following must be
+      true?
+
+      \textbf{I.\phantom{II}} \quad $f(2) < g(2)$ \\
+      \textbf{II.\phantom{I}} \quad $f(-1) < g(-1)$ \\
+      \textbf{III.} \quad $f\left(\frac{1}{2}\right) < g\left(\frac{1}{2}\right)$
+    answer: I and II only
+    distractors:
+      - I only
+      - I and III only
+      - I, II, and III
+    solution: |
+      Two values determine each function: $f(x) = 2 + 4x$ and $g(x) = 2(3)^x$. \\
+      \textbf{I.} True: $f(2) = 10$ and $g(2) = 18$. \\
+      \textbf{II.} True: $f(-1) = -2$ and $g(-1) = \frac{2}{3}$. \\
+      \textbf{III.} False: $f\left(\frac{1}{2}\right) = 4$ and
+      $g\left(\frac{1}{2}\right) = 2\sqrt{3} < 4$, since $(2\sqrt{3})^2 = 12 < 16$.
+    calculator_active: false
+    sections:
+      - 2.2
+    dok: 3
+    review: generated
+
+  - id: 9bb14592-8efc-4c34-a00d-ba660b856eb2
+    question: |
+      Let $f(x) = 3(0.4)^x$. Which of the following describes the end behavior
+      of $f$?
+    answer: $\lim_{x \to -\infty} f(x) = \infty$ and $\lim_{x \to \infty} f(x) = 0$
+    distractors:
+      - $\lim_{x \to -\infty} f(x) = 0$ and $\lim_{x \to \infty} f(x) = \infty$
+      - $\lim_{x \to -\infty} f(x) = -\infty$ and $\lim_{x \to \infty} f(x) = 0$
+      - $\lim_{x \to -\infty} f(x) = \infty$ and $\lim_{x \to \infty} f(x) = \infty$
+    solution: |
+      $a = 3 > 0$ and $0 < b = 0.4 < 1$, so $f$ demonstrates exponential decay:
+      as $x$ decreases without bound, $f(x)$ increases without bound, and as
+      $x$ increases without bound, $f(x)$ approaches 0.
+    calculator_active: false
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
+
+  - id: cc0c9d4f-e459-4daa-96f2-3b5815297b3c
+    question: |
+      Which of the following functions demonstrates exponential decay?
+    answer: $f(x) = 5\left(\frac{3}{4}\right)^x$
+    distractors:
+      - $f(x) = 5\left(\frac{4}{3}\right)^x$
+      - $f(x) = -5\left(\frac{4}{3}\right)^x$
+      - $f(x) = \frac{3}{4}(5)^x$
+    solution: |
+      An exponential function $f(x) = ab^x$ demonstrates exponential decay when
+      $a > 0$ and $0 < b < 1$. Only $5\left(\frac{3}{4}\right)^x$ has
+      $a > 0$ and $0 < b < 1$.
+    calculator_active: false
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
+
+  - id: 4cb11f16-4534-4164-9c28-e012b4da8581
+    question: |
+      Let $f(x) = ab^x$, where $a \ne 0$, $b > 0$, and $b \ne 1$. Which of the
+      following must be true?
+
+      \textbf{I.\phantom{II}} \quad $f$ has no relative extrema. \\
+      \textbf{II.\phantom{I}} \quad The graph of $f$ has no points of inflection. \\
+      \textbf{III.} \quad $f(x) > 0$ for all $x$.
+    answer: I and II only
+    distractors:
+      - I only
+      - II and III only
+      - I, II, and III
+    solution: |
+      \textbf{I.} True: $f$ is always increasing or always decreasing. \\
+      \textbf{II.} True: the graph of $f$ is always concave up or always
+      concave down. \\
+      \textbf{III.} False: if $a < 0$, then $f(x) < 0$ for all $x$ (e.g.
+      $f(x) = -2^x$).
+    calculator_active: false
+    sections:
+      - 2.3
+    dok: 3
+    review: generated
+
+  - id: 28db6ad2-cdb3-499f-8527-86b2fc620a5c
+    question: |
+      Selected values of the function $f$ are given in the table above. Which
+      of the following could define $f$?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+        \hline
+        \bm{$x$} & 0 & 1 & 2 & 3 \\
+        \hline
+        \bm{$f(x)$} & 5 & 7 & 11 & 19 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
+    answer: $f(x) = 2(2)^x + 3$
+    distractors:
+      - $f(x) = 5(2)^x$
+      - $f(x) = 2^x + 3$
+      - $f(x) = 5 + 2x$
+    solution: |
+      The output values of $f$ are not proportional ($\frac{7}{5} \ne
+      \frac{11}{7}$), but the values of $f(x) - 3$ are $2, 4, 8, 16$, which
+      double over each interval of length 1. So $f(x) - 3 = 2(2)^x$, and
+      $f(x) = 2(2)^x + 3$.
+    calculator_active: false
+    sections:
+      - 2.3
+    dok: 3
+    review: generated
+
+  - id: 617fcd9d-2950-423b-be05-da40f48f436a
+    question: |
+      What is the range of $f(x) = -2(3)^x + 5$?
+    answer: $y < 5$
+    distractors:
+      - $y > 5$
+      - $y < -2$
+      - all real numbers
+    solution: |
+      $3^x > 0$ for all $x$, so $-2(3)^x < 0$ and $f(x) = -2(3)^x + 5 < 5$. As
+      $x \to -\infty$, $f(x)$ approaches 5, and as $x \to \infty$, $f(x)$
+      decreases without bound, so the range is $y < 5$.
+    calculator_active: false
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
+
+  - id: 27957064-48aa-40a4-8775-93da0657eb7c
+    question: |
+      What is the maximum value of $g(x) = 6\left(\frac{1}{2}\right)^x$ on the
+      closed interval $[0, 4]$?
+    answer: 6
+    distractors:
+      - $\frac{3}{8}$
+      - 0
+      - $g$ has no maximum value on $[0, 4]$.
+    solution: |
+      $a = 6 > 0$ and $0 < b < 1$, so $g$ is decreasing. On $[0, 4]$ its
+      maximum is at the left endpoint: $g(0) = 6$.
+    calculator_active: false
+    sections:
+      - 2.3
+    dok: 2
+    review: generated
+
+  - id: 1f529c44-7138-4c72-95ad-db1eed32aefd
+    question: |
+      Which of the following is equivalent to $\left(\frac{1}{8}\right)^{x/3}$?
+    answer: $\left(\frac{1}{2}\right)^x$
+    distractors:
+      - $\left(\frac{1}{24}\right)^x$
+      - $\frac{1}{3}\left(\frac{1}{8}\right)^x$
+      - $2^x$
+    solution: |
+      $\left(\frac{1}{8}\right)^{x/3} = \left(\left(\frac{1}{8}\right)^{1/3}\right)^x
+      = \left(\frac{1}{2}\right)^x$
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 2
+    review: generated
+
+  - id: 5402591e-f384-4d6b-8dfa-ef0c7a38d46b
+    question: |
+      Which of the following is equivalent to $27^{x/3}$?
+    answer: $3^x$
+    distractors:
+      - $9^x$
+      - $3^{3x}$
+      - $\frac{27^x}{3}$
+    solution: |
+      $27^{x/3} = \left(27^{1/3}\right)^x = 3^x$
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 2
+    review: generated
+
+  - id: eca69a85-e1d4-4177-af0c-c7523fcf16e2
+    question: |
+      Which of the following is equivalent to $\left(\frac{1}{4}\right)^{-x}$?
+    answer: $4^x$
+    distractors:
+      - $-4^x$
+      - $\left(\frac{1}{4}\right)^x$
+      - $4^{-x}$
+    solution: |
+      $\left(\frac{1}{4}\right)^{-x} = \frac{1}{\left(\frac{1}{4}\right)^x}
+      = \frac{1}{4^{-x}} = 4^x$
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 1
+    review: generated
+
+  - id: a0a2377a-ed87-425b-aa41-98aeb375d58c
+    question: |
+      Which of the following is equivalent to $f(x) = 5^{x - 2}$?
+    answer: $f(x) = \frac{1}{25} \cdot 5^x$
+    distractors:
+      - $f(x) = 25 \cdot 5^x$
+      - $f(x) = 5^x - 2$
+      - $f(x) = 5^x - 25$
+    solution: |
+      $5^{x - 2} = 5^x \cdot 5^{-2} = \frac{1}{25} \cdot 5^x$
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 2
+    review: generated
+
+  - id: 07337fb3-180f-4a01-9a33-d2f1cd877968
+    question: |
+      What is the value of $16^{3/4}$?
+    answer: 8
+    distractors:
+      - 12
+      - 64
+      - 4
+    solution: |
+      $16^{3/4} = \left(16^{1/4}\right)^3 = 2^3 = 8$
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 1
+    review: generated
+
+  - id: 1c437855-da30-4b52-9c18-7e11d5adea92
+    question: |
+      Which of the following is equivalent to $4 \cdot 2^{2x + 1}$?
+    answer: $8 \cdot 4^x$
+    distractors:
+      - $4 \cdot 4^x$
+      - $8^{2x + 1}$
+      - $16 \cdot 4^x$
+    solution: |
+      $4 \cdot 2^{2x + 1} = 4 \cdot 2^{2x} \cdot 2^1 = 8 \cdot \left(2^2\right)^x
+      = 8 \cdot 4^x$
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 2
+    review: generated
+
+  - id: bdd8b271-5414-4a77-aa96-d04c0b95bdd3
+    question: |
+      Which of the following is equivalent to $\sqrt{5^x}$?
+    answer: $\left(\sqrt{5}\right)^x$
+    distractors:
+      - $\frac{5^x}{2}$
+      - $5^{\sqrt{x}}$
+      - $\left(\frac{5}{2}\right)^x$
+    solution: |
+      $\sqrt{5^x} = \left(5^x\right)^{1/2} = 5^{x/2} = \left(5^{1/2}\right)^x
+      = \left(\sqrt{5}\right)^x$
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 2
+    review: generated
+
+  - id: e5d027e5-aa23-4c10-84f2-e447a9155ea0
+    question: |
+      The graph of $y = 2^{x + 3}$ is a horizontal translation of the graph of
+      $y = 2^x$ by 3 units to the left. Which of the following transformations
+      of the graph of $y = 2^x$ produces the same graph?
+    answer: A vertical dilation by a factor of 8
+    distractors:
+      - A vertical translation up 8 units
+      - A vertical dilation by a factor of 3
+      - A vertical translation up 3 units
+    solution: |
+      $2^{x + 3} = 2^x \cdot 2^3 = 8 \cdot 2^x$, so the same graph is a vertical
+      dilation of $y = 2^x$ by a factor of 8.
+    calculator_active: false
+    sections:
+      - 2.4
+    dok: 2
+    review: generated
+
+  - id: 1676c496-e272-4c2b-a8b6-a981dbb9c353
+    question: |
+      A population of bacteria starts with 500 bacteria and doubles every 3
+      hours. Which of the following models the population $P(t)$ after $t$
+      hours?
+    answer: $P(t) = 500(2)^{t/3}$
+    distractors:
+      - $P(t) = 500(2)^{3t}$
+      - $P(t) = 500\left(\frac{2}{3}\right)^t$
+      - $P(t) = 500 + 2^{t/3}$
+    solution: |
+      The population is multiplied by 2 for every 3 hours, so after $t$ hours
+      it has doubled $\frac{t}{3}$ times: $P(t) = 500(2)^{t/3}$.
+    calculator_active: false
+    sections:
+      - 2.5
+    dok: 2
+    review: generated
+
+  - id: 689f1a09-08dd-4ce1-8aa0-0917e24efe17
+    question: |
+      A car is worth \$20{,}000 when it is purchased, and its value decreases by
+      15\% each year. Which of the following gives the value of the car, in
+      dollars, $t$ years after it is purchased?
+    answer: $20{,}000(0.85)^t$
+    distractors:
+      - $20{,}000(0.15)^t$
+      - $20{,}000(1.15)^t$
+      - $20{,}000 - 0.15t$
+    solution: |
+      Each year the car keeps $100\% - 15\% = 85\%$ of its value, so the
+      growth factor is $0.85$ and the value is $20{,}000(0.85)^t$.
+    calculator_active: false
+    sections:
+      - 2.5
+    dok: 2
+    review: generated
+
+  - id: 2262e9b2-7ca3-4141-8a43-9ac11a987d71
+    question: |
+      The population of a town $t$ years after 2020 is modeled by
+      $P(t) = 1200(1.04)^t$. Which of the following is the best interpretation
+      of the number 1.04 in this model?
+    answer: The population increases by 4\% each year.
+    distractors:
+      - The population increases by 104\% each year.
+      - The population increases by 1.04 people each year.
+      - The population increases by 4 people each year.
+    solution: |
+      The base 1.04 is the growth factor for each 1-year increase in $t$:
+      $1.04 = 1 + 0.04$, a 4\% increase each year.
+    calculator_active: false
+    sections:
+      - 2.5
+    dok: 2
+    review: generated
+
+  - id: 5136b1f2-8819-40c6-9644-8962984773a8
+    question: |
+      The amount of a substance $d$ days after an experiment begins is modeled
+      by $f(d) = 3(2)^d$. Which of the following equivalent forms of $f$ shows
+      the factor by which the amount increases every week?
+    answer: $f(d) = 3(128)^{d/7}$
+    distractors:
+      - $f(d) = 3(14)^{d/7}$
+      - $f(d) = 3(2)^{7d}$
+      - $f(d) = 21(2)^{d/7}$
+    solution: |
+      $3(2)^d = 3\left(2^7\right)^{d/7} = 3(128)^{d/7}$, so the amount
+      increases by a factor of $2^7 = 128$ every 7 days.
+    calculator_active: false
+    sections:
+      - 2.5
+    dok: 2
+    review: generated
+
+  - id: 6ff20040-994d-443b-81ff-e3a14c035f39
+    question: |
+      The number of fish in a pond, in thousands, is modeled by an exponential
+      function $F(t) = ab^t$, where $t$ is the number of years since the pond
+      was stocked. If $F(1) = 12$ and $F(3) = 48$, how many thousand fish were
+      in the pond when it was stocked?
+    answer: 6
+    distractors:
+      - 3
+      - 4
+      - 24
+    solution: |
+      $\frac{F(3)}{F(1)} = b^2 = \frac{48}{12} = 4 \implies b = 2$ \\
+      $F(1) = ab = 12 \implies a = 6$ \\
+      When the pond was stocked ($t = 0$), there were $F(0) = a = 6$ thousand
+      fish.
+    calculator_active: false
+    sections:
+      - 2.5
+    dok: 2
+    review: generated
+
+  - id: 596b89e3-2a07-4423-91cf-04ab087e3a74
+    question: |
+      A cup of coffee cools in a room with a temperature of 70\textdegree F. The
+      table above gives the temperature $T(t)$ of the coffee, in degrees
+      Fahrenheit, $t$ minutes after it was poured. Which of the following best
+      models these data?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{3}{Y|} }
+        \hline
+        \bm{$t$} (minutes) & 0 & 10 & 20 \\
+        \hline
+        \bm{$T(t)$} & 190 & 130 & 100 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
+    answer: $T(t) = 70 + 120\left(\frac{1}{2}\right)^{t/10}$
+    distractors:
+      - $T(t) = 190\left(\frac{1}{2}\right)^{t/10}$
+      - $T(t) = 70 + 120\left(\frac{1}{2}\right)^t$
+      - $T(t) = 190 - 6t$
+    solution: |
+      The temperatures are not proportional, but the amounts above room
+      temperature, $T(t) - 70$, are $120, 60, 30$, which are halved every 10
+      minutes. So $T(t) - 70 = 120\left(\frac{1}{2}\right)^{t/10}$ and
+      $T(t) = 70 + 120\left(\frac{1}{2}\right)^{t/10}$.
+    calculator_active: false
+    sections:
+      - 2.5
+    dok: 3
+    review: generated
+
+  - id: 865d332b-39f1-43e5-b076-c3f364344d89
+    question: |
+      A regression model predicts a value of 11.5 for a data point whose actual
+      value is 14. What is the residual for this data point?
+    answer: 2.5
+    distractors:
+      - -2.5
+      - 25.5
+      - 11.5
+    solution: |
+      residual $=$ actual value $-$ predicted value $= 14 - 11.5 = 2.5$
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 1
+    review: generated
+
+  - id: 2cbb7fe1-51d9-49ff-81dc-65c0dced935c
+    question: |
+      Two regression models, A and B, are fit to the same data set. The residual
+      plot for model A shows a clear U-shaped pattern, and the residuals for
+      model B appear randomly scattered above and below 0. Which of the
+      following statements is true?
+    answer: Model B is more appropriate because its residual plot appears without pattern.
+    distractors:
+      - Model A is more appropriate because its residuals form a smooth pattern.
+      - Model A is more appropriate because a U-shaped pattern means the residuals add to 0.
+      - Neither model is appropriate because both models have nonzero residuals.
+    solution: |
+      A model is justified as appropriate for a data set if its residual plot
+      appears without pattern. Model A's U-shaped residual plot shows a clear
+      pattern, so model B is more appropriate. Nonzero residuals are expected
+      for any model.
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 2
+    review: generated
+
+  - id: b4dbdb69-ba4d-4ca6-920d-8a76d17023b1
+    question: |
+      For a regression model, the residual at $x = 4$ is $-3$. Which of the
+      following statements is true?
+    answer: The value predicted by the model at $x = 4$ is 3 more than the actual value.
+    distractors:
+      - The value predicted by the model at $x = 4$ is 3 less than the actual value.
+      - The actual value at $x = 4$ is $-3$.
+      - The value predicted by the model at $x = 4$ is $-3$.
+    solution: |
+      residual $=$ actual $-$ predicted $= -3$, so predicted $=$ actual $+ 3$.
+      The model overestimates the actual value by 3.
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 2
+    review: generated
+
+  - id: 138bdf36-e3d2-4d17-b0ce-187a67848998
+    question: |
+      The table above gives four data values and the values predicted by a
+      regression model. For which values of $x$ does the model underestimate
+      the actual value?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+        \hline
+        \bm{$x$} & 1 & 2 & 3 & 4 \\
+        \hline
+        \textbf{Actual} & 5 & 9 & 16 & 30 \\
+        \hline
+        \textbf{Predicted} & 6 & 10 & 15 & 28 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
+    answer: $x = 3$ and $x = 4$
+    distractors:
+      - $x = 1$ and $x = 2$
+      - $x = 4$ only
+      - $x = 1$, $x = 2$, $x = 3$, and $x = 4$
+    solution: |
+      The residuals (actual $-$ predicted) are $-1, -1, 1, 2$. The model
+      underestimates where the residual is positive: $x = 3$ and $x = 4$.
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 2
+    review: generated
+
+  - id: b9804f1c-1271-4604-b920-ada40c005870
+    question: |
+      An engineer builds a model to predict the maximum weight a shelf can
+      safely hold. Which type of error would be preferred for this model, and
+      why?
+    answer: Underestimates, because the shelf would then not be loaded with more weight than it can hold.
+    distractors:
+      - Overestimates, because the shelf would then not be loaded with more weight than it can hold.
+      - Overestimates, because larger predictions make the residuals positive.
+      - Underestimates, because smaller predictions make the residuals negative.
+    solution: |
+      If the model underestimates the maximum safe weight, any load within the
+      prediction is also within what the shelf can actually hold. An
+      overestimate could lead to overloading the shelf. (An underestimate gives
+      a positive residual: actual $-$ predicted $> 0$.)
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 3
+    review: generated
+
+  - id: dac20cd2-a8d0-44e0-9a3e-236b3bf07b89
+    question: |
+      Selected values of the function $y$ are given in the table above. Which
+      type of model is most appropriate for these data?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+        \hline
+        \bm{$x$} & 0 & 1 & 2 & 3 & 4 \\
+        \hline
+        \bm{$y$} & 2 & 5 & 10 & 17 & 26 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
+    answer: Quadratic, because the second differences of $y$ are constant.
+    distractors:
+      - Linear, because the first differences of $y$ are constant.
+      - Exponential, because the ratios of successive $y$-values are constant.
+      - Linear, because $y$ increases as $x$ increases.
+    solution: |
+      First differences: $3, 5, 7, 9$ (not constant). \\
+      Second differences: $2, 2, 2$ (constant). \\
+      Ratios: $\frac{5}{2}, 2, \frac{17}{10}, \dots$ (not constant). \\
+      A quadratic model is most appropriate.
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 2
+    review: generated
+
+  - id: 114fe363-47ca-416f-b3fa-a77af6c61493
+    question: |
+      Selected values of the function $y$ are given in the table above. Which
+      type of model is most appropriate for these data?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+        \hline
+        \bm{$x$} & 0 & 1 & 2 & 3 \\
+        \hline
+        \bm{$y$} & 100 & 110 & 121 & 133.1 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
+    answer: Exponential, because the ratios of successive $y$-values are constant.
+    distractors:
+      - Linear, because the first differences of $y$ are constant.
+      - Quadratic, because the second differences of $y$ are constant.
+      - Linear, because $y$ increases by about 10 each time.
+    solution: |
+      Ratios: $\frac{110}{100} = \frac{121}{110} = \frac{133.1}{121} = 1.1$
+      (constant). \\
+      First differences: $10, 11, 12.1$ (not constant), and second
+      differences: $1, 1.1$ (not constant). \\
+      An exponential model is most appropriate.
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 2
+    review: generated
+
+  - id: ca81f35e-6996-45b2-98ab-050917c5988e
+    question: |
+      A linear model $f(x) = 2x + 3$ is used for a data set that includes the
+      point $(4, 12)$. What is the residual at $x = 4$?
+    answer: 1
+    distractors:
+      - -1
+      - 11
+      - 23
+    solution: |
+      $f(4) = 2(4) + 3 = 11$ \\
+      residual $=$ actual $-$ predicted $= 12 - 11 = 1$
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 1
+    review: generated
+
+  - id: f7334d9e-eb32-402a-a48a-7376fa4014ad
+    question: |
+      Which of the following statements about residuals must be true?
+
+      \textbf{I.\phantom{II}} \quad If a residual plot shows a clear pattern, the model is not appropriate for the data. \\
+      \textbf{II.\phantom{I}} \quad If the sum of the residuals is positive, the model is appropriate for the data. \\
+      \textbf{III.} \quad A residual of 0 means the model's predicted value equals the actual value.
+    answer: I and III only
+    distractors:
+      - I only
+      - II and III only
+      - I, II, and III
+    solution: |
+      \textbf{I.} True: a model is appropriate only if its residual plot
+      appears without pattern. \\
+      \textbf{II.} False: the sign of the sum of the residuals does not show
+      whether there is a pattern. \\
+      \textbf{III.} True: residual $=$ actual $-$ predicted $= 0$ means the two
+      values are equal.
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 3
+    review: generated
+
+  - id: 036e41ee-898d-49ba-90c8-7ee7d274f0c6
+    question: |
+      A city's population has increased by about the same percentage each year
+      for the past 20 years. Which type of model is most appropriate for the
+      population?
+    answer: Exponential, because the population changes proportionally over equal-length time intervals.
+    distractors:
+      - Linear, because the population changes by the same amount over equal-length time intervals.
+      - Quadratic, because the population increases over time.
+      - Linear, because the time intervals are all the same length.
+    solution: |
+      Increasing by the same percentage each year means the population is
+      multiplied by the same factor each year, which is proportional change
+      over equal-length input-value intervals. An exponential model is most
+      appropriate.
+    calculator_active: false
+    sections:
+      - 2.6
+    dok: 2
+    review: generated
+
+  - id: f9f27285-33ed-4a8f-accd-596f8f5fd53b
+    question: |
+      Let $f(x) = x^2 + 1$ and $g(x) = 2x - 3$. What is the value of $f(g(2))$?
+    answer: 2
+    distractors:
+      - 7
+      - 5
+      - 17
+    solution: |
+      $g(2) = 2(2) - 3 = 1$ \\
+      $f(g(2)) = f(1) = 1^2 + 1 = 2$
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 1
+    review: generated
+
+  - id: 2b232be6-d347-4d77-a147-9060e1a34e27
+    question: |
+      Selected values of the functions $f$ and $g$ are given in the table above.
+      What is the value of $(f \circ g)(3)$?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+        \hline
+        \bm{$x$} & 1 & 2 & 3 & 4 \\
+        \hline
+        \bm{$f(x)$} & 3 & 4 & 1 & 2 \\
+        \hline
+        \bm{$g(x)$} & 4 & 1 & 3 & 2 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
+    answer: 1
+    distractors:
+      - 4
+      - 3
+      - 2
+    solution: |
+      $(f \circ g)(3) = f(g(3)) = f(3) = 1$
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: 9d5315d3-6d97-481d-9075-90879bd355aa
+    question: |
+      Let $f(x) = \sqrt{x}$ and $g(x) = x - 5$. Which of the following is an
+      expression for $f(g(x))$?
+    answer: $\sqrt{x - 5}$
+    distractors:
+      - $\sqrt{x} - 5$
+      - $\sqrt{x} - \sqrt{5}$
+      - $x - 5\sqrt{x}$
+    solution: |
+      Substitute $g(x)$ for every $x$ in $f$: $f(g(x)) = f(x - 5) = \sqrt{x - 5}$.
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 1
+    review: generated
+
+  - id: bd1f54fc-dbbd-473a-add4-efd1a985e782
+    question: |
+      Let $f(x) = \sqrt{x}$ and $g(x) = 4 - x$. What is the domain of
+      $f(g(x))$?
+    answer: $x \le 4$
+    distractors:
+      - $x \ge 4$
+      - $x \ge 0$
+      - all real numbers
+    solution: |
+      $f(g(x)) = \sqrt{4 - x}$ is defined only when $g(x) = 4 - x$ is in the
+      domain of $f$: $4 - x \ge 0 \implies x \le 4$.
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: 354c4109-0158-4286-878c-34515bd82d29
+    question: |
+      Let $f(x) = 3x$ and $g(x) = x + 2$. Which of the following statements is
+      true?
+    answer: $f(g(x)) - g(f(x)) = 4$ for all $x$.
+    distractors:
+      - $f(g(x)) = g(f(x))$ for all $x$.
+      - $f(g(x)) - g(f(x)) = 2$ for all $x$.
+      - $f(g(x)) = 3x + 2$
+    solution: |
+      $f(g(x)) = 3(x + 2) = 3x + 6$ \\
+      $g(f(x)) = 3x + 2$ \\
+      $f(g(x)) - g(f(x)) = 4$, so composition is not commutative here.
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: 076cd83d-56b7-4bc5-89cb-1adb6223750a
+    question: |
+      The function $h(x) = (2x + 1)^5$ can be written as $h(x) = f(g(x))$.
+      Which of the following could be $f$ and $g$?
+    answer: $f(x) = x^5$ and $g(x) = 2x + 1$
+    distractors:
+      - $f(x) = 2x + 1$ and $g(x) = x^5$
+      - $f(x) = 2x^5 + 1$ and $g(x) = x$
+      - $f(x) = x^5$ and $g(x) = 2x$
+    solution: |
+      With $g(x) = 2x + 1$ inside and $f(x) = x^5$ outside,
+      $f(g(x)) = (2x + 1)^5 = h(x)$. Reversing them gives
+      $2x^5 + 1$, and $g(x) = x$ with $f(x) = 2x^5 + 1$ gives $2x^5 + 1$.
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: 60638bdc-9cb7-4144-89da-ed36c6bdcf9b
+    question: |
+      Let $f(x) = x$, and let $g$ be any function. Which of the following is
+      equal to $f(g(x))$?
+    answer: $g(x)$
+    distractors:
+      - $x$
+      - $x \cdot g(x)$
+      - 1
+    solution: |
+      $f(x) = x$ is the identity function, so $f(g(x)) = g(x)$.
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 1
+    review: generated
+
+  - id: 66243195-8e89-4424-a89f-bdff264e269f
+    question: |
+      The function $k(x) = f(2x)$ is a horizontal dilation of $f$. If
+      $k(x) = f(h(x))$, which of the following is $h(x)$?
+    answer: $h(x) = 2x$
+    distractors:
+      - $h(x) = x + 2$
+      - $h(x) = \frac{x}{2}$
+      - $h(x) = 2f(x)$
+    solution: |
+      A multiplicative transformation of the input is a composition with
+      $h(x) = kx$. Here $f(h(x)) = f(2x)$ when $h(x) = 2x$.
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: 460d3eb7-8910-49ed-85b4-75d8defbef88
+    question: |
+      The area of a circle with radius $r$ is $A(r) = \pi r^2$. The radius of a
+      circular ripple $t$ seconds after a stone hits the water is
+      $r(t) = 3t$ centimeters. Which of the following gives the area of the
+      ripple, in square centimeters, $t$ seconds after the stone hits the
+      water?
+    answer: $A(r(t)) = 9\pi t^2$
+    distractors:
+      - $A(r(t)) = 3\pi t^2$
+      - $A(r(t)) = 9\pi t$
+      - $A(r(t)) = \pi(3 + t)^2$
+    solution: |
+      $A(r(t)) = \pi(3t)^2 = 9\pi t^2$
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: 4b71a3c2-173f-46b4-bcf8-5d1a26358348
+    question: |
+      Let $f(x) = 2^x$ and $g(x) = x + 3$. Which of the following is equivalent
+      to $f(g(x))$?
+    answer: $8 \cdot 2^x$
+    distractors:
+      - $2^x + 3$
+      - $3 \cdot 2^x$
+      - $2^{3x}$
+    solution: |
+      $f(g(x)) = 2^{x + 3} = 2^x \cdot 2^3 = 8 \cdot 2^x$
+    calculator_active: false
+    sections:
+      - 2.7
+      - 2.4
+    dok: 2
+    review: generated
+
+  - id: d1ac6c62-5358-40bb-9405-90a752b79cdd
+    question: |
+      Let $f(x) = 2x + 1$ and $g(x) = x^2$. What are all values of $x$ for which
+      $f(g(x)) = 19$?
+    answer: $x = -3$ and $x = 3$
+    distractors:
+      - $x = 3$ only
+      - $x = -9$ and $x = 9$
+      - $x = -\sqrt{10}$ and $x = \sqrt{10}$
+    solution: |
+      $f(g(x)) = 2x^2 + 1 = 19 \implies x^2 = 9 \implies x = \pm 3$
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 2
+    review: generated
+
+  - id: fbb8f822-8033-46f0-8582-57c4d4130947
+    question: |
+      Let $f(x) = x^2$ and $g(x) = x - 1$. Which of the following must be
+      true?
+
+      \textbf{I.\phantom{II}} \quad $f(g(1)) = g(f(1))$ \\
+      \textbf{II.\phantom{I}} \quad $f(g(x)) = g(f(x))$ for all $x$ \\
+      \textbf{III.} \quad $f(g(x)) \ge 0$ for all $x$
+    answer: I and III only
+    distractors:
+      - I only
+      - II and III only
+      - I, II, and III
+    solution: |
+      $f(g(x)) = (x - 1)^2$ and $g(f(x)) = x^2 - 1$. \\
+      \textbf{I.} True: $f(g(1)) = 0^2 = 0$ and $g(f(1)) = 1 - 1 = 0$. \\
+      \textbf{II.} False: at $x = 0$, $f(g(0)) = 1$ but $g(f(0)) = -1$. \\
+      \textbf{III.} True: $(x - 1)^2 \ge 0$ for all $x$.
+    calculator_active: false
+    sections:
+      - 2.7
+    dok: 3
+    review: generated
+
+  - id: 2c8ad3c7-a36f-426d-9103-3e351380bcf1
+    question: |
+      Let $f(x) = 3x - 7$. Which of the following is $f^{-1}(x)$?
+    answer: $f^{-1}(x) = \frac{x + 7}{3}$
+    distractors:
+      - $f^{-1}(x) = \frac{x - 7}{3}$
+      - $f^{-1}(x) = 3x + 7$
+      - $f^{-1}(x) = \frac{1}{3x - 7}$
+    solution: |
+      $y = 3x - 7$ \\
+      Swap $x$ and $y$: $x = 3y - 7 \implies y = \frac{x + 7}{3}$
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 2
+    review: generated
+
+  - id: 4fbcc5d3-edfe-4bbb-98c3-9b51df3a6d45
+    question: |
+      The function $f$ is invertible and $f(2) = 9$. What is the value of
+      $f^{-1}(9)$?
+    answer: 2
+    distractors:
+      - 9
+      - $\frac{1}{9}$
+      - $\frac{1}{2}$
+    solution: |
+      If $f(a) = b$, then $f^{-1}(b) = a$. Since $f(2) = 9$, $f^{-1}(9) = 2$.
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 1
+    review: generated
+
+  - id: f52644d0-a16d-4ffb-a777-3a207c00d583
+    question: |
+      The function $f$ is invertible, and selected values of $f$ are given in
+      the table above. What is the value of $f^{-1}(2)$?
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{4}{Y|} }
+        \hline
+        \bm{$x$} & 0 & 1 & 2 & 3 \\
+        \hline
+        \bm{$f(x)$} & 5 & 2 & 8 & -1 \\
+        \hline
+      \end{tabularx}
+    figure_placement: above
+    answer: 1
+    distractors:
+      - 8
+      - 5
+      - $\frac{1}{2}$
+    solution: |
+      $f(1) = 2$, so $f^{-1}(2) = 1$.
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 1
+    review: generated
+
+  - id: ac80b6a6-ead3-469c-b46f-a0ee8de9a41a
+    question: |
+      The function $f(x) = (x - 2)^2$ is not invertible on its whole domain. On
+      which of the following domains is $f$ invertible?
+    answer: $x \ge 2$
+    distractors:
+      - $x \ge 0$
+      - $x \le 4$
+      - all real numbers
+    solution: |
+      Each output value must come from a unique input value. The graph of $f$
+      is a parabola with vertex at $x = 2$; on $x \ge 2$, $f$ is always
+      increasing, so it is invertible. The other domains contain inputs on
+      both sides of the vertex, e.g. $f(1) = f(3) = 1$.
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 2
+    review: generated
+
+  - id: d4113158-0241-4c52-8d2c-6a40ce8905ad
+    question: |
+      The graph of $y = f^{-1}(x)$ is a reflection of the graph of $y = f(x)$
+      over which of the following?
+    answer: The line $y = x$
+    distractors:
+      - The $x$-axis
+      - The $y$-axis
+      - The line $y = -x$
+    solution: |
+      The inverse reverses the roles of $x$ and $y$, which reflects the graph
+      of $f$ over the graph of the identity function $y = x$.
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 1
+    review: generated
+
+  - id: f9cbc065-4b63-4561-905a-f9cbfe5083cc
+    question: |
+      An invertible function $f$ has domain $1 \le x \le 5$ and range
+      $-2 \le y \le 8$. What is the domain of $f^{-1}$?
+    answer: $-2 \le x \le 8$
+    distractors:
+      - $1 \le x \le 5$
+      - $-2 \le x \le 5$
+      - $1 \le x \le 8$
+    solution: |
+      The range of $f$ is the domain of $f^{-1}$: $-2 \le x \le 8$.
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 1
+    review: generated
+
+  - id: 27c4f231-f3c1-457d-bd86-b0adea199cd2
+    question: |
+      Let $f(x) = x^3 + 1$. What is the value of $f^{-1}(9)$?
+    answer: 2
+    distractors:
+      - 730
+      - $\frac{1}{730}$
+      - $\sqrt[3]{10}$
+    solution: |
+      $f^{-1}(9)$ is the input $x$ with $f(x) = 9$: \\
+      $x^3 + 1 = 9 \implies x^3 = 8 \implies x = 2$
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 2
+    review: generated
+
+  - id: 193f6415-453b-468e-aad1-4672275bf4d1
+    question: |
+      Let $f(x) = \frac{2}{x - 1}$. Which of the following is $f^{-1}(x)$?
+    answer: $f^{-1}(x) = \frac{2}{x} + 1$
+    distractors:
+      - $f^{-1}(x) = \frac{x - 1}{2}$
+      - $f^{-1}(x) = \frac{2}{x + 1}$
+      - $f^{-1}(x) = \frac{2}{x} - 1$
+    solution: |
+      $y = \frac{2}{x - 1}$ \\
+      Swap $x$ and $y$: $x = \frac{2}{y - 1} \implies y - 1 = \frac{2}{x}
+      \implies y = \frac{2}{x} + 1$
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 2
+    review: generated
+
+  - id: 8e8a4197-5193-4a9c-bc70-8e845f772423
+    question: |
+      Which of the following pairs of functions are inverses of each other?
+    answer: $f(x) = 2x + 6$ and $g(x) = \frac{x}{2} - 3$
+    distractors:
+      - $f(x) = 2x + 6$ and $g(x) = \frac{x}{2} + 3$
+      - $f(x) = 2x + 6$ and $g(x) = \frac{1}{2x + 6}$
+      - $f(x) = 2x + 6$ and $g(x) = -2x - 6$
+    solution: |
+      $f(g(x)) = 2\left(\frac{x}{2} - 3\right) + 6 = x$ and
+      $g(f(x)) = \frac{2x + 6}{2} - 3 = x$. Both compositions give the identity
+      function, so $f$ and $g$ are inverses.
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 2
+    review: generated
+
+  - id: eaa59852-ea15-4a68-a116-87b2a020e03b
+    question: |
+      The function $C(F) = \frac{5}{9}(F - 32)$ gives the Celsius temperature
+      for a Fahrenheit temperature $F$. Which of the following describes the
+      inverse function?
+    answer: $F(C) = \frac{9}{5}C + 32$, the Fahrenheit temperature for a Celsius temperature $C$
+    distractors:
+      - $F(C) = \frac{5}{9}C + 32$, the Fahrenheit temperature for a Celsius temperature $C$
+      - $F(C) = \frac{9}{5}(C - 32)$, the Fahrenheit temperature for a Celsius temperature $C$
+      - $F(C) = \frac{9}{5}C + 32$, the Celsius temperature for a Fahrenheit temperature $C$
+    solution: |
+      $C = \frac{5}{9}(F - 32) \implies \frac{9}{5}C = F - 32 \implies
+      F = \frac{9}{5}C + 32$. The inverse reverses the mapping: its input is a
+      Celsius temperature and its output is the Fahrenheit temperature.
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 2
+    review: generated
+
+  - id: 47977fd3-71f3-409f-87c1-b87c3044ba16
+    question: |
+      Let $f(x) = \sqrt{x - 3}$ for $x \ge 3$. Which of the following is
+      $f^{-1}(x)$?
+    answer: $f^{-1}(x) = x^2 + 3$ for $x \ge 0$
+    distractors:
+      - $f^{-1}(x) = x^2 + 3$ for $x \ge 3$
+      - $f^{-1}(x) = x^2 - 3$ for $x \ge 0$
+      - $f^{-1}(x) = (x + 3)^2$ for $x \ge 0$
+    solution: |
+      $y = \sqrt{x - 3}$; swap $x$ and $y$: $x = \sqrt{y - 3} \implies
+      x^2 = y - 3 \implies y = x^2 + 3$. \\
+      The range of $f$ is $y \ge 0$, so the domain of $f^{-1}$ is $x \ge 0$.
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 2
+    review: generated
+
+  - id: 00953df0-9cb3-4f6a-8946-2bda61ac7ac0
+    question: |
+      The function $f$ is invertible, with $f(1) = 4$ and $f(4) = 6$. Which of
+      the following must be true?
+
+      \textbf{I.\phantom{II}} \quad $f^{-1}(4) = 1$ \\
+      \textbf{II.\phantom{I}} \quad $f^{-1}(6) = 4$ \\
+      \textbf{III.} \quad $f^{-1}\left(f^{-1}(6)\right) = 1$
+    answer: I, II, and III
+    distractors:
+      - I only
+      - I and II only
+      - II and III only
+    solution: |
+      \textbf{I.} True: $f(1) = 4$, so $f^{-1}(4) = 1$. \\
+      \textbf{II.} True: $f(4) = 6$, so $f^{-1}(6) = 4$. \\
+      \textbf{III.} True: $f^{-1}\left(f^{-1}(6)\right) = f^{-1}(4) = 1$.
+    calculator_active: false
+    sections:
+      - 2.8
+    dok: 3
+    review: generated
+
+  - id: b691d314-9ba6-4a7f-a7f0-5b3c23a936f7
+    question: |
+      Which of the following expressions gives the value, in dollars, of an
+      investment of \$2000 at 6\% annual interest compounded quarterly after 5
+      years?
+    answer: $2000\left(1 + \frac{0.06}{4}\right)^{20}$
+    distractors:
+      - $2000(1 + 0.06)^{20}$
+      - $2000\left(1 + \frac{0.06}{4}\right)^{5}$
+      - $2000\left(1 + \frac{0.06}{4}\right)^{4/5}$
+    solution: |
+      $A = P\left(1 + \frac{r}{k}\right)^{kt}$ with $P = 2000$, $r = 0.06$,
+      $k = 4$, and $t = 5$: $A = 2000\left(1 + \frac{0.06}{4}\right)^{20}$.
+    calculator_active: false
+    sections:
+      - '2.F'
+    dok: 2
+    review: generated
+
+  - id: a0b8bb50-2b71-4e91-9bc7-ae4acda9c4ff
+    question: |
+      Which of the following expressions gives the value, in dollars, of an
+      investment of \$500 at 4\% annual interest compounded continuously after
+      10 years?
+    answer: $500e^{0.4}$
+    distractors:
+      - $500(1.04)^{10}$
+      - $500e^{4}$
+      - $500 + 500(0.04)(10)$
+    solution: |
+      $A = Pe^{rt}$ with $P = 500$, $r = 0.04$, and $t = 10$:
+      $A = 500e^{0.04 \cdot 10} = 500e^{0.4}$.
+    calculator_active: false
+    sections:
+      - '2.F'
+    dok: 2
+    review: generated
+
+  - id: 4f7f6c6d-146d-418e-b8d8-5d7232167d81
+    question: |
+      Ana invests \$1000 at 10\% annual simple interest, and Ben invests \$1000
+      at 10\% annual interest compounded annually. After 2 years, how much more
+      is Ben's investment worth than Ana's?
+    answer: \$10
+    distractors:
+      - \$0
+      - \$100
+      - \$21
+    solution: |
+      Ana: $1000 + 1000(0.10)(2) = 1200$ \\
+      Ben: $1000(1 + 0.10)^2 = 1000(1.21) = 1210$ \\
+      $1210 - 1200 = 10$, so Ben's investment is worth \$10 more.
+    calculator_active: false
+    sections:
+      - '2.F'
+    dok: 2
+    review: generated
+
+  - id: 7f464703-479f-4617-bcd8-efae431ac359
+    question: |
+      An account pays 6\% annual interest compounded semiannually. What is the
+      annual percentage yield (APY) of the account?
+    answer: 6.09\%
+    distractors:
+      - 6\%
+      - 12.36\%
+      - 3\%
+    solution: |
+      The APY is the annual rate that, compounded annually, gives the same
+      return: \\
+      $\left(1 + \frac{0.06}{2}\right)^2 - 1 = (1.03)^2 - 1 = 1.0609 - 1 = 0.0609$,
+      or 6.09\%.
+    calculator_active: false
+    sections:
+      - '2.F'
+    dok: 2
+    review: generated

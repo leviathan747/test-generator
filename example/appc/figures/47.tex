@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{bm}
+\begin{document}
+\begin{tikzpicture}[>=stealth, scale=0.6, font=\bfseries]
+  % From unit2a/6-A.png: y = -1.2e^(-0.8x); increasing, concave down, -> 0 from below as x -> infinity
+  \draw[->, thick] (-2.4,0) -- (7.2,0) node[right] {$\bm{x}$};
+  \draw[->, thick] (0,-6.2) -- (0,1.8) node[above] {$\bm{y}$};
+  \node[below left] at (0,0) {$\bm{O}$};
+  \begin{scope}
+    \clip (-2.4,-6.2) rectangle (7.2,1.8);
+    \draw[line width=1.4pt, smooth, samples=150, domain=-2.4:7.2] plot (\x, {-1.2*exp(-0.8*\x)});
+  \end{scope}
+\end{tikzpicture}
+\end{document}

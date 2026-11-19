@@ -1,0 +1,490 @@
+title: "Unit 2A Test FRQ: Exponential Functions and Modeling"
+author: Levi Starrett
+class_name: AP Precalculus
+class_id: APPC
+duration: 15 min
+sections: 2.1 - 2.8
+instructions: |
+  Read all directions and answer each question completely. Unless otherwise
+  specified, all answers will be real numbers.
+question_count: 1
+questions:
+  - id: b06e0e68-1ddf-444a-b944-aaed9f70f532
+    related_to:
+      - e1b2748e-cae2-43af-878c-80cbe97b1ec0
+    question: |
+      \begin{center}
+        \begin{tabularx}{4in}{ |Y||*{3}{Y|} }
+          \hline
+          \bm{$n$} & 2 & 4 & 5 \\
+          \hline
+          \bm{$f_n$} & 3 & $k$ & 24 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      The table above presents values for a sequence $f$ at selected values of
+      $n$, where $k$ is a constant. The data in the table can be used to find two
+      possible models for $f_n$ -- an arithmetic model $a_n$ or a geometric model
+      $g_n$.
+    parts:
+      - question: |
+          The arithmetic model $a_n$ for $f_n$ can be written as $a_n$ = $a_0 +
+          dn$, where $d$ is the common difference between successive terms. Use the
+          data in the table to find an expression for $a_n$ in terms of $n$ and use
+          the model to find the value of the constant $k$ in the table above.
+        solution: |
+          \begin{multicols}{2}
+            \begin{gather*}
+              24 = 3 + d(5 - 2) \\
+              24 = 3 + 3d \\
+              21 = 3d \\
+              d = 7 \\
+              3 = a_0 + 7(2) \\
+              3 = a_0 + 14  \\
+              a_0 = -11  \\
+              \boxed{ a_n = -11 + 7n } \\
+            \end{gather*}
+
+            \begin{gather*}
+              k = -11 + 7(4) \\
+              k = -11 + 28 \\
+              \boxed{ k = 17 } \\
+            \end{gather*}
+          \end{multicols}
+        grading:
+          - points: 1
+            criterion: Expression for $a_n$
+          - points: 1
+            criterion: Value of $k$
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 2in
+      - question: |
+          According to the arithmetic model, for what value of $n$ will $f_n = 66$?
+        solution: |
+          \begin{gather*}
+            66 = -11 + 7n \\
+            77 = 7n \\
+            \boxed{ n = 11 } \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Value of $n$
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          The geometric model $g_n$ for $f_n$ can be written as $g_n$ = $g_0 \cdot
+          r^n$, where $r$ is the common ratio between successive terms. Use the
+          data in the table to find an expression for $g_n$ in terms of $n$ and use
+          the model to find the value of the constant $k$ in the table above.
+        solution: |
+          \begin{multicols}{2}
+            \begin{gather*}
+              24 = 3 \cdot r^{5 - 2} \\
+              24 = 3 \cdot r^3 \\
+              8 = r^3 \\
+              r = 2 \\
+              3 = g_0 \cdot 2^2 \\
+              3 = g_0 \cdot 4  \\
+              g_0 = \frac{3}{4}  \\
+              \boxed{ g_n = \frac{3}{4} \cdot 2^n } \\
+            \end{gather*}
+
+            \begin{gather*}
+              k = \frac{3}{4} \cdot 2^4 \\
+              k = \frac{3}{4} \cdot 16 \\
+              \boxed{ k = 12 } \\
+            \end{gather*}
+          \end{multicols}
+        grading:
+          - points: 1
+            criterion: Expression for $g_n$
+          - points: 1
+            criterion: Value of $k$
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 2in
+      - question: |
+          For $n \ge 0$, the value of $f_{n + 1} - f_n$ increases as $n$ increases.
+          Based on this, is $a_n$ or $g_n$ a better model for $f_n$?  Give a reason
+          for your answer.
+        solution: |
+          Because the difference between successive elements is increasing, the
+          geometric sequence $g_n$ is a better model. For arithmetic sequences,
+          the difference between successive elements is a constant value (the
+          common difference).
+        grading:
+          - points: 1
+            criterion: Answer with reason
+        sections:
+          - 2.1
+        dok: 3
+        work_space: 1.5in
+    calculator_active: false
+    question_type: FRQ
+    review: generated
+
+  - id: e1b2748e-cae2-43af-878c-80cbe97b1ec0
+    related_to:
+      - b06e0e68-1ddf-444a-b944-aaed9f70f532
+    question: |
+      \begin{center}
+        \begin{tabularx}{4in}{ |Y||*{3}{Y|} }
+          \hline
+          \bm{$n$} & 2 & 4 & 5 \\
+          \hline
+          \bm{$f_n$} & 162 & $k$ & 6 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      The table above presents values for a sequence $f$ at selected values of
+      $n$, where $k$ is a constant. The data in the table can be used to find two
+      possible models for $f_n$ -- an arithmetic model $a_n$ or a geometric model
+      $g_n$.
+    parts:
+      - question: |
+          The arithmetic model $a_n$ for $f_n$ can be written as $a_n$ = $a_0 +
+          dn$, where $d$ is the common difference between successive terms. Use the
+          data in the table to find an expression for $a_n$ in terms of $n$ and use
+          the model to find the value of the constant $k$ in the table above.
+        solution: |
+          \begin{multicols}{2}
+            \begin{gather*}
+              6 = 162 + d(5 - 2) \\
+              6 = 162 + 3d \\
+              -156 = 3d \\
+              d = -52 \\
+              6 = a_0 - 52(5) \\
+              6 = a_0 - 260  \\
+              a_0 = 266  \\
+              \boxed{ a_n = 266 - 52n } \\
+            \end{gather*}
+
+            \begin{gather*}
+              k = 266 - 52(4) \\
+              k = 266 - 208 \\
+              \boxed{ k = 58 } \\
+            \end{gather*}
+          \end{multicols}
+        grading:
+          - points: 1
+            criterion: Expression for $a_n$
+          - points: 1
+            criterion: Value of $k$
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 2in
+      - question: |
+          According to the arithmetic model, for what value of $n$ will $f_n = -150$?
+        solution: |
+          \begin{gather*}
+            -150 = 266 - 52n \\
+            -416 = -52n \\
+            \boxed{ n = 8 } \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Value of $n$
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          The geometric model $g_n$ for $f_n$ can be written as $g_n$ = $g_0 \cdot
+          r^n$, where $r$ is the common ratio between successive terms. Use the
+          data in the table to find an expression for $g_n$ in terms of $n$ and use
+          the model to find the value of the constant $k$ in the table above.
+        solution: |
+          \begin{multicols}{2}
+            \begin{gather*}
+              6 = 162 \cdot r^{5 - 2} \\
+              6 = 162 \cdot r^3 \\
+              \frac{1}{27} = r^3 \\
+              r = \frac{1}{3} \\
+              162 = g_0 \cdot \left(\frac{1}{3}\right)^2 \\
+              162 = g_0 \cdot \frac{1}{9}  \\
+              g_0 = 1458  \\
+              \boxed{ g_n = 1458 \cdot \left(\frac{1}{3}\right)^n } \\
+            \end{gather*}
+
+            \begin{gather*}
+              k = 1458 \cdot \left(\frac{1}{3}\right)^4 \\
+              k = 1458 \cdot \frac{1}{81} \\
+              \boxed{ k = 18 } \\
+            \end{gather*}
+          \end{multicols}
+        grading:
+          - points: 1
+            criterion: Expression for $g_n$
+          - points: 1
+            criterion: Value of $k$
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 2in
+      - question: |
+          For $n \ge 0$, the value of $f_{n + 1} - f_n$ increases as $n$ increases.
+          Based on this, is $a_n$ or $g_n$ a better model for $f_n$?  Give a reason
+          for your answer.
+        solution: |
+          Because the difference between successive elements is increasing, the
+          geometric sequence $g_n$ is a better model. For arithmetic sequences,
+          the difference between successive elements is a constant value (the
+          common difference).
+        grading:
+          - points: 1
+            criterion: Answer with reason
+        sections:
+          - 2.1
+        dok: 3
+        work_space: 1.5in
+    calculator_active: false
+    question_type: FRQ
+    review: generated
+
+  - id: 73aede6d-d67b-46e0-9222-d37d28b52585
+    related_to:
+      - e3b7e8db-dd75-44a2-a813-466bca33147a
+    question: |
+      \begin{center}
+        \begin{tabularx}{4in}{ |Y||*{3}{Y|} }
+          \hline
+          \bm{$n$} & 1 & 2 & 4 \\
+          \hline
+          \bm{$f_n$} & 2 & $k$ & 128 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      The table above presents values for a sequence $f$ at selected values of
+      $n$, where $k$ is a constant. The data in the table can be used to find two
+      possible models for $f_n$ -- an arithmetic model $a_n$ or a geometric model
+      $g_n$.
+    parts:
+      - question: |
+          The arithmetic model $a_n$ for $f_n$ can be written as $a_n$ = $a_0 +
+          dn$, where $d$ is the common difference between successive terms. Use the
+          data in the table to find an expression for $a_n$ in terms of $n$ and use
+          the model to find the value of the constant $k$ in the table above.
+        solution: |
+          \begin{multicols}{2}
+            \begin{gather*}
+              128 = 2 + d(4 - 1) \\
+              128 = 2 + 3d \\
+              126 = 3d \\
+              d = 42 \\
+              2 = a_0 + 42(1) \\
+              2 = a_0 + 42  \\
+              a_0 = -40  \\
+              \boxed{ a_n = -40 + 42n } \\
+            \end{gather*}
+
+            \begin{gather*}
+              k = -40 + 42(2) \\
+              k = -40 + 84 \\
+              \boxed{ k = 44 } \\
+            \end{gather*}
+          \end{multicols}
+        grading:
+          - points: 1
+            criterion: Expression for $a_n$
+          - points: 1
+            criterion: Value of $k$
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 2in
+      - question: |
+          According to the arithmetic model, for what value of $n$ will $f_n = 212$?
+        solution: |
+          \begin{gather*}
+            212 = -40 + 42n \\
+            252 = 42n \\
+            \boxed{ n = 6 } \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Value of $n$
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          The geometric model $g_n$ for $f_n$ can be written as $g_n$ = $g_0 \cdot
+          r^n$, where $r$ is the common ratio between successive terms. Use the
+          data in the table to find an expression for $g_n$ in terms of $n$ and use
+          the model to find the value of the constant $k$ in the table above.
+        solution: |
+          \begin{multicols}{2}
+            \begin{gather*}
+              128 = 2 \cdot r^{4 - 1} \\
+              128 = 2 \cdot r^3 \\
+              64 = r^3 \\
+              r = 4 \\
+              2 = g_0 \cdot 4^1 \\
+              2 = g_0 \cdot 4  \\
+              g_0 = \frac{1}{2}  \\
+              \boxed{ g_n = \frac{1}{2} \cdot 4^n } \\
+            \end{gather*}
+
+            \begin{gather*}
+              k = \frac{1}{2} \cdot 4^2 \\
+              k = \frac{1}{2} \cdot 16 \\
+              \boxed{ k = 8 } \\
+            \end{gather*}
+          \end{multicols}
+        grading:
+          - points: 1
+            criterion: Expression for $g_n$
+          - points: 1
+            criterion: Value of $k$
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 2in
+      - question: |
+          For $n \ge 0$, the value of $f_{n + 1} - f_n$ increases as $n$ increases.
+          Based on this, is $a_n$ or $g_n$ a better model for $f_n$?  Give a reason
+          for your answer.
+        solution: |
+          Because the difference between successive elements is increasing, the
+          geometric sequence $g_n$ is a better model. For arithmetic sequences,
+          the difference between successive elements is a constant value (the
+          common difference).
+        grading:
+          - points: 1
+            criterion: Answer with reason
+        sections:
+          - 2.1
+        dok: 3
+        work_space: 1.5in
+    calculator_active: false
+    question_type: FRQ
+    review: generated
+
+  - id: e3b7e8db-dd75-44a2-a813-466bca33147a
+    related_to:
+      - 73aede6d-d67b-46e0-9222-d37d28b52585
+    question: |
+      \begin{center}
+        \begin{tabularx}{4in}{ |Y||*{3}{Y|} }
+          \hline
+          \bm{$n$} & 3 & 5 & 6 \\
+          \hline
+          \bm{$f_n$} & 192 & $k$ & 3 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      The table above presents values for a sequence $f$ at selected values of
+      $n$, where $k$ is a constant. The data in the table can be used to find two
+      possible models for $f_n$ -- an arithmetic model $a_n$ or a geometric model
+      $g_n$.
+    parts:
+      - question: |
+          The arithmetic model $a_n$ for $f_n$ can be written as $a_n$ = $a_0 +
+          dn$, where $d$ is the common difference between successive terms. Use the
+          data in the table to find an expression for $a_n$ in terms of $n$ and use
+          the model to find the value of the constant $k$ in the table above.
+        solution: |
+          \begin{multicols}{2}
+            \begin{gather*}
+              3 = 192 + d(6 - 3) \\
+              3 = 192 + 3d \\
+              -189 = 3d \\
+              d = -63 \\
+              3 = a_0 - 63(6) \\
+              3 = a_0 - 378  \\
+              a_0 = 381  \\
+              \boxed{ a_n = 381 - 63n } \\
+            \end{gather*}
+
+            \begin{gather*}
+              k = 381 - 63(5) \\
+              k = 381 - 315 \\
+              \boxed{ k = 66 } \\
+            \end{gather*}
+          \end{multicols}
+        grading:
+          - points: 1
+            criterion: Expression for $a_n$
+          - points: 1
+            criterion: Value of $k$
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 2in
+      - question: |
+          According to the arithmetic model, for what value of $n$ will $f_n = -60$?
+        solution: |
+          \begin{gather*}
+            -60 = 381 - 63n \\
+            -441 = -63n \\
+            \boxed{ n = 7 } \\
+          \end{gather*}
+        grading:
+          - points: 1
+            criterion: Value of $n$
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          The geometric model $g_n$ for $f_n$ can be written as $g_n$ = $g_0 \cdot
+          r^n$, where $r$ is the common ratio between successive terms. Use the
+          data in the table to find an expression for $g_n$ in terms of $n$ and use
+          the model to find the value of the constant $k$ in the table above.
+        solution: |
+          \begin{multicols}{2}
+            \begin{gather*}
+              3 = 192 \cdot r^{6 - 3} \\
+              3 = 192 \cdot r^3 \\
+              \frac{1}{64} = r^3 \\
+              r = \frac{1}{4} \\
+              192 = g_0 \cdot \left(\frac{1}{4}\right)^3 \\
+              192 = g_0 \cdot \frac{1}{64}  \\
+              g_0 = 12288  \\
+              \boxed{ g_n = 12288 \cdot \left(\frac{1}{4}\right)^n } \\
+            \end{gather*}
+
+            \begin{gather*}
+              k = 12288 \cdot \left(\frac{1}{4}\right)^5 \\
+              k = 12288 \cdot \frac{1}{1024} \\
+              \boxed{ k = 12 } \\
+            \end{gather*}
+          \end{multicols}
+        grading:
+          - points: 1
+            criterion: Expression for $g_n$
+          - points: 1
+            criterion: Value of $k$
+        sections:
+          - 2.1
+        dok: 2
+        work_space: 2in
+      - question: |
+          For $n \ge 0$, the value of $f_{n + 1} - f_n$ increases as $n$ increases.
+          Based on this, is $a_n$ or $g_n$ a better model for $f_n$?  Give a reason
+          for your answer.
+        solution: |
+          Because the difference between successive elements is increasing, the
+          geometric sequence $g_n$ is a better model. For arithmetic sequences,
+          the difference between successive elements is a constant value (the
+          common difference).
+        grading:
+          - points: 1
+            criterion: Answer with reason
+        sections:
+          - 2.1
+        dok: 3
+        work_space: 1.5in
+    calculator_active: false
+    question_type: FRQ
+    review: generated

@@ -1,0 +1,389 @@
+title: "Unit 2A Test FRQ: Exponential Functions and Modeling"
+author: Levi Starrett
+class_name: AP Precalculus
+class_id: APPC
+duration: 15 min
+sections: 2.1 - 2.8
+instructions: |
+  Read all directions and answer each question completely. Unless otherwise
+  specified, all answers will be real numbers. Decimal approximations must be
+  reported to at least 3 places after the decimal point.
+question_count: 1
+questions:
+  - id: 2ac09b34-06a9-4569-b83e-11a4249588ed
+    related_to:
+      - d9816985-e6ab-4a1a-aa16-39987120e21d
+    question: |
+      \begin{center}
+        \footnotesize
+        \begin{tabularx}{7in}{ |Y||*{9}{Y|} }
+          \hline
+          \bm{$t$} & 0 & 11 & 20 & 31 & 38 & 54 & 64 & 75 & 87 \\
+          \hline
+          \bm{$P(t)$} & 19.91 & 14.71 & 9.69 & 8.35 & 6.39 & 2.28 & 1.61 & 1.20 & 1.00 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      The purchasing power of the US currency is the amount of goods and services
+      that can be bought with one US dollar. The function $P$ gives the purchasing
+      power of one US dollar based on the value of a dollar in the year 2020.
+      The table above presents values for the function $P$ at selected values of $t$,
+      where $P$ is measured in dollars and $t$ is the number of years since 1933.
+
+      $P(t)$ can be modeled by the exponential regression $y =
+      21.682(0.963124)^t$, where $t$ is the number of years since 1933.
+    parts:
+      - question: |
+          At what time $t$ does the regression model predict that $P(t) = 5$?
+        solution: |
+          Enter the regression equation into your calculator. Find the
+          intersection between the regression curve and the constant function $y
+          = 5$.
+
+          $t \approx 39.045$
+        grading:
+          - points: 2
+            criterion: Value of $t$
+        sections:
+          - 2.5
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Find the residual value of the purchasing power of the US currency when
+          $t = 54$. Does this residual value indicate that our model overestimated
+          or underestimated the purchasing power of the US currency when $t = 54$?
+          Give a reason for your answer.
+        solution: |
+          residual = actual - predicted
+          residual $= 2.28 - 2.8506 \approx -0.5706$
+
+          The model overestimated the purchasing power when $t = 54$. This can be
+          seen because the residual value is negative.
+        grading:
+          - points: 1
+            criterion: Value of the residual
+          - points: 1
+            criterion: Over/underestimate with reason
+        sections:
+          - 2.6
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          The function $P(t)$ can also be modeled with a linear model. Let $y = a +
+          bx$ be the linear regression model for $P(t)$. Use the data in the table
+          to find the linear regression model and use the model to predict the
+          value of $P(30)$.
+        solution: |
+          $y = 16.11355239 - 0.2102157146x$
+
+          $P(30) \approx 9.807$
+        grading:
+          - points: 1
+            criterion: Regression equation
+          - points: 1
+            criterion: Value of $P(30)$
+        sections:
+          - 2.6
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          The graphs of the residuals for the exponential and linear regression
+          models are below. Use the graphs of the residuals to determine which
+          model was appropriate for the data. Explain your reasoning.
+        figure: 53.tex
+        figure_placement: below
+        solution: |
+          \raggedright
+          The exponential regression appears to be the most appropriate. The
+          residuals corresponding to the linear model show a pattern where the
+          datapoints in the middle all dip below the $x$-axis and swoop above the
+          $x$-axis near the edges. The residuals corresponding to the exponential
+          model are more randomly distributed around the $x$-axis and their
+          average distance from zero is smaller.
+        grading:
+          - points: 1
+            criterion: Answer with reason
+        sections:
+          - 2.6
+        dok: 3
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
+
+  - id: d9816985-e6ab-4a1a-aa16-39987120e21d
+    related_to:
+      - 2ac09b34-06a9-4569-b83e-11a4249588ed
+    question: |
+      \begin{center}
+        \footnotesize
+        \begin{tabularx}{7in}{ |Y||*{7}{Y|} }
+          \hline
+          \bm{$t$} (sec) & 2 & 5 & 10 & 15 & 20 & 25 & 30 \\
+          \hline
+          \bm{$T(t)$} ($^\circ$C) & 60.3 & 44.5 & 26.9 & 17.5 & 12.0 & 9.7 & 7.5 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      In an experiment, a temperature probe was removed from a cup of hot coffee
+      and placed in a glass of cold water. Selected values of $T(t)$ are given in
+      the table above where $T$ represents the temperature of the probe in
+      $^\circ$C and $t$ represents the number of seconds since the probe was
+      placed in the water.
+
+      $T(t)$ can be modeled by the exponential regression $y =
+      61.656(0.9277013)^t$, where $t$ is the number of seconds since the
+      probe was placed in the water.
+    parts:
+      - question: |
+          At what time $t$ does the regression model predict that $T(t) = 10$?
+        solution: |
+          Enter the regression equation into your calculator. Find the
+          intersection between the regression curve and the constant function $y
+          = 10$.
+
+          $t \approx 24.238$ seconds after the probe was put in the water
+        grading:
+          - points: 2
+            criterion: Value of $t$
+        sections:
+          - 2.5
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Find the residual value of the temperature of the probe when $t = 5$.
+          Does this residual value indicate that our model overestimated or
+          underestimated the temperature of the probe when $t = 5$? Give a reason
+          for your answer.
+        solution: |
+          residual = actual - predicted
+          residual $= 44.5 - 42.365 \approx 2.134$
+
+          The model underestimated the temperature when $t = 5$. This can be
+          seen because the residual value is positive.
+        grading:
+          - points: 1
+            criterion: Value of the residual
+          - points: 1
+            criterion: Over/underestimate with reason
+        sections:
+          - 2.6
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          The function $T(t)$ can also be modeled with a linear model. Let $y = a +
+          bx$ be the linear regression model for $T(t)$. Use the data in the table
+          to find the linear regression model and use the model to predict the
+          value of $T(27)$.
+        solution: |
+          $y = 52.68403641 - 1.779329485x$
+
+          $T(27) \approx 4.642 ^\circ$C
+        grading:
+          - points: 1
+            criterion: Regression equation
+          - points: 1
+            criterion: Value of $T(27)$
+        sections:
+          - 2.6
+        dok: 2
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
+
+  - id: 1163b003-ea5e-4d84-b24d-e578eb337554
+    related_to:
+      - 85139be6-cd3e-49f3-9c6b-a99d1a66488a
+    question: |
+      \begin{center}
+        \footnotesize
+        \begin{tabularx}{7in}{ |Y||*{9}{Y|} }
+          \hline
+          \bm{$t$} (years) & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+          \hline
+          \bm{$V(t)$} & 31.5 & 27.9 & 23.1 & 19.6 & 17.2 & 14.1 & 12.3 & 10.2 & 8.9 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      A used-car dealer tracks the resale value of a certain model of car.
+      Selected values of $V(t)$ are given in the table above where $V$
+      represents the value of the car in thousands of dollars and $t$
+      represents the number of years since the car was purchased new.
+
+      $V(t)$ can be modeled by the exponential regression $y =
+      32.0357(0.851231)^t$, where $t$ is the number of years since the car
+      was purchased new.
+    parts:
+      - question: |
+          At what time $t$ does the regression model predict that $V(t) = 12$?
+        solution: |
+          Enter the regression equation into your calculator. Find the
+          intersection between the regression curve and the constant function $y
+          = 12$.
+
+          $t \approx 6.096$ years after the car was purchased new
+        grading:
+          - points: 2
+            criterion: Value of $t$
+        sections:
+          - 2.5
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Find the residual value of the car when $t = 4$. Does this residual
+          value indicate that our model overestimated or underestimated the
+          value of the car when $t = 4$? Give a reason for your answer.
+        solution: |
+          residual = actual - predicted
+          residual $= 17.2 - 16.820 \approx 0.380$
+
+          The model underestimated the value of the car when $t = 4$. This can
+          be seen because the residual value is positive.
+        grading:
+          - points: 1
+            criterion: Value of the residual
+          - points: 1
+            criterion: Over/underestimate with reason
+        sections:
+          - 2.6
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          The function $V(t)$ can also be modeled with a linear model. Let $y = a +
+          bx$ be the linear regression model for $V(t)$. Use the data in the table
+          to find the linear regression model and use the model to predict the
+          value of $V(6.5)$.
+        solution: |
+          $y = 29.68444444 - 2.843333333x$
+
+          $V(6.5) \approx 11.203$ thousand dollars
+        grading:
+          - points: 1
+            criterion: Regression equation
+          - points: 1
+            criterion: Value of $V(6.5)$
+        sections:
+          - 2.6
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          According to the exponential regression model, by what percent does
+          the value of the car decrease each year? Give a reason for your
+          answer.
+        solution: |
+          The base of the exponential model, $0.851231$, is the growth factor
+          for each one-year increase in $t$. Each year the car keeps
+          $85.1231\%$ of its value from the year before, so its value decreases
+          by $1 - 0.851231 = 0.148769$, or about $14.877\%$, each year.
+        grading:
+          - points: 1
+            criterion: Percent decrease with reason
+        sections:
+          - 2.5
+        dok: 2
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
+
+  - id: 85139be6-cd3e-49f3-9c6b-a99d1a66488a
+    related_to:
+      - 1163b003-ea5e-4d84-b24d-e578eb337554
+    question: |
+      \begin{center}
+        \footnotesize
+        \begin{tabularx}{7in}{ |Y||*{8}{Y|} }
+          \hline
+          \bm{$t$} (hours) & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+          \hline
+          \bm{$N(t)$} & 1.2 & 1.7 & 2.1 & 3.0 & 3.9 & 5.5 & 7.1 & 9.8 \\
+          \hline
+        \end{tabularx}
+      \end{center}
+
+      A biologist grows a colony of bacteria in a laboratory. Selected values
+      of $N(t)$ are given in the table above where $N$ represents the number
+      of bacteria in the colony, in thousands, and $t$ represents the number
+      of hours since the biologist began observing the colony.
+
+      $N(t)$ can be modeled by the exponential regression $y =
+      1.2106(1.346626)^t$, where $t$ is the number of hours since the
+      biologist began observing the colony.
+    parts:
+      - question: |
+          At what time $t$ does the regression model predict that $N(t) = 8$?
+        solution: |
+          Enter the regression equation into your calculator. Find the
+          intersection between the regression curve and the constant function $y
+          = 8$.
+
+          $t \approx 6.345$ hours after the biologist began observing the colony
+        grading:
+          - points: 2
+            criterion: Value of $t$
+        sections:
+          - 2.5
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          Find the residual value of the number of bacteria in the colony when
+          $t = 6$. Does this residual value indicate that our model
+          overestimated or underestimated the number of bacteria in the colony
+          when $t = 6$? Give a reason for your answer.
+        solution: |
+          residual = actual - predicted
+          residual $= 7.1 - 7.219 \approx -0.119$
+
+          The model overestimated the number of bacteria when $t = 6$. This can
+          be seen because the residual value is negative.
+        grading:
+          - points: 1
+            criterion: Value of the residual
+          - points: 1
+            criterion: Over/underestimate with reason
+        sections:
+          - 2.6
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          The function $N(t)$ can also be modeled with a linear model. Let $y = a +
+          bx$ be the linear regression model for $N(t)$. Use the data in the table
+          to find the linear regression model and use the model to predict the
+          value of $N(4.5)$.
+        solution: |
+          $y = 0.1916666667 + 1.170238095x$
+
+          $N(4.5) \approx 5.458$ thousand bacteria
+        grading:
+          - points: 1
+            criterion: Regression equation
+          - points: 1
+            criterion: Value of $N(4.5)$
+        sections:
+          - 2.6
+        dok: 2
+        work_space: 1.5in
+      - question: |
+          According to the exponential regression model, by what percent does
+          the number of bacteria in the colony increase each hour? Give a reason
+          for your answer.
+        solution: |
+          The base of the exponential model, $1.346626$, is the growth factor
+          for each one-hour increase in $t$. Each hour the colony has
+          $134.6626\%$ of the bacteria it had the hour before, so the number of
+          bacteria increases by $1.346626 - 1 = 0.346626$, or about
+          $34.663\%$, each hour.
+        grading:
+          - points: 1
+            criterion: Percent increase with reason
+        sections:
+          - 2.5
+        dok: 2
+        work_space: 1.5in
+    calculator_active: true
+    question_type: FRQ
+    review: generated
