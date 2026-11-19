@@ -111,14 +111,14 @@ questions:
 | `distractors` | The incorrect MCQ choices |
 | `solution` | The worked solution shown in the solution copy (LaTeX) |
 | `parts` | Sub-parts of a multipart FRQ; a part may carry its own `question`, `solution`, `sections`, `dok`, `grading`, `work_space`, and figure fields |
-| `sections` | Standards covered, as `major.minor` values; non-numeric tokens (e.g. `unknown`) are tolerated and skipped |
+| `sections` | Standards covered, as `major.minor` values or labels such as `2.F` (see [Section filtering](#section-filtering)); other non-numeric tokens (e.g. `unknown`) are tolerated and skipped |
 | `dok` | Depth of Knowledge, typically 1-4; a non-integer marker counts as unrecorded. A multipart question without its own `dok` is rated by its hardest part |
 | `calculator_active` | Whether a calculator is permitted for this question |
 | `assessment_type` | Free-form filter tag (e.g. `quiz`, `test`) |
 | `related_to` | Ids of related questions, to avoid selecting them together |
 | `grading` | Rubric entries (see below) |
 | `work_space` | FRQ answer-space height (LaTeX length, e.g. `2in`) |
-| `figure`, `figure_placement`, `figure_width` | Figure to show with the question (see below) |
+| `figure`, `figure_latex`, `figure_placement`, `figure_width` | Figure (a file, or inline LaTeX such as a table) to show with the question (see below) |
 | `legacy_ids` | Historical identifiers; editorial metadata, ignored by the generator |
 | `review` | Editorial workflow marker; ignored by the generator |
 
@@ -143,6 +143,8 @@ the average is shown against it and highlighted in yellow if the target
 was missed. When the `sections` filter is a bounded range (e.g.
 `1.1 - 1.16`), every section in the range is listed, even with zero
 questions, so coverage gaps stand out; DOK levels 1-4 are always listed.
+Section labels (e.g. `2.F`) are listed after the numbered sections,
+alphabetically.
 
 Because manifests record each question's sections and DOK,
 `--report-from-manifest <manifest.yaml>` prints the same report for an
@@ -262,6 +264,24 @@ The optional `figure_placement` field chooses where the figure goes:
 
 All placements keep the figure with its question across page breaks.
 
+To place inline LaTeX — typically a table of values — the same way, put it
+in `figure_latex` instead of `figure` (a question can't set both). It
+honors `figure_placement` and `figure_width` (which rescales it with
+`\resizebox`), so a table the stem refers to as "the table above" keeps
+the question number aligned with the stem rather than the table:
+
+```yaml
+    question: |
+      The table above gives selected values of $g$. ...
+    figure_latex: |
+      \begin{tabularx}{4in}{ |Y||*{5}{Y|} }
+        \hline
+        \bm{$x$} & 1 & 2 & 3 & 4 & 5 \\
+        ...
+      \end{tabularx}
+    figure_placement: above
+```
+
 Questions may instead embed figures as raw LaTeX in the question text
 (e.g. `\fullwidth{\begin{center}\input{figures/27.tex}\end{center}}`
 for a full-width centered figure), but don't combine that `\fullwidth`
@@ -302,7 +322,18 @@ using SemVer-style version ranges, except section numbers have no patch
 component (they are `major.minor`, e.g. `1.3`). A question without parts
 is included only when the highest section it lists falls within the
 range. For multipart FRQs, the highest section listed on each part must
-fall within the range (question-level sections are ignored). When either
+fall within the range (question-level sections are ignored).
+
+A section can also be a *label* — a unit number, a dot, and a name starting
+with a letter (e.g. `2.F`) — for material outside the numbered topics.
+Labels have no numeric order: a range includes one only when it names it
+exactly as an alternative (e.g. `2.1 - 2.8 || 2.F`) or is `*`, so ranges
+such as `2.9 - 2.15` and `2.x` exclude it. Labels can't be used with
+operators or as hyphen-range ends, and matching is case-sensitive. Every
+label a question (or part) lists must fall within the range, in addition
+to its highest numbered section.
+
+When either
 filter is set, questions missing the corresponding field are excluded.
 The `calculator_active` filter differs: questions missing the field are
 treated as `calculator_active: false` rather than excluded.
@@ -315,6 +346,7 @@ Supported range syntax:
 | `1.3 - 1.7` | 1.3 through 1.7, inclusive |
 | `>=1.3 <1.8` | comparators (`<`, `<=`, `>`, `>=`, `=`); all must hold |
 | `1.3 \|\| 2.1` | alternatives; any may match |
+| `2.1 - 2.8 \|\| 2.F` | 2.1 through 2.8, plus the label `2.F` |
 | `1.x` / `1.*` | any section in unit 1 |
 | `*` | any section |
 | `^1.3` | `>=1.3 <2.0` |

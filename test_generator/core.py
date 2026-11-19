@@ -8,7 +8,7 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
-from .sections import parse_range, parse_version
+from .sections import Section, format_section, parse_range, parse_section, section_sort_key
 from .validation import validate_questions
 
 # A question (or question part) mapping as loaded from YAML.
@@ -132,11 +132,11 @@ def filter_questions(
             field are dropped.
         sections: When set, a SemVer-style section range (see
             :mod:`test_generator.sections`). A question without parts is
-            kept only when the highest section it lists falls within the
-            range. A question with parts is kept only when the highest
-            section listed on each part falls within the range;
-            question-level sections are ignored. Questions with no
-            applicable sections listed are dropped.
+            kept only when the highest numbered section it lists, and every
+            label (e.g. ``2.F``) it lists, falls within the range. A
+            question with parts is kept only when the same holds for each
+            part's sections; question-level sections are ignored. Questions
+            with no applicable sections listed are dropped.
         calculator_active: When set, keep only questions whose
             ``calculator_active`` equals this value; questions missing the
             field are treated as no-calculator (``False``).
@@ -158,15 +158,16 @@ def filter_questions(
             parts = q.get("parts") or []
             try:
                 if parts:
-                    highest = [
-                        max(p_sections, key=parse_version)
+                    keys = [
+                        key
                         for part in parts
-                        if (p_sections := list(part.get("sections") or []))
+                        for key in _filter_keys(list(part.get("sections") or []))
                     ]
                 else:
-                    q_sections = list(q.get("sections") or [])
-                    highest = [max(q_sections, key=parse_version)] if q_sections else []
-                if not highest or not all(section_range.match(s) for s in highest):
+                    keys = _filter_keys(list(q.get("sections") or []))
+                if not keys or not all(
+                    section_range.match(format_section(k)) for k in keys
+                ):
                     continue
             except ValueError:
                 continue
@@ -181,12 +182,25 @@ def filter_questions(
     return filtered
 
 
-def _question_sections(q: Question) -> set[tuple[int, int]]:
-    """Return the normalized ``(major, minor)`` sections a question covers.
+def _filter_keys(raw: list[Any]) -> list[Section]:
+    """Sections a range filter must match: the highest numbered one, plus labels.
 
-    For a multipart question the union of each part's sections is used;
-    otherwise the question-level ``sections`` list. Values that fail to
-    parse are skipped.
+    Raises ValueError if any value is neither a section number nor a label,
+    so a question listing one is dropped by the filter.
+    """
+    parsed = [parse_section(s) for s in raw]
+    numbered = [s for s in parsed if not isinstance(s, str)]
+    labels = [s for s in parsed if isinstance(s, str)]
+    return ([max(numbered)] if numbered else []) + labels
+
+
+def _question_sections(q: Question) -> set[Section]:
+    """Return the normalized sections a question covers.
+
+    Numbered sections are ``(major, minor)`` pairs; labels such as ``2.F``
+    are kept as strings. For a multipart question the union of each part's
+    sections is used; otherwise the question-level ``sections`` list.
+    Values that fail to parse (e.g. ``unknown``) are skipped.
     """
     parts = q.get("parts") or []
     if parts:
@@ -194,10 +208,10 @@ def _question_sections(q: Question) -> set[tuple[int, int]]:
     else:
         raw = list(q.get("sections") or [])
 
-    covered: set[tuple[int, int]] = set()
+    covered: set[Section] = set()
     for s in raw:
         try:
-            covered.add(parse_version(s))
+            covered.add(parse_section(s))
         except ValueError:
             continue
     return covered
@@ -234,7 +248,7 @@ def _effective_dok(q: Question) -> int | None:
 
 
 def _review_label(
-    dok: int | None, sections: set[tuple[int, int]], qid: Any = None
+    dok: int | None, sections: set[Section], qid: Any = None
 ) -> str:
     """A gray ID/DOK/section label for a solution, shown only in review copies.
 
@@ -247,7 +261,9 @@ def _review_label(
     if dok is not None:
         parts.append(f"DOK {dok}")
     if sections:
-        listed = ", ".join(f"{major}.{minor}" for major, minor in sorted(sections))
+        listed = ", ".join(
+            format_section(s) for s in sorted(sections, key=section_sort_key)
+        )
         parts.append(f"Sections: {listed}")
     if qid is not None and str(qid):
         parts.append("ID: \\texttt{%s}" % str(qid)[:8])
@@ -298,7 +314,7 @@ def select_questions(
     random.shuffle(shuffled)
 
     selected_ids: set[Any] = set()
-    covered: set[tuple[int, int]] = set()
+    covered: set[Section] = set()
     for _ in range(count):
         best: Question | None = None
         best_key: tuple[int, int] | None = None
@@ -350,7 +366,7 @@ def _optimize_dok(
         return sum(len(neighbors[i] & ids) for i in ids) // 2
 
     def coverage(ids: set[Any]) -> int:
-        covered: set[tuple[int, int]] = set()
+        covered: set[Section] = set()
         for i in ids:
             covered |= sections_by_id[i]
         return len(covered)
@@ -444,13 +460,33 @@ def _figure_include(figure: str, figure_width: str | None = None) -> str:
     return include
 
 
+def _figure_latex_include(latex: str, figure_width: str | None = None) -> str:
+    """LaTeX snippet for inline figure content (e.g. a table) from the YAML."""
+    include = latex.strip()
+    if figure_width:
+        include = f"\\resizebox{{{figure_width}}}{{!}}{{{include}}}"
+    return include
+
+
 def _apply_figure_placeholders(block: str, item: Question) -> str:
-    """Fill a template's $FIG_* placeholders from the item's figure fields."""
+    """Fill a template's $FIG_* placeholders from the item's figure fields.
+
+    The figure is either a file (``figure``) or inline LaTeX such as a table
+    (``figure_latex``); both are placed by ``figure_placement``.
+    """
     above = begin = end = below = ""
     figure = item.get("figure")
-    if figure:
+    figure_latex = item.get("figure_latex")
+    if figure and figure_latex:
+        raise RuntimeError(
+            f"Question {item.get('id')!r} sets both figure and figure_latex"
+        )
+    if figure or figure_latex:
         placement = str(item.get("figure_placement", "right"))
-        include = _figure_include(figure, item.get("figure_width"))
+        if figure:
+            include = _figure_include(figure, item.get("figure_width"))
+        else:
+            include = _figure_latex_include(str(figure_latex), item.get("figure_width"))
         if placement == "right":
             begin = "\\begin{figright}{%s}" % include
             end = "\\end{figright}"

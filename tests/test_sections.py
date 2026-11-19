@@ -1,6 +1,13 @@
 import pytest
 
-from test_generator.sections import parse_range, parse_version
+from test_generator.sections import (
+    Section,
+    format_section,
+    parse_range,
+    parse_section,
+    parse_version,
+    section_sort_key,
+)
 
 
 def test_parse_version() -> None:
@@ -134,3 +141,49 @@ def test_concrete_sections_unbounded() -> None:
     assert parse_range("1.x").concrete_sections() is None
     assert parse_range(">=1.3").concrete_sections() is None
     assert parse_range("1.3 - 2.4").concrete_sections() is None
+
+
+def test_parse_section_numbers_and_labels() -> None:
+    assert parse_section("1.3") == (1, 3)
+    assert parse_section(1.5) == (1, 5)
+    assert parse_section("2.F") == "2.F"
+    assert parse_section(" 2.FIN ") == "2.FIN"
+
+
+@pytest.mark.parametrize("bad", ["unknown", "abc", "2.", "2.x", "1.3-1.7", "F.2"])
+def test_parse_section_invalid(bad: str) -> None:
+    with pytest.raises(ValueError):
+        parse_section(bad)
+
+
+def test_label_matches_only_when_named() -> None:
+    r = parse_range("2.1 - 2.8 || 2.F")
+    assert r.match("2.F")
+    assert r.match("2.5")
+    assert not r.match("2.9")
+    assert not r.match("2.G")
+    assert not r.match("2.f")  # labels are case-sensitive
+
+
+def test_label_outside_numeric_order() -> None:
+    assert not parse_range("2.9 - 2.15").match("2.F")
+    assert not parse_range("2.x").match("2.F")
+    assert not parse_range(">=2.1").match("2.F")
+    assert parse_range("*").match("2.F")
+
+
+@pytest.mark.parametrize("bad", [">=2.F", "2.F - 2.8", "2.1 - 2.F", "2.F 1.3", "~2.F"])
+def test_label_with_operator_or_hyphen_invalid(bad: str) -> None:
+    with pytest.raises(ValueError):
+        parse_range(bad)
+
+
+def test_concrete_sections_include_labels() -> None:
+    result = parse_range("2.1 - 2.3 || 2.F").concrete_sections()
+    assert result == {(2, 1), (2, 2), (2, 3), "2.F"}
+
+
+def test_section_sort_and_format() -> None:
+    sections: list[Section] = ["2.f", (2, 10), "2.F", (2, 9), "1.Z"]
+    ordered = sorted(sections, key=section_sort_key)
+    assert [format_section(s) for s in ordered] == ["2.9", "2.10", "1.Z", "2.F", "2.f"]

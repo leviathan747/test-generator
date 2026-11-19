@@ -45,7 +45,7 @@
       }
     },
     "sections": {
-      "description": "Standards covered, as 'major.minor' values. Non-numeric tokens (e.g. 'unknown') are tolerated and skipped.",
+      "description": "Standards covered, as 'major.minor' values or labels such as '2.F' (a unit number, a dot, and a name starting with a letter). Other non-numeric tokens (e.g. 'unknown') are tolerated and skipped.",
       "type": "array",
       "items": {
         "type": ["string", "number"]
@@ -83,6 +83,10 @@
     },
     "figure": {
       "description": "Figure filename. A '.tex' file is \\input, otherwise \\includegraphics.",
+      "type": "string"
+    },
+    "figure_latex": {
+      "description": "Inline LaTeX (e.g. a table) placed like a figure. Mutually exclusive with 'figure'.",
       "type": "string"
     },
     "figure_placement": {
@@ -137,6 +141,9 @@
           "type": "string"
         },
         "figure": {
+          "type": "string"
+        },
+        "figure_latex": {
           "type": "string"
         },
         "figure_placement": {

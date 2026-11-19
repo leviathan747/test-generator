@@ -3,7 +3,7 @@
 from collections import Counter
 
 from .core import Question, _effective_dok, _question_sections
-from .sections import parse_range
+from .sections import Section, format_section, parse_range, section_sort_key
 
 # DOK levels always shown in the histogram, even with zero questions.
 DOK_LEVELS = (1, 2, 3, 4)
@@ -30,7 +30,9 @@ def format_report(
     Each question counts once toward every section it covers (union across
     parts for multipart questions). When ``sections`` (a section range
     spec) is given and finitely enumerable, every section in the range is
-    listed, including those with zero questions; DOK levels 1-4 are always
+    listed, including those with zero questions. Numbered sections come
+    first in order, then labels (e.g. ``2.F``) alphabetically. DOK levels
+    1-4 are always
     listed. Questions without a DOK appear in an ``n/a`` row and are
     excluded from the average.
 
@@ -38,7 +40,7 @@ def format_report(
     average below the target (or an ``n/a`` average) is wrapped in ANSI
     yellow when ``color`` is also set.
     """
-    section_counts: Counter[tuple[int, int]] = Counter()
+    section_counts: Counter[Section] = Counter()
     dok_counts: Counter[int] = Counter()
     no_dok = 0
     for q in questions:
@@ -59,8 +61,8 @@ def format_report(
 
     lines.append("Section coverage:")
     section_rows = [
-        (f"{major}.{minor}", section_counts[(major, minor)])
-        for major, minor in sorted(section_domain)
+        (format_section(s), section_counts[s])
+        for s in sorted(section_domain, key=section_sort_key)
     ]
     lines.extend(_histogram_lines(section_rows) or ["  (no sections listed)"])
 

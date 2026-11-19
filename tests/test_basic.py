@@ -14,7 +14,7 @@ import yaml as real_yaml
 
 import test_generator
 from test_generator.__main__ import _display_form_id, main
-from test_generator.core import Question, select_questions
+from test_generator.core import Question, _review_label, select_questions
 from test_generator.report import format_report
 
 
@@ -85,6 +85,22 @@ def test_filter_questions_sections_multipart() -> None:
     ]
     result = test_generator.filter_questions(questions, sections="1.3 - 1.7")
     assert [q["id"] for q in result] == [1, 3, 4]
+
+
+def test_filter_questions_section_labels() -> None:
+    questions: list[Question] = [
+        {"id": 1, "sections": ["2.5"]},
+        {"id": 2, "sections": ["2.F"]},
+        {"id": 3, "sections": ["2.5", "2.F"]},  # label must also match
+        {"id": 4, "sections": ["2.F", "unknown"]},  # unparseable section
+        {"id": 5, "parts": [{"sections": ["2.3"]}, {"sections": ["2.F"]}]},
+    ]
+    result = test_generator.filter_questions(questions, sections="2.1 - 2.8")
+    assert [q["id"] for q in result] == [1]
+    result = test_generator.filter_questions(questions, sections="2.1 - 2.8 || 2.F")
+    assert [q["id"] for q in result] == [1, 2, 3, 5]
+    result = test_generator.filter_questions(questions, sections="2.F")
+    assert [q["id"] for q in result] == [2]
 
 
 def test_filter_questions_calculator_active() -> None:
@@ -602,6 +618,67 @@ def test_generate_test_invalid_figure_placement(
     _fake_pdflatex(monkeypatch, [])
 
     with pytest.raises(RuntimeError, match="figure_placement"):
+        test_generator.generate_test(str(yaml_file), str(tmp_path / "out.pdf"))
+
+
+def test_generate_test_figure_latex_placement(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    yaml_file = tmp_path / "q.yaml"
+    yaml_file.write_text(
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: Table stem.\n"
+        "    answer: 4\n"
+        "    distractors: [3, 5]\n"
+        "    solution: Because.\n"
+        "    figure_latex: |\n"
+        "      \\begin{tabular}{|c|c|} \\hline $x$ & 1 \\\\ \\hline \\end{tabular}\n"
+        "    figure_placement: above\n"
+        "  - id: 2\n"
+        "    question: Scaled table stem.\n"
+        "    answer: 6\n"
+        "    distractors: [5, 7]\n"
+        "    solution: Because.\n"
+        "    figure_latex: \\begin{tabular}{c} 2 \\end{tabular}\n"
+        "    figure_width: 2in\n"
+    )
+
+    tex_contents: list[str] = []
+    _fake_pdflatex(monkeypatch, tex_contents)
+
+    test_generator.generate_test(str(yaml_file), str(tmp_path / "out.pdf"))
+
+    tex = tex_contents[0]
+    # above: the inline LaTeX precedes \question, like an above figure
+    above_block = tex.split("Table stem.")[0].rsplit("\\fitquestion", 1)[1]
+    table = "\\begin{tabular}{|c|c|} \\hline $x$ & 1 \\\\ \\hline \\end{tabular}"
+    assert "{\\centering %s\\par}" % table in above_block
+    assert above_block.index("\\centering") < above_block.index("\\question")
+    # default placement floats it right, scaled by figure_width
+    assert (
+        "\\begin{figright}{\\resizebox{2in}{!}{\\begin{tabular}{c} 2 \\end{tabular}}}"
+        in tex
+    )
+
+
+def test_generate_test_figure_and_figure_latex_conflict(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    yaml_file = tmp_path / "q.yaml"
+    yaml_file.write_text(
+        "questions:\n"
+        "  - id: 1\n"
+        "    question: Both.\n"
+        "    answer: 4\n"
+        "    distractors: [3, 5]\n"
+        "    figure: 27.tex\n"
+        "    figure_latex: x\n"
+    )
+
+    _fake_pdflatex(monkeypatch, [])
+
+    with pytest.raises(RuntimeError, match="both figure and figure_latex"):
         test_generator.generate_test(str(yaml_file), str(tmp_path / "out.pdf"))
 
 
@@ -2378,6 +2455,22 @@ def test_format_report_lists_all_sections_in_range() -> None:
     assert "  1.1 0" in report
     assert "  1.2 █ 1" in report
     assert "  1.3 0" in report
+
+
+def test_format_report_labels_listed_last_alphabetically() -> None:
+    questions: list[Question] = [
+        {"id": 1, "sections": ["2.F", "2.10"], "dok": 2},
+        {"id": 2, "sections": ["2.B", "2.9"], "dok": 2},
+    ]
+    report = format_report(questions, sections="2.9 - 2.10 || 2.F || 2.Z")
+    rows = [line.split()[0] for line in report.splitlines() if line.startswith("  2.")]
+    assert rows == ["2.9", "2.10", "2.B", "2.F", "2.Z"]
+    assert "  2.Z  0" in report
+
+
+def test_review_label_lists_labels_after_numbers() -> None:
+    label = _review_label(2, {"2.F", (2, 10), (2, 9)}, "abc")
+    assert "Sections: 2.9, 2.10, 2.F" in label
 
 
 def test_format_report_unbounded_range_shows_observed_only() -> None:

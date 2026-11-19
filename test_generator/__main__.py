@@ -89,6 +89,7 @@ from .core import (
     select_questions,
 )
 from .report import format_report
+from .sections import format_section, section_sort_key
 from .validation import validate_config, validate_manifest
 
 # Version 2 embeds per-question sections/DOK (and the config's section
@@ -267,9 +268,9 @@ def _build_manifest(
             letter = _answer_letter(choice_orders[q["id"]])
             entry["answer"] = letter
             answer_letters.append(letter)
-        covered = sorted(_question_sections(q))
+        covered = sorted(_question_sections(q), key=section_sort_key)
         if covered:
-            entry["sections"] = [f"{major}.{minor}" for major, minor in covered]
+            entry["sections"] = [format_section(s) for s in covered]
         dok = _effective_dok(q)
         if dok is not None:
             entry["dok"] = dok
