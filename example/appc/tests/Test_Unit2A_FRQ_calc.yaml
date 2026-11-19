@@ -234,11 +234,12 @@ questions:
         dok: 2
         work_space: 1.5in
       - question: |
-          Find the residual value of the car when $t = 4$. Does this residual
-          value indicate that our model overestimated or underestimated the
-          value of the car when $t = 4$? Give a reason for your answer.
+          Find the residual value when $t = 4$. Does this residual value
+          indicate that our model overestimated or underestimated the value of
+          the car when $t = 4$? Give a reason for your answer.
         solution: |
           residual = actual - predicted
+
           residual $= 17.2 - 16.820 \approx 0.380$
 
           The model underestimated the value of the car when $t = 4$. This can
@@ -288,7 +289,7 @@ questions:
         work_space: 1.5in
     calculator_active: true
     question_type: FRQ
-    review: generated
+    review: none
 
   - id: 85139be6-cd3e-49f3-9c6b-a99d1a66488a
     related_to:

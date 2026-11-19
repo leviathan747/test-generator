@@ -199,7 +199,7 @@ questions:
     sections:
       - 2.3
     dok: 2
-    review: generated
+    review: none
 
   - id: fe0cbf16-1af5-4493-a4cd-27abc8879806
     legacy_ids:
@@ -738,7 +738,7 @@ questions:
     sections:
       - 2.6
     dok: 2
-    review: generated
+    review: none
 
   - id: 943a05e0-5198-426a-912b-904da6644cf7
     question: |
@@ -1156,7 +1156,7 @@ questions:
     sections:
       - 2.3
     dok: 3
-    review: generated
+    review: none
 
   - id: 617fcd9d-2950-423b-be05-da40f48f436a
     question: |
@@ -1209,7 +1209,7 @@ questions:
     sections:
       - 2.4
     dok: 2
-    review: generated
+    review: none
 
   - id: 5402591e-f384-4d6b-8dfa-ef0c7a38d46b
     question: |
@@ -1388,22 +1388,26 @@ questions:
 
   - id: 5136b1f2-8819-40c6-9644-8962984773a8
     question: |
-      The amount of a substance $d$ days after an experiment begins is modeled
-      by $f(d) = 3(2)^d$. Which of the following equivalent forms of $f$ shows
-      the factor by which the amount increases every week?
-    answer: $f(d) = 3(128)^{d/7}$
+      The amount of a substance doubles each day after the experiment begins.
+      The amount of the substance can be modeled by $f(d) = 3(2)^d$ where
+      $f(d)$ is the amount of the substance and $d$ is the number of days
+      after the experiment begins. Which of the following is an equivalent
+      form of $f$ where the \emph{base} represents the factor by which the
+      amount of the substance increases each \emph{week}, and $w$ represents
+      the number of weeks after the experiment begins?
+    answer: $g(w) = 3(128)^{w}$
     distractors:
-      - $f(d) = 3(14)^{d/7}$
-      - $f(d) = 3(2)^{7d}$
-      - $f(d) = 21(2)^{d/7}$
+      - $g(w) = 3(14)^{w}$
+      - $g(w) = 3(2)^{w/7}$
+      - $g(w) = 21(2)^{w}$
     solution: |
-      $3(2)^d = 3\left(2^7\right)^{d/7} = 3(128)^{d/7}$, so the amount
-      increases by a factor of $2^7 = 128$ every 7 days.
+      Since $d = 7w$, $3(2)^d = 3(2)^{7w} = 3\left(2^7\right)^{w} = 3(128)^{w}$,
+      so the amount increases by a factor of $2^7 = 128$ each week.
     calculator_active: false
     sections:
       - 2.5
     dok: 2
-    review: generated
+    review: none
 
   - id: 6ff20040-994d-443b-81ff-e3a14c035f39
     question: |
@@ -1786,7 +1790,7 @@ questions:
     sections:
       - 2.7
     dok: 2
-    review: generated
+    review: none
 
   - id: 076cd83d-56b7-4bc5-89cb-1adb6223750a
     question: |
@@ -1878,7 +1882,7 @@ questions:
       - 2.7
       - 2.4
     dok: 2
-    review: generated
+    review: none
 
   - id: d1ac6c62-5358-40bb-9405-90a752b79cdd
     question: |
@@ -1895,7 +1899,7 @@ questions:
     sections:
       - 2.7
     dok: 2
-    review: generated
+    review: none
 
   - id: fbb8f822-8033-46f0-8582-57c4d4130947
     question: |
@@ -1999,7 +2003,7 @@ questions:
     sections:
       - 2.8
     dok: 2
-    review: generated
+    review: none
 
   - id: d4113158-0241-4c52-8d2c-6a40ce8905ad
     question: |
@@ -2069,7 +2073,7 @@ questions:
     sections:
       - 2.8
     dok: 2
-    review: generated
+    review: none
 
   - id: 8e8a4197-5193-4a9c-bc70-8e845f772423
     question: |
@@ -2126,7 +2130,7 @@ questions:
     sections:
       - 2.8
     dok: 2
-    review: generated
+    review: none
 
   - id: 00953df0-9cb3-4f6a-8946-2bda61ac7ac0
     question: |
@@ -2207,7 +2211,7 @@ questions:
     sections:
       - '2.F'
     dok: 2
-    review: generated
+    review: none
 
   - id: 7f464703-479f-4617-bcd8-efae431ac359
     question: |
